@@ -952,3 +952,37 @@ none of the architecture comparisons are blocked on this. The honest status is
 that `c7t`/`c8t` are a working *pipeline* (collect -> train -> DAgger -> fly, all
 reproducible) carrying a policy that does not yet navigate, and their numbers
 must not be read as an architecture result.
+
+## Verification of all architectures
+
+`uavlab verify` over the full set (22 configs: C0-C14 plus the `g` and `t`
+variants), three seeds each, on `grid_nav` — vision architectures routed to
+`grid_nav_vision`.
+
+**21 of 22 passed. The one failure was c2g**, on the determinism check:
+final distance 28.462555 vs 28.461193 for the same seed. 1.4 mm, but the check
+is right to fail it — paired-by-seed comparison is the whole method.
+
+Chased rather than assumed. Capturing every Gemma response across two runs in
+one process: 23 calls each, byte-identical. Across three separate processes:
+identical to nine decimal places. So it is intermittent, and it is not the
+harness — the residual variation is inside the server's GPU kernels, where
+batching and memory pressure change reduction order. No client-side option
+reaches it.
+
+`sampling_seed` is now pinned and sent with every call. That is the one lever
+that is ours, and it is honest about not being sufficient — the docstring says
+so rather than implying the problem is solved. c2g and c3g both verify clean
+after it, but "clean on a re-run" is not proof for an intermittent fault.
+
+Why c2g specifically and not c3g-c6g: C2 maps the emitted pixel straight to a
+waypoint, so nothing downstream absorbs a one-pixel difference. The verifier and
+monitor in C3-C6 do absorb it.
+
+### Reading the table
+
+Success rates in the verify output are reported for information only — the
+checks test that an architecture *functions*, not that it performs. Two things
+in that table are worth following up separately: c1 still scores 0.00, and
+c3g/c4g/c5g produce identical distance, path and collision figures, which is
+suspicious for three architectures that differ.

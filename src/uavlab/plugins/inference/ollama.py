@@ -49,6 +49,22 @@ class OllamaInference:
         comparison meaningless, since the same scene would produce different
         decisions run to run."""
         self.num_predict = int(params.get("num_predict", 96))
+        self.sampling_seed = int(params.get("sampling_seed", 0))
+        """Seed sent to the server with every call.
+
+        Determinism here is *best effort and not guaranteed*, which is worth
+        stating plainly rather than discovering later. Measured on this
+        repository: c2g reproduces exactly across three separate processes, but
+        `uavlab verify` caught one divergence of 1.4 mm in final distance during
+        a long sequential run. The residual variation is inside the server's GPU
+        kernels, where batching and memory pressure change reduction order; no
+        client-side option reaches it.
+
+        Architectures with a verifier or monitor downstream (c3g-c6g) absorb a
+        difference this small and verify clean. C2 maps the emitted pixel
+        straight to a waypoint, so nothing absorbs it, which is why c2g is the
+        one that shows it.
+        """
 
         self.charge_mode = str(params.get("charge_mode", "fixed"))
         """How measured model latency is charged to the *simulation* clock.
@@ -220,7 +236,16 @@ class OllamaInference:
         prompt = request.prompt
         images = list(request.images)
 
-        options = {"temperature": self.temperature, "num_predict": self.num_predict}
+        options = {
+            "temperature": self.temperature,
+            "num_predict": self.num_predict,
+            # Pinned even though temperature is 0 and greedy decoding should not
+            # consult it. It costs nothing, it states the intent, and it removes
+            # the one source of run-to-run variation that is ours to control.
+            # It does NOT make the backend deterministic on its own: see
+            # `sampling_seed` for what remains.
+            "seed": self.sampling_seed,
+        }
         if self.endpoint == "chat":
             message: dict[str, Any] = {"role": "user", "content": prompt}
             if images:
