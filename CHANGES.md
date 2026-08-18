@@ -986,3 +986,57 @@ checks test that an architecture *functions*, not that it performs. Two things
 in that table are worth following up separately: c1 still scores 0.00, and
 c3g/c4g/c5g produce identical distance, path and collision figures, which is
 suspicious for three architectures that differ.
+
+## Why C1 scores near zero
+
+Traced rather than guessed. Over a full episode C1's belief source is `none` on
+every one of 37 decisions — it never once detects the target and explores blind
+until the horizon. But so does C2 for long stretches, and C2 scores 0.70 on the
+same seeds, so "never sees the target" is not the answer by itself.
+
+The answer is an interaction between two things, neither of which does the
+damage alone. On 20 seeds of `grid_nav_vision`:
+
+| | success |
+|---|---|
+| C1 as shipped (1 Hz, scan every 3rd decision) | 0.15 |
+| without the scan skill | 0.15 |
+| at 2 Hz, scan unchanged | 0.20 |
+| without the scan, at 2 Hz | 0.60 |
+
+A `scan` is a whole decision spent rotating in place. At 1 Hz, one scan in every
+three means a third of the mission is not spent flying anywhere — and at 1 Hz
+there are only ~60 decisions in an episode to begin with. Doubling the rate
+without removing the scan just buys more scans; removing the scan without
+raising the rate leaves too few decisions to search with. Only both together
+recover the performance.
+
+Cost is set by scan *frequency*, not duration, which is what confirms the
+reading — decisions are the scarce resource, not seconds:
+
+| at 1 Hz | success |
+|---|---|
+| scan 1.0 s every 3 (shipped) | 0.15 |
+| scan 0.4 s every 3 | 0.15 |
+| scan 1.0 s every 6 | 0.35 |
+| scan 0.4 s every 6 | 0.20 |
+
+### What is a result and what is a bug
+
+The 1 Hz rate is deliberate and is part of what C1 *is* — a skill agent is
+expensive per call, and raising the rate would quietly turn C1 into a different
+architecture. That a low call rate handicaps a task requiring search is a
+genuine finding, and precisely the falsifying result `c1_llm_skills.yaml`
+anticipated.
+
+The scan frequency is not. It was chosen without reference to the decision rate,
+and it currently dominates the architecture signal: C1 reads as 0.15 when the
+defensible number for its own design is 0.35.
+
+`scan_every` and `scan_duration_s` are now parameters so this is measurable
+rather than arguable. Defaults are unchanged pending a decision on whether to
+set `scan_every: 6` for C1.
+
+`scan_every: 6` is now C1's default. Verified: PASS, and 0.35 success over 40
+held-out seeds (was 0.15), with zero collisions. 1 Hz is untouched. 224 tests
+pass.

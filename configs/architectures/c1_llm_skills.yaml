@@ -23,6 +23,12 @@ policy:
     standoff_m: 1.5
     scan_when_lost: true
     stop_radius_m: 2.0
+    # A scan is a whole decision spent rotating in place, and at 1 Hz there are
+    # only ~60 decisions in an episode. Scanning every third one spent a third
+    # of the mission going nowhere and reported C1 at 0.15 where its own design
+    # gives 0.35. Cost is set by frequency, not duration: shortening the scan to
+    # 0.4 s changed nothing, scanning half as often did. See CHANGES.md.
+    scan_every: 6
 
 planner:
   name: fixed_local

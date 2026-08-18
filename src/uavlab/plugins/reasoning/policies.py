@@ -234,6 +234,18 @@ class ScriptedSkillPolicy(BasePolicy):
         super().__init__(**params)
         self.standoff_m = float(params.get("standoff_m", 1.5))
         self.scan_when_lost = bool(params.get("scan_when_lost", True))
+        self.scan_every = int(params.get("scan_every", 3))
+        self.scan_duration_s = float(params.get("scan_duration_s", 1.0))
+        """A stationary scan costs whole decisions, so its cost is set by the
+        decision rate rather than by the number here.
+
+        At C1's 1 Hz, one scan in every three decisions means a third of the
+        mission is spent rotating in place, and C1 scored 0.15 where C2 scored
+        0.70 on the same seeds. The interaction is what does the damage: removing
+        the scan alone changes nothing (0.15), doubling the rate alone changes
+        little (0.20), and doing both gives 0.60. These are parameters so the
+        interaction can be measured rather than argued about.
+        """
         self._lost_ticks = 0
 
     @property
@@ -284,11 +296,14 @@ class ScriptedSkillPolicy(BasePolicy):
         self._lost_ticks += 1
         # A bounded vocabulary means the response to "lost" is a skill, not an
         # improvised trajectory: scan for evidence, then commit to a search leg.
-        if self.scan_when_lost and self._lost_ticks % 3 == 1:
+        if self.scan_when_lost and self._lost_ticks % max(self.scan_every, 1) == 1:
             return self.envelope(
                 ctx,
                 DecisionKind.SKILL,
-                SkillCall(skill_name="scan", args={"yaw_rate_rps": 0.8, "duration_s": 1.0}),
+                SkillCall(
+                    skill_name="scan",
+                    args={"yaw_rate_rps": 0.8, "duration_s": self.scan_duration_s},
+                ),
                 0.1,
                 note="searching",
             )
