@@ -1,0 +1,30 @@
+# C2 - VLM -> semantic waypoint -> fixed planner.
+#
+# Question: does visual semantic grounding justify waypoint-level authority?
+# Nearest comparison: See-Point-Fly, the decision path of OnFly.
+# Supporting result: better grounding than C1 without a large safety or latency
+# penalty. Falsifying result: no meaningful gain over bounded skills.
+
+_base_: [_base.yaml, ../models/sim_vlm_waypoint.yaml]
+
+id: c2
+name: "VLM -> waypoint -> fixed planner"
+description: "Semantic waypoint authority with a classical local planner."
+tags: [waypoint_authority, macro_screening]
+
+authority: waypoint
+
+policy:
+  name: vlm_waypoint
+  params:
+    hop_m: 12.0
+    stop_radius_m: 2.0
+    stop_confidence: 0.35
+
+planner:
+  name: fixed_local
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 2.0

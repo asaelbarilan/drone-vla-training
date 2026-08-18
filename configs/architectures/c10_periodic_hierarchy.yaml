@@ -1,0 +1,38 @@
+# C10 - Periodic slow reasoner -> single-step VLA -> shield.
+#
+# Question: does hierarchical semantic reasoning help a direct VLA?
+# Nearest comparison: CognitiveDrone-R1.
+# Supporting result: gains concentrated on ambiguity and multi-stage tasks.
+# Falsifying result: performance similar to C8, i.e. the second model is not
+# earning its cost.
+#
+# scheduler.kind is periodic on purpose: the reasoner runs INSIDE the decision
+# loop and blocks the executor. C12 keeps everything else identical and only
+# makes it concurrent, which is what isolates the value of non-blocking
+# execution from the value of having a reasoner at all.
+
+_base_: [c8_shielded_vla.yaml, ../models/sim_slow_reasoner.yaml]
+
+id: c10
+name: "Periodic slow reasoner -> single-step VLA -> shield"
+description: "Blocking fast/slow hierarchy over a shielded direct VLA."
+tags: [hierarchy, timing_recovery]
+
+semantic_supervision: periodic_reasoner
+semantic_memory: compact_semantic_state
+memory_consumers: [policy, recovery]
+
+memory:
+  name: compact_semantic_state
+
+recovery:
+  name: hierarchical_reasoner
+  params:
+    emit: directive         # a directive carries intent, never motion
+    detour_m: 8.0
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 10.0
+  reasoner_hz: 0.5

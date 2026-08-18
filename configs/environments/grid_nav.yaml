@@ -1,0 +1,42 @@
+# Regime 1: long-horizon language navigation.
+# Tests semantic grounding, progress, stopping correctness and memory.
+# The target is within sensor range from the start, so this regime is about
+# *following through* on a goal rather than finding one.
+
+id: grid_nav
+task_family: long_horizon_nav
+instruction: "fly to the target tower and stop there"
+max_episode_s: 90.0
+
+adapter:
+  name: grid3d
+
+params:
+  scene: clutter
+  goal_distance_m: 35.0
+  n_obstacles: 10
+  sensor_range_m: 45.0
+  fov_deg: 90.0
+  subgoals: 2
+  distractors: 3
+  detection_noise_m: 0.25
+
+  success:
+    goal_radius_m: 2.0
+    # Reaching the goal is not enough: the agent must also decide it is done.
+    # This is the criterion an independent progress monitor is supposed to move.
+    require_terminal_stop: true
+    # Subgoals are a route-adherence *metric*, not a success gate: they are not
+    # part of the instruction, so the agent has no way to know about them and
+    # scoring against them would penalise legitimate detours around obstacles.
+    required_subgoals: 0
+    max_flight_time_s: 90.0
+
+  constraints:
+    max_speed_mps: 5.0
+    min_altitude_m: 0.5
+    max_altitude_m: 25.0
+    geofence_radius_m: 60.0
+    min_obstacle_clearance_m: 0.6
+
+  allowed_skills: [goto, move, approach, hover, scan, back_off, ascend, stop]

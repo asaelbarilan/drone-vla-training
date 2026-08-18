@@ -1,0 +1,27 @@
+# C12 - Asynchronous streaming reasoner -> chunked VLA -> shield.
+#
+# Question: is non-blocking fast/slow execution better than periodic hierarchy?
+# Nearest comparison: FLIGHT.
+# Supporting result: lower wall-clock delay and fewer stalls at similar or
+# better success.
+# Falsifying result: staleness offsets the concurrency gains.
+#
+# Identical components and identical rates to C11. The single difference is
+# scheduler.kind, which moves the reasoner from inside the decision loop to
+# beside it. If C12 beats C11, concurrency is the reason, because nothing else
+# differs.
+
+_base_: [c11_chunked_hierarchy.yaml]
+
+id: c12
+name: "Async streaming reasoner -> chunked VLA -> shield"
+description: "Non-blocking slow reasoner running concurrently with a fast executor."
+tags: [hierarchy, async, timing_recovery]
+
+semantic_supervision: async_reasoner
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 10.0
+  reasoner_hz: 0.5

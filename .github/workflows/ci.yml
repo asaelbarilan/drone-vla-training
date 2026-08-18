@@ -1,0 +1,96 @@
+name: ci
+
+# The whole suite must pass from a clean checkout with no CUDA, no ROS, no
+# Gazebo, no simulator install and no network access at test time. Contract and
+# timing regressions are the dangerous ones in this project, so they run on
+# every push rather than nightly.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,analysis]"
+
+      - name: Lint
+        run: ruff check src tests
+
+      - name: Format check
+        run: ruff format --check src tests
+
+      - name: Type check
+        run: mypy src/uavlab
+
+      - name: Validate every architecture configuration
+        # Catches an illegal or unbuildable architecture before any episode runs.
+        run: uavlab validate-config
+
+      - name: Unit tests
+        run: pytest tests/unit -q
+
+      - name: Contract tests
+        run: pytest tests/contract -q
+
+      - name: Integration and acceptance tests
+        run: pytest tests/integration -q
+
+      - name: Smoke tests
+        run: pytest tests/smoke -q
+
+      - name: Deterministic end-to-end sweep
+        # Every architecture, one regime, two seeds. Proves the fifteen configs
+        # still launch and log correctly after any change.
+        run: uavlab sweep --experiment smoke --out runs/ci-smoke
+
+      - name: Upload sweep report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-smoke-report-py${{ matrix.python-version }}
+          path: runs/ci-smoke
+          if-no-files-found: ignore
+
+  no-heavy-deps:
+    # Guards the property that makes this repository testable at all: the core
+    # runtime must import with nothing but pydantic, pyyaml and numpy.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install core only
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Import and run one episode with no extras installed
+        run: |
+          python -c "
+          import asyncio
+          from uavlab import load_architecture, load_environment, run_episode
+          from uavlab.core.config import EpisodeSpec
+          arch = load_architecture('c12')
+          env = load_environment('grid_nav').model_copy(update={'max_episode_s': 15.0})
+          result = asyncio.run(run_episode(arch, env, EpisodeSpec(episode_id='ci', seed=1)))
+          assert result.error is None, result.error
+          print('ok:', result.termination_reason.value, result.sim_duration_s)
+          "

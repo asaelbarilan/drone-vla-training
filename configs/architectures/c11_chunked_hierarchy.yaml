@@ -1,0 +1,30 @@
+# C11 - C10 but with a short chunked VLA executor.
+#
+# Question: can a short future-action horizon bridge slow inference?
+# Nearest comparison: FLIGHT, ScoutVLA.
+# Supporting result: smoother, higher-frequency control with fewer semantic calls.
+# Falsifying result: more stale-action failures.
+#
+# Only the action horizon changes. The chunk lets the executor keep flying
+# between inferences - and simultaneously lets stale intent persist longer,
+# which is exactly the trade-off being measured.
+
+_base_: [c10_periodic_hierarchy.yaml]
+
+id: c11
+name: "C10 with chunked action horizon"
+description: "Receding-horizon action chunks under a periodic slow reasoner."
+tags: [hierarchy, action_horizon, memory_horizon]
+
+action_horizon: chunk
+chunk_length: 4
+
+policy:
+  name: chunk_vla
+  params:
+    cruise_mps: 3.0
+    action_duration_s: 0.2
+    avoid_gain: 1.2
+    stop_radius_m: 2.0
+    chunk_length: 4
+    replan_after: 4

@@ -1,0 +1,9 @@
+# Fast decision loop plus a much slower supervisory loop.
+# The gap between the two rates is what a dual-loop architecture is made of;
+# with similar rates there is no second loop worth paying for.
+inference:
+  name: simulated
+  params:
+    model_id: sim-vlm-dual
+    latency_s: {perception: 0.02, policy: 0.35, monitor: 1.60, reasoner: 2.40}
+    tokens_per_call: {policy: 160, monitor: 320, reasoner: 800}

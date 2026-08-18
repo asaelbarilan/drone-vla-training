@@ -1,0 +1,46 @@
+# C13 - Event-triggered reasoner -> best VLA executor -> shield.
+#
+# Question: should high-level reasoning be invoked only on uncertainty or lack
+# of progress?
+# Nearest comparison: selective recovery combined with a VLA hierarchy.
+# Supporting result: similar or better hard-case success with sharply fewer calls.
+# Falsifying result: the trigger misses important semantic corrections.
+#
+# This is the direct-VLA counterpart of C6. Same reasoner, same executor, same
+# shield as C12 - only the admission policy changes, from "always, slowly" to
+# "only when something is wrong".
+
+_base_: [c12_async_hierarchy.yaml]
+
+id: c13
+name: "Event-triggered reasoner -> chunked VLA -> shield"
+description: "Reasoning admitted on no-progress or ambiguity rather than on a schedule."
+tags: [hierarchy, recovery, timing_recovery]
+
+semantic_supervision: triggered_reasoner
+memory_consumers: [policy, monitor, recovery]
+
+monitor:
+  name: local_progress      # geometric watcher, zero inference cost
+  params:
+    window_s: 3.0
+    min_travel_m: 1.0
+
+recovery:
+  name: bounded_reasoner
+  params:
+    emit: directive
+    detour_m: 8.0
+    stall_threshold_s: 2.5
+    uncertainty_threshold: 0.6
+
+scheduler:
+  kind: event_triggered
+  control_hz: 20.0
+  decision_hz: 10.0
+  monitor_hz: 5.0
+  reasoner_hz: null         # no periodic schedule; the trigger is the schedule
+  trigger: no_progress_or_ambiguity
+  cooldown_s: 4.0
+  max_calls: 8
+  trigger_check_hz: 2.0

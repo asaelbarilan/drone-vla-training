@@ -1,0 +1,34 @@
+# Regime 2: open-set object/goal search.
+# Short sensor range plus decoys: the target must be found, and committing to
+# the wrong one is a measurable failure (false_target_commitment).
+
+id: object_search
+task_family: object_search
+instruction: "find the target and stop above it"
+max_episode_s: 120.0
+
+adapter:
+  name: grid3d
+
+params:
+  scene: clutter
+  goal_distance_m: 30.0
+  n_obstacles: 8
+  sensor_range_m: 16.0
+  fov_deg: 80.0
+  lures: 2
+  distractors: 4
+  detection_noise_m: 0.35
+
+  success:
+    goal_radius_m: 2.5
+    require_terminal_stop: true
+    max_flight_time_s: 120.0
+
+  constraints:
+    max_speed_mps: 5.0
+    geofence_radius_m: 60.0
+    max_altitude_m: 25.0
+    min_obstacle_clearance_m: 0.6
+
+  allowed_skills: [goto, move, approach, hover, scan, back_off, ascend, stop]

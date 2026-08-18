@@ -1,0 +1,40 @@
+# C7 - Direct VLA, one kinematic action, short context.
+#
+# Question: can learned visuomotor control eliminate waypoint planning?
+# Nearest comparison: AeroVLA, CognitiveDrone, UAV-Flow.
+# Supporting result: better fine control and efficiency without unacceptable
+# safety or generalisation cost.
+# Falsifying result: strong safety or semantic-generalisation degradation.
+#
+# No planner and no shield: this is the unprotected learned-action baseline, and
+# it exists so that C8 can attribute any safety improvement to the shield alone.
+
+_base_: [_base.yaml, ../models/sim_vla_fast.yaml]
+
+id: c7
+name: "Direct VLA, single action"
+description: "Learned kinematic action straight to the controller. No planner, no shield."
+tags: [direct_vla, macro_screening]
+
+authority: direct_vla
+action_horizon: single
+chunk_length: 1
+
+semantic_memory: short_context
+memory:
+  name: short_context
+  params:
+    window: 5
+
+policy:
+  name: mock_vla
+  params:
+    cruise_mps: 3.0
+    action_duration_s: 0.2
+    avoid_gain: 1.2
+    stop_radius_m: 2.0
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 10.0

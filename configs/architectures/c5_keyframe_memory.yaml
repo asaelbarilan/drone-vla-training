@@ -1,0 +1,24 @@
+# C5 - C4 + compact keyframe memory.
+#
+# Question: does historical state specifically improve monitoring?
+# Nearest comparison: the hybrid memory of OnFly, the keyframe history of OpenFly.
+# Supporting result: better long-horizon completion and stopping.
+# Falsifying result: no gain, or unacceptable latency and memory cost.
+#
+# Only the memory plugin changes. Same policy, same monitor, same rates - so a
+# difference here is a memory result and cannot be anything else.
+
+_base_: [c4_periodic_monitor.yaml]
+
+id: c5
+name: "C4 + compact keyframe memory"
+description: "Replaces the sliding window with first frame + salient keyframes + latest."
+tags: [memory, memory_horizon]
+
+semantic_memory: compact_keyframe_memory
+
+memory:
+  name: compact_keyframe_memory
+  params:
+    capacity: 6
+    min_separation_m: 3.0

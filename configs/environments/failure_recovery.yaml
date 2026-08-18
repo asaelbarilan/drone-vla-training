@@ -1,0 +1,44 @@
+# Regime 3: failure, ambiguity and recovery.
+# Failures are injected on a schedule so that recovery is measured rather than
+# hoped for: a blocked route, then a decoy, then a sensing dropout.
+
+id: failure_recovery
+task_family: failure_recovery
+instruction: "reach the target despite obstructions"
+max_episode_s: 120.0
+
+adapter:
+  name: grid3d
+
+params:
+  scene: clutter
+  goal_distance_m: 35.0
+  n_obstacles: 10
+  sensor_range_m: 40.0
+  lures: 1
+  distractors: 3
+  detection_noise_m: 0.3
+
+  failures:
+    - kind: block_path
+      at_s: 8.0
+      params: {size_m: 5.0}
+    - kind: lure_target
+      at_s: 16.0
+      params: {dx: 9.0, dy: -7.0, dz: 0.0}
+    - kind: sensor_dropout
+      at_s: 26.0
+      params: {duration_s: 5.0}
+
+  success:
+    goal_radius_m: 2.5
+    require_terminal_stop: true
+    max_flight_time_s: 120.0
+
+  constraints:
+    max_speed_mps: 5.0
+    geofence_radius_m: 60.0
+    max_altitude_m: 25.0
+    min_obstacle_clearance_m: 0.6
+
+  allowed_skills: [goto, move, approach, hover, scan, back_off, ascend, stop]

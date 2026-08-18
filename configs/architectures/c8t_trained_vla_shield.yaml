@@ -1,0 +1,20 @@
+# C8T - C7T plus the independent safety shield.
+#
+# The learned-policy counterpart of the C7 -> C8 contrast: same trained network,
+# one component added. If the shield helps here as it does for the scripted
+# stand-in, the safety finding is a property of the architecture rather than of
+# the particular policy in the slot.
+
+_base_: [c7t_trained_vla.yaml]
+
+id: c8t
+name: "Trained visuomotor policy + safety shield"
+tags: [direct_vla, trained, safety_screening]
+
+shield:
+  name: simple_collision
+  params:
+    reaction_time_s: 0.35
+    hard_stop_m: 1.0
+    brake_margin_m: 1.5
+    allow_deflection: true

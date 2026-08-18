@@ -1,0 +1,29 @@
+{
+  "checkpoint": "models\\bc_dagger_grid_nav.pt",
+  "parameters": 427042,
+  "epochs_run": 12,
+  "wall_seconds": 399.9,
+  "quantisation_floor": {
+    "velocity_error_mean_mps": 0.06869507499115515,
+    "velocity_error_p95_mps": 0.1023368666538986,
+    "yaw_error_mean_rps": 0.013038296554581602
+  },
+  "best": {
+    "loss": 11.877262537347619,
+    "bin_accuracy": 0.17332914967053656,
+    "velocity_error_mean_mps": 2.9600664417488507,
+    "velocity_error_p95_mps": 7.166599262066107,
+    "terminate_recall": 0.7058823529411765,
+    "terminate_precision": 0.2548262548262548
+  },
+  "train_config": {
+    "epochs": 20,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "val_fraction": 0.15,
+    "seed": 0,
+    "device": "cuda",
+    "patience": 4
+  }
+}

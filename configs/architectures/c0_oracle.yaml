@@ -1,0 +1,36 @@
+# C0 - Oracle semantic goal -> fixed planner.
+#
+# Question: how much failure is attributable to semantic architecture rather
+# than to flight execution?
+# Supporting result: very high success, establishing a competent substrate.
+# Falsifying result: low success means the planner/controller/environment stack
+# must be fixed before any foundation-model conclusion means anything.
+#
+# This is the only configuration permitted to see ground truth, and the flag
+# below is what permits it. Everything downstream is the ordinary stack.
+
+_base_: [_base.yaml, ../models/sim_free.yaml]
+
+id: c0
+name: "Oracle semantic goal -> fixed planner"
+description: "Control ceiling. Perfect semantics, ordinary planner and controller."
+tags: [control_ceiling, macro_screening]
+
+authority: waypoint
+allow_privileged_observations: true
+
+policy:
+  name: oracle_waypoint
+  params:
+    stop_radius_m: 1.8
+
+planner:
+  name: fixed_local
+
+shield:
+  name: simple_collision
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 4.0

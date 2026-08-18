@@ -1,0 +1,14 @@
+# Stage 4 - memory and action horizon.
+# Two independent axes, deliberately in one stage because they interact:
+# what is remembered, and how far ahead a learned action commits.
+
+id: memory_horizon
+description: "What history is worth keeping, and how long should a chunk be?"
+stage: memory_horizon
+architectures: [c4, c5, c8, c9, c10, c11]
+environments: [grid_nav, object_search, failure_recovery]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+compare:
+  - [c4, c5]      # sliding window vs compact keyframes
+  - [c8, c9]      # does a direct VLA need explicit history
+  - [c10, c11]    # single action vs action chunk

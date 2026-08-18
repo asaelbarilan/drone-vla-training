@@ -1,0 +1,12 @@
+# Stage 5 - predictive state, conditional.
+# Only run this if occlusion failures are still substantial after stage 4.
+# Otherwise C14 is complexity without a question.
+
+id: predictive_state
+description: "Does an explicit world model earn its keep under occlusion?"
+stage: predictive_state
+architectures: [c12, c14]
+environments: [occlusion, grid_nav]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+compare:
+  - [c12, c14]

@@ -1,0 +1,7 @@
+# A learned action policy at roughly 10 Hz.
+inference:
+  name: simulated
+  params:
+    model_id: sim-vla
+    latency_s: {perception: 0.01, policy: 0.09}
+    tokens_per_call: {policy: 0}

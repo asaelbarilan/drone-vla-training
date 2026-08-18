@@ -1,0 +1,35 @@
+# C3G - C2G plus the semantic/geometric verifier.
+#
+# The verifier matters more with a real model than with a scripted one: a VLM
+# that points at a distractor, or at sky, produces a waypoint that a scripted
+# policy would never have proposed. This measures whether validation catches it.
+
+_base_: [c3_verifier.yaml, ../models/gemma3_4b.yaml]
+
+id: c3g
+name: "C3 with Gemma 3 4B vision"
+tags: [real_model, vision, gemma]
+
+perception:
+  # Off: this plugin runs no model, so charging it against a real backend would
+  # send an empty prompt to Gemma and wait seconds for an unread reply.
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: vlm_point_waypoint
+  params:
+    model_id: gemma3:4b
+    hop_m: 12.0
+    arrival_hop_m: 4.0
+    min_altitude_m: 2.0
+
+staleness:
+  # Raised from the 1.5 s default, and this is a *measured accommodation*, not a
+  # free parameter. Gemma 3 4B takes seconds per frame on this hardware, so the
+  # bound designed for a fast policy would reject every decision it produced.
+  # The gap between the two numbers is itself a finding about whether a model
+  # this size can hold waypoint authority in a real-time loop.
+  max_decision_age_s: 8.0
+  reject_stale: true

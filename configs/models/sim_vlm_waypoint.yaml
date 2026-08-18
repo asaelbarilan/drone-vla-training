@@ -1,0 +1,7 @@
+# A VLM grounding a semantic waypoint a few times per second.
+inference:
+  name: simulated
+  params:
+    model_id: sim-vlm
+    latency_s: {perception: 0.02, policy: 0.35}
+    tokens_per_call: {policy: 160}

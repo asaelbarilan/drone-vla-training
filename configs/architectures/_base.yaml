@@ -1,0 +1,62 @@
+# Shared defaults for every architecture.
+#
+# Anything held constant across the study lives here, so that a derived config
+# contains only what makes that architecture different. Reading c3.yaml should
+# show you exactly one thing: it is c2 plus a verifier.
+#
+# Perception, the controller and the environment are deliberately part of the
+# constant set. If they varied between architectures, a result about "where
+# semantic authority sits" would silently also be a result about detector
+# quality or controller tuning.
+
+name: ""
+description: ""
+
+perception:
+  name: identity
+  params:
+    min_score: 0.0
+    drone_radius_m: 0.4
+    charge_latency: true   # bookkeeping only; real backends override to false
+
+memory:
+  name: no_memory
+
+controller:
+  name: mock_velocity
+  params:
+    kp: 1.1
+    lookahead_m: 3.0
+    max_speed_mps: 5.0
+    yaw_kp: 1.5
+
+inference:
+  name: simulated
+  params:
+    jitter_frac: 0.0     # deterministic by default; raise it for robustness sweeps
+
+semantic_supervision: none
+semantic_memory: no_memory
+memory_consumers: [policy]
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 2.0
+
+staleness:
+  # A decision computed from a frame older than this is refused rather than
+  # flown. Set deliberately: it is the boundary between "slow but usable" and
+  # "computed from somewhere the vehicle no longer is".
+  max_decision_age_s: 1.5
+  reject_stale: true
+
+feature_cache:
+  # Off during the first causal architecture comparison, by design. Shared
+  # visual features are a compute optimisation; enabling them early would
+  # confound "a second semantic loop helps" with "sharing a ViT is cheap".
+  enabled: false
+  capacity: 32
+
+allow_privileged_observations: false
+unsafe_ablation: false

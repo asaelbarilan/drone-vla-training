@@ -1,0 +1,21 @@
+# The complete controlled set, all regimes.
+# Expensive; use the staged experiments for day-to-day work. This exists to
+# produce the final Pareto surface once the stages have settled.
+
+id: full_c0_c14
+description: "All fifteen configurations across all five regimes."
+stage: full
+architectures: [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14]
+environments: [grid_nav, object_search, failure_recovery, fine_maneuver, occlusion]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+compare:
+  - [c2, c3]
+  - [c3, c4]
+  - [c4, c5]
+  - [c3, c6]
+  - [c7, c8]
+  - [c8, c9]
+  - [c10, c11]
+  - [c10, c12]
+  - [c12, c13]
+  - [c12, c14]

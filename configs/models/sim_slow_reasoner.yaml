@@ -1,0 +1,9 @@
+# Fast learned executor under an expensive reasoner.
+# Used by every fast/slow hierarchy so that periodic, asynchronous and
+# event-triggered admission are compared at identical reasoner cost.
+inference:
+  name: simulated
+  params:
+    model_id: sim-vla-reasoner
+    latency_s: {perception: 0.01, policy: 0.09, reasoner: 2.40, monitor: 1.60}
+    tokens_per_call: {policy: 0, reasoner: 900, monitor: 320}

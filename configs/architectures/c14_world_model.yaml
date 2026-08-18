@@ -1,0 +1,31 @@
+# C14 - Predictive world-model VLA sentinel.
+#
+# Question: does explicit future-state prediction justify its complexity under
+# partial observability?
+# Nearest comparison: WorldFly.
+# Supporting result: targeted gains under occlusion and sharp viewpoint change.
+# Falsifying result: no gain in precisely those failure regimes.
+#
+# Run this ONLY if occlusion and partial-observability failures are still
+# substantial after the memory experiments (C4->C5, C8->C9). Otherwise it is
+# complexity in search of a question.
+#
+# Everything except the policy is inherited from C12.
+
+_base_: [c12_async_hierarchy.yaml]
+
+id: c14
+name: "Predictive world-model VLA"
+description: "Chunked VLA that carries target belief forward through occlusion."
+tags: [world_model, predictive_state, sentinel]
+
+policy:
+  name: world_model_vla
+  params:
+    cruise_mps: 3.0
+    action_duration_s: 0.2
+    avoid_gain: 1.2
+    stop_radius_m: 2.0
+    chunk_length: 4
+    replan_after: 4
+    prediction_horizon_s: 1.0

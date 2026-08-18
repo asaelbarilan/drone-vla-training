@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uavlab"
+version = "0.1.0"
+description = "A modular testbed for searching single-UAV foundation-model autonomy architectures"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+# Core dependencies only. The repository must run with no CUDA, no ROS, no
+# Gazebo, no network access and no model downloads.
+dependencies = [
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+    "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+# Composition helpers. The config loader falls back to a pure-PyYAML merge when
+# OmegaConf is absent, so these are genuinely optional.
+compose = ["omegaconf>=2.3", "hydra-core>=1.3"]
+# Analysis / logging backends.
+analysis = ["pandas>=2.0", "pyarrow>=14.0"]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+# Live robotics boundary. Never imported by the core runtime or the core tests.
+sim = []
+
+[project.scripts]
+uavlab = "uavlab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+uavlab = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+# Tests drive the event loop with asyncio.run() rather than through a pytest
+# plugin. One less dependency, and it keeps the async tests explicit about
+# where the loop starts - which matters when the thing under test is a
+# custom virtual-time driver.
+# --basetemp keeps pytest's scratch directories inside the repository rather
+# than in the system temp root, which is not always writable (locked-down CI
+# images, sandboxed dev environments).
+addopts = "-p no:asyncio --basetemp=.pytest_tmp"
+filterwarnings = ["error::DeprecationWarning:uavlab.*"]
+markers = [
+    "slow: tests that run full episode sweeps",
+    "requires_sim: needs PX4/Gazebo/AirSim; excluded from core CI",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["uavlab"]
+mypy_path = "src"
+strict_optional = true
+warn_unused_ignores = true
+disallow_untyped_defs = false
+ignore_missing_imports = true

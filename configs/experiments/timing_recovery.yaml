@@ -1,0 +1,18 @@
+# Stage 3 - timing and recovery.
+# Waypoint side: does supervision help, and can reasoning be event-admitted?
+# Learned-action side: periodic vs asynchronous vs triggered hierarchy.
+# Every contrast here holds the components fixed and changes only the schedule.
+
+id: timing_recovery
+description: "When should expensive semantic computation be allowed to run?"
+stage: timing_recovery
+architectures: [c3, c4, c6, c8, c10, c12, c13]
+environments: [grid_nav, failure_recovery]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+compare:
+  - [c3, c4]      # add a persistent monitor
+  - [c3, c6]      # add event-triggered recovery instead
+  - [c4, c6]      # persistent supervision vs selective invocation
+  - [c8, c10]     # add a periodic slow reasoner
+  - [c10, c12]    # same reasoner, made concurrent
+  - [c12, c13]    # same reasoner, admitted only on trigger

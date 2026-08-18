@@ -1,0 +1,55 @@
+# C7T - C7 with a real trained policy instead of the scripted stand-in.
+#
+# A small convnet behaviour-cloned from C2, emitting the same KinematicAction at
+# the same authority level as `mock_vla`. Everything else - authority, action
+# horizon, scheduler, controller - is inherited from C7 unchanged, so this
+# measures "scripted stand-in vs learned policy" and nothing else.
+#
+# The teacher is C2, not the C0 oracle, and the reason is the whole point of the
+# setup. C0 is handed the true goal position, so it flies confidently toward a
+# target that is outside the camera frame 61% of the time: its label is not a
+# function of the student's observation and no network can recover it. C2 decides
+# from detections alone and carries no memory, so its action IS a function of the
+# current view. Measured heading concentration given the same view: C2 0.983 /
+# 0.912 (target visible / absent) against C0's 0.964 / 0.812. Worse pilot,
+# learnable target - see docs/SMALL_VLA_SEARCH.md.
+#
+# NOT a VLA. There is no language input, because the environment issues one
+# instruction for every episode and a language channel would carry zero bits.
+# It is a visuomotor policy occupying the slot a VLA would occupy. Calling it
+# vision-language-action would be false.
+
+_base_: [c7_direct_vla.yaml]
+
+id: c7t
+name: "Direct trained visuomotor policy, single action"
+description: "Behaviour-cloned convnet in the direct-action slot."
+tags: [direct_vla, trained, behaviour_cloning]
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: learned_visuomotor
+  params:
+    checkpoint: models/bc_stacked_grid_nav.pt
+    action_duration_s: 0.2
+    terminate_enabled: true
+    # A spurious stop at cruise speed would end the mission tens of metres out.
+    # The teacher only ever stops when already slow, so this costs nothing on
+    # true positives - and it matters more against C2 data, where stop-head
+    # precision is 0.44: two thirds of raised stops are false and this gate is
+    # what keeps them from ending the episode.
+    min_terminal_speed_mps: 1.5
+
+inference:
+  # The forward pass is sub-millisecond, but it is charged as a measured
+  # CONSTANT rather than live wall-clock time. Charging jitter to the simulation
+  # clock is what broke reproducibility for the Ollama backend.
+  name: simulated
+  params:
+    model_id: bc-visuomotor
+    latency_s: {policy: 0.01}
+    tokens_per_call: {policy: 0}

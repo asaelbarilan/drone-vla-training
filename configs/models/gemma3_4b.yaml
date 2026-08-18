@@ -1,0 +1,40 @@
+# Gemma 3 4B served by a local Ollama daemon.
+#
+# Latency is NOT stated here. The Ollama backend charges the latency it actually
+# measures to the simulation clock, which is the whole reason to run a real
+# model: the timing axis stops being an assumption.
+#
+# temperature 0 is not a quality choice, it is a methodology one. Architectures
+# are compared paired by seed, and a stochastic policy would make the same scene
+# produce different decisions run to run, destroying the pairing.
+
+inference:
+  name: ollama
+  params:
+    host: http://localhost:11434
+    model_id: gemma3:4b
+    temperature: 0.0
+    num_predict: 64
+    timeout_s: 180.0
+    endpoint: chat            # measured ~0.2 s/call cheaper than /api/generate
+    keep_alive: 30m
+
+    # Latency is measured and reported either way. What differs is what gets
+    # charged to the SIMULATION clock. Raw measured latency makes runs
+    # irreproducible - the same seed diverges because wall-clock jitter shifts
+    # every subsequent decision - and paired-by-seed comparison is the method
+    # this whole protocol rests on.
+    # Measured on this machine (RTX 4060 Laptop, Ollama 0.32.14, /api/chat,
+    # persistent connection): ~2.2 s median per policy call, of which ~1.24 s is
+    # Ollama per-request setup and ~0.5 s is prefill+decode.
+    #
+    # Charged as a CONSTANT, not as the live measurement. Tested: charging live
+    # latency makes two runs of the same seed end 36.8 m and 7.2 m from the goal,
+    # because wall-clock jitter shifts every later decision. Quantising to 250 ms
+    # does not fix it either (10.9 m vs 18.5 m). A constant does.
+    #
+    # The live measurement is still recorded in the metrics as
+    # inference_latency_s_policy, so nothing about real cost is lost.
+    charge_mode: fixed
+    fixed_latency_s:
+      policy: 2.2

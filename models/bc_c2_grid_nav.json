@@ -1,0 +1,29 @@
+{
+  "checkpoint": "models\\bc_c2_grid_nav.pt",
+  "parameters": 427042,
+  "epochs_run": 20,
+  "wall_seconds": 310.7,
+  "quantisation_floor": {
+    "velocity_error_mean_mps": 0.06458928067495652,
+    "velocity_error_p95_mps": 0.09994582119496011,
+    "yaw_error_mean_rps": 0.013399409697212398
+  },
+  "best": {
+    "loss": 9.652043066026794,
+    "bin_accuracy": 0.32784487051792827,
+    "velocity_error_mean_mps": 1.4995636607168348,
+    "velocity_error_p95_mps": 4.375445707193067,
+    "terminate_recall": 0.9675675675675676,
+    "terminate_precision": 0.43658536585365854
+  },
+  "train_config": {
+    "epochs": 20,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "val_fraction": 0.15,
+    "seed": 0,
+    "device": "cuda",
+    "patience": 4
+  }
+}

@@ -1,0 +1,14 @@
+# Stage 2 - safety screening.
+# Isolates semantic verification (C2->C3) from independent physical safety
+# (C7->C8). These are different claims and must not be reported as one
+# "added modularity" effect.
+
+id: safety_screen
+description: "Separate semantic verification from independent safety."
+stage: safety_screening
+architectures: [c2, c3, c7, c8]
+environments: [grid_nav, fine_maneuver]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+compare:
+  - [c2, c3]      # verifier only
+  - [c7, c8]      # shield only, identical VLA

@@ -1,0 +1,3 @@
+# Zero compute cost. Oracle control ceiling (C0) and unit tests only.
+inference:
+  name: free

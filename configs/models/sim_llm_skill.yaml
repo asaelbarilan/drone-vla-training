@@ -1,0 +1,8 @@
+# Coarse, slow, infrequent mission authority: an LLM emitting bounded skills.
+# Low decision rate is the point of this family, not a limitation of it.
+inference:
+  name: simulated
+  params:
+    model_id: sim-llm-skill
+    latency_s: {perception: 0.02, policy: 0.60}
+    tokens_per_call: {policy: 220}

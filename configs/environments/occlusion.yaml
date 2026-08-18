@@ -1,0 +1,36 @@
+# Regime 5 (optional sentinel): partial observability.
+# The target is periodically unobservable. Only run the predictive world-model
+# configuration (C14) if occlusion failures are still substantial after the
+# memory experiments, otherwise it is complexity without a question.
+
+id: occlusion
+task_family: partial_observability
+instruction: "reach the target that keeps going out of view"
+max_episode_s: 100.0
+
+adapter:
+  name: grid3d
+
+params:
+  scene: clutter
+  goal_distance_m: 35.0
+  n_obstacles: 12
+  sensor_range_m: 40.0
+  fov_deg: 75.0
+  occlusion_period_s: 5.0
+  occlusion_duty: 0.5
+  distractors: 3
+  detection_noise_m: 0.3
+
+  success:
+    goal_radius_m: 2.5
+    require_terminal_stop: true
+    max_flight_time_s: 100.0
+
+  constraints:
+    max_speed_mps: 5.0
+    geofence_radius_m: 60.0
+    max_altitude_m: 25.0
+    min_obstacle_clearance_m: 0.6
+
+  allowed_skills: [goto, move, approach, hover, scan, back_off, ascend, stop]

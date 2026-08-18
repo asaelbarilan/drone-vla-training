@@ -1,0 +1,40 @@
+# C4 - C3 + periodic low-rate progress monitor, short context.
+#
+# Question: does mission supervision matter independently of memory?
+# Nearest comparison: the monitoring loop of OnFly.
+# Supporting result: fewer overshoots, fewer wrong stops, fewer lost tasks.
+# Falsifying result: same mission completion as C3.
+#
+# The monitor has no motor authority. It runs on its own slower schedule and can
+# only emit CONTINUE/STOP/LOST/BLOCKED/AMBIGUOUS, so any improvement it produces
+# is attributable to supervision rather than to better steering.
+
+_base_: [c3_verifier.yaml, ../models/sim_dual_loop.yaml]
+
+id: c4
+name: "C3 + periodic progress monitor, short context"
+description: "Adds independent low-rate mission supervision over a sliding window."
+tags: [supervision, timing_recovery]
+
+semantic_supervision: periodic_monitor
+semantic_memory: short_context
+memory_consumers: [policy, monitor]
+
+memory:
+  name: short_context
+  params:
+    window: 5
+
+monitor:
+  name: progress
+  params:
+    stop_confirmations: 2
+    lost_after_s: 8.0
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  # Roughly one supervisory assessment every two seconds: slow enough to be a
+  # genuinely separate loop, not a second copy of the decision loop.
+  monitor_hz: 0.5

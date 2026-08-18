@@ -1,0 +1,23 @@
+# C3 - C2 + semantic/geometric verifier.
+#
+# Question: does explicit waypoint validation help beyond what the planner
+# already does?
+# Supporting result: fewer invalid targets, modest success gain.
+# Falsifying result: negligible change - in which case the verifier is a later
+# engineering detail, not an architecture axis.
+#
+# This file is C2 plus five lines. That is the whole experiment.
+
+_base_: [c2_vlm_waypoint.yaml]
+
+id: c3
+name: "C2 + semantic/geometric verifier"
+description: "Waypoint authority with explicit proposal validation."
+tags: [waypoint_authority, safety_screening]
+
+verifier:
+  name: semantic_geometric
+  params:
+    max_waypoint_distance_m: 30.0
+    min_clearance_m: 1.2
+    repair: true

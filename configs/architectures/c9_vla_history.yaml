@@ -1,0 +1,20 @@
+# C9 - C8 + compact history.
+#
+# Question: does a direct VLA need explicit semantic history?
+# Nearest comparison: the keyframe and history design of OpenFly.
+# Supporting result: better long-horizon task completion.
+# Falsifying result: no change despite the extra compute.
+
+_base_: [c8_shielded_vla.yaml]
+
+id: c9
+name: "C8 + compact keyframe history"
+description: "Shielded direct VLA with selected-keyframe semantic memory."
+tags: [direct_vla, memory, memory_horizon]
+
+semantic_memory: compact_keyframe_memory
+memory:
+  name: compact_keyframe_memory
+  params:
+    capacity: 6
+    min_separation_m: 3.0

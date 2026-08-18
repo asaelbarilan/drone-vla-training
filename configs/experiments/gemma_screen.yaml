@@ -1,0 +1,15 @@
+# Real-VLM screen: does Gemma 3 4B hold up where the stand-in did?
+#
+# Deliberately tiny. Each episode costs real model time, so this is a promoted
+# subset, never the screening sweep. The scripted C2 runs alongside on the same
+# scenes so the comparison is paired and like-for-like.
+
+id: gemma_screen
+description: "Gemma 3 4B as the waypoint policy, against its scripted stand-in."
+stage: real_model
+architectures: [c2, c2g, c3g]
+environments: [grid_nav_vision]
+seeds: [1, 2, 3]
+compare:
+  - [c2, c2g]     # scripted stand-in vs real VLM, same architecture
+  - [c2g, c3g]    # does the verifier catch what the VLM gets wrong

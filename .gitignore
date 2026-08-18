@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.pytest_tmp/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Experiment output. Runs are reproducible from configs/ plus manifest.json,
+# so the artefacts themselves do not belong in version control.
+runs/
+*.parquet
+*.jsonl
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Expert datasets. 8+ GB of rendered frames, fully regenerable from the
+# manifest: `uavlab collect --expert c2 --episodes 250` reproduces the set,
+# because scene generation is seeded and the seed range is in manifest.json.
+data/
+
+# Third-party papers, re-downloadable from the links in papers/small_vla/README.md.
+papers/**/*.pdf

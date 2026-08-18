@@ -1,0 +1,49 @@
+# C6 - C3 + local progress detector + event-triggered recovery reasoner.
+#
+# Question: can expensive reasoning be absent during nominal execution?
+# Nearest comparison: selective agentic recovery with a persistent mission runtime.
+# Supporting result: similar or better hard-case success with far fewer calls.
+# Falsifying result: recovery success falls despite the lower compute.
+#
+# The detector that decides when to wake the reasoner is deliberately NOT a
+# model: it is geometric and costs nothing. If the watcher were itself a model
+# call, reasoning would not actually be absent and the compute saving would be
+# fictional.
+
+_base_: [c3_verifier.yaml, ../models/sim_dual_loop.yaml]
+
+id: c6
+name: "C3 + event-triggered recovery reasoner"
+description: "No persistent semantic monitor; reasoning admitted only on trigger."
+tags: [recovery, timing_recovery]
+
+semantic_supervision: triggered_reasoner
+semantic_memory: compact_semantic_state
+memory_consumers: [policy, monitor, recovery]
+
+memory:
+  name: compact_semantic_state
+
+monitor:
+  name: local_progress      # geometric only, zero inference cost
+  params:
+    window_s: 3.0
+    min_travel_m: 1.0
+
+recovery:
+  name: bounded_reasoner
+  params:
+    emit: waypoint          # routable here because C3 has a planner
+    detour_m: 8.0
+    stall_threshold_s: 2.5
+    uncertainty_threshold: 0.6
+
+scheduler:
+  kind: event_triggered
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 5.0           # cheap detector, so it can run fast
+  trigger: no_progress_or_ambiguity
+  cooldown_s: 4.0
+  max_calls: 8              # a hard budget makes "selective" falsifiable
+  trigger_check_hz: 2.0

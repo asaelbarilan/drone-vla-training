@@ -1,0 +1,16 @@
+# Stage 1 - macro screening.
+# Establishes whether skill, waypoint or direct learned authority is worth
+# pursuing at all, and whether the substrate is competent (C0).
+# Run this before anything else; if C0 is weak, stop and fix the stack.
+
+id: macro_screen
+description: "Does semantic authority level matter, and is the substrate sound?"
+stage: macro_screening
+architectures: [c0, c1, c2, c7]
+environments: [grid_nav, object_search, fine_maneuver]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+episodes_per_cell: 1
+compare:
+  - [c1, c2]      # skills vs waypoints
+  - [c2, c7]      # waypoint vs direct learned action
+  - [c0, c2]      # how much the semantic model costs against the ceiling

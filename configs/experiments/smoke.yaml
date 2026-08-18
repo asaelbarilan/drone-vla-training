@@ -1,0 +1,10 @@
+# Fast CI sweep: every architecture, one regime, two seeds.
+# Its job is to prove that all fifteen configurations still launch and produce
+# a well-formed log - not to produce results.
+
+id: smoke
+description: "Every architecture launches and logs correctly."
+stage: smoke
+architectures: [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14]
+environments: [grid_nav]
+seeds: [1, 2]

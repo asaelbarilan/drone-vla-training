@@ -1,0 +1,36 @@
+# Regime 4: fine continuous manoeuvring.
+# A narrow gate on the direct line. Control authority and reaction frequency
+# dominate here, which is where a learned action policy is expected to have the
+# advantage over waypoint-and-planner. Included so that the study cannot
+# conclude a globally dominant authority level by only testing one regime.
+
+id: fine_maneuver
+task_family: fine_maneuver
+instruction: "fly through the gap and stop at the target"
+max_episode_s: 70.0
+
+adapter:
+  name: grid3d
+
+params:
+  scene: gate
+  goal_distance_m: 30.0
+  n_obstacles: 3
+  gate_gap_m: 3.2
+  sensor_range_m: 45.0
+  fov_deg: 100.0
+  distractors: 1
+  detection_noise_m: 0.2
+
+  success:
+    goal_radius_m: 2.0
+    require_terminal_stop: true
+    max_flight_time_s: 70.0
+
+  constraints:
+    max_speed_mps: 5.0
+    geofence_radius_m: 60.0
+    max_altitude_m: 25.0
+    min_obstacle_clearance_m: 0.5
+
+  allowed_skills: [goto, move, approach, hover, scan, back_off, ascend, stop]

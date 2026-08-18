@@ -1,0 +1,25 @@
+# C8 - C7 + independent safety shield.
+#
+# Question: is the safety weakness of a direct VLA separable from its control
+# capability?
+# Supporting result: collision reduction with little task penalty.
+# Falsifying result: the shield constantly modifies or rejects actions and
+# destroys efficiency - which would mean it is driving, not protecting.
+#
+# The VLA plugin and its parameters are inherited unchanged from C7. That is the
+# requirement: same exact policy, one component added.
+
+_base_: [c7_direct_vla.yaml]
+
+id: c8
+name: "C7 + independent safety shield"
+description: "Same VLA as C7 with an independent collision and envelope shield."
+tags: [direct_vla, safety_screening]
+
+shield:
+  name: simple_collision
+  params:
+    reaction_time_s: 0.35
+    hard_stop_m: 1.0
+    brake_margin_m: 1.5
+    allow_deflection: true

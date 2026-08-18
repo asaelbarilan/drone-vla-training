@@ -1,0 +1,36 @@
+# C1 - LLM -> predefined skills -> planner.
+#
+# Question: is coarse, bounded mission authority enough?
+# Nearest comparison: TypeFly, AerialClaw.
+# Supporting result: competitive semantic success at a low foundation-model call
+# rate. Falsifying result: large failures on visually grounded tasks.
+#
+# The model never touches motion. It selects from a validated vocabulary, and
+# each skill expands into an ordinary subgoal on the same planner path as C2.
+
+_base_: [_base.yaml, ../models/sim_llm_skill.yaml]
+
+id: c1
+name: "LLM -> predefined skills -> planner"
+description: "Bounded skill authority over a classical planner."
+tags: [skill_authority, macro_screening]
+
+authority: skill
+
+policy:
+  name: scripted_skill
+  params:
+    standoff_m: 1.5
+    scan_when_lost: true
+    stop_radius_m: 2.0
+
+planner:
+  name: fixed_local
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  # Deliberately low: a skill/program agent is expensive per call and is not
+  # supposed to run at executor rates. Raising this would quietly turn C1 into
+  # a different architecture.
+  decision_hz: 1.0
