@@ -1040,3 +1040,83 @@ set `scan_every: 6` for C1.
 `scan_every: 6` is now C1's default. Verified: PASS, and 0.35 success over 40
 held-out seeds (was 0.15), with zero collisions. 1 Hz is untouched. 224 tests
 pass.
+
+## Why C3G, C4G and C5G report identical numbers
+
+Because they fly identical trajectories. On seed 1 all three end at exactly
+34.1546 m with a 114.9097 m path. The scripted C3/C4/C5 differ from each other
+normally (0.33 / 0.67 / 0.33), so this is specific to the Gemma variants.
+
+The components are not missing. C4G and C5G each run 15 monitor assessments, 13
+of which return LOST, and each carries a different memory plugin. The event logs
+show them firing. What differs between C3G and C4G is *only* cost:
+`inference_calls_total` 22 vs 37, `tokens_per_minute` 557 vs 1517,
+`monitor_assessments` 0 vs 15. Not one metric of motion differs.
+
+### The cause
+
+`VLMPointWaypoint.decide` never calls `self.believe(ctx)`. It asks Gemma; if
+Gemma reports the target is not visible it goes straight to `explore_target`.
+The belief chain — live detection, then the reasoner's directive, then remembered
+evidence — is where memory and supervision enter a policy's behaviour, and this
+policy does not consult it. So the memory plugin and the monitor's LOST calls
+have nowhere to land.
+
+C2's `vlm_waypoint` does consult it, which is why the scripted C3/C4/C5 separate
+and the Gemma ones do not.
+
+### The verification gate missed this
+
+`uavlab verify` checks that each architecture's distinguishing component *fires*,
+and by that standard C4G and C5G pass honestly: the monitor runs, the memory
+updates. Firing is not the same as influencing. A component that consumes real
+compute and changes no behaviour is exactly the failure the gate exists to catch,
+and the check as written cannot see it.
+
+The check needs to compare against the same architecture with the component
+removed and require the trajectory to differ. That is a stronger and more
+expensive test, and it is the right one.
+
+### Consequence for the results
+
+Any C3G/C4G/C5G comparison currently measures token cost and nothing else. The
+memory and supervision contrasts for the real model are not yet testable.
+
+## C2G's nondeterminism was a frame leak, not GPU noise
+
+I called it intermittent GPU nondeterminism. It was not: the full sweep
+reproduced the *same two values* — 28.462555063 vs 28.461193430 — so it was
+deterministic and structural.
+
+Replicating verify's exact sequence for c2g (seeds 1, 2, 3, then seed 1 twice)
+showed the pattern:
+
+```
+results seed 1        d=28.462555063
+results seed 2        d=36.869823639
+results seed 3        d=31.826341575
+determinism run A     d=28.462555063
+determinism run B     d=28.461193430   <- diverges
+```
+
+Frame URIs were `frame://{id(env)}/rgb/{seq}`. `id()` is an object address that
+CPython recycles as soon as the previous environment is collected, and the frame
+store is process-global and was never cleared by anything. So a new episode
+could resolve a reference to the *previous* episode's pixels — and the
+`max(self._seq - 1, 0)` lookups at the very start of an episode are exactly
+where that lands.
+
+Fixed with a monotonic namespace per episode, which cannot be recycled, plus
+`global_store().clear()` on reset. All three seed-1 runs now agree, on
+28.461193430 — the value fresh processes always produced. 28.462555063 was the
+contaminated one.
+
+`test_frames_never_leak_between_episodes` asserts on the URIs rather than on a
+trajectory, so it names the cause instead of reporting a number that happens to
+differ. Confirmed to fail against the pre-fix code.
+
+Why only c2g showed it: C2 maps the emitted pixel straight to a waypoint with
+nothing downstream to absorb a one-frame difference. The verifier and monitor in
+C3–C6 absorb it, which is why they verified clean while carrying the same bug.
+
+**All 22 configurations now pass every structural check.**

@@ -17,6 +17,7 @@ and is never visible to a policy.
 from __future__ import annotations
 
 import hashlib
+import itertools
 import math
 from dataclasses import dataclass, field
 from typing import Any
@@ -37,6 +38,13 @@ from uavlab.contracts import (
 )
 from uavlab.contracts.env_status import EnvironmentStatus
 from uavlab.core.registry import register
+
+_FRAME_NAMESPACE = itertools.count()
+
+
+def _next_frame_namespace() -> int:
+    """A namespace for this episode's frames that no later episode can reuse."""
+    return next(_FRAME_NAMESPACE)
 
 
 @dataclass(slots=True)
@@ -116,6 +124,7 @@ class DeterministicEnv:
         self.n_rays = int(params.get("n_rays", 24))
         self.wind_mps = float(params.get("wind_mps", 0.0))
         self.allow_privileged = bool(params.get("allow_privileged", False))
+        self._frame_ns = _next_frame_namespace()
         self.goal_radius_m = float(params.get("goal_radius_m", 2.0))
         self.subgoal_radius_m = float(params.get("subgoal_radius_m", 3.0))
         self.injections = [
@@ -179,6 +188,20 @@ class DeterministicEnv:
     # -- scene construction -------------------------------------------------
 
     async def reset(self, mission: MissionSpec, seed: int) -> ObservationPacket:
+        from uavlab.core.frame_store import global_store
+
+        # A fresh namespace per episode, and an empty store to go with it.
+        #
+        # The URI used to be keyed on `id(self)`, an object address CPython
+        # recycles as soon as the previous environment is collected. The store is
+        # process-global and was never cleared, so a new episode could be handed
+        # the *previous* episode's frame at the same URI - and the `_seq - 1`
+        # lookups at the start of an episode are exactly where that bites.
+        # It reproduced as a 1.4 mm divergence in c2g between two runs of the
+        # same seed: deterministic, not noise. A monotonic counter cannot be
+        # recycled, and clearing removes the stale entries either way.
+        global_store().clear()
+        self._frame_ns = _next_frame_namespace()
         self._rng = np.random.default_rng(seed)
         self._t_ns = 0
         self._seq = 0
@@ -375,7 +398,7 @@ class DeterministicEnv:
             camera=self._camera,
             visible_labels=visible_labels,
         )
-        uri = f"frame://{id(self)}/{kind}/{self._seq}"
+        uri = f"frame://{self._frame_ns}/{kind}/{self._seq}"
         global_store().put(uri, image)
         return SensorRef(kind=kind, uri=uri, digest=digest, shape=(image.height, image.width))
 

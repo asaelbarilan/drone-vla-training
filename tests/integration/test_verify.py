@@ -124,3 +124,48 @@ def test_render_marks_skipped_separately_from_failed():
     assert "SKIP" in text
     assert "FAILED" not in text
     assert "1 skipped" in text
+
+
+def test_frames_never_leak_between_episodes(env_factory):
+    """A new episode must never resolve a reference to an older episode's frame.
+
+    The frame store is process-global and the URI used to be keyed on `id(env)`,
+    which CPython recycles as soon as the previous environment is collected. A
+    second episode could therefore be handed the first one's imagery at the same
+    URI. It surfaced as a 1.4 mm divergence between two runs of the same seed in
+    c2g -- small, deterministic, and fatal to paired-by-seed comparison.
+
+    Asserted on the URIs rather than on a trajectory, so the test names the cause
+    instead of reporting a number that happens to differ.
+    """
+    import asyncio
+
+    from uavlab.contracts import MissionSpec
+    from uavlab.core.frame_store import global_store
+    from uavlab.core.registry import REGISTRY
+
+    cfg = env_factory("grid_nav_vision")
+    mission = MissionSpec(
+        mission_id="frame-leak-probe",
+        instruction=cfg.instruction,
+        task_family=cfg.task_family,
+        success=cfg.params.get("success", {}),
+        constraints=cfg.params.get("constraints", {}),
+    )
+
+    def first_uri() -> str:
+        env = REGISTRY.build("environment", cfg.adapter.name, {**cfg.params, "render": True})
+        packet = asyncio.run(env.reset(mission, seed=1))
+        assert packet.rgb is not None, "the vision regime must render"
+        return packet.rgb.uri
+
+    a = first_uri()
+    b = first_uri()
+    assert a != b, (
+        f"two episodes shared the frame URI {a!r}; the second would resolve to "
+        "the first episode's pixels"
+    )
+    # And the store must not still be holding the first episode's entries.
+    assert global_store().get(a) is None, (
+        "the previous episode's frame is still resolvable after a new reset"
+    )
