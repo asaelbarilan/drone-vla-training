@@ -107,6 +107,22 @@ class BasePolicy:
         If these disagree with the environment the sweep is merely mis-sized,
         which shows up as a worse score rather than as a silent advantage.
         """
+        self.search_altitude_m = float(params.get("search_altitude_m", 0.0))
+        """Altitude to search from. 0 keeps whatever altitude the vehicle is at.
+
+        A search pattern is a plan over the *ground*, and flying it at cruise
+        altitude threads the vehicle between obstacles rather than over them.
+        Measured on grid_nav: obstacles top out at 11.1 m, the mission permits
+        25 m, and the vehicle searched at 3.0 m — below every obstacle in the
+        scene. With the target at z=2.9 m and 35 m away, every sight line
+        crossed a tower, which is why coverage at any lane spacing acquired
+        nothing.
+
+        Climbing is not a trick: altitude is inside the mission's stated band,
+        and trading it for sight lines is the ordinary reason survey aircraft
+        fly high. It costs approach time, which is what makes it a real
+        architectural choice rather than a free win.
+        """
         self.sweep_overlap = float(params.get("sweep_overlap", 0.8))
         """Lane pitch as a fraction of the view width at half sensor range.
 
@@ -270,10 +286,11 @@ class BasePolicy:
             # and a policy that gives up scores the same as one that never looked.
             self._sweep.reset()
             waypoint = self._sweep.next_waypoint(p.x, p.y) or (p.x, p.y)
+        altitude = self.search_altitude_m or p.z
         return Vec3(
             x=float(waypoint[0]),
             y=float(waypoint[1]),
-            z=min(self._max_alt, max(self._min_alt, p.z)),
+            z=min(self._max_alt, max(self._min_alt, altitude)),
         )
 
     def _spiral_target(self, ctx: DecisionContext) -> Vec3:

@@ -1318,3 +1318,50 @@ I previously wrote that C1–C6's failure was a search-pattern defect and that t
 camera pointed "past the target rather than at it". The field-of-view half of
 that is real — 43% versus 61% — but it is not what decides the outcome.
 Occlusion is, and I had not measured it before naming a cause.
+
+## Altitude was the occlusion mechanism — and seed 3 was not representative
+
+You were right about the mechanism. Obstacles on `grid_nav` top out at 11.1 m,
+the mission permits 25 m, and the vehicle searched at **3.0 m** — below every
+obstacle in the scene. It was threading between towers with the target at
+z=2.9 m, so every sight line crossed one.
+
+Adding `search_altitude_m` and flying the sweep above the obstacles, seed 3:
+
+| | target acquired | final distance |
+|---|---|---|
+| sweep at 3 m (cruise) | 0 / 104 | 33.2 m |
+| sweep at 14 m | 6 / 47 | 11.1 m |
+| sweep at 20 m | 8 / 23 | 12.7 m |
+
+Acquisition goes from never to a third of queries. The occlusion diagnosis and
+the altitude explanation are both confirmed.
+
+### But the conclusion I drew from it was wrong
+
+Scored over seeds 1–8 rather than the one seed the video happened to use:
+
+| | success | distance | collisions |
+|---|---|---|---|
+| c2 spiral at cruise (baseline) | **0.62** | 12.6 m | 0.00 |
+| c2 sweep at 18 m | 0.00 | 30.5 m | 0.38 |
+| c3 sweep at 18 m | 0.00 | 30.6 m | 0.38 |
+
+**The baseline was never broken.** c2 succeeds on 5 of 8 seeds. Seed 3 is simply
+a hard seed, and I generalised "C1–C6 orbit and never acquire the target" from
+the single episode I had rendered as a video. That claim was false as stated;
+it is true of seed 3 and not of the regime.
+
+High-altitude search is also worse overall, not better: acquiring the target
+from 18 m means descending onto it through the obstacle field, and c2 has no
+shield, so 3 of 8 seeds end in a collision.
+
+### What actually stands
+
+* `search_altitude_m` and `search_pattern: sweep` exist and are measured. Both
+  stay non-default because neither has earned it.
+* Altitude is a genuine architectural lever — sight lines traded against
+  approach time — and it now has a knob and a number attached.
+* The lesson is procedural: a video is one seed. It is excellent for seeing
+  *how* a run fails and worthless for deciding *how often*. I used it for the
+  second and should not have.
