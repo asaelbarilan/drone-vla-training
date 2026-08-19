@@ -37,7 +37,7 @@ PANEL = 560
 """Side of each panel in pixels. Two panels plus a margin gives a 1140x600 frame."""
 
 MARGIN = 20
-BAR_H = 40
+BAR_H = 62
 
 # Colours are BGR, because that is what OpenCV writes.
 BG = (24, 22, 20)
@@ -91,7 +91,9 @@ class _Projector:
         stack = np.array(points, dtype=float)
         lo, hi = stack.min(axis=0), stack.max(axis=0)
         centre = (lo + hi) / 2.0
-        span = float(max((hi - lo).max(), 20.0)) * 1.15
+        # 1.35 rather than a snug fit: at 1.15 a target at the extreme of the
+        # travelled area landed on the panel border and was half cut off.
+        span = float(max((hi - lo).max(), 20.0)) * 1.35
         self.centre = centre
         self.scale = (PANEL - 2 * MARGIN) / span
 
@@ -200,13 +202,6 @@ def _plan_panel(scene: Scene, samples: list[Sample], upto: int, project: _Projec
     cv2.circle(panel, p, 7, BAD if s.collided else DRONE, -1)
     cv2.circle(panel, p, 7, BG, 1)
 
-    for offset, (colour, text) in enumerate(
-        ((TARGET, "target"), (DISTRACTOR, "distractor"), (OBSTACLE, "obstacle"), (PATH, "path"))
-    ):
-        y = PANEL - 96 + offset * 18
-        cv2.circle(panel, (MARGIN + 6, y - 4), 5, colour, -1)
-        cv2.putText(panel, text, (MARGIN + 18, y), cv2.FONT_HERSHEY_SIMPLEX, 0.38, DIM, 1,
-                    cv2.LINE_AA)
     cv2.putText(panel, "plan view", (MARGIN, PANEL - 14),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.42, DIM, 1, cv2.LINE_AA)
     return panel
@@ -253,7 +248,7 @@ def render(arch, env_cfg, seed: int, out_path: Path, fps: int = 15, stride: int 
             canvas[BAR_H:, :PANEL] = _plan_panel(scene, samples, i, project)
             canvas[BAR_H:, PANEL + MARGIN:] = _camera_panel(s)
 
-            cv2.putText(canvas, f"{arch.id}  {arch.name}   seed {seed}", (MARGIN, 26),
+            cv2.putText(canvas, f"{arch.id}  {arch.name}   seed {seed}", (MARGIN, 24),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.55, INK, 1, cv2.LINE_AA)
             # Stats sit inside the plan panel rather than in the header, so they
             # cannot collide with a long architecture name or the verdict.
@@ -261,6 +256,15 @@ def render(arch, env_cfg, seed: int, out_path: Path, fps: int = 15, stride: int 
                      f"speed {s.speed:4.1f} m/s")
             cv2.putText(canvas, stats, (MARGIN, BAR_H + 28), cv2.FONT_HERSHEY_SIMPLEX, 0.48,
                         INK, 1, cv2.LINE_AA)
+            # Legend along the header. It used to sit inside the plan panel and
+            # covered the target whenever the target was in the bottom-left.
+            x = MARGIN
+            for colour, text in ((TARGET, "target"), (DISTRACTOR, "distractor"),
+                                 (OBSTACLE, "obstacle"), (PATH, "path")):
+                cv2.circle(canvas, (x + 5, BAR_H - 10), 5, colour, -1)
+                cv2.putText(canvas, text, (x + 16, BAR_H - 6), cv2.FONT_HERSHEY_SIMPLEX,
+                            0.38, DIM, 1, cv2.LINE_AA)
+                x += 26 + 8 * len(text)
             # The verdict appears only in the closing moment, so the run can be
             # judged on what it did rather than read in the light of its label.
             if i >= len(samples) - 8:

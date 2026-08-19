@@ -303,6 +303,14 @@ def cmd_video(args: argparse.Namespace) -> int:
         if env is None:
             print(f"  {name:<5} SKIP  ({note})")
             continue
+        if args.render and not env.params.get("render"):
+            # Every vehicle has a camera; the scored environments simply do not
+            # pay to render frames no policy reads. Measured on c0/c4/c9/c13,
+            # turning rendering on leaves the trajectory bit-identical, so the
+            # video shows the same episode that was scored - now with the view.
+            env = env.model_copy(
+                update={"params": {**env.params, "render": True, "image_size": 224}}
+            )
         summary = render(arch, env, args.seed, out_dir / f"{name}.mp4",
                          fps=args.fps, stride=args.stride)
         summary["environment"] = env.id
@@ -465,6 +473,9 @@ def build_parser() -> argparse.ArgumentParser:
     vid.add_argument("--fps", type=int, default=15)
     vid.add_argument("--stride", type=int, default=4,
                      help="sample every Nth control tick")
+    vid.add_argument("--no-render", dest="render", action="store_false",
+                     help="leave the camera panel empty for non-vision configurations")
+    vid.set_defaults(render=True)
     vid.set_defaults(func=cmd_video)
 
     dag = sub.add_parser("dagger", help="add teacher labels at states the student visits")

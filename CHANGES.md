@@ -1211,3 +1211,49 @@ Worth noting from the table: C2–C6 are identical on this seed, as are C4G/C5G.
 That is not the inert-component bug — those separate on other seeds — but it is a
 reminder that a single seed cannot distinguish architectures, which is why the
 scoring paths are paired across many.
+
+## What the end maps showed: C1-C6 orbit and never acquire the target
+
+Rendering every architecture's final plan view side by side made a pattern
+visible that no summary metric had surfaced: **C1-C6 fly a large closed loop and
+never approach the target**, while C0 and C7-C14 go more or less straight to it.
+
+Measured on seed 3, same scene for both:
+
+| | belief queries | target detected |
+|---|---|---|
+| c2 | 104 | **0** |
+| c7 | 132 | 70 (53%) |
+
+c2 never sees the target at all. Its verifier, monitor and memory therefore have
+nothing to act on, which is the same root cause as the identical C2-C6 numbers
+seen earlier — not a wiring fault, an acquisition fault.
+
+### Why
+
+Neither policy detects the target at t=0, so `grid_nav`'s claim that "the target
+is within sensor range from the start" is true of range and false of field of
+view. The two families then diverge in how they look for it:
+
+* **C7** yaws continuously while translating — 21 deg/s in the first second —
+  sweeping the 90 deg FOV across the horizon, and acquires the target early.
+* **C1-C6** fly waypoint to waypoint with the nose pointed along travel. The
+  exploration spiral is anchored at launch with the heading advancing on a
+  clock, so the vehicle circles at roughly constant radius with the camera
+  pointing tangentially — past the target rather than at it.
+
+A 35 m target inside a 45 m sensor range is never acquired in 90 seconds. That
+is a search-pattern defect, not a semantics defect, and it currently sets the
+ceiling for the entire waypoint and skill family.
+
+### Also fixed here
+
+Every architecture now renders a camera panel. The panel was blank for the
+non-vision configurations only because `grid_nav` does not pay to render frames
+no policy reads — the vehicle always had a camera. Verified on c0/c4/c9/c13 that
+turning rendering on leaves the trajectory bit-identical, so the video shows the
+same episode that was scored. `--no-render` restores the old behaviour.
+
+The legend moved out of the plan panel into the header, where it was covering
+the target whenever the target sat in the bottom-left, and the view padding grew
+from 1.15x to 1.35x so a target at the edge of the travelled area is not clipped.
