@@ -28,6 +28,46 @@ from uavlab.core.registry import register
 
 TOKENS_PER_ITEM = 24
 
+DECISION_KIND = "decision"
+"""Kind marking a memory of what the *policy itself* concluded.
+
+Every other item in these stores comes from `perception.detections`, i.e. from
+the simulated detector. A policy whose whole point is that a real model is the
+perceiver - the Gemma variants - must not recover the detector's sightings by
+reading memory, or its "memory result" is really a detector result. Recording
+the policy's own committed target under a distinct kind lets such a policy
+remember what *it* saw and nothing else. See `recall_target(kinds=...)`.
+"""
+
+
+def _decision_memory(
+    observation: ObservationPacket, decision: DecisionEnvelope | None
+) -> MemoryItem | None:
+    """The policy's own sighting, when its decision named a labelled target."""
+    payload = getattr(decision, "payload", None)
+    target = getattr(payload, "target", None)
+    label = getattr(payload, "target_label", None)
+    if target is None or not label:
+        return None
+    # A decision taken *from* memory must never be written back into memory.
+    # Otherwise recall refreshes its own timestamp on every tick, no staleness
+    # bound can ever fire, and the policy orbits a position the model has not
+    # confirmed for the rest of the episode. Measured: c5g flew 9-17 m in a 60 s
+    # episode against 113-115 m with no memory, and adding an age limit changed
+    # nothing at all until this line existed.
+    # `provenance` is dict[str, str], so this is the string "true", not a bool.
+    if (getattr(decision, "provenance", None) or {}).get("from_memory") == "true":
+        return None
+    return MemoryItem(
+        observation_seq=observation.seq,
+        t_sim_ns=observation.t_sim_ns,
+        kind=DECISION_KIND,
+        summary=f"committed to {label} at ({target.x:.1f},{target.y:.1f},{target.z:.1f})",
+        position=target,
+        label=label,
+        salience=float(getattr(decision, "confidence", 0.5) or 0.5),
+    )
+
 
 @register("memory", "no_memory")
 class NoMemory:
@@ -107,6 +147,9 @@ class ShortContext:
                 salience=best.score if best else 0.0,
             )
         )
+        own = _decision_memory(observation, decision)
+        if own is not None:
+            self._items.append(own)
         if len(self._items) > self.window:
             self._items = self._items[-self.window :]
 
@@ -141,6 +184,7 @@ class CompactKeyframeMemory:
         self._first: MemoryItem | None = None
         self._keyframes: list[MemoryItem] = []
         self._latest: MemoryItem | None = None
+        self._own_sighting: MemoryItem | None = None
         self._seq = 0
         self._t_ns = 0
         self._replacements = 0
@@ -151,6 +195,7 @@ class CompactKeyframeMemory:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._first = None
+        self._own_sighting = None
         self._keyframes = []
         self._latest = None
         self._seq = 0
@@ -182,6 +227,13 @@ class CompactKeyframeMemory:
             self._first = item
         self._latest = item
 
+        own = _decision_memory(observation, decision)
+        if own is not None:
+            # Held separately rather than pushed into the keyframe pool: it is
+            # not a view of the world, and letting it compete on salience would
+            # evict genuine keyframes.
+            self._own_sighting = own
+
         if best is None:
             return
         if self._too_close_to_existing(item):
@@ -210,6 +262,8 @@ class CompactKeyframeMemory:
         if self._first is not None:
             items.append(self._first)
         items.extend(self._keyframes)
+        if self._own_sighting is not None:
+            items.append(self._own_sighting)
         if self._latest is not None:
             items.append(self._latest)
         best = max((i for i in self._keyframes if i.position), key=lambda i: i.salience, default=None)

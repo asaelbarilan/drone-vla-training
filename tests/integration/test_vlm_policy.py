@@ -213,3 +213,67 @@ def test_the_policy_reports_its_own_hit_rate():
     assert stats["vlm_found"] == 1.0
     assert stats["vlm_not_found"] == 1.0
     assert stats["vlm_found_rate"] == pytest.approx(0.5)
+
+
+def _context_remembering(position, age_s: float, kind: str) -> DecisionContext:
+    """A context whose memory already holds one sighting of the target."""
+    from uavlab.contracts import MemoryItem, MemorySnapshot
+
+    ctx = rendering_context()
+    item = MemoryItem(
+        observation_seq=ctx.observation.seq,
+        t_sim_ns=ctx.t_sim_ns - int(age_s * 1e9),
+        kind=kind,
+        summary="remembered",
+        position=position,
+        label="target",
+        salience=0.8,
+    )
+    ctx.memory = MemorySnapshot(
+        observation_seq=ctx.observation.seq, t_sim_ns=ctx.t_sim_ns, items=(item,)
+    )
+    return ctx
+
+
+def test_an_unseen_target_is_recalled_from_the_policys_own_memory():
+    """The whole point of the C4->C5 memory contrast for a real model.
+
+    Runs the recall branch end to end. Worth its own test because the branch was
+    once broken at runtime -- a bool in a `dict[str, str]` provenance field --
+    while the entire suite still passed, since nothing exercised it.
+    """
+    from uavlab.contracts import Vec3
+
+    remembered = Vec3(x=30.0, y=5.0, z=3.0)
+    policy, _ = make_policy(['{"found": false, "u": 0, "v": 0, "arrived": false}'])
+    envelope = asyncio.run(policy.decide(_context_remembering(remembered, 1.0, "decision")))
+
+    assert envelope.kind is DecisionKind.WAYPOINT
+    assert "remembered" in envelope.provenance.get("note", "")
+    assert envelope.provenance.get("from_memory") == "true", (
+        "a decision taken from memory must be marked, or memory refreshes itself"
+    )
+
+
+def test_a_stale_memory_stops_steering_and_search_resumes():
+    from uavlab.contracts import Vec3
+
+    policy, _ = make_policy(['{"found": false, "u": 0, "v": 0, "arrived": false}'] * 2)
+    stale = _context_remembering(Vec3(x=30.0, y=5.0, z=3.0), 60.0, "decision")
+    envelope = asyncio.run(policy.decide(stale))
+    assert "searching" in envelope.provenance.get("note", "")
+
+
+def test_the_simulated_detector_is_not_reachable_through_memory():
+    """A Gemma configuration must not recover detector sightings by remembering.
+
+    Memory stores are fed from `perception.detections`. If this policy recalled
+    those, its "memory result" would really be a detector result and the real-model
+    comparison would be measuring the wrong thing.
+    """
+    from uavlab.contracts import Vec3
+
+    policy, _ = make_policy(['{"found": false, "u": 0, "v": 0, "arrived": false}'])
+    detector_memory = _context_remembering(Vec3(x=30.0, y=5.0, z=3.0), 1.0, "keyframe")
+    envelope = asyncio.run(policy.decide(detector_memory))
+    assert "searching" in envelope.provenance.get("note", "")

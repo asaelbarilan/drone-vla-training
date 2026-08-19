@@ -1,0 +1,23 @@
+[
+ {
+  "seed": 1,
+  "success": false,
+  "path": 16.866,
+  "dist": 19.991,
+  "reason": "runtime_error"
+ },
+ {
+  "seed": 2,
+  "success": false,
+  "path": 9.527,
+  "dist": 28.825,
+  "reason": "runtime_error"
+ },
+ {
+  "seed": 3,
+  "success": false,
+  "path": 13.104,
+  "dist": 24.016,
+  "reason": "runtime_error"
+ }
+]

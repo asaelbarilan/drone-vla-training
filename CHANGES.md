@@ -1120,3 +1120,60 @@ nothing downstream to absorb a one-frame difference. The verifier and monitor in
 C3–C6 absorb it, which is why they verified clean while carrying the same bug.
 
 **All 22 configurations now pass every structural check.**
+
+## The Gemma believe() gap, closed
+
+### Proving it was the cause
+
+Reading the code showed `VLMPointWaypoint.decide` never calls `believe()`. That
+is not proof, so it was tested by removal: strip the memory plugin and see
+whether the trajectory moves.
+
+| | memory changes the trajectory |
+|---|---|
+| c5 (scripted) | 3 of 10 seeds |
+| c5g (Gemma), before | **0 of 8 seeds** |
+| c5g (Gemma), after | **3 of 3 seeds** |
+
+A first attempt at this test used one seed and showed no change for the
+*scripted* c5 either — on seed 1 the target stays visible and memory is never
+consulted. A component that is inert on one episode is not an inert component.
+
+### The trap that shaped the fix
+
+Memory stores are fed from `perception.detections` — the simulated detector.
+Wiring `believe()` in as-is would have let the Gemma policy recover the
+detector's sightings through memory, and c5g's "memory result" would really be a
+detector result, in a configuration whose entire premise is that a real model is
+the perceiver.
+
+So the policy now remembers only what *it* concluded. `_decision_memory` records
+the policy's own committed waypoint under `kind="decision"`, and `recall_target`
+takes a `kinds` filter so the Gemma policy can ask for that and nothing else.
+
+### Two bugs found on the way, both by measurement
+
+**Memory refreshed itself.** Steering on a recalled target produced another
+labelled waypoint decision, which was written back to memory with a fresh
+timestamp. The policy latched: it flew 9–17 m in a 60 s episode against 113–115 m
+with no memory, orbiting a position the model could no longer confirm. Adding a
+`memory_trust_s` age limit changed *nothing at all* — the timestamp was never old.
+The fix is that a decision marked `from_memory` is never written back, and only
+then does the age limit do anything.
+
+**The recall branch was broken at runtime while 225 tests passed.** `provenance`
+is `dict[str, str]` and the marker was a bool, so every c5g episode ended in
+`runtime_error` — and no test noticed, because none exercised recall. Three tests
+now do, including one asserting the detector is *not* reachable through memory.
+
+### Where it leaves c5g
+
+| seed | with memory | without |
+|---|---|---|
+| 1 | 30.6 m out, 79 m flown | 34.1 m out, 115 m flown |
+| 2 | 36.0 m out, 91 m flown | 22.7 m out, 113 m flown |
+| 3 | 24.0 m out, 13 m flown | 24.7 m out, 55 m flown |
+
+Mixed — better on seed 1, worse on seed 2. That is the honest outcome and it is
+the point: the objective was to make the C4→C5 memory contrast *measurable* for
+the real model, not to make c5g win. It is now measurable. 228 tests pass.

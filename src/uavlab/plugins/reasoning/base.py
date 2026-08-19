@@ -31,19 +31,31 @@ from uavlab.core.services import RuntimeServices
 from uavlab.interfaces import DecisionContext, InferenceRequest
 
 
-def recall_target(ctx: DecisionContext, target_label: str) -> MemoryItem | None:
+def recall_target(
+    ctx: DecisionContext, target_label: str, kinds: frozenset[str] | None = None
+) -> MemoryItem | None:
     """Retrieve the most salient *matching* memory of the target.
 
     Filtering by label is not optional.  Retrieval by salience alone returns
     whichever landmark was seen closest and largest, and a nearby distractor
     beats the true target every time — the vehicle then flies confidently to the
     wrong object while every component reports success.
+
+    ``kinds`` filters by provenance. Most items in a memory store come from
+    ``perception.detections``, i.e. from the simulated detector. A policy whose
+    premise is that a real model does the perceiving must pass
+    ``kinds=frozenset({"decision"})`` so that it recalls only what it concluded
+    itself; otherwise it recovers the detector's sightings through memory and
+    the configuration stops measuring what it claims to.
     """
     return max(
         (
             item
             for item in ctx.memory.items
-            if item.position is not None and item.salience > 0.0 and item.label == target_label
+            if item.position is not None
+            and item.salience > 0.0
+            and item.label == target_label
+            and (kinds is None or item.kind in kinds)
         ),
         key=lambda item: item.salience,
         default=None,
@@ -246,6 +258,7 @@ class BasePolicy:
         payload: Any,
         confidence: float,
         note: str = "",
+        extra: dict[str, str] | None = None,
     ) -> DecisionEnvelope:
         """Build the envelope, stamping observation time and production time.
 
@@ -267,5 +280,9 @@ class BasePolicy:
             valid_until_t_sim_ns=now_ns + s_to_ns(self.validity_s),
             confidence=confidence,
             producer=self.name,
-            provenance={"model_id": self.model_id, "note": note} if note else {"model_id": self.model_id},
+            provenance={
+                "model_id": self.model_id,
+                **({"note": note} if note else {}),
+                **(extra or {}),
+            },
         )

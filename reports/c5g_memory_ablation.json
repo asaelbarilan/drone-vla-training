@@ -1,0 +1,42 @@
+[
+ {
+  "cond": "with_memory",
+  "seed": 1,
+  "success": false,
+  "path": 16.893537,
+  "dist": 20.002,
+  "reason": "timeout"
+ },
+ {
+  "cond": "with_memory",
+  "seed": 2,
+  "success": false,
+  "path": 9.527521,
+  "dist": 28.82,
+  "reason": "timeout"
+ },
+ {
+  "cond": "with_memory",
+  "seed": 3,
+  "success": false,
+  "path": 13.161083,
+  "dist": 24.032,
+  "reason": "timeout"
+ },
+ {
+  "cond": "no_memory",
+  "seed": 1,
+  "success": false,
+  "path": 114.909742,
+  "dist": 34.155,
+  "reason": "timeout"
+ },
+ {
+  "cond": "no_memory",
+  "seed": 2,
+  "success": false,
+  "path": 113.426556,
+  "dist": 22.706,
+  "reason": "timeout"
+ }
+]
