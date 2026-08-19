@@ -282,6 +282,40 @@ def cmd_collect(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_video(args: argparse.Namespace) -> int:
+    """Render one episode per architecture so the runs can be judged by eye."""
+    import json as _json
+
+    from uavlab.analysis.replay_video import render
+    from uavlab.experiments.verify import resolve_environment
+
+    root = _config_root(args)
+    names = args.architectures or sorted(
+        {n.split("_", 1)[0] for n in list_architectures(root)}
+    )
+    out_dir = Path(args.out)
+    summaries = []
+    for name in names:
+        arch = load_architecture(name, root)
+        # resolve_environment hands back the *config*, plus a note naming the
+        # substitute when a vision policy had to be routed to a rendering variant.
+        env, note = resolve_environment(arch, args.env, root)
+        if env is None:
+            print(f"  {name:<5} SKIP  ({note})")
+            continue
+        summary = render(arch, env, args.seed, out_dir / f"{name}.mp4",
+                         fps=args.fps, stride=args.stride)
+        summary["environment"] = env.id
+        summaries.append(summary)
+        print(f"  {name:<5} {'SUCCESS' if summary['success'] else 'FAILED ':<8} "
+              f"{summary['termination']:<14} d={summary['distance_to_goal_m']:6.1f}m  "
+              f"path={summary['path_length_m']:6.1f}m  -> {summary['video']}", flush=True)
+
+    (out_dir / "index.json").write_text(_json.dumps(summaries, indent=2), encoding="utf-8")
+    print(f"\n{len(summaries)} videos in {out_dir}")
+    return EXIT_OK
+
+
 def cmd_dagger(args: argparse.Namespace) -> int:
     """Roll the trained student out and label its states with the teacher."""
     from uavlab.training.dagger import aggregate
@@ -422,6 +456,16 @@ def build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--stride", type=int, default=2)
     collect.add_argument("--out", default="data/expert_grid_nav")
     collect.set_defaults(func=cmd_collect)
+
+    vid = sub.add_parser("video", help="render an episode per architecture as mp4")
+    vid.add_argument("architectures", nargs="*")
+    vid.add_argument("--env", default="grid_nav")
+    vid.add_argument("--seed", type=int, default=3)
+    vid.add_argument("--out", default="reports/videos")
+    vid.add_argument("--fps", type=int, default=15)
+    vid.add_argument("--stride", type=int, default=4,
+                     help="sample every Nth control tick")
+    vid.set_defaults(func=cmd_video)
 
     dag = sub.add_parser("dagger", help="add teacher labels at states the student visits")
     dag.add_argument("--base", default="data/expert_c2_grid_nav",

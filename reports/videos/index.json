@@ -1,0 +1,86 @@
+[
+  {
+    "architecture": "c2g",
+    "seed": 3,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 31.83,
+    "path_length_m": 128.06,
+    "collisions": 0,
+    "frames": 300,
+    "video": "reports\\videos\\c2g.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c3g",
+    "seed": 3,
+    "success": false,
+    "termination": "collision",
+    "distance_to_goal_m": 24.71,
+    "path_length_m": 54.46,
+    "collisions": 1,
+    "frames": 188,
+    "video": "reports\\videos\\c3g.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c4g",
+    "seed": 3,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 24.03,
+    "path_length_m": 13.16,
+    "collisions": 0,
+    "frames": 300,
+    "video": "reports\\videos\\c4g.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c5g",
+    "seed": 3,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 24.03,
+    "path_length_m": 13.16,
+    "collisions": 0,
+    "frames": 300,
+    "video": "reports\\videos\\c5g.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c6g",
+    "seed": 3,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 27.18,
+    "path_length_m": 124.38,
+    "collisions": 0,
+    "frames": 300,
+    "video": "reports\\videos\\c6g.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c7t",
+    "seed": 3,
+    "success": false,
+    "termination": "out_of_bounds",
+    "distance_to_goal_m": 67.84,
+    "path_length_m": 89.16,
+    "collisions": 0,
+    "frames": 273,
+    "video": "reports\\videos\\c7t.mp4",
+    "environment": "grid_nav_vision"
+  },
+  {
+    "architecture": "c8t",
+    "seed": 3,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 51.64,
+    "path_length_m": 71.4,
+    "collisions": 0,
+    "frames": 300,
+    "video": "reports\\videos\\c8t.mp4",
+    "environment": "grid_nav_vision"
+  }
+]

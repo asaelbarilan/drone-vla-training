@@ -1177,3 +1177,37 @@ now do, including one asserting the detector is *not* reachable through memory.
 Mixed — better on seed 1, worse on seed 2. That is the honest outcome and it is
 the point: the objective was to make the C4→C5 memory contrast *measurable* for
 the real model, not to make c5g win. It is now measurable. 228 tests pass.
+
+## Videos: judging a run by eye
+
+`uavlab video [ARCH...] --seed N` renders one episode per architecture to mp4
+(`analysis/replay_video.py`). Two panels: a plan view with obstacles, target,
+distractors and the path so far, and the camera frame the policy actually saw.
+
+Both panels are needed. The plan view shows whether the vehicle went anywhere
+sensible; the camera panel separates "flew past a target that was never in
+frame" (a perception result) from "flew past a target filling the frame" (a
+policy result), which the plan view alone cannot distinguish.
+
+Two deliberate choices. The scale is fixed for the whole episode rather than
+fitted per frame — a rescaling view makes a straight line look curved and a
+stall look like progress. And the verdict is withheld until the last few frames,
+so a run can be judged on what it did rather than read in the light of its label.
+
+Not importable from anything that scores a run. This module is for looking at.
+
+Seed 3, all 22 configurations:
+
+| | outcome |
+|---|---|
+| C0, C7–C14 | success, stopped 0.9–1.6 m from the target |
+| C1 | timeout, 30 m out after a 267 m path |
+| C2–C6 | timeout, 33 m out after ~366 m |
+| C2G–C6G | fail; C3G collides, C4G/C5G stall at 13 m of path |
+| C7T | out of bounds, 68 m from goal |
+| C8T | timeout, 52 m out |
+
+Worth noting from the table: C2–C6 are identical on this seed, as are C4G/C5G.
+That is not the inert-component bug — those separate on other seeds — but it is a
+reminder that a single seed cannot distinguish architectures, which is why the
+scoring paths are paired across many.
