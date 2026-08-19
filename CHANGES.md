@@ -1257,3 +1257,64 @@ same episode that was scored. `--no-render` restores the old behaviour.
 The legend moved out of the plan panel into the header, where it was covering
 the target whenever the target sat in the bottom-left, and the view padding grew
 from 1.15x to 1.35x so a target at the edge of the travelled area is not clipped.
+
+## Ported drone_control's sweep. It did not fix acquisition, and the measurement says why
+
+`plugins/reasoning/coverage.py` is a boustrophedon sweep ported from
+`drone_control/src/agent/boustrophedon.py`, available as
+`search_pattern: sweep`. The argument for it was already settled there by
+measurement: frontier and spiral searches exist for *unknown* extent, and when
+the extent is known — a stated geofence — coverage planning applies and is
+provably complete where frontier is complete only in unbounded time.
+
+Lane pitch is derived rather than chosen, and the derivation differs from the
+original. drone_control treats the sensor as a disc, giving a swath of
+2·R·sin(fov/2) either side of track. Here the camera is body-fixed and looks
+*along* the lane, so a pass covers a forward wedge; the pitch is the wedge width
+at half range, which is the conservative reading of the same geometry.
+
+### It changed nothing that matters
+
+| c2, grid_nav seed 3 | target acquired | final distance | path |
+|---|---|---|---|
+| spiral | 0 / 104 | 33.2 m | 368 m |
+| sweep, 3 lanes @ 25.5 m | 0 / 104 | 36.4 m | 312 m |
+| sweep, 8 lanes @ 11.1 m | 0 / 104 | 36.4 m | 307 m |
+| sweep, 18 lanes @ 4.8 m | 0 / 104 | 35.4 m | 306 m |
+
+`spiral` therefore stays the default. Flipping it to an unproven pattern would
+have quietly changed every number measured so far for nothing.
+
+### The actual blocker is occlusion, not coverage
+
+Instrumenting the detection gate directly — range, field of view, and line of
+sight, separately:
+
+| | in range | in FOV | of those, occluded |
+|---|---|---|---|
+| c2 | 100% | 43% | **100%** |
+| c7 | 100% | 61% | 13% |
+
+The target is *always* within c2's sensor range and often within its field of
+view. It is blocked by an obstacle every single time. c7 succeeds because it
+flies toward the target and so reaches viewpoints with clear line of sight;
+c2 searches from positions that never have any.
+
+No lane pattern fixes line of sight, which is why every spacing gives the same
+answer. drone_control had already framed this correctly from the other side:
+the objective is **observed**, not **flown over**, which turns the problem from
+coverage into the Watchman Route / TSP-with-Neighborhoods family — choose
+viewpoints whose *visibility* covers the region, then tour them. That was
+ranked there as option 4, "the principled optimum; needs a visibility
+computation per candidate viewpoint".
+
+That is the next thing to build, and this time the measurement above says
+plainly what it has to achieve: a viewpoint set with unoccluded sight lines,
+not more kilometres flown.
+
+### Correction
+
+I previously wrote that C1–C6's failure was a search-pattern defect and that the
+camera pointed "past the target rather than at it". The field-of-view half of
+that is real — 43% versus 61% — but it is not what decides the outcome.
+Occlusion is, and I had not measured it before naming a cause.

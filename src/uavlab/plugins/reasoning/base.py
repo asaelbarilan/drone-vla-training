@@ -95,6 +95,55 @@ class BasePolicy:
         self.stop_radius_m = float(params.get("stop_radius_m", 2.0))
         self.self_terminate = bool(params.get("self_terminate", True))
         self.stop_confidence = float(params.get("stop_confidence", 0.35))
+        self.sensor_range_m = float(params.get("sensor_range_m", 45.0))
+        self.sensor_fov_deg = float(params.get("sensor_fov_deg", 90.0))
+        """The vehicle's own camera spec, used to size the search lanes.
+
+        Declared here rather than read from the environment. A policy
+        legitimately knows what camera it is carrying — that is a property of
+        the airframe, not of the scene — but reaching into the environment for
+        it would be a channel through which anything else could follow.
+
+        If these disagree with the environment the sweep is merely mis-sized,
+        which shows up as a worse score rather than as a silent advantage.
+        """
+        self.sweep_overlap = float(params.get("sweep_overlap", 0.8))
+        """Lane pitch as a fraction of the view width at half sensor range.
+
+        Lower means more, closer lanes. It is a coverage knob, not a detection
+        knob: with a target the vehicle can already range but cannot see past an
+        obstacle, tightening this changes nothing.
+        """
+        self.search_pattern = str(params.get("search_pattern", "spiral"))
+        """`spiral` (default) or `sweep`.
+
+        The spiral was the original and is measurably bad. It is anchored at
+        launch with the heading advancing on a clock, so the vehicle circles at
+        roughly constant radius with a body-fixed camera pointing tangentially.
+        Measured on grid_nav seed 3: c2 detected the target in 0 of 104 belief
+        queries, while c7 — which yaws continuously — detected it in 70 of 132
+        in the same scene, with the target inside sensor range throughout.
+
+        `sweep` is a boustrophedon over the mission's stated geofence, ported
+        from drone_control, where the same argument was settled by measurement:
+        frontier and spiral searches exist for *unknown* extent, and when the
+        extent is known coverage planning applies and is provably complete.
+        See `plugins/reasoning/coverage.py`.
+
+        **`spiral` remains the default, because `sweep` has not earned it.**
+        Measured on grid_nav seed 3, c2: spiral ends 33.2 m out over a 368 m
+        path, sweep 36.4 m over 312 m, and *neither acquires the target at all*
+        — 0 of 104 belief queries either way, at every lane spacing from 25.5 m
+        down to 4.8 m.
+
+        The reason is not coverage. Instrumenting the geometry: for c2 the
+        target is within sensor range on 100% of ticks and within the field of
+        view on 43%, and on **100%** of those it is occluded by an obstacle. For
+        c7, which flies toward it, the same figure is 13%. The blocker is line
+        of sight, and no lane pattern fixes line of sight. drone_control reached
+        the same conclusion from the other direction: the objective is
+        "observed", not "flown over".
+        """
         self.explore_step_m = float(params.get("explore_step_m", 8.0))
         self.explore_turn_rad = float(params.get("explore_turn_rad", math.radians(50.0)))
         self.explore_dwell_s = float(params.get("explore_dwell_s", 3.0))
@@ -129,6 +178,7 @@ class BasePolicy:
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._explore_base_yaw = None
         self._explore_anchor = None
+        self._sweep = None
         self._decisions = 0
         self._stopped = False
         self._geofence_m = mission.constraints.geofence_radius_m
@@ -191,6 +241,42 @@ class BasePolicy:
         return self._explore_base_yaw + self._explore_leg(ctx) * self.explore_turn_rad
 
     def explore_target(self, ctx: DecisionContext) -> Vec3:
+        """The next place to look. Sweep by default; see `search_pattern`."""
+        if self.search_pattern == "sweep":
+            return self._sweep_target(ctx)
+        return self._spiral_target(ctx)
+
+    def _sweep_target(self, ctx: DecisionContext) -> Vec3:
+        """Boustrophedon lane coverage of the mission's operating volume.
+
+        Sized from the mission's own geofence and the sensor model it publishes,
+        so nothing here is privileged: both are given constraints, and a search
+        that leaves its stated volume measures the harness rather than the
+        architecture.
+        """
+        from uavlab.plugins.reasoning.coverage import sweep_for_mission
+
+        if self._sweep is None:
+            self._sweep = sweep_for_mission(
+                self._geofence_m, self.sensor_range_m, self.sensor_fov_deg,
+                self.sweep_overlap,
+            )
+        p = ctx.observation.position
+        self._sweep.note_arrival(p.x, p.y)
+        waypoint = self._sweep.next_waypoint(p.x, p.y)
+        if waypoint is None:
+            # Every lane covered and still nothing found. Start again rather
+            # than stopping: the target may have been occluded on the first pass,
+            # and a policy that gives up scores the same as one that never looked.
+            self._sweep.reset()
+            waypoint = self._sweep.next_waypoint(p.x, p.y) or (p.x, p.y)
+        return Vec3(
+            x=float(waypoint[0]),
+            y=float(waypoint[1]),
+            z=min(self._max_alt, max(self._min_alt, p.z)),
+        )
+
+    def _spiral_target(self, ctx: DecisionContext) -> Vec3:
         """Outward spiral anchored to the launch point.
 
         The anchor matters.  Offsetting from the *current* position each tick
