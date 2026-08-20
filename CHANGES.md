@@ -1579,3 +1579,19 @@ D-17, status `open`, unquantified — and it sits under every waypoint-family
 result.
 
 231 tests pass.
+
+## Timestamps on the decision register
+
+Every entry in `docs/RESEARCH_LOG.md` now carries a **When** field, plus a
+chronological index at the bottom so the register reads as a diary as well as a
+reference.
+
+The times are taken from git commit dates, not written by hand. That makes them
+the moment a decision entered the repository rather than the moment it was
+thought of — usually minutes apart — and it means they cannot quietly drift away
+from the record they describe.
+
+Fifteen of the thirty entries predate `git init` on 2026-08-18 15:03. They say
+"on or before" and point at the initial commit rather than carrying an invented
+time. A fabricated timestamp in a research log is worse than an absent one: it
+looks like evidence.

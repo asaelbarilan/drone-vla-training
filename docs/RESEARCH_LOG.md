@@ -18,12 +18,20 @@ reader has is "why is the search like this?", not "what happened on Tuesday".
 
 | field | meaning |
 |---|---|
+| **When** | date, time and the commit that carries it |
 | **Decision** | what is true in the code now |
 | **Rationale** | why, in one or two sentences |
 | **Evidence** | the measurement. "None" is a legitimate and important value |
 | **Rejected** | what else was considered, and why it lost |
 | **Status** | `settled` / `provisional` / `open` / `superseded by D-nn` |
 | **Related work** | the paper this follows or departs from |
+
+**On the timestamps.** They are taken from git commit times, not written by
+hand, so they are the moment a decision entered the repository rather than the
+moment it was thought of — usually minutes apart, occasionally longer. Fifteen
+entries predate version control (the testbed was built before `git init` on
+2026-08-18 15:03) and cannot be dated individually; they say so rather than
+carrying an invented time. Times are local to the machine the work was done on.
 
 **Status discipline.** `settled` means measured and unlikely to change.
 `provisional` means it works but the evidence is thin. `open` means it is known
@@ -35,6 +43,7 @@ is `provisional` at best, however obviously correct it seems.
 ## A. Experiment structure
 
 ### D-01 — Architectures are configuration, not code
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** Every architecture is a YAML file composing the same plugin set.
 There are no per-architecture code paths.
 **Rationale.** A comparison between two architectures is only interpretable if
@@ -46,6 +55,7 @@ that makes "is this difference real or incidental?" unanswerable.
 **Status.** settled.
 
 ### D-02 — Seven families, one base each, everything else an ablation
+**When.** 2026-08-20 10:46 — `e7a78e5`
 **Decision.** `ArchitectureConfig` carries `family` and `ablation_of`.
 `validate_family_set` enforces exactly one base per family and requires every
 other member to name what it modifies. `uavlab families` prints it.
@@ -61,6 +71,7 @@ already drifted.
 **Status.** settled.
 
 ### D-03 — C8 is the direct-VLA base, not C7
+**When.** 2026-08-20 10:46 — `e7a78e5`
 **Decision.** The shielded VLA is the family base; C7 is "remove the shield".
 **Rationale.** Shipping a learned policy with no safety shield is the ablation,
 not the default.
@@ -68,6 +79,7 @@ not the default.
 **Status.** settled.
 
 ### D-04 — C12 is the hierarchy base, not C10
+**When.** 2026-08-20 10:46 — `e7a78e5`
 **Decision.** A concurrent reasoner over chunked actions is the base; C10 is
 "make it blocking and single-step".
 **Rationale.** That is the shape the literature describes.
@@ -76,6 +88,7 @@ override).
 **Status.** settled.
 
 ### D-05 — Held-out seeds, enforced in code
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `EVAL_SEEDS = 1..40` held out, `TRAIN_SEEDS = 1000..1999` the only
 range data collection may draw from. `collect()` raises if a range crosses.
 **Rationale.** Scenes are generated from the seed, so the seed is the unit of
@@ -90,12 +103,14 @@ enforcement prevents drift rather than fixing a leak.
 ## B. Runtime and fairness
 
 ### D-06 — A virtual simulation clock, with model latency charged to it
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** A model that takes 1.7 s per call costs 1.7 s of *simulated* time.
 **Rationale.** Otherwise a slow architecture is compared against a fast one as
 though inference were free, and every latency finding disappears.
 **Status.** settled.
 
 ### D-07 — Latency is charged as a fixed constant, not measured wall time
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `charge_mode: fixed` is the default.
 **Rationale.** Charging live jitter to the simulation clock destroys
 paired-by-seed comparison.
@@ -106,6 +121,7 @@ fixed charge does.
 **Status.** settled.
 
 ### D-08 — Decision age is a first-class metric, distinct from inference latency
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `execution_sim_time − source_observation_sim_time` is recorded per
 command.
 **Rationale.** How obsolete the world was when a command landed is the quantity
@@ -114,18 +130,20 @@ it.
 **Status.** settled.
 
 ### D-09 — Search timing is clock-based, never per-decision
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** The search heading advances on simulated time.
 **Rationale.** If it advanced per decision, a 10 Hz executor would sweep ten
 times faster than a 1 Hz skill agent, and the authority comparison would be
 contaminated by an exploration-rate difference nobody chose.
-**Status.** settled. See D-14 for the value, which was wrong for years of this
-project's short life.
+**Status.** settled — but see D-14: the *principle* was right and the value it
+was given was the single largest defect in the testbed.
 
 ---
 
 ## C. Search and exploration
 
 ### D-10 — Anchored outward spiral rather than a body-relative offset
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** The search pattern is anchored at launch with a growing radius.
 **Rationale.** Offsetting from the current position each tick produces a circle
 around wherever the vehicle happens to be: it turns continuously, never gets
@@ -133,6 +151,7 @@ further from home, and searches nothing.
 **Status.** settled.
 
 ### D-11 — Boustrophedon sweep available, not default
+**When.** 2026-08-19 22:22 — `a8254d3`
 **Decision.** `search_pattern: sweep` exists; `spiral` remains the default.
 **Rationale.** Coverage planning is the right tool for *known* extent and is
 provably complete where frontier search is complete only in unbounded time — but
@@ -146,6 +165,7 @@ from measurement on a different airframe.
 re-testing now that the search works.
 
 ### D-12 — Lane pitch derived from a forward wedge, not a sensor disc
+**When.** 2026-08-19 22:22 — `a8254d3`
 **Decision.** Pitch is the view width at half sensor range.
 **Rationale.** `drone_control` treats the sensor as a disc, giving a swath either
 side of track. Here the camera is body-fixed and looks *along* the lane, so a
@@ -153,6 +173,7 @@ pass covers a forward wedge and the disc formula would overstate coverage.
 **Status.** provisional — the sweep it serves is not in use.
 
 ### D-13 — `search_altitude_m` exists and defaults to off
+**When.** 2026-08-19 22:43 — `19bbc9b`
 **Decision.** The search may be flown at a stated altitude; by default it is not.
 **Rationale.** Sight lines can be bought with altitude, at the cost of approach
 time. That is a real architectural trade and deserves a knob.
@@ -166,6 +187,7 @@ carries no shield.
 descent plan before it can help.
 
 ### D-14 — The search dwell is derived, not chosen
+**When.** 2026-08-20 12:52 — `4806427`
 **Decision.** `explore_dwell_s` defaults to 0, meaning derive it: chord length
 between consecutive search points over the speed the mission permits.
 **Rationale.** A search leg must be long enough to fly. The heading turns 50° per
@@ -184,6 +206,7 @@ to prevent.
 **Status.** settled.
 
 ### D-15 — Everything measured about C1–C6 before D-14 is suspect
+**When.** 2026-08-20 12:52 — `4806427`
 **Decision.** Findings about the scripted-search family predating D-14 are to be
 re-read, not cited.
 **Rationale.** They were measured on a search that could not travel more than
@@ -198,6 +221,7 @@ because it could not travel. D-11 and D-13 were both evaluated against it.
 ## D. Perception and the semantic boundary
 
 ### D-16 — A pixel is unprojected using the pose that took the frame
+**When.** 2026-08-20 13:59 — `ed5ae2f`
 **Decision.** The waypoint is computed in **world** coordinates from
 `ctx.observation`, the same packet the image came from.
 **Rationale.** The vehicle keeps flying while a model thinks — 1.7 s for Gemma
@@ -211,6 +235,7 @@ error growing with model latency and looking like a model-quality problem.
 **Status.** settled.
 
 ### D-17 — Depth is guessed, not measured
+**When.** 2026-08-20 13:59 — `ed5ae2f`
 **Decision.** The unprojection places the waypoint at a fixed hop distance along
 the ray (`hop_m`, or `arrival_hop_m` on arrival).
 **Rationale.** A monocular pixel carries no range, and the testbed has no depth
@@ -221,12 +246,14 @@ and has never been quantified.
 any C2-family result is presented.
 
 ### D-18 — Detections are gated by range, field of view and occlusion
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** The environment filters semantic hits by all three.
 **Rationale.** Without it an architecture can succeed on information it never
 observed, and memory would have nothing to be *for*.
 **Status.** settled.
 
 ### D-19 — Frames are namespaced per episode and the store is cleared on reset
+**When.** 2026-08-18 22:09 — `43fe7e9`
 **Decision.** Frame URIs use a monotonic counter, not `id(env)`.
 **Rationale.** `id()` is an address CPython recycles, and the frame store is
 process-global.
@@ -241,6 +268,7 @@ downstream to absorb a one-frame difference.
 ## E. Memory and supervision
 
 ### D-20 — Memory carries identity, not just position and score
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `MemoryItem.label`, and `recall_target` filters by it.
 **Rationale.** Retrieval by salience alone returns whichever landmark was seen
 closest and largest, so a nearby distractor beats the true target every time.
@@ -249,6 +277,7 @@ component reported success.
 **Status.** settled.
 
 ### D-21 — A real-model policy recalls only its own sightings
+**When.** 2026-08-19 21:18 — `abb1c24`
 **Decision.** The policy's committed waypoint is stored under `kind="decision"`,
 and the Gemma policy recalls with `kinds={"decision"}`.
 **Rationale.** Memory stores are fed from `perception.detections` — the simulated
@@ -260,6 +289,7 @@ seeds while changing the scripted c5 on 3 of 10. After: 3 of 3.
 **Status.** settled.
 
 ### D-22 — A decision taken from memory is never written back to memory
+**When.** 2026-08-19 21:18 — `abb1c24`
 **Decision.** Envelopes marked `from_memory` are not recorded as sightings.
 **Rationale.** Otherwise recall refreshes its own timestamp every tick, no
 staleness bound can fire, and the policy orbits a position the model has not
@@ -274,6 +304,7 @@ this rule existed.
 ## F. Learned policy
 
 ### D-23 — Per-dimension action bins, not a joint codebook
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** Four independent 64-bin classifiers over (vx, vy, vz, yaw_rate).
 **Rationale.** A joint codebook over a 4-D action space needs exponentially many
 prototypes.
@@ -283,6 +314,7 @@ prototypes.
 **Status.** settled.
 
 ### D-24 — The policy is not given its own velocity
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** Proprioception is restricted to cos/sin of yaw.
 **Rationale.** Causal confusion: velocity is a lagged copy of the previous
 command.
@@ -293,6 +325,7 @@ own velocity* scores 1.174, and froze at 0.12 m/s from a standing start.
 **Status.** settled.
 
 ### D-25 — Yaw comes from a rule, not from the network
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `yaw_mode: course_aligned` points the nose along the commanded
 velocity.
 **Rationale.** Yaw is the one channel the teacher cannot convey through a single
@@ -304,6 +337,7 @@ turns loses the target and never recovers.
 **Status.** settled.
 
 ### D-26 — A dilated frame history, not consecutive frames
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `FRAME_OFFSETS = (0, 5, 15, 40)` — 0, 0.5, 1.5 and 4.0 seconds.
 **Rationale.** Four consecutive stored samples span 0.3 s: enough to see motion,
 far too short to remember where a target was last seen.
@@ -312,6 +346,7 @@ to 1, stop precision 0.44 → 0.95. Did **not** fix navigation.
 **Status.** settled for what it does; the navigation problem is D-27.
 
 ### D-27 — The behaviour-cloned policy does not navigate
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `c7t`/`c8t` are shipped as a working pipeline carrying a policy
 that does not work, and their numbers must not be read as an architecture result.
 **Evidence.** Success 0.03 on held-out seeds after three interventions, each of
@@ -328,6 +363,7 @@ exists to drop in, because small VLAs exist where manipulation datasets exist.
 ## G. Verification and tooling
 
 ### D-28 — Verification checks that components *fire*, and that is not enough
+**When.** on or before 2026-08-18 15:03 — predates version control, so not individually dated; first recorded in `903ed58`
 **Decision.** `uavlab verify` asserts each architecture's distinguishing
 component actually acts.
 **Evidence of its limit.** C4G and C5G passed honestly while being behaviourally
@@ -338,6 +374,7 @@ the component removed and require the trajectory to differ. D-21 fixed the
 particular case; the gate is still weak.
 
 ### D-29 — Runs are rendered to video, and video is not evidence of rate
+**When.** 2026-08-19 21:39 — `e51c384`
 **Decision.** `uavlab video` renders a plan view beside the camera frame.
 Rendering is forced on for every architecture.
 **Rationale.** A summary cannot say whether a run flew sensibly and stopped a
@@ -351,6 +388,7 @@ produced the false claim that C1–C6 never acquire the target.
 **Status.** settled.
 
 ### D-30 — End maps are the debugging tool
+**When.** 2026-08-19 21:55 — `d798d42`
 **Decision.** A grid of final plan views across architectures × seeds.
 **Evidence.** It found D-14, which months of summary metrics had not: the closed
 loop was obvious at a glance and invisible in a success rate.
@@ -384,3 +422,42 @@ withdrawn, and because the pattern of error is itself informative.
 | "c8 fails by arriving and not stopping" | **withdrawn** | Its 1.7 m median mixed successes with failures. No failure across 140 episodes ended within 5 m |
 | "C2 has no memory, so it is an imitable teacher" | **withdrawn** | It has no memory *plugin*, but decides at 2 Hz and controls at 20 Hz, so 9 of 10 labels come from a planner tracking an earlier waypoint |
 | "The joint action codebook is the right encoding" | **withdrawn** | Per-dimension bins measured 7× better (D-23) |
+
+---
+
+## Chronological index
+
+The same decisions in the order they were taken, for reading the project as a
+diary rather than as a reference. Session boundaries are where the day changes.
+
+### Before 2026-08-18 15:03 — initial build, pre-version-control
+D-01 architectures as configuration · D-05 held-out seeds · D-06 virtual clock ·
+D-07 fixed latency charging · D-08 decision age · D-09 clock-based search timing ·
+D-10 anchored spiral · D-18 detection gating · D-20 memory carries identity ·
+D-23 per-dimension action bins · D-24 velocity withheld from the policy ·
+D-25 rule-based yaw · D-26 dilated frame history · D-27 cloned policy parked ·
+D-28 verification checks components fire
+
+### 2026-08-18 — verification and determinism
+| time | | |
+|---|---|---|
+| 15:44 | `247cbb3` | verify all 22 configs; pin the Ollama sampling seed |
+| 19:02 | `a3811f7` | C1's scan frequency stops masking its architecture result |
+| 22:09 | `43fe7e9` | **D-19** frames namespaced per episode — the recycled `id()` leak |
+
+### 2026-08-19 — looking at the runs
+| time | | |
+|---|---|---|
+| 21:18 | `abb1c24` | **D-21, D-22** the Gemma policy recalls only its own sightings |
+| 21:39 | `e51c384` | **D-29** episodes rendered to video |
+| 21:55 | `d798d42` | **D-30** end maps; a camera for every architecture |
+| 22:22 | `a8254d3` | **D-11, D-12** boustrophedon sweep ported — and rejected on measurement |
+| 22:43 | `19bbc9b` | **D-13** search altitude; the claim that C1–C6 never acquire is withdrawn |
+
+### 2026-08-20 — structure, baseline, and the defect
+| time | | |
+|---|---|---|
+| 10:46 | `e7a78e5` | **D-02, D-03, D-04** seven families enforced in code |
+| 10:51 | `87e7a99` | seven bases baselined over 20 seeds |
+| 12:52 | `4806427` | **D-14, D-15** the search dwell was 3 s and needed 9.1 |
+| 13:59 | `ed5ae2f` | **D-16, D-17** frame-to-pose binding pinned; depth guess recorded |
