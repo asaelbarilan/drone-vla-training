@@ -1409,3 +1409,52 @@ hold — over `configs/` — by `validate_family_set` and a smoke test.
 
 `test_every_ablation_differs_from_its_base` also fails an ablation that changes
 nothing, since that is a duplicate rather than an experiment. 230 tests pass.
+
+## Baseline: the seven family bases over 20 seeds
+
+`grid_nav`, seeds 1-20, scripted policies only. Per-episode records in
+`reports/baseline_7families.json`, table in `reports/baseline_7families.md`.
+
+| base | family | success | 95% CI | collisions | median distance when it fails | failure modes |
+|---|---|---|---|---|---|---|
+| c0 | classical_baseline | **0.80** | 0.60 - 0.95 | 0.15 | 21.5 m | collision 3, timeout 1 |
+| c1 | llm_tool_planner | **0.45** | 0.25 - 0.65 | 0.00 | 30.2 m | timeout 11 |
+| c2 | vlm_semantic_waypointer | **0.70** | 0.50 - 0.90 | 0.05 | 32.1 m | timeout 5, collision 1 |
+| c3 | hybrid_stack | **0.60** | 0.40 - 0.80 | 0.05 | 29.7 m | timeout 7, collision 1 |
+| c6 | selective_recovery | **0.60** | 0.40 - 0.80 | 0.05 | 29.7 m | timeout 7, collision 1 |
+| c8 | direct_vla | **0.55** | 0.35 - 0.75 | 0.00 | 29.3 m | timeout 9 |
+| c12 | fast_slow_hierarchy | **0.55** | 0.35 - 0.75 | 0.00 | 29.8 m | timeout 9 |
+
+### What this does and does not say
+
+**Nothing separates.** Every interval except c0-versus-c1 overlaps every other.
+Twenty seeds cannot rank seven architectures whose true rates sit between 0.45
+and 0.70, and no ablation should be read against a base until the base has more
+seeds behind it. This table is a floor check, not a result.
+
+**The ceiling is 0.80, not 1.00.** C0 reads ground truth and still collides on 3
+of 20. Some of what every other architecture loses is inherited from the flight
+stack rather than from its semantics, and that share is now quantified.
+
+**Every failure is an acquisition failure.** Not one failed episode across all
+140 ended within 5 m of the goal — the closest was 9.7 m, and the medians sit
+near 30 m. Nothing arrives and forgets to stop. Whatever is wrong is upstream of
+stopping, in finding the target at all.
+
+I had read the opposite from an earlier column: c8's median final distance over
+*all* episodes was 1.7 m, which looked like arrive-and-hover. That median mixed
+successes with failures. The table now reports distance among failures only,
+which is the number that carries information.
+
+### C3 and C6 are the same architecture in practice
+
+They produce **identical results on 18 of 20 seeds**. C6 is C3 plus a geometric
+progress watcher and an event-triggered recovery reasoner, and on these seeds
+that machinery almost never changes the outcome. Either the trigger rarely fires
+or its detour is what the planner would have done anyway — worth separating, but
+as it stands the `selective_recovery` family has no measured behaviour of its
+own on `grid_nav`.
+
+### Not changed
+
+Nothing in the runtime, the configs or the defaults. This entry is measurement.
