@@ -1458,3 +1458,81 @@ own on `grid_nav`.
 ### Not changed
 
 Nothing in the runtime, the configs or the defaults. This entry is measurement.
+
+## The search leg was three seconds when it needed nine
+
+Debugging from the end-map grid rather than the metrics found the largest defect
+in the whole testbed. Seven bases against four seeds
+(`reports/videos/base_grid.png`) showed C1–C6 tracing a *closed loop* rather
+than an outward spiral, on every seed, whatever the target's position.
+
+Instrumenting the spiral against its own commanded target, c2 on seed 3:
+
+```
+   t   commanded radius   achieved radius
+ 0.0                8.0               0.0
+20.9               34.4              18.5
+41.8               54.0              20.2
+62.7               54.0              18.4
+83.5               54.0              20.2
+```
+
+The search commanded points up to **54 m** from launch while the vehicle never
+exceeded **21.5 m** and oscillated between 6 and 21 m for the whole episode.
+
+### The arithmetic
+
+`explore_turn_rad` is 50 deg and `explore_dwell_s` was a fixed 3.0 s. Consecutive
+search points are a chord apart, and at the geofence radius that chord is 45.6 m
+— **9.1 s of flight at the mission's 5 m/s.** Given 3 s the vehicle covered a
+third of it, the heading moved on, and the next leg pulled it back. It was not
+searching, it was chasing a point that outran it.
+
+`explore_dwell_s` now defaults to 0, meaning *derive it*: chord length over
+permitted speed, both taken from the mission's own constraints. It stays purely
+time-based, so the fairness property holds — search coverage still cannot become
+a function of decision rate — and it is identical across architectures because
+it depends on nothing an architecture chooses.
+
+### Effect, on 40 seeds never looked at during the diagnosis (101–140)
+
+| base | family | before (seeds 1–20) | after (seeds 101–140) |
+|---|---|---|---|
+| c0 | classical_baseline | 0.80 | 0.88 |
+| c1 | llm_tool_planner | 0.45 | 0.70 |
+| c2 | vlm_semantic_waypointer | 0.70 | 0.95 |
+| c3 | hybrid_stack | 0.60 | 0.97 |
+| c6 | selective_recovery | 0.60 | 0.95 |
+| c8 | direct_vla | 0.55 | 0.93 |
+| c12 | fast_slow_hierarchy | 0.55 | 0.62 |
+
+C0 is the control: it reads ground truth and never explores, so the fix must not
+move it, and on the same seeds it does not.
+
+### What this changes about earlier entries
+
+Almost every earlier conclusion about C1–C6 was measured on a broken search and
+should be re-read. Specifically:
+
+* "C1–C6 orbit and never acquire the target" — the mechanism is now named. It
+  was not the pattern, the field of view, or occlusion. It was a leg too short
+  to fly.
+* The occlusion measurement (target in range 100%, blocked 100%) was real but
+  downstream: the vehicle was pinned near launch behind the obstacle cluster
+  because it could not travel, not because coverage was wrong.
+* The boustrophedon port failed for the same reason and would now be worth
+  re-testing, since its lane ends are 42 m away and were equally unreachable.
+* `search_altitude_m` was measured against a search that could not travel.
+
+### Two things the new baseline says
+
+**C0 is no longer a ceiling.** At 0.88 it sits below C2, C3 and C6, and its
+failures are collisions rather than timeouts. It bounds the *semantics*, not the
+flight stack, and calling it a control ceiling now overstates it.
+
+**C12 is the outlier at 0.62**, with 15 timeouts, against C8's 0.93 — the
+hierarchy is markedly worse than the plain shielded VLA it is built on. That is
+now the largest unexplained gap in the set.
+
+230 tests pass. `reports/baseline_7families.{json,md}` regenerated on seeds
+101–140.

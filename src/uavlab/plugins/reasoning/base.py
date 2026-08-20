@@ -162,11 +162,29 @@ class BasePolicy:
         """
         self.explore_step_m = float(params.get("explore_step_m", 8.0))
         self.explore_turn_rad = float(params.get("explore_turn_rad", math.radians(50.0)))
-        self.explore_dwell_s = float(params.get("explore_dwell_s", 3.0))
-        """Seconds committed to one search leg before turning.
+        self.explore_dwell_s = float(params.get("explore_dwell_s", 0.0))
+        """Seconds committed to one search leg before turning. 0 derives it.
 
-        Held identical across architectures so that search coverage is not a
-        function of decision rate.
+        Held on a clock, not per decision, so search coverage is not a function
+        of decision rate — a 10 Hz executor must not sweep ten times faster than
+        a 1 Hz skill agent for reasons nobody chose.
+
+        **It was a fixed 3.0 s, and that number was the single largest defect in
+        the scripted search.** The leg must be long enough to fly, and it was
+        not: the heading advances 50 deg every dwell, so consecutive commanded
+        points are a chord apart, and at the geofence radius that chord is 45 m
+        — 9 s of flight at the mission's 5 m/s. Given 3 s the vehicle got a third
+        of the way, the target moved on, and the net motion cancelled.
+
+        Measured on c2, grid_nav seed 3: the search commanded points up to 54 m
+        from launch while the vehicle never exceeded **21.5 m** and oscillated
+        between 6 and 21 m for the entire episode. It was not searching, it was
+        chasing a point that outran it.
+
+        Deriving it from the mission's own geometry — chord length over permitted
+        speed — makes the leg completable by construction, and keeps the value
+        identical across architectures because it depends on nothing an
+        architecture chooses. Setting it explicitly overrides the derivation.
         """
         self.explore_growth = float(params.get("explore_growth", 0.55))
         """How much the search radius grows per leg, as a fraction of the step."""
@@ -195,11 +213,22 @@ class BasePolicy:
         self._explore_base_yaw = None
         self._explore_anchor = None
         self._sweep = None
+        self._derived_dwell_s = self.explore_dwell_s or 3.0
         self._decisions = 0
         self._stopped = False
         self._geofence_m = mission.constraints.geofence_radius_m
         self._min_alt = mission.constraints.min_altitude_m
         self._max_alt = mission.constraints.max_altitude_m
+        if self.explore_dwell_s <= 0.0:
+            # Chord between consecutive search points at the widest radius the
+            # spiral reaches, over the speed the mission permits. Both are given
+            # constraints, so this is derived rather than tuned.
+            radius = self._geofence_m * 0.9
+            chord = 2.0 * radius * math.sin(self.explore_turn_rad / 2.0)
+            speed = max(mission.constraints.max_speed_mps, 0.1)
+            self._derived_dwell_s = max(chord / speed, 1.0)
+        else:
+            self._derived_dwell_s = self.explore_dwell_s
 
     # -- belief -------------------------------------------------------------
 
@@ -241,7 +270,7 @@ class BasePolicy:
         return TargetBelief(None, 0.0, "none")
 
     def _explore_leg(self, ctx: DecisionContext) -> int:
-        return int(ctx.t_sim_ns / max(s_to_ns(self.explore_dwell_s), 1))
+        return int(ctx.t_sim_ns / max(s_to_ns(self._derived_dwell_s), 1))
 
     def explore_heading(self, ctx: DecisionContext) -> float:
         """Search heading, advanced on a clock rather than per decision.
