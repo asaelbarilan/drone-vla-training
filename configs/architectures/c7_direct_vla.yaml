@@ -12,6 +12,10 @@
 _base_: [_base.yaml, ../models/sim_vla_fast.yaml]
 
 id: c7
+
+family: direct_vla
+# Ablation of C8: removes the safety shield.
+ablation_of: c8
 name: "Direct VLA, single action"
 description: "Learned kinematic action straight to the controller. No planner, no shield."
 tags: [direct_vla, macro_screening]

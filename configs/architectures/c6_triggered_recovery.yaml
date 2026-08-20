@@ -13,6 +13,10 @@
 _base_: [c3_verifier.yaml, ../models/sim_dual_loop.yaml]
 
 id: c6
+
+family: selective_recovery
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
 name: "C3 + event-triggered recovery reasoner"
 description: "No persistent semantic monitor; reasoning admitted only on trigger."
 tags: [recovery, timing_recovery]

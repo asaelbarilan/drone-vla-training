@@ -11,6 +11,10 @@
 _base_: [c2_vlm_waypoint.yaml, ../models/gemma3_4b.yaml]
 
 id: c2g
+
+family: vlm_semantic_waypointer
+# Ablation of C2: scripted stand-in -> real VLM.
+ablation_of: c2
 name: "C2 with Gemma 3 4B vision"
 tags: [real_model, vision, gemma]
 

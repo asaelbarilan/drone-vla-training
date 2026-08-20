@@ -134,12 +134,54 @@ class FeatureCacheSpec(StrictModel):
     capacity: int = 32
 
 
+class Family(str, Enum):
+    """The seven families. One base configuration each; the rest are ablations."""
+
+    CLASSICAL = "classical_baseline"
+    """Classical planner and controller only. The control ceiling."""
+    LLM_PLANNER = "llm_tool_planner"
+    """Mission decomposition into validated skills or API calls."""
+    VLM_WAYPOINTER = "vlm_semantic_waypointer"
+    """Visual target, direction or waypoint selection."""
+    HYBRID = "hybrid_stack"
+    """Semantics -> safety gate -> classical execution."""
+    RECOVERY = "selective_recovery"
+    """Reasoning admitted only on failure, ambiguity or no progress."""
+    DIRECT_VLA = "direct_vla"
+    """A learned local-action policy holding motion authority."""
+    HIERARCHY = "fast_slow_hierarchy"
+    """A slow reasoner above a fast action policy, at two rates."""
+
+
 class ArchitectureConfig(StrictModel):
     """One architecture, entirely as data."""
 
     id: str
     name: str = ""
     description: str = ""
+
+    family: Family | None = None
+    """Which of the seven design families this configuration belongs to.
+
+    Optional on the model and *mandatory on the shipped set*, which is a
+    deliberate split. Unit tests build throwaway configs to exercise the router
+    and the scheduler, and those have no place in the design space; forcing them
+    to name a family would be bookkeeping with no reader. `validate_family_set`
+    rejects a missing family for anything under `configs/`, which is where the
+    claim actually needs to hold.
+
+    The families are the design space; the configurations are points in it.
+    Making that structure data rather than prose is what stops the set drifting
+    into "fifteen architectures" with no statement of what varies between them —
+    which it had, with one family holding ten of the fifteen members.
+    """
+    ablation_of: str | None = None
+    """The base configuration this one modifies, or None if it *is* the base.
+
+    Exactly one configuration per family is the base. Everything else states
+    what it is an ablation of, so every reported difference has a named
+    comparison rather than an implied one. Enforced in `validate_family_set`.
+    """
 
     authority: Authority
     action_horizon: ActionHorizon | None = None
@@ -423,3 +465,63 @@ class ExperimentConfig(StrictModel):
                     for rep in range(self.episodes_per_cell):
                         out.append((arch, env, seed * 1000 + rep))
         return out
+
+
+def validate_family_set(architectures: list[ArchitectureConfig]) -> list[str]:
+    """Check the seven-family structure holds across the whole shipped set.
+
+    The families are the design space and the configurations are points in it.
+    That only means anything if the mapping is one base per family with every
+    other member naming what it modifies — otherwise the set drifts back into
+    "N architectures" with no statement of what varies, which is exactly what
+    happened before: one family had grown to ten of the fifteen members while
+    others had one.
+
+    Returns every violation rather than the first. A half-corrected set is easy
+    to run by mistake.
+    """
+    problems: list[str] = []
+    by_id = {a.id: a for a in architectures}
+
+    for arch in architectures:
+        if arch.family is None:
+            problems.append(f"{arch.id} declares no family")
+    architectures = [a for a in architectures if a.family is not None]
+
+    for family in Family:
+        members = [a for a in architectures if a.family is family]
+        bases = [a.id for a in members if a.ablation_of is None]
+        if not members:
+            problems.append(f"family {family.value} has no members")
+        elif len(bases) != 1:
+            problems.append(
+                f"family {family.value} must have exactly one base configuration, "
+                f"found {len(bases)}: {sorted(bases) or 'none'}"
+            )
+
+    for arch in architectures:
+        if arch.ablation_of is None:
+            continue
+        parent = by_id.get(arch.ablation_of)
+        if parent is None:
+            problems.append(f"{arch.id} is an ablation of unknown '{arch.ablation_of}'")
+        elif parent.family is not arch.family:
+            problems.append(
+                f"{arch.id} ({arch.family.value}) ablates {parent.id} "
+                f"({parent.family.value}); an ablation must stay inside its family, "
+                "or the comparison crosses two changes at once"
+            )
+        elif parent.id == arch.id:
+            problems.append(f"{arch.id} declares itself its own ablation base")
+
+    # A cycle would make "what does this ablate?" unanswerable.
+    for arch in architectures:
+        seen, cursor = {arch.id}, arch.ablation_of
+        while cursor is not None and cursor in by_id:
+            if cursor in seen:
+                problems.append(f"ablation chain from {arch.id} is circular at '{cursor}'")
+                break
+            seen.add(cursor)
+            cursor = by_id[cursor].ablation_of
+
+    return sorted(set(problems))

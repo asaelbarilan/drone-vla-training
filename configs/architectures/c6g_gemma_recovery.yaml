@@ -7,6 +7,10 @@
 _base_: [c6_triggered_recovery.yaml, ../models/gemma3_4b.yaml]
 
 id: c6g
+
+family: selective_recovery
+# Ablation of C6: scripted stand-in -> real VLM.
+ablation_of: c6
 name: "C6 with Gemma 3 4B vision"
 tags: [real_model, vision, gemma]
 

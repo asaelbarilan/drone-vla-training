@@ -14,6 +14,10 @@
 _base_: [c8_shielded_vla.yaml, ../models/sim_slow_reasoner.yaml]
 
 id: c10
+
+family: fast_slow_hierarchy
+# Ablation of C12: concurrent reasoner -> blocking, single-step actions.
+ablation_of: c12
 name: "Periodic slow reasoner -> single-step VLA -> shield"
 description: "Blocking fast/slow hierarchy over a shielded direct VLA."
 tags: [hierarchy, timing_recovery]

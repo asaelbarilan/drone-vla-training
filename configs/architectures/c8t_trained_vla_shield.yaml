@@ -8,6 +8,10 @@
 _base_: [c7t_trained_vla.yaml]
 
 id: c8t
+
+family: direct_vla
+# Ablation of C8: scripted stand-in -> trained policy.
+ablation_of: c8
 name: "Trained visuomotor policy + safety shield"
 tags: [direct_vla, trained, safety_screening]
 

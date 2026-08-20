@@ -233,7 +233,10 @@ def test_c7_and_c8_use_an_identical_policy(arch_factory):
     d7 = c7.model_dump()
     d8 = c8.model_dump()
     differing = {k for k in d7 if d7[k] != d8[k]}
-    assert differing <= {"id", "name", "description", "shield", "tags"}, (
+    # `ablation_of` is bookkeeping about the comparison, not part of it: C7 is
+    # declared an ablation of C8 and C8 is the family base, so the field differs
+    # by construction while the architectures still differ only in the shield.
+    assert differing <= {"id", "name", "description", "shield", "tags", "ablation_of"}, (
         f"C7 and C8 differ in more than the shield: {differing}"
     )
 

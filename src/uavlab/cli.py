@@ -282,6 +282,35 @@ def cmd_collect(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_families(args: argparse.Namespace) -> int:
+    """Show the design space: seven families, one base each, the rest ablations."""
+    from uavlab.core.config import Family, validate_family_set
+
+    root = _config_root(args)
+    archs = [load_architecture(n, root) for n in sorted(list_architectures(root))]
+    by_id = {a.id: a for a in archs}
+
+    for family in Family:
+        members = [a for a in archs if a.family is family]
+        base = next((a for a in members if a.ablation_of is None), None)
+        print(f"\n{family.value}")
+        if base is not None:
+            print(f"  BASE  {base.id:<5} {base.name}")
+        for arch in sorted((a for a in members if a.ablation_of), key=lambda a: a.id):
+            parent = by_id.get(arch.ablation_of)
+            print(f"        {arch.id:<5} {arch.name}")
+            print(f"              ablation of {parent.id if parent else arch.ablation_of}")
+
+    problems = validate_family_set(archs)
+    if problems:
+        print("\nSTRUCTURE VIOLATIONS:")
+        for problem in problems:
+            print(f"  {problem}")
+        return EXIT_BAD_CONFIG
+    print(f"\n{len(Family)} families, {len(archs)} configurations, structure valid.")
+    return EXIT_OK
+
+
 def cmd_video(args: argparse.Namespace) -> int:
     """Render one episode per architecture so the runs can be judged by eye."""
     import json as _json
@@ -464,6 +493,9 @@ def build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--stride", type=int, default=2)
     collect.add_argument("--out", default="data/expert_grid_nav")
     collect.set_defaults(func=cmd_collect)
+
+    fam = sub.add_parser("families", help="show the seven families and their ablations")
+    fam.set_defaults(func=cmd_families)
 
     vid = sub.add_parser("video", help="render an episode per architecture as mp4")
     vid.add_argument("architectures", nargs="*")

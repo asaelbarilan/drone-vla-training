@@ -7,6 +7,10 @@
 _base_: [c3_verifier.yaml, ../models/gemma3_4b.yaml]
 
 id: c3g
+
+family: hybrid_stack
+# Ablation of C3: scripted stand-in -> real VLM.
+ablation_of: c3
 name: "C3 with Gemma 3 4B vision"
 tags: [real_model, vision, gemma]
 

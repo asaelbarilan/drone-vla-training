@@ -12,6 +12,10 @@
 _base_: [_base.yaml, ../models/sim_free.yaml]
 
 id: c0
+
+family: classical_baseline
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
 name: "Oracle semantic goal -> fixed planner"
 description: "Control ceiling. Perfect semantics, ordinary planner and controller."
 tags: [control_ceiling, macro_screening]

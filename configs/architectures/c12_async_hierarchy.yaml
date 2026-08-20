@@ -14,6 +14,16 @@
 _base_: [c11_chunked_hierarchy.yaml]
 
 id: c12
+
+family: fast_slow_hierarchy
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
+#
+# `null` is explicit and load-bearing. This config inherits through
+# `_base_` from a member that declares itself an ablation of this one, so
+# without the override it would inherit `ablation_of: c12`
+# and claim to be an ablation of itself. `validate_family_set` catches it.
+ablation_of: null
 name: "Async streaming reasoner -> chunked VLA -> shield"
 description: "Non-blocking slow reasoner running concurrently with a fast executor."
 tags: [hierarchy, async, timing_recovery]

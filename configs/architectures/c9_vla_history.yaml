@@ -8,6 +8,10 @@
 _base_: [c8_shielded_vla.yaml]
 
 id: c9
+
+family: direct_vla
+# Ablation of C8: sliding window -> compact keyframe memory.
+ablation_of: c8
 name: "C8 + compact keyframe history"
 description: "Shielded direct VLA with selected-keyframe semantic memory."
 tags: [direct_vla, memory, memory_horizon]

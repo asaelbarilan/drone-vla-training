@@ -11,6 +11,10 @@
 _base_: [c4_periodic_monitor.yaml]
 
 id: c5
+
+family: hybrid_stack
+# Ablation of C4: sliding window -> compact keyframe memory.
+ablation_of: c4
 name: "C4 + compact keyframe memory"
 description: "Replaces the sliding window with first frame + salient keyframes + latest."
 tags: [memory, memory_horizon]

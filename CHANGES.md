@@ -1365,3 +1365,47 @@ shield, so 3 of 8 seeds end in a collision.
 * The lesson is procedural: a video is one seed. It is excellent for seeing
   *how* a run fails and worthless for deciding *how often*. I used it for the
   second and should not have.
+
+## Seven families as structure, not prose
+
+The design space is now data. `ArchitectureConfig` carries `family` and
+`ablation_of`, every shipped config declares both, and `validate_family_set`
+enforces the rule: **seven families, exactly one base each, every other member
+naming what it modifies.**
+
+```
+classical_baseline       BASE c0
+llm_tool_planner         BASE c1
+vlm_semantic_waypointer  BASE c2   ablations: c2g
+hybrid_stack             BASE c3   ablations: c3g c4 c4g c5 c5g
+selective_recovery       BASE c6   ablations: c6g
+direct_vla               BASE c8   ablations: c7 c7t c8t c9
+fast_slow_hierarchy      BASE c12  ablations: c10 c11 c13 c14
+```
+
+Two base choices worth stating. **C8, not C7, is the direct-VLA base**: shipping
+a learned policy with no safety shield is the ablation, not the default, so C7
+is "remove the shield". **C12, not C10, is the hierarchy base**: a concurrent
+reasoner over chunked actions is the shape CognitiveDrone and LiteVLA-H actually
+describe, and C10 is "make it blocking and single-step".
+
+`uavlab families` prints the structure and exits non-zero if it is violated.
+
+### What the rule caught immediately
+
+`ablation_of` inherits through `_base_`, and C8 inherits from C7. Declaring C7
+an ablation of C8 therefore made C8 an ablation of *itself*, and the same for
+C12 through the C10→C11→C12 chain. The bases now set `ablation_of: null`
+explicitly, with a comment saying why, because a future reader would otherwise
+delete it as redundant.
+
+### Where the field is required
+
+`family` is optional on the model and mandatory on the shipped set. Unit tests
+build throwaway configs to exercise the router and scheduler; those are not
+points in the design space and forcing them to name a family would be
+bookkeeping with no reader. The requirement is enforced where the claim needs to
+hold — over `configs/` — by `validate_family_set` and a smoke test.
+
+`test_every_ablation_differs_from_its_base` also fails an ablation that changes
+nothing, since that is a duplicate rather than an experiment. 230 tests pass.

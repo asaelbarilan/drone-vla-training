@@ -180,3 +180,37 @@ def test_cli_list_runs():
     from uavlab.cli import main
 
     assert main(["list"]) == 0
+
+
+def test_the_seven_family_structure_holds(config_root):
+    """Seven families, one base each, every other member naming what it changes.
+
+    This is the design-space claim expressed as a test. Without it the set drifts
+    back into "N architectures" with no statement of what varies between them -
+    which had already happened: `direct_vla` had grown to ten of fifteen members
+    while other families had one.
+    """
+    from uavlab.core.compose import load_architecture
+    from uavlab.core.config import Family, validate_family_set
+
+    archs = [load_architecture(n, config_root) for n in sorted(list_architectures(config_root))]
+    problems = validate_family_set(archs)
+    assert not problems, "family structure violations:\n  " + "\n  ".join(problems)
+    assert {a.family for a in archs} == set(Family), "a family has no members"
+
+
+def test_every_ablation_differs_from_its_base(config_root):
+    """An ablation that changes nothing is a duplicate, not an experiment."""
+    from uavlab.core.compose import load_architecture
+
+    archs = {n.split("_", 1)[0]: load_architecture(n, config_root)
+             for n in sorted(list_architectures(config_root))}
+    ignore = {"id", "name", "description", "tags", "family", "ablation_of"}
+    for arch in archs.values():
+        if arch.ablation_of is None:
+            continue
+        base = archs[arch.ablation_of]
+        mine = arch.model_dump(exclude=ignore)
+        theirs = base.model_dump(exclude=ignore)
+        changed = [k for k in mine if mine[k] != theirs[k]]
+        assert changed, f"{arch.id} is identical to its base {base.id}"

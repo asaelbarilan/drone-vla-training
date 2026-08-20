@@ -11,6 +11,10 @@
 _base_: [c2_vlm_waypoint.yaml]
 
 id: c3
+
+family: hybrid_stack
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
 name: "C2 + semantic/geometric verifier"
 description: "Waypoint authority with explicit proposal validation."
 tags: [waypoint_authority, safety_screening]

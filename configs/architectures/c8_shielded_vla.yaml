@@ -12,6 +12,16 @@
 _base_: [c7_direct_vla.yaml]
 
 id: c8
+
+family: direct_vla
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
+#
+# `null` is explicit and load-bearing. This config inherits through
+# `_base_` from a member that declares itself an ablation of this one, so
+# without the override it would inherit `ablation_of: c8`
+# and claim to be an ablation of itself. `validate_family_set` catches it.
+ablation_of: null
 name: "C7 + independent safety shield"
 description: "Same VLA as C7 with an independent collision and envelope shield."
 tags: [direct_vla, safety_screening]

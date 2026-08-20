@@ -8,6 +8,10 @@
 _base_: [_base.yaml, ../models/sim_vlm_waypoint.yaml]
 
 id: c2
+
+family: vlm_semantic_waypointer
+# The base configuration for this family: every other member states
+# what it changes relative to one of these.
 name: "VLM -> waypoint -> fixed planner"
 description: "Semantic waypoint authority with a classical local planner."
 tags: [waypoint_authority, macro_screening]

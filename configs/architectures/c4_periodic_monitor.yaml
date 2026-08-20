@@ -12,6 +12,10 @@
 _base_: [c3_verifier.yaml, ../models/sim_dual_loop.yaml]
 
 id: c4
+
+family: hybrid_stack
+# Ablation of C3: adds an independent progress monitor.
+ablation_of: c3
 name: "C3 + periodic progress monitor, short context"
 description: "Adds independent low-rate mission supervision over a sliding window."
 tags: [supervision, timing_recovery]

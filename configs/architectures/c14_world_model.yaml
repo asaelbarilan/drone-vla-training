@@ -15,6 +15,10 @@
 _base_: [c12_async_hierarchy.yaml]
 
 id: c14
+
+family: fast_slow_hierarchy
+# Ablation of C12: adds predictive target belief through occlusion.
+ablation_of: c12
 name: "Predictive world-model VLA"
 description: "Chunked VLA that carries target belief forward through occlusion."
 tags: [world_model, predictive_state, sentinel]

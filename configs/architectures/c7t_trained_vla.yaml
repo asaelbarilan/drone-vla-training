@@ -22,6 +22,10 @@
 _base_: [c7_direct_vla.yaml]
 
 id: c7t
+
+family: direct_vla
+# Ablation of C7: scripted stand-in -> trained policy.
+ablation_of: c7
 name: "Direct trained visuomotor policy, single action"
 description: "Behaviour-cloned convnet in the direct-action slot."
 tags: [direct_vla, trained, behaviour_cloning]
