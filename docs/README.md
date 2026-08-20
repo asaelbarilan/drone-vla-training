@@ -1,0 +1,24 @@
+# Documentation map
+
+Four documents, four distinct jobs. Putting a decision in the wrong one is how a
+research repository becomes unreadable, so the boundaries are stated here.
+
+| file | job | read it when |
+|---|---|---|
+| [`RESEARCH_LOG.md`](RESEARCH_LOG.md) | **The decision register.** Every design decision with its rationale, evidence, rejected alternatives and status. Organised by area, stable IDs (`D-01`…), never reordered. | You want to know *why* the testbed is the way it is, or you need to cite a decision in the paper |
+| [`ARCHITECTURE_FAMILIES.md`](ARCHITECTURE_FAMILIES.md) | **The design space.** Seven families, one base each, every ablation and exactly what it changes, plus the nearest published work. | You want to know what an architecture *contains*, or how it maps to a paper |
+| [`../CHANGES.md`](../CHANGES.md) | **The chronological record.** What was done, when, and what the measurement said at the time — including the wrong turns. | You want the narrative, or to find when something changed |
+| [`SMALL_VLA_SEARCH.md`](SMALL_VLA_SEARCH.md) | A literature search and its negative result. | You are wondering whether a small aerial VLA can be dropped in |
+
+## Where a new decision goes
+
+Anything that changes how the testbed behaves, or that rules out an option, gets
+an entry in `RESEARCH_LOG.md` with a new `D-nn`. It needs a **rationale** and an
+**evidence** line, and `Evidence: none` is an acceptable and useful answer —
+it marks the decision as `provisional` and tells a later reader exactly what to
+go and measure.
+
+Corrections do not delete the old entry. The status becomes
+`superseded by D-nn`, and if a claim was published anywhere it also goes in the
+"Superseded and corrected claims" table at the bottom, because a reader who
+meets the old claim elsewhere needs to be able to find out that it was withdrawn.

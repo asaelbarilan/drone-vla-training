@@ -1536,3 +1536,46 @@ now the largest unexplained gap in the set.
 
 230 tests pass. `reports/baseline_7families.{json,md}` regenerated on seeds
 101–140.
+
+## A decision register, and where things belong
+
+`docs/RESEARCH_LOG.md` is new: every design decision with a stable identifier,
+its rationale, the evidence behind it, what was rejected, and a status. Thirty
+entries covering experiment structure, runtime fairness, search, perception,
+memory, the learned policy and tooling. `docs/README.md` states which of the four
+documents a given thing belongs in.
+
+The split that matters: **CHANGES.md is chronological, RESEARCH_LOG.md is
+organised.** This file answers "what happened and when"; the register answers
+"why is it like this, and what would change my mind". A reader coming to the
+results needs the second and cannot navigate the first.
+
+Three conventions worth keeping:
+
+* `Evidence: none` is a legitimate value. It marks a decision `provisional` and
+  tells a later reader exactly what to go and measure. D-03 and D-17 carry it.
+* Corrections never delete. The status becomes `superseded by D-nn`, and
+  withdrawn claims go in a table at the bottom — six of them so far — because a
+  reader who meets an old claim elsewhere needs to find out it was withdrawn.
+* Open questions are ranked, with a first step each. C12 at 0.62 against C8's
+  0.93 is currently first.
+
+## Frame-to-pose binding, pinned
+
+Raised as a concern: the vehicle flies while a slow model thinks, so are the
+image and the pose out of sync? Checked rather than assumed — they are not. The
+frame and the pose come from the same observation packet, and the unprojection
+produces a point in **world** coordinates from the capture pose, so a waypoint
+stays valid however far the vehicle has moved by the time it executes.
+
+`test_the_waypoint_is_unprojected_from_the_pose_that_took_the_frame` pins it,
+because the failure would be silent: the same pixel read against the current pose
+still yields a plausible waypoint, just the wrong one, with the error growing
+with model latency and looking like a model-quality problem.
+
+What *is* wrong in that path is depth: the waypoint is placed at a fixed hop
+distance along the ray because a monocular pixel carries no range. Recorded as
+D-17, status `open`, unquantified — and it sits under every waypoint-family
+result.
+
+231 tests pass.

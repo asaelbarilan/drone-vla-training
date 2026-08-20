@@ -277,3 +277,47 @@ def test_the_simulated_detector_is_not_reachable_through_memory():
     detector_memory = _context_remembering(Vec3(x=30.0, y=5.0, z=3.0), 1.0, "keyframe")
     envelope = asyncio.run(policy.decide(detector_memory))
     assert "searching" in envelope.provenance.get("note", "")
+
+
+def test_the_waypoint_is_unprojected_from_the_pose_that_took_the_frame():
+    """A slow model must not have its answer read against a newer pose.
+
+    The vehicle keeps flying while the model thinks - 1.7 s per call for Gemma
+    3 4B on this hardware, which is metres of travel. The pixel the model points
+    at is only meaningful together with the pose the frame was captured from, so
+    the unprojection uses `ctx.observation`, and the result is a point in WORLD
+    coordinates. That is what keeps it valid however far the vehicle has moved by
+    the time the command is executed.
+
+    Pinned because the failure would be silent: reading the same pixel against
+    the current pose still yields a plausible waypoint, just the wrong one, and
+    the error would grow with model latency and look like a model quality
+    problem.
+    """
+    from uavlab.contracts import Vec3
+
+    # One context only. `reset` clears the global frame store, so building a
+    # second rendering context would delete the frame this one refers to.
+    ctx = rendering_context()
+    policy, _ = make_policy(['{"found": true, "u": 100, "v": 110, "arrived": false}'])
+    first = asyncio.run(policy.decide(ctx)).payload.target
+
+    # The same frame and the same answer, but the vehicle has since moved and
+    # turned. The waypoint must be computed from the pose that took the frame.
+    ctx.observation = ctx.observation.model_copy(
+        update={
+            "position": Vec3(
+                x=ctx.observation.position.x + 12.0,
+                y=ctx.observation.position.y - 7.0,
+                z=ctx.observation.position.z,
+            ),
+            "yaw_rad": ctx.observation.yaw_rad + 1.1,
+        }
+    )
+    policy2, _ = make_policy(['{"found": true, "u": 100, "v": 110, "arrived": false}'])
+    second = asyncio.run(policy2.decide(ctx)).payload.target
+
+    assert (first.x, first.y) != (second.x, second.y), (
+        "the unprojection ignored the observation's pose entirely; a pixel cannot "
+        "be turned into a world point without knowing where the camera was"
+    )

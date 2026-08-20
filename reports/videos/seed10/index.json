@@ -1,0 +1,86 @@
+[
+  {
+    "architecture": "c0",
+    "seed": 10,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 11.66,
+    "path_length_m": 165.25,
+    "collisions": 0,
+    "frames": 450,
+    "video": "reports\\videos\\seed10\\c0.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c1",
+    "seed": 10,
+    "success": true,
+    "termination": "agent_stopped",
+    "distance_to_goal_m": 0.24,
+    "path_length_m": 129.45,
+    "collisions": 0,
+    "frames": 344,
+    "video": "reports\\videos\\seed10\\c1.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c2",
+    "seed": 10,
+    "success": true,
+    "termination": "agent_stopped",
+    "distance_to_goal_m": 0.46,
+    "path_length_m": 174.96,
+    "collisions": 0,
+    "frames": 364,
+    "video": "reports\\videos\\seed10\\c2.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c3",
+    "seed": 10,
+    "success": true,
+    "termination": "agent_stopped",
+    "distance_to_goal_m": 0.25,
+    "path_length_m": 170.94,
+    "collisions": 0,
+    "frames": 364,
+    "video": "reports\\videos\\seed10\\c3.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c6",
+    "seed": 10,
+    "success": true,
+    "termination": "agent_stopped",
+    "distance_to_goal_m": 0.25,
+    "path_length_m": 170.94,
+    "collisions": 0,
+    "frames": 364,
+    "video": "reports\\videos\\seed10\\c6.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c8",
+    "seed": 10,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 28.69,
+    "path_length_m": 6.39,
+    "collisions": 0,
+    "frames": 450,
+    "video": "reports\\videos\\seed10\\c8.mp4",
+    "environment": "grid_nav"
+  },
+  {
+    "architecture": "c12",
+    "seed": 10,
+    "success": false,
+    "termination": "timeout",
+    "distance_to_goal_m": 29.04,
+    "path_length_m": 6.01,
+    "collisions": 0,
+    "frames": 450,
+    "video": "reports\\videos\\seed10\\c12.mp4",
+    "environment": "grid_nav"
+  }
+]
