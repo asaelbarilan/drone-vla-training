@@ -1595,3 +1595,57 @@ Fifteen of the thirty entries predate `git init` on 2026-08-18 15:03. They say
 "on or before" and point at the initial commit rather than carrying an invented
 time. A fabricated timestamp in a research log is worse than an absent one: it
 looks like evidence.
+
+## Chasing the C12 gap: localised, not solved
+
+The hierarchy chain is an ablation chain, so scoring it isolates the step that
+costs the performance. Seeds 101–140:
+
+| | | success |
+|---|---|---|
+| c8 | base: shielded VLA | 0.93 |
+| c10 | + blocking reasoner, semantic state | 0.82 |
+| **c11** | **+ action chunks** | **0.57** |
+| c12 | reasoner made async | 0.62 |
+
+The reasoner costs 0.11. The c10→c11 step costs 0.25 — more than twice as much —
+and that is where the gap lives.
+
+### Why the number is not yet trustworthy
+
+C10 runs `mock_vla`; C11 runs `chunk_vla`. Those are two implementations, not one
+policy under two horizons, so C11 changes the action horizon *and* the policy at
+once. Splitting it as far as the code allows: `chunk_vla` at its shortest horizon
+scores 0.68 against `mock_vla`'s 0.82, so roughly 0.15 is the swap and 0.11 the
+horizon. Recorded as **D-31**, open. It is the same one-change-at-a-time
+principle the family structure exists to enforce, violated inside a family.
+
+### Rejected on measurement
+
+* **The memory swap.** C10 also changed `short_context` to
+  `compact_semantic_state`. Putting C8's memory back into C11: 0.57, unchanged.
+* **The in-chunk velocity decay.** Removing it: 0.62.
+* **Cruise speed.** 3.0 → 4.0 m/s: 0.62.
+* **Chunk length.** Every value from 1 to 8 stays between 0.53 and 0.68.
+* **Stopping.** Not the problem. Across all four configurations, **zero**
+  episodes arrived at the goal and failed to declare done. C11 simply reaches
+  the goal on 23 of 40 where C8 reaches it on 37.
+
+### A fix that made it far worse
+
+`chunk_vla` emits `yaw_rate_rps=0.0` for every action while `mock_vla` computes
+one from the same belief, which looks like a plain oversight. Giving it the
+identical yaw law took C11 from 0.57 to **0.00** and C12 from 0.62 to 0.00.
+Reverted.
+
+A yaw rate is a *rate*: `mock_vla` applies it for one 0.2 s step and re-decides at
+10 Hz, whereas a chunk commits it open-loop for 0.8 s, so the vehicle rotates
+straight past its target heading with nothing to stop it. A correct version has
+to integrate heading error across the chunk rather than hold a rate. **D-32**.
+
+Also measured, and against the obvious story: on seed 103 C11 turns **0 degrees**
+all episode and still has the target in view 100% of ticks. Whatever it loses, it
+is not primarily perception.
+
+The mechanism is still unidentified. Three decisions recorded (D-31, D-32, D-33)
+so the rejected explanations are not re-tried. No code changed.

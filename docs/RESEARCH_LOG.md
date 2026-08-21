@@ -394,13 +394,59 @@ produced the false claim that C1–C6 never acquire the target.
 loop was obvious at a glance and invisible in a success rate.
 **Status.** settled.
 
+### D-31 — C11 confounds two changes and is not a clean ablation
+**When.** 2026-08-20 15:40 — investigation, no code change
+**Decision.** Recorded as a defect, not yet fixed: `c11` changes the action
+horizon *and* the policy implementation at the same time, so "what does chunking
+cost?" is not currently answerable.
+**Rationale.** C10 runs `mock_vla`; C11 runs `chunk_vla`. They are separate
+implementations, not one policy under two horizons.
+**Evidence.** Scoring the chain on seeds 101–140: c8 0.93, c10 0.82, **c11 0.57**,
+c12 0.62 — the c10→c11 step is by far the largest. Splitting it: `chunk_vla` at
+its shortest horizon scores 0.68 against `mock_vla`'s 0.82, so roughly 0.15 is
+the policy swap and 0.11 the horizon. Neither number is trustworthy while both
+move together.
+**Related work.** The action-horizon question is the one C11 exists to answer,
+and it is exactly what FLIGHT and ScoutVLA vary.
+**Status.** open — the fix is for both to share one action law with the horizon
+as the only difference.
+
+### D-32 — The chunked policy does not turn, and naively making it turn is worse
+**When.** 2026-08-20 15:40 — reverted, no code change
+**Decision.** `chunk_vla` emits `yaw_rate_rps=0.0` for every action. Left as is.
+**Rationale.** It looks like an oversight beside `mock_vla`, which computes a
+yaw rate from the same belief.
+**Evidence.** Giving `chunk_vla` the identical yaw law took C11 from 0.57 to
+**0.00** and C12 from 0.62 to 0.00, and the change was reverted. A yaw rate is a
+*rate*: `mock_vla` applies it for one 0.2 s step and then re-decides at 10 Hz,
+whereas a chunk commits it open-loop for 0.8 s and the vehicle over-rotates past
+its target heading with no feedback to stop it.
+**Rejected.** The naive fix, on measurement. A correct one has to integrate the
+heading error over the chunk rather than hold a rate.
+**Note.** Measured on seed 103, C11 turns **0 degrees** across the episode and
+still has the target in view 100% of ticks, so on that seed the zero yaw costs
+nothing. Whatever C11 loses, it is not primarily perception.
+**Status.** open.
+
+### D-33 — Three explanations for the C11 gap, tested and rejected
+**When.** 2026-08-20 15:40 — investigation, no code change
+**Decision.** Recorded so they are not re-tried.
+**Evidence.** On seeds 101–140 against C11's shipped 0.57: swapping the memory
+plugin back to C8's `short_context` gives 0.57 (no effect); removing the in-chunk
+velocity decay gives 0.62; raising cruise speed 3.0→4.0 m/s gives 0.62; every
+chunk length from 1 to 8 stays between 0.53 and 0.68. Arrival, not stopping, is
+what fails: C11 enters the goal radius on 23 of 40 against C8's 37, and on every
+run where it arrives it declares done — **zero** arrived-but-never-stopped across
+all four configurations.
+**Status.** open — the mechanism is still unidentified.
+
 ---
 
 ## H. Open questions, ranked
 
 | # | question | why it matters | first step |
 |---|---|---|---|
-| 1 | Why is C12 at 0.62 when C8 is at 0.93? | The hierarchy is *worse* than the VLA it is built on — the largest unexplained gap in the set | End maps of C12 vs C8 on the 15 seeds C12 times out on |
+| 1 | Why is C11 at 0.57 when C10 is at 0.82? | Localised to the c10→c11 step (D-31); three explanations rejected (D-33); C11 arrives on 23 of 40 against C8's 37 | Give `chunk_vla` and `mock_vla` one shared action law so the horizon is the only difference |
 | 2 | Why does C0, with ground truth, fail seed 10 at 12 m? | The control ceiling is not a ceiling; it fails on collisions and now scores below C2, C3 and C6 | Video of `seed10/c0.mp4`, already rendered |
 | 3 | How large is the depth-guess error (D-17)? | Unquantified inaccuracy under every waypoint-family result | Compare unprojected range against ground truth per decision |
 | 4 | Do C3 and C6 differ at all? | They were identical on 18 of 20 seeds pre-D-14; `selective_recovery` may have no behaviour of its own | Re-measure post-D-14, then instrument trigger firings |
