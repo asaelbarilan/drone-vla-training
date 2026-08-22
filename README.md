@@ -1,5 +1,22 @@
 # uav_arch_lab
 
+> ## Status: the harness works. The models do not.
+>
+> **Every architecture number in this repository is produced by a hand-written
+> scripted policy, not by a learned or foundation model.** `mock_vla`,
+> `vlm_waypoint`, `scripted_skill` and `chunk_vla` are all scripts standing in
+> for models.
+>
+> The one learned network that exists — `learned_visuomotor`, 427k parameters,
+> in `c7t`/`c8t` — does not navigate (0.03 success). The Gemma 3 4B
+> configurations run real inference, ground at 0.93 detection accuracy, and no
+> Gemma configuration has yet completed a mission.
+>
+> What is demonstrated: the harness composes architectures from configuration,
+> charges model latency to a simulated clock, separates architectures on
+> measurement, and catches its own defects. What is **not** demonstrated:
+> anything about foundation-model autonomy. See [`TODO.md`](TODO.md) items 1–3.
+
 A modular testbed for searching single-UAV foundation-model autonomy architectures.
 
 The organising principle is one sentence:

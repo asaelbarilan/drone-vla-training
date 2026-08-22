@@ -1,5 +1,11 @@
 # Research log — decision register
 
+> **Read this first.** Every architecture number in this repository comes from a
+> hand-written scripted policy. The one learned network does not navigate
+> (D-27); no Gemma configuration completes a mission. The decisions below are
+> real and measured, but they are decisions about a *harness*, not yet findings
+> about foundation-model autonomy.
+
 **What this is.** Every design decision taken in this testbed, why it was taken,
 what evidence supports it, and what was rejected. It exists so that someone who
 was not here — a reader, a reviewer, a supervisor, another agent — can reconstruct
