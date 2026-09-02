@@ -1,0 +1,35 @@
+# Paper-valid C2 profile: See, Point, Fly inside the common testbed.
+# The legacy c2 profile remains a cheap structural sentinel; results claiming
+# SPF must use this real-model profile.
+
+_base_: [c2_vlm_waypoint.yaml, ../models/qwen3_vl_8b_spf.yaml]
+
+id: c2_spf
+profile_of: c2
+family: vlm_semantic_waypointer
+name: "C2 See, Point, Fly (Qwen3-VL 8B)"
+description: "Frozen VLM point+distance authority, lifted to shared SUPER execution."
+tags: [paper_valid, real_model, vision, spf, clean_room]
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: spf_waypoint
+  params:
+    model_id: qwen3-vl:8b
+    scale_m: 10.0
+    levels: 10
+    exponent: 1.8
+    minimum_step_m: 0.1
+    camera_pitch_rad: -0.15
+    min_altitude_m: 0.5
+    stop_label_max: 2
+    stop_confirmations: 2
+    waypoint_tolerance_m: 0.35
+
+staleness:
+  max_decision_age_s: 4.0
+  reject_stale: true

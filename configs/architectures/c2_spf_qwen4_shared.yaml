@@ -1,0 +1,8 @@
+_base_: [c2_spf.yaml, ../models/qwen3_vl_4b_shared.yaml]
+
+id: c2_spf_qwen4_shared
+profile_of: c2
+family: vlm_semantic_waypointer
+name: "C2 See, Point, Fly, shared Qwen3-VL 4B"
+description: "SPF point-and-distance authority using the frozen comparison model."
+tags: [spf, shared_model_comparison, qwen3_vl_4b, real_model]

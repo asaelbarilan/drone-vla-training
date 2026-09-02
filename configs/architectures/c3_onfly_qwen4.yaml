@@ -1,0 +1,18 @@
+_base_: [c3_verifier.yaml, ../models/qwen3_vl_4b_onfly.yaml]
+
+id: c3_onfly_qwen4
+profile_of: c3
+family: hybrid_stack
+name: "OnFly decision agent + verifier, no monitor (Qwen3-VL 4B)"
+description: "Diagnostic OnFly decision path using the paper-sized Qwen3-VL 4B compatible backend; monitor intentionally absent."
+tags: [onfly, decision_ablation, normalized_profile, real_model, vision, depth, qwen3_vl_4b, qwen_relative_coordinates]
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    # D_max=7 m is camera-forward depth; the corresponding 3-D ray is longer.
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+

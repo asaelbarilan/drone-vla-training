@@ -1,0 +1,18 @@
+# First top-level comparison in the deterministic local simulator.
+# C0 is the privileged control baseline. C1/C2/C3/C6/C8 are the primary
+# representatives of the five autonomy families. Scores from scripted policy
+# slots validate the harness only; they are not foundation-model results.
+
+id: core_families_local
+description: "One baseline plus five family representatives in the local simulator."
+stage: macro_screening
+architectures: [c0, c1, c2, c3, c6, c8]
+environments: [grid_nav]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8]
+episodes_per_cell: 1
+compare:
+  - [c0, c1]
+  - [c1, c2]
+  - [c2, c3]
+  - [c3, c6]
+  - [c2, c8]

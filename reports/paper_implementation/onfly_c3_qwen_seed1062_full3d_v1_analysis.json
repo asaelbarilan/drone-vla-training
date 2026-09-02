@@ -1,0 +1,1664 @@
+{
+  "run": "runs/onfly_c3_qwen_seed1062_full3d_v1",
+  "architecture": "c3_onfly_qwen",
+  "seed": 1062,
+  "success": false,
+  "stored_final_distance_m": 71.07771538718838,
+  "replay_final_distance_m": 71.07771538718838,
+  "replay_distance_error_m": 0.0,
+  "decision_frames": 89,
+  "visible_decision_frames": 0,
+  "visible_fraction": 0.0,
+  "first_visible": null,
+  "last_visible": null,
+  "visible_pixel_error_mean": null,
+  "visible_pixel_error_median": null,
+  "visible_pixel_error_max": null,
+  "closest_approach": {
+    "observation_seq": 480,
+    "t_sim_s": 23.95,
+    "distance_to_goal_m": 19.89863605427092,
+    "predicted_pixel": [
+      112.058,
+      100.897
+    ],
+    "goal_relative_bearing_deg": 49.740649660750755,
+    "predicted_relative_bearing_deg": 0.029671026024068802,
+    "goal_bearing_error_deg": -49.710978634726686,
+    "goal_inside_horizontal_fov": false,
+    "sampled_depth_m": 1.635919,
+    "gated_range_m": 1.635919,
+    "history_pixel": "(112, 101)",
+    "target_visible": false,
+    "distance_change_to_next_decision_m": 0.4944744483702408
+  },
+  "bearing_alignment_all": {
+    "decisions": 89,
+    "mean_abs_goal_bearing_error_deg": 113.34813812618683,
+    "goal_facing_fraction_22_5deg": 0.0449438202247191,
+    "mean_distance_change_to_next_decision_m": 0.40995916076074507
+  },
+  "bearing_alignment_through_closest": {
+    "decisions": 25,
+    "mean_abs_goal_bearing_error_deg": 56.84592695802789,
+    "goal_facing_fraction_22_5deg": 0.16,
+    "mean_distance_change_to_next_decision_m": -0.5843279495040661
+  },
+  "bearing_alignment_after_closest": {
+    "decisions": 64,
+    "mean_abs_goal_bearing_error_deg": 135.41931436374892,
+    "goal_facing_fraction_22_5deg": 0.0,
+    "mean_distance_change_to_next_decision_m": 0.8045175378499557
+  },
+  "monitor_labels": {},
+  "monitor_visibility_scored": 0,
+  "monitor_visibility_accuracy": null,
+  "monitor_false_lost_while_target_visible": 0,
+  "monitor_continue_while_target_absent": 0,
+  "monitor_rows": [],
+  "rows": [
+    {
+      "observation_seq": 1,
+      "t_sim_s": 0.0,
+      "distance_to_goal_m": 35.00130924024281,
+      "predicted_pixel": [
+        167.194,
+        83.7087
+      ],
+      "goal_relative_bearing_deg": 0.0,
+      "predicted_relative_bearing_deg": 26.23424259855557,
+      "goal_bearing_error_deg": 26.234242598555568,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.68186,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 20,
+      "t_sim_s": 0.95,
+      "distance_to_goal_m": 35.00130924024281,
+      "predicted_pixel": [
+        166.971,
+        83.9319
+      ],
+      "goal_relative_bearing_deg": 0.0,
+      "predicted_relative_bearing_deg": 26.14238152587597,
+      "goal_bearing_error_deg": 26.14238152587597,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.695056,
+      "history_pixel": "(167, 84)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.0488707581264407
+    },
+    {
+      "observation_seq": 40,
+      "t_sim_s": 1.95,
+      "distance_to_goal_m": 33.95243848211637,
+      "predicted_pixel": [
+        127.014,
+        81.9229
+      ],
+      "goal_relative_bearing_deg": 19.491228320941225,
+      "predicted_relative_bearing_deg": 7.635185325588849,
+      "goal_bearing_error_deg": -11.856042995352375,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.765534,
+      "history_pixel": "(127, 82)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.466103751224047
+    },
+    {
+      "observation_seq": 60,
+      "t_sim_s": 2.95,
+      "distance_to_goal_m": 32.486334730892324,
+      "predicted_pixel": [
+        104.915,
+        77.9049
+      ],
+      "goal_relative_bearing_deg": 30.826762714301182,
+      "predicted_relative_bearing_deg": -3.6196465282836208,
+      "goal_bearing_error_deg": -34.44640924258481,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.946605,
+      "history_pixel": "(105, 78)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.2869053006055644
+    },
+    {
+      "observation_seq": 80,
+      "t_sim_s": 3.95,
+      "distance_to_goal_m": 31.19942943028676,
+      "predicted_pixel": [
+        122.103,
+        72.994
+      ],
+      "goal_relative_bearing_deg": 24.14604804570634,
+      "predicted_relative_bearing_deg": 5.154435901703691,
+      "goal_bearing_error_deg": -18.991612144002648,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.89215,
+      "history_pixel": "(122, 73)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.0810365953788974
+    },
+    {
+      "observation_seq": 100,
+      "t_sim_s": 4.95,
+      "distance_to_goal_m": 30.118392834907862,
+      "predicted_pixel": [
+        123.889,
+        68.0831
+      ],
+      "goal_relative_bearing_deg": 25.261533844989877,
+      "predicted_relative_bearing_deg": 6.059357941373511,
+      "goal_bearing_error_deg": -19.202175903616364,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.851403,
+      "history_pixel": "(124, 68)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.4300979072754316
+    },
+    {
+      "observation_seq": 120,
+      "t_sim_s": 5.95,
+      "distance_to_goal_m": 28.68829492763243,
+      "predicted_pixel": [
+        122.103,
+        60.047
+      ],
+      "goal_relative_bearing_deg": 28.967779805486337,
+      "predicted_relative_bearing_deg": 5.154435901703691,
+      "goal_bearing_error_deg": -23.81334390378265,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.89215,
+      "history_pixel": "(122, 60)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.3698851229808575
+    },
+    {
+      "observation_seq": 140,
+      "t_sim_s": 6.95,
+      "distance_to_goal_m": 27.318409804651573,
+      "predicted_pixel": [
+        108.04,
+        49.1091
+      ],
+      "goal_relative_bearing_deg": 37.544279995009454,
+      "predicted_relative_bearing_deg": -2.0249715182464647,
+      "goal_bearing_error_deg": -39.569251513255914,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.983246,
+      "history_pixel": "(108, 49)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.393786183571315
+    },
+    {
+      "observation_seq": 160,
+      "t_sim_s": 7.95,
+      "distance_to_goal_m": 25.924623621080258,
+      "predicted_pixel": [
+        33.9299,
+        83.7087
+      ],
+      "goal_relative_bearing_deg": 35.95697183907933,
+      "predicted_relative_bearing_deg": -34.87859710552727,
+      "goal_bearing_error_deg": -70.8355689446066,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 5.037964,
+      "gated_range_m": 2.474546,
+      "history_pixel": "(117, 34)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.041435073493819
+    },
+    {
+      "observation_seq": 180,
+      "t_sim_s": 8.95,
+      "distance_to_goal_m": 24.88318854758644,
+      "predicted_pixel": [
+        22.3223,
+        44.6446
+      ],
+      "goal_relative_bearing_deg": 34.88521958357824,
+      "predicted_relative_bearing_deg": -38.68403721603763,
+      "goal_bearing_error_deg": -73.56925679961587,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 3.980422,
+      "gated_range_m": 1.660044,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.3326426190277054
+    },
+    {
+      "observation_seq": 200,
+      "t_sim_s": 9.95,
+      "distance_to_goal_m": 23.550545928558734,
+      "predicted_pixel": [
+        156.033,
+        6.91992
+      ],
+      "goal_relative_bearing_deg": -9.067745778849241,
+      "predicted_relative_bearing_deg": 21.462359529010946,
+      "goal_bearing_error_deg": 30.530105307860193,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 6.507353,
+      "gated_range_m": 4.97156,
+      "history_pixel": "(156, 7)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.7367532263758783
+    },
+    {
+      "observation_seq": 220,
+      "t_sim_s": 10.95,
+      "distance_to_goal_m": 22.813792702182855,
+      "predicted_pixel": [
+        87.9499,
+        8.03604
+      ],
+      "goal_relative_bearing_deg": 22.36806365446158,
+      "predicted_relative_bearing_deg": -12.119259256660314,
+      "goal_bearing_error_deg": -34.4873229111219,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 6.187585,
+      "gated_range_m": 5.678625,
+      "history_pixel": "(88, 8)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.6548643926827395
+    },
+    {
+      "observation_seq": 240,
+      "t_sim_s": 11.95,
+      "distance_to_goal_m": 22.158928309500116,
+      "predicted_pixel": [
+        22.3223,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 59.62763811663694,
+      "predicted_relative_bearing_deg": -38.68403721603763,
+      "goal_bearing_error_deg": -98.31167533267457,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 2.840159,
+      "gated_range_m": 1.184494,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.5504190722293103
+    },
+    {
+      "observation_seq": 260,
+      "t_sim_s": 12.95,
+      "distance_to_goal_m": 21.608509237270805,
+      "predicted_pixel": [
+        22.3223,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 71.38979990937095,
+      "predicted_relative_bearing_deg": -38.68403721603763,
+      "goal_bearing_error_deg": -110.07383712540857,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 3.04917,
+      "gated_range_m": 1.271663,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.1775712712176123
+    },
+    {
+      "observation_seq": 280,
+      "t_sim_s": 13.95,
+      "distance_to_goal_m": 21.430937966053193,
+      "predicted_pixel": [
+        22.3223,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 74.7525828944518,
+      "predicted_relative_bearing_deg": -38.68403721603763,
+      "goal_bearing_error_deg": -113.43662011048944,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 2.342124,
+      "gated_range_m": 0.976788,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.7089443127518464
+    },
+    {
+      "observation_seq": 300,
+      "t_sim_s": 14.95,
+      "distance_to_goal_m": 20.721993653301347,
+      "predicted_pixel": [
+        191.079,
+        102.013
+      ],
+      "goal_relative_bearing_deg": 25.38385683011795,
+      "predicted_relative_bearing_deg": 35.22448144014464,
+      "goal_bearing_error_deg": 9.84062461002669,
+      "goal_inside_horizontal_fov": true,
+      "sampled_depth_m": 2.054001,
+      "gated_range_m": 0.994687,
+      "history_pixel": "(191, 102)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.3115495261298413
+    },
+    {
+      "observation_seq": 320,
+      "t_sim_s": 15.95,
+      "distance_to_goal_m": 20.410444127171505,
+      "predicted_pixel": [
+        108.933,
+        97.995
+      ],
+      "goal_relative_bearing_deg": 71.03479748463427,
+      "predicted_relative_bearing_deg": -1.568591527104475,
+      "goal_bearing_error_deg": -72.60338901173874,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.989941,
+      "history_pixel": "(109, 98)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.16709866927867623
+    },
+    {
+      "observation_seq": 340,
+      "t_sim_s": 16.95,
+      "distance_to_goal_m": 20.24334545789283,
+      "predicted_pixel": [
+        112.951,
+        97.995
+      ],
+      "goal_relative_bearing_deg": 70.22080055316566,
+      "predicted_relative_bearing_deg": 0.4864908649055675,
+      "goal_bearing_error_deg": -69.7343096882601,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999032,
+      "history_pixel": "(113, 98)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.34090532170633736
+    },
+    {
+      "observation_seq": 360,
+      "t_sim_s": 17.95,
+      "distance_to_goal_m": 20.584250779599166,
+      "predicted_pixel": [
+        25.001,
+        99.1111
+      ],
+      "goal_relative_bearing_deg": 105.24350101043194,
+      "predicted_relative_bearing_deg": -37.839231218016984,
+      "goal_bearing_error_deg": -143.08273222844892,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 3.031769,
+      "history_pixel": "(25, 99)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.18100446581219032
+    },
+    {
+      "observation_seq": 380,
+      "t_sim_s": 18.95,
+      "distance_to_goal_m": 20.765255245411357,
+      "predicted_pixel": [
+        24.1081,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 95.82032129291439,
+      "predicted_relative_bearing_deg": -38.12301834626834,
+      "goal_bearing_error_deg": -133.94333963918274,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 2.220639,
+      "gated_range_m": 0.94974,
+      "history_pixel": "(24, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.2699558902961492
+    },
+    {
+      "observation_seq": 400,
+      "t_sim_s": 19.95,
+      "distance_to_goal_m": 20.495299355115208,
+      "predicted_pixel": [
+        99.1111,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 53.76891218307894,
+      "predicted_relative_bearing_deg": -6.564689901146941,
+      "goal_bearing_error_deg": -60.33360208422588,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 0.706468,
+      "gated_range_m": 0.688897,
+      "history_pixel": "(99, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.2654135240720201
+    },
+    {
+      "observation_seq": 420,
+      "t_sim_s": 20.95,
+      "distance_to_goal_m": 20.229885831043187,
+      "predicted_pixel": [
+        110.942,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 49.567474700389944,
+      "predicted_relative_bearing_deg": -0.5412243902759336,
+      "goal_bearing_error_deg": -50.10869909066588,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 0.503473,
+      "gated_range_m": 0.503387,
+      "history_pixel": "(111, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.1507954094362738
+    },
+    {
+      "observation_seq": 440,
+      "t_sim_s": 21.95,
+      "distance_to_goal_m": 20.079090421606914,
+      "predicted_pixel": [
+        112.058,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 49.57419117117338,
+      "predicted_relative_bearing_deg": 0.029671026024068802,
+      "goal_bearing_error_deg": -49.54452014514931,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 0.29267,
+      "gated_range_m": 0.29267,
+      "history_pixel": "(112, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.1237416181980322
+    },
+    {
+      "observation_seq": 460,
+      "t_sim_s": 22.95,
+      "distance_to_goal_m": 19.95534880340888,
+      "predicted_pixel": [
+        110.942,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 50.2049080691929,
+      "predicted_relative_bearing_deg": -0.5412243902759336,
+      "goal_bearing_error_deg": -50.74613245946883,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 1.656282,
+      "gated_range_m": 1.655999,
+      "history_pixel": "(111, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.05671274913796154
+    },
+    {
+      "observation_seq": 480,
+      "t_sim_s": 23.95,
+      "distance_to_goal_m": 19.89863605427092,
+      "predicted_pixel": [
+        112.058,
+        100.897
+      ],
+      "goal_relative_bearing_deg": 49.740649660750755,
+      "predicted_relative_bearing_deg": 0.029671026024068802,
+      "goal_bearing_error_deg": -49.710978634726686,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 1.635919,
+      "gated_range_m": 1.635919,
+      "history_pixel": "(112, 101)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.4944744483702408
+    },
+    {
+      "observation_seq": 500,
+      "t_sim_s": 24.95,
+      "distance_to_goal_m": 20.39311050264116,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 131.16365915772388,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -131.36214731414543,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.3061560556957481
+    },
+    {
+      "observation_seq": 520,
+      "t_sim_s": 25.95,
+      "distance_to_goal_m": 20.69926655833691,
+      "predicted_pixel": [
+        167.417,
+        100.45
+      ],
+      "goal_relative_bearing_deg": 176.52073806443002,
+      "predicted_relative_bearing_deg": 26.325958741288563,
+      "goal_bearing_error_deg": -150.19477932314146,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.668675,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.826308132266437
+    },
+    {
+      "observation_seq": 540,
+      "t_sim_s": 26.95,
+      "distance_to_goal_m": 21.525574690603346,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 145.48463308079928,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -145.68312123722083,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.0303164735712258
+    },
+    {
+      "observation_seq": 560,
+      "t_sim_s": 27.95,
+      "distance_to_goal_m": 22.55589116417457,
+      "predicted_pixel": [
+        107.594,
+        78.1281
+      ],
+      "goal_relative_bearing_deg": -151.1233895978836,
+      "predicted_relative_bearing_deg": -2.2528133838368074,
+      "goal_bearing_error_deg": 148.8705762140468,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.979265,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.0081940047571294
+    },
+    {
+      "observation_seq": 580,
+      "t_sim_s": 28.95,
+      "distance_to_goal_m": 23.5640851689317,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 149.44204192110956,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -149.6405300775311,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.0039917978799124
+    },
+    {
+      "observation_seq": 600,
+      "t_sim_s": 29.95,
+      "distance_to_goal_m": 24.568076966811613,
+      "predicted_pixel": [
+        111.612,
+        100.45
+      ],
+      "goal_relative_bearing_deg": -149.8220017851246,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": 149.62351362870305,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.9358143440738758
+    },
+    {
+      "observation_seq": 620,
+      "t_sim_s": 30.95,
+      "distance_to_goal_m": 25.50389131088549,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 148.3740790685275,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -148.57256722494904,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.1293285542571567
+    },
+    {
+      "observation_seq": 640,
+      "t_sim_s": 31.95,
+      "distance_to_goal_m": 26.633219865142646,
+      "predicted_pixel": [
+        115.406,
+        94.8699
+      ],
+      "goal_relative_bearing_deg": -149.46431383189088,
+      "predicted_relative_bearing_deg": 1.7418687461358533,
+      "goal_bearing_error_deg": 151.20618257802673,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.987596,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.0005783618134103
+    },
+    {
+      "observation_seq": 660,
+      "t_sim_s": 32.95,
+      "distance_to_goal_m": 27.633798226956056,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 144.87683155955864,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -145.07531971598019,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.9706854665623474
+    },
+    {
+      "observation_seq": 680,
+      "t_sim_s": 33.95,
+      "distance_to_goal_m": 28.604483693518404,
+      "predicted_pixel": [
+        126.568,
+        89.2893
+      ],
+      "goal_relative_bearing_deg": -149.35996920419126,
+      "predicted_relative_bearing_deg": 7.410936632676935,
+      "goal_bearing_error_deg": 156.7709058368682,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.778901,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.9793384075805207
+    },
+    {
+      "observation_seq": 700,
+      "t_sim_s": 34.95,
+      "distance_to_goal_m": 29.583822101098924,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 146.7729810362262,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -146.9714691926478,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.9976345321180666
+    },
+    {
+      "observation_seq": 720,
+      "t_sim_s": 35.95,
+      "distance_to_goal_m": 30.58145663321699,
+      "predicted_pixel": [
+        139.515,
+        89.2893
+      ],
+      "goal_relative_bearing_deg": -148.53895842943987,
+      "predicted_relative_bearing_deg": 13.802490178218244,
+      "goal_bearing_error_deg": 162.3414486076581,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.262494,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.9912287349397921
+    },
+    {
+      "observation_seq": 740,
+      "t_sim_s": 36.95,
+      "distance_to_goal_m": 31.572685368156783,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 147.24755616417374,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -147.4460443205953,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.78848438459314
+    },
+    {
+      "observation_seq": 760,
+      "t_sim_s": 37.95,
+      "distance_to_goal_m": 32.36116975274992,
+      "predicted_pixel": [
+        146.658,
+        122.773
+      ],
+      "goal_relative_bearing_deg": -143.91907487230742,
+      "predicted_relative_bearing_deg": 17.1944951544493,
+      "goal_bearing_error_deg": 161.11357002675672,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 5.889269,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.8023331862197125
+    },
+    {
+      "observation_seq": 780,
+      "t_sim_s": 38.95,
+      "distance_to_goal_m": 33.163502938969636,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 148.3250595133966,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -148.52354766981816,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.35426223673837853
+    },
+    {
+      "observation_seq": 800,
+      "t_sim_s": 39.95,
+      "distance_to_goal_m": 33.517765175708014,
+      "predicted_pixel": [
+        177.016,
+        116.076
+      ],
+      "goal_relative_bearing_deg": 121.58207365328832,
+      "predicted_relative_bearing_deg": 30.135165112335027,
+      "goal_bearing_error_deg": -91.44690854095329,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.117269,
+      "history_pixel": "(177, 116)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.260548721807865
+    },
+    {
+      "observation_seq": 820,
+      "t_sim_s": 40.95,
+      "distance_to_goal_m": 34.77831389751588,
+      "predicted_pixel": [
+        137.952,
+        122.103
+      ],
+      "goal_relative_bearing_deg": 143.19737666268017,
+      "predicted_relative_bearing_deg": 13.04601599201164,
+      "goal_bearing_error_deg": -130.15136067066854,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.337248,
+      "history_pixel": "(138, 122)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.554391669274814
+    },
+    {
+      "observation_seq": 840,
+      "t_sim_s": 41.95,
+      "distance_to_goal_m": 36.33270556679069,
+      "predicted_pixel": [
+        116.076,
+        122.996
+      ],
+      "goal_relative_bearing_deg": 156.2625535902131,
+      "predicted_relative_bearing_deg": 2.084237294348781,
+      "goal_bearing_error_deg": -154.17831629586428,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.982251,
+      "history_pixel": "(116, 123)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.1328432683823522
+    },
+    {
+      "observation_seq": 860,
+      "t_sim_s": 42.95,
+      "distance_to_goal_m": 37.465548835173045,
+      "predicted_pixel": [
+        123.889,
+        127.907
+      ],
+      "goal_relative_bearing_deg": 153.90847079060947,
+      "predicted_relative_bearing_deg": 6.059357941373511,
+      "goal_bearing_error_deg": -147.84911284923595,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.851403,
+      "history_pixel": "(124, 128)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.4797648578244846
+    },
+    {
+      "observation_seq": 880,
+      "t_sim_s": 43.95,
+      "distance_to_goal_m": 38.94531369299753,
+      "predicted_pixel": [
+        123.889,
+        137.952
+      ],
+      "goal_relative_bearing_deg": 156.2194196691248,
+      "predicted_relative_bearing_deg": 6.059357941373511,
+      "goal_bearing_error_deg": -150.16006172775127,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.851403,
+      "history_pixel": "(124, 138)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6105517627922126
+    },
+    {
+      "observation_seq": 900,
+      "t_sim_s": 44.95,
+      "distance_to_goal_m": 40.55586545578974,
+      "predicted_pixel": [
+        114.96,
+        150.899
+      ],
+      "goal_relative_bearing_deg": 162.16664806359088,
+      "predicted_relative_bearing_deg": 1.5138931976919385,
+      "goal_bearing_error_deg": -160.65275486589894,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.990631,
+      "history_pixel": "(115, 151)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5997765623845268
+    },
+    {
+      "observation_seq": 920,
+      "t_sim_s": 45.95,
+      "distance_to_goal_m": 42.15564201817427,
+      "predicted_pixel": [
+        127.014,
+        168.98
+      ],
+      "goal_relative_bearing_deg": 158.49822485885798,
+      "predicted_relative_bearing_deg": 7.635185325588849,
+      "goal_bearing_error_deg": -150.86303953326913,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.765534,
+      "history_pixel": "(127, 169)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.584733481606733
+    },
+    {
+      "observation_seq": 940,
+      "t_sim_s": 46.95,
+      "distance_to_goal_m": 43.740375499781,
+      "predicted_pixel": [
+        122.103,
+        191.972
+      ],
+      "goal_relative_bearing_deg": 163.6587987917325,
+      "predicted_relative_bearing_deg": 5.154435901703691,
+      "goal_bearing_error_deg": -158.50436289002883,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.89215,
+      "history_pixel": "(122, 192)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6010359161229104
+    },
+    {
+      "observation_seq": 960,
+      "t_sim_s": 47.95,
+      "distance_to_goal_m": 45.34141141590391,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 159.81665973836132,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -160.01514789478287,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5904448869496477
+    },
+    {
+      "observation_seq": 980,
+      "t_sim_s": 48.95,
+      "distance_to_goal_m": 46.93185630285356,
+      "predicted_pixel": [
+        100.004,
+        116.969
+      ],
+      "goal_relative_bearing_deg": 164.93334197479632,
+      "predicted_relative_bearing_deg": -6.11348050462729,
+      "goal_bearing_error_deg": -171.0468224794236,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.848763,
+      "history_pixel": "(100, 117)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5740622297236513
+    },
+    {
+      "observation_seq": 1000,
+      "t_sim_s": 49.95,
+      "distance_to_goal_m": 48.50591853257721,
+      "predicted_pixel": [
+        89.0661,
+        123.889
+      ],
+      "goal_relative_bearing_deg": 168.39806850871847,
+      "predicted_relative_bearing_deg": -11.572312161047218,
+      "goal_bearing_error_deg": -179.9703806697657,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.473044,
+      "history_pixel": "(89, 124)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.4267054549646687
+    },
+    {
+      "observation_seq": 1020,
+      "t_sim_s": 50.95,
+      "distance_to_goal_m": 49.93262398754188,
+      "predicted_pixel": [
+        125.898,
+        131.925
+      ],
+      "goal_relative_bearing_deg": 151.31916864846525,
+      "predicted_relative_bearing_deg": 7.073633288878831,
+      "goal_bearing_error_deg": -144.24553535958643,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.798274,
+      "history_pixel": "(126, 132)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5093046531728262
+    },
+    {
+      "observation_seq": 1040,
+      "t_sim_s": 51.95,
+      "distance_to_goal_m": 51.44192864071471,
+      "predicted_pixel": [
+        127.014,
+        143.979
+      ],
+      "goal_relative_bearing_deg": 153.76776826422235,
+      "predicted_relative_bearing_deg": 7.635185325588849,
+      "goal_bearing_error_deg": -146.1325829386335,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.765534,
+      "history_pixel": "(127, 144)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.1494388370242845
+    },
+    {
+      "observation_seq": 1060,
+      "t_sim_s": 52.95,
+      "distance_to_goal_m": 52.59136747773899,
+      "predicted_pixel": [
+        125.898,
+        154.917
+      ],
+      "goal_relative_bearing_deg": 156.5091836224188,
+      "predicted_relative_bearing_deg": 7.073633288878831,
+      "goal_bearing_error_deg": -149.43555033353996,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.798274,
+      "history_pixel": "(126, 155)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.4551461178872387
+    },
+    {
+      "observation_seq": 1080,
+      "t_sim_s": 53.95,
+      "distance_to_goal_m": 54.04651359562623,
+      "predicted_pixel": [
+        106.924,
+        170.989
+      ],
+      "goal_relative_bearing_deg": 166.69360251431942,
+      "predicted_relative_bearing_deg": -2.594950846847023,
+      "goal_bearing_error_deg": -169.28855336116644,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.972506,
+      "history_pixel": "(107, 171)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6481499109676676
+    },
+    {
+      "observation_seq": 1100,
+      "t_sim_s": 54.95,
+      "distance_to_goal_m": 55.6946635065939,
+      "predicted_pixel": [
+        112.951,
+        195.097
+      ],
+      "goal_relative_bearing_deg": 163.70968343686658,
+      "predicted_relative_bearing_deg": 0.4864908649055675,
+      "goal_bearing_error_deg": -163.223192571961,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999032,
+      "history_pixel": "(113, 195)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.1934593660539363
+    },
+    {
+      "observation_seq": 1120,
+      "t_sim_s": 55.95,
+      "distance_to_goal_m": 56.888122872647834,
+      "predicted_pixel": [
+        118.978,
+        216.973
+      ],
+      "goal_relative_bearing_deg": 161.3140012611167,
+      "predicted_relative_bearing_deg": 3.5651235018620326,
+      "goal_bearing_error_deg": -157.74887775925467,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.948197,
+      "history_pixel": "(119, 217)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5333798718987808
+    },
+    {
+      "observation_seq": 1140,
+      "t_sim_s": 56.95,
+      "distance_to_goal_m": 58.421502744546615,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 163.21192357966888,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -163.41041173609042,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6564373810639594
+    },
+    {
+      "observation_seq": 1160,
+      "t_sim_s": 57.95,
+      "distance_to_goal_m": 60.077940125610574,
+      "predicted_pixel": [
+        97.1021,
+        116.969
+      ],
+      "goal_relative_bearing_deg": 169.23572862219777,
+      "predicted_relative_bearing_deg": -7.5768326418191,
+      "goal_bearing_error_deg": -176.81256126401686,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.769045,
+      "history_pixel": "(97, 117)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6611109734816054
+    },
+    {
+      "observation_seq": 1180,
+      "t_sim_s": 58.95,
+      "distance_to_goal_m": 61.73905109909218,
+      "predicted_pixel": [
+        102.906,
+        123.889
+      ],
+      "goal_relative_bearing_deg": 165.40654719652125,
+      "predicted_relative_bearing_deg": -4.642029126006025,
+      "goal_bearing_error_deg": -170.04857632252725,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.912399,
+      "history_pixel": "(103, 124)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.3356198362539757
+    },
+    {
+      "observation_seq": 1200,
+      "t_sim_s": 59.95,
+      "distance_to_goal_m": 63.074670935346155,
+      "predicted_pixel": [
+        118.978,
+        131.032
+      ],
+      "goal_relative_bearing_deg": 158.01943022265024,
+      "predicted_relative_bearing_deg": 3.5651235018620326,
+      "goal_bearing_error_deg": -154.45430672078822,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.948197,
+      "history_pixel": "(119, 131)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.2266808807830145
+    },
+    {
+      "observation_seq": 1220,
+      "t_sim_s": 60.95,
+      "distance_to_goal_m": 64.30135181612917,
+      "predicted_pixel": [
+        129.916,
+        139.961
+      ],
+      "goal_relative_bearing_deg": 154.4563090777944,
+      "predicted_relative_bearing_deg": 9.088281709004713,
+      "goal_bearing_error_deg": -145.36802736878968,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.670135,
+      "history_pixel": "(130, 140)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.52121247977081
+    },
+    {
+      "observation_seq": 1240,
+      "t_sim_s": 61.95,
+      "distance_to_goal_m": 65.82256429589998,
+      "predicted_pixel": [
+        112.058,
+        152.908
+      ],
+      "goal_relative_bearing_deg": 164.67988305756427,
+      "predicted_relative_bearing_deg": 0.029671026024068802,
+      "goal_bearing_error_deg": -164.65021203154024,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999996,
+      "history_pixel": "(112, 153)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.3168158672026493
+    },
+    {
+      "observation_seq": 1260,
+      "t_sim_s": 62.95,
+      "distance_to_goal_m": 67.13938016310263,
+      "predicted_pixel": [
+        125.005,
+        168.087
+      ],
+      "goal_relative_bearing_deg": 159.11266113521592,
+      "predicted_relative_bearing_deg": 6.623299914019333,
+      "goal_bearing_error_deg": -152.48936122119656,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.822822,
+      "history_pixel": "(125, 168)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.5083411548471588
+    },
+    {
+      "observation_seq": 1280,
+      "t_sim_s": 63.95,
+      "distance_to_goal_m": 68.64772131794979,
+      "predicted_pixel": [
+        110.049,
+        187.954
+      ],
+      "goal_relative_bearing_deg": 167.69060426254913,
+      "predicted_relative_bearing_deg": -0.9979710817415592,
+      "goal_bearing_error_deg": -168.6885753442907,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.995927,
+      "history_pixel": "(110, 188)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 1.6657393284116608
+    },
+    {
+      "observation_seq": 1300,
+      "t_sim_s": 64.95,
+      "distance_to_goal_m": 70.31346064636145,
+      "predicted_pixel": [
+        114.067,
+        218.089
+      ],
+      "goal_relative_bearing_deg": 166.034158122151,
+      "predicted_relative_bearing_deg": 1.0572940464026086,
+      "goal_bearing_error_deg": -164.9768640757484,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.995428,
+      "history_pixel": "(114, 218)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.6858337406195432
+    },
+    {
+      "observation_seq": 1320,
+      "t_sim_s": 65.95,
+      "distance_to_goal_m": 70.99929438698099,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 164.58876170242033,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -164.7872498588419,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.08012063017069693
+    },
+    {
+      "observation_seq": 1340,
+      "t_sim_s": 66.95,
+      "distance_to_goal_m": 71.07941501715169,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "goal_relative_bearing_deg": 108.62216227616345,
+      "predicted_relative_bearing_deg": -0.1984881564215621,
+      "goal_bearing_error_deg": -108.82065043258501,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -0.0016217512834373338
+    },
+    {
+      "observation_seq": 1360,
+      "t_sim_s": 67.95,
+      "distance_to_goal_m": 71.07779326586825,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.32493729657236,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.19147995104976,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -7.431020381432063e-05
+    },
+    {
+      "observation_seq": 1380,
+      "t_sim_s": 68.95,
+      "distance_to_goal_m": 71.07771895566444,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.32493539421885,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.19147804869627,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -3.404965056574838e-06
+    },
+    {
+      "observation_seq": 1400,
+      "t_sim_s": 69.95,
+      "distance_to_goal_m": 71.07771555069938,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353070511,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.19147796152852,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.5601877123572194e-07
+    },
+    {
+      "observation_seq": 1420,
+      "t_sim_s": 70.95,
+      "distance_to_goal_m": 71.07771539468061,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.324935303057,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779575344,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -7.14891257302952e-09
+    },
+    {
+      "observation_seq": 1440,
+      "t_sim_s": 71.95,
+      "distance_to_goal_m": 71.0777153875317,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.32493530287398,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.19147795735138,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -3.275886228948366e-10
+    },
+    {
+      "observation_seq": 1460,
+      "t_sim_s": 72.95,
+      "distance_to_goal_m": 71.07771538720411,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028656,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.19147795734301,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -1.5006662579253316e-11
+    },
+    {
+      "observation_seq": 1480,
+      "t_sim_s": 73.95,
+      "distance_to_goal_m": 71.0777153871891,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -6.821210263296962e-13
+    },
+    {
+      "observation_seq": 1500,
+      "t_sim_s": 74.95,
+      "distance_to_goal_m": 71.07771538718842,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.32493530286519,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": -4.263256414560601e-14
+    },
+    {
+      "observation_seq": 1520,
+      "t_sim_s": 75.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1540,
+      "t_sim_s": 76.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1560,
+      "t_sim_s": 77.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1580,
+      "t_sim_s": 78.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1600,
+      "t_sim_s": 79.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1620,
+      "t_sim_s": 80.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1640,
+      "t_sim_s": 81.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1660,
+      "t_sim_s": 82.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1680,
+      "t_sim_s": 83.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1700,
+      "t_sim_s": 84.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1720,
+      "t_sim_s": 85.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1740,
+      "t_sim_s": 86.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": 0.0
+    },
+    {
+      "observation_seq": 1760,
+      "t_sim_s": 87.95,
+      "distance_to_goal_m": 71.07771538718838,
+      "predicted_pixel": [
+        120.094,
+        112.058
+      ],
+      "goal_relative_bearing_deg": 104.3249353028652,
+      "predicted_relative_bearing_deg": 4.133457345522595,
+      "goal_bearing_error_deg": -100.1914779573426,
+      "goal_inside_horizontal_fov": false,
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.930452,
+      "history_pixel": "(120, 112)",
+      "target_visible": false,
+      "distance_change_to_next_decision_m": null
+    }
+  ],
+  "truth_scope": "offline scoring only; not exposed to the architecture"
+}

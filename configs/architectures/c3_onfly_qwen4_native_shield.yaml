@@ -1,0 +1,20 @@
+# Matched local-only comparator for the PMR capability profile.
+# It adds the same independent shield but no monitor, memory, admission, or
+# recovery reasoner. This is the correct local-continuation branch for CVI
+# utility labels and later paired evaluation.
+
+_base_: c3_onfly_qwen4_native_dynamics.yaml
+
+id: c3_onfly_qwen4_native_shield
+profile_of: c3
+name: "OnFly/Qwen local policy + verifier + SUPER + PMR-matched shield"
+description: "Local-only control branch matched to PMR below the semantic recovery layer."
+tags: [onfly, pmr_comparator, real_model, qwen3_vl_4b, independent_shield]
+
+shield:
+  name: simple_collision
+  params:
+    reaction_time_s: 0.35
+    hard_stop_m: 1.0
+    brake_margin_m: 1.5
+    allow_deflection: true

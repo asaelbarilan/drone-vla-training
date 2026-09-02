@@ -1,0 +1,31 @@
+# Development-only C5 output-contract variant. The frozen C5 profile is unchanged.
+#
+# The pixel channel is saturated: on seed 1060 the model's chosen `u` has median
+# 116 where the image centre is 112, 59% of its commands fall within 10 degrees
+# of straight ahead, and the prompt's corridor-correction rule is obeyed on 25 of
+# 43 opportunities -- chance. See
+# reports/paper_implementation/C5_S1060_VISUAL_ERROR_ANALYSIS_20260902.md.
+#
+# This variant changes only the OUTPUT REPRESENTATION. A pixel is a continuous
+# 2-D quantity with no verbal anchor and "the middle" is always defensible; a
+# word from a five-item vocabulary forces a commitment, and `ahead` becomes a
+# visible choice rather than a hidden default. Everything downstream -- range
+# gating, waypoint construction, verifier, monitor -- is untouched, because the
+# direction is converted to an image point inside the decision agent.
+#
+# Acceptance for this experiment is NOT mission success. It is whether commanded
+# bearings spread beyond +-10 degrees. If they do not, the capability conclusion
+# is confirmed on two independent output representations, which is the stronger
+# result.
+
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+
+id: c5_onfly_qwen4_direction_dev
+profile_of: c5
+name: "C5 OnFly + Qwen3-VL 4B, discrete direction output (development)"
+description: "Seed-1060 diagnostic variant replacing the (u,v) pixel goal with a five-way steering word."
+tags: [onfly, development, discrete_direction, real_model, qwen3_vl_4b]
+
+policy:
+  params:
+    coordinate_contract: discrete_direction

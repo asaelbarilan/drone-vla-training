@@ -1,0 +1,111 @@
+{
+  "run": "runs/c5_shared_qwen_s1061_feedback_recovery_v1",
+  "model": "qwen3-vl:4b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 19.2,
+      "actual_monitor_result_t_s": 19.2,
+      "image_count": 3,
+      "model_image_count": 3,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": false,
+          "latest_target_visible": false,
+          "latest_target_scale": "absent",
+          "status": "LOST"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 126,
+        "done_reason": "stop",
+        "latency_s": 3.1615
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 21.2,
+      "actual_monitor_result_t_s": 21.2,
+      "image_count": 4,
+      "model_image_count": 4,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "model_output": {
+        "payload": null,
+        "parse_error": "model response contains no JSON object",
+        "raw_preview": "",
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 0,
+        "done_reason": null,
+        "latency_s": 0.0959
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 31.2,
+      "actual_monitor_result_t_s": 31.2,
+      "image_count": 5,
+      "model_image_count": 5,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": null,
+        "parse_error": "model response contains no JSON object",
+        "raw_preview": "",
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 0,
+        "done_reason": null,
+        "latency_s": 0.1306
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 77.2,
+      "actual_monitor_result_t_s": 77.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": null,
+        "parse_error": "model response contains no JSON object",
+        "raw_preview": "",
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 0,
+        "done_reason": null,
+        "latency_s": 0.1304
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

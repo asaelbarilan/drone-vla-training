@@ -4,15 +4,17 @@
 # `grid_nav` - the ONLY difference is that frames are rendered. That keeps a
 # real-VLM run comparable against the scripted baselines on the same scenes.
 #
-# The horizon is shorter because a real model costs real seconds per decision
-# and the simulation clock now advances with it.
+# The mission horizon remains inherited from `grid_nav` (90 s). Wall-clock
+# expense is not a valid reason to give a vision architecture a different task.
 
 _base_: grid_nav.yaml
 
 id: grid_nav_vision
-max_episode_s: 60.0
 
 params:
   render: true
+  # Standard RGB-D sensing. Every architecture receives the same channel; only
+  # real VLM policies currently consume depth at their grounded target pixel.
+  render_depth: true
   image_size: 224
   camera_pitch_rad: -0.15

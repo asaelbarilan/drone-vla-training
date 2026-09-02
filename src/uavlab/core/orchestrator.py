@@ -23,11 +23,13 @@ typed contracts.
 from __future__ import annotations
 
 import asyncio
+import math
 import time
 import uuid
 from pathlib import Path
 
 from uavlab.contracts import (
+    AdmissionRuntime,
     DecisionEnvelope,
     EventType,
     MemorySnapshot,
@@ -64,10 +66,39 @@ from uavlab.core.results import EpisodeResult
 from uavlab.core.scheduler import RoleSchedule, Scheduler
 from uavlab.core.services import RuntimeServices, bind
 from uavlab.core.skills import SkillRuntime
-from uavlab.interfaces import DecisionContext
+from uavlab.interfaces import DecisionContext, RoutingFeedback
 
 DEFAULT_ROLE_ORDER = ("control", "decision", "monitor", "reasoner", "trigger")
 """Fixed spawn order. Determinism of the whole runtime depends on it."""
+
+
+def _onfly_recovery_heading(
+    last_normal_yaw_rad: float | None, current_yaw_rad: float
+) -> float:
+    """Return the paper-defined heading used after an OnFly LOST signal.
+
+    The last normal *point* is a stored pose.  Recovery restores that pose's
+    heading; it does not face the point's position, which would usually turn
+    the vehicle backwards along its travelled path.
+    """
+    target = (
+        last_normal_yaw_rad
+        if last_normal_yaw_rad is not None
+        else current_yaw_rad + math.pi
+    )
+    return math.atan2(math.sin(target), math.cos(target))
+
+
+def _onfly_monitor_anchor(ctx: DecisionContext):
+    """Return the pose synchronized with the latest visual monitor evidence."""
+    for item in reversed(ctx.memory.items):
+        if (
+            item.image_uri is not None
+            and item.position is not None
+            and item.yaw_rad is not None
+        ):
+            return item.position, item.yaw_rad, item.observation_seq
+    return ctx.observation.position, ctx.observation.yaw_rad, ctx.observation.seq
 
 
 class Orchestrator:
@@ -105,6 +136,7 @@ class Orchestrator:
         self.last_memory: MemorySnapshot | None = None
         self.last_progress: ProgressState | None = None
         self.last_decision: DecisionEnvelope | None = None
+        self.last_routing_feedback: RoutingFeedback | None = None
         self.scratch: dict[str, object] = {}
 
         self._error: BaseException | None = None
@@ -112,6 +144,9 @@ class Orchestrator:
         self._termination_detail = ""
         self._decision_ticks = 0
         self._reached_goal_t_ns: int | None = None
+        self._last_normal_position = None
+        self._last_normal_yaw_rad: float | None = None
+        self._onfly_loss_episode_active = False
         self._stop = asyncio.Event()
 
     # -- construction -------------------------------------------------------
@@ -163,6 +198,11 @@ class Orchestrator:
         self.monitor = (
             reg.build("monitor", arch.monitor.name, arch.monitor.params) if arch.monitor else None
         )
+        self.admission = (
+            reg.build("admission", arch.admission.name, arch.admission.params)
+            if arch.admission
+            else None
+        )
         self.recovery = (
             reg.build("recovery", arch.recovery.name, arch.recovery.params)
             if arch.recovery
@@ -197,6 +237,7 @@ class Orchestrator:
             self.planner,
             self.shield,
             self.monitor,
+            self.admission,
             self.recovery,
         ]
         for component in self.components:
@@ -239,6 +280,7 @@ class Orchestrator:
             last_progress=self.last_progress,
             last_decision=self.last_decision,
             last_directive=self.router.last_directive if hasattr(self, "router") else None,
+            last_routing_feedback=self.last_routing_feedback,
             scratch=self.scratch,
         )
 
@@ -279,6 +321,13 @@ class Orchestrator:
                 "controller",
                 EventType.CONTROL,
                 {
+                    # Onboard pose at the instant the command was issued. This
+                    # is the audit-grade trajectory source for end maps; it is
+                    # already present in the ordinary observation and does not
+                    # expose simulator-only scene truth to the policy.
+                    "position_x": ctx.observation.position.x,
+                    "position_y": ctx.observation.position.y,
+                    "position_z": ctx.observation.position.z,
                     "vx": command.velocity.x,
                     "vy": command.velocity.y,
                     "vz": command.velocity.z,
@@ -370,24 +419,63 @@ class Orchestrator:
         calls rather than cheap ones.
         """
         gate = self.scheduler.gate
-        params = self.arch.scheduler
         while not self._stop.is_set():
             if gate is not None and self.latest_obs is not None:
-                cause = gate.condition_met(
-                    self.last_progress,
-                    self.last_perception,
-                    stall_threshold_s=float(
-                        self.arch.recovery.params.get("stall_threshold_s", 2.0)
-                        if self.arch.recovery
-                        else 2.0
-                    ),
-                    uncertainty_threshold=float(
-                        self.arch.recovery.params.get("uncertainty_threshold", 0.6)
-                        if self.arch.recovery
-                        else 0.6
-                    ),
-                )
+                admission_decision = None
+                if self.admission is not None:
+                    admission_decision = await self.admission.assess(
+                        self._ctx(),
+                        AdmissionRuntime(
+                            t_sim_ns=self.clock.now_ns(),
+                            call_count=gate.calls,
+                            max_calls=gate.max_calls,
+                            last_call_t_sim_ns=gate.last_fired_ns,
+                            cooldown_s=ns_to_s(gate.cooldown_ns),
+                            planner_failed=self._last_plan_failed(),
+                            safety_interventions=self.log.count(EventType.SAFETY),
+                        ),
+                    )
+                    cause = (
+                        admission_decision.reason if admission_decision.admit else None
+                    )
+                else:
+                    cause = gate.condition_met(
+                        self.last_progress,
+                        self.last_perception,
+                        stall_threshold_s=float(
+                            self.arch.recovery.params.get("stall_threshold_s", 2.0)
+                            if self.arch.recovery
+                            else 2.0
+                        ),
+                        uncertainty_threshold=float(
+                            self.arch.recovery.params.get("uncertainty_threshold", 0.6)
+                            if self.arch.recovery
+                            else 0.6
+                        ),
+                    )
                 admitted = gate.admit(self.clock.now_ns(), cause)
+                if admission_decision is not None:
+                    self._emit(
+                        "admission",
+                        EventType.ADMISSION,
+                        {
+                            "policy": self.admission.name,
+                            "score": admission_decision.score,
+                            "threshold": admission_decision.threshold,
+                            "hard_stuck": admission_decision.hard_stuck,
+                            "candidate": admission_decision.admit,
+                            "admitted": admitted is not None,
+                            "reason": admission_decision.reason,
+                            "guards": admission_decision.guards,
+                            "features": dict(
+                                zip(
+                                    admission_decision.feature_names,
+                                    admission_decision.features,
+                                    strict=True,
+                                )
+                            ),
+                        },
+                    )
                 if admitted is not None:
                     self._emit(
                         "trigger",
@@ -398,8 +486,14 @@ class Orchestrator:
             if self._stop.is_set():
                 return
             await self.scheduler.tick(sched)
-            _ = params
         return
+
+    def _last_plan_failed(self) -> bool:
+        """Return only the latest local-planner outcome, never simulator truth."""
+        plans = self.log.of_type(EventType.PLAN)
+        if not plans:
+            return False
+        return plans[-1].payload.get("feasible") is False
 
     async def _run_supervision(self, role: str, blocking: bool) -> None:
         """Run the monitor or the slow reasoner once."""
@@ -407,6 +501,7 @@ class Orchestrator:
         if role == "monitor" and self.monitor is not None:
             progress = await self.monitor.assess(ctx)
             self.last_progress = progress
+            anchor_position, anchor_yaw, anchor_seq = _onfly_monitor_anchor(ctx)
             self._emit(
                 "monitor",
                 EventType.MONITOR,
@@ -415,12 +510,68 @@ class Orchestrator:
                     "confidence": progress.confidence,
                     "stalled_for_s": progress.stalled_for_s,
                     "evidence": progress.evidence,
+                    "recovery_anchor_valid": progress.recovery_anchor_valid,
+                    "recovery_reacquired": progress.recovery_reacquired,
+                    "evidence_observation_seq": progress.observation_seq,
+                    "recovery_anchor_observation_seq": anchor_seq,
+                    "recovery_anchor_yaw_rad": anchor_yaw,
                     "blocking": blocking,
                 },
             )
             if progress.label is ProgressLabel.STOP:
                 self.router.stop_requested = True
                 self.router.stop_reason = f"monitor: {progress.evidence or 'stop'}"
+            elif progress.label is ProgressLabel.LOST and self.monitor.name == "onfly_monitor":
+                current = self.latest_obs or ctx.observation
+                target_yaw = _onfly_recovery_heading(
+                    self._last_normal_yaw_rad, current.yaw_rad
+                )
+                if (
+                    not self._onfly_loss_episode_active
+                    and not self.router.reorientation_active
+                ):
+                    self._onfly_loss_episode_active = True
+                    self.router.begin_fixed_reorientation(
+                        target_yaw_rad=target_yaw,
+                        t_sim_ns=self.clock.now_ns(),
+                        hold_s=float(getattr(self.monitor, "lost_hold_s", 0.25)),
+                        max_duration_s=float(
+                            getattr(self.monitor, "lost_reorient_s", 2.0)
+                        ),
+                        yaw_rate_rps=float(
+                            getattr(self.monitor, "lost_yaw_rate_rps", 0.8)
+                        ),
+                    )
+                    self._emit(
+                        "monitor",
+                        EventType.RECOVERY_TRIGGER,
+                        {
+                            "trigger": "onfly_lost",
+                            "cause": progress.evidence,
+                            "target_yaw_rad": target_yaw,
+                        },
+                    )
+                    self._emit(
+                        "recovery",
+                        EventType.RECOVERY_DECISION,
+                        {
+                            "kind": "fixed_reorientation",
+                            "cause": "monitor_lost",
+                            "producer": "onfly_lost_executive",
+                        },
+                    )
+            elif progress.label is ProgressLabel.CONTINUE:
+                if progress.recovery_anchor_valid:
+                    self._last_normal_position = anchor_position
+                    self._last_normal_yaw_rad = anchor_yaw
+                if (
+                    self.monitor.name == "onfly_monitor"
+                    and self.router.reorientation_active
+                    and (progress.recovery_anchor_valid or progress.recovery_reacquired)
+                ):
+                    self.router.cancel_fixed_reorientation()
+                if progress.recovery_anchor_valid or progress.recovery_reacquired:
+                    self._onfly_loss_episode_active = False
         elif role == "reasoner" and self.recovery is not None:
             await self._run_recovery("periodic schedule", call_index=-1)
 
@@ -453,19 +604,42 @@ class Orchestrator:
     def _handle_envelope(self, envelope: DecisionEnvelope, origin: str) -> None:
         """Route one proposal and log what happened to it."""
         ctx = self._ctx()
+        proposed_payload = {
+            "kind": envelope.kind.value,
+            "producer": envelope.producer,
+            "confidence": envelope.confidence,
+            "source_observation_seq": envelope.source_observation_seq,
+            "production_latency_s": ns_to_s(
+                envelope.produced_t_sim_ns - envelope.source_t_sim_ns
+            ),
+            # Typed provenance contains bounded model/config identifiers and
+            # structured intermediate decisions (for example SPF's u/v/label),
+            # never raw model prose. Persisting it is required to audit whether
+            # a paper-defining mechanism actually ran rather than merely sharing
+            # the same final authority type.
+            "provenance": dict(envelope.provenance),
+        }
+        # Typed, bounded decision fields are safe and scientifically necessary
+        # to log. Raw model text is intentionally never put on the event bus.
+        skill_name = getattr(envelope.payload, "skill_name", None)
+        if skill_name is not None:
+            proposed_payload["skill_name"] = skill_name
+            proposed_payload["skill_args"] = dict(getattr(envelope.payload, "args", {}))
         self._emit(
             origin,
             EventType.DECISION_PROPOSED,
-            {
-                "kind": envelope.kind.value,
-                "producer": envelope.producer,
-                "confidence": envelope.confidence,
-                "source_observation_seq": envelope.source_observation_seq,
-                "production_latency_s": ns_to_s(envelope.produced_t_sim_ns - envelope.source_t_sim_ns),
-            },
+            proposed_payload,
             trace=envelope.decision_id,
         )
         outcome = self.router.accept(envelope, ctx)
+        self.last_routing_feedback = RoutingFeedback(
+            decision_id=envelope.decision_id,
+            accepted=outcome.accepted,
+            reason=outcome.reason,
+            proposed_kind=envelope.kind,
+            expanded_kind=outcome.expanded_kind,
+            t_sim_ns=self.clock.now_ns(),
+        )
         if outcome.accepted:
             self._emit(
                 origin,
@@ -515,6 +689,7 @@ class Orchestrator:
                     "points": len(outcome.trajectory.points),
                     "planner": outcome.trajectory.planner_name,
                     "reason": outcome.trajectory.reason,
+                    "planner_metadata": outcome.trajectory.metadata,
                 },
                 trace=envelope.decision_id,
             )
@@ -665,7 +840,7 @@ class Orchestrator:
                     raise HarnessError(f"no loop implemented for role {role!r}")
         except asyncio.CancelledError:
             raise
-        except Exception as exc:  # noqa: BLE001 - recorded, then re-raised as a result
+        except Exception as exc:
             self._error = exc
             self._finish(TerminationReason.RUNTIME_ERROR, f"{role}: {exc!r}")
             self._emit("orchestrator", EventType.WARNING, {"role": role, "error": repr(exc)})
@@ -687,7 +862,13 @@ class Orchestrator:
             sim_duration_ns=self.clock.now_ns(),
             arch=self.arch,
             reached_goal_t_ns=self._reached_goal_t_ns,
-            components=[self.policy, self.monitor, self.recovery, self.verifier],
+            components=[
+                self.policy,
+                self.monitor,
+                self.admission,
+                self.recovery,
+                self.verifier,
+            ],
         )
         return EpisodeResult(
             episode_id=self.episode.episode_id,

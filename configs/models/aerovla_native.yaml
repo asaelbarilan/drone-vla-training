@@ -1,0 +1,25 @@
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: aerovla
+  params:
+    model_id: XuPeng23/AeroVLA@e37685a
+    output_format: official_text
+    image_size: 224
+    cruise_mps: 1.0
+    max_yaw_rate_rps: 1.1
+    use_memory: false
+    follow_directives: false
+
+inference:
+  name: aerovla_hf
+  params:
+    base_model_path: models/aerovla/openvla-7b
+    adapter_path: models/aerovla/aero_vla
+    load_in_4bit: true
+    fixed_latency_s: 0.38
+    max_new_tokens: 20
+

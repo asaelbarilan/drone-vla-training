@@ -1,21 +1,21 @@
 # uav_arch_lab
 
-> ## Status: the harness works. The models do not.
+> ## Status: the harness, SUPER, and AerialClaw work locally.
 >
-> **Every architecture number in this repository is produced by a hand-written
-> scripted policy, not by a learned or foundation model.** `mock_vla`,
-> `vlm_waypoint`, `scripted_skill` and `chunk_vla` are all scripts standing in
-> for models.
+> **C1 is now a real AerialClaw-style local LLM skill agent** using
+> `gpt-oss:20b`; its frozen development gate passed 5/5 grid and 5/5 object
+> search episodes with zero collisions. SUPER is the accepted shared waypoint
+> execution substrate.
 >
-> The one learned network that exists — `learned_visuomotor`, 427k parameters,
-> in `c7t`/`c8t` — does not navigate (0.03 success). The Gemma 3 4B
-> configurations run real inference, ground at 0.93 detection accuracy, and no
-> Gemma configuration has yet completed a mission.
+> The other paper families are not yet valid model results. The learned direct
+> policy does not navigate; Gemma runs but has not completed a mission; and
+> several remaining configurations are still scripted architecture probes.
 >
 > What is demonstrated: the harness composes architectures from configuration,
 > charges model latency to a simulated clock, separates architectures on
 > measurement, and catches its own defects. What is **not** demonstrated:
-> anything about foundation-model autonomy. See [`TODO.md`](TODO.md) items 1–3.
+> a validated LLM skill-agent member, but not yet a general visual-autonomy or
+> direct-VLA comparison. See [`TODO.md`](TODO.md).
 
 A modular testbed for searching single-UAV foundation-model autonomy architectures.
 
@@ -156,19 +156,19 @@ deterministic and fast — a 90-second mission executes in well under a second, 
 "asynchronous" means something reproducible rather than "whatever the OS
 scheduler did".
 
-## There is no model and no vision in this repository yet
+## Model-validity status
 
 Stated plainly, because the plugin names invite the opposite reading:
 
-- **No VLA.** `mock_vla`, `chunk_vla` and `world_model_vla` are closed-form
+- **One real LLM architecture.** C1 uses a real local `gpt-oss:20b` call for
+  every semantic turn and fails closed without it. No scripted model fallback
+  is allowed. It consumes the shared semantic sensor stream, not pixels.
+- **No capable VLA.** `mock_vla`, `chunk_vla` and `world_model_vla` are closed-form
   geometry — a unit vector toward a believed target position, scaled by a cruise
   speed, plus a repulsive term from the depth fan. No network, no checkpoint, no
   training.
-- **No VLM or LLM.** `vlm_waypoint` and `scripted_skill` are the same kind of
-  arithmetic wearing different authority levels.
-- **No vision at all.** Nothing renders. `observation.rgb` is a `SensorRef`
-  holding a hash of the pose; there is no pixel array behind it anywhere in the
-  codebase. `grep -r "import torch\|import cv2" src/` returns nothing.
+- **No capable VLM member yet.** `vlm_waypoint` remains scripted. Gemma profiles
+  perform real pixel inference but have not completed the safe capability gate.
 - **The "detector" is geometry.** `semantic_hits` come from the environment
   filtering its own landmark list by range, field of view and ray-cast occlusion,
   then adding Gaussian noise. `IdentityPerception` copies those straight into
@@ -179,10 +179,10 @@ and simulated clock, staleness accounting, the safety boundary, the config
 grammar, the metrics and the statistics. Those are all geometry-and-timing
 properties, and they are genuinely exercised.
 
-**What it cannot validate:** anything about visual grounding, visuomotor
-competence, language following, or semantic generalisation — which is most of
-what C1–C14 are *named* after. No table produced from these plugins is a result
-about foundation-model autonomy.
+**What remains unvalidated:** reliable visual grounding, visuomotor competence
+and cross-domain semantic generalisation. Only the frozen AerialClaw result is
+a foundation-model architecture result; scripted configurations remain harness
+measurements.
 
 Milestone D replaces one plugin per family with a real model and changes nothing
 else. Until then, read every number here as a harness measurement.
@@ -193,12 +193,13 @@ Milestones A and B are complete: contracts, plugin protocols, config grammar,
 scheduler, decision router, simulated clock, event logger, deterministic
 environment, and all fifteen configurations running as pure configuration.
 
-**The shipped policies are simulated stand-ins, not real models.** They reproduce
-each family's information flow and authority boundary with scripted logic and a
-configured latency budget. Numbers produced with them validate *the harness* —
-that the runtime is modular, deterministic and fair — and are not results about
-any published system. Real LLM/VLM/VLA adapters are Milestone D; they replace
-one plugin each and change nothing else.
+Most shipped policies are simulated stand-ins. They reproduce each family's
+information flow and authority boundary with scripted logic and a configured
+latency budget, so their numbers validate the harness rather than the named
+paper. C1 is the first exception: its real AerialClaw-style LLM mechanism and
+resource passed the frozen local capability gate. Real VLM and direct-VLA
+members remain Milestone D work and will replace one plugin without changing
+the shared testbed.
 
 See [EXPERIMENTS.md](EXPERIMENTS.md) for the protocol and
 [docs/architecture.md](docs/architecture.md) for the runtime design.

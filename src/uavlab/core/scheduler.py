@@ -35,6 +35,8 @@ class RoleSchedule:
     every_n_decisions: int = 1
     """Inline roles run on every n-th decision tick."""
     triggered: bool = False
+    next_deadline_ns: int | None = field(default=None, repr=False)
+    """Next start-time deadline for concurrent periodic execution."""
 
 
 @dataclass(slots=True)
@@ -197,21 +199,46 @@ class Scheduler:
                             triggered=True,
                         )
                     )
+        # Loops do their work before calling ``tick``.  Establish the first
+        # deadline here (rather than on the first tick after inference) so the
+        # configured period is start-to-start, not compute-time-plus-period.
+        epoch_ns = self.clock.now_ns()
+        for schedule in schedules:
+            if schedule.period_ns is not None:
+                schedule.next_deadline_ns = epoch_ns + schedule.period_ns
         return schedules
 
     @staticmethod
     def _ratio(fast_hz: float, slow_hz: float | None) -> int:
         if not slow_hz or slow_hz <= 0:
             return 1
-        return max(1, int(round(fast_hz / slow_hz)))
+        return max(1, round(fast_hz / slow_hz))
 
     # -- driving ------------------------------------------------------------
 
     async def tick(self, schedule: RoleSchedule) -> None:
-        """Sleep one period of simulation time for this role."""
+        """Wait until this role's next start-time deadline.
+
+        A slow model call must not be followed by a *second* full-period wait.
+        If work finishes before its deadline, sleep only the remaining time.
+        If it overruns, let the next invocation start immediately and rebase
+        the following deadline from that start.  Rebasing avoids catch-up
+        bursts after a large overrun while preserving maximum attainable rate.
+        """
         if schedule.period_ns is None:
             raise ValueError(f"role {schedule.role!r} has no period to wait on")
-        await self.clock.sleep_ns(schedule.period_ns, role=schedule.role)
+        now_ns = self.clock.now_ns()
+        deadline_ns = schedule.next_deadline_ns
+        if deadline_ns is None:
+            # Defensive fallback for a manually constructed RoleSchedule. The
+            # normal path initializes deadlines in ``build`` before work starts.
+            deadline_ns = now_ns + schedule.period_ns
+
+        if now_ns < deadline_ns:
+            await self.clock.sleep_ns(deadline_ns - now_ns, role=schedule.role)
+            schedule.next_deadline_ns = deadline_ns + schedule.period_ns
+        else:
+            schedule.next_deadline_ns = now_ns + schedule.period_ns
 
     def stats(self) -> dict[str, float]:
         return self.gate.stats() if self.gate else {}

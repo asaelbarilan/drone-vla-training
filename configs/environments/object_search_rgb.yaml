@@ -1,0 +1,12 @@
+# RGB-only rendering variant of object_search. No depth frame or semantic
+# target coordinate is made available to the SPF policy.
+
+_base_: object_search.yaml
+
+id: object_search_rgb
+
+params:
+  render: true
+  render_depth: false
+  image_size: 224
+  camera_pitch_rad: -0.15

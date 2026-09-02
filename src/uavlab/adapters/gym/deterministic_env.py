@@ -62,10 +62,10 @@ class Obstacle:
         return float(outside + inside)
 
     def intersects_segment(self, a: np.ndarray, b: np.ndarray, samples: int = 12) -> bool:
-        for t in np.linspace(0.0, 1.0, samples):
-            if self.distance(a + (b - a) * t) <= 0.0:
-                return True
-        return False
+        return any(
+            self.distance(a + (b - a) * t) <= 0.0
+            for t in np.linspace(0.0, 1.0, samples)
+        )
 
 
 @dataclass(slots=True)
@@ -167,6 +167,12 @@ class DeterministicEnv:
         self.render = bool(params.get("render", False))
         """Produce real camera frames. Off by default: it costs ~1 ms/frame and
         the scripted-policy sweeps never look at an image."""
+        self.render_depth = bool(params.get("render_depth", False))
+        """Expose a calibrated depth-camera channel alongside RGB when enabled."""
+        self.render_down = bool(params.get("render_down", False))
+        """Render the ordinary downward RGB camera used by AeroVLA profiles."""
+        self.coarse_goal_direction = bool(params.get("coarse_goal_direction", False))
+        """Expose only a seven-way target-bearing bucket when the task declares it."""
         from uavlab.adapters.gym.render import Camera
 
         self._camera = Camera(
@@ -174,6 +180,12 @@ class DeterministicEnv:
             height=int(params.get("image_size", 224)),
             fov_deg=float(params.get("fov_deg", 90.0)),
             pitch_rad=float(params.get("camera_pitch_rad", -0.15)),
+        )
+        self._down_camera = Camera(
+            width=self._camera.width,
+            height=self._camera.height,
+            fov_deg=float(params.get("down_camera_fov_deg", 90.0)),
+            pitch_rad=-math.pi / 2.0,
         )
         self._obs_centers = np.zeros((0, 3))
         self._obs_halves = np.zeros((0, 3))
@@ -274,16 +286,30 @@ class DeterministicEnv:
                     Obstacle(center=center, half=np.array([3.0, 3.0, 6.0]), label="corridor_wall")
                 )
 
-        n = self.n_obstacles if self.scene in ("clutter", "corridor") else max(0, self.n_obstacles // 3)
+        n = (
+            self.n_obstacles
+            if self.scene in ("clutter", "corridor")
+            else max(0, self.n_obstacles // 3)
+        )
         attempts = 0
-        while len(obstacles) < n + (len(obstacles) if self.scene != "clutter" else 0) and attempts < 400:
+        while (
+            len(obstacles) < n + (len(obstacles) if self.scene != "clutter" else 0)
+            and attempts < 400
+        ):
             attempts += 1
             along = float(self._rng.uniform(0.15, 0.9)) * length
             lateral = float(self._rng.normal(0.0, 6.0))
             center = start + unit * along + perp * lateral
-            center[2] = float(self._rng.uniform(1.5, min(8.0, self.world_size[2] - 2.0)))
+            # Consume the historical height draw so existing seeds retain the
+            # same horizontal layout and obstacle sizes.  The normalized local
+            # sensor/planner stack is 2.5-D and its fidelity record declares
+            # these boxes to be ground-attached vertical columns.  Letting a
+            # random box float above the horizontal range fan created an
+            # unsensed "ceiling" that a vertical waypoint could collide with.
+            self._rng.uniform(1.5, min(8.0, self.world_size[2] - 2.0))
             size = float(self._rng.uniform(*self.obstacle_span))
             half = np.array([size / 2.0, size / 2.0, size])
+            center[2] = half[2]
             candidate = Obstacle(center=center, half=half)
             if candidate.distance(start) < 6.0 or candidate.distance(self.goal) < 5.0:
                 continue
@@ -347,7 +373,11 @@ class DeterministicEnv:
             yaw_rad=self.vehicle.yaw,
             frame=Frame.ENU,
             rgb=self._sensor_ref("rgb", visible),
-            depth=self._sensor_ref("depth"),
+            rgb_down=self._sensor_ref(
+                "rgb_down",
+                set() if t_s < self._dropout_until_s else None,
+            ),
+            depth=self._sensor_ref("depth", visible),
             intrinsics=CameraIntrinsics(
                 width=self._camera.width,
                 height=self._camera.height,
@@ -362,6 +392,7 @@ class DeterministicEnv:
             ray_bearings_rad=bearings,
             vertical_clearance_m=self._vertical_clearance(),
             battery_frac=max(0.0, 1.0 - t_s / 600.0),
+            coarse_goal_direction=self._coarse_goal_direction(),
             privileged=self._privileged() if self.allow_privileged else None,
         )
         self._seq += 1
@@ -381,26 +412,76 @@ class DeterministicEnv:
         raw = f"{kind}|{self._seq}|{p[0]:.3f}|{p[1]:.3f}|{p[2]:.3f}|{self.vehicle.yaw:.3f}"
         digest = hashlib.sha256(raw.encode()).hexdigest()[:16]
 
-        if not self.render or kind != "rgb":
+        if (
+            not self.render
+            or (kind == "depth" and not self.render_depth)
+            or (kind == "rgb_down" and not self.render_down)
+        ):
             return SensorRef(
                 kind=kind, uri=f"stub://grid3d/{kind}/{self._seq}", digest=digest, shape=None
             )
 
-        from uavlab.adapters.gym.render import render_frame
+        from uavlab.adapters.gym.render import render_depth_frame, render_down_frame, render_frame
         from uavlab.core.frame_store import global_store
 
-        image = render_frame(
-            self.vehicle.position,
-            self.vehicle.yaw,
-            self.obstacles,
-            self.landmarks,
-            self.target_label,
-            camera=self._camera,
-            visible_labels=visible_labels,
-        )
+        if kind == "rgb":
+            image = render_frame(
+                self.vehicle.position,
+                self.vehicle.yaw,
+                self.obstacles,
+                self.landmarks,
+                self.target_label,
+                camera=self._camera,
+                visible_labels=visible_labels,
+            )
+            shape = (image.height, image.width)
+        elif kind == "rgb_down":
+            image = render_down_frame(
+                self.vehicle.position,
+                self.vehicle.yaw,
+                self.obstacles,
+                self.landmarks,
+                self.target_label,
+                camera=self._down_camera,
+                visible_labels=visible_labels,
+            )
+            shape = (image.height, image.width)
+        else:
+            image = render_depth_frame(
+                self.vehicle.position,
+                self.vehicle.yaw,
+                self.obstacles,
+                self.landmarks,
+                self.target_label,
+                camera=self._camera,
+                visible_labels=visible_labels,
+            )
+            shape = tuple(int(x) for x in image.shape)
         uri = f"frame://{self._frame_ns}/{kind}/{self._seq}"
         global_store().put(uri, image)
-        return SensorRef(kind=kind, uri=uri, digest=digest, shape=(image.height, image.width))
+        return SensorRef(kind=kind, uri=uri, digest=digest, shape=shape)
+
+    def _coarse_goal_direction(self) -> str | None:
+        """AeroVLA's seven-way localization hint, with no coordinate leakage."""
+        if not self.coarse_goal_direction:
+            return None
+        delta = self.goal - self.vehicle.position
+        if float(np.linalg.norm(delta[:2])) < 1e-9:
+            return "straight ahead"
+        world_bearing = math.atan2(float(delta[1]), float(delta[0]))
+        relative = math.atan2(
+            math.sin(world_bearing - self.vehicle.yaw),
+            math.cos(world_bearing - self.vehicle.yaw),
+        )
+        degrees = math.degrees(relative)
+        magnitude = abs(degrees)
+        if magnitude <= 15.0:
+            return "straight ahead"
+        if magnitude <= 60.0:
+            return "forward-left" if degrees > 0.0 else "forward-right"
+        if magnitude <= 120.0:
+            return "to your left" if degrees > 0.0 else "to your right"
+        return "to your left rear" if degrees > 0.0 else "to your right rear"
 
     def _visible_hits(self, t_s: float) -> list[SemanticHit]:
         """Detections that survive range, field of view and occlusion.
@@ -477,7 +558,7 @@ class DeterministicEnv:
     def _distance_to_obstacles(self, points: np.ndarray) -> np.ndarray:
         """Box distances for a batch of points. ``points`` is (..., 3) -> (..., N)."""
         if self._obs_centers.shape[0] == 0:
-            return np.full(points.shape[:-1] + (0,), np.inf)
+            return np.full((*points.shape[:-1], 0), np.inf)
         delta = np.abs(points[..., None, :] - self._obs_centers) - self._obs_halves
         outside = np.linalg.norm(np.maximum(delta, 0.0), axis=-1)
         inside = np.minimum(delta.max(axis=-1), 0.0)
@@ -489,7 +570,9 @@ class DeterministicEnv:
         idx = min(range(len(bearings)), key=lambda i: abs(bearings[i]))
         return rays[idx]
 
-    def _range_fan(self, max_range: float = 25.0, step_m: float = 0.5) -> tuple[tuple[float, ...], tuple[float, ...]]:
+    def _range_fan(
+        self, max_range: float = 25.0, step_m: float = 0.5
+    ) -> tuple[tuple[float, ...], tuple[float, ...]]:
         """A horizontal depth fan: the planner's only geometric evidence."""
         if self._fan_cache_seq == self._seq and self._fan_cache is not None:
             return self._fan_cache

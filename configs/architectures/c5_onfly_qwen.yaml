@@ -1,0 +1,47 @@
+_base_: [c5_keyframe_memory.yaml, ../models/qwen3_vl_8b_onfly.yaml]
+
+id: c5_onfly_qwen
+profile_of: c5
+ablation_of: null
+family: hybrid_stack
+name: "C5 full OnFly hybrid memory (Qwen3-VL 8B)"
+description: "C4 OnFly profile with initial + four segment keyframes + latest visual monitor memory."
+tags: [onfly, normalized_profile, real_model, vision, depth, dual_agent, hybrid_memory, qwen_relative_coordinates]
+
+memory_consumers: [monitor]
+
+memory:
+  name: onfly_hybrid_memory
+  params:
+    keyframe_budget: 4
+    translation_threshold_m: 2.0
+    rotation_threshold_rad: 0.3490658504
+    dedupe_epsilon: 0.08
+    dedupe_distance_m: 3.0
+
+monitor:
+  name: onfly_monitor
+  params:
+    model_id: qwen3-vl:8b
+    stop_confirmations: 2
+    layout: latest_emphasis_sheet
+    structured_evidence: true
+    stop_max_depth_m: 3.0
+    lost_hold_s: 0.25
+    lost_reorient_s: 2.0
+    lost_yaw_rate_rps: 0.8
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    # D_max=7 m is camera-forward depth; the corresponding 3-D ray is longer.
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 0.5

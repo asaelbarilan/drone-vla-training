@@ -18,9 +18,10 @@ pulls in nothing heavy.
 from __future__ import annotations
 
 import base64
+import contextlib
+import http.client
 import io
 import json
-import http.client
 import time
 import urllib.parse
 from typing import Any
@@ -36,6 +37,10 @@ class OllamaUnavailable(RuntimeError):
     """Raised when the endpoint cannot be reached, with what to do about it."""
 
 
+class OllamaRequestError(RuntimeError):
+    """Raised when Ollama rejects a request instead of returning an inference."""
+
+
 @register("inference", "ollama")
 class OllamaInference:
     """Calls a local Ollama daemon and charges the measured latency to the clock."""
@@ -49,6 +54,10 @@ class OllamaInference:
         comparison meaningless, since the same scene would produce different
         decisions run to run."""
         self.num_predict = int(params.get("num_predict", 96))
+        raw_num_ctx = params.get("num_ctx")
+        self.num_ctx = None if raw_num_ctx is None else int(raw_num_ctx)
+        if self.num_ctx is not None and self.num_ctx <= 0:
+            raise ValueError("num_ctx must be positive or omitted")
         self.sampling_seed = int(params.get("sampling_seed", 0))
         """Seed sent to the server with every call.
 
@@ -65,6 +74,33 @@ class OllamaInference:
         straight to a waypoint, so nothing absorbs it, which is why c2g is the
         one that shows it.
         """
+        self.think = params.get("think")
+        """Optional Ollama reasoning-channel switch.
+
+        Models such as Qwen 3.5 may spend the complete output budget in the
+        separate ``thinking`` field and leave the schema-constrained content
+        empty. A profile may disable that hidden channel when the requested
+        JSON itself already carries inspectable reasoning.
+        """
+        if self.think is not None and not (
+            isinstance(self.think, bool)
+            or self.think in {"low", "medium", "high"}
+        ):
+            raise ValueError("think must be true, false, low, medium, high or omitted")
+        self.response_channel = str(params.get("response_channel", "content"))
+        """Assistant field used as the policy payload.
+
+        Ollama exposes thinking-capable models with separate ``content`` and
+        ``thinking`` fields. Some quantized Qwen3-VL builds place a requested
+        schema-constrained JSON object in ``thinking`` even when ``think=false``
+        and leave content empty. Selecting that channel must be explicit: a
+        silent fallback could accidentally turn hidden free-form rationale into
+        an executable decision for another model profile.
+        """
+        if self.response_channel not in {"content", "thinking", "content_or_thinking"}:
+            raise ValueError(
+                "response_channel must be content|thinking|content_or_thinking"
+            )
 
         self.charge_mode = str(params.get("charge_mode", "fixed"))
         """How measured model latency is charged to the *simulation* clock.
@@ -198,10 +234,8 @@ class OllamaInference:
 
     def close(self) -> None:
         if self._conn is not None:
-            try:
+            with contextlib.suppress(Exception):
                 self._conn.close()
-            except Exception:  # noqa: BLE001 - closing must never raise
-                pass
             self._conn = None
 
     def available(self) -> bool:
@@ -228,7 +262,7 @@ class OllamaInference:
         quantum_ns = max(int(self.latency_quantum_s * 1e9), 1)
         # Round to nearest, never to zero: a call that took real time must cost
         # the simulated vehicle real time, or a slow model would look free.
-        return max(quantum_ns, int(round(measured_ns / quantum_ns)) * quantum_ns)
+        return max(quantum_ns, round(measured_ns / quantum_ns) * quantum_ns)
 
     # -- the interface ------------------------------------------------------
 
@@ -246,6 +280,8 @@ class OllamaInference:
             # `sampling_seed` for what remains.
             "seed": self.sampling_seed,
         }
+        if self.num_ctx is not None:
+            options["num_ctx"] = self.num_ctx
         if self.endpoint == "chat":
             message: dict[str, Any] = {"role": "user", "content": prompt}
             if images:
@@ -257,6 +293,10 @@ class OllamaInference:
                 "keep_alive": self.keep_alive,
                 "options": options,
             }
+            if self.think is not None:
+                body["think"] = self.think
+            if request.response_schema is not None:
+                body["format"] = request.response_schema
             path = "/api/chat"
         else:
             body = {
@@ -266,8 +306,12 @@ class OllamaInference:
                 "keep_alive": self.keep_alive,
                 "options": options,
             }
+            if self.think is not None:
+                body["think"] = self.think
             if images:
                 body["images"] = images
+            if request.response_schema is not None:
+                body["format"] = request.response_schema
             path = "/api/generate"
 
         started = time.perf_counter_ns()
@@ -276,13 +320,24 @@ class OllamaInference:
         load_ns = 0
         try:
             payload = self._post(path, body)
-            text = str(
-                payload.get("response")
-                or payload.get("message", {}).get("content", "")
-            )
+            if payload.get("error"):
+                raise OllamaRequestError(
+                    f"Ollama rejected {request.role} request for {self.model_id}: "
+                    f"{payload['error']}"
+                )
+            message = payload.get("message", {})
+            content = message.get("content", "")
+            thinking = message.get("thinking", "")
+            if self.response_channel == "thinking":
+                selected = thinking
+            elif self.response_channel == "content_or_thinking":
+                selected = content or thinking
+            else:
+                selected = payload.get("response") or content
+            text = str(selected or "")
             eval_count = int(payload.get("eval_count", 0) or 0)
             load_ns = int(payload.get("load_duration", 0) or 0)
-        except OllamaUnavailable:
+        except (OllamaUnavailable, OllamaRequestError):
             self._errors += 1
             raise
         measured_ns = time.perf_counter_ns() - started
@@ -312,6 +367,7 @@ class OllamaInference:
                     "output_tokens": eval_count,
                     "image_count": len(images),
                     "response_chars": len(text),
+                    "response_channel": self.response_channel,
                 },
             )
 

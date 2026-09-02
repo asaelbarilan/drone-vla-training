@@ -1,0 +1,23 @@
+# Real local LLM profile for AerialClaw's JSON skill agent.
+# Installed Ollama manifest (2026-08-25):
+# 324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df
+
+inference:
+  name: ollama
+  params:
+    host: http://localhost:11434
+    model_id: qwen3.5:2b
+    temperature: 0.0
+    num_predict: 256
+    sampling_seed: 1020
+    # The required JSON has its own inspectable thinking/reflection fields.
+    # Qwen's separate hidden channel otherwise consumes the whole token budget.
+    think: false
+    timeout_s: 180.0
+    endpoint: chat
+    keep_alive: 30m
+    charge_mode: fixed
+    # Frozen from the first successful real-model development run: 19 calls,
+    # 2.071 s median live latency (2.120 s mean). Live latency remains logged.
+    fixed_latency_s:
+      policy: 2.0

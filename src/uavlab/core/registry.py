@@ -16,6 +16,7 @@ CATEGORIES: tuple[str, ...] = (
     "memory",
     "policy",
     "monitor",
+    "admission",
     "recovery",
     "verifier",
     "planner",
@@ -29,8 +30,20 @@ T = TypeVar("T")
 
 OPTIONAL_PLUGINS: dict[tuple[str, str], str] = {
     ("inference", "ollama"): "uavlab.plugins.inference.ollama",
+    ("inference", "role_router"): "uavlab.plugins.inference.role_router",
+    ("inference", "aerovla_hf"): "uavlab.plugins.inference.aerovla_hf",
     ("policy", "vlm_point_waypoint"): "uavlab.plugins.reasoning.vlm",
+    ("policy", "spf_waypoint"): "uavlab.plugins.reasoning.spf",
     ("policy", "learned_visuomotor"): "uavlab.plugins.reasoning.learned",
+    ("policy", "aerialclaw_agent"): "uavlab.plugins.reasoning.aerialclaw",
+    ("policy", "aerovla"): "uavlab.plugins.reasoning.aerovla",
+    ("policy", "onfly_decision"): "uavlab.plugins.reasoning.onfly",
+    ("memory", "onfly_hybrid_memory"): "uavlab.plugins.reasoning.onfly",
+    ("memory", "onfly_sliding_memory"): "uavlab.plugins.reasoning.onfly",
+    ("monitor", "onfly_monitor"): "uavlab.plugins.reasoning.onfly",
+    ("admission", "pmr_cvi"): "uavlab.plugins.admission.pmr",
+    ("recovery", "pmr_recovery_reasoner"): "uavlab.plugins.recovery.pmr",
+    ("verifier", "onfly_semantic_geometric"): "uavlab.plugins.reasoning.onfly",
 }
 """Plugins imported on first use rather than at package import.
 

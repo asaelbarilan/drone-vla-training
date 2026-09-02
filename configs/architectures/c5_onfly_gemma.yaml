@@ -1,0 +1,40 @@
+_base_: [c5_keyframe_memory.yaml, ../models/gemma3_4b_onfly.yaml]
+
+id: c5_onfly_gemma
+profile_of: c5
+ablation_of: null
+family: hybrid_stack
+name: "Full OnFly hybrid-memory mechanism (Gemma profile)"
+description: "C4 OnFly profile with first-frame + four keyframes + latest visual monitor memory."
+tags: [onfly, normalized_profile, real_model, vision, depth, dual_agent, hybrid_memory]
+
+memory_consumers: [monitor]
+
+memory:
+  name: onfly_hybrid_memory
+  params:
+    keyframe_budget: 4
+    translation_threshold_m: 2.0
+    rotation_threshold_rad: 0.3490658504
+    dedupe_epsilon: 0.08
+    dedupe_distance_m: 3.0
+
+monitor:
+  name: onfly_monitor
+  params:
+    model_id: gemma3:4b
+    stop_confirmations: 2
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    max_waypoint_distance_m: 7.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 0.5

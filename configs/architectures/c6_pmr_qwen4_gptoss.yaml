@@ -1,0 +1,56 @@
+# Paper-mechanism PMR capability profile.
+#
+# This profile intentionally fails closed until the declared learned-CVI
+# checkpoint has been fitted on the locked non-held-out split. The existing
+# c6 rule trigger remains a structural ablation and is not relabeled PMR.
+
+_base_: [c3_onfly_qwen4_native_shield.yaml, ../models/qwen3_vl_4b_gpt_oss_20b_pmr.yaml]
+
+id: c6_pmr_qwen4_gptoss
+profile_of: c6
+family: selective_recovery
+name: "PMR learned-CVI + GPT-OSS recovery over OnFly/Qwen local policy"
+description: "Real visual local policy with learned admission and typed real-model recovery."
+tags: [pmr, learned_cvi, real_model, typed_recovery, qwen3_vl_4b, gpt_oss_20b]
+
+semantic_supervision: triggered_reasoner
+semantic_memory: compact_semantic_state
+memory_consumers: [monitor, admission, recovery]
+
+memory:
+  name: compact_semantic_state
+
+monitor:
+  name: local_progress
+  params:
+    window_s: 3.0
+    min_travel_m: 1.0
+
+admission:
+  name: pmr_cvi
+  params:
+    checkpoint_path: artifacts/pmr_cvi/pmr_cvi_v1.json
+
+recovery:
+  name: pmr_recovery_reasoner
+  params:
+    model_id: gpt-oss:20b
+    max_parse_attempts: 2
+    validity_s: 15.0
+
+scheduler:
+  kind: event_triggered
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 5.0
+  trigger: learned_cvi
+  cooldown_s: 4.0
+  max_calls: 8
+  trigger_check_hz: 2.0
+
+staleness:
+  # The measured low-reasoning GPT-OSS call is 8.37 s. Recovery output remains
+  # symbolic and is grounded against current local state by the shared skill
+  # runtime, but the semantic observation age is still capped and logged.
+  max_decision_age_s: 12.0
+  reject_stale: true

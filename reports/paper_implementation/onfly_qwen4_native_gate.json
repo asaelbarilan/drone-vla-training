@@ -1,0 +1,63 @@
+{
+  "paper": "OnFly",
+  "profile": "c5_onfly_qwen4_native_dynamics",
+  "environment": "grid_nav_onfly_native_dynamics",
+  "model": {
+    "id": "qwen3-vl:4b",
+    "ollama_digest": "1343d82ebee3",
+    "quantization": "Q4_K_M",
+    "fidelity": "compatible backend; not unreleased author runtime"
+  },
+  "development_gate": {
+    "required_successes": 4,
+    "planned_seeds": [1060, 1061, 1062, 1063, 1064],
+    "spent_seeds": [1060, 1061],
+    "successes": 0,
+    "failures": 2,
+    "attainable": false,
+    "heldout_seeds_1_40_spent": false
+  },
+  "runs": [
+    {
+      "seed": 1060,
+      "path": "runs/onfly_c5_qwen4_native_seed1060_v1",
+      "success": false,
+      "termination": "timeout",
+      "distance_to_goal_m": 25.4126,
+      "collisions": 0,
+      "target_visible_decision_frames": 0,
+      "decision_frames": 89,
+      "planner_infeasible": 63,
+      "cause": "semantic search selected non-target near surfaces; no known-free SUPER prefix"
+    },
+    {
+      "seed": 1061,
+      "path": "runs/onfly_c5_qwen4_native_seed1061_v7",
+      "success": false,
+      "termination": "timeout",
+      "distance_to_goal_m": 15.7782,
+      "collisions": 0,
+      "cause": "positionally occluded target cannot be recovered by the paper-defined yaw-only maneuver"
+    }
+  ],
+    "focused_tests": {
+        "passed": 61,
+        "status": "pass"
+    },
+    "full_regression": {
+        "passed": 345,
+        "duration_s": 479.92,
+        "status": "pass"
+    },
+    "configuration_validation": {
+        "architecture": "pass",
+        "environment": "pass_via_typed_loader_and_full_regression",
+        "note": "validate-config is architecture-only; EnvironmentConfig loading is covered by test_onfly_native_profile.py"
+    },
+    "official_release_check": {
+        "date": "2026-08-30",
+        "repository": "https://github.com/Robotics-STAR-Lab/OnFly",
+        "status": "code_coming_soon"
+    },
+    "status": "rejected"
+}

@@ -1,0 +1,25 @@
+# Development-only hybrid: Qwen performs semantic acquisition; observable
+# launch-corridor continuation plus the shared planner handles target absence.
+# The simulator aligns launch yaw with the hidden goal, so this is a corridor
+# prior experiment, not a general frontier-search result.
+
+_base_: c5_onfly_qwen4_coverage_dev.yaml
+
+id: c5_onfly_qwen4_corridor_frontier_dev
+profile_of: c5
+name: "C5 OnFly + explicit corridor frontier (development)"
+description: "Qwen semantic acquisition with a non-privileged launch-heading frontier candidate."
+tags: [onfly, development, corridor_frontier, real_model, qwen3_vl_4b]
+
+policy:
+  params:
+    frontier_assist: true
+    frontier_hop_m: 9.0
+
+verifier:
+  name: semantic_geometric
+  params:
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 0.1
+    sensing_horizon_m: 25.0
+    repair: true

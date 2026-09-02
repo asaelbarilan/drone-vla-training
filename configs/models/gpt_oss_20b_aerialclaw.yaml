@@ -1,0 +1,23 @@
+# Current-best local text-reasoner profile for AerialClaw.
+# Installed Ollama manifest (2026-08-25):
+# 17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7
+
+inference:
+  name: ollama
+  params:
+    host: http://localhost:11434
+    model_id: gpt-oss:20b
+    temperature: 0.0
+    num_predict: 512
+    sampling_seed: 1020
+    # gpt-oss requires its Harmony reasoning channel for non-empty structured
+    # content in the installed Ollama runtime.
+    think: low
+    timeout_s: 300.0
+    endpoint: chat
+    keep_alive: 30m
+    charge_mode: fixed
+    # Frozen from a resident low-reasoning structured probe (8.37 s). Live
+    # latency is still logged and the development gate audits this charge.
+    fixed_latency_s:
+      policy: 8.5

@@ -20,6 +20,7 @@ from uavlab.plugins.memory import stores as _memory_stores
 from uavlab.plugins.monitoring import progress as _monitoring_progress
 from uavlab.plugins.perception import identity as _perception_identity
 from uavlab.plugins.planning import local as _planning_local
+from uavlab.plugins.planning import super as _planning_super
 from uavlab.plugins.reasoning import policies as _reasoning_policies
 from uavlab.plugins.recovery import reasoner as _recovery_reasoner
 from uavlab.plugins.shield import collision as _shield_collision
@@ -32,6 +33,7 @@ __all__ = [
     "_monitoring_progress",
     "_perception_identity",
     "_planning_local",
+    "_planning_super",
     "_reasoning_policies",
     "_recovery_reasoner",
     "_shield_collision",

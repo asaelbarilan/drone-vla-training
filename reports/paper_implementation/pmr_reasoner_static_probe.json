@@ -1,0 +1,41 @@
+{
+  "architecture": "c6_pmr_qwen4_gptoss",
+  "model": "gpt-oss:20b",
+  "probe_kind": "static_capability_not_architecture_score",
+  "cases": [
+    {
+      "case": "blocked",
+      "kind": "skill",
+      "skill": "ascend",
+      "decision": "local_repair",
+      "option": "ascend",
+      "risk": "low",
+      "confidence": 0.75,
+      "used_fallback": false,
+      "semantically_valid": true
+    },
+    {
+      "case": "target_lost",
+      "kind": "skill",
+      "skill": "scan",
+      "decision": "goal_alignment",
+      "option": "scan_left",
+      "risk": "low",
+      "confidence": 0.7,
+      "used_fallback": false,
+      "semantically_valid": true
+    },
+    {
+      "case": "stalled",
+      "kind": "skill",
+      "skill": "approach",
+      "decision": "goal_resume",
+      "option": "approach_target",
+      "risk": "low",
+      "confidence": 0.92,
+      "used_fallback": false,
+      "semantically_valid": true
+    }
+  ],
+  "passed": true
+}

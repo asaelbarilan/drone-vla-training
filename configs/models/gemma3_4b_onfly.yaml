@@ -1,0 +1,29 @@
+_base_: gemma3_4b.yaml
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: onfly_decision
+  params:
+    model_id: gemma3:4b
+    max_depth_m: 7.0
+    sigma_theta: 0.65
+    goal_standoff_m: 0.0
+    camera_pitch_rad: -0.15
+    self_terminate: false
+    use_memory: false
+
+inference:
+  params:
+    num_predict: 48
+    charge_mode: fixed
+    fixed_latency_s:
+      policy: 2.2
+      monitor: 2.2
+
+staleness:
+  max_decision_age_s: 8.0
+  reject_stale: true

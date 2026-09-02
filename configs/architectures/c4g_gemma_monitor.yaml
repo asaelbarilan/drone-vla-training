@@ -5,7 +5,7 @@
 # "more model helps". The monitor's own model can be swapped in later as its
 # own experiment.
 
-_base_: [c4_periodic_monitor.yaml, ../models/gemma3_4b.yaml]
+_base_: [c4_periodic_monitor.yaml, ../models/gemma3_4b_waypoint.yaml]
 
 id: c4g
 

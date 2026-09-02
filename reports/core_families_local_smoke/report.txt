@@ -1,0 +1,18 @@
+
+=== grid_nav  (long_horizon_nav) ===
+arch     n     SR   coll   stop    eff  p95_lat    age   reas
+-------------------------------------------------------------
+c0       1   0.00   1.00   0.00   0.25     0.00   0.15    0.0
+c1       1   1.00   0.00   1.00   0.29     0.60   1.45    0.0
+c2       1   1.00   0.00   1.00   0.24     0.35   0.80    0.0
+c3       1   1.00   0.00   1.00   0.24     0.35   0.80    0.0
+c6       1   1.00   0.00   1.00   0.24     0.35   0.80    8.0
+c8       1   0.00   0.00   0.00   0.16     0.09   0.15    0.0
+
+=== Pareto frontier (per environment) ===
+grid_nav: c2, c3, c8
+    c1 dominated by c2, c3
+    c6 dominated by c2, c3
+    [reference, excluded from the frontier] c0: SR=0.00 coll=1.00 - sees ground truth, so it is a ceiling to measure against, not a competitor
+
+No single score is computed. An architecture on the frontier is not 'best'; it is un-dominated given these objectives.

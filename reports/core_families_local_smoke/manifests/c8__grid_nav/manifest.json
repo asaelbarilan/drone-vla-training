@@ -1,0 +1,163 @@
+{
+  "architecture_config": {
+    "ablation_of": null,
+    "action_horizon": "single",
+    "allow_privileged_observations": false,
+    "authority": "direct_vla",
+    "chunk_length": 1,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5
+      }
+    },
+    "description": "Same VLA as C7 with an independent collision and envelope shield.",
+    "family": "direct_vla",
+    "feature_cache": {
+      "capacity": 32,
+      "enabled": false
+    },
+    "id": "c8",
+    "inference": {
+      "name": "simulated",
+      "params": {
+        "jitter_frac": 0.0,
+        "latency_s": {
+          "perception": 0.01,
+          "policy": 0.09
+        },
+        "model_id": "sim-vla",
+        "tokens_per_call": {
+          "policy": 0
+        }
+      }
+    },
+    "memory": {
+      "name": "short_context",
+      "params": {
+        "window": 5
+      }
+    },
+    "memory_consumers": [
+      "policy"
+    ],
+    "monitor": null,
+    "name": "C7 + independent safety shield",
+    "perception": {
+      "name": "identity",
+      "params": {
+        "charge_latency": true,
+        "drone_radius_m": 0.4,
+        "min_score": 0.0
+      }
+    },
+    "planner": null,
+    "policy": {
+      "name": "mock_vla",
+      "params": {
+        "action_duration_s": 0.2,
+        "avoid_gain": 1.2,
+        "cruise_mps": 3.0,
+        "stop_radius_m": 2.0
+      }
+    },
+    "recovery": null,
+    "scheduler": {
+      "control_hz": 20.0,
+      "cooldown_s": 2.0,
+      "decision_hz": 10.0,
+      "kind": "periodic",
+      "max_calls": null,
+      "monitor_hz": null,
+      "reasoner_hz": null,
+      "trigger": null,
+      "trigger_check_hz": 5.0
+    },
+    "semantic_memory": "short_context",
+    "semantic_supervision": "none",
+    "shield": {
+      "name": "simple_collision",
+      "params": {
+        "allow_deflection": true,
+        "brake_margin_m": 1.5,
+        "hard_stop_m": 1.0,
+        "reaction_time_s": 0.35
+      }
+    },
+    "staleness": {
+      "max_decision_age_s": 1.5,
+      "reject_stale": true
+    },
+    "subfamily": null,
+    "tags": [
+      "direct_vla",
+      "safety_screening"
+    ],
+    "unsafe_ablation": false,
+    "verifier": null
+  },
+  "architecture_config_hash": "7c5e8b35ba49912f",
+  "architecture_id": "c8",
+  "container_image_digest": null,
+  "dependency_hash": "63de0236d6e60d99",
+  "environment_config": {
+    "adapter": {
+      "name": "grid3d",
+      "params": {}
+    },
+    "id": "grid_nav",
+    "instruction": "fly to the target tower and stop there",
+    "max_episode_s": 90.0,
+    "params": {
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "constraints": {
+        "geofence_radius_m": 60.0,
+        "max_altitude_m": 25.0,
+        "max_speed_mps": 5.0,
+        "min_altitude_m": 0.5,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "detection_noise_m": 0.25,
+      "distractors": 3,
+      "fov_deg": 90.0,
+      "goal_distance_m": 35.0,
+      "n_obstacles": 10,
+      "scene": "clutter",
+      "sensor_range_m": 45.0,
+      "subgoals": 2,
+      "success": {
+        "goal_radius_m": 2.0,
+        "max_flight_time_s": 90.0,
+        "require_terminal_stop": true,
+        "required_subgoals": 0
+      }
+    },
+    "task_family": "long_horizon_nav"
+  },
+  "environment_id": "grid_nav",
+  "experiment_id": "core_families_local",
+  "git_branch": "master",
+  "git_dirty": true,
+  "git_dirty_files": 39,
+  "git_sha": "0687510d565b18839a6a6ef0eeca746039f85c41",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.3",
+  "schema": "uavlab/manifest/1",
+  "seeds": [
+    1
+  ],
+  "stage": "macro_screening"
+}

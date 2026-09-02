@@ -276,6 +276,101 @@ def test_staleness_can_be_measured_instead_of_rejected():
     assert router.counters.rejected_stale == 0
 
 
+def test_motion_source_is_rejected_when_it_becomes_stale_during_execution():
+    """A fresh proposal must not grant indefinite trajectory authority."""
+    router = make_router(Authority.WAYPOINT)
+    router.max_age_ns = s_to_ns(1.0)
+    accepted = router.accept(
+        envelope(
+            DecisionKind.WAYPOINT,
+            WaypointGoal(target=Vec3(x=10.0, y=0.0, z=3.0)),
+            source_t_sim_ns=0,
+        ),
+        make_ctx(),
+    )
+    assert accepted.accepted
+
+    command, _, age = router.command_for_tick(make_ctx(t_sim_ns=s_to_ns(1.5)))
+
+    assert age == s_to_ns(1.5)
+    assert command.source_decision_id is None
+    assert command.velocity == Vec3(x=0.0, y=0.0, z=0.0)
+    assert router.source is None
+    assert router.counters.stale_commands_rejected == 1
+    assert router.counters.stale_commands_executed == 0
+
+
+def test_stale_motion_source_executes_only_in_declared_measurement_ablation():
+    router = make_router(Authority.WAYPOINT)
+    router.max_age_ns = s_to_ns(1.0)
+    router.reject_stale = False
+    router.accept(
+        envelope(
+            DecisionKind.WAYPOINT,
+            WaypointGoal(target=Vec3(x=10.0, y=0.0, z=3.0)),
+            source_t_sim_ns=0,
+        ),
+        make_ctx(),
+    )
+
+    command, _, age = router.command_for_tick(make_ctx(t_sim_ns=s_to_ns(1.5)))
+
+    assert age == s_to_ns(1.5)
+    assert command.source_decision_id == "d1"
+    assert router.counters.stale_commands_executed == 1
+    assert router.counters.stale_commands_rejected == 0
+
+
+def test_fixed_lost_reorientation_holds_then_yaws_without_translation():
+    router = make_router(Authority.WAYPOINT)
+    router.begin_fixed_reorientation(
+        target_yaw_rad=1.0,
+        t_sim_ns=0,
+        hold_s=0.25,
+        max_duration_s=2.0,
+        yaw_rate_rps=0.8,
+    )
+
+    held, _, held_age = router.command_for_tick(make_ctx(t_sim_ns=s_to_ns(0.1)))
+    turning, _, turning_age = router.command_for_tick(make_ctx(t_sim_ns=s_to_ns(0.3)))
+    finished, _, _ = router.command_for_tick(make_ctx(t_sim_ns=s_to_ns(2.1)))
+
+    assert held.is_hold and held.metadata["recovery"] == "lost_hold"
+    assert held_age is None
+    assert turning.velocity == Vec3(x=0.0, y=0.0, z=0.0)
+    assert turning.yaw_rate_rps > 0.0
+    assert turning.source_decision_id == "onfly-lost-reorientation"
+    assert turning_age is None
+    assert finished.is_hold
+    assert not router.reorientation_active
+
+
+def test_recovered_viewpoint_holds_only_until_bounded_recovery_deadline():
+    router = make_router(Authority.WAYPOINT)
+    router.begin_fixed_reorientation(
+        target_yaw_rad=1.0,
+        t_sim_ns=0,
+        hold_s=0.25,
+        max_duration_s=2.0,
+        yaw_rate_rps=0.8,
+    )
+    settled_ctx = make_ctx(t_sim_ns=s_to_ns(1.0))
+    settled_ctx.observation = settled_ctx.observation.model_copy(
+        update={"yaw_rad": 1.0}
+    )
+
+    settled, _, _ = router.command_for_tick(settled_ctx)
+    later_ctx = make_ctx(t_sim_ns=s_to_ns(3.0))
+    later_ctx.observation = later_ctx.observation.model_copy(update={"yaw_rad": 1.0})
+    expired, _, _ = router.command_for_tick(later_ctx)
+
+    assert settled.is_hold
+    assert settled.metadata["recovery"] == "awaiting_reacquisition"
+    assert expired.is_hold
+    assert expired.metadata["recovery"] == "reorientation_expired"
+    assert not router.reorientation_active
+
+
 def test_self_declared_expiry_is_honoured():
     router = make_router(Authority.WAYPOINT)
     expiring = envelope(

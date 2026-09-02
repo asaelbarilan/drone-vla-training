@@ -6,6 +6,7 @@ build/
 dist/
 .venv/
 venv/
+.python_deps/
 
 # Tooling
 .pytest_cache/

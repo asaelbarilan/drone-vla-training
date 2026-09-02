@@ -1,0 +1,16 @@
+
+=== grid_nav_aerovla  (long_horizon_nav) ===
+arch     n     SR   coll   stop    eff  p95_lat    age   reas
+-------------------------------------------------------------
+c0       5   1.00   0.00   1.00   0.81     0.00   0.15    0.0
+c1       5   0.60   0.00   0.60   0.72    12.00   2.53    0.0
+c2_spf   5   0.00   0.00   0.00   0.62     5.00   1.50    0.0
+c3_onfly_qwen4   5   0.00   0.00   0.00   0.37     1.14   1.53    0.0
+c8_aerovla_gemma   5   0.00   0.00   0.00   1.00     2.10   4.55    0.0
+
+=== Pareto frontier (per environment) ===
+grid_nav_aerovla: c1, c2_spf, c3_onfly_qwen4
+    c8_aerovla_gemma dominated by c3_onfly_qwen4
+    [reference, excluded from the frontier] c0: SR=1.00 coll=0.00 - sees ground truth, so it is a ceiling to measure against, not a competitor
+
+No single score is computed. An architecture on the frontier is not 'best'; it is un-dominated given these objectives.

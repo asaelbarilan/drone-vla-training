@@ -74,7 +74,8 @@ through `_base_`, so declaring C7 an ablation of C8 made C8 an ablation of
 itself.
 **Rejected.** Keeping the structure in prose. It had been in prose and had
 already drifted.
-**Status.** settled.
+**Status.** superseded by D-41. The structural enforcement remains; the
+top-level count and hierarchy placement changed.
 
 ### D-03 — C8 is the direct-VLA base, not C7
 **When.** 2026-08-20 10:46 — `e7a78e5`
@@ -513,3 +514,496 @@ D-28 verification checks components fire
 | 10:51 | `87e7a99` | seven bases baselined over 20 seeds |
 | 12:52 | `4806427` | **D-14, D-15** the search dwell was 3 s and needed 9.1 |
 | 13:59 | `ed5ae2f` | **D-16, D-17** frame-to-pose binding pinned; depth guess recorded |
+
+### D-34 — The camera model belongs in the runtime, not in a simulator adapter
+**When.** 2026-08-20 16:35 — investigation while planning the AirSim port
+**Decision.** `Camera` moved from `adapters/gym/render.py` to `core/camera.py`.
+Adapters supply intrinsics through `ObservationPacket`; policies unproject with
+them.
+**Rationale.** A pinhole projection is not a property of one simulator. It is the
+geometry that turns "the model pointed at that pixel" into a world point, and it
+is the same arithmetic whether the pixels came from a rasteriser, from AirSim, or
+from a real camera.
+**Evidence.** The point-and-fly policy imported the *toy simulator's rendering
+module* to do its own geometry, so it could not have run against any other
+simulator. It was the only such leak in the runtime, and it was found by a
+boundary test written while planning the port rather than by the port failing.
+Round-trip project/unproject is exact to 0.0 px after the move; 233 tests pass.
+**Status.** settled.
+
+### D-35 — The runtime is simulator-agnostic; the tooling is not
+**When.** 2026-08-20 16:35 — audit, pinned by tests
+**Decision.** Two boundary tests. One asserts `core/` and `plugins/` mention no
+concrete environment. The other pins the exact set of modules that *do* bind to
+`DeterministicEnv`, so adding another is a deliberate act.
+**Rationale.** "Simulators are adapters" is the central claim of the testbed and
+had never been checked. If it is false, moving to AirSim is a rewrite rather than
+a configuration change.
+**Evidence.** The runtime is clean. Four modules are not: `training/dataset.py`,
+`training/dagger.py`, `analysis/replay_video.py` (all monkeypatch
+`DeterministicEnv.step`) and `adapters/dataset_replay/replay.py` (subclasses it,
+by design). The consequence is concrete — on AirSim there would be no training
+data, no DAgger and no video, which are the three things most needed when a port
+misbehaves.
+**Status.** open for the tooling; the fix is a recording hook on the environment
+interface so tools subscribe rather than patch. TODO item 15.
+
+### D-36 — AirSim is not worth porting to until a real model is in the loop
+**When.** 2026-08-20 16:35 — planning decision
+**Decision.** The AirSim benchmark waits on TODO items 1 and 2.
+**Rationale.** AirSim's contribution is photorealistic imagery. The scripted
+policies do not look at pixels at all — they read simulated detections — so
+porting them buys cost and no information.
+**Evidence.** None needed for the direction; the supporting facts are that every
+current number comes from a scripted policy, and that the one learned network
+scores 0.03.
+**Status.** settled as a sequencing decision; revisit if a real-model
+configuration starts completing missions.
+
+### D-37 — Frame namespaces must be consumed, not reconstructed from object IDs
+**When.** 2026-08-22 — post-D-14 training rerun
+**Decision.** The local-simulator collector and DAgger now resolve the rendered
+frame with `DeterministicEnv._frame_ns`, matching the URI emitted by the
+environment. A regression test requires a successful rendered flight to produce
+non-empty, aligned frame/action samples.
+**Rationale.** D-19 correctly replaced recyclable `id(self)` frame namespaces
+with a monotonic episode namespace, but the two training tools still rebuilt the
+old URI. Successful expert flights therefore recorded zero frames.
+**Evidence.** Before the fix, 8 successful flights in the first 25 episodes
+produced 0 samples. After the fix, the same collection path produced 1,524
+samples by episode 25 and completed with 22,025 samples. The focused collector
+and contract suite passes.
+**Status.** settled for the local simulator. D-35 remains open because the tools
+still monkeypatch one concrete environment.
+
+### D-38 — Experiment seeds are literal scene identities
+**When.** 2026-08-22 — corrected Gemma screen
+**Decision.** `ExperimentConfig.cells()` executes the exact seeds declared in
+the experiment. `episodes_per_cell` is fixed at one; repetitions must be
+represented by explicit additional seeds. Kept sweep logs now also persist each
+full `EpisodeResult`.
+**Rationale.** The seed is the scene identity and unit of pairing. An implicit
+`seed * 1000 + rep` transform made the manifest claim seeds 1–3 while episodes
+actually used 1000, 2000 and 3000; seed 1000 is inside the learned-policy
+training range. The report was neither reproducible from its manifest nor a
+held-out comparison.
+**Evidence.** The invalid sweep printed 1000/2000/3000 and was stopped before
+the real-model cells. Regression tests now pin exact cells and result-file
+persistence; the corrected sweep printed and stored seeds 1/2/3.
+**Status.** settled.
+
+### D-39 — Fixing the search data does not rescue the cloned direct policy
+**When.** 2026-08-22 — full local-simulator rerun
+**Decision.** The post-D-14 behaviour-cloning checkpoint is retained as a
+negative result, not promoted into the shipped C7T/C8T configs.
+**Evidence.** C2 on `grid_nav_vision`, training seeds 1000–1249: 98/250
+successful demonstrations, 22,025 samples, 0.83 GB. Compared with the previous
+dataset, 28.2% versus 3.1% of actions are below 0.5 m/s. The 429,634-parameter
+frame-stack policy trained for 20 epochs to 1.439 m/s validation velocity error
+(0.075 m/s quantisation floor), stop recall 1.00 and precision 0.93. On held-out
+seeds 1–40: C7T 0.00 success / 0.00 reached-goal / 0.625 collision; C8T 0.00
+success / 0.025 reached-goal / 0.00 collision. The shield changes safety, not
+capability.
+**Rejected.** D-14's degenerate search data as the binding explanation for the
+learned policy. Repeating the same behaviour-cloning recipe again is not the
+next experiment.
+**Status.** settled as a negative result; TODO item 1 remains open for a
+different learning formulation.
+
+### D-40 — Gemma grounds and can reach, but terminal proximity is ungrounded
+**When.** 2026-08-22 — corrected local real-model screen
+**Decision.** Keep the original Gemma prompt and fixed-hop waypoint policy. Do
+not add renderer-specific colour segmentation or the tested target-scale stop
+heuristic.
+**Evidence.** Corrected held-out screen, seeds 1–3: C2 0.67 success, C2G 0.00,
+C3G 0.00; every real-model episode timed out without collision. In a standalone
+C2G seed-2 run, Gemma found the target on 14/22 calls with zero parse errors,
+the vehicle entered the 2 m goal radius at 52.35 s, and Gemma never emitted
+arrival; it ended 3.36 m away. Controlled clean frames showed Gemma answering
+`arrived=false` even at 2 m. Asking for apparent target height looked monotonic
+on clean frames but stopped the cluttered mission 27.6 m away, so it was
+reverted. Qwen3-VL 2B consumed 512 reasoning tokens without emitting content;
+Moondream reported arrival at every tested distance; SmolVLM did not follow the
+JSON/pixel contract.
+**Interpretation.** Gemma is functioning as a visual grounder; the missing
+capability is monocular range/terminal-state estimation. A learned range head or
+two-view geometry is a legitimate next component. A red-pixel rule would be a
+local-renderer cheat and is explicitly rejected.
+**Status.** open; TODO item 2.
+
+### D-41 — One baseline plus five families; fast/slow is a hybrid subfamily
+**When.** 2026-08-23 — taxonomy correction against the concise experiment design
+**Decision.** The top-level comparison is C0 as the classical control baseline
+plus five autonomy families: LLM tool planner, VLM semantic waypointer, hybrid
+stack, selective recovery supervisor and direct VLA. `fast_slow_hierarchy` is
+now an explicit subfamily of `hybrid_stack`. C12 remains the reference for that
+subfamily, while C3 remains the primary hybrid representative.
+**Rationale.** A slow reasoner over a fast executor is a composition and timing
+choice inside a hybrid stack, not a distinct authority family. Treating it as a
+seventh peer contradicted the concise experiment design and inflated a nested
+variant into a headline comparison.
+**Evidence.** `ArchitectureConfig` now separates `family` from `subfamily`;
+`validate_family_set` enforces one primary base per top-level category and one
+reference per named subfamily. C10–C14 declare `family: hybrid_stack` and
+`subfamily: fast_slow_hierarchy`. The canonical local screen is C0/C1/C2/C3/C6/C8
+and completed an end-to-end one-seed wiring smoke. Its scores are explicitly
+not model results.
+**Status.** settled as the benchmark taxonomy; model-validity gates remain open.
+
+### D-42 — RGB-D closes the range channel, not the real-model capability gap
+**When.** 2026-08-23 — local real-model terminal-range gate
+**Decision.** Keep calibrated depth sampled at the VLM-grounded pixel, target
+world-point consistency, and a second cropped VLM confirmation before terminal
+stop. Share this profile across C2G–C6G. Reject depth or triangulation as
+unverified steering authority, and do not expand the screen to 20 seeds while
+the 1–3 seed capability gate is zero.
+**Rationale.** Depth answers how far the pointed surface is; it cannot establish
+that the surface is the mission target. A second semantic check is required to
+avoid turning a nearby obstacle into a successful arrival. Vision and
+non-vision variants must also retain the same 90 s task horizon; wall-clock cost
+does not justify changing the mission.
+**Evidence.** Two-view steering ended seed 2 at 50.5 m and active parallax at
+36.7 m, so both were rejected. Depth-only world consistency stopped C2G seeds 1
+and 3 prematurely at 24.77 m and 27.72 m. Cropped semantic confirmation removed
+those false stops. The safe 3-seed gate scored C2 2/3 and C2G/C3G/C6G all 0/3;
+C6G collided on one seed. On the corrected 90 s horizon C2G seed 2 entered the
+goal at 62.65 s but never produced a valid terminal observation and finished
+45.77 m away. Qwen3-VL 2B still consumed all output tokens as `thinking` with
+Ollama's native `think:false` and emitted no content.
+**Status.** range channel settled for RGB-D local simulation; real visual
+grounding remains open under TODO item 2.
+
+### D-43 — SUPER is the one shared waypoint-execution substrate
+**When.** 2026-08-25 — primary paper and official-source audit
+**Decision.** Replace `fixed_local` in C0/C1/C2/C3-C6 with one configuration-
+selected SUPER-derived planner plugin. Reproduce the dual exploratory/known-
+free-backup commitment mechanism; normalize LiDAR, CIRI/MINCO internals and
+OMMPC to the local simulator's range-fan and frozen controller interfaces.
+Direct VLA remains planner-free. The frozen fidelity record and gate are in
+[`docs/fidelity/SUPER.md`](fidelity/SUPER.md).
+**Rationale.** The current reactive bearing deflection has none of SUPER's
+defining two-trajectory safety contract, so calling it a classical execution
+ceiling would be paper-inaccurate. Running the official ROS stack beside the
+testbed would also defeat the common contracts and make architecture comparison
+unclean.
+**Evidence.** Ren et al. (Science Robotics 2025) and official commit
+`2ad3419c127a617c6d7df6925e81a14175a9c096` were inspected. Both generate an
+exploratory path with unknown-as-free A*, a known-free stopping backup, and
+retain the last committed trajectory when replanning fails or overruns.
+**Result.** The independent `super_local` plugin now provides point-evidence
+mapping, unknown-permissive A*, shortened corridor seeds, a known-free stopping
+backup, start escape, prior-commitment retention and same-goal hot-start. C0,
+C1 and C2 (therefore C3-C6) select it through YAML. Dev seeds 1000-1019 scored
+20/20 on both `grid_nav` and `failure_recovery`, with zero collisions and zero
+shield interventions; deterministic repeat passed. The complete suite reports
+253 passed. Evidence: `reports/paper_implementation/super_gate.json`.
+**Status.** accepted and frozen. Do not retune while implementing later papers.
+
+### D-44 — AerialClaw is the first accepted real-model family member
+**When.** 2026-08-25 — primary paper/source audit, implementation and frozen
+development gate
+**Decision.** C1 is a paper-faithful AerialClaw-style closed-loop
+brain-skill-runtime agent, not the prior scripted skill policy. A real local
+`gpt-oss:20b` emits one JSON-schema-constrained hard skill or terminal verdict;
+`SkillRuntime`, the semantic endpoint verifier and shared SUPER own validated
+execution. SOUL/BODY and task soft-skill Markdown, bounded reflection/feedback
+history, explicit done evidence and fail-closed model behavior are required.
+**Rationale.** AerialClaw's causal claim is incremental model composition of
+validated skills. A fixed program that happens to call the same skills tests
+only wiring. The official framework is model-agnostic and releases no trained
+checkpoint, so the locally loadable 20.9B/3.6B-active gpt-oss profile is a
+declared normalized current-best backend rather than a claimed paper weight.
+**Evidence.** The paper, official repository commit
+`e01adaa73c38fb10ec4bc5e8c0f71915cc7490a8` and release documentation were
+audited. The final development gate (`reports/paper_implementation/
+aerialclaw_gate.json`) scored grid navigation 5/5 and object search 5/5 on
+seeds 1020-1024, with zero collisions, zero runtime errors and no privileged
+input or fallback. Every run recorded real inference, typed model-authored
+skills, verification and SUPER plans. Repeated grid seed 1020 matched success,
+termination, typed sequence, exact arguments and final distance. Held-out seeds
+1-40 were untouched. C1 config validation, changed-file Ruff, 78 focused tests
+and the complete 280-test regression pass.
+**Substrate audit.** Development found shared defects instead of papering them
+over with a target script: duplicated active decisions evicted observations;
+same-XY altitude goals collapsed in SUPER; random boxes violated the declared
+ground-column sensor model; and endpoint validation confused route obstacles
+plus the no-hit horizon sentinel with an invalid target. SUPER's frozen gate
+was rerun after correction and stayed 40/40 with zero collisions/interventions.
+Coverage options are frozen from launch pose and geometric range only; no
+target coordinate or scoring truth enters C1.
+**Status.** accepted and frozen. See `docs/fidelity/AerialClaw.md`. The next
+paper implementation is See, Point, Fly; no later family is edited first.
+
+### D-45 — SPF is integrated, but the local VLM capability gate is blocked
+**When.** 2026-08-25 — primary paper/source audit, clean-room integration and
+development-only real-model probes
+**Decision.** Keep C2's paper-valid execution profile as the exact SPF causal
+mechanism: current RGB plus instruction to strict `(u,v,distance)` output,
+published nonlinear travel scaling, calibrated camera lift, typed waypoint and
+shared SUPER execution. Do not reuse the legacy Gemma RGB-D arrival policy, add
+a detector/range oracle, relax terminal scoring, or silently substitute a
+script. C2 has no OnFly verifier; that mechanism begins at C3.
+**Evidence.** The CoRL/PMLR paper, supplement and official repository commit
+`5621bcf43e9826d60df014541dd0498e743a92bd` were audited. The repository is
+proprietary, so the plugin is a clean-room implementation of the published
+schema and equations. A 31-work evidence ledger validates the review. Focused
+SPF/Ollama tests pass 11/11, changed-file Ruff passes, and the complete suite
+passes 296 tests. Exact configuration IDs and the new `profile_of` relationship
+let `c2` and `c2_spf` coexist without turning a backend profile into a second
+family member. Frozen SUPER and AerialClaw gates were rerun and remain fully
+passing.
+**Backend audit.** On seed 1040 controlled frames, Gemma 3 4B produced the
+wrong normalized point `(5,5)` even without constrained decoding; Qwen3-VL 2B
+produced non-monotonic close-range labels; Gemma 4 e2b always emitted label 5;
+Gemma 3 12B grounded better but emitted labels `6,4,4,3,4,3` from 30 m to 1.5 m
+and never a near label. Qwen3-VL 8B was the only viable grounder. In closed
+loop it entered the goal region at 64 s but its isolated labels 2 and 1 were not
+consecutive, so it flew away and timed out. Single-label stopping terminated
+4.77 m or 4.12 m away; a metric-range prompt lost the target and ended 91.12 m
+away. Those variants were falsified and reverted. No held-out seed 1-40 was
+used. Full evidence is in
+`reports/paper_implementation/spf_backend_audit.json`.
+**Status.** not accepted and not frozen. The same model/resource blocker has
+survived all available compatible local backends. The minimum external action
+is access to the paper's Gemini-class VLM or an open checkpoint that passes the
+locked point/range probe. Sequential work remains at SPF; AeroVLA is not started.
+
+### D-46 — AeroVLA mechanism is integrated; neither local profile is accepted
+**When.** 2026-08-25 — primary paper/source audit and development-only real-model runs
+**Decision.** Represent AeroVLA as C7/C8 profiles inside the common runtime:
+one vertically mosaicked front/down image, target description, one of seven
+coarse target-relative bearings, three 99-bin numerical actions, intrinsic
+LAND, direct kinematic authority, and an optional independent C8 shield. No
+planner, detector, depth stop, memory or scripted fallback may enter the policy.
+This supersedes D-45's sequencing sentence after the user explicitly directed
+work to continue past the externally blocked SPF backend.
+**Evidence.** The full paper, official Apache-2.0 repository commit
+`e37685afb8953d1f5a09155d7255960cee1bfd9d`, official 463 MB LoRA, 257 MB
+training JSON and 15.1 GB OpenVLA-7B base listing were inspected. The released
+executor uses yaw range `[-1.1,1.1]` although the paper says `[-pi,pi]`; the
+executable source is locked and the discrepancy is logged. Focused tests cover
+the codec, mosaic, NED/ENU conversion, direct route, intrinsic stop and C7/C8
+shield isolation.
+**Result.** Native BF16 requires the paper-reported 17 GB VRAM and does not fit
+the local 8 GB RTX 4060. The fail-closed native profile is wired but its base is
+not downloaded. The normalized Gemma profile ran real inference. After frame-
+sign and prompt-contract corrections, seed 1060 emitted neutral `(49,49,49)`
+on every one of 19 calls and timed out. Prompted or scripted steering was not
+substituted.
+**Status.** mechanism integrated; not accepted. See
+`docs/research/AEROVLA_IMPLEMENTATION_LOCK.md` and
+`reports/paper_implementation/aerovla_gate.json`.
+
+### D-47 — OnFly maps to C3/C4/C5; normalized Gemma gate is closed
+**When.** 2026-08-25 — primary paper audit, clean-room integration and sequential dev gate
+**Decision.** Full OnFly is a composition in the existing testbed rather than a
+new family or simulator fork. `c3_onfly_gemma` supplies image-point decision,
+RGB-D lift, bearing gate, verifier and the shared planner. `c4_onfly_gemma` adds
+the independent slow forced-choice visual monitor and a recent window.
+`c5_onfly_gemma` changes only memory to first frame + four distance-segment
+keyframes + latest frame. Gemma 3 4B is a normalized profile, not the paper's
+Qwen3-VL-4B-AWQ checkpoint.
+**Evidence.** The paper was inspected end to end. It specifies integer image
+targets, previous-goal reprojection, CONTINUE/STOP/LOST monitoring every 2 s,
+four keyframes, 7 m maximum depth, semantic/geometric verification and a
+receding-horizon ESDF planner. It reports 67.8% SR and 2.7% CR, versus 35.8% SR
+and 37.5% CR without the planner. The official repository still says `Code
+coming soon`, so unavailable shared-ViT features, separate KV-cache mechanics,
+exact prompts and Fast-Planner changes are explicitly normalized rather than
+claimed reproduced. The 31-work evidence ledger remains valid.
+**Implementation correction.** Two same-seed dry runs revealed that visual
+deduplication first compared against the whole route and then against the
+latest slot itself, collapsing memory to two frames. The final design keeps a
+separate immutable candidate pool, applies feature deduplication only within a
+3 m geometric neighborhood, and serializes initial/segment/latest frames. The
+corrected seed 1060 run delivered 1-6 images to the monitor (mostly 4-5).
+**Result.** Corrected dev seed 1060 timed out 25.71 m from goal; seed 1061 timed
+out 18.17 m away. Both had zero collisions, zero inference/parse errors, 33
+decision calls and 21 monitor calls; every monitor verdict was CONTINUE. Two
+failures make the frozen 4/5 acceptance gate impossible, so seeds 1062-1064
+were not spent. Held-out seeds 1-40 remain untouched.
+**Status.** mechanism integrated; normalized Gemma profile not accepted. Do
+not add scripted pixels, target coordinates or steering. Reopen only for a
+capable backend/native release. See `docs/research/ONFLY_IMPLEMENTATION_LOCK.md`
+and `reports/paper_implementation/onfly_gate.json`. All changed implementation
+files pass Ruff and the complete regression passes 321 tests.
+
+### D-48 — Qwen proves the OnFly mechanism once; semantic gate still rejects the profile
+**When.** 2026-08-26 — exact replay, sequential local Qwen gate
+**Decision.** Keep the Qwen3-VL 8B OnFly profile as a declared real-model
+implementation, but reject it from the benchmark representative set. Do not
+repair it with scripted search, a color detector, target coordinates, or
+simulator truth. The next paper system may proceed because the 4/5 OnFly gate
+is now conclusively closed rather than merely unfinished.
+**Evidence.** The 0--999 Qwen coordinate adapter passed its six-frame offline
+gate. Scheduler start-to-start deadlines, execution-time source expiry,
+persistent acquisition memory, and paper-defined last-normal-yaw recovery were
+implemented. Correcting recovery from “face the old position” to “restore the
+old heading” changed seed 1061 from repeated timeouts to a correct stop 1.606 m
+from the goal at 69.2 s, with zero collision and exact replay error 0.0 m.
+Seed 1060 then exposed reproducible confusion of a green tower-like distractor
+with the requested red tower. A generic named-attribute prompt corrected one
+frame but not the independent historical false positive. Qwen3-VL 2B and
+Qwen3.5 2B failed the same negative/positive offline gate. The final-profile
+seed-1060 rerun ended on two confirmed false STOPs at 28.41 m after 15.2 s;
+exact replay found 0/15 target-visible decision frames and 0.0 m replay error.
+**Geometry corrections.** Seed 1062 exposed two non-paper checks: a 1 m
+standoff/0.5 m minimum hop that could exceed its own gate, and a verifier that
+compared off-axis Euclidean slant range against camera-forward `d_f`. Both were
+removed/corrected and locked with focused tests. The corrected seed still had
+0/89 target-visible decision frames, false historical acquisition, 29 LOST
+recoveries, and ended 85.82 m from goal.
+**Result.** Seeds 1060 and 1062 are two final-profile failures, so 4/5 is
+mathematically impossible. Seeds 1063-1064 and held-out seeds 1-40 are not
+spent. Status: mechanism integrated; local Qwen3-VL 8B profile rejected. See
+`reports/paper_implementation/ONFLY_QWEN_ROOT_CAUSE.md`.
+
+### D-49 — Native-dynamics Qwen3-VL 4B closes OnFly's remaining adapter hypotheses
+**When.** 2026-08-27 — paper-native dynamics, exact replay and installed-backend audit
+**Decision.** Keep the corrected C3/C4/C5 OnFly mechanism in the shared
+testbed, but reject the current Qwen3-VL 4B compatible backend. Do not repair
+the gate by returning to an old position, adding goal truth/color rules, or
+weakening the frozen SUPER substrate. Sequential acceptance work remains at
+OnFly until a capable backend or released native implementation exists.
+**Corrections before judgment.** The native profile now uses 0.6 m/s speed and
+acceleration plus 0.4 rad/s yaw. Qwen receives the paper's chronological
+multi-image memory rather than a lossy composite sheet. `CONTINUE`/`LOST`
+separate recovery-anchor validity from current reacquisition; monitor evidence
+and last-normal yaw are synchronized to the exact retained frame; and reaching
+the recovery heading holds the viewpoint until monitor confirmation. The
+previous-goal reprojection supplies a non-privileged temporal-continuity check.
+Sixty-one focused contract/router tests and changed-file Ruff pass.
+**Evidence.** C3 without the monitor entered the goal region on seed 1061,
+proving the decision/verifier/planner path under native dynamics. Full C5 seed
+1061 nevertheless timed out 15.778 m away with zero collisions. Exact replay
+showed that the target remained occluded even in an offline counterfactual at
+the true goal yaw, so the paper's yaw-only recovery could not reacquire it.
+Seed 1060 timed out 25.413 m away with 0/89 target-visible frames; 63/89 plans
+were correctly infeasible because the VLM repeatedly selected surfaces with no
+known-free stopping prefix. Two failures make 4/5 impossible; seeds 1062-1064
+were not spent on the new profile and held-out seeds 1-40 remain untouched.
+**Backend audit.** Qwen3-VL 8B repeats the history/latest temporal error.
+Qwen3-VL 2B, Qwen3.5 2B/4B, MiniCPM-V 4.6 and Gemma 3/4 fail fixed coordinate
+or monitor gates. The exact downloaded Qwen3-VL-4B AWQ files load, but one
+monitor response took 178.09 s and 10.56 GiB; Gemma 4 produced no positive
+target verdict and ranged from 2.18 to 124.34 s. No remaining installed model
+meets both capability and the 2 s cycle.
+**Status.** mechanism integrated; compatible-backend gate rejected. Evidence:
+`reports/paper_implementation/ONFLY_QWEN4_NATIVE_ROOT_CAUSE.md` and
+`reports/paper_implementation/onfly_qwen4_native_gate.json`. Final verification:
+61 focused tests and changed-file Ruff passed; the complete repository
+regression passed 345 tests in 479.92 s. The architecture config validates with
+the architecture-only `validate-config` command, while the environment is
+validated by the typed loader in the passing native-profile test.
+The official OnFly repository was checked again on 2026-08-30 and still stated
+`Code coming soon`; no native implementation or checkpoint was available to
+replace the rejected compatible backend.
+
+### D-50 — PMR starts with learned-CVI, not the existing rule trigger
+**When.** 2026-08-30 — primary-paper audit and first shared-runtime integration
+**Decision.** Advance after OnFly's conclusive rejection and implement PMR as
+C6 inside the shared testbed. The previous C6 rule gate is retained only as an
+ablation/sentinel; it is not labeled PMR. Add admission as a configured plugin
+so C6 does not receive a private runtime.
+**Evidence.** PMR defines a fixed 18D compact runtime vector, a sigmoid-linear
+learned-CVI score, threshold 0.997, budget/cooldown/terminal guards, a
+no-progress-plus-blocked hard-stuck override, and a predefined recovery-skill
+boundary. The paper discloses neither fitted weights nor normalization and has
+no linked source release, so `pmr_cvi` requires an explicitly trained,
+versioned checkpoint and fails closed without one.
+**Implementation.** Added typed admission runtime/decision contracts, a plugin
+registry slot, an observable admission event, shared trigger-loop routing, and
+the 18D PMR feature/checkpoint implementation. The existing verifier, SUPER
+planner, shield and controller remain the only execution path. Initial focused
+verification: 107 tests pass and Ruff is clean; the complete repository
+regression passes 349 tests in 455.17 s.
+**Next.** Collect paired K=5 local/invocation utility labels on the locked
+non-held-out split, fit and freeze the linear gate, then replace the scripted
+bounded reasoner with a real typed recovery-skill reasoner. Fidelity and seed
+lock: `docs/fidelity/PMR.md`.
+
+### D-51 — Freeze the real PMR recovery boundary before training CVI
+**When.** 2026-08-31 — recovery implementation and local-model capability gate
+**Decision.** Do not train learned-CVI labels against the scripted
+`bounded_reasoner`; that would learn when the sentinel is useful rather than
+when PMR reasoning is useful. First freeze a real constrained recovery reasoner
+and the multi-model inference composition, then collect paired labels.
+**Implementation.** Added `pmr_recovery_reasoner`, which requests strict JSON
+from `gpt-oss:20b`, permits only eight named semantic decisions and nine bounded
+options, locally grounds them into typed skills, and uses the shared
+verifier/SUPER/shield/controller route. Added `role_router` so the same C6
+profile uses Qwen3-VL 4B for OnFly policy calls and GPT-OSS 20B for recovery
+calls without a private model client. Added a PMR-matched shielded C3 comparator
+and a C6 profile that fails closed until its trained checkpoint exists.
+**Evidence.** Seven new offline tests cover schema rejection/retry, safe
+fallback, simulated-backend refusal including nested routes, per-role model
+identity, and shared verifier/planner routing. The real three-case probe first
+revealed mode collapse to `safe_hold_verify`; after adding the missing semantic
+definitions, both consecutive runs produced the same valid sequence:
+blocked→`local_repair/ascend`, lost→`goal_alignment/scan_left`, and
+stalled-visible→`goal_resume/approach_target`, with no fallback.
+Changed-file Ruff passes; the complete repository regression passes 356/356
+tests with zero failures or errors in 496.35 s.
+**Next.** Implement deterministic paired K=5 utility collection from identical
+pre-intervention states. Do not treat the static probe as mission-level PMR
+success and do not consume held-out seeds 1-40.
+
+### D-52 — C5 OnFly works after fixing context rejection and recovery re-entry
+**When.** 2026-09-01 — exact-run visual debugging on seeds 1060/1061
+**Decision.** Reopen the old compatible-backend rejection. Freeze the shared
+Qwen context at 8192, make Ollama request errors fatal, emphasize the latest
+monitor frame, and allow one bounded reorientation per continuous LOST episode.
+Do not add target-specific search or simulator truth.
+**Evidence.** Ollama explicitly reported 4430 prompt tokens against a 4096
+context on the first four-image failure. Exact offline gates return LOST on the
+four-image occlusion and STOP on the six-image near-goal case after correction.
+Seed 1061 then succeeds at 0.652 m with a correct stop, one recovery, zero
+collisions and zero parse errors. Offline replay scores monitor visibility at
+0.95 and visually confirms occlusion, reacquisition and approach. Seed 1060
+still has zero target-visible decision frames and fails after entering open
+space; that is retained as a never-observed-target search limitation.
+**Status.** C5 mechanism demonstrated; five-seed development gate remains open.
+Full evidence is in
+`reports/paper_implementation/ONFLY_QWEN4_RECOVERY_FIX_20260901.md`.
+
+### D-53 — Qwen-VLA collection is a declared local-simulator-bound tool
+**When.** 2026-09-01 — complete regression audit after D-52
+**Decision.** Add `training/qwen_vla_dataset.py` to the pinned portability
+exception set. Like the existing dataset, DAgger and replay-video tools, it
+temporarily wraps `DeterministicEnv.step` so image/action labels share an exact
+tick; it is not simulator-portable and must be replaced before AirSim data
+collection.
+**Evidence.** The complete regression reached 367 passes with this as its only
+failure; source inspection confirmed the wrapper is restored in `finally` and
+is used solely during collection.
+
+### D-54 — C5 OnFly fails the retained five-seed capability gate
+**When.** 2026-09-01 — systematic exact replay on development seeds 1060–1064
+**Decision.** Freeze the corrected C5 mechanism and report the negative
+five-seed result. Do not introduce target-specific scans, simulator-truth
+steering, or a policy schema that regresses the demonstrated seed-1061 success.
+**Evidence.** Seed 1061 succeeds at 0.519 m. Seeds 1060, 1062, and 1063 have
+0 target-visible decision frames; seed 1064 has 9 early visible frames and then
+loses tracking. Aggregate success is 1/5 with zero collisions, zero inference
+errors, and zero policy/monitor parse errors. Exact replay separates
+never-observed-target search from post-acquisition tracking failure.
+**Status.** The runtime and monitor defects are fixed, but the shared
+Qwen3-VL-4B C5 configuration fails the locked 4/5 capability gate. Full
+evidence:
+`reports/paper_implementation/C5_RETAINED_FIVE_SEED_RESULTS_20260901.md`.
+
+### D-55 — “Choose the best viewpoint” prompting does not create coverage
+**When.** 2026-09-02 — prompt-only C5 ablation on development seeds
+**Decision.** Reject and revert a stronger prompt that retained the `u,v`
+schema but requested a free-space observation viewpoint maximizing new visual
+coverage whenever the target was absent.
+**Evidence.** The seed-1061 positive control still succeeds at 1.496 m. Seeds
+1060 and 1062 still have 0/89 target-visible decision frames; seed 1060 worsens
+to 57.186 m and seed 1062 improves to 38.771 m without ever exposing the
+target. Seed 1063 was interrupted after a backend stall at 88.15/90 simulated
+seconds and is not counted.
+**Conclusion.** A prompt can change direction but cannot infer which directions
+were already covered from a current frame plus one history point. Preserve the
+frozen C5 result and test explicit visited-view/frontier state as a separately
+named extension. Evidence:
+`reports/paper_implementation/C5_VIEWPOINT_PROMPT_EXPERIMENT_20260902.md`.

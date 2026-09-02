@@ -1,0 +1,21 @@
+# OnFly native-dynamics validation inside the deterministic local simulator.
+#
+# This profile changes only the vehicle envelope to the values reported by the
+# OnFly paper. It is not the normalized benchmark environment: the canonical
+# `grid_nav_onfly` profile remains at the shared 5 m/s dynamics.
+
+_base_: grid_nav_onfly.yaml
+
+id: grid_nav_onfly_native_dynamics
+
+params:
+  # The adapter consumes this top-level limit, while the mission constraint is
+  # independently consumed by the shared controller, planner, and shield.
+  max_speed_mps: 0.6
+  # A first-order velocity time constant of 1 s bounds the largest step response
+  # to 0.6 m/s^2, matching the paper's stated acceleration envelope.
+  accel_tau_s: 1.0
+  constraints:
+    max_speed_mps: 0.6
+    max_accel_mps2: 0.6
+

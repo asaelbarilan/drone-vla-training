@@ -1,0 +1,42 @@
+{
+  "model": "gemma3:4b",
+  "seed": 2,
+  "probes": [
+    {
+      "distance_m": 2.0,
+      "image": "reports\\vlm_arrival_probe\\distance_2m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 0, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 112, \"v\": 112, \"height_px\": 112}"
+    },
+    {
+      "distance_m": 3.0,
+      "image": "reports\\vlm_arrival_probe\\distance_3m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 0, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 112, \"v\": 0, \"height_px\": 112}"
+    },
+    {
+      "distance_m": 4.0,
+      "image": "reports\\vlm_arrival_probe\\distance_4m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 0, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 112, \"v\": 112, \"height_px\": 112}"
+    },
+    {
+      "distance_m": 6.0,
+      "image": "reports\\vlm_arrival_probe\\distance_6m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 112, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 112, \"v\": 112, \"height_px\": 80}"
+    },
+    {
+      "distance_m": 8.0,
+      "image": "reports\\vlm_arrival_probe\\distance_8m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 0, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 112, \"v\": 112, \"height_px\": 80}"
+    },
+    {
+      "distance_m": 12.0,
+      "image": "reports\\vlm_arrival_probe\\distance_12m.png",
+      "current_reply": "{\"found\": true, \"u\": 112, \"v\": 176, \"arrived\": false}",
+      "scale_reply": "{\"found\": true, \"u\": 128, \"v\": 128, \"height_px\": 64}"
+    }
+  ]
+}

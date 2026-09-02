@@ -1,0 +1,148 @@
+{
+  "run": "runs/onfly_c5_qwen4_native_seed1061_v4",
+  "model": "qwen3-vl:4b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 35.2,
+      "actual_monitor_result_t_s": 35.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 3.8116
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 37.2,
+      "actual_monitor_result_t_s": 37.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "small",
+          "status": "CONTINUE"
+        },
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 127,
+        "done_reason": "stop",
+        "latency_s": 1.3797
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 39.2,
+      "actual_monitor_result_t_s": 39.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "small",
+          "status": "CONTINUE"
+        },
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 127,
+        "done_reason": "stop",
+        "latency_s": 1.3883
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 41.2,
+      "actual_monitor_result_t_s": 41.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "small",
+          "status": "CONTINUE"
+        },
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 127,
+        "done_reason": "stop",
+        "latency_s": 1.3907
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 43.2,
+      "actual_monitor_result_t_s": 43.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "small",
+          "status": "CONTINUE"
+        },
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 127,
+        "done_reason": "stop",
+        "latency_s": 1.3918
+      }
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

@@ -145,10 +145,14 @@ def cmd_replay(args: argparse.Namespace) -> int:
             file=sys.stderr,
         )
 
-    orchestrator = Orchestrator(arch, env, EpisodeSpec(episode_id=f"replay_{run_dir.name}", seed=seed))
+    orchestrator = Orchestrator(
+        arch, env, EpisodeSpec(episode_id=f"replay_{run_dir.name}", seed=seed)
+    )
     result = asyncio.run(orchestrator.run())
-    print(f"replayed {run_dir.name}: success={result.success} "
-          f"{result.termination_reason.value} sim={result.sim_duration_s:.1f}s")
+    print(
+        f"replayed {run_dir.name}: success={result.success} "
+        f"{result.termination_reason.value} sim={result.sim_duration_s:.1f}s"
+    )
 
     original_path = run_dir / "result.json"
     if original_path.is_file():
@@ -270,20 +274,68 @@ def cmd_collect(args: argparse.Namespace) -> int:
         config_root=_config_root(args),
     )
     print()
-    print(f"kept {manifest['episodes_kept']}/{manifest['episodes_requested']} episodes "
-          f"({manifest['episodes_skipped_as_failures']} skipped as failures)")
+    print(
+        f"kept {manifest['episodes_kept']}/{manifest['episodes_requested']} episodes "
+        f"({manifest['episodes_skipped_as_failures']} skipped as failures)"
+    )
     print(f"samples          : {manifest['samples']:,}")
     print(f"terminal ticks   : {manifest['terminate_positive_rate']:.1%}")
     print(f"on disk          : {manifest['frames_bytes'] / 1e9:.2f} GB")
     error = manifest["codec_error"]
-    print(f"quantisation floor: {error['velocity_error_mean_mps']:.4f} m/s mean "
-          f"({manifest['codec']['bins']} bins/dim) - no policy can beat this")
+    print(
+        f"quantisation floor: {error['velocity_error_mean_mps']:.4f} m/s mean "
+        f"({manifest['codec']['bins']} bins/dim) - no policy can beat this"
+    )
     print(f"\ndataset: {args.out}")
     return EXIT_OK
 
 
+def cmd_collect_qwen_vla(args: argparse.Namespace) -> int:
+    """Generate official-format Qwen3-VL action-token SFT data."""
+    from uavlab.training.qwen_vla_dataset import collect
+
+    manifest = collect(
+        Path(args.out),
+        episodes=args.episodes,
+        env_name=args.env,
+        expert=args.expert,
+        stride=args.stride,
+        horizon_s=args.horizon_s,
+        start_seed=args.start_seed,
+        config_root=_config_root(args),
+    )
+    print()
+    print(
+        f"kept {manifest['episodes_kept']}/{manifest['episodes_requested']} episodes; "
+        f"samples={manifest['samples']:,}"
+    )
+    print(
+        f"train={manifest['train_samples']:,} val={manifest['validation_samples']:,} "
+        f"LAND={manifest['terminal_positive_rate']:.2%}"
+    )
+    print(f"images={manifest['image_bytes'] / 1e6:.1f} MB -> {args.out}")
+    return EXIT_OK
+
+
+def cmd_validate_qwen_vla(args: argparse.Namespace) -> int:
+    """Reject malformed, leaked, incomplete, or trivially collapsed VLA data."""
+    from uavlab.training.qwen_vla_dataset import validate_dataset
+
+    report = validate_dataset(Path(args.data))
+    print(
+        f"valid: {report['samples']:,} samples; "
+        f"{report['train_seeds']} train seeds, {report['validation_seeds']} validation seeds"
+    )
+    print(
+        f"actions: {report['unique_actions']} unique; "
+        f"largest={report['largest_action_fraction']:.1%}; "
+        f"LAND={report['terminal_positive_rate']:.2%}"
+    )
+    return EXIT_OK
+
+
 def cmd_families(args: argparse.Namespace) -> int:
-    """Show the design space: seven families, one base each, the rest ablations."""
+    """Show one baseline, five autonomy families, and nested subfamilies."""
     from uavlab.core.config import Family, validate_family_set
 
     root = _config_root(args)
@@ -291,15 +343,37 @@ def cmd_families(args: argparse.Namespace) -> int:
     by_id = {a.id: a for a in archs}
 
     for family in Family:
-        members = [a for a in archs if a.family is family]
-        base = next((a for a in members if a.ablation_of is None), None)
+        members = [a for a in archs if a.family is family and a.profile_of is None]
         print(f"\n{family.value}")
-        if base is not None:
-            print(f"  BASE  {base.id:<5} {base.name}")
-        for arch in sorted((a for a in members if a.ablation_of), key=lambda a: a.id):
-            parent = by_id.get(arch.ablation_of)
-            print(f"        {arch.id:<5} {arch.name}")
-            print(f"              ablation of {parent.id if parent else arch.ablation_of}")
+        groups = [(None, [a for a in members if a.subfamily is None])]
+        groups += [
+            (subfamily, [a for a in members if a.subfamily is subfamily])
+            for subfamily in sorted(
+                {a.subfamily for a in members if a.subfamily is not None},
+                key=lambda item: item.value,
+            )
+        ]
+        for subfamily, group_members in groups:
+            if not group_members:
+                continue
+            if subfamily is not None:
+                print(f"  SUBFAMILY {subfamily.value}")
+            base = next((a for a in group_members if a.ablation_of is None), None)
+            indent = "    " if subfamily is not None else "  "
+            if base is not None:
+                print(f"{indent}BASE  {base.id:<5} {base.name}")
+            for arch in sorted((a for a in group_members if a.ablation_of), key=lambda a: a.id):
+                parent = by_id.get(arch.ablation_of)
+                print(f"{indent}      {arch.id:<5} {arch.name}")
+                print(
+                    f"{indent}            ablation of {parent.id if parent else arch.ablation_of}"
+                )
+            group_ids = {a.id for a in group_members}
+            for profile in sorted(
+                (a for a in archs if a.profile_of in group_ids), key=lambda a: a.id
+            ):
+                print(f"{indent}      {profile.id:<5} {profile.name}")
+                print(f"{indent}            execution profile of {profile.profile_of}")
 
     problems = validate_family_set(archs)
     if problems:
@@ -307,7 +381,10 @@ def cmd_families(args: argparse.Namespace) -> int:
         for problem in problems:
             print(f"  {problem}")
         return EXIT_BAD_CONFIG
-    print(f"\n{len(Family)} families, {len(archs)} configurations, structure valid.")
+    print(
+        f"\n1 baseline + {len(Family) - 1} autonomy families, "
+        f"{len(archs)} configurations, structure valid."
+    )
     return EXIT_OK
 
 
@@ -319,9 +396,7 @@ def cmd_video(args: argparse.Namespace) -> int:
     from uavlab.experiments.verify import resolve_environment
 
     root = _config_root(args)
-    names = args.architectures or sorted(
-        {n.split("_", 1)[0] for n in list_architectures(root)}
-    )
+    names = args.architectures or sorted({n.split("_", 1)[0] for n in list_architectures(root)})
     out_dir = Path(args.out)
     summaries = []
     for name in names:
@@ -340,13 +415,17 @@ def cmd_video(args: argparse.Namespace) -> int:
             env = env.model_copy(
                 update={"params": {**env.params, "render": True, "image_size": 224}}
             )
-        summary = render(arch, env, args.seed, out_dir / f"{name}.mp4",
-                         fps=args.fps, stride=args.stride)
+        summary = render(
+            arch, env, args.seed, out_dir / f"{name}.mp4", fps=args.fps, stride=args.stride
+        )
         summary["environment"] = env.id
         summaries.append(summary)
-        print(f"  {name:<5} {'SUCCESS' if summary['success'] else 'FAILED ':<8} "
-              f"{summary['termination']:<14} d={summary['distance_to_goal_m']:6.1f}m  "
-              f"path={summary['path_length_m']:6.1f}m  -> {summary['video']}", flush=True)
+        print(
+            f"  {name:<5} {'SUCCESS' if summary['success'] else 'FAILED ':<8} "
+            f"{summary['termination']:<14} d={summary['distance_to_goal_m']:6.1f}m  "
+            f"path={summary['path_length_m']:6.1f}m  -> {summary['video']}",
+            flush=True,
+        )
 
     (out_dir / "index.json").write_text(_json.dumps(summaries, indent=2), encoding="utf-8")
     print(f"\n{len(summaries)} videos in {out_dir}")
@@ -371,11 +450,12 @@ def cmd_dagger(args: argparse.Namespace) -> int:
         config_root=_config_root(args),
     )
     print()
-    print(f"rollouts         : {manifest['dagger_rollouts']} at beta={manifest['beta']} "
-          f"({manifest['dagger_rollout_successes']} reached the goal)")
+    print(
+        f"rollouts         : {manifest['dagger_rollouts']} at beta={manifest['beta']} "
+        f"({manifest['dagger_rollout_successes']} reached the goal)"
+    )
     print(f"new samples      : {manifest['dagger_samples']:,}")
-    print(f"total samples    : {manifest['samples']:,} "
-          f"(base {manifest['base_samples']:,})")
+    print(f"total samples    : {manifest['samples']:,} (base {manifest['base_samples']:,})")
     print(f"terminal ticks   : {manifest['terminate_positive_rate']:.1%}")
     print(f"on disk          : {manifest['frames_bytes'] / 1e9:.2f} GB")
     print(f"\ndataset: {args.out}")
@@ -395,10 +475,14 @@ def cmd_train(args: argparse.Namespace) -> int:
     print(f"\nparameters   : {summary['parameters']:,}")
     print(f"trained in   : {summary['wall_seconds']:.0f}s over {summary['epochs_run']} epochs")
     print(f"bin accuracy : {best.get('bin_accuracy', 0):.3f}")
-    print(f"velocity err : {best.get('velocity_error_mean_mps', 0):.3f} m/s "
-          f"(floor {summary['quantisation_floor']['velocity_error_mean_mps']:.3f})")
-    print(f"stop recall  : {best.get('terminate_recall', 0):.2f}  "
-          f"precision {best.get('terminate_precision', 0):.2f}")
+    print(
+        f"velocity err : {best.get('velocity_error_mean_mps', 0):.3f} m/s "
+        f"(floor {summary['quantisation_floor']['velocity_error_mean_mps']:.3f})"
+    )
+    print(
+        f"stop recall  : {best.get('terminate_recall', 0):.2f}  "
+        f"precision {best.get('terminate_precision', 0):.2f}"
+    )
     print(f"\ncheckpoint: {summary['checkpoint']}")
     print("Now fly it:  uavlab run --arch c7t --env grid_nav_vision --seed 1")
     return EXIT_OK
@@ -494,7 +578,27 @@ def build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--out", default="data/expert_grid_nav")
     collect.set_defaults(func=cmd_collect)
 
-    fam = sub.add_parser("families", help="show the seven families and their ablations")
+    qwen_vla = sub.add_parser(
+        "collect-qwen-vla",
+        help="collect dual-view Qwen3-VL SFT action-token demonstrations",
+    )
+    qwen_vla.add_argument("--episodes", type=int, default=100)
+    qwen_vla.add_argument("--env", default="grid_nav_aerovla")
+    qwen_vla.add_argument("--expert", default="c0")
+    qwen_vla.add_argument("--stride", type=int, default=10)
+    qwen_vla.add_argument("--horizon-s", type=float, default=0.25)
+    qwen_vla.add_argument("--start-seed", type=int, default=1000)
+    qwen_vla.add_argument("--out", default="data/qwen_vla_sft")
+    qwen_vla.set_defaults(func=cmd_collect_qwen_vla)
+
+    qwen_validate = sub.add_parser(
+        "validate-qwen-vla",
+        help="validate Qwen-VLA data before fine-tuning",
+    )
+    qwen_validate.add_argument("--data", default="data/qwen_vla_sft")
+    qwen_validate.set_defaults(func=cmd_validate_qwen_vla)
+
+    fam = sub.add_parser("families", help="show the baseline, five families and ablations")
     fam.set_defaults(func=cmd_families)
 
     vid = sub.add_parser("video", help="render an episode per architecture as mp4")
@@ -503,26 +607,33 @@ def build_parser() -> argparse.ArgumentParser:
     vid.add_argument("--seed", type=int, default=3)
     vid.add_argument("--out", default="reports/videos")
     vid.add_argument("--fps", type=int, default=15)
-    vid.add_argument("--stride", type=int, default=4,
-                     help="sample every Nth control tick")
-    vid.add_argument("--no-render", dest="render", action="store_false",
-                     help="leave the camera panel empty for non-vision configurations")
+    vid.add_argument("--stride", type=int, default=4, help="sample every Nth control tick")
+    vid.add_argument(
+        "--no-render",
+        dest="render",
+        action="store_false",
+        help="leave the camera panel empty for non-vision configurations",
+    )
     vid.set_defaults(render=True)
     vid.set_defaults(func=cmd_video)
 
     dag = sub.add_parser("dagger", help="add teacher labels at states the student visits")
-    dag.add_argument("--base", default="data/expert_c2_grid_nav",
-                     help="dataset to append to")
-    dag.add_argument("--checkpoint", default="models/bc_c2_grid_nav.pt",
-                     help="student that drives the rollouts")
+    dag.add_argument("--base", default="data/expert_c2_grid_nav", help="dataset to append to")
+    dag.add_argument(
+        "--checkpoint", default="models/bc_c2_grid_nav.pt", help="student that drives the rollouts"
+    )
     dag.add_argument("--out", default="data/dagger_c2_grid_nav")
     dag.add_argument("--episodes", type=int, default=120)
     dag.add_argument("--env", default="grid_nav_vision")
     dag.add_argument("--teacher", default="c2")
     dag.add_argument("--stride", type=int, default=2)
     dag.add_argument("--start-seed", type=int, default=1300)
-    dag.add_argument("--beta", type=float, default=0.5,
-                     help="probability of executing the TEACHER's command on a tick")
+    dag.add_argument(
+        "--beta",
+        type=float,
+        default=0.5,
+        help="probability of executing the TEACHER's command on a tick",
+    )
     dag.add_argument("--device", default="cpu")
     dag.set_defaults(func=cmd_dagger)
 
@@ -538,8 +649,11 @@ def build_parser() -> argparse.ArgumentParser:
     verify.add_argument("architectures", nargs="*")
     verify.add_argument("--env", default="grid_nav")
     verify.add_argument("--seeds", type=int, nargs="*")
-    verify.add_argument("--skip-determinism", action="store_true",
-                        help="skip the repeated-seed check (halves runtime)")
+    verify.add_argument(
+        "--skip-determinism",
+        action="store_true",
+        help="skip the repeated-seed check (halves runtime)",
+    )
     verify.set_defaults(func=cmd_verify)
 
     listing = sub.add_parser("list", help="show available configs and plugins")

@@ -15,6 +15,8 @@ from dataclasses import dataclass, field
 from typing import Protocol, runtime_checkable
 
 from uavlab.contracts import (
+    AdmissionDecision,
+    AdmissionRuntime,
     ControlCommand,
     DecisionEnvelope,
     KinematicAction,
@@ -27,9 +29,48 @@ from uavlab.contracts import (
     RecoveryRequest,
     SafetyDecision,
     Trajectory,
+    Vec3,
     WaypointGoal,
 )
+from uavlab.contracts.common import DecisionKind
 from uavlab.contracts.env_status import EnvironmentStatus
+
+
+@dataclass(frozen=True, slots=True)
+class RoutingFeedback:
+    """What the common runtime did with the previous semantic proposal.
+
+    This is deliberately narrower than :class:`RoutingOutcome`: semantic
+    components may learn that their proposal was accepted, repaired or rejected,
+    but they do not receive the planner's private trajectory or simulator truth.
+    Closed-loop skill agents need this observation to adapt after an invalid
+    call; without it they are open-loop text generators despite running in a
+    loop.
+    """
+
+    decision_id: str
+    accepted: bool
+    reason: str
+    proposed_kind: DecisionKind
+    expanded_kind: DecisionKind | None
+    t_sim_ns: int
+
+
+@dataclass(frozen=True, slots=True)
+class SemanticCompletionEvidence:
+    """Sensor-originated semantic evidence carried through one hard skill.
+
+    A blocking ``fly_to`` may take longer than a short recency window. The
+    runtime therefore records that an evidence-supported semantic target was
+    selected and that the corresponding hard skill later completed. This is
+    skill-result memory, not environment success truth.
+    """
+
+    label: str
+    position: Vec3
+    observed_t_sim_ns: int
+    completed_t_sim_ns: int
+    source_decision_id: str
 
 
 @dataclass(slots=True)
@@ -59,6 +100,8 @@ class DecisionContext:
     A hierarchical architecture is exactly this field being read; a flat one is
     exactly this field being ``None``.
     """
+    last_routing_feedback: RoutingFeedback | None = None
+    """Validated execution feedback for the preceding proposal, never truth."""
     scratch: dict[str, object] = field(default_factory=dict)
     """Per-episode scratch space for a plugin's own state. Cleared on reset."""
 
@@ -94,6 +137,8 @@ class InferenceRequest:
     images: tuple[str, ...] = ()
     """Base64-encoded frames. Kept out of ``prompt_hash`` so the hash stays a
     cheap identifier for the *template*, which is what belongs in a manifest."""
+    response_schema: dict[str, object] | None = None
+    """Optional JSON schema requested from a backend that supports constrained output."""
 
 
 @dataclass(slots=True)
@@ -201,6 +246,20 @@ class MonitorPlugin(Protocol):
     def reset(self, mission: MissionSpec, seed: int) -> None: ...
 
     async def assess(self, ctx: DecisionContext) -> ProgressState: ...
+
+
+@runtime_checkable
+class AdmissionPolicy(Protocol):
+    """Cheap policy deciding whether expensive recovery may be queried."""
+
+    @property
+    def name(self) -> str: ...
+
+    def reset(self, mission: MissionSpec, seed: int) -> None: ...
+
+    async def assess(
+        self, ctx: DecisionContext, runtime: AdmissionRuntime
+    ) -> AdmissionDecision: ...
 
 
 @runtime_checkable

@@ -1,0 +1,602 @@
+{
+  "architecture": "c1",
+  "configuration_ok": true,
+  "deterministic_repeat": {
+    "final_distance_delta_m": 0.0,
+    "first_full_sequence": [
+      {
+        "args": {
+          "label": "target",
+          "tolerance_m": 2.0,
+          "x": 31.06,
+          "y": 16.81,
+          "z": 3.07
+        },
+        "kind": "skill",
+        "skill": "goto"
+      },
+      {
+        "args": {
+          "reason": "AerialClaw goal completed: completed"
+        },
+        "kind": "skill",
+        "skill": "stop"
+      }
+    ],
+    "first_typed_signature": [
+      {
+        "kind": "skill",
+        "skill": "goto"
+      },
+      {
+        "kind": "skill",
+        "skill": "stop"
+      }
+    ],
+    "passed": true,
+    "same_exact_arguments": true,
+    "same_success": true,
+    "same_termination": true,
+    "same_typed_sequence": true,
+    "second_full_sequence": [
+      {
+        "args": {
+          "label": "target",
+          "tolerance_m": 2.0,
+          "x": 31.06,
+          "y": 16.81,
+          "z": 3.07
+        },
+        "kind": "skill",
+        "skill": "goto"
+      },
+      {
+        "args": {
+          "reason": "AerialClaw goal completed: completed"
+        },
+        "kind": "skill",
+        "skill": "stop"
+      }
+    ],
+    "second_typed_signature": [
+      {
+        "kind": "skill",
+        "skill": "goto"
+      },
+      {
+        "kind": "skill",
+        "skill": "stop"
+      }
+    ],
+    "seed": 1020,
+    "tolerance_m": 0.25,
+    "typed_signature_definition": "ordered (decision kind, skill) pairs"
+  },
+  "development_seeds": [
+    1020,
+    1021,
+    1022,
+    1023,
+    1024
+  ],
+  "held_out_seeds_used": [],
+  "model_resource": {
+    "available": true,
+    "details": {
+      "context_length": 131072,
+      "embedding_length": 2880,
+      "families": [
+        "gptoss"
+      ],
+      "family": "gptoss",
+      "format": "gguf",
+      "parameter_size": "20.9B",
+      "parent_model": "",
+      "quantization_level": "MXFP4"
+    },
+    "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+    "model_id": "gpt-oss:20b",
+    "size": 13793441244
+  },
+  "paper": "AerialClaw",
+  "passed": true,
+  "regimes": {
+    "grid_nav": {
+      "collisions": 0.0,
+      "mechanism_observed_every_run": true,
+      "passed": true,
+      "required_successes": 4,
+      "runs": [
+        {
+          "calls": 2.0,
+          "distance_to_goal_m": 0.32840718654376677,
+          "mechanism": {
+            "inference_calls": 2,
+            "super_plans": 25,
+            "typed_decisions": 2,
+            "verifier_events": 25
+          },
+          "parse_failures": 0.0,
+          "seed": 1020,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "label": "target",
+                "tolerance_m": 2.0,
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 2.0,
+          "distance_to_goal_m": 0.4027963492965777,
+          "mechanism": {
+            "inference_calls": 2,
+            "super_plans": 29,
+            "typed_decisions": 2,
+            "verifier_events": 29
+          },
+          "parse_failures": 0.0,
+          "seed": 1021,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "label": "target",
+                "tolerance_m": 2.5,
+                "x": 24.99,
+                "y": -25.0,
+                "z": 2.48
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 5.0,
+          "distance_to_goal_m": 0.12803520912775426,
+          "mechanism": {
+            "inference_calls": 5,
+            "super_plans": 35,
+            "typed_decisions": 4,
+            "verifier_events": 35
+          },
+          "parse_failures": 0.0,
+          "seed": 1022,
+          "success": false,
+          "termination": "timeout",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -5.0,
+                "y": -0.0,
+                "z": 15.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.0,
+                "x": -35.05,
+                "y": -0.09,
+                "z": 5.56
+              },
+              "kind": "skill",
+              "skill": "goto"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.17873279818464186,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 35,
+            "typed_decisions": 4,
+            "verifier_events": 35
+          },
+          "parse_failures": 0.0,
+          "seed": 1023,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 2.6,
+                "y": -4.2,
+                "z": 15.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.0,
+                "x": 18.62,
+                "y": -29.58,
+                "z": 5.5
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.3010209732219555,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 40,
+            "typed_decisions": 4,
+            "verifier_events": 40
+          },
+          "parse_failures": 0.0,
+          "seed": 1024,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 2.2,
+                "y": -4.5,
+                "z": 15.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.0,
+                "x": 15.5,
+                "y": -31.2,
+                "z": 2.88
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: arrived"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        }
+      ],
+      "runtime_errors": 0,
+      "successes": 4
+    },
+    "object_search": {
+      "collisions": 0.0,
+      "mechanism_observed_every_run": true,
+      "passed": true,
+      "required_successes": 2,
+      "runs": [
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.4491347012595676,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 35,
+            "typed_decisions": 4,
+            "verifier_events": 35
+          },
+          "parse_failures": 0.0,
+          "seed": 1020,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 24.8,
+                "y": 13.4,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.38,
+                "y": 14.13,
+                "z": 3.57
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.4551510766661788,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 32,
+            "typed_decisions": 4,
+            "verifier_events": 32
+          },
+          "parse_failures": 0.0,
+          "seed": 1021,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": -20.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 21.08,
+                "y": -21.68,
+                "z": 2.56
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.33980701390512585,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 38,
+            "typed_decisions": 4,
+            "verifier_events": 38
+          },
+          "parse_failures": 0.0,
+          "seed": 1022,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -28.2,
+                "y": -0.1,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -29.86,
+                "y": 0.21,
+                "z": 5.69
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.21523189150875927,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 37,
+            "typed_decisions": 4,
+            "verifier_events": 37
+          },
+          "parse_failures": 0.0,
+          "seed": 1023,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 14.9,
+                "y": -23.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 15.97,
+                "y": -25.52,
+                "z": 5.81
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.8946201827259441,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 33,
+            "typed_decisions": 4,
+            "verifier_events": 33
+          },
+          "parse_failures": 0.0,
+          "seed": 1024,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 12.4,
+                "y": -25.3,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 13.18,
+                "y": -26.5,
+                "z": 3.81
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: completed"
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        }
+      ],
+      "runtime_errors": 0,
+      "successes": 5
+    }
+  }
+}

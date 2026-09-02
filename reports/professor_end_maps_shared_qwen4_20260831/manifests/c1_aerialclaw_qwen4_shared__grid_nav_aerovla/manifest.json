@@ -1,0 +1,203 @@
+{
+  "architecture_config": {
+    "ablation_of": null,
+    "action_horizon": null,
+    "admission": null,
+    "allow_privileged_observations": false,
+    "authority": "skill",
+    "chunk_length": 1,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5
+      }
+    },
+    "description": "AerialClaw skill authority using the frozen comparison model.",
+    "family": "llm_tool_planner",
+    "feature_cache": {
+      "capacity": 32,
+      "enabled": false
+    },
+    "id": "c1_aerialclaw_qwen4_shared",
+    "inference": {
+      "name": "ollama",
+      "params": {
+        "charge_mode": "fixed",
+        "endpoint": "chat",
+        "expected_digest": "9c60bdd691c1897bbfe5ddbc67336848e18c346b7ee2ab8541b135f208e5bb38",
+        "fixed_latency_s": {
+          "policy": 1.2
+        },
+        "host": "http://localhost:11434",
+        "jitter_frac": 0.0,
+        "keep_alive": "30m",
+        "model_id": "qwen3-vl:4b",
+        "num_predict": 128,
+        "response_channel": "thinking",
+        "sampling_seed": 0,
+        "temperature": 0.0,
+        "think": false,
+        "timeout_s": 180.0
+      }
+    },
+    "memory": {
+      "name": "short_context",
+      "params": {
+        "token_budget": 144,
+        "window": 6
+      }
+    },
+    "memory_consumers": [
+      "policy"
+    ],
+    "monitor": null,
+    "name": "C1 AerialClaw, shared Qwen3-VL 4B",
+    "perception": {
+      "name": "identity",
+      "params": {
+        "charge_latency": false,
+        "drone_radius_m": 0.4,
+        "min_score": 0.0
+      }
+    },
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "clearance_margin_m": 1.2,
+        "commit_horizon_m": 2.5,
+        "planning_horizon_m": 16.0,
+        "resolution_m": 0.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0
+      }
+    },
+    "policy": {
+      "name": "aerialclaw_agent",
+      "params": {
+        "allowed_skills": [
+          "goto",
+          "hover",
+          "scan",
+          "stop"
+        ],
+        "context_steps": 6,
+        "max_parse_attempts": 3,
+        "model_id": "qwen3-vl:4b",
+        "validity_s": 5.0
+      }
+    },
+    "profile_of": "c1",
+    "recovery": null,
+    "scheduler": {
+      "control_hz": 20.0,
+      "cooldown_s": 2.0,
+      "decision_hz": 1.0,
+      "kind": "periodic",
+      "max_calls": null,
+      "monitor_hz": null,
+      "reasoner_hz": null,
+      "trigger": null,
+      "trigger_check_hz": 5.0
+    },
+    "semantic_memory": "short_context",
+    "semantic_supervision": "none",
+    "shield": null,
+    "staleness": {
+      "max_decision_age_s": 4.0,
+      "reject_stale": true
+    },
+    "subfamily": null,
+    "tags": [
+      "aerialclaw",
+      "shared_model_comparison",
+      "qwen3_vl_4b",
+      "real_model"
+    ],
+    "unsafe_ablation": false,
+    "verifier": {
+      "name": "semantic_geometric",
+      "params": {
+        "max_waypoint_distance_m": 30.0,
+        "min_clearance_m": 1.2,
+        "repair": true,
+        "require_semantic_support": false,
+        "sensing_horizon_m": 25.0
+      }
+    }
+  },
+  "architecture_config_hash": "2b49e714b137b0da",
+  "architecture_id": "c1_aerialclaw_qwen4_shared",
+  "container_image_digest": null,
+  "dependency_hash": "184c60efb0aebc48",
+  "environment_config": {
+    "adapter": {
+      "name": "grid3d",
+      "params": {}
+    },
+    "id": "grid_nav_aerovla",
+    "instruction": "fly to the red tower and stop there",
+    "max_episode_s": 90.0,
+    "params": {
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "camera_pitch_rad": -0.15,
+      "coarse_goal_direction": true,
+      "constraints": {
+        "geofence_radius_m": 60.0,
+        "max_altitude_m": 25.0,
+        "max_speed_mps": 5.0,
+        "min_altitude_m": 0.5,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "detection_noise_m": 0.25,
+      "distractors": 3,
+      "down_camera_fov_deg": 90.0,
+      "fov_deg": 90.0,
+      "goal_distance_m": 35.0,
+      "image_size": 224,
+      "n_obstacles": 10,
+      "render": true,
+      "render_depth": true,
+      "render_down": true,
+      "scene": "clutter",
+      "sensor_range_m": 45.0,
+      "subgoals": 2,
+      "success": {
+        "goal_radius_m": 2.0,
+        "max_flight_time_s": 90.0,
+        "require_terminal_stop": true,
+        "required_subgoals": 0
+      }
+    },
+    "task_family": "long_horizon_nav"
+  },
+  "environment_id": "grid_nav_aerovla",
+  "experiment_id": "professor_end_maps_shared_qwen4_dev",
+  "git_branch": "master",
+  "git_dirty": true,
+  "git_dirty_files": 160,
+  "git_sha": "0687510d565b18839a6a6ef0eeca746039f85c41",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.13",
+  "schema": "uavlab/manifest/1",
+  "seeds": [
+    1060,
+    1061,
+    1062,
+    1063,
+    1064
+  ],
+  "stage": "development_visualization"
+}

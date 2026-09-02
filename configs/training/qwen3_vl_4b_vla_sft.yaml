@@ -1,0 +1,31 @@
+# Reproducibility record for scripts/train_qwen_vla_sft.ps1.
+# The script uses explicit arguments because ms-swift's CLI is the executable contract.
+base_model: Qwen/Qwen3-VL-4B-Instruct
+method: qlora_sft
+dataset: data/qwen_vla_sft/train_swift.jsonl
+validation_dataset: data/qwen_vla_sft/val_swift.jsonl
+output_dir: models/qwen3_vl_4b_vla_lora
+image_max_token_num: 64
+precision: bfloat16
+quantization:
+  method: bnb
+  bits: 4
+  type: nf4
+  double_quant: true
+lora:
+  rank: 8
+  alpha: 32
+  target_modules: all-linear
+freeze:
+  vision_encoder: true
+  aligner: true
+optimization:
+  epochs: 3
+  learning_rate: 0.0001
+  batch_size: 1
+  gradient_accumulation_steps: 16
+  gradient_checkpointing: true
+  max_length: 512
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 2

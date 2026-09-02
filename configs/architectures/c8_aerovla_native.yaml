@@ -1,0 +1,18 @@
+_base_: [c7_aerovla_native.yaml]
+
+id: c8_aerovla_native
+profile_of: c8
+family: direct_vla
+ablation_of: null
+name: "Official AeroVLA checkpoint, shielded"
+description: "Identical official AeroVLA policy with the common independent shield."
+tags: [direct_vla, aerovla, native_profile, official_checkpoint, shielded]
+
+shield:
+  name: simple_collision
+  params:
+    reaction_time_s: 0.35
+    hard_stop_m: 1.0
+    brake_margin_m: 1.5
+    allow_deflection: true
+

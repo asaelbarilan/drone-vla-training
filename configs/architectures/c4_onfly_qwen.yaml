@@ -1,0 +1,43 @@
+_base_: [c4_periodic_monitor.yaml, ../models/qwen3_vl_8b_onfly.yaml]
+
+id: c4_onfly_qwen
+profile_of: c4
+ablation_of: null
+family: hybrid_stack
+name: "C4 OnFly dual agent, recent memory (Qwen3-VL 8B)"
+description: "C3 OnFly mechanism plus an independent forced-choice visual monitor over recent frames."
+tags: [onfly, normalized_profile, real_model, vision, depth, dual_agent, qwen_relative_coordinates]
+
+memory_consumers: [monitor]
+
+memory:
+  name: onfly_sliding_memory
+  params:
+    keyframe_budget: 4
+
+monitor:
+  name: onfly_monitor
+  params:
+    model_id: qwen3-vl:8b
+    stop_confirmations: 2
+    layout: latest_emphasis_sheet
+    structured_evidence: true
+    stop_max_depth_m: 3.0
+    lost_hold_s: 0.25
+    lost_reorient_s: 2.0
+    lost_yaw_rate_rps: 0.8
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    # D_max=7 m is camera-forward depth; the corresponding 3-D ray is longer.
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 0.5

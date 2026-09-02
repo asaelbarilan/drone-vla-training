@@ -1,0 +1,14 @@
+
+=== grid_nav_vision  (long_horizon_nav) ===
+arch     n     SR   coll   stop    eff  p95_lat    age   reas
+-------------------------------------------------------------
+c2       3   0.67   0.00   0.67   0.57     0.35   0.80    0.0
+c2g      3   0.00   0.00   0.00   0.29     8.79   3.55    0.0
+c3g      3   0.00   0.00   0.00   0.83     9.01  17.83    0.0
+
+=== Pareto frontier (per environment) ===
+grid_nav_vision: c2
+    c2g dominated by c2
+    c3g dominated by c2, c2g
+
+No single score is computed. An architecture on the frontier is not 'best'; it is un-dominated given these objectives.

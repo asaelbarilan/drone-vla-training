@@ -1,0 +1,53 @@
+_base_: [c5_keyframe_memory.yaml, ../models/qwen3_vl_4b_onfly.yaml]
+
+id: c5_onfly_qwen4
+profile_of: c5
+ablation_of: null
+family: hybrid_stack
+name: "Full OnFly dual agent + hybrid memory (Qwen3-VL 4B)"
+description: "Full normalized OnFly mechanism using the paper-sized Qwen3-VL 4B compatible backend."
+tags: [onfly, full_architecture, normalized_profile, real_model, vision, depth, dual_agent, hybrid_memory, qwen3_vl_4b, qwen_relative_coordinates]
+
+memory_consumers: [monitor]
+
+memory:
+  name: onfly_hybrid_memory
+  params:
+    keyframe_budget: 4
+    translation_threshold_m: 2.0
+    rotation_threshold_rad: 0.3490658504
+    dedupe_epsilon: 0.08
+    dedupe_distance_m: 3.0
+
+monitor:
+  name: onfly_monitor
+  params:
+    model_id: qwen3-vl:4b
+    stop_confirmations: 2
+    # Preserve chronological history while keeping the latest camera frame as
+    # an independent full-resolution image. A single combined montage made
+    # Qwen transfer semantic attributes from green distractors into LATEST.
+    layout: history_sheet_plus_latest
+    structured_evidence: true
+    # Do not arm LOST recovery from a single hallucinated or historical sighting.
+    # Acquisition must persist in two consecutive latest sensor frames.
+    acquisition_confirmations: 2
+    stop_max_depth_m: 3.0
+    lost_hold_s: 0.25
+    lost_reorient_s: 2.0
+    lost_yaw_rate_rps: 0.8
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    # D_max=7 m is camera-forward depth; the corresponding 3-D ray is longer.
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 0.5

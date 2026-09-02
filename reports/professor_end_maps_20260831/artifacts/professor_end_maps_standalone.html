@@ -1,0 +1,1287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Professor End Maps</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Professor End Maps" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Professor End Maps&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;professor-end-maps-v1&quot; class=&quot;pem&quot;&gt;
+&lt;style&gt;
+#professor-end-maps-v1{color:var(--foreground);font-family:var(--font-sans);padding:8px 2px 4px}#professor-end-maps-v1 *{box-sizing:border-box}.pem-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:10px}.pem h2{font-size:20px;letter-spacing:-.025em;margin:0 0 3px}.pem-sub,.pem-note{color:var(--muted-foreground);font-size:11px;line-height:1.45}.pem-controls{display:flex;gap:6px;flex-wrap:wrap}.pem .btn{min-width:108px}.pem-summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,.42fr);gap:9px;margin-bottom:10px}.pem-rule,.pem-blocked{border:1px solid var(--border);border-radius:8px;padding:8px 10px;background:color-mix(in srgb,var(--card) 55%,transparent);font-size:11px;line-height:1.4}.pem-blocked{border-color:var(--orange);color:var(--foreground)}.pem-legend{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:9px;color:var(--muted-foreground);font-size:10px}.pem-legend span{display:inline-flex;align-items:center;gap:5px}.pem-k{width:9px;height:9px;display:inline-block}.pem-start{border-radius:50%;background:var(--foreground)}.pem-goal{border-radius:50%;border:2px solid var(--green)}.pem-end{border-radius:50%;background:var(--red)}.pem-obstacle{background:var(--muted);border:1px solid var(--border)}.pem-maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:9px}.pem-panel{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:color-mix(in srgb,var(--card) 48%,transparent);min-width:0}.pem-panel-head{padding:8px 9px 5px;display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.pem-name{font-size:12px;font-weight:650;line-height:1.28}.pem-kind{display:block;color:var(--muted-foreground);font-size:9px;font-weight:400;margin-top:2px}.pem-badge{font-size:9px;padding:2px 5px;border:1px solid var(--border);border-radius:999px;white-space:nowrap}.pem-badge.ok{color:var(--green);border-color:var(--green)}.pem-badge.fail{color:var(--red);border-color:var(--red)}.pem-plot{height:246px;width:100%}.pem-plot svg{display:block;width:100%;height:100%}.pem-stats{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--border)}.pem-stat{padding:6px 4px;text-align:center;min-width:0}.pem-stat b{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pem-stat small{font-size:8px;text-transform:uppercase;color:var(--muted-foreground)}.pem-note{margin-top:9px}@media(max-width:736px){.pem-head{align-items:flex-start;flex-direction:column}.pem-summary{grid-template-columns:1fr}.pem-maps{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:430px){.pem-maps{grid-template-columns:1fr}.pem-controls{width:100%}.pem .btn{flex:1;min-width:0}}
+&lt;/style&gt;
+&lt;div class=&quot;pem-head&quot;&gt;&lt;div&gt;&lt;h2&gt;Current architecture end maps&lt;/h2&gt;&lt;div class=&quot;pem-sub&quot;&gt;Local deterministic simulator · fixed shared testbed · development seeds only&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;pem-controls&quot; role=&quot;group&quot; aria-label=&quot;Representative development seed&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;pem-summary&quot;&gt;&lt;div class=&quot;pem-rule&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pem-blocked&quot;&gt;&lt;b&gt;C6 PMR - blocked&lt;/b&gt;&lt;br&gt;Trained CVI checkpoint is absent. The scripted structural sentinel is excluded.&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;pem-legend&quot;&gt;&lt;span&gt;&lt;i class=&quot;pem-k pem-start&quot;&gt;&lt;/i&gt;start&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;pem-k pem-goal&quot;&gt;&lt;/i&gt;goal + 2 m radius&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;pem-k pem-end&quot;&gt;&lt;/i&gt;failed endpoint&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;pem-k pem-obstacle&quot;&gt;&lt;/i&gt;obstacle footprint&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;pem-maps&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pem-note&quot;&gt;Paths are sampled directly from onboard pose in the 20 Hz controller log; endpoints, collisions, and verdicts come from episode results. C0 alone receives privileged goal semantics. Extra sensor channels are present identically for every architecture but are consumed only by architectures that use them.&lt;/div&gt;
+&lt;script&gt;(()=&gt;{const DATA={&quot;source&quot;:&quot;professor_end_maps_20260831&quot;,&quot;scenes&quot;:{&quot;1060&quot;:{&quot;goal&quot;:[-34.8342,3.4023],&quot;goalRadius&quot;:2.0,&quot;obstacles&quot;:[{&quot;center&quot;:[-12.7146,9.5438],&quot;half&quot;:[2.4864,2.4864]},{&quot;center&quot;:[-26.6481,7.7714],&quot;half&quot;:[2.279,2.279]},{&quot;center&quot;:[-17.9347,2.5974],&quot;half&quot;:[2.4238,2.4238]},{&quot;center&quot;:[-20.5685,5.0641],&quot;half&quot;:[1.6066,1.6066]},{&quot;center&quot;:[-27.5065,13.9722],&quot;half&quot;:[1.3916,1.3916]},{&quot;center&quot;:[-8.5149,7.7576],&quot;half&quot;:[1.0326,1.0326]},{&quot;center&quot;:[-14.4048,-1.8463],&quot;half&quot;:[2.302,2.302]},{&quot;center&quot;:[-12.231,-5.2091],&quot;half&quot;:[1.4501,1.4501]},{&quot;center&quot;:[-14.0841,1.3127],&quot;half&quot;:[1.7298,1.7298]},{&quot;center&quot;:[-14.5897,3.9789],&quot;half&quot;:[1.0291,1.0291]}],&quot;subgoals&quot;:[[-11.6114,1.1341],[-23.2228,2.2682]]},&quot;1061&quot;:{&quot;goal&quot;:[26.1741,23.2361],&quot;goalRadius&quot;:2.0,&quot;obstacles&quot;:[{&quot;center&quot;:[16.0269,1.6204],&quot;half&quot;:[1.8128,1.8128]},{&quot;center&quot;:[7.076,15.9421],&quot;half&quot;:[1.0882,1.0882]},{&quot;center&quot;:[16.3984,19.0262],&quot;half&quot;:[2.3151,2.3151]},{&quot;center&quot;:[31.4681,11.0417],&quot;half&quot;:[1.6756,1.6756]},{&quot;center&quot;:[8.1081,14.182],&quot;half&quot;:[1.8028,1.8028]},{&quot;center&quot;:[11.4569,11.4504],&quot;half&quot;:[1.5019,1.5019]},{&quot;center&quot;:[8.5509,-1.3913],&quot;half&quot;:[2.4929,2.4929]},{&quot;center&quot;:[20.9447,12.7656],&quot;half&quot;:[1.5448,1.5448]},{&quot;center&quot;:[9.6742,-0.8784],&quot;half&quot;:[1.2762,1.2762]},{&quot;center&quot;:[5.6786,17.0607],&quot;half&quot;:[2.1078,2.1078]}],&quot;subgoals&quot;:[[8.7247,7.7454],[17.4494,15.4907]]},&quot;1062&quot;:{&quot;goal&quot;:[19.9962,28.7254],&quot;goalRadius&quot;:2.0,&quot;obstacles&quot;:[{&quot;center&quot;:[25.1985,13.3005],&quot;half&quot;:[1.0511,1.0511]},{&quot;center&quot;:[23.4506,21.8422],&quot;half&quot;:[1.4874,1.4874]},{&quot;center&quot;:[7.2181,11.1867],&quot;half&quot;:[1.5847,1.5847]},{&quot;center&quot;:[17.1849,15.8745],&quot;half&quot;:[2.1924,2.1924]},{&quot;center&quot;:[7.7121,14.1198],&quot;half&quot;:[1.7194,1.7194]},{&quot;center&quot;:[14.9192,20.2325],&quot;half&quot;:[1.1755,1.1755]},{&quot;center&quot;:[16.7737,17.8483],&quot;half&quot;:[1.592,1.592]},{&quot;center&quot;:[13.0737,12.8358],&quot;half&quot;:[1.2939,1.2939]},{&quot;center&quot;:[6.5124,14.7794],&quot;half&quot;:[1.9186,1.9186]},{&quot;center&quot;:[20.3935,12.6322],&quot;half&quot;:[2.462,2.462]}],&quot;subgoals&quot;:[[6.6654,9.5751],[13.3308,19.1503]]},&quot;1063&quot;:{&quot;goal&quot;:[-34.017,8.2368],&quot;goalRadius&quot;:2.0,&quot;obstacles&quot;:[{&quot;center&quot;:[-13.6867,-0.9203],&quot;half&quot;:[1.9065,1.9065]},{&quot;center&quot;:[-25.3021,14.1822],&quot;half&quot;:[2.4702,2.4702]},{&quot;center&quot;:[-12.236,-5.1187],&quot;half&quot;:[2.2038,2.2038]},{&quot;center&quot;:[-31.8149,-4.0471],&quot;half&quot;:[1.0511,1.0511]},{&quot;center&quot;:[-13.4116,0.6001],&quot;half&quot;:[1.8815,1.8815]},{&quot;center&quot;:[-2.5288,12.5835],&quot;half&quot;:[2.162,2.162]},{&quot;center&quot;:[-22.2708,3.7323],&quot;half&quot;:[1.7692,1.7692]},{&quot;center&quot;:[-23.0088,8.1617],&quot;half&quot;:[1.8025,1.8025]},{&quot;center&quot;:[-26.3456,17.2013],&quot;half&quot;:[1.203,1.203]},{&quot;center&quot;:[-15.2794,5.2405],&quot;half&quot;:[1.3973,1.3973]}],&quot;subgoals&quot;:[[-11.339,2.7456],[-22.678,5.4912]]},&quot;1064&quot;:{&quot;goal&quot;:[1.7726,-34.9551],&quot;goalRadius&quot;:2.0,&quot;obstacles&quot;:[{&quot;center&quot;:[-2.1474,-9.1142],&quot;half&quot;:[1.4037,1.4037]},{&quot;center&quot;:[-16.6037,-13.1902],&quot;half&quot;:[1.2141,1.2141]},{&quot;center&quot;:[9.747,-23.5514],&quot;half&quot;:[1.9794,1.9794]},{&quot;center&quot;:[-4.2847,-19.6937],&quot;half&quot;:[2.4406,2.4406]},{&quot;center&quot;:[2.4417,-9.9319],&quot;half&quot;:[1.371,1.371]},{&quot;center&quot;:[9.9028,-10.3813],&quot;half&quot;:[1.3635,1.3635]},{&quot;center&quot;:[-2.1049,-15.3004],&quot;half&quot;:[1.1555,1.1555]},{&quot;center&quot;:[-8.1386,-10.2565],&quot;half&quot;:[1.3034,1.3034]},{&quot;center&quot;:[-6.5556,-31.0981],&quot;half&quot;:[1.4615,1.4615]},{&quot;center&quot;:[6.711,-17.3309],&quot;half&quot;:[2.4139,2.4139]}],&quot;subgoals&quot;:[[0.5909,-11.6517],[1.1817,-23.3034]]}},&quot;episodes&quot;:[{&quot;architecture&quot;:&quot;c0&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1060,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:21.25,&quot;distanceToGoal&quot;:1.25677775827496,&quot;pathLength&quot;:41.251126302461735,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:0,&quot;error&quot;:null,&quot;end&quot;:[-33.668,3.016],&quot;path&quot;:[[0.0,0.0],[-0.448,0.024],[-1.215,0.29],[-2.018,0.038],[-2.689,-0.521],[-3.334,-1.151],[-4.006,-1.811],[-4.643,-2.409],[-5.277,-3.028],[-5.867,-3.644],[-6.502,-4.283],[-7.07,-4.979],[-7.692,-5.797],[-8.193,-6.614],[-8.751,-7.473],[-9.392,-8.207],[-10.193,-8.685],[-11.112,-8.905],[-11.992,-8.971],[-12.925,-8.994],[-13.813,-8.937],[-14.599,-8.633],[-15.384,-8.054],[-16.146,-7.352],[-16.826,-6.683],[-17.518,-6.126],[-18.302,-5.515],[-19.058,-4.866],[-19.773,-4.195],[-20.49,-3.618],[-21.343,-3.044],[-22.294,-2.473],[-23.278,-1.963],[-24.274,-1.469],[-25.274,-0.976],[-26.274,-0.482],[-27.274,0.015],[-28.275,0.513],[-29.275,1.012],[-30.275,1.512],[-31.275,2.011],[-32.223,2.476],[-33.115,2.821],[-33.668,3.016]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c0&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1061,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:20.75,&quot;distanceToGoal&quot;:1.4572939683045758,&quot;pathLength&quot;:39.655927832009404,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:0,&quot;error&quot;:null,&quot;end&quot;:[25.667,21.965],&quot;path&quot;:[[0.0,0.0],[0.307,0.307],[0.93,0.93],[1.64,1.64],[2.312,2.312],[3.004,3.004],[3.676,3.676],[4.328,4.328],[5.011,5.011],[5.662,5.63],[6.353,6.124],[7.218,6.582],[8.164,6.932],[9.05,7.126],[10.086,7.274],[11.126,7.37],[12.17,7.435],[13.112,7.656],[14.014,7.956],[15.042,8.301],[16.118,8.581],[17.134,8.754],[18.04,8.842],[19.082,8.906],[20.101,8.945],[21.003,8.966],[21.936,9.03],[22.801,9.267],[23.562,9.57],[24.24,10.028],[24.692,10.72],[24.904,11.566],[24.971,12.546],[24.993,13.611],[24.999,14.537],[25.0,15.53],[25.0,16.603],[25.0,17.645],[25.045,18.556],[25.148,19.567],[25.272,20.576],[25.495,21.467],[25.667,21.965]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c0&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1062,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:19.25,&quot;distanceToGoal&quot;:1.391024079956384,&quot;pathLength&quot;:38.61164037661928,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:0,&quot;error&quot;:null,&quot;end&quot;:[18.729,28.173],&quot;path&quot;:[[0.0,0.0],[0.307,0.307],[0.93,0.93],[1.64,1.64],[2.312,2.312],[3.004,3.004],[3.26,3.911],[3.334,5.003],[3.399,6.103],[3.135,7.175],[2.884,8.088],[2.837,9.02],[2.739,10.078],[2.504,11.149],[2.303,12.074],[2.147,13.102],[2.073,14.115],[2.041,15.013],[2.02,15.893],[2.189,16.71],[2.647,17.5],[3.279,18.251],[3.993,18.996],[4.672,19.68],[5.326,20.333],[6.01,21.015],[6.662,21.633],[7.39,22.166],[8.294,22.766],[9.27,23.36],[10.266,23.924],[11.268,24.463],[12.271,24.985],[13.273,25.497],[14.274,26.004],[15.274,26.507],[16.275,27.009],[17.275,27.51],[18.22,27.946],[18.729,28.173]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c0&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1063,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:26.25,&quot;distanceToGoal&quot;:1.4497453174955324,&quot;pathLength&quot;:50.27473736001646,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:0,&quot;error&quot;:null,&quot;end&quot;:[-33.725,9.373],&quot;path&quot;:[[0.0,0.0],[-0.448,0.024],[-1.215,0.29],[-1.98,0.688],[-2.733,1.043],[-3.664,1.487],[-4.684,1.983],[-5.715,2.491],[-6.671,2.991],[-7.478,3.502],[-8.31,4.129],[-9.058,4.757],[-9.754,5.38],[-10.466,6.044],[-11.11,6.706],[-11.739,7.491],[-12.4,8.202],[-13.202,8.677],[-14.118,8.899],[-14.964,9.095],[-15.687,9.666],[-16.346,10.301],[-16.993,10.895],[-17.656,11.566],[-18.311,12.245],[-19.021,13.015],[-19.51,13.788],[-19.818,14.606],[-20.075,15.556],[-20.325,16.484],[-20.687,17.332],[-21.122,18.013],[-21.642,18.584],[-22.33,19.204],[-23.053,19.813],[-23.855,20.409],[-24.685,20.775],[-25.671,20.94],[-26.693,20.994],[-27.624,20.825],[-28.474,20.36],[-29.214,19.709],[-29.774,18.926],[-30.245,18.067],[-30.648,17.255],[-31.157,16.292],[-31.691,15.279],[-32.22,14.26],[-32.739,13.246],[-33.165,12.281],[-33.321,11.474],[-33.43,10.666],[-33.615,9.828],[-33.725,9.373]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c0&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1064,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:26.75,&quot;distanceToGoal&quot;:1.470112430778974,&quot;pathLength&quot;:50.37353265332968,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:0,&quot;error&quot;:null,&quot;end&quot;:[3.103,-34.426],&quot;path&quot;:[[0.0,0.0],[0.0,-0.413],[0.048,-1.274],[0.396,-2.139],[0.904,-2.938],[1.563,-3.724],[2.188,-4.37],[2.903,-5.041],[3.606,-5.7],[4.281,-6.343],[5.015,-7.049],[5.57,-7.856],[6.1,-8.096],[6.754,-7.685],[7.478,-7.131],[8.225,-6.757],[8.808,-6.579],[9.654,-6.52],[10.623,-6.564],[11.503,-6.865],[12.307,-7.399],[12.949,-8.026],[13.309,-8.88],[13.451,-9.892],[13.494,-10.884],[13.504,-11.966],[13.505,-13.076],[13.504,-14.11],[13.503,-15.025],[13.502,-16.073],[13.501,-17.096],[13.537,-18.056],[13.676,-19.109],[13.795,-20.123],[13.863,-21.031],[13.917,-22.076],[13.951,-23.097],[13.97,-24.001],[13.984,-24.887],[13.813,-25.707],[13.518,-26.47],[13.007,-27.289],[12.383,-28.057],[11.695,-28.792],[10.978,-29.522],[10.306,-30.197],[9.606,-30.86],[8.78,-31.465],[7.943,-31.981],[7.18,-32.405],[6.272,-32.901],[5.276,-33.434],[4.448,-33.857],[3.607,-34.22],[3.103,-34.426]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c1&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1060,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:35.769803347398295,&quot;pathLength&quot;:22.93851148222555,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:7,&quot;error&quot;:null,&quot;end&quot;:[-2.432,-4.932],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.475,0.0],[-1.092,0.0],[-1.492,0.0],[-1.686,0.0],[-1.902,0.0],[-2.106,0.0],[-2.356,0.0],[-2.578,0.0],[-2.837,0.0],[-3.066,0.0],[-3.33,0.0],[-3.561,0.0],[-3.827,0.0],[-4.059,0.0],[-4.326,0.102],[-4.558,0.234],[-4.755,0.353],[-4.896,0.438],[-4.968,0.481],[-4.996,0.498],[-5.004,0.502],[-5.004,0.502],[-5.002,0.501],[-5.001,0.501],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-5.0,0.5],[-4.638,0.138],[-4.168,-0.332],[-3.562,-0.938],[-3.025,-1.475],[-2.437,-2.164],[-1.94,-2.794],[-1.52,-3.398],[-1.218,-3.871],[-0.928,-4.328],[-0.693,-4.698],[-0.565,-4.899],[-0.511,-4.983],[-0.495,-5.008],[-0.494,-5.01],[-0.496,-5.006],[-0.498,-5.003],[-0.499,-5.001],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-0.5,-5.0],[-1.043,-5.0],[-1.748,-5.0],[-2.432,-4.932]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c1&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1061,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:78.0,&quot;distanceToGoal&quot;:0.8192448246447087,&quot;pathLength&quot;:52.536339875093844,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:4,&quot;error&quot;:null,&quot;end&quot;:[25.76,23.78],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.362,0.362],[0.832,0.832],[1.116,1.116],[1.237,1.237],[1.338,1.338],[1.425,1.425],[1.557,1.557],[1.686,1.686],[1.815,1.815],[1.917,1.917],[2.108,2.108],[2.307,2.307],[2.499,2.499],[2.647,2.647],[2.79,2.79],[2.905,2.905],[3.086,3.013],[3.264,3.098],[3.443,3.18],[3.585,3.246],[3.662,3.282],[3.694,3.297],[3.703,3.301],[3.704,3.302],[3.702,3.301],[3.701,3.301],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[3.7,3.3],[4.026,3.698],[4.449,4.215],[4.94,4.703],[5.355,5.063],[5.876,5.524],[6.35,5.955],[6.943,6.513],[7.478,7.023],[8.017,7.547],[8.454,7.974],[8.962,8.476],[9.412,8.922],[9.935,9.442],[10.393,9.898],[10.971,10.474],[11.496,10.998],[12.029,11.53],[12.462,11.963],[12.968,12.468],[13.416,12.916],[13.938,13.438],[14.395,13.895],[14.972,14.472],[15.496,14.997],[16.03,15.53],[16.462,15.962],[16.968,16.468],[17.416,16.916],[17.938,17.438],[18.395,17.895],[18.972,18.472],[19.496,18.996],[20.03,19.53],[20.462,19.962],[20.968,20.468],[21.416,20.916],[21.91,21.342],[22.331,21.675],[23.01,22.151],[23.686,22.611],[24.001,22.872],[24.068,22.979],[24.191,23.146],[24.342,23.325],[24.513,23.417],[24.656,23.444],[24.796,23.464],[24.908,23.483],[25.051,23.492],[25.182,23.495],[25.312,23.497],[25.416,23.498],[25.543,23.575],[25.658,23.675],[25.724,23.738],[25.752,23.769],[25.762,23.78],[25.763,23.782],[25.762,23.782],[25.761,23.781],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78],[25.76,23.78]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c1&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1062,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:78.0,&quot;distanceToGoal&quot;:0.34017406709530834,&quot;pathLength&quot;:54.46508915549779,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:4,&quot;error&quot;:null,&quot;end&quot;:[20.27,28.83],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.362,0.362],[0.832,0.832],[1.18,1.18],[1.384,1.384],[1.61,1.61],[1.816,1.816],[2.007,2.007],[2.153,2.153],[2.293,2.293],[2.407,2.407],[2.469,2.605],[2.495,2.807],[2.502,3.0],[2.502,3.147],[2.501,3.29],[2.5,3.405],[2.572,3.568],[2.666,3.723],[2.763,3.877],[2.839,4.0],[2.88,4.067],[2.897,4.095],[2.902,4.103],[2.902,4.103],[2.901,4.102],[2.901,4.101],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[2.9,4.1],[3.28,4.444],[3.774,4.89],[4.245,5.398],[4.597,5.821],[5.05,6.35],[5.473,6.832],[6.025,7.431],[6.531,7.97],[7.052,8.512],[7.478,8.95],[7.979,9.459],[8.424,9.91],[8.943,10.434],[9.399,10.892],[9.975,11.47],[10.498,11.995],[11.031,12.529],[11.463,12.962],[11.968,13.467],[12.416,13.916],[12.938,14.438],[13.395,14.895],[13.827,15.394],[14.163,15.818],[14.54,16.501],[14.871,17.18],[15.31,17.981],[15.718,18.678],[16.113,19.478],[16.423,20.175],[16.842,20.976],[17.238,21.674],[17.625,22.476],[17.931,23.174],[18.347,23.975],[18.741,24.674],[19.127,25.475],[19.432,26.174],[19.548,26.492],[19.554,26.563],[19.533,26.689],[19.515,26.841],[19.641,27.074],[19.813,27.296],[19.907,27.496],[19.938,27.645],[19.96,27.789],[19.981,27.905],[19.991,28.049],[19.994,28.181],[19.996,28.311],[19.998,28.415],[20.048,28.523],[20.112,28.613],[20.177,28.701],[20.229,28.772],[20.256,28.811],[20.268,28.827],[20.271,28.831],[20.271,28.832],[20.271,28.831],[20.27,28.831],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83],[20.27,28.83]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c1&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1063,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:0.4052588274471491,&quot;pathLength&quot;:52.214926353962674,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:5,&quot;error&quot;:null,&quot;end&quot;:[-33.953,8.133],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.543,0.0],[-1.248,0.0],[-1.647,0.0],[-1.793,0.0],[-2.017,0.0],[-2.26,0.0],[-2.493,0.0],[-2.671,0.0],[-2.895,0.102],[-3.103,0.234],[-3.353,0.334],[-3.576,0.395],[-3.836,0.434],[-4.065,0.458],[-4.309,0.616],[-4.514,0.811],[-4.686,0.985],[-4.809,1.109],[-4.872,1.172],[-4.897,1.197],[-4.903,1.204],[-4.903,1.204],[-4.902,1.202],[-4.901,1.201],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-4.9,1.2],[-5.531,1.159],[-6.351,1.106],[-7.279,1.168],[-8.049,1.276],[-8.897,1.361],[-9.624,1.412],[-10.312,1.506],[-10.852,1.606],[-11.663,1.72],[-12.458,1.817],[-13.342,1.885],[-14.089,1.927],[-14.922,2.056],[-15.64,2.205],[-16.324,2.295],[-16.861,2.335],[-17.669,2.378],[-18.463,2.42],[-19.134,2.648],[-19.607,2.923],[-20.141,3.231],[-20.617,3.486],[-21.359,3.876],[-22.088,4.259],[-22.923,4.639],[-23.641,4.939],[-24.324,5.109],[-24.861,5.185],[-25.454,5.382],[-25.967,5.61],[-26.542,5.875],[-27.037,6.101],[-27.8,6.459],[-28.549,6.813],[-29.399,6.969],[-30.125,6.993],[-30.813,7.061],[-31.353,7.15],[-31.701,7.141],[-31.896,7.082],[-32.116,7.172],[-32.318,7.324],[-32.507,7.41],[-32.653,7.44],[-32.793,7.462],[-32.907,7.482],[-33.105,7.494],[-33.307,7.499],[-33.505,7.629],[-33.661,7.795],[-33.789,7.945],[-33.882,8.052],[-33.929,8.106],[-33.948,8.128],[-33.953,8.133]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c1&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1064,&quot;success&quot;:true,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:60.0,&quot;distanceToGoal&quot;:0.32363451219514044,&quot;pathLength&quot;:58.52489219302943,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:2,&quot;error&quot;:null,&quot;end&quot;:[1.71,-35.0],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,-0.475],[0.0,-1.092],[0.204,-1.9],[0.468,-2.622],[0.928,-3.196],[1.385,-3.585],[1.919,-4.048],[2.382,-4.472],[2.914,-4.977],[3.379,-5.423],[3.961,-5.99],[4.489,-6.508],[5.075,-7.086],[5.574,-7.579],[5.853,-8.126],[5.972,-8.596],[6.006,-9.273],[6.006,-9.921],[5.866,-10.704],[5.688,-11.395],[5.71,-11.38],[5.832,-11.021],[5.91,-10.422],[5.938,-9.862],[6.143,-9.123],[6.398,-8.444],[6.561,-8.052],[6.639,-7.88],[7.029,-7.462],[7.505,-6.984],[8.078,-6.686],[8.573,-6.547],[9.395,-6.498],[10.219,-6.489],[10.892,-6.672],[11.349,-6.911],[11.937,-7.292],[12.492,-7.659],[12.952,-8.147],[13.272,-8.596],[13.432,-9.308],[13.494,-10.009],[13.51,-10.787],[13.509,-11.443],[13.437,-12.148],[13.346,-12.744],[13.244,-13.599],[13.159,-14.418],[13.1,-15.317],[13.064,-16.073],[13.042,-16.844],[13.029,-17.478],[13.121,-18.295],[13.247,-19.051],[13.427,-19.74],[13.594,-20.261],[13.76,-21.0],[13.893,-21.713],[13.948,-22.392],[13.957,-22.915],[13.965,-23.546],[13.975,-24.117],[13.985,-24.818],[13.993,-25.445],[13.636,-26.166],[13.168,-26.792],[12.594,-27.416],[12.096,-27.92],[11.509,-28.504],[10.989,-29.019],[10.461,-29.544],[10.032,-29.972],[9.528,-30.475],[9.081,-30.921],[8.41,-31.387],[7.759,-31.774],[6.981,-32.249],[6.299,-32.678],[5.507,-33.088],[4.815,-33.407],[4.213,-33.722],[3.77,-33.979],[3.071,-34.339],[2.372,-34.683],[1.955,-34.885],[1.767,-34.975],[1.703,-35.004],[1.693,-35.009],[1.697,-35.006],[1.703,-35.003],[1.707,-35.001],[1.709,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0],[1.71,-35.0]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c2_spf&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1060,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:47.6387863271712,&quot;pathLength&quot;:114.579525931138,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[-0.796,-29.876],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.426,-0.037],[-0.979,-0.084],[-1.762,-0.152],[-2.485,-0.214],[-3.114,-0.239],[-3.57,-0.241],[-4.171,-0.291],[-4.739,-0.357],[-5.373,-0.354],[-5.914,-0.316],[-6.526,-0.386],[-7.058,-0.5],[-7.485,-0.12],[-7.78,0.436],[-8.338,0.383],[-8.927,0.015],[-9.251,0.326],[-9.371,0.947],[-9.6,1.019],[-9.856,0.767],[-9.969,1.156],[-9.984,1.821],[-9.85,1.436],[-9.68,0.572],[-9.279,0.847],[-8.847,1.69],[-8.733,1.36],[-8.804,0.448],[-9.085,0.726],[-9.393,1.606],[-9.861,1.543],[-10.311,0.954],[-10.378,1.228],[-10.239,1.935],[-9.909,1.68],[-9.572,0.947],[-9.538,1.133],[-9.663,1.794],[-9.683,1.377],[-9.628,0.452],[-9.672,0.662],[-9.765,1.454],[-9.541,1.157],[-9.2,0.311],[-9.241,0.64],[-9.478,1.552],[-9.474,1.275],[-9.327,0.394],[-9.406,0.691],[-9.596,1.584],[-9.648,1.295],[-9.607,0.407],[-9.667,0.7],[-9.775,1.589],[-9.759,1.298],[-9.677,0.409],[-9.688,0.724],[-9.749,1.643],[-9.62,1.352],[-9.417,0.446],[-9.463,0.724],[-9.633,1.605],[-9.569,1.308],[-9.388,0.415],[-9.444,0.705],[-9.62,1.593],[-9.561,1.3],[-9.383,0.41],[-9.441,0.702],[-9.618,1.591],[-9.664,1.458],[-9.621,0.774],[-9.678,1.165],[-9.783,2.075],[-9.763,1.788],[-9.68,0.902],[-9.713,1.197],[-9.805,2.088],[-9.777,1.797],[-9.689,0.908],[-9.719,1.2],[-9.808,2.09],[-9.779,1.799],[-9.691,0.909],[-9.72,1.201],[-9.809,2.09],[-9.78,1.799],[-9.691,0.909],[-9.72,1.201],[-9.809,2.09],[-9.78,1.799],[-9.691,0.909],[-9.72,1.201],[-9.809,2.09],[-9.78,1.799],[-9.691,0.91],[-9.72,1.201],[-9.809,2.09],[-9.882,1.799],[-9.925,0.91],[-9.953,1.201],[-9.97,2.09],[-9.775,2.003],[-9.515,1.379],[-9.554,1.705],[-9.742,2.5],[-10.033,2.44],[-10.298,1.913],[-10.441,2.268],[-10.496,3.044],[-10.283,2.736],[-9.988,1.901],[-9.684,1.198],[-9.446,0.761],[-9.281,-0.03],[-9.179,-0.865],[-8.971,-1.494],[-8.747,-1.884],[-8.524,-2.518],[-8.349,-3.167],[-8.169,-3.851],[-8.018,-4.408],[-7.83,-4.972],[-7.66,-5.436],[-7.493,-6.037],[-7.36,-6.594],[-7.143,-7.181],[-6.925,-7.667],[-6.78,-8.268],[-6.702,-8.814],[-6.574,-9.33],[-6.439,-9.73],[-6.254,-10.343],[-6.081,-10.947],[-5.886,-11.546],[-5.718,-12.019],[-5.55,-12.607],[-5.413,-13.143],[-5.201,-13.734],[-4.993,-14.236],[-4.839,-14.836],[-4.746,-15.371],[-4.505,-15.946],[-4.235,-16.428],[-4.128,-17.042],[-4.13,-17.606],[-3.824,-18.15],[-3.414,-18.578],[-3.414,-19.209],[-3.633,-19.822],[-3.199,-20.291],[-2.503,-20.592],[-2.547,-21.037],[-2.983,-21.481],[-2.675,-21.782],[-2.016,-21.949],[-2.128,-22.382],[-2.644,-22.874],[-2.342,-23.198],[-1.649,-23.365],[-1.752,-23.791],[-2.275,-24.277],[-1.976,-24.598],[-1.279,-24.763],[-1.381,-25.19],[-1.905,-25.677],[-1.606,-25.998],[-0.91,-26.163],[-1.011,-26.59],[-1.535,-27.076],[-1.236,-27.398],[-0.54,-27.562],[-0.642,-27.989],[-1.166,-28.476],[-0.867,-28.797],[-0.171,-28.962],[-0.272,-29.389],[-0.796,-29.876]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c2_spf&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1061,&quot;success&quot;:false,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:9.0,&quot;distanceToGoal&quot;:27.487764283557386,&quot;pathLength&quot;:8.667017351134286,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:9,&quot;error&quot;:null,&quot;end&quot;:[6.753,3.886],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.407,0.204],[0.936,0.468],[1.534,0.767],[2.03,1.015],[2.549,1.326],[2.984,1.61],[3.541,1.891],[4.053,2.115],[4.575,2.458],[4.998,2.795],[5.566,3.043],[6.101,3.196],[6.588,3.587],[6.955,4.028],[6.949,4.073],[6.77,3.903],[6.753,3.886]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c2_spf&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1062,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:33.48384911555724,&quot;pathLength&quot;:109.59497584307015,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[3.891,-0.61],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.294,0.422],[0.675,0.969],[1.068,1.534],[1.376,1.976],[1.716,2.465],[2.01,2.887],[2.368,3.402],[2.69,3.864],[3.046,4.375],[3.349,4.811],[3.703,5.32],[4.014,5.767],[4.69,6.055],[5.415,6.211],[6.064,6.572],[6.536,6.976],[7.08,7.366],[7.566,7.662],[8.009,7.811],[8.345,7.864],[8.968,7.878],[9.62,7.88],[10.237,8.28],[10.707,8.8],[11.114,9.281],[11.422,9.63],[11.786,9.788],[12.115,9.83],[12.668,9.543],[13.224,9.161],[13.895,9.117],[14.485,9.262],[15.133,9.441],[15.684,9.579],[16.062,10.052],[16.283,10.599],[16.27,10.356],[16.158,9.756],[16.07,9.322],[16.023,9.099],[16.513,8.74],[17.168,8.364],[16.985,7.782],[16.401,7.217],[16.694,6.905],[17.411,6.782],[17.334,6.574],[16.83,6.346],[17.189,5.998],[17.955,5.665],[17.803,5.129],[17.177,4.602],[17.41,4.243],[18.077,4.043],[17.981,3.852],[17.475,3.689],[17.805,3.311],[18.533,2.901],[18.402,2.678],[17.825,2.599],[18.075,2.185],[18.736,1.673],[18.6,1.45],[18.046,1.43],[18.179,1.031],[18.676,0.501],[18.416,-0.061],[17.791,-0.511],[18.023,-1.1],[18.677,-1.65],[18.518,-1.784],[17.939,-1.684],[18.134,-2.125],[18.722,-2.772],[18.539,-2.969],[17.964,-2.877],[18.06,-3.345],[18.515,-4.031],[18.318,-4.206],[17.796,-4.066],[17.796,-4.49],[18.094,-5.143],[17.834,-5.711],[17.315,-6.096],[16.741,-6.463],[16.284,-6.764],[16.14,-6.833],[16.172,-6.778],[15.943,-6.893],[15.611,-7.082],[15.471,-6.522],[15.467,-5.693],[15.074,-5.868],[14.553,-6.541],[14.286,-6.13],[14.216,-5.206],[13.986,-5.37],[13.703,-6.103],[13.563,-5.755],[13.531,-4.874],[12.955,-4.864],[12.214,-5.352],[12.314,-5.384],[12.835,-5.127],[12.575,-5.125],[11.93,-5.282],[11.974,-4.966],[12.396,-4.461],[12.126,-4.556],[11.525,-4.953],[11.273,-4.649],[11.284,-4.023],[10.732,-4.108],[9.983,-4.567],[9.821,-4.092],[10.01,-3.205],[9.586,-3.246],[8.904,-3.79],[8.746,-3.532],[8.913,-2.87],[8.398,-2.953],[7.611,-3.437],[7.817,-3.13],[8.508,-2.445],[8.16,-2.507],[7.308,-2.973],[7.388,-2.798],[7.974,-2.294],[7.796,-2.338],[7.218,-2.684],[7.074,-2.175],[7.222,-1.31],[6.737,-1.341],[6.003,-1.855],[6.084,-1.736],[6.586,-1.273],[6.36,-1.332],[5.77,-1.679],[6.002,-1.37],[6.639,-0.765],[6.517,-0.85],[5.995,-1.297],[5.886,-0.963],[6.05,-0.268],[5.775,-0.318],[5.309,-0.772],[5.586,-0.489],[6.202,0.15],[5.886,-0.011],[5.131,-0.581],[5.175,-0.445],[5.659,0.062],[5.309,-0.164],[4.565,-0.751],[4.642,-0.562],[5.157,0.015],[4.968,-0.131],[4.416,-0.653],[4.586,-0.463],[5.122,0.088],[4.792,-0.129],[4.055,-0.726],[4.135,-0.547],[4.653,0.026],[4.465,-0.124],[3.914,-0.648],[4.084,-0.459],[4.62,0.09],[4.44,-0.081],[3.896,-0.618],[4.072,-0.438],[4.612,0.105],[4.434,-0.071],[3.892,-0.611],[4.069,-0.433],[4.61,0.108],[4.432,-0.069],[3.891,-0.61]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c2_spf&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1063,&quot;success&quot;:false,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:61.0,&quot;distanceToGoal&quot;:8.84562925496468,&quot;pathLength&quot;:75.47521196706612,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:61,&quot;error&quot;:null,&quot;end&quot;:[-35.641,16.435],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.362,0.362],[-0.832,0.832],[-1.438,1.438],[-1.975,1.975],[-2.516,2.516],[-2.953,2.953],[-3.397,3.472],[-3.764,3.935],[-4.183,4.432],[-4.549,4.848],[-4.966,5.344],[-5.327,5.786],[-5.76,6.279],[-6.145,6.7],[-6.56,7.195],[-6.908,7.633],[-7.323,8.087],[-7.692,8.461],[-8.191,9.045],[-8.656,9.621],[-9.107,10.171],[-9.462,10.594],[-9.867,11.067],[-10.224,11.48],[-10.65,11.985],[-11.028,12.438],[-11.43,12.904],[-11.765,13.284],[-12.187,13.788],[-12.572,14.258],[-12.982,14.723],[-13.324,15.091],[-13.74,15.596],[-14.114,16.076],[-14.538,16.53],[-14.903,16.879],[-15.283,17.363],[-15.598,17.826],[-16.054,18.257],[-16.492,18.586],[-16.844,19.098],[-17.08,19.606],[-17.768,19.564],[-18.553,19.253],[-18.796,19.64],[-18.704,20.326],[-18.979,20.278],[-19.418,19.837],[-19.618,20.298],[-19.639,21.159],[-20.004,20.893],[-20.484,20.071],[-20.745,20.291],[-20.829,21.048],[-21.299,20.922],[-21.885,20.321],[-22.193,20.703],[-22.285,21.551],[-22.495,21.314],[-22.744,20.531],[-22.981,20.685],[-23.158,21.336],[-23.171,21.094],[-23.105,20.398],[-23.463,20.665],[-23.97,21.409],[-24.767,21.607],[-25.529,21.438],[-25.994,21.752],[-26.217,22.281],[-26.74,22.008],[-27.331,21.364],[-27.632,21.777],[-27.716,22.676],[-27.643,22.62],[-27.527,22.043],[-27.73,22.211],[-28.056,22.774],[-28.061,22.754],[-27.89,22.404],[-28.3,22.69],[-28.936,23.274],[-29.034,22.929],[-28.816,22.156],[-29.092,22.154],[-29.594,22.586],[-29.691,22.35],[-29.541,21.78],[-30.04,21.849],[-30.788,22.261],[-30.827,21.993],[-30.474,21.402],[-30.957,21.388],[-31.802,21.702],[-31.846,21.449],[-31.438,20.928],[-31.905,20.829],[-32.763,20.99],[-32.794,20.732],[-32.36,20.29],[-32.807,20.116],[-33.655,20.133],[-33.67,19.871],[-33.22,19.503],[-33.637,19.261],[-34.454,19.144],[-34.453,18.871],[-33.998,18.564],[-34.314,18.283],[-35.001,18.077],[-34.993,17.79],[-34.597,17.513],[-34.887,17.187],[-35.502,16.902],[-35.494,16.93],[-35.14,17.105],[-35.446,16.706],[-36.058,16.084],[-36.04,16.077],[-35.676,16.403],[-35.641,16.435]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c2_spf&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1064,&quot;success&quot;:false,&quot;termination&quot;:&quot;agent_stopped&quot;,&quot;flightTime&quot;:2.0,&quot;distanceToGoal&quot;:34.6388743380582,&quot;pathLength&quot;:0.3690390588477293,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:2,&quot;error&quot;:null,&quot;end&quot;:[0.019,-0.368],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.008,-0.153],[0.018,-0.351],[0.019,-0.368]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c3_onfly_qwen4&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1060,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:4.053372158120025,&quot;pathLength&quot;:120.68525004544489,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[-36.127,-0.284],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.475,0.0],[-1.092,0.0],[-1.767,0.0],[-2.316,0.0],[-2.933,-0.05],[-3.468,-0.116],[-4.221,-0.212],[-4.936,-0.302],[-5.694,0.035],[-6.321,0.518],[-6.217,0.529],[-5.78,0.286],[-6.063,0.638],[-6.686,1.244],[-6.852,1.807],[-6.717,2.205],[-6.528,2.832],[-6.383,3.462],[-6.15,4.081],[-5.917,4.567],[-5.653,5.317],[-5.427,6.059],[-5.237,6.702],[-5.101,7.162],[-5.046,7.754],[-5.038,8.308],[-5.031,9.141],[-5.021,9.945],[-5.013,10.834],[-5.008,11.584],[-5.598,12.036],[-6.365,12.259],[-6.355,12.875],[-5.937,13.587],[-6.144,14.176],[-6.666,14.571],[-6.632,15.086],[-6.292,15.574],[-6.596,15.586],[-7.193,15.359],[-7.195,15.745],[-6.866,16.386],[-7.27,16.946],[-7.995,17.323],[-8.077,17.92],[-7.785,18.524],[-8.154,18.901],[-8.819,19.086],[-8.793,19.728],[-8.392,20.487],[-8.657,20.95],[-9.243,21.155],[-9.105,21.785],[-8.598,22.526],[-8.868,22.773],[-9.514,22.708],[-9.447,23.234],[-8.995,23.981],[-9.296,24.243],[-9.956,24.184],[-9.904,24.716],[-9.467,25.469],[-9.912,25.436],[-10.751,24.991],[-11.011,25.36],[-10.883,26.106],[-11.239,26.158],[-11.804,25.81],[-12.047,26.316],[-12.055,27.19],[-12.394,27.109],[-12.854,26.524],[-13.236,26.702],[-13.488,27.281],[-13.973,27.037],[-14.489,26.387],[-15.072,26.674],[-15.567,27.417],[-15.781,27.228],[-15.82,26.56],[-16.216,26.657],[-16.728,27.169],[-17.212,27.003],[-17.57,26.486],[-18.176,26.699],[-18.794,27.274],[-18.941,26.823],[-18.819,25.912],[-19.155,25.956],[-19.68,26.521],[-20.138,26.13],[-20.446,25.283],[-21.059,25.319],[-21.714,25.84],[-21.892,25.367],[-21.788,24.44],[-22.103,24.385],[-22.593,24.828],[-22.75,24.333],[-22.688,23.414],[-23.225,23.401],[-23.976,23.893],[-24.24,23.627],[-24.181,22.982],[-24.714,23.05],[-25.468,23.503],[-25.666,23.202],[-25.521,22.543],[-26.055,22.595],[-26.858,23.033],[-27.363,22.791],[-27.584,22.215],[-28.102,22.043],[-28.69,22.144],[-29.066,21.769],[-29.249,21.202],[-29.959,21.061],[-30.808,21.183],[-31.038,20.593],[-30.894,19.74],[-31.453,19.49],[-32.289,19.624],[-32.529,19.058],[-32.388,18.218],[-32.949,17.976],[-33.787,18.115],[-34.027,17.553],[-33.887,16.714],[-34.448,16.473],[-35.287,16.613],[-35.527,16.052],[-35.387,15.214],[-35.948,14.973],[-36.787,15.113],[-36.851,14.712],[-36.482,14.082],[-36.81,13.849],[-37.466,13.888],[-37.409,13.331],[-36.969,12.561],[-37.346,12.28],[-38.097,12.326],[-38.047,11.788],[-37.566,11.033],[-37.845,10.699],[-38.495,10.668],[-38.433,10.135],[-37.986,9.428],[-38.424,8.889],[-39.258,8.565],[-39.104,8.051],[-38.442,7.525],[-38.605,7.145],[-39.205,6.918],[-39.034,6.506],[-38.465,6.07],[-38.764,5.501],[-39.481,4.986],[-39.293,4.72],[-38.644,4.631],[-38.72,4.256],[-39.194,3.797],[-38.878,3.659],[-38.188,3.72],[-38.262,3.353],[-38.744,2.823],[-38.472,2.756],[-37.833,2.952],[-37.825,2.633],[-38.175,2.093],[-37.793,2.157],[-37.083,2.535],[-37.113,2.064],[-37.543,1.23],[-37.094,0.982],[-36.253,1.119],[-35.996,0.555],[-36.127,-0.284]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c3_onfly_qwen4&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1061,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:34.16365141439965,&quot;pathLength&quot;:111.97413120471269,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[3.485,48.739],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.407,0.204],[0.936,0.468],[1.534,0.767],[2.03,1.015],[2.589,1.294],[3.075,1.537],[3.726,2.016],[4.333,2.517],[5.09,2.956],[5.772,3.27],[6.528,3.43],[7.174,3.492],[7.83,3.507],[8.367,3.505],[8.825,4.059],[9.16,4.781],[9.19,4.559],[9.073,3.89],[9.373,4.019],[9.836,4.571],[10.447,4.828],[10.988,4.838],[11.527,5.216],[11.961,5.727],[12.508,6.076],[13.011,6.258],[13.511,6.611],[13.911,6.994],[14.361,7.635],[14.754,8.269],[15.237,9.036],[15.671,9.713],[16.262,9.832],[16.815,9.654],[17.646,9.441],[18.448,9.285],[19.344,9.159],[20.103,9.068],[20.871,9.028],[21.497,9.018],[22.243,9.012],[22.911,9.006],[23.757,9.206],[24.527,9.469],[25.225,9.567],[25.75,9.553],[26.42,9.544],[27.041,9.55],[27.43,9.69],[27.625,9.865],[27.807,10.053],[27.965,10.204],[28.064,10.296],[28.114,10.344],[28.128,10.357],[28.125,10.355],[27.953,10.755],[27.733,11.276],[27.592,11.997],[27.525,12.658],[27.504,13.324],[27.504,13.862],[27.504,14.672],[27.503,15.464],[27.4,16.346],[27.267,17.092],[26.963,17.923],[26.638,18.641],[26.511,19.324],[26.513,19.861],[26.492,20.398],[26.45,20.84],[26.403,21.329],[26.366,21.752],[26.318,22.256],[26.274,22.703],[26.248,22.958],[26.236,23.068],[26.233,23.103],[26.233,23.108],[26.202,23.569],[26.161,24.166],[26.623,24.749],[27.244,25.188],[27.426,25.773],[27.331,26.324],[27.722,26.949],[28.306,27.485],[28.248,28.272],[27.858,29.031],[28.094,29.638],[28.631,30.045],[28.606,30.566],[28.271,31.058],[28.543,31.57],[29.096,31.991],[29.01,32.578],[28.589,33.138],[28.756,33.64],[29.22,34.013],[29.044,34.635],[28.552,35.267],[28.865,35.934],[29.552,36.478],[29.434,37.017],[28.895,37.453],[29.069,37.962],[29.61,38.412],[29.432,38.935],[28.891,39.393],[29.068,39.922],[29.609,40.384],[29.432,40.916],[28.891,41.38],[29.068,41.913],[29.609,42.378],[29.432,42.911],[28.891,43.377],[29.068,43.911],[29.609,44.376],[29.432,44.91],[28.891,45.376],[28.49,45.639],[28.282,45.752],[27.903,46.186],[27.497,46.708],[27.055,47.457],[26.689,48.156],[26.33,48.965],[26.041,49.667],[25.635,50.471],[25.248,51.171],[25.021,51.566],[24.92,51.736],[24.886,51.789],[24.881,51.796],[24.881,51.795],[24.881,51.795],[24.422,51.823],[23.826,51.859],[23.17,51.89],[22.633,51.912],[21.824,51.937],[21.033,51.959],[20.152,51.974],[19.407,51.983],[18.709,51.988],[18.166,51.991],[17.734,51.41],[17.432,50.656],[16.743,50.666],[15.988,51.078],[15.373,50.866],[14.963,50.341],[14.44,50.373],[13.947,50.712],[13.433,50.445],[13.012,49.895],[12.424,49.984],[11.863,50.406],[11.299,50.08],[10.846,49.409],[10.225,49.587],[9.636,50.193],[9.108,49.876],[8.718,49.115],[8.196,49.173],[7.702,49.679],[7.192,49.333],[6.777,48.582],[6.182,48.796],[5.608,49.495],[5.203,49.35],[4.965,48.76],[4.541,48.939],[4.095,49.516],[3.73,49.322],[3.485,48.739]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c3_onfly_qwen4&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1062,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:25.60823237236984,&quot;pathLength&quot;:110.4872116434292,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[-0.221,13.152],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.362,0.362],[0.832,0.832],[1.288,1.356],[1.631,1.787],[1.99,2.291],[2.294,2.736],[2.739,3.444],[3.169,4.143],[3.582,4.958],[3.904,5.663],[4.383,6.131],[4.853,6.395],[5.293,6.847],[5.626,7.322],[6.377,7.397],[7.193,7.253],[7.965,7.12],[8.549,7.043],[9.195,7.281],[9.76,7.622],[10.418,8.047],[10.996,8.414],[11.796,8.652],[12.549,8.782],[13.398,8.862],[14.125,8.912],[14.344,9.236],[14.275,9.635],[14.791,9.422],[15.524,8.937],[15.624,9.109],[15.36,9.607],[15.635,9.503],[16.163,9.084],[16.723,8.625],[17.157,8.274],[17.863,8.088],[18.575,8.013],[19.31,8.27],[19.904,8.63],[20.012,8.752],[19.868,8.716],[20.244,8.499],[20.832,8.251],[20.481,8.096],[19.706,8.024],[20.09,8.001],[21.022,7.999],[20.887,7.999],[20.184,7.999],[20.585,8.0],[21.521,8.0],[21.386,8.0],[20.683,8.0],[20.921,8.0],[21.643,8.0],[21.278,8.0],[20.388,8.0],[20.689,8.0],[21.583,8.0],[21.43,8.0],[20.718,8.0],[20.948,8.0],[21.662,8.0],[21.29,8.0],[20.396,8.0],[20.694,8.0],[21.586,8.0],[21.296,8.0],[20.408,8.0],[19.545,8.0],[18.937,8.0],[18.223,8.0],[17.576,8.0],[16.933,8.272],[16.419,8.624],[15.909,8.362],[15.495,7.836],[15.603,7.924],[15.942,8.331],[15.941,8.034],[15.745,7.41],[15.705,7.495],[15.772,7.954],[15.543,7.531],[15.201,6.712],[15.226,6.902],[15.445,7.602],[15.178,7.489],[14.702,6.936],[14.731,7.101],[15.03,7.641],[14.78,7.458],[14.277,6.909],[14.343,7.18],[14.71,7.846],[14.452,7.759],[13.901,7.27],[13.238,7.114],[12.688,7.2],[12.066,6.797],[11.526,6.206],[11.35,6.379],[11.387,6.921],[11.09,6.795],[10.663,6.319],[10.193,6.671],[9.813,7.404],[9.222,7.185],[8.636,6.491],[8.406,6.784],[8.402,7.564],[8.127,7.528],[7.747,7.038],[7.638,7.146],[7.698,7.581],[7.359,7.412],[6.873,6.94],[6.833,7.047],[7.042,7.454],[6.802,7.309],[6.359,6.884],[6.296,7.021],[6.459,7.443],[6.043,7.123],[5.398,6.466],[5.381,6.641],[5.708,7.234],[5.391,7.006],[4.779,6.367],[4.324,6.603],[4.074,7.276],[3.724,7.149],[3.375,6.599],[3.29,6.764],[3.357,7.298],[3.053,7.085],[2.61,6.5],[2.667,6.578],[2.979,7.014],[2.762,6.84],[2.296,6.357],[2.312,6.753],[2.593,7.544],[2.326,7.463],[1.809,6.918],[1.886,7.019],[2.273,7.474],[2.011,7.291],[1.443,6.788],[1.531,6.965],[1.962,7.48],[1.526,7.374],[0.707,6.941],[0.724,7.124],[1.199,7.615],[0.737,7.776],[-0.149,7.706],[0.097,7.926],[0.907,8.272],[0.749,8.424],[0.075,8.435],[0.241,8.615],[0.85,8.858],[0.503,9.278],[-0.3,9.694],[0.072,9.793],[1.009,9.712],[0.849,10.138],[0.111,10.752],[0.086,11.339],[0.486,11.771],[0.143,12.359],[-0.549,12.919],[-0.341,12.846],[0.314,12.472],[0.245,12.672],[-0.221,13.152]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c3_onfly_qwen4&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1063,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:32.67239628210783,&quot;pathLength&quot;:56.72101313416782,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[-39.828,40.328],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.362,0.362],[-0.832,0.832],[-1.405,1.468],[-1.9,2.046],[-2.439,2.587],[-2.897,3.004],[-3.424,3.496],[-3.885,3.935],[-4.466,4.499],[-4.992,5.014],[-5.527,5.541],[-5.96,5.97],[-6.466,6.473],[-6.915,6.92],[-7.341,7.413],[-7.674,7.833],[-8.109,8.36],[-8.515,8.839],[-9.007,9.386],[-9.443,9.859],[-10.004,10.448],[-10.517,10.981],[-11.043,11.519],[-11.472,11.955],[-11.974,12.463],[-12.421,12.912],[-12.941,13.436],[-13.398,13.894],[-13.974,14.471],[-14.497,14.996],[-15.03,15.529],[-15.463,15.962],[-15.968,16.468],[-16.416,16.916],[-16.938,17.438],[-17.395,17.895],[-17.972,18.472],[-18.497,18.996],[-19.03,19.53],[-19.462,19.962],[-19.968,20.468],[-20.416,20.916],[-20.938,21.438],[-21.395,21.895],[-21.972,22.472],[-22.496,22.996],[-23.03,23.53],[-23.462,23.962],[-23.968,24.468],[-24.416,24.916],[-24.938,25.438],[-25.395,25.895],[-25.972,26.472],[-26.496,26.996],[-27.03,27.53],[-27.462,27.962],[-27.968,28.468],[-28.416,28.916],[-28.938,29.438],[-29.395,29.895],[-29.972,30.472],[-30.496,30.996],[-31.03,31.53],[-31.462,31.962],[-31.968,32.468],[-32.416,32.916],[-32.938,33.438],[-33.395,33.895],[-33.972,34.472],[-34.496,34.996],[-35.03,35.53],[-35.462,35.962],[-35.968,36.468],[-36.416,36.916],[-36.938,37.438],[-37.395,37.895],[-37.972,38.472],[-38.496,38.996],[-39.03,39.53],[-39.462,39.962],[-39.699,40.199],[-39.797,40.297],[-39.827,40.327],[-39.83,40.33],[-39.829,40.329],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328],[-39.828,40.328]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c3_onfly_qwen4&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1064,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:56.238871373248266,&quot;pathLength&quot;:116.8110938485425,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:89,&quot;error&quot;:null,&quot;end&quot;:[8.309,20.902],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,-0.475],[0.0,-1.092],[0.0,-1.767],[0.0,-2.316],[0.362,-2.885],[0.832,-3.359],[1.438,-3.947],[1.975,-4.48],[1.894,-5.06],[1.523,-5.549],[1.986,-5.9],[2.804,-6.117],[3.567,-6.286],[4.107,-6.408],[4.653,-6.743],[5.112,-7.121],[5.71,-7.529],[6.262,-7.864],[6.754,-8.193],[7.119,-8.458],[7.35,-8.628],[7.48,-8.722],[7.523,-8.769],[7.523,-8.791],[7.514,-8.798],[7.507,-8.8],[7.367,-8.447],[7.189,-7.989],[7.21,-7.558],[7.332,-7.24],[7.382,-6.661],[7.374,-6.059],[7.753,-5.485],[8.254,-5.046],[8.806,-4.569],[9.257,-4.158],[9.716,-3.636],[10.093,-3.158],[10.558,-2.612],[10.979,-2.14],[11.63,-1.653],[12.267,-1.253],[12.881,-0.808],[13.359,-0.425],[13.896,0.047],[14.365,0.471],[14.903,0.976],[15.371,1.422],[15.956,1.99],[16.486,2.508],[17.023,3.037],[17.457,3.467],[18.113,4.018],[18.756,4.526],[19.338,4.958],[19.771,5.266],[20.308,5.674],[20.802,6.06],[21.513,6.481],[22.192,6.834],[22.988,7.287],[23.682,7.703],[24.285,8.081],[24.729,8.365],[25.43,8.786],[26.133,9.2],[26.753,9.579],[27.203,9.864],[27.911,10.285],[28.62,10.699],[29.244,11.079],[29.695,11.363],[30.405,11.785],[31.117,12.199],[31.942,12.601],[32.652,12.916],[33.462,13.337],[34.165,13.735],[34.97,14.123],[35.67,14.43],[36.473,14.744],[37.172,15.006],[37.873,15.496],[38.439,16.005],[39.141,16.583],[39.779,17.073],[40.353,17.49],[40.783,17.792],[41.47,18.233],[42.16,18.664],[42.771,19.054],[43.217,19.344],[43.922,19.771],[44.627,20.189],[45.448,20.595],[46.157,20.912],[46.965,21.335],[47.667,21.733],[48.471,22.122],[49.171,22.429],[49.974,22.846],[50.673,23.24],[51.067,23.47],[51.237,23.573],[51.29,23.606],[51.297,23.611],[51.296,23.611],[51.296,23.611],[51.323,24.071],[51.359,24.668],[51.391,25.326],[51.413,25.863],[51.424,26.158],[51.428,26.282],[51.429,26.319],[51.429,26.323],[51.429,26.321],[51.429,26.321],[50.968,26.259],[50.37,26.18],[49.651,26.081],[49.034,25.996],[48.218,25.969],[47.458,25.976],[46.606,25.986],[45.878,25.991],[45.189,25.926],[44.649,25.839],[44.055,25.627],[43.54,25.398],[42.755,25.24],[41.987,25.151],[41.124,25.096],[40.389,25.061],[39.697,24.975],[39.155,24.878],[38.342,24.768],[37.545,24.676],[36.66,24.61],[35.912,24.57],[35.146,24.546],[34.515,24.532],[33.7,24.42],[32.946,24.28],[32.099,23.971],[31.373,23.643],[30.686,23.515],[30.147,23.516],[29.336,23.522],[28.541,23.516],[27.657,23.408],[26.91,23.272],[26.078,22.966],[25.36,22.64],[24.676,22.512],[24.139,22.514],[23.331,22.52],[22.537,22.515],[21.655,22.509],[20.909,22.506],[20.077,22.402],[19.36,22.268],[18.546,21.963],[17.84,21.638],[17.162,21.511],[16.628,21.513],[15.822,21.52],[15.032,21.514],[14.152,21.509],[13.407,21.506],[12.643,21.504],[12.013,21.503],[11.198,21.4],[10.445,21.267],[9.846,21.135],[9.442,21.033],[8.869,20.955],[8.309,20.902]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c8_aerovla_gemma&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1060,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:23.763310449306516,&quot;pathLength&quot;:11.452349474798567,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:19,&quot;error&quot;:null,&quot;end&quot;:[-11.147,1.622],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.118,0.012],[-0.523,0.051],[-1.001,0.098],[-1.494,0.146],[-1.991,0.194],[-2.37,0.231],[-2.463,0.241],[-2.483,0.242],[-2.487,0.243],[-2.508,0.245],[-2.834,0.277],[-3.294,0.322],[-3.784,0.37],[-4.28,0.418],[-4.757,0.465],[-4.929,0.481],[-4.966,0.485],[-4.974,0.486],[-4.976,0.486],[-5.163,0.504],[-5.592,0.546],[-6.075,0.593],[-6.57,0.642],[-7.067,0.69],[-7.378,0.721],[-7.446,0.727],[-7.46,0.729],[-7.464,0.729],[-7.526,0.735],[-7.897,0.771],[-8.368,0.817],[-8.859,0.865],[-9.356,0.914],[-9.792,0.956],[-9.918,0.969],[-9.945,0.971],[-9.951,0.972],[-9.952,0.972],[-10.216,0.998],[-10.648,1.084],[-10.985,1.391],[-11.112,1.573],[-11.139,1.612],[-11.145,1.62],[-11.146,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622],[-11.147,1.622]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c8_aerovla_gemma&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1061,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:21.359198398721105,&quot;pathLength&quot;:13.741286899343853,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:19,&quot;error&quot;:null,&quot;end&quot;:[10.47,8.808],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.089,0.079],[0.393,0.349],[0.752,0.668],[1.123,0.997],[1.496,1.328],[1.781,1.581],[1.851,1.643],[1.866,1.656],[1.869,1.659],[1.885,1.673],[2.129,1.89],[2.475,2.198],[2.843,2.524],[3.216,2.855],[3.574,3.173],[3.704,3.288],[3.732,3.313],[3.738,3.318],[3.739,3.319],[3.879,3.444],[4.202,3.73],[4.565,4.052],[4.936,4.382],[5.31,4.714],[5.543,4.921],[5.595,4.967],[5.606,4.977],[5.608,4.979],[5.655,5.02],[5.934,5.268],[6.287,5.582],[6.657,5.91],[7.03,6.241],[7.357,6.531],[7.452,6.616],[7.473,6.634],[7.477,6.638],[7.478,6.639],[7.676,6.814],[8.012,7.113],[8.378,7.438],[8.75,7.768],[9.124,8.1],[9.3,8.256],[9.338,8.289],[9.346,8.297],[9.347,8.298],[9.449,8.361],[9.795,8.574],[10.231,8.739],[10.419,8.793],[10.459,8.805],[10.468,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808],[10.47,8.808]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c8_aerovla_gemma&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1062,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:24.63178928990009,&quot;pathLength&quot;:10.447010418113006,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:19,&quot;error&quot;:null,&quot;end&quot;:[6.156,8.352],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.068,0.098],[0.3,0.431],[0.574,0.825],[0.858,1.232],[1.143,1.642],[1.36,1.954],[1.414,2.031],[1.425,2.047],[1.428,2.051],[1.44,2.068],[1.627,2.337],[1.891,2.717],[2.172,3.121],[2.457,3.53],[2.731,3.923],[2.83,4.065],[2.851,4.095],[2.855,4.102],[2.856,4.103],[2.964,4.257],[3.21,4.611],[3.487,5.01],[3.771,5.417],[4.056,5.827],[4.235,6.084],[4.274,6.14],[4.283,6.152],[4.284,6.155],[4.32,6.206],[4.533,6.512],[4.803,6.9],[5.086,7.306],[5.371,7.715],[5.638,8.06],[5.718,8.158],[5.735,8.179],[5.739,8.184],[5.74,8.185],[5.976,8.285],[6.118,8.337],[6.148,8.349],[6.155,8.351],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352],[6.156,8.352]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c8_aerovla_gemma&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1063,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:24.312986288095857,&quot;pathLength&quot;:10.8397791766824,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:19,&quot;error&quot;:null,&quot;end&quot;:[-10.421,2.81],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[-0.116,0.028],[-0.511,0.124],[-0.977,0.237],[-1.459,0.353],[-1.944,0.471],[-2.314,0.56],[-2.405,0.582],[-2.424,0.587],[-2.429,0.588],[-2.449,0.593],[-2.767,0.67],[-3.217,0.779],[-3.695,0.895],[-4.18,1.012],[-4.645,1.125],[-4.814,1.166],[-4.85,1.174],[-4.857,1.176],[-4.859,1.177],[-5.042,1.221],[-5.461,1.322],[-5.933,1.436],[-6.415,1.553],[-6.901,1.671],[-7.204,1.744],[-7.271,1.761],[-7.285,1.764],[-7.289,1.765],[-7.349,1.78],[-7.712,1.867],[-8.171,1.979],[-8.652,2.095],[-9.136,2.212],[-9.562,2.315],[-9.685,2.345],[-9.712,2.352],[-9.718,2.353],[-9.719,2.353],[-9.932,2.503],[-10.271,2.724],[-10.389,2.791],[-10.414,2.806],[-10.42,2.809],[-10.421,2.809],[-10.421,2.809],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81],[-10.421,2.81]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;},{&quot;architecture&quot;:&quot;c8_aerovla_gemma&quot;,&quot;environment&quot;:&quot;grid_nav_aerovla&quot;,&quot;seed&quot;:1064,&quot;success&quot;:false,&quot;termination&quot;:&quot;timeout&quot;,&quot;flightTime&quot;:90.0,&quot;distanceToGoal&quot;:27.51495531142056,&quot;pathLength&quot;:7.497827311559572,&quot;collided&quot;:false,&quot;collisions&quot;:0,&quot;modelCalls&quot;:19,&quot;error&quot;:null,&quot;end&quot;:[0.319,-7.488],&quot;path&quot;:[[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.0,0.0],[0.006,-0.119],[0.027,-0.525],[0.051,-1.004],[0.076,-1.499],[0.101,-1.998],[0.121,-2.378],[0.125,-2.471],[0.126,-2.491],[0.127,-2.496],[0.128,-2.517],[0.144,-2.843],[0.168,-3.306],[0.193,-3.797],[0.218,-4.295],[0.242,-4.774],[0.251,-4.946],[0.253,-4.984],[0.253,-4.991],[0.253,-4.993],[0.263,-5.181],[0.285,-5.611],[0.309,-6.096],[0.334,-6.592],[0.344,-7.091],[0.324,-7.401],[0.32,-7.47],[0.319,-7.484],[0.319,-7.487],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488],[0.319,-7.488]],&quot;trajectorySource&quot;:&quot;logged onboard pose&quot;}],&quot;seedPool&quot;:[1060,1061,1062,1063,1064],&quot;seedRanking&quot;:[{&quot;seed&quot;:1061,&quot;successes&quot;:1,&quot;collisions&quot;:0,&quot;meanDistance&quot;:20.957464730330713,&quot;meanFlightTime&quot;:66.75},{&quot;seed&quot;:1062,&quot;successes&quot;:1,&quot;collisions&quot;:0,&quot;meanDistance&quot;:21.01601121123062,&quot;meanFlightTime&quot;:87.0},{&quot;seed&quot;:1064,&quot;successes&quot;:1,&quot;collisions&quot;:0,&quot;meanDistance&quot;:29.67908388373054,&quot;meanFlightTime&quot;:60.5},{&quot;seed&quot;:1063,&quot;successes&quot;:0,&quot;collisions&quot;:0,&quot;meanDistance&quot;:16.55906766315388,&quot;meanFlightTime&quot;:82.75},{&quot;seed&quot;:1060,&quot;successes&quot;:0,&quot;collisions&quot;:0,&quot;meanDistance&quot;:27.80631807049901,&quot;meanFlightTime&quot;:90.0}],&quot;representatives&quot;:{&quot;best&quot;:1061,&quot;median&quot;:1064,&quot;worst&quot;:1060},&quot;selectionRule&quot;:&quot;non-oracle successes descending, collisions ascending, mean endpoint distance ascending, mean flight time ascending&quot;,&quot;blocked&quot;:{&quot;c6_pmr&quot;:&quot;trained CVI checkpoint absent; scripted structural sentinel excluded&quot;}};const ORDER=[&quot;c0&quot;, &quot;c1&quot;, &quot;c2_spf&quot;, &quot;c3_onfly_qwen4&quot;, &quot;c8_aerovla_gemma&quot;];const META={&quot;c0&quot;: {&quot;label&quot;: &quot;C0 SUPER control ceiling - oracle semantics&quot;, &quot;short&quot;: &quot;C0 SUPER ceiling\nOracle semantics (privileged)&quot;, &quot;colour&quot;: &quot;#6b7280&quot;, &quot;status&quot;: &quot;privileged control baseline&quot;}, &quot;c1&quot;: {&quot;label&quot;: &quot;C1 AerialClaw - GPT-OSS 20B&quot;, &quot;short&quot;: &quot;C1 AerialClaw\nGPT-OSS 20B&quot;, &quot;colour&quot;: &quot;#2563eb&quot;, &quot;status&quot;: &quot;real local model&quot;}, &quot;c2_spf&quot;: {&quot;label&quot;: &quot;C2 See, Point, Fly - Qwen3-VL 8B&quot;, &quot;short&quot;: &quot;C2 See, Point, Fly\nQwen3-VL 8B&quot;, &quot;colour&quot;: &quot;#8b5cf6&quot;, &quot;status&quot;: &quot;real local VLM&quot;}, &quot;c3_onfly_qwen4&quot;: {&quot;label&quot;: &quot;C3 OnFly - Qwen3-VL 4B&quot;, &quot;short&quot;: &quot;C3 OnFly\nQwen3-VL 4B&quot;, &quot;colour&quot;: &quot;#f59e0b&quot;, &quot;status&quot;: &quot;real compatible backend&quot;}, &quot;c8_aerovla_gemma&quot;: {&quot;label&quot;: &quot;C8 AeroVLA + shield - Gemma 3 4B&quot;, &quot;short&quot;: &quot;C8 AeroVLA + shield\nGemma 3 4B&quot;, &quot;colour&quot;: &quot;#059669&quot;, &quot;status&quot;: &quot;real compatible backend&quot;}};const root=document.getElementById(&#x27;professor-end-maps-v1&#x27;);const maps=root.querySelector(&#x27;.pem-maps&#x27;);const controls=root.querySelector(&#x27;.pem-controls&#x27;);let rank=&#x27;best&#x27;,resizeFrame=0;const esc=v=&gt;String(v).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g,c=&gt;({&#x27;&amp;&#x27;:&#x27;&amp;amp;&#x27;,&#x27;&lt;&#x27;:&#x27;&amp;lt;&#x27;,&#x27;&gt;&#x27;:&#x27;&amp;gt;&#x27;,&#x27;&quot;&#x27;:&#x27;&amp;quot;&#x27;,&quot;&#x27;&quot;:&#x27;&amp;#39;&#x27;}[c]));const ep=(a,s)=&gt;DATA.episodes.find(d=&gt;d.architecture===a&amp;&amp;d.seed===s);const seed=()=&gt;DATA.representatives[rank];const scene=()=&gt;DATA.scenes[String(seed())];function bounds(){const sc=scene(),pts=[[0,0],sc.goal,...sc.subgoals];sc.obstacles.forEach(o=&gt;pts.push([o.center[0]-o.half[0],o.center[1]-o.half[1]],[o.center[0]+o.half[0],o.center[1]+o.half[1]]));ORDER.forEach(a=&gt;pts.push(...ep(a,seed()).path));let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;pts.forEach(([x,y])=&gt;{minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)});const span=Math.max(maxX-minX,maxY-minY,20)*1.18;return{cx:(minX+maxX)/2,cy:(minY+maxY)/2,span}}function verdict(d){return d.success?&#x27;SUCCESS&#x27;:d.termination.replaceAll(&#x27;_&#x27;,&#x27; &#x27;).toUpperCase()}function shell(){const s=seed(),score=DATA.seedRanking.find(d=&gt;d.seed===s);root.querySelector(&#x27;.pem-rule&#x27;).innerHTML=`&lt;b&gt;${rank.toUpperCase()} representative: seed ${s}&lt;/b&gt;&lt;br&gt;Ranked before plotting by non-oracle outcomes: successes (more), collisions (fewer), mean endpoint distance (lower), then mean flight time (lower). This seed: ${score.successes}/4 successes, ${score.collisions} collisions, ${score.meanDistance.toFixed(1)} m mean distance.`;maps.innerHTML=ORDER.map(a=&gt;{const d=ep(a,s),m=META[a];return`&lt;section class=&quot;pem-panel&quot; data-arch=&quot;${a}&quot;&gt;&lt;div class=&quot;pem-panel-head&quot;&gt;&lt;span class=&quot;pem-name&quot;&gt;${esc(m.label)}&lt;small class=&quot;pem-kind&quot;&gt;${esc(m.status)}&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pem-badge ${d.success?&#x27;ok&#x27;:&#x27;fail&#x27;}&quot;&gt;${esc(verdict(d))}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;pem-plot&quot;&gt;&lt;/div&gt;&lt;div class=&quot;pem-stats&quot;&gt;&lt;span class=&quot;pem-stat&quot;&gt;&lt;b&gt;${d.distanceToGoal.toFixed(1)} m&lt;/b&gt;&lt;small&gt;to goal&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pem-stat&quot;&gt;&lt;b&gt;${d.pathLength.toFixed(1)} m&lt;/b&gt;&lt;small&gt;path&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pem-stat&quot;&gt;&lt;b&gt;${d.collisions}&lt;/b&gt;&lt;small&gt;collisions&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pem-stat&quot;&gt;&lt;b&gt;${d.flightTime.toFixed(1)} s&lt;/b&gt;&lt;small&gt;flight&lt;/small&gt;&lt;/span&gt;&lt;span class=&quot;pem-stat&quot;&gt;&lt;b&gt;${d.modelCalls}&lt;/b&gt;&lt;small&gt;model calls&lt;/small&gt;&lt;/span&gt;&lt;/div&gt;&lt;/section&gt;`}).join(&#x27;&#x27;);drawAll()}function draw(panel){const a=panel.dataset.arch,d=ep(a,seed()),sc=scene(),box=bounds(),host=panel.querySelector(&#x27;.pem-plot&#x27;),w=Math.max(220,Math.floor(host.getBoundingClientRect().width)),h=246,pad=13,scale=Math.min((w-2*pad)/box.span,(h-2*pad)/box.span),px=x=&gt;w/2+(x-box.cx)*scale,py=y=&gt;h/2-(y-box.cy)*scale,path=d.path.map((p,i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;}${px(p[0]).toFixed(1)},${py(p[1]).toFixed(1)}`).join(&#x27; &#x27;),obstacles=sc.obstacles.map(o=&gt;`&lt;rect x=&quot;${px(o.center[0]-o.half[0]).toFixed(1)}&quot; y=&quot;${py(o.center[1]+o.half[1]).toFixed(1)}&quot; width=&quot;${(2*o.half[0]*scale).toFixed(1)}&quot; height=&quot;${(2*o.half[1]*scale).toFixed(1)}&quot; fill=&quot;var(--muted)&quot; stroke=&quot;var(--border)&quot;/&gt;`).join(&#x27;&#x27;),subs=sc.subgoals.map(p=&gt;`&lt;circle cx=&quot;${px(p[0]).toFixed(1)}&quot; cy=&quot;${py(p[1]).toFixed(1)}&quot; r=&quot;2.6&quot; fill=&quot;none&quot; stroke=&quot;var(--muted-foreground)&quot;/&gt;`).join(&#x27;&#x27;),gx=px(sc.goal[0]),gy=py(sc.goal[1]),ex=px(d.end[0]),ey=py(d.end[1]);host.innerHTML=`&lt;svg viewBox=&quot;0 0 ${w} ${h}&quot; role=&quot;img&quot; aria-label=&quot;${esc(META[a].label)}, ${rank} seed ${seed()}, ${esc(verdict(d))}&quot;&gt;&lt;line x1=&quot;${px(0)}&quot; y1=&quot;${py(0)}&quot; x2=&quot;${gx}&quot; y2=&quot;${gy}&quot; stroke=&quot;var(--border)&quot; stroke-dasharray=&quot;4 5&quot;/&gt;${obstacles}${subs}&lt;circle cx=&quot;${gx}&quot; cy=&quot;${gy}&quot; r=&quot;${Math.max(5,sc.goalRadius*scale).toFixed(1)}&quot; fill=&quot;none&quot; stroke=&quot;var(--green)&quot; stroke-width=&quot;1.5&quot;/&gt;&lt;circle cx=&quot;${gx}&quot; cy=&quot;${gy}&quot; r=&quot;3&quot; fill=&quot;var(--green)&quot;/&gt;&lt;path d=&quot;${path}&quot; fill=&quot;none&quot; stroke=&quot;${META[a].colour}&quot; stroke-width=&quot;2.1&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;&lt;circle cx=&quot;${px(0)}&quot; cy=&quot;${py(0)}&quot; r=&quot;3.3&quot; fill=&quot;var(--foreground)&quot;/&gt;&lt;circle cx=&quot;${ex}&quot; cy=&quot;${ey}&quot; r=&quot;4.8&quot; fill=&quot;${d.success?&#x27;var(--green)&#x27;:&#x27;var(--red)&#x27;}&quot; stroke=&quot;var(--background)&quot; stroke-width=&quot;1.4&quot;/&gt;&lt;/svg&gt;`}function drawAll(){root.querySelectorAll(&#x27;.pem-panel&#x27;).forEach(draw)}[&#x27;best&#x27;,&#x27;median&#x27;,&#x27;worst&#x27;].forEach((r,i)=&gt;{const b=document.createElement(&#x27;button&#x27;);b.className=&#x27;btn&#x27;;b.dataset.rank=r;b.setAttribute(&#x27;aria-pressed&#x27;,String(i===0));b.textContent=`${r[0].toUpperCase()+r.slice(1)} · ${DATA.representatives[r]}`;b.addEventListener(&#x27;click&#x27;,()=&gt;{rank=r;controls.querySelectorAll(&#x27;.btn&#x27;).forEach(x=&gt;x.setAttribute(&#x27;aria-pressed&#x27;,String(x===b)));shell()});controls.appendChild(b)});new ResizeObserver(()=&gt;{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(drawAll)}).observe(maps);shell()})()&lt;/script&gt;&lt;/div&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>

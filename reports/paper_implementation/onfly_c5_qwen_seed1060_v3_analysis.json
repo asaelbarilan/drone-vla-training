@@ -1,0 +1,318 @@
+{
+  "run": "runs/onfly_c5_qwen_seed1060_v3",
+  "architecture": "c5_onfly_qwen",
+  "seed": 1060,
+  "success": false,
+  "stored_final_distance_m": 28.4123220544603,
+  "replay_final_distance_m": 28.4123220544603,
+  "replay_distance_error_m": 0.0,
+  "decision_frames": 15,
+  "visible_decision_frames": 0,
+  "visible_fraction": 0.0,
+  "first_visible": null,
+  "last_visible": null,
+  "visible_pixel_error_mean": null,
+  "visible_pixel_error_median": null,
+  "visible_pixel_error_max": null,
+  "closest_approach": {
+    "observation_seq": 220,
+    "t_sim_s": 10.95,
+    "distance_to_goal_m": 26.202308052646018,
+    "predicted_pixel": [
+      111.612,
+      111.612
+    ],
+    "sampled_depth_m": 2.787199,
+    "gated_range_m": 2.787135,
+    "history_pixel": "None",
+    "target_visible": false
+  },
+  "monitor_labels": {
+    "continue": 7,
+    "stop": 1
+  },
+  "monitor_visibility_scored": 7,
+  "monitor_visibility_accuracy": 0.8571428571428571,
+  "monitor_false_lost_while_target_visible": 0,
+  "monitor_continue_while_target_absent": 7,
+  "monitor_rows": [
+    {
+      "t_sim_s": 1.2,
+      "observation_seq": 25,
+      "distance_to_goal_m": 35.0060853853471,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 3.2,
+      "observation_seq": 65,
+      "distance_to_goal_m": 33.66387101750701,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 5.2,
+      "observation_seq": 105,
+      "distance_to_goal_m": 30.754926628107505,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 7.2,
+      "observation_seq": 145,
+      "distance_to_goal_m": 27.946888759987676,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 9.2,
+      "observation_seq": 185,
+      "distance_to_goal_m": 26.610506149122067,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 11.2,
+      "observation_seq": 225,
+      "distance_to_goal_m": 26.199299439041695,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 13.2,
+      "observation_seq": 265,
+      "distance_to_goal_m": 26.50020393538294,
+      "label": "continue",
+      "declared_latest_visible": null,
+      "target_visible": false,
+      "latest_visibility_correct": null,
+      "evidence": "STOP awaiting confirmation 1/2"
+    },
+    {
+      "t_sim_s": 15.2,
+      "observation_seq": 305,
+      "distance_to_goal_m": 28.374209123002597,
+      "label": "stop",
+      "declared_latest_visible": true,
+      "target_visible": false,
+      "latest_visibility_correct": false,
+      "evidence": "visual monitor classified stop from 1 frames; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True"
+    }
+  ],
+  "rows": [
+    {
+      "observation_seq": 1,
+      "t_sim_s": 0.0,
+      "distance_to_goal_m": 35.0060853853471,
+      "predicted_pixel": [
+        89.2893,
+        66.967
+      ],
+      "sampled_depth_m": 5.478983,
+      "gated_range_m": 5.074013,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 20,
+      "t_sim_s": 0.95,
+      "distance_to_goal_m": 35.0060853853471,
+      "predicted_pixel": [
+        89.959,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.510868,
+      "history_pixel": "(90, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 40,
+      "t_sim_s": 1.95,
+      "distance_to_goal_m": 35.0060853853471,
+      "predicted_pixel": [
+        89.959,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.510868,
+      "history_pixel": "(90, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 60,
+      "t_sim_s": 2.95,
+      "distance_to_goal_m": 33.972744261850316,
+      "predicted_pixel": [
+        97.1021,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.769045,
+      "history_pixel": "(97, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 80,
+      "t_sim_s": 3.95,
+      "distance_to_goal_m": 32.74521443573672,
+      "predicted_pixel": [
+        95.986,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.734305,
+      "history_pixel": "(96, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 100,
+      "t_sim_s": 4.95,
+      "distance_to_goal_m": 31.15036402650955,
+      "predicted_pixel": [
+        163.176,
+        66.967
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.920848,
+      "history_pixel": "(92, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 120,
+      "t_sim_s": 5.95,
+      "distance_to_goal_m": 29.514662309564066,
+      "predicted_pixel": [
+        171.882,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.407971,
+      "history_pixel": "(185, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 140,
+      "t_sim_s": 6.95,
+      "distance_to_goal_m": 28.247025409245655,
+      "predicted_pixel": [
+        108.933,
+        95.0931
+      ],
+      "sampled_depth_m": 6.840621,
+      "gated_range_m": 6.830791,
+      "history_pixel": "(109, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 160,
+      "t_sim_s": 7.95,
+      "distance_to_goal_m": 26.802144490916184,
+      "predicted_pixel": [
+        116.076,
+        95.0931
+      ],
+      "sampled_depth_m": 5.359453,
+      "gated_range_m": 5.345864,
+      "history_pixel": "(116, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 180,
+      "t_sim_s": 8.95,
+      "distance_to_goal_m": 26.556350121398204,
+      "predicted_pixel": [
+        89.2893,
+        111.612
+      ],
+      "sampled_depth_m": 4.306788,
+      "gated_range_m": 3.988458,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 200,
+      "t_sim_s": 9.95,
+      "distance_to_goal_m": 26.739369346489937,
+      "predicted_pixel": [
+        96.6557,
+        72.5475
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.755414,
+      "history_pixel": "(193, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 220,
+      "t_sim_s": 10.95,
+      "distance_to_goal_m": 26.202308052646018,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "sampled_depth_m": 2.787199,
+      "gated_range_m": 2.787135,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 240,
+      "t_sim_s": 11.95,
+      "distance_to_goal_m": 27.012976891756576,
+      "predicted_pixel": [
+        117.192,
+        83.7087
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.971238,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 260,
+      "t_sim_s": 12.95,
+      "distance_to_goal_m": 26.541887784242896,
+      "predicted_pixel": [
+        111.388,
+        111.388
+      ],
+      "sampled_depth_m": 1.405707,
+      "gated_range_m": 1.405627,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 280,
+      "t_sim_s": 13.95,
+      "distance_to_goal_m": 27.44244128914172,
+      "predicted_pixel": [
+        96.6557,
+        106.031
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.755414,
+      "history_pixel": "None",
+      "target_visible": false
+    }
+  ],
+  "truth_scope": "offline scoring only; not exposed to the architecture"
+}

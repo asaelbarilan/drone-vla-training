@@ -6,7 +6,7 @@ research repository becomes unreadable, so the boundaries are stated here.
 | file | job | read it when |
 |---|---|---|
 | [`RESEARCH_LOG.md`](RESEARCH_LOG.md) | **The decision register.** Every design decision with its rationale, evidence, rejected alternatives and status. Organised by area, stable IDs (`D-01`…), never reordered. | You want to know *why* the testbed is the way it is, or you need to cite a decision in the paper |
-| [`ARCHITECTURE_FAMILIES.md`](ARCHITECTURE_FAMILIES.md) | **The design space.** Seven families, one base each, every ablation and exactly what it changes, plus the nearest published work. | You want to know what an architecture *contains*, or how it maps to a paper |
+| [`ARCHITECTURE_FAMILIES.md`](ARCHITECTURE_FAMILIES.md) | **The design space.** One baseline, five autonomy families, their subfamilies and ablations, plus the nearest published work. | You want to know what an architecture *contains*, or how it maps to a paper |
 | [`../CHANGES.md`](../CHANGES.md) | **The chronological record.** What was done, when, and what the measurement said at the time — including the wrong turns. | You want the narrative, or to find when something changed |
 | [`../TODO.md`](../TODO.md) | **What is undone.** Open work ordered by what it blocks, each item naming the decision it comes from and its first step. | You are picking up work, or you want to know what the results do not yet cover |
 | [`SMALL_VLA_SEARCH.md`](SMALL_VLA_SEARCH.md) | A literature search and its negative result. | You are wondering whether a small aerial VLA can be dropped in |

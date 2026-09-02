@@ -5,42 +5,83 @@
 # Supporting result: competitive semantic success at a low foundation-model call
 # rate. Falsifying result: large failures on visually grounded tasks.
 #
-# The model never touches motion. It selects from a validated vocabulary, and
-# each skill expands into an ordinary subgoal on the same planner path as C2.
+# A real model chooses one documented hard skill per closed-loop iteration.
+# Each call is validated and expands into an ordinary subgoal on the same
+# planner path as C2. Missing/malformed model output fails the episode.
 
-_base_: [_base.yaml, ../models/sim_llm_skill.yaml]
+_base_: [_base.yaml, ../models/gpt_oss_20b_aerialclaw.yaml]
 
 id: c1
 
 family: llm_tool_planner
 # The base configuration for this family: every other member states
 # what it changes relative to one of these.
-name: "LLM -> predefined skills -> planner"
-description: "Bounded skill authority over a classical planner."
-tags: [skill_authority, macro_screening]
+name: "AerialClaw closed-loop LLM -> validated skills -> SUPER"
+description: "Paper-faithful incremental AerialClaw skill composition over shared execution."
+tags: [skill_authority, aerialclaw, real_model]
 
 authority: skill
 
-policy:
-  name: scripted_skill
+perception:
+  name: identity
   params:
-    standoff_m: 1.5
-    scan_when_lost: true
-    stop_radius_m: 2.0
-    # A scan is a whole decision spent rotating in place, and at 1 Hz there are
-    # only ~60 decisions in an episode. Scanning every third one spent a third
-    # of the mission going nowhere and reported C1 at 0.15 where its own design
-    # gives 0.35. Cost is set by frequency, not duration: shortening the scan to
-    # 0.4 s changed nothing, scanning half as often did. See CHANGES.md.
-    scan_every: 6
+    min_score: 0.0
+    drone_radius_m: 0.4
+    # SemanticHit is the local simulator's normalized passive-perception
+    # channel. Do not make a second text-only model call merely to charge it.
+    charge_latency: false
+
+semantic_memory: short_context
+memory:
+  name: short_context
+  params:
+    window: 6
+    token_budget: 144
+
+policy:
+  name: aerialclaw_agent
+  params:
+    model_id: gpt-oss:20b
+    context_steps: 6
+    validity_s: 5.0
+    max_parse_attempts: 3
+    # Task-profile subset of AerialClaw's official atomic vocabulary: fly_to,
+    # look_around, hover and explicit completion. The testbed's relative `move`
+    # helper is deliberately absent because the official profile uses absolute
+    # world coordinates for fly_to.
+    allowed_skills: [goto, hover, scan, stop]
+
+# AerialClaw validates skills and their expanded spatial targets before
+# dispatch. This is runtime capability validation, not C3's VLM-waypoint
+# ablation: it is part of the selected C1 paper system.
+verifier:
+  name: semantic_geometric
+  params:
+    max_waypoint_distance_m: 30.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+    require_semantic_support: false
 
 planner:
-  name: fixed_local
+  name: super_local
+  params:
+    resolution_m: 0.5
+    planning_horizon_m: 16.0
+    commit_horizon_m: 2.5
+    sensing_horizon_m: 25.0
+    temporal_window_s: 12.0
+    clearance_margin_m: 1.2
 
 scheduler:
   kind: periodic
   control_hz: 20.0
-  # Deliberately low: a skill/program agent is expensive per call and is not
-  # supposed to run at executor rates. Raising this would quietly turn C1 into
-  # a different architecture.
+  # One expensive incremental agent cycle per second; skills continue through
+  # the fast shared controller between decisions.
   decision_hz: 1.0
+
+staleness:
+  # The frozen resident gpt-oss charge is 8.5 s. This 20 s admission envelope
+  # admits one schema/protocol correction but rejects a third stale attempt.
+  max_decision_age_s: 20.0
+  reject_stale: true

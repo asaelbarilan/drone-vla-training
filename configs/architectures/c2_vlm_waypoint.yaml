@@ -12,8 +12,8 @@ id: c2
 family: vlm_semantic_waypointer
 # The base configuration for this family: every other member states
 # what it changes relative to one of these.
-name: "VLM -> waypoint -> fixed planner"
-description: "Semantic waypoint authority with a classical local planner."
+name: "VLM -> waypoint -> SUPER execution"
+description: "Semantic waypoint authority over the shared SUPER-derived execution substrate."
 tags: [waypoint_authority, macro_screening]
 
 authority: waypoint
@@ -26,7 +26,14 @@ policy:
     stop_confidence: 0.35
 
 planner:
-  name: fixed_local
+  name: super_local
+  params:
+    resolution_m: 0.5
+    planning_horizon_m: 16.0
+    commit_horizon_m: 2.5
+    sensing_horizon_m: 25.0
+    temporal_window_s: 12.0
+    clearance_margin_m: 1.2
 
 scheduler:
   kind: periodic

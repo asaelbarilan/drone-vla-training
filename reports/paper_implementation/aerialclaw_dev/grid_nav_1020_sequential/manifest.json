@@ -1,0 +1,184 @@
+{
+  "architecture_config": {
+    "ablation_of": null,
+    "action_horizon": null,
+    "allow_privileged_observations": false,
+    "authority": "skill",
+    "chunk_length": 1,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5
+      }
+    },
+    "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+    "family": "llm_tool_planner",
+    "feature_cache": {
+      "capacity": 32,
+      "enabled": false
+    },
+    "id": "c1",
+    "inference": {
+      "name": "ollama",
+      "params": {
+        "charge_mode": "fixed",
+        "endpoint": "chat",
+        "fixed_latency_s": {
+          "policy": 2.0
+        },
+        "host": "http://localhost:11434",
+        "jitter_frac": 0.0,
+        "keep_alive": "30m",
+        "model_id": "qwen3.5:2b",
+        "num_predict": 256,
+        "sampling_seed": 1020,
+        "temperature": 0.0,
+        "think": false,
+        "timeout_s": 180.0
+      }
+    },
+    "memory": {
+      "name": "short_context",
+      "params": {
+        "token_budget": 144,
+        "window": 6
+      }
+    },
+    "memory_consumers": [
+      "policy"
+    ],
+    "monitor": null,
+    "name": "AerialClaw closed-loop LLM -> validated skills -> SUPER",
+    "perception": {
+      "name": "identity",
+      "params": {
+        "charge_latency": false,
+        "drone_radius_m": 0.4,
+        "min_score": 0.0
+      }
+    },
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "clearance_margin_m": 1.2,
+        "commit_horizon_m": 2.5,
+        "planning_horizon_m": 16.0,
+        "resolution_m": 0.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0
+      }
+    },
+    "policy": {
+      "name": "aerialclaw_agent",
+      "params": {
+        "allowed_skills": [
+          "goto",
+          "hover",
+          "scan",
+          "stop"
+        ],
+        "context_steps": 6,
+        "max_parse_attempts": 3,
+        "model_id": "qwen3.5:2b",
+        "validity_s": 5.0
+      }
+    },
+    "recovery": null,
+    "scheduler": {
+      "control_hz": 20.0,
+      "cooldown_s": 2.0,
+      "decision_hz": 1.0,
+      "kind": "periodic",
+      "max_calls": null,
+      "monitor_hz": null,
+      "reasoner_hz": null,
+      "trigger": null,
+      "trigger_check_hz": 5.0
+    },
+    "semantic_memory": "short_context",
+    "semantic_supervision": "none",
+    "shield": null,
+    "staleness": {
+      "max_decision_age_s": 5.0,
+      "reject_stale": true
+    },
+    "subfamily": null,
+    "tags": [
+      "skill_authority",
+      "aerialclaw",
+      "real_model"
+    ],
+    "unsafe_ablation": false,
+    "verifier": {
+      "name": "semantic_geometric",
+      "params": {
+        "max_waypoint_distance_m": 30.0,
+        "min_clearance_m": 1.2,
+        "repair": true,
+        "require_semantic_support": false
+      }
+    }
+  },
+  "architecture_config_hash": "576358b29c8867ca",
+  "architecture_id": "c1",
+  "container_image_digest": null,
+  "dependency_hash": "2967a2d96de4f1c1",
+  "environment_config": {
+    "adapter": {
+      "name": "grid3d",
+      "params": {}
+    },
+    "id": "grid_nav",
+    "instruction": "fly to the target tower and stop there",
+    "max_episode_s": 90.0,
+    "params": {
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "constraints": {
+        "geofence_radius_m": 60.0,
+        "max_altitude_m": 25.0,
+        "max_speed_mps": 5.0,
+        "min_altitude_m": 0.5,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "detection_noise_m": 0.25,
+      "distractors": 3,
+      "fov_deg": 90.0,
+      "goal_distance_m": 35.0,
+      "n_obstacles": 10,
+      "scene": "clutter",
+      "sensor_range_m": 45.0,
+      "subgoals": 2,
+      "success": {
+        "goal_radius_m": 2.0,
+        "max_flight_time_s": 90.0,
+        "require_terminal_stop": true,
+        "required_subgoals": 0
+      }
+    },
+    "task_family": "long_horizon_nav"
+  },
+  "environment_id": "grid_nav",
+  "git_branch": "master",
+  "git_dirty": true,
+  "git_dirty_files": 82,
+  "git_sha": "0687510d565b18839a6a6ef0eeca746039f85c41",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.13",
+  "schema": "uavlab/manifest/1",
+  "seeds": [
+    1020
+  ]
+}

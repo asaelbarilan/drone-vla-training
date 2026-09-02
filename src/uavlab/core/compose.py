@@ -95,7 +95,12 @@ def load_raw(path: str | Path, _depth: int = 0) -> dict[str, Any]:
 
 
 def resolve_path(name_or_path: str | Path, search_dir: Path) -> Path:
-    """Accept ``c3``, ``c3.yaml`` or a full path."""
+    """Accept a declared config ID, filename stem, filename or full path.
+
+    Declared IDs are checked before legacy family-prefix matching. This keeps
+    ``c2`` stable when an additional paper profile such as ``c2_spf.yaml`` is
+    installed beside the original ``c2_vlm_waypoint.yaml``.
+    """
     candidate = Path(name_or_path)
     if candidate.is_file():
         return candidate.resolve()
@@ -103,6 +108,18 @@ def resolve_path(name_or_path: str | Path, search_dir: Path) -> Path:
         probe = search_dir / f"{name_or_path}{suffix}"
         if probe.is_file():
             return probe.resolve()
+    declared_matches = sorted(
+        path
+        for path in search_dir.glob("*.y*ml")
+        if _read_yaml(path).get("id") == str(name_or_path)
+    )
+    if len(declared_matches) == 1:
+        return declared_matches[0].resolve()
+    if len(declared_matches) > 1:
+        names = ", ".join(path.name for path in declared_matches)
+        raise ComposeError(
+            f"declared config id {name_or_path!r} is duplicated in {search_dir}: {names}"
+        )
     # Allow prefix matching so "c3" finds "c3_verifier.yaml".
     matches = sorted(
         p for p in search_dir.glob("*.y*ml") if p.stem.split("_", 1)[0] == str(name_or_path)
@@ -146,9 +163,7 @@ def load_environment(
     return EnvironmentConfig.model_validate(raw)
 
 
-def load_experiment(
-    name_or_path: str | Path, config_root: Path | None = None
-) -> ExperimentConfig:
+def load_experiment(name_or_path: str | Path, config_root: Path | None = None) -> ExperimentConfig:
     root = config_root or default_config_root()
     path = resolve_path(name_or_path, root / "experiments")
     raw = load_raw(path)
@@ -158,14 +173,20 @@ def load_experiment(
 
 def list_architectures(config_root: Path | None = None) -> list[str]:
     root = config_root or default_config_root()
-    return sorted(p.stem for p in (root / "architectures").glob("*.y*ml") if not p.name.startswith("_"))
+    return sorted(
+        p.stem for p in (root / "architectures").glob("*.y*ml") if not p.name.startswith("_")
+    )
 
 
 def list_environments(config_root: Path | None = None) -> list[str]:
     root = config_root or default_config_root()
-    return sorted(p.stem for p in (root / "environments").glob("*.y*ml") if not p.name.startswith("_"))
+    return sorted(
+        p.stem for p in (root / "environments").glob("*.y*ml") if not p.name.startswith("_")
+    )
 
 
 def list_experiments(config_root: Path | None = None) -> list[str]:
     root = config_root or default_config_root()
-    return sorted(p.stem for p in (root / "experiments").glob("*.y*ml") if not p.name.startswith("_"))
+    return sorted(
+        p.stem for p in (root / "experiments").glob("*.y*ml") if not p.name.startswith("_")
+    )

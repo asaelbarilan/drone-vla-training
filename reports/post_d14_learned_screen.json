@@ -1,0 +1,873 @@
+{
+  "checkpoint": "models\\bc_post_d14_grid_nav.pt",
+  "environment": "grid_nav_vision",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "summary": {
+    "c7t": {
+      "episodes": 40,
+      "success_rate": 0.0,
+      "reached_goal_rate": 0.0,
+      "collision_rate": 0.625,
+      "median_final_distance_m": 25.354459520781056,
+      "median_path_length_m": 13.77668583903792,
+      "terminations": {
+        "collision": 25,
+        "timeout": 15
+      }
+    },
+    "c8t": {
+      "episodes": 40,
+      "success_rate": 0.0,
+      "reached_goal_rate": 0.025,
+      "collision_rate": 0.0,
+      "median_final_distance_m": 25.449244374325577,
+      "median_path_length_m": 17.919685135974746,
+      "terminations": {
+        "timeout": 40
+      }
+    }
+  },
+  "episodes": [
+    {
+      "architecture": "c7t",
+      "seed": 1,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 20.739543977248122,
+      "path_length_m": 15.128113651399637,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 2,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.16954701651787,
+      "path_length_m": 7.86822193388207,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 3,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.94545585962982,
+      "path_length_m": 24.279398279058423,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 4,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 24.81172503537825,
+      "path_length_m": 12.968696226737839,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 5,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 19.365226372493666,
+      "path_length_m": 22.446985110747008,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 6,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 24.611114710074105,
+      "path_length_m": 10.661932290671873,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 7,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.450888843638808,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 8,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.507955272161627,
+      "path_length_m": 41.64510599853008,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 9,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 35.503297342471235,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 10,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.56323936601478,
+      "path_length_m": 7.26882778344421,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 11,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 41.92691678328663,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 12,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 29.32952213642954,
+      "path_length_m": 12.059166694404407,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 13,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.292318660727535,
+      "path_length_m": 14.584675451338,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 14,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 19.84417073166669,
+      "path_length_m": 41.595330787786224,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 15,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.03432711308952,
+      "path_length_m": 22.19684855964755,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 16,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 26.303793653724195,
+      "path_length_m": 9.103071935718138,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 17,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 22.936713265182036,
+      "path_length_m": 16.80427206497041,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 18,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 34.79447906634192,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 19,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.453975239497304,
+      "path_length_m": 18.59804916243486,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 20,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.575619700103598,
+      "path_length_m": 6.9669806654458455,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 21,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.81320970744056,
+      "path_length_m": 20.84273397882912,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 22,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 24.428807306344996,
+      "path_length_m": 25.32945118969211,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 23,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 26.2779630091348,
+      "path_length_m": 9.13037366343157,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 24,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 22.970350624841146,
+      "path_length_m": 15.602316370533623,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 25,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.250323027952092,
+      "path_length_m": 11.320611171972951,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 26,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.182589231800208,
+      "path_length_m": 7.917660787751604,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 27,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.977886289609923,
+      "path_length_m": 12.029077659817466,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 28,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 23.219112086593967,
+      "path_length_m": 24.167061593186276,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 29,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.52475117998642,
+      "path_length_m": 33.09155827023957,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 30,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.21813638770105,
+      "path_length_m": 9.039468951205322,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 31,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 14.792463478668415,
+      "path_length_m": 38.39012273262157,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 32,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 23.210006561834554,
+      "path_length_m": 18.853236296413296,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 33,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.832041756569083,
+      "path_length_m": 9.145192518524741,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 34,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 24.932083676237184,
+      "path_length_m": 10.185029648299619,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 35,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.895332415998794,
+      "path_length_m": 15.250440464783345,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 36,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 41.55833209331869,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 37,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.707029475831057,
+      "path_length_m": 14.78058265916442,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 38,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 20.77038713499954,
+      "path_length_m": 62.72137436761847,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 39,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.776835365324928,
+      "path_length_m": 9.836701366846192,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c7t",
+      "seed": 40,
+      "success": false,
+      "termination": "collision",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.169279658968712,
+      "path_length_m": 21.158548916251867,
+      "collisions": 1.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 1,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.57258019396663,
+      "path_length_m": 14.133349077408617,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 2,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.21979276450805,
+      "path_length_m": 16.31398091226259,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 3,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.94545585962982,
+      "path_length_m": 24.279398279058423,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 4,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.695178152191694,
+      "path_length_m": 12.110395053673324,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 5,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 20.117669123649264,
+      "path_length_m": 20.897094350160874,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 6,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.44797460444728,
+      "path_length_m": 12.079059885470121,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 7,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.450888843638808,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 8,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.778737023325217,
+      "path_length_m": 36.16230485893137,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 9,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 35.503297342471235,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 10,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 29.191573705969876,
+      "path_length_m": 7.100345153025744,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 11,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 41.92691678328663,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 12,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 31.738671555051642,
+      "path_length_m": 15.093790167190996,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 13,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.292318660727535,
+      "path_length_m": 14.584675451338,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 14,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.424322097837784,
+      "path_length_m": 36.75441433660901,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 15,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.780317433419597,
+      "path_length_m": 24.66488603587744,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 16,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.760383192079733,
+      "path_length_m": 45.89997049996909,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 17,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.831381282202003,
+      "path_length_m": 19.525389359686905,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 18,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 34.79447906634192,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 19,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.081485333979536,
+      "path_length_m": 25.221281210879432,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 20,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.943971869049363,
+      "path_length_m": 6.955045185863714,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 21,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.692879867294465,
+      "path_length_m": 21.008232748808634,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 22,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 24.428807306344996,
+      "path_length_m": 25.32945118969211,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 23,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 26.359742197357164,
+      "path_length_m": 8.978469903667877,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 24,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.350199570644104,
+      "path_length_m": 28.25164612469144,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 25,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.867382820690157,
+      "path_length_m": 11.898405680593058,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 26,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 15.754456803592342,
+      "path_length_m": 52.74201549250514,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 27,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 26.544745876781892,
+      "path_length_m": 11.20211308576712,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 28,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 23.219112086593967,
+      "path_length_m": 24.167061593186276,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 29,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.52475117998642,
+      "path_length_m": 33.09155827023957,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 30,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 28.339241138903294,
+      "path_length_m": 10.87059760064067,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 31,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 14.792463478668415,
+      "path_length_m": 38.39012273262157,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 32,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 26.05575169872655,
+      "path_length_m": 11.740757139012628,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 33,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 16.5071707765385,
+      "path_length_m": 29.033645705693843,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 34,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 1.0,
+      "distance_to_goal_m": 19.42444444705497,
+      "path_length_m": 63.5200663292112,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 35,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 25.450514144203876,
+      "path_length_m": 20.386348213361995,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 36,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 41.55833209331869,
+      "path_length_m": 7.023405301482849,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 37,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 7.799618704246288,
+      "path_length_m": 38.59187695292538,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 38,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 18.942716006874658,
+      "path_length_m": 58.326440714712575,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 39,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 27.093526618870175,
+      "path_length_m": 9.802841727524589,
+      "collisions": 0.0
+    },
+    {
+      "architecture": "c8t",
+      "seed": 40,
+      "success": false,
+      "termination": "timeout",
+      "reached_goal": 0.0,
+      "distance_to_goal_m": 21.233759740776055,
+      "path_length_m": 14.967143276313564,
+      "collisions": 0.0
+    }
+  ]
+}

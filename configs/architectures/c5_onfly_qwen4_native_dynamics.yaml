@@ -1,0 +1,26 @@
+# C5 OnFly mechanism under the paper-reported motion envelope.
+#
+# The VLM remains the declared compatible Qwen3-VL 4B Q4_K_M backend, not the
+# paper's unreleased/third-party AWQ runtime. This profile isolates whether the
+# normalized benchmark's much faster dynamics invalidate OnFly's asynchronous
+# image-goal continuity assumption.
+
+_base_: c5_onfly_qwen4.yaml
+
+id: c5_onfly_qwen4_native_dynamics
+profile_of: c5
+name: "Full OnFly + Qwen3-VL 4B, paper-native dynamics"
+description: "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw."
+tags: [onfly, full_architecture, native_dynamics_profile, real_model, qwen3_vl_4b]
+
+controller:
+  params:
+    max_yaw_rate_rps: 0.4
+
+planner:
+  params:
+    max_acc_mps2: 0.6
+
+monitor:
+  params:
+    lost_yaw_rate_rps: 0.4

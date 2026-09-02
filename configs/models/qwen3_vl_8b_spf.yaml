@@ -1,0 +1,27 @@
+# Real local model profile for the paper-faithful SPF point-and-distance policy.
+
+inference:
+  name: ollama
+  params:
+    host: http://localhost:11434
+    model_id: qwen3-vl:8b
+    expected_digest: 901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28
+    temperature: 0.0
+    num_predict: 64
+    # Kept identical to the frozen shared-Qwen runtime. OnFly inherits this
+    # profile and can carry at most six visual memory frames.
+    num_ctx: 8192
+    sampling_seed: 0
+    timeout_s: 180.0
+    endpoint: chat
+    keep_alive: 30m
+    think: false
+    # This installed Qwen3-VL/Ollama build puts schema-constrained JSON in the
+    # separate thinking field even with think=false. The explicit selection is
+    # tested; other model profiles retain the safe `content` default.
+    response_channel: thinking
+    charge_mode: fixed
+    # Locked from the resident-model SPF probe: ~0.79-0.89 s after warm-up.
+    # Measured latency is still logged; 1.0 s is the deterministic sim charge.
+    fixed_latency_s:
+      policy: 1.0

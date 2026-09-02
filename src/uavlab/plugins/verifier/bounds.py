@@ -46,6 +46,7 @@ class SemanticGeometricVerifier:
     def __init__(self, **params: Any) -> None:
         self.max_waypoint_distance_m = float(params.get("max_waypoint_distance_m", 30.0))
         self.min_clearance_m = float(params.get("min_clearance_m", 1.2))
+        self.sensing_horizon_m = float(params.get("sensing_horizon_m", 25.0))
         self.repair = bool(params.get("repair", True))
         self.require_semantic_support = bool(params.get("require_semantic_support", False))
         """Reject targets with no supporting detection *and* no memory evidence."""
@@ -90,7 +91,10 @@ class SemanticGeometricVerifier:
             )
 
         if not (self._min_alt <= repaired.z <= self._max_alt):
-            reasons.append(f"altitude {repaired.z:.1f} m outside [{self._min_alt}, {self._max_alt}]")
+            reasons.append(
+                f"altitude {repaired.z:.1f} m outside "
+                f"[{self._min_alt}, {self._max_alt}]"
+            )
             repaired = Vec3(
                 x=repaired.x, y=repaired.y, z=min(self._max_alt, max(self._min_alt, repaired.z))
             )
@@ -108,7 +112,7 @@ class SemanticGeometricVerifier:
             self.rejections += 1
             return VerificationResult(
                 accepted=False,
-                reason="line of travel to the target is blocked within the minimum clearance",
+                reason="target lies within the minimum clearance of an observed obstacle",
             )
 
         if self.require_semantic_support and not self._has_semantic_support(goal, ctx):
@@ -157,7 +161,19 @@ class SemanticGeometricVerifier:
             ),
         )
         clearance = obs.range_rays[idx]
-        return clearance < min(planar, self.min_clearance_m * 2.0) and clearance < self.min_clearance_m * 2.0
+        if clearance >= self.sensing_horizon_m - 1e-6:
+            # The normalized range fan reports its maximum range when no
+            # surface was hit.  That sentinel is free/unknown space, not an
+            # obstacle coincidentally located at the horizon.
+            return False
+        # This verifier decides whether the proposed *endpoint* is sane.  An
+        # obstacle anywhere earlier on the ray is a route-planning problem and
+        # SUPER is specifically responsible for finding a detour.  Reject only
+        # when the endpoint itself lies within the clearance band around the
+        # first observed surface; otherwise a long-running skill would be
+        # rejected precisely when its planner approached an obstacle to route
+        # around it.
+        return abs(planar - clearance) < self.min_clearance_m * 2.0
 
     @staticmethod
     def _has_semantic_support(goal: WaypointGoal, ctx: DecisionContext) -> bool:

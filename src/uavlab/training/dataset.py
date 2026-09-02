@@ -122,7 +122,12 @@ async def collect_episode(arch, env, seed: int, stride: int) -> tuple[list, list
     async def recording_step(self, command, dt_ns):
         nonlocal tick
         if tick % stride == 0:
-            uri = f"frame://{id(self)}/rgb/{max(self._seq - 1, 0)}"
+            # The environment assigns every episode a monotonic frame namespace.
+            # Reconstructing this URI from ``id(self)`` used to work only because
+            # the renderer used the object's recyclable memory address too.  When
+            # frame namespaces were fixed to prevent stale cross-episode images,
+            # keeping the old lookup made collection record zero frames.
+            uri = f"frame://{self._frame_ns}/rgb/{max(self._seq - 1, 0)}"
             image = global_store().get(uri)
             if image is not None:
                 frames.append(_resize(image))

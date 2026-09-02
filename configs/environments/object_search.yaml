@@ -4,7 +4,7 @@
 
 id: object_search
 task_family: object_search
-instruction: "find the target and stop above it"
+instruction: "find the red tower and stop above it"
 max_episode_s: 120.0
 
 adapter:

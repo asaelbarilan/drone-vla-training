@@ -1,0 +1,36 @@
+_base_: [c4_periodic_monitor.yaml, ../models/gemma3_4b_onfly.yaml]
+
+id: c4_onfly_gemma
+profile_of: c4
+ablation_of: null
+family: hybrid_stack
+name: "OnFly dual agent with recent-frame memory (Gemma profile)"
+description: "C3 OnFly mechanism plus an independent forced-choice visual monitor over a recent window."
+tags: [onfly, normalized_profile, real_model, vision, depth, dual_agent]
+
+memory_consumers: [monitor]
+
+memory:
+  name: onfly_sliding_memory
+  params:
+    keyframe_budget: 4
+
+monitor:
+  name: onfly_monitor
+  params:
+    model_id: gemma3:4b
+    stop_confirmations: 2
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    max_waypoint_distance_m: 7.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true
+
+scheduler:
+  kind: async_multi_rate
+  control_hz: 20.0
+  decision_hz: 2.0
+  monitor_hz: 0.5

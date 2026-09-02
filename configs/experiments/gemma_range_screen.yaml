@@ -1,0 +1,15 @@
+# Promoted real-model screen after adding calibrated RGB-D terminal range.
+# Run seeds 1-3 first as a gate; expand to the declared 1-20 only if the real
+# configurations demonstrate non-zero capability without premature stopping.
+
+id: gemma_range_screen
+description: "Does grounded RGB-D range let real VLM families finish missions?"
+stage: promoted_real_model
+architectures: [c2, c2g, c3g, c6g]
+environments: [grid_nav_vision]
+seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+episodes_per_cell: 1
+compare:
+  - [c2, c2g]
+  - [c2g, c3g]
+  - [c3g, c6g]

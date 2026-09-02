@@ -14,7 +14,8 @@ _base_: [c12_async_hierarchy.yaml]
 
 id: c13
 
-family: fast_slow_hierarchy
+family: hybrid_stack
+subfamily: fast_slow_hierarchy
 # Ablation of C12: scheduled reasoner -> event-triggered.
 ablation_of: c12
 name: "Event-triggered reasoner -> chunked VLA -> shield"

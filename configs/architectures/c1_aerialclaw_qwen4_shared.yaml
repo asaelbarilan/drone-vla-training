@@ -1,0 +1,8 @@
+_base_: [c1_llm_skills.yaml, ../models/qwen3_vl_4b_shared.yaml]
+
+id: c1_aerialclaw_qwen4_shared
+profile_of: c1
+family: llm_tool_planner
+name: "C1 AerialClaw, shared Qwen3-VL 4B"
+description: "AerialClaw skill authority using the frozen comparison model."
+tags: [aerialclaw, shared_model_comparison, qwen3_vl_4b, real_model]

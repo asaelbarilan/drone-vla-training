@@ -19,8 +19,8 @@ from uavlab.contracts import (
     DecisionEnvelope,
     DecisionKind,
     KinematicAction,
-    MissionSpec,
     MissionDirective,
+    MissionSpec,
     ProgressLabel,
     SkillCall,
     Vec3,
@@ -57,6 +57,18 @@ class OracleWaypointPolicy(BasePolicy):
     def __init__(self, **params: Any) -> None:
         params.setdefault("model_id", "oracle")
         super().__init__(**params)
+        self._effective_stop_radius_m = self.stop_radius_m
+
+    def reset(self, mission: MissionSpec, seed: int) -> None:
+        super().reset(mission, seed)
+        # C0 knows the scoring contract, but it must stop safely *inside* it.
+        # A fixed 2.4 m threshold is correct for the 2.5 m recovery regime and
+        # prematurely terminates the 2.0 m navigation regime after dynamics
+        # carry the vehicle a few centimetres. Keep a deterministic margin.
+        self._effective_stop_radius_m = min(
+            self.stop_radius_m,
+            max(0.1, mission.success.goal_radius_m - 0.10),
+        )
 
     @property
     def name(self) -> str:
@@ -73,7 +85,7 @@ class OracleWaypointPolicy(BasePolicy):
             return None
         assert belief.position is not None
         distance = ctx.observation.position.distance_to(belief.position)
-        if distance <= self.stop_radius_m and self.self_terminate:
+        if distance <= self._effective_stop_radius_m and self.self_terminate:
             self._stopped = True
             return self.envelope(
                 ctx,

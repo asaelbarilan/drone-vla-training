@@ -1,0 +1,188 @@
+{
+  "run": "runs/c5_shared_qwen_s1061_loss_latch_v3",
+  "model": "qwen3-vl:4b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 69.2,
+      "actual_monitor_result_t_s": 69.2,
+      "image_count": 6,
+      "model_image_count": 2,
+      "layout": "history_sheet_plus_latest",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "server_error": null,
+        "response_keys": [
+          "created_at",
+          "done",
+          "done_reason",
+          "eval_count",
+          "eval_duration",
+          "load_duration",
+          "message",
+          "model",
+          "prompt_eval_count",
+          "prompt_eval_duration",
+          "total_duration"
+        ],
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 4.3575
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 79.2,
+      "actual_monitor_result_t_s": 79.2,
+      "image_count": 6,
+      "model_image_count": 2,
+      "layout": "history_sheet_plus_latest",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "server_error": null,
+        "response_keys": [
+          "created_at",
+          "done",
+          "done_reason",
+          "eval_count",
+          "eval_duration",
+          "load_duration",
+          "message",
+          "model",
+          "prompt_eval_count",
+          "prompt_eval_duration",
+          "total_duration"
+        ],
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 2.1959
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 81.2,
+      "actual_monitor_result_t_s": 81.2,
+      "image_count": 6,
+      "model_image_count": 2,
+      "layout": "history_sheet_plus_latest",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "server_error": null,
+        "response_keys": [
+          "created_at",
+          "done",
+          "done_reason",
+          "eval_count",
+          "eval_duration",
+          "load_duration",
+          "message",
+          "model",
+          "prompt_eval_count",
+          "prompt_eval_duration",
+          "total_duration"
+        ],
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 2.5268
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 83.2,
+      "actual_monitor_result_t_s": 83.2,
+      "image_count": 6,
+      "model_image_count": 2,
+      "layout": "history_sheet_plus_latest",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "server_error": null,
+        "response_keys": [
+          "created_at",
+          "done",
+          "done_reason",
+          "eval_count",
+          "eval_duration",
+          "load_duration",
+          "message",
+          "model",
+          "prompt_eval_count",
+          "prompt_eval_duration",
+          "total_duration"
+        ],
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 1.9693
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

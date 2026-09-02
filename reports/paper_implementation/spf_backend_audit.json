@@ -1,0 +1,73 @@
+{
+  "paper": "See, Point, Fly",
+  "date": "2026-08-25",
+  "development_seeds": [1040],
+  "held_out_seeds_used": [],
+  "locked_interface": {
+    "input": "current RGB plus mission text",
+    "output": "strict JSON integer fields u,v,distance",
+    "distance_range": [1, 10],
+    "depth_input": false,
+    "privileged_input": false
+  },
+  "candidates": [
+    {
+      "model": "gemma3:4b",
+      "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "quantization": "Q4_K_M",
+      "artifact": "reports/paper_implementation/spf_probe_gemma/report.json",
+      "schema_valid": "5/5",
+      "distance_labels": [5, 3, 3, 3, 3],
+      "result": "rejected: four frames point to normalized (5,5), including a centered target; unconstrained decoding reproduces the defect"
+    },
+    {
+      "model": "qwen3-vl:2b",
+      "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+      "quantization": "Q4_K_M",
+      "artifact": "reports/paper_implementation/spf_probe_qwen2b/report.json",
+      "schema_valid": "6/6",
+      "distance_labels": [3, 3, 1, 5, 5, 5],
+      "result": "rejected: non-monotonic range labels reverse at close range"
+    },
+    {
+      "model": "gemma4:e2b",
+      "digest": "7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e",
+      "quantization": "Q4_K_M",
+      "artifact": "reports/paper_implementation/spf_probe_gemma4_no_think/report.json",
+      "schema_valid": "3/3",
+      "distance_labels": [5, 5, 5],
+      "result": "rejected: constant midpoint range label across 12 m, 4 m and 2 m"
+    },
+    {
+      "model": "qwen3-vl:8b",
+      "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+      "quantization": "Q4_K_M",
+      "artifact": "reports/paper_implementation/spf_probe_v4/report.json",
+      "schema_valid": "5/5",
+      "distance_labels": [3, 3, 3, 3, 1],
+      "result": "best local grounder but rejected by closed loop: entered the goal at 64 s and flew away; label 2 and label 1 were not consecutive, so no valid stop",
+      "closed_loop_artifacts": [
+        "runs/spf_dev2/result.json",
+        "runs/spf_dev_stop1/result.json",
+        "runs/spf_dev_stop_label1/result.json",
+        "runs/spf_dev_metric/result.json"
+      ]
+    },
+    {
+      "model": "gemma3:12b",
+      "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "quantization": "Q4_K_M",
+      "artifact": "reports/paper_implementation/spf_probe_gemma3_12b/report.json",
+      "schema_valid": "6/6",
+      "distance_labels": [6, 4, 4, 3, 4, 3],
+      "result": "rejected: improved pointing but non-monotonic range and no near label at 2 m or 1.5 m"
+    }
+  ],
+  "rejected_runtime_changes": [
+    "single label <=2 terminal stop: premature at 4.77 m",
+    "single label 1 terminal stop: premature at 4.12 m",
+    "metric-range prompt: mostly label 5, loses target, finishes 91.12 m away"
+  ],
+  "conclusion": "No installed or audited local VLM satisfies both SPF point grounding and autonomous range-based stopping. The clean-room mechanism is integrated and regression-clean, but C2 has not passed its capability gate.",
+  "minimum_external_action": "Provide access to the paper's Gemini-class VLM or a compatible open checkpoint that passes the locked probe; do not add depth, scripted target sizing, oracle stopping or weaken the acceptance gate."
+}

@@ -1,0 +1,434 @@
+{
+  "run": "runs/c5_shared_qwen_s1062_systematic_v1",
+  "seed": 1062,
+  "sample_period_s": 2.0,
+  "samples": 45,
+  "scan_visible_samples": 3,
+  "current_view_visible_samples": 1,
+  "first_scan_visible": {
+    "t_sim_s": 30.0,
+    "distance_to_goal_m": 25.938829376808226,
+    "current_yaw_delta_to_target_deg": 84.22190924911493,
+    "target_line_of_sight": true,
+    "target_in_sensor_range": true,
+    "visible_after_full_yaw_scan": true,
+    "visible_in_current_90deg_view": false
+  },
+  "last_scan_visible": {
+    "t_sim_s": 84.0,
+    "distance_to_goal_m": 21.38831613948345,
+    "current_yaw_delta_to_target_deg": 104.34140659079043,
+    "target_line_of_sight": true,
+    "target_in_sensor_range": true,
+    "visible_after_full_yaw_scan": true,
+    "visible_in_current_90deg_view": false
+  },
+  "rows": [
+    {
+      "t_sim_s": 0.0,
+      "distance_to_goal_m": 35.00130924024281,
+      "current_yaw_delta_to_target_deg": 0.0,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 2.0,
+      "distance_to_goal_m": 34.770678420624414,
+      "current_yaw_delta_to_target_deg": 8.089585112376133,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 4.0,
+      "distance_to_goal_m": 33.76551440206286,
+      "current_yaw_delta_to_target_deg": 10.439093830960928,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 6.0,
+      "distance_to_goal_m": 32.59809280814436,
+      "current_yaw_delta_to_target_deg": 3.9539840533591404,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 8.0,
+      "distance_to_goal_m": 31.405388862238087,
+      "current_yaw_delta_to_target_deg": 1.59628742307301,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 10.0,
+      "distance_to_goal_m": 30.212147320446608,
+      "current_yaw_delta_to_target_deg": -9.237065616291892,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 12.0,
+      "distance_to_goal_m": 29.037011627180977,
+      "current_yaw_delta_to_target_deg": -19.05848890563961,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 14.0,
+      "distance_to_goal_m": 27.97135888464256,
+      "current_yaw_delta_to_target_deg": -24.11946722070077,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 16.0,
+      "distance_to_goal_m": 26.984450488532374,
+      "current_yaw_delta_to_target_deg": 3.744496857551249,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 18.0,
+      "distance_to_goal_m": 25.94472737278891,
+      "current_yaw_delta_to_target_deg": 7.196201652586847,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 20.0,
+      "distance_to_goal_m": 25.27389188816908,
+      "current_yaw_delta_to_target_deg": 30.79712001227496,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 22.0,
+      "distance_to_goal_m": 24.726419709425137,
+      "current_yaw_delta_to_target_deg": 3.8131004026831943,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 24.0,
+      "distance_to_goal_m": 24.52797145060323,
+      "current_yaw_delta_to_target_deg": 49.75603810436425,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 26.0,
+      "distance_to_goal_m": 25.20997904849844,
+      "current_yaw_delta_to_target_deg": 95.72375592589017,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 28.0,
+      "distance_to_goal_m": 25.75827642895427,
+      "current_yaw_delta_to_target_deg": 93.9146457155998,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 30.0,
+      "distance_to_goal_m": 25.938829376808226,
+      "current_yaw_delta_to_target_deg": 84.22190924911493,
+      "target_line_of_sight": true,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": true,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 32.0,
+      "distance_to_goal_m": 26.00874489597849,
+      "current_yaw_delta_to_target_deg": 86.0261203157909,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 34.0,
+      "distance_to_goal_m": 25.66025114209077,
+      "current_yaw_delta_to_target_deg": 44.53691604477243,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 36.0,
+      "distance_to_goal_m": 24.799607591522058,
+      "current_yaw_delta_to_target_deg": 38.38757386944664,
+      "target_line_of_sight": true,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": true,
+      "visible_in_current_90deg_view": true
+    },
+    {
+      "t_sim_s": 38.0,
+      "distance_to_goal_m": 23.875076208782723,
+      "current_yaw_delta_to_target_deg": 38.79153486736871,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 40.0,
+      "distance_to_goal_m": 22.931226815375993,
+      "current_yaw_delta_to_target_deg": 39.77675672566571,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 42.0,
+      "distance_to_goal_m": 22.13819495641074,
+      "current_yaw_delta_to_target_deg": 50.67601832129712,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 44.0,
+      "distance_to_goal_m": 21.449271065896994,
+      "current_yaw_delta_to_target_deg": 58.16829733001176,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 46.0,
+      "distance_to_goal_m": 20.875402951060646,
+      "current_yaw_delta_to_target_deg": 63.858043889227716,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 48.0,
+      "distance_to_goal_m": 20.197893808529678,
+      "current_yaw_delta_to_target_deg": 40.93624739086703,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 50.0,
+      "distance_to_goal_m": 19.34875333587427,
+      "current_yaw_delta_to_target_deg": 38.24013930059629,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 52.0,
+      "distance_to_goal_m": 18.672909702245747,
+      "current_yaw_delta_to_target_deg": 21.869107133618478,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 54.0,
+      "distance_to_goal_m": 18.937997153990967,
+      "current_yaw_delta_to_target_deg": 21.563143716578338,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 56.0,
+      "distance_to_goal_m": 18.92009536403059,
+      "current_yaw_delta_to_target_deg": -2.5403522908571707,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 58.0,
+      "distance_to_goal_m": 18.663407273911144,
+      "current_yaw_delta_to_target_deg": 34.01418902367722,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 60.0,
+      "distance_to_goal_m": 18.656404908447524,
+      "current_yaw_delta_to_target_deg": 80.36388456515381,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 62.0,
+      "distance_to_goal_m": 19.247168949605737,
+      "current_yaw_delta_to_target_deg": 92.15627476455889,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 64.0,
+      "distance_to_goal_m": 19.907788390533078,
+      "current_yaw_delta_to_target_deg": 132.61141865070675,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 66.0,
+      "distance_to_goal_m": 20.541251100274,
+      "current_yaw_delta_to_target_deg": 107.50868655727209,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 68.0,
+      "distance_to_goal_m": 20.71346899557837,
+      "current_yaw_delta_to_target_deg": 88.01159321118732,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 70.0,
+      "distance_to_goal_m": 20.70323544265867,
+      "current_yaw_delta_to_target_deg": 88.99509694383731,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 72.0,
+      "distance_to_goal_m": 20.71725665251806,
+      "current_yaw_delta_to_target_deg": 91.85326050039967,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 74.0,
+      "distance_to_goal_m": 20.77644749150081,
+      "current_yaw_delta_to_target_deg": 94.56407400149122,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 76.0,
+      "distance_to_goal_m": 20.809913518932213,
+      "current_yaw_delta_to_target_deg": 95.49741587332217,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 78.0,
+      "distance_to_goal_m": 20.90769135939122,
+      "current_yaw_delta_to_target_deg": 97.76871975972665,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 80.0,
+      "distance_to_goal_m": 20.95595953621772,
+      "current_yaw_delta_to_target_deg": 98.65178795767595,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 82.0,
+      "distance_to_goal_m": 21.12800846511992,
+      "current_yaw_delta_to_target_deg": 101.27958917387922,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 84.0,
+      "distance_to_goal_m": 21.38831613948345,
+      "current_yaw_delta_to_target_deg": 104.34140659079043,
+      "target_line_of_sight": true,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": true,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 86.0,
+      "distance_to_goal_m": 21.715521124736444,
+      "current_yaw_delta_to_target_deg": 107.38634061792193,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    },
+    {
+      "t_sim_s": 88.0,
+      "distance_to_goal_m": 22.137840461106194,
+      "current_yaw_delta_to_target_deg": 118.13496448481739,
+      "target_line_of_sight": false,
+      "target_in_sensor_range": true,
+      "visible_after_full_yaw_scan": false,
+      "visible_in_current_90deg_view": false
+    }
+  ],
+  "truth_scope": "offline counterfactual only; never exposed to C5"
+}

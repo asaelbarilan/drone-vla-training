@@ -23,6 +23,12 @@ class Trajectory(StrictModel):
     planner_name: str = "unknown"
     feasible: bool = True
     reason: str | None = None
+    metadata: dict[str, str] = Field(default_factory=dict)
+    """Planner diagnostics kept inside the shared trajectory contract.
+
+    The controller ignores these string values; logs and fidelity tests may
+    inspect them without introducing a paper-specific handoff type.
+    """
 
     @model_validator(mode="after")
     def _non_empty(self) -> Trajectory:

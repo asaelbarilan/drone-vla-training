@@ -9,11 +9,10 @@ from __future__ import annotations
 
 import pytest
 
+from tests.conftest import ALL_ARCHITECTURES, run_one
 from uavlab.contracts import EventType
 from uavlab.core.compose import list_architectures, list_environments, list_experiments
 from uavlab.core.registry import REGISTRY
-
-from tests.conftest import ALL_ARCHITECTURES, run_one
 
 
 def test_the_full_c0_c14_set_is_present(config_root):
@@ -29,12 +28,16 @@ def test_the_full_c0_c14_set_is_present(config_root):
 
 
 CANONICAL_REGIMES = {
-    "grid_nav", "object_search", "failure_recovery", "fine_maneuver", "occlusion",
+    "grid_nav",
+    "object_search",
+    "failure_recovery",
+    "fine_maneuver",
+    "occlusion",
 }
 
 
 def test_all_five_benchmark_regimes_are_present(config_root):
-    assert CANONICAL_REGIMES <= set(list_environments(config_root))
+    assert set(list_environments(config_root)) >= CANONICAL_REGIMES
 
 
 def test_every_regime_declares_a_distinct_task_family(env_factory, config_root):
@@ -89,8 +92,9 @@ def test_every_metric_is_finite(name, arch_factory, env_factory):
         assert math.isfinite(value) or value == -1.0, f"{name}: {key} is {value}"
 
 
-@pytest.mark.parametrize("env_name", ["grid_nav", "object_search", "failure_recovery",
-                                      "fine_maneuver", "occlusion"])
+@pytest.mark.parametrize(
+    "env_name", ["grid_nav", "object_search", "failure_recovery", "fine_maneuver", "occlusion"]
+)
 def test_every_regime_runs(env_name, arch_factory, env_factory):
     arch = arch_factory("c0")
     env = env_factory(env_name).model_copy(update={"max_episode_s": 15.0})
@@ -182,8 +186,8 @@ def test_cli_list_runs():
     assert main(["list"]) == 0
 
 
-def test_the_seven_family_structure_holds(config_root):
-    """Seven families, one base each, every other member naming what it changes.
+def test_the_baseline_plus_five_family_structure_holds(config_root):
+    """One baseline, five autonomy families, and an explicit nested hierarchy.
 
     This is the design-space claim expressed as a test. Without it the set drifts
     back into "N architectures" with no statement of what varies between them -
@@ -191,21 +195,35 @@ def test_the_seven_family_structure_holds(config_root):
     while other families had one.
     """
     from uavlab.core.compose import load_architecture
-    from uavlab.core.config import Family, validate_family_set
+    from uavlab.core.config import Family, Subfamily, validate_family_set
 
     archs = [load_architecture(n, config_root) for n in sorted(list_architectures(config_root))]
     problems = validate_family_set(archs)
     assert not problems, "family structure violations:\n  " + "\n  ".join(problems)
     assert {a.family for a in archs} == set(Family), "a family has no members"
+    assert {a.subfamily for a in archs if a.subfamily} == set(Subfamily)
+    hierarchy = [a for a in archs if a.subfamily is Subfamily.FAST_SLOW_HIERARCHY]
+    assert hierarchy and all(a.family is Family.HYBRID for a in hierarchy)
 
 
 def test_every_ablation_differs_from_its_base(config_root):
     """An ablation that changes nothing is a duplicate, not an experiment."""
     from uavlab.core.compose import load_architecture
 
-    archs = {n.split("_", 1)[0]: load_architecture(n, config_root)
-             for n in sorted(list_architectures(config_root))}
-    ignore = {"id", "name", "description", "tags", "family", "ablation_of"}
+    loaded = [
+        load_architecture(name, config_root) for name in sorted(list_architectures(config_root))
+    ]
+    archs = {arch.id: arch for arch in loaded if arch.profile_of is None}
+    ignore = {
+        "id",
+        "name",
+        "description",
+        "tags",
+        "family",
+        "subfamily",
+        "ablation_of",
+        "profile_of",
+    }
     for arch in archs.values():
         if arch.ablation_of is None:
             continue

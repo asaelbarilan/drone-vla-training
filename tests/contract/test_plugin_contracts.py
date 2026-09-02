@@ -10,6 +10,7 @@ would break the fairness silently.
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import inspect
 
 import pytest
@@ -63,7 +64,12 @@ ENVIRONMENT_ADAPTERS = ["grid3d"]
 
 def services() -> RuntimeServices:
     clock = SimClock()
-    inference = SimulatedInference(latency_s={k: 0.0 for k in ("perception", "policy", "monitor", "reasoner")})
+    inference = SimulatedInference(
+        latency_s={
+            key: 0.0
+            for key in ("perception", "policy", "monitor", "reasoner")
+        }
+    )
     svc = RuntimeServices(
         clock=clock,
         log=EventLog("contract", None),
@@ -211,33 +217,32 @@ def test_memory_reset_restores_a_pristine_plugin(name):
 # -- policies ---------------------------------------------------------------
 
 
-def _vision_policies() -> set[str]:
-    """Policies that declare they need rendered frames.
+def _policies_requiring_external_inputs() -> set[str]:
+    """Policies the blind, cost-only generic sweep cannot execute.
 
-    Read from the plugin's own ``requires_vision`` attribute rather than a name
-    list here, so a newly added vision policy is handled without editing this
-    file. They are excluded from the blind sweep below because calling them
-    without pixels *should* raise — a vision policy that silently degraded to a
-    blind one would still produce plausible numbers.
+    Read capability flags from each plugin rather than maintaining a name list.
+    A vision policy called without pixels and a real-agent policy called on the
+    simulated accounting backend should both fail closed; their dedicated
+    contract tests supply the required input instead.
     """
     names = set()
     for name in REGISTRY.names("policy"):
         factory = REGISTRY._factories.get(("policy", name))
         if factory is None:
-            try:
+            with contextlib.suppress(Exception):
                 REGISTRY.build("policy", name, {})
-            except Exception:  # noqa: BLE001 - only importing to read the flag
-                pass
             factory = REGISTRY._factories.get(("policy", name))
-        if getattr(factory, "requires_vision", False):
+        if getattr(factory, "requires_vision", False) or getattr(
+            factory, "requires_real_inference", False
+        ):
             names.add(name)
     return names
 
 
-VISION_POLICIES = _vision_policies()
-
-
-@pytest.mark.parametrize("name", sorted(set(REGISTRY.names("policy")) - _vision_policies()))
+@pytest.mark.parametrize(
+    "name",
+    sorted(set(REGISTRY.names("policy")) - _policies_requiring_external_inputs()),
+)
 def test_policy_returns_a_valid_envelope_of_a_declared_kind(name):
     svc = services()
     plugin = build("policy", name, svc)
@@ -343,7 +348,24 @@ def test_monitor_returns_a_progress_state(name):
     ProgressState.model_validate(state.model_dump())
 
 
-@pytest.mark.parametrize("name", REGISTRY.names("recovery"))
+def _recoveries_requiring_external_inputs() -> set[str]:
+    """Recovery plugins the cost-only generic contract cannot execute."""
+    names = set()
+    for name in REGISTRY.names("recovery"):
+        factory = REGISTRY._factories.get(("recovery", name))
+        if factory is None:
+            with contextlib.suppress(Exception):
+                REGISTRY.build("recovery", name, {})
+            factory = REGISTRY._factories.get(("recovery", name))
+        if getattr(factory, "requires_real_inference", False):
+            names.add(name)
+    return names
+
+
+@pytest.mark.parametrize(
+    "name",
+    sorted(set(REGISTRY.names("recovery")) - _recoveries_requiring_external_inputs()),
+)
 def test_recovery_returns_a_routable_envelope(name):
     from uavlab.contracts import RecoveryRequest, RecoveryTrigger
 
@@ -378,3 +400,68 @@ def test_every_event_carries_both_clocks():
         assert event.t_sim_ns == 5 and event.t_wall_ns == 7
     assert len(log) == len(EventType)
     assert [e.seq for e in log.events] == list(range(len(EventType)))
+
+
+def test_the_runtime_never_reaches_for_a_concrete_environment():
+    """The central claim: simulators are adapters.
+
+    If anything in the runtime imports a specific environment or reads its
+    internals, then swapping the simulator is a code change and the claim is
+    false. This is the test that would fail on contact with AirSim, so it is
+    worth failing here first, cheaply.
+
+    Scoped to `core/` and `plugins/` — the path an episode actually runs through.
+    Tooling is a separate matter and is tracked in TODO.md, because it *does*
+    bind to the concrete environment and cannot move to another simulator as
+    written.
+    """
+    import pathlib
+
+    root = pathlib.Path(__file__).resolve().parents[2] / "src" / "uavlab"
+    forbidden = ("DeterministicEnv", "adapters.gym", "adapters.project_airsim")
+    offenders = []
+    for area in ("core", "plugins"):
+        for path in sorted((root / area).rglob("*.py")):
+            text = path.read_text(encoding="utf-8")
+            for needle in forbidden:
+                if needle in text:
+                    offenders.append(f"{path.relative_to(root)} mentions {needle!r}")
+    assert not offenders, (
+        "the runtime reaches for a concrete environment, so the simulator is not "
+        "an adapter:\n  " + "\n  ".join(offenders)
+    )
+
+
+def test_the_tools_that_do_bind_to_one_environment_are_the_known_ones():
+    """Pin the exceptions, so a new one has to be a deliberate act.
+
+    Data collection, DAgger rollouts and video capture all monkeypatch
+    `DeterministicEnv.step`. That is defensible — they need the frame and the
+    command to correspond exactly, which only the environment can guarantee —
+    but it means none of them runs on another simulator, and that is a
+    prerequisite for the AirSim benchmark rather than a detail.
+    """
+    import pathlib
+
+    root = pathlib.Path(__file__).resolve().parents[2] / "src" / "uavlab"
+    expected = {
+        "adapters/dataset_replay/replay.py",   # subclasses it on purpose
+        "analysis/replay_video.py",
+        "analysis/replay_run.py",              # re-flies a stored run's commands
+        "training/dataset.py",
+        "training/dagger.py",
+        "training/qwen_vla_dataset.py",
+    }
+    found = {
+        str(p.relative_to(root)).replace("\\", "/")
+        for p in root.rglob("*.py")
+        if "DeterministicEnv" in p.read_text(encoding="utf-8")
+        and not str(p.relative_to(root)).replace("\\", "/").startswith("adapters/gym/")
+    }
+    assert found == expected, (
+        f"the set of modules bound to one environment changed.\n"
+        f"  added:   {sorted(found - expected)}\n"
+        f"  removed: {sorted(expected - found)}\n"
+        "Adding one is a decision about simulator portability -- record it in "
+        "docs/RESEARCH_LOG.md and update this test."
+    )

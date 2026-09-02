@@ -1,0 +1,70 @@
+{
+  "run": "runs/onfly_c5_qwen_seed1061_v6",
+  "model": "qwen3-vl:4b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 67.2,
+      "actual_monitor_result_t_s": 67.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "latest_only",
+      "red_visible_by_image": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 3.5758
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 69.2,
+      "actual_monitor_result_t_s": 69.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "latest_only",
+      "red_visible_by_image": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 123,
+        "done_reason": "stop",
+        "latency_s": 1.2975
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

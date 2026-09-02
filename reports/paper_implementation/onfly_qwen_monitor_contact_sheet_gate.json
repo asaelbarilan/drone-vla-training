@@ -1,0 +1,92 @@
+{
+  "run": "runs/onfly_c5_qwen_seed1061_v2",
+  "model": "qwen3-vl:8b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 17.2,
+      "actual_monitor_result_t_s": 17.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "earlier_target_visible": true,
+        "latest_target_visible": true,
+        "latest_target_scale": "large",
+        "status": "STOP"
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 19.2,
+      "actual_monitor_result_t_s": 19.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "earlier_target_visible": true,
+        "latest_target_visible": true,
+        "latest_target_scale": "small",
+        "status": "CONTINUE"
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 21.2,
+      "actual_monitor_result_t_s": 21.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "earlier_target_visible": true,
+        "latest_target_visible": true,
+        "latest_target_scale": "small",
+        "status": "CONTINUE"
+      }
+    },
+    {
+      "requested_monitor_result_t_s": 25.2,
+      "actual_monitor_result_t_s": 25.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "labeled_contact_sheet",
+      "red_visible_by_image": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "earlier_target_visible": true,
+        "latest_target_visible": true,
+        "latest_target_scale": "small",
+        "status": "CONTINUE"
+      }
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

@@ -29,8 +29,21 @@ class ProgressState(StrictModel):
     stalled_for_s: float = 0.0
     """Seconds without meaningful progress; the usual no-progress trigger."""
     monitor_name: str = "none"
+    recovery_anchor_valid: bool = True
+    """Whether this verdict may replace the executive's last-normal pose.
 
+    A verdict can permit motor-level CONTINUE without establishing a fresh
+    semantic-normal observation.  The producer must set this only when its own
+    bounded evidence also establishes temporal continuity.
+    """
+    recovery_reacquired: bool = False
+    """Whether current monitor evidence may cancel an active LOST maneuver.
 
+    Reacquisition and anchor replacement are deliberately distinct. A visual
+    STOP vetoed by far depth is not a trustworthy new normal anchor, but its
+    explicit latest-frame visibility can still mean that reorientation should
+    end and nominal waypoint execution should resume.
+    """
 class RecoveryTrigger(StrictModel):
     """Why recovery reasoning was admitted.
 

@@ -1,0 +1,30 @@
+{
+  "model": "qwen3-vl:2b",
+  "seed": 2,
+  "probes": [
+    {
+      "distance_m": 2.0,
+      "image": "reports\\qwen3vl2b_arrival_probe_192\\distance_2m.png",
+      "current_reply": "",
+      "scale_reply": ""
+    },
+    {
+      "distance_m": 4.0,
+      "image": "reports\\qwen3vl2b_arrival_probe_192\\distance_4m.png",
+      "current_reply": "",
+      "scale_reply": ""
+    },
+    {
+      "distance_m": 8.0,
+      "image": "reports\\qwen3vl2b_arrival_probe_192\\distance_8m.png",
+      "current_reply": "",
+      "scale_reply": ""
+    },
+    {
+      "distance_m": 12.0,
+      "image": "reports\\qwen3vl2b_arrival_probe_192\\distance_12m.png",
+      "current_reply": "",
+      "scale_reply": ""
+    }
+  ]
+}

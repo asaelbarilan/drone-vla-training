@@ -1,0 +1,50 @@
+{
+  "system": "OnFly",
+  "date": "2026-08-25",
+  "profile": "c5_onfly_gemma",
+  "status": "mechanism_integrated_profile_rejected",
+  "acceptance_rule": "at least 4 of 5 development seeds",
+  "stop_reason": "two failures make 4/5 impossible",
+  "corrected_hybrid_memory": {
+    "layout": "initial + up to four distance-segment keyframes + latest",
+    "monitor_image_count_min": 1,
+    "monitor_image_count_max": 6
+  },
+  "runs": [
+    {
+      "seed": 1060,
+      "artifact": "runs/onfly_c5_dev_seed1060_v3",
+      "success": false,
+      "termination": "timeout",
+      "distance_to_goal_m": 25.7105,
+      "collisions": 0,
+      "policy_calls": 33,
+      "monitor_calls": 21,
+      "policy_parse_errors": 0,
+      "monitor_parse_errors": 0,
+      "monitor_labels": {"continue": 21, "stop": 0, "lost": 0}
+    },
+    {
+      "seed": 1061,
+      "artifact": "runs/onfly_c5_dev_seed1061",
+      "success": false,
+      "termination": "timeout",
+      "distance_to_goal_m": 18.1727,
+      "collisions": 0,
+      "policy_calls": 33,
+      "monitor_calls": 21,
+      "policy_parse_errors": 0,
+      "monitor_parse_errors": 0,
+      "monitor_labels": {"continue": 21, "stop": 0, "lost": 0}
+    }
+  ],
+  "unused_development_seeds": [1062, 1063, 1064],
+  "heldout_seeds_used": [],
+  "scripted_fallback": false,
+  "verification": {
+    "ruff": "passed",
+    "pytest_passed": 321,
+    "pytest_failed": 0,
+    "evidence_ledger_valid": true
+  }
+}

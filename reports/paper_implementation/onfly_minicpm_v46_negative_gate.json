@@ -1,0 +1,34 @@
+{
+  "run": "runs/onfly_c5_qwen_seed1060_v2",
+  "model": "minicpm-v4.6:Q4_K_M",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 11.2,
+      "actual_monitor_result_t_s": 11.2,
+      "image_count": 4,
+      "model_image_count": 1,
+      "layout": "latest_emphasis_sheet",
+      "red_visible_by_image": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_scale": "small",
+          "latest_target_visible": false,
+          "status": "CONTINUE"
+        },
+        "response_channel": "content",
+        "content_chars": 118,
+        "thinking_chars": 0,
+        "done_reason": "stop",
+        "latency_s": 7.2238
+      }
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

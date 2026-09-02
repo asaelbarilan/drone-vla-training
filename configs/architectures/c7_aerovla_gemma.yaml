@@ -1,0 +1,22 @@
+_base_: [c7_direct_vla.yaml, ../models/gemma3_4b_aerovla.yaml]
+
+id: c7_aerovla_gemma
+profile_of: c7
+family: direct_vla
+ablation_of: null
+name: "AeroVLA mechanism, Gemma 3 4B, bare"
+description: "Dual-view fuzzy-hint numerical-token direct actions; no planner or shield."
+tags: [direct_vla, aerovla, normalized_profile, real_model]
+
+semantic_memory: no_memory
+memory:
+  name: no_memory
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 10.0
+
+staleness:
+  max_decision_age_s: 8.0
+  reject_stale: true

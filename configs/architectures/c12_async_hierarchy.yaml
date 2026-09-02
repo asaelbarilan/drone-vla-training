@@ -15,8 +15,9 @@ _base_: [c11_chunked_hierarchy.yaml]
 
 id: c12
 
-family: fast_slow_hierarchy
-# The base configuration for this family: every other member states
+family: hybrid_stack
+subfamily: fast_slow_hierarchy
+# The reference configuration for this hybrid subfamily: every other member states
 # what it changes relative to one of these.
 #
 # `null` is explicit and load-bearing. This config inherits through

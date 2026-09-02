@@ -1,0 +1,9 @@
+_base_: [c5_onfly_qwen4.yaml, ../models/qwen3_vl_4b_shared.yaml]
+
+id: c5_onfly_qwen4_shared
+profile_of: c5
+family: hybrid_stack
+name: "C5 full OnFly, shared Qwen3-VL 4B"
+description: "Representative full OnFly architecture using the frozen comparison model."
+tags: [onfly, full_architecture, shared_model_comparison, qwen3_vl_4b, real_model]
+

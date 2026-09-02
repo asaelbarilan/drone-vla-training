@@ -1,0 +1,25 @@
+_base_: gemma3_4b.yaml
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: aerovla
+  params:
+    model_id: gemma3:4b
+    output_format: json
+    image_size: 224
+    cruise_mps: 1.0
+    max_yaw_rate_rps: 1.1
+    use_memory: false
+    follow_directives: false
+
+inference:
+  params:
+    num_predict: 64
+    charge_mode: fixed
+    fixed_latency_s:
+      policy: 2.2
+

@@ -19,6 +19,7 @@ Two invariants are enforced here rather than trusted:
 from __future__ import annotations
 
 import dataclasses
+import math
 from collections import deque
 from dataclasses import dataclass, field
 
@@ -40,7 +41,7 @@ from uavlab.contracts import (
     s_to_ns,
 )
 from uavlab.core.config import ArchitectureConfig
-from uavlab.core.skills import SkillRuntime, UnknownSkillError
+from uavlab.core.skills import InvalidSkillArguments, SkillRuntime, UnknownSkillError
 from uavlab.interfaces import (
     ControllerAdapter,
     DecisionContext,
@@ -85,6 +86,18 @@ class _MotionSource:
 
 
 @dataclass(slots=True)
+class _FixedReorientation:
+    """Bounded monitor-triggered executive action, not semantic motor output."""
+
+    target_yaw_rad: float
+    hold_until_ns: int
+    expires_ns: int
+    max_yaw_rate_rps: float
+    settled: bool = False
+    source_id: str = "onfly-lost-reorientation"
+
+
+@dataclass(slots=True)
 class RouterCounters:
     proposed: int = 0
     executed: int = 0
@@ -102,9 +115,11 @@ class RouterCounters:
     safety_stop: int = 0
     commands_issued: int = 0
     stale_commands_executed: int = 0
+    stale_commands_rejected: int = 0
     decision_age_ns_total: int = 0
     decision_age_samples: int = 0
     unknown_skill: int = 0
+    invalid_skill_args: int = 0
 
     def as_dict(self) -> dict[str, float]:
         d = {
@@ -141,6 +156,7 @@ class DecisionRouter:
         self.reject_stale = arch.staleness.reject_stale
 
         self.source: _MotionSource | None = None
+        self._reorientation: _FixedReorientation | None = None
         self.counters = RouterCounters()
         self.stop_requested: bool = False
         self.stop_reason: str = ""
@@ -148,6 +164,7 @@ class DecisionRouter:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self.source = None
+        self._reorientation = None
         self.counters = RouterCounters()
         self.stop_requested = False
         self.stop_reason = ""
@@ -187,9 +204,22 @@ class DecisionRouter:
             except UnknownSkillError as exc:
                 self.counters.unknown_skill += 1
                 return RoutingOutcome(accepted=False, reason=str(exc), decision_age_ns=age_ns)
+            except InvalidSkillArguments as exc:
+                self.counters.invalid_skill_args += 1
+                return RoutingOutcome(
+                    accepted=False,
+                    reason=f"invalid skill arguments: {exc}",
+                    decision_age_ns=age_ns,
+                )
             if isinstance(expanded, MissionDirective):
                 return self._accept_directive(expanded, envelope, age_ns, stale)
-            outcome = self._accept_motion(expanded, envelope, ctx, age_ns, stale)
+            # The semantic verifier validates the expanded typed result rather
+            # than the wrapper SkillCall. Otherwise an out-of-bounds `goto`
+            # would bypass the very AerialClaw-style runtime checks C1 declares.
+            expanded_envelope = envelope.model_copy(
+                update={"kind": expanded.kind, "payload": expanded}
+            )
+            outcome = self._accept_motion(expanded, expanded_envelope, ctx, age_ns, stale)
             outcome.expanded_kind = expanded.kind
             return outcome
 
@@ -347,6 +377,80 @@ class DecisionRouter:
 
     # -- issuing motion -----------------------------------------------------
 
+    @property
+    def reorientation_active(self) -> bool:
+        return self._reorientation is not None
+
+    def begin_fixed_reorientation(
+        self,
+        *,
+        target_yaw_rad: float,
+        t_sim_ns: int,
+        hold_s: float,
+        max_duration_s: float,
+        yaw_rate_rps: float,
+    ) -> None:
+        """Cancel translation, pause, then rotate toward a known heading.
+
+        This is a fixed executive response to a monitor verdict. The monitor
+        does not author a velocity, waypoint, or trajectory, so waypoint-level
+        semantic authority remains unchanged and the output still passes
+        through the shared controller/shield path.
+        """
+        self.source = None
+        self._reorientation = _FixedReorientation(
+            target_yaw_rad=math.atan2(math.sin(target_yaw_rad), math.cos(target_yaw_rad)),
+            hold_until_ns=t_sim_ns + s_to_ns(max(0.0, hold_s)),
+            expires_ns=t_sim_ns + s_to_ns(max(max_duration_s, hold_s, 0.05)),
+            max_yaw_rate_rps=max(0.05, abs(yaw_rate_rps)),
+        )
+
+    def cancel_fixed_reorientation(self) -> None:
+        self._reorientation = None
+
+    def _fixed_reorientation_command(self, ctx: DecisionContext) -> ControlCommand | None:
+        recovery = self._reorientation
+        if recovery is None:
+            return None
+        # Recovery is deliberately bounded. Checking the deadline before the
+        # settled branch prevents a perfect yaw alignment from becoming an
+        # infinite hover when positional occlusion makes visual reacquisition
+        # impossible from the recovered viewpoint.
+        if ctx.t_sim_ns >= recovery.expires_ns:
+            self._reorientation = None
+            return self.controller.hold(ctx).model_copy(
+                update={"metadata": {"recovery": "reorientation_expired"}}
+            )
+        if ctx.t_sim_ns < recovery.hold_until_ns:
+            return self.controller.hold(ctx).model_copy(
+                update={"metadata": {"recovery": "lost_hold"}}
+            )
+        error = math.atan2(
+            math.sin(recovery.target_yaw_rad - ctx.observation.yaw_rad),
+            math.cos(recovery.target_yaw_rad - ctx.observation.yaw_rad),
+        )
+        if recovery.settled or abs(error) <= math.radians(5.0):
+            # Keep the recovered viewpoint fixed until the next semantic
+            # monitor result explicitly confirms reacquisition.  Resuming a
+            # stale waypoint for the gap between monitor ticks immediately
+            # undoes the recovery turn.
+            recovery.settled = True
+            return self.controller.hold(ctx).model_copy(
+                update={"metadata": {"recovery": "awaiting_reacquisition"}}
+            )
+        yaw_rate = max(
+            -recovery.max_yaw_rate_rps,
+            min(recovery.max_yaw_rate_rps, error * 1.5),
+        )
+        action = KinematicAction(
+            velocity=Vec3(x=0.0, y=0.0, z=0.0),
+            yaw_rate_rps=yaw_rate,
+            duration_s=0.1,
+        )
+        return self.controller.from_action(action, ctx, recovery.source_id).model_copy(
+            update={"metadata": {"recovery": "lost_reorientation"}}
+        )
+
     def command_for_tick(
         self, ctx: DecisionContext
     ) -> tuple[ControlCommand, SafetyDecision | None, int | None]:
@@ -356,13 +460,38 @@ class DecisionRouter:
         measured *now*, at execution, which is the number that actually
         describes how obsolete the world was when the vehicle moved.
         """
-        command = self._raw_command(ctx)
-        age_ns = command.decision_age_ns(ctx.t_sim_ns)
+        fixed_reorientation = self._fixed_reorientation_command(ctx)
+
+        # Check the authoritative source *before* asking the controller to
+        # derive another command from it.  Admission-time rejection is not
+        # enough: a once-fresh trajectory can remain authoritative for many
+        # control ticks and become stale during execution.
+        source = self.source
+        source_age_ns = (
+            ctx.t_sim_ns - source.source_t_sim_ns if source is not None else None
+        )
+        reject_source = (
+            source_age_ns is not None
+            and source_age_ns > self.max_age_ns
+            and self.reject_stale
+        )
+
+        if fixed_reorientation is not None:
+            command = fixed_reorientation
+            age_ns = None
+        elif reject_source:
+            self.source = None
+            self.counters.stale_commands_rejected += 1
+            command = self.controller.hold(ctx)
+            age_ns = source_age_ns
+        else:
+            command = self._raw_command(ctx)
+            age_ns = command.decision_age_ns(ctx.t_sim_ns)
 
         if age_ns is not None:
             self.counters.decision_age_ns_total += age_ns
             self.counters.decision_age_samples += 1
-            if age_ns > self.max_age_ns:
+            if age_ns > self.max_age_ns and not reject_source:
                 self.counters.stale_commands_executed += 1
 
         safety: SafetyDecision | None = None
@@ -417,6 +546,12 @@ class DecisionRouter:
     def _trajectory_complete(self, src: _MotionSource, ctx: DecisionContext) -> bool:
         traj = src.trajectory
         if traj is None or not traj.points:
+            return False
+        # Receding-horizon safety planners such as SUPER deliberately end a
+        # commitment at a known-free stopping point before the semantic goal.
+        # Reaching that backup endpoint is not mission completion. Legacy
+        # planners omit the field and retain the old final-point semantics.
+        if traj.metadata.get("reaches_goal", "true") != "true":
             return False
         final = traj.points[-1].position
         return ctx.observation.position.distance_to(final) <= 1.0

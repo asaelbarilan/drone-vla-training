@@ -1,0 +1,96 @@
+{
+  "model": "gemma3:12b",
+  "seeds": [
+    1040
+  ],
+  "distances_m": [
+    30.0,
+    12.0,
+    4.0,
+    3.0,
+    2.0,
+    1.5
+  ],
+  "valid_schema": 6,
+  "total": 6,
+  "rows": [
+    {
+      "seed": 1040,
+      "camera_distance_m": 30.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_30m.png",
+      "raw": "{\"u\": 333, \"v\": 250, \"distance\": 6}",
+      "parsed": {
+        "u": 333,
+        "v": 250,
+        "distance": 6
+      },
+      "latency_s": 12.1305995,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 12.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_12m.png",
+      "raw": "{\"u\": 375, \"v\": 320, \"distance\": 4}",
+      "parsed": {
+        "u": 375,
+        "v": 320,
+        "distance": 4
+      },
+      "latency_s": 3.4236277,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 4.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_4m.png",
+      "raw": "{\"u\": 497, \"v\": 360, \"distance\": 4}",
+      "parsed": {
+        "u": 497,
+        "v": 360,
+        "distance": 4
+      },
+      "latency_s": 3.4683546,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 3.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_3m.png",
+      "raw": "{\"u\": 430, \"v\": 370, \"distance\": 3}",
+      "parsed": {
+        "u": 430,
+        "v": 370,
+        "distance": 3
+      },
+      "latency_s": 3.4387121,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 2.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_2m.png",
+      "raw": "{\"u\": 487, \"v\": 363, \"distance\": 4}",
+      "parsed": {
+        "u": 487,
+        "v": 363,
+        "distance": 4
+      },
+      "latency_s": 3.4143893,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 1.5,
+      "image": "reports\\paper_implementation\\spf_probe_gemma3_12b\\seed_1040_distance_1.5m.png",
+      "raw": "{\"u\": 500, \"v\": 350, \"distance\": 3}",
+      "parsed": {
+        "u": 500,
+        "v": 350,
+        "distance": 3
+      },
+      "latency_s": 3.4525281,
+      "server_payload": null
+    }
+  ]
+}

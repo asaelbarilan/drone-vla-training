@@ -1,0 +1,29 @@
+{
+  "checkpoint": "models\\bc_post_d14_grid_nav.pt",
+  "parameters": 429634,
+  "epochs_run": 20,
+  "wall_seconds": 296.9,
+  "quantisation_floor": {
+    "velocity_error_mean_mps": 0.07499289245037709,
+    "velocity_error_p95_mps": 0.11758617031766451,
+    "yaw_error_mean_rps": 0.013695978555190851
+  },
+  "best": {
+    "loss": 9.694921072214687,
+    "bin_accuracy": 0.33898305084745767,
+    "velocity_error_mean_mps": 1.4392048627339316,
+    "velocity_error_p95_mps": 4.874940696358738,
+    "terminate_recall": 1.0,
+    "terminate_precision": 0.9252873563218391
+  },
+  "train_config": {
+    "epochs": 20,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "val_fraction": 0.15,
+    "seed": 0,
+    "device": "cuda",
+    "patience": 4
+  }
+}

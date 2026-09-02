@@ -1,0 +1,17 @@
+_base_: [c3_verifier.yaml, ../models/qwen3_vl_8b_onfly.yaml]
+
+id: c3_onfly_qwen
+profile_of: c3
+family: hybrid_stack
+name: "C3 OnFly decision + verifier (Qwen3-VL 8B)"
+description: "OnFly image-point decision and depth/bearing verification over the shared planner; no monitor."
+tags: [onfly, normalized_profile, real_model, vision, depth, qwen_relative_coordinates]
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    # D_max=7 m is camera-forward depth; the corresponding 3-D ray is longer.
+    max_waypoint_distance_m: 10.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true

@@ -39,7 +39,7 @@ uavlab = "uavlab.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-uavlab = ["py.typed"]
+uavlab = ["py.typed", "plugins/reasoning/aerialclaw_docs/*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

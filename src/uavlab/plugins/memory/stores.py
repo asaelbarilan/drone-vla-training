@@ -111,6 +111,7 @@ class ShortContext:
         self.window = int(params.get("window", 5))
         self.token_budget = int(params.get("token_budget", self.window * TOKENS_PER_ITEM))
         self._items: list[MemoryItem] = []
+        self._last_decision_id: str | None = None
         self._seq = 0
         self._t_ns = 0
 
@@ -120,6 +121,7 @@ class ShortContext:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._items = []
+        self._last_decision_id = None
         self._seq = 0
         self._t_ns = 0
 
@@ -147,9 +149,17 @@ class ShortContext:
                 salience=best.score if best else 0.0,
             )
         )
-        own = _decision_memory(observation, decision)
-        if own is not None:
-            self._items.append(own)
+        # The orchestrator calls memory.update() on every control tick, while a
+        # semantic decision can remain active for many ticks.  Store a
+        # committed decision once, not once per tick; otherwise duplicates use
+        # half of a short window and can evict genuine visual evidence before a
+        # blocking skill (notably a scan) finishes.
+        decision_id = getattr(decision, "decision_id", None)
+        if decision_id is not None and decision_id != self._last_decision_id:
+            own = _decision_memory(observation, decision)
+            if own is not None:
+                self._items.append(own)
+                self._last_decision_id = decision_id
         if len(self._items) > self.window:
             self._items = self._items[-self.window :]
 
@@ -266,7 +276,11 @@ class CompactKeyframeMemory:
             items.append(self._own_sighting)
         if self._latest is not None:
             items.append(self._latest)
-        best = max((i for i in self._keyframes if i.position), key=lambda i: i.salience, default=None)
+        best = max(
+            (i for i in self._keyframes if i.position),
+            key=lambda i: i.salience,
+            default=None,
+        )
         summary = (
             f"best target evidence at ({best.position.x:.1f},{best.position.y:.1f}) "
             f"score={best.salience:.2f}"
@@ -281,11 +295,18 @@ class CompactKeyframeMemory:
             token_budget=self.token_budget,
             tokens_used=len(items) * TOKENS_PER_ITEM,
             policy_name="compact_keyframe_memory",
-            stats={"keyframes": float(len(self._keyframes)), "replacements": float(self._replacements)},
+            stats={
+                "keyframes": float(len(self._keyframes)),
+                "replacements": float(self._replacements),
+            },
         )
 
     def best_target(self) -> Vec3 | None:
-        best = max((i for i in self._keyframes if i.position), key=lambda i: i.salience, default=None)
+        best = max(
+            (i for i in self._keyframes if i.position),
+            key=lambda i: i.salience,
+            default=None,
+        )
         return best.position if best else None
 
 

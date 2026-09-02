@@ -349,6 +349,7 @@ def test_policy_rationale_never_appears_in_a_control_event(arch_factory, env_fac
     env = env_factory("grid_nav").model_copy(update={"max_episode_s": 20.0})
     _, orchestrator = run_one(arch, env, seed=2)
     allowed = {
+        "position_x", "position_y", "position_z",
         "vx", "vy", "vz", "yaw_rate", "decision_age_s", "safety_modified",
         "source_observation_seq",
     }

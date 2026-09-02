@@ -18,7 +18,7 @@ from __future__ import annotations
 import hashlib
 import json
 from enum import Enum
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import Field, model_validator
 
@@ -135,7 +135,7 @@ class FeatureCacheSpec(StrictModel):
 
 
 class Family(str, Enum):
-    """The seven families. One base configuration each; the rest are ablations."""
+    """One control baseline and the five autonomy families in the paper."""
 
     CLASSICAL = "classical_baseline"
     """Classical planner and controller only. The control ceiling."""
@@ -149,8 +149,13 @@ class Family(str, Enum):
     """Reasoning admitted only on failure, ambiguity or no progress."""
     DIRECT_VLA = "direct_vla"
     """A learned local-action policy holding motion authority."""
-    HIERARCHY = "fast_slow_hierarchy"
-    """A slow reasoner above a fast action policy, at two rates."""
+
+
+class Subfamily(str, Enum):
+    """Named branches inside a top-level family."""
+
+    FAST_SLOW_HIERARCHY = "fast_slow_hierarchy"
+    """A slow reasoner above a fast action policy, inside the hybrid family."""
 
 
 class ArchitectureConfig(StrictModel):
@@ -161,7 +166,7 @@ class ArchitectureConfig(StrictModel):
     description: str = ""
 
     family: Family | None = None
-    """Which of the seven design families this configuration belongs to.
+    """Which top-level benchmark category this configuration belongs to.
 
     Optional on the model and *mandatory on the shipped set*, which is a
     deliberate split. Unit tests build throwaway configs to exercise the router
@@ -170,17 +175,34 @@ class ArchitectureConfig(StrictModel):
     rejects a missing family for anything under `configs/`, which is where the
     claim actually needs to hold.
 
-    The families are the design space; the configurations are points in it.
+    The baseline and five autonomy families are the design space; the
+    configurations are points in it.
     Making that structure data rather than prose is what stops the set drifting
     into "fifteen architectures" with no statement of what varies between them —
     which it had, with one family holding ten of the fifteen members.
     """
+    subfamily: Subfamily | None = None
+    """An optional named branch within a family.
+
+    Fast/slow hierarchies are hybrid stacks, not a seventh peer family. Keeping
+    the branch explicit preserves its internal reference configuration and
+    ablations without changing the paper's top-level comparison.
+    """
     ablation_of: str | None = None
     """The base configuration this one modifies, or None if it *is* the base.
 
-    Exactly one configuration per family is the base. Everything else states
-    what it is an ablation of, so every reported difference has a named
-    comparison rather than an implied one. Enforced in `validate_family_set`.
+    Each top-level family and named subfamily has one reference configuration.
+    Everything else states what it is an ablation of, so every reported
+    difference has a named comparison rather than an implied one. Enforced in
+    `validate_family_set`.
+    """
+    profile_of: str | None = None
+    """Canonical architecture ID implemented by this resource/backend profile.
+
+    A paper-valid real-model profile and a cheap structural sentinel are two
+    executable configurations of one architecture, not two family members and
+    not an ablation contrast. Profiles are validated separately and excluded
+    from the one-base-per-family count.
     """
 
     authority: Authority
@@ -198,6 +220,7 @@ class ArchitectureConfig(StrictModel):
     planner: ComponentSpec | None = None
     shield: ComponentSpec | None = None
     monitor: ComponentSpec | None = None
+    admission: ComponentSpec | None = None
     recovery: ComponentSpec | None = None
     controller: ComponentSpec = ComponentSpec(name="mock_velocity")
     inference: ComponentSpec = ComponentSpec(name="simulated")
@@ -222,6 +245,8 @@ class ArchitectureConfig(StrictModel):
     @model_validator(mode="after")
     def _check_grammar(self) -> ArchitectureConfig:
         v: list[str] = []
+        if self.subfamily is not None and self.family is not Family.HYBRID:
+            v.append(f"subfamily={self.subfamily.value!r} belongs under family='hybrid_stack'")
         v += self._check_authority_rules()
         v += self._check_supervision_rules()
         v += self._check_memory_rules()
@@ -264,7 +289,9 @@ class ArchitectureConfig(StrictModel):
                     "this into a waypoint architecture"
                 )
             if self.action_horizon is ActionHorizon.CHUNK and self.chunk_length < 2:
-                v.append(f"action_horizon=chunk requires chunk_length >= 2, got {self.chunk_length}")
+                v.append(
+                    f"action_horizon=chunk requires chunk_length >= 2, got {self.chunk_length}"
+                )
             if self.action_horizon is ActionHorizon.SINGLE and self.chunk_length != 1:
                 v.append(
                     f"action_horizon=single requires chunk_length == 1, got {self.chunk_length}"
@@ -321,6 +348,11 @@ class ArchitectureConfig(StrictModel):
                     "semantic_supervision=triggered_reasoner requires scheduler.kind of "
                     f"event_triggered or hybrid, got {self.scheduler.kind.value!r}"
                 )
+        if self.admission is not None and s is not Supervision.TRIGGERED_REASONER:
+            v.append(
+                f"admission={self.admission.name!r} is only meaningful with "
+                "semantic_supervision=triggered_reasoner"
+            )
         return v
 
     def _check_memory_rules(self) -> list[str]:
@@ -333,12 +365,11 @@ class ArchitectureConfig(StrictModel):
                 "the declared architecture and the wired component disagree"
             )
         if not declared_none and plugin_none:
-            v.append(
-                f"semantic_memory={self.semantic_memory.value} but no memory plugin is wired"
-            )
+            v.append(f"semantic_memory={self.semantic_memory.value} but no memory plugin is wired")
         present = {
             "policy": True,
             "monitor": self.monitor is not None,
+            "admission": self.admission is not None,
             "recovery": self.recovery is not None,
         }
         for consumer in self.memory_consumers:
@@ -450,7 +481,15 @@ class ExperimentConfig(StrictModel):
     architectures: tuple[str, ...]
     environments: tuple[str, ...]
     seeds: tuple[int, ...] = (0, 1, 2)
-    episodes_per_cell: int = 1
+    episodes_per_cell: Literal[1] = 1
+    """One episode for every explicit seed.
+
+    Repetitions are represented by listing more seeds, because the seed is the
+    scene identity and the unit of pairing.  An earlier expansion multiplied
+    each declared seed by 1000; manifests recorded [1,2,3] while episodes ran
+    [1000,2000,3000], including a learned-policy training seed.  Forbidding an
+    implicit repetition axis makes the manifest and the executed cells agree.
+    """
     stage: str = "macro_screening"
     """Which staged screen this belongs to; ordering is part of the protocol."""
     compare: tuple[tuple[str, str], ...] = ()
@@ -462,26 +501,36 @@ class ExperimentConfig(StrictModel):
         for arch in self.architectures:
             for env in self.environments:
                 for seed in self.seeds:
-                    for rep in range(self.episodes_per_cell):
-                        out.append((arch, env, seed * 1000 + rep))
+                    out.append((arch, env, seed))
         return out
 
 
 def validate_family_set(architectures: list[ArchitectureConfig]) -> list[str]:
-    """Check the seven-family structure holds across the whole shipped set.
+    """Check the baseline + five-family structure across the shipped set.
 
-    The families are the design space and the configurations are points in it.
-    That only means anything if the mapping is one base per family with every
-    other member naming what it modifies — otherwise the set drifts back into
-    "N architectures" with no statement of what varies, which is exactly what
-    happened before: one family had grown to ten of the fifteen members while
-    others had one.
+    Each top-level category has one primary reference configuration. A named
+    subfamily may have its own reference configuration, but remains nested
+    under its parent family. Every other member names the reference it modifies.
 
     Returns every violation rather than the first. A half-corrected set is easy
     to run by mistake.
     """
     problems: list[str] = []
-    by_id = {a.id: a for a in architectures}
+    all_architectures = architectures
+    by_id = {a.id: a for a in all_architectures}
+
+    for profile in (a for a in all_architectures if a.profile_of is not None):
+        if profile.ablation_of is not None:
+            problems.append(f"{profile.id} cannot be both a profile and an ablation")
+        parent = by_id.get(profile.profile_of)
+        if parent is None:
+            problems.append(f"{profile.id} is a profile of unknown '{profile.profile_of}'")
+        elif parent.id == profile.id:
+            problems.append(f"{profile.id} declares itself as its canonical profile base")
+        elif parent.family is not profile.family or parent.subfamily is not profile.subfamily:
+            problems.append(f"{profile.id} profile family/subfamily differs from {parent.id}")
+
+    architectures = [a for a in all_architectures if a.profile_of is None]
 
     for arch in architectures:
         if arch.family is None:
@@ -490,12 +539,24 @@ def validate_family_set(architectures: list[ArchitectureConfig]) -> list[str]:
 
     for family in Family:
         members = [a for a in architectures if a.family is family]
-        bases = [a.id for a in members if a.ablation_of is None]
+        primary_members = [a for a in members if a.subfamily is None]
+        bases = [a.id for a in primary_members if a.ablation_of is None]
         if not members:
             problems.append(f"family {family.value} has no members")
         elif len(bases) != 1:
             problems.append(
-                f"family {family.value} must have exactly one base configuration, "
+                f"family {family.value} must have exactly one primary base configuration, "
+                f"found {len(bases)}: {sorted(bases) or 'none'}"
+            )
+
+    for subfamily in Subfamily:
+        members = [a for a in architectures if a.subfamily is subfamily]
+        bases = [a.id for a in members if a.ablation_of is None]
+        if not members:
+            problems.append(f"subfamily {subfamily.value} has no members")
+        elif len(bases) != 1:
+            problems.append(
+                f"subfamily {subfamily.value} must have exactly one base configuration, "
                 f"found {len(bases)}: {sorted(bases) or 'none'}"
             )
 
@@ -505,10 +566,12 @@ def validate_family_set(architectures: list[ArchitectureConfig]) -> list[str]:
         parent = by_id.get(arch.ablation_of)
         if parent is None:
             problems.append(f"{arch.id} is an ablation of unknown '{arch.ablation_of}'")
-        elif parent.family is not arch.family:
+        elif parent.family is not arch.family or parent.subfamily is not arch.subfamily:
+            parent_group = parent.subfamily.value if parent.subfamily else parent.family.value
+            arch_group = arch.subfamily.value if arch.subfamily else arch.family.value
             problems.append(
-                f"{arch.id} ({arch.family.value}) ablates {parent.id} "
-                f"({parent.family.value}); an ablation must stay inside its family, "
+                f"{arch.id} ({arch_group}) ablates {parent.id} "
+                f"({parent_group}); an ablation must stay inside its family/subfamily, "
                 "or the comparison crosses two changes at once"
             )
         elif parent.id == arch.id:

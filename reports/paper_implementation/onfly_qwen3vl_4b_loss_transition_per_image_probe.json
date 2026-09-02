@@ -1,0 +1,156 @@
+{
+  "run": "runs/onfly_c5_qwen4_native_seed1061_v4",
+  "model": "qwen3-vl:4b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 35.2,
+      "actual_monitor_result_t_s": 35.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "target_visible_by_image": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "latest_target_scale": "absent",
+          "status": "LOST"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 158,
+        "done_reason": "length",
+        "latency_s": 8.8723
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 37.2,
+      "actual_monitor_result_t_s": 37.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "target_visible_by_image": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "latest_target_scale": "absent",
+          "status": "LOST"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 158,
+        "done_reason": "length",
+        "latency_s": 0.9007
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 39.2,
+      "actual_monitor_result_t_s": 39.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "target_visible_by_image": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "latest_target_scale": "absent",
+          "status": "LOST"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 158,
+        "done_reason": "length",
+        "latency_s": 0.9109
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 43.2,
+      "actual_monitor_result_t_s": 43.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "target_visible_by_image": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "latest_target_scale": "absent",
+          "status": "LOST"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 158,
+        "done_reason": "length",
+        "latency_s": 0.9048
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

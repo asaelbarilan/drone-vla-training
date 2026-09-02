@@ -9,6 +9,7 @@ survives into a paper.
 from __future__ import annotations
 
 import pytest
+from pydantic import ValidationError
 
 from uavlab.core.config import (
     ActionHorizon,
@@ -16,10 +17,14 @@ from uavlab.core.config import (
     Authority,
     ComponentSpec,
     ConfigError,
+    ExperimentConfig,
+    Family,
     MemoryMode,
     SchedulerKind,
     SchedulerSpec,
+    Subfamily,
     Supervision,
+    validate_family_set,
 )
 
 
@@ -42,6 +47,42 @@ def violations_of(**overrides) -> list[str]:
 
 def test_the_baseline_is_valid():
     assert build().authority is Authority.WAYPOINT
+
+
+def test_execution_profile_is_not_a_second_family_base():
+    base = build(id="base", family=Family.VLM_WAYPOINTER)
+    profile = build(
+        id="paper-profile",
+        family=Family.VLM_WAYPOINTER,
+        profile_of="base",
+    )
+    # The rest of the family set is intentionally absent in this focused check;
+    # only assert that the VLM family itself does not report two base configs.
+    problems = validate_family_set([base, profile])
+    assert not any("vlm_semantic_waypointer must have exactly one" in p for p in problems)
+
+
+def test_profile_cannot_also_be_an_ablation():
+    base = build(id="base", family=Family.VLM_WAYPOINTER)
+    profile = build(
+        id="bad-profile",
+        family=Family.VLM_WAYPOINTER,
+        profile_of="base",
+        ablation_of="base",
+    )
+    assert "cannot be both a profile and an ablation" in " ".join(
+        validate_family_set([base, profile])
+    )
+
+
+def test_fast_slow_subfamily_must_be_nested_under_hybrid():
+    text = " ".join(
+        violations_of(
+            family=Family.DIRECT_VLA,
+            subfamily=Subfamily.FAST_SLOW_HIERARCHY,
+        )
+    )
+    assert "belongs under" in text and Family.HYBRID.value in text
 
 
 def test_action_chunk_with_skill_authority_is_rejected():
@@ -186,6 +227,35 @@ def test_config_hash_is_stable_and_sensitive():
     a, b = build(), build()
     assert a.config_hash() == b.config_hash()
     assert build(scheduler=SchedulerSpec(decision_hz=4.0)).config_hash() != a.config_hash()
+
+
+def test_experiment_cells_execute_the_exact_seeds_written_in_the_manifest():
+    experiment = ExperimentConfig(
+        id="paired",
+        architectures=("c2", "c2g"),
+        environments=("grid_nav_vision",),
+        seeds=(1, 2, 3),
+    )
+
+    assert experiment.cells() == [
+        ("c2", "grid_nav_vision", 1),
+        ("c2", "grid_nav_vision", 2),
+        ("c2", "grid_nav_vision", 3),
+        ("c2g", "grid_nav_vision", 1),
+        ("c2g", "grid_nav_vision", 2),
+        ("c2g", "grid_nav_vision", 3),
+    ]
+
+
+def test_experiment_repetitions_must_be_explicit_seeds():
+    with pytest.raises(ValidationError, match="episodes_per_cell"):
+        ExperimentConfig(
+            id="ambiguous-repetitions",
+            architectures=("c2",),
+            environments=("grid_nav",),
+            seeds=(1,),
+            episodes_per_cell=2,
+        )
 
 
 def test_shipped_architectures_all_validate(arch_factory):

@@ -145,7 +145,9 @@ async def rollout(
 
     async def dagger_step(self, command, dt_ns):
         nonlocal tick
-        uri = f"frame://{id(self)}/rgb/{max(self._seq - 1, 0)}"
+        # Match DeterministicEnv._sensor_ref.  The namespace is monotonic so a
+        # new episode can never retrieve a stale frame from an earlier one.
+        uri = f"frame://{self._frame_ns}/rgb/{max(self._seq - 1, 0)}"
         image = global_store().get(uri)
         executed = command
         if image is not None:

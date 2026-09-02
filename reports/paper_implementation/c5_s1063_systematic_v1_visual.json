@@ -1,0 +1,122 @@
+[
+  {
+    "t_sim_s": 0.0,
+    "distance_to_goal_m": 35.06991866857005,
+    "target_visible": false,
+    "predicted_pixel": [
+      189.74,
+      122.773
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 7.95,
+    "distance_to_goal_m": 32.19798754379813,
+    "target_visible": false,
+    "predicted_pixel": [
+      125.005,
+      131.032
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 15.95,
+    "distance_to_goal_m": 29.202072328341583,
+    "target_visible": false,
+    "predicted_pixel": [
+      121.21,
+      158.935
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 23.95,
+    "distance_to_goal_m": 26.607598593443967,
+    "target_visible": false,
+    "predicted_pixel": [
+      116.969,
+      204.026
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 31.95,
+    "distance_to_goal_m": 23.674290751730116,
+    "target_visible": false,
+    "predicted_pixel": [
+      118.978,
+      214.964
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 39.95,
+    "distance_to_goal_m": 21.69056395607312,
+    "target_visible": false,
+    "predicted_pixel": [
+      133.041,
+      175.007
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 47.95,
+    "distance_to_goal_m": 20.46856119038427,
+    "target_visible": false,
+    "predicted_pixel": [
+      111.612,
+      178.579
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 55.95,
+    "distance_to_goal_m": 19.542969153924233,
+    "target_visible": false,
+    "predicted_pixel": [
+      111.612,
+      204.026
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 63.95,
+    "distance_to_goal_m": 19.419914760550842,
+    "target_visible": false,
+    "predicted_pixel": [
+      111.612,
+      178.579
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 71.95,
+    "distance_to_goal_m": 20.63640401580099,
+    "target_visible": false,
+    "predicted_pixel": [
+      108.04,
+      204.919
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 79.95,
+    "distance_to_goal_m": 22.808919850207236,
+    "target_visible": false,
+    "predicted_pixel": [
+      112.058,
+      112.951
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 87.95,
+    "distance_to_goal_m": 25.65890804547042,
+    "target_visible": false,
+    "predicted_pixel": [
+      112.058,
+      131.925
+    ],
+    "monitor": "-"
+  }
+]

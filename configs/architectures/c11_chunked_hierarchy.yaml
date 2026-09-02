@@ -13,7 +13,8 @@ _base_: [c10_periodic_hierarchy.yaml]
 
 id: c11
 
-family: fast_slow_hierarchy
+family: hybrid_stack
+subfamily: fast_slow_hierarchy
 # Ablation of C12: concurrent reasoner -> blocking.
 ablation_of: c12
 name: "C10 with chunked action horizon"

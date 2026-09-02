@@ -4,7 +4,7 @@
 # that points at a distractor, or at sky, produces a waypoint that a scripted
 # policy would never have proposed. This measures whether validation catches it.
 
-_base_: [c3_verifier.yaml, ../models/gemma3_4b.yaml]
+_base_: [c3_verifier.yaml, ../models/gemma3_4b_waypoint.yaml]
 
 id: c3g
 

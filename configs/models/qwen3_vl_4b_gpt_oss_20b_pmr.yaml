@@ -1,0 +1,44 @@
+# Two-model profile for the PMR capability implementation.
+#
+# OnFly's fixed local policy needs a visual model; PMR's selectively admitted
+# recovery agent is text-only. Both remain inside the one shared inference
+# service so calls, tokens, latency, and simulation-time charge are observable.
+
+inference:
+  name: role_router
+  params:
+    default_role: policy
+    routes:
+      policy:
+        name: ollama
+        params:
+          host: http://localhost:11434
+          model_id: qwen3-vl:4b
+          expected_digest: 9c60bdd691c1897bbfe5ddbc67336848e18c346b7ee2ab8541b135f208e5bb38
+          temperature: 0.0
+          num_predict: 48
+          sampling_seed: 0
+          timeout_s: 180.0
+          endpoint: chat
+          keep_alive: 30m
+          think: false
+          response_channel: thinking
+          charge_mode: fixed
+          fixed_latency_s:
+            policy: 1.0
+      reasoner:
+        name: ollama
+        params:
+          host: http://localhost:11434
+          model_id: gpt-oss:20b
+          temperature: 0.0
+          num_predict: 256
+          sampling_seed: 1020
+          timeout_s: 300.0
+          endpoint: chat
+          keep_alive: 30m
+          think: low
+          response_channel: content
+          charge_mode: fixed
+          fixed_latency_s:
+            reasoner: 8.5

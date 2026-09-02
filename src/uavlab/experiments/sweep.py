@@ -12,6 +12,7 @@ avoid.
 from __future__ import annotations
 
 import asyncio
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -74,6 +75,11 @@ async def run_sweep(
         )
         result = await orchestrator.run()
         results.append(result)
+        if episode_dir is not None:
+            (episode_dir / "result.json").write_text(
+                json.dumps(result.model_dump(mode="json"), indent=2),
+                encoding="utf-8",
+            )
         if result.error:
             failures.append((arch.id, env.id, seed, result.error))
 

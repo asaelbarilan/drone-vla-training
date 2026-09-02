@@ -1,0 +1,13 @@
+# RGB-only rendering variant for monocular policies such as See, Point, Fly.
+# Scene generation, dynamics, scoring and mission horizon remain identical to
+# grid_nav; only the required camera channel is enabled.
+
+_base_: grid_nav.yaml
+
+id: grid_nav_rgb
+
+params:
+  render: true
+  render_depth: false
+  image_size: 224
+  camera_pitch_rad: -0.15

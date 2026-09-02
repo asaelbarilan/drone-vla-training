@@ -74,11 +74,13 @@ def make_policy(replies: list[str], **params) -> tuple[VLMPointWaypointPolicy, S
     return policy, backend
 
 
-def rendering_context(seed: int = 11) -> DecisionContext:
+def rendering_context(seed: int = 11, **env_params) -> DecisionContext:
     """A context whose observation carries a genuinely rendered frame."""
     from uavlab.contracts import MemorySnapshot, PerceptionState
 
-    env = REGISTRY.build("environment", "grid3d", {"render": True, "sensor_range_m": 60.0})
+    params = {"render": True, "sensor_range_m": 60.0}
+    params.update(env_params)
+    env = REGISTRY.build("environment", "grid3d", params)
     obs = asyncio.run(env.reset(MISSION, seed))
     return DecisionContext(
         mission=MISSION,
@@ -140,6 +142,222 @@ def test_arrival_becomes_a_directive_not_motion():
     envelope = asyncio.run(policy.decide(rendering_context()))
     assert envelope.kind is DecisionKind.MISSION_DIRECTIVE
     assert envelope.payload.label is ProgressLabel.STOP
+    assert policy.stats()["vlm_arrived_reports"] == 1.0
+
+
+def _reply_for_world_point(position, yaw: float, target) -> str:
+    import json
+    import numpy as np
+
+    from uavlab.core.camera import Camera
+
+    camera = Camera()
+    pixels, _ = camera.project(
+        np.array([[target.x, target.y, target.z]], dtype=float),
+        np.array([position.x, position.y, position.z], dtype=float),
+        yaw,
+    )
+    return json.dumps(
+        {
+            "found": True,
+            "u": int(round(float(pixels[0, 0]))),
+            "v": int(round(float(pixels[0, 1]))),
+            "arrived": False,
+        }
+    )
+
+
+def _move_context(ctx: DecisionContext, position, yaw: float, seq: int) -> None:
+    t_sim_ns = seq * 1_000_000_000
+    ctx.observation = ctx.observation.model_copy(
+        update={"position": position, "yaw_rad": yaw, "seq": seq, "t_sim_ns": t_sim_ns}
+    )
+    ctx.t_sim_ns = t_sim_ns
+
+
+def test_two_grounded_views_produce_a_metric_target_without_privileged_state():
+    import math
+
+    from uavlab.contracts import Vec3
+
+    target = Vec3(x=12.0, y=2.0, z=3.0)
+    first_position = Vec3(x=0.0, y=-2.0, z=3.0)
+    second_position = Vec3(x=2.0, y=-2.0, z=3.0)
+    first_yaw = math.atan2(target.y - first_position.y, target.x - first_position.x)
+    second_yaw = math.atan2(target.y - second_position.y, target.x - second_position.x)
+    replies = [
+        _reply_for_world_point(first_position, first_yaw, target),
+        _reply_for_world_point(second_position, second_yaw, target),
+    ]
+    policy, _ = make_policy(
+        replies,
+        range_mode="two_view",
+        range_stop_confirmations=1,
+        trust_model_arrival=False,
+    )
+    ctx = rendering_context()
+    assert ctx.observation.privileged is None
+    _move_context(ctx, first_position, first_yaw, 1)
+    first = asyncio.run(policy.decide(ctx))
+    assert first.kind is DecisionKind.WAYPOINT
+    assert first.provenance["range_source"] == "fixed_hop"
+
+    _move_context(ctx, second_position, second_yaw, 2)
+    second = asyncio.run(policy.decide(ctx))
+    assert second.kind is DecisionKind.WAYPOINT
+    assert second.provenance["range_source"] == "two_view"
+    assert policy.stats()["vlm_range_estimates"] == 1.0
+    assert policy.stats()["vlm_range_last_m"] == pytest.approx(
+        second_position.distance_to(target), abs=0.5
+    )
+
+
+def test_active_range_probe_is_bounded_and_lateral():
+    import math
+
+    from uavlab.contracts import Vec3
+
+    target = Vec3(x=12.0, y=2.0, z=3.0)
+    position = Vec3(x=0.0, y=-2.0, z=3.0)
+    yaw = math.atan2(target.y - position.y, target.x - position.x)
+    policy, _ = make_policy(
+        [_reply_for_world_point(position, yaw, target)],
+        range_mode="two_view",
+        range_probe_m=2.0,
+        trust_model_arrival=False,
+    )
+    ctx = rendering_context()
+    _move_context(ctx, position, yaw, 1)
+    proposal = asyncio.run(policy.decide(ctx))
+    displacement = Vec3(
+        x=proposal.payload.target.x - position.x,
+        y=proposal.payload.target.y - position.y,
+        z=proposal.payload.target.z - position.z,
+    )
+    target_direction = Vec3(
+        x=target.x - position.x,
+        y=target.y - position.y,
+        z=target.z - position.z,
+    )
+
+    assert proposal.provenance["range_source"] == "active_probe"
+    assert displacement.norm() == pytest.approx(2.0, abs=1e-6)
+    assert abs(displacement.x * target_direction.x + displacement.y * target_direction.y) < 1e-6
+    assert policy.stats()["vlm_range_probes"] == 1.0
+
+
+def test_confirmed_two_view_range_can_stop_without_model_arrival():
+    import math
+
+    from uavlab.contracts import Vec3
+
+    target = Vec3(x=5.0, y=0.0, z=3.0)
+    first_position = Vec3(x=3.0, y=-1.2, z=3.0)
+    second_position = Vec3(x=4.2, y=0.0, z=3.0)
+    first_yaw = math.atan2(target.y - first_position.y, target.x - first_position.x)
+    second_yaw = math.atan2(target.y - second_position.y, target.x - second_position.x)
+    policy, _ = make_policy(
+        [
+            _reply_for_world_point(first_position, first_yaw, target),
+            _reply_for_world_point(second_position, second_yaw, target),
+        ],
+        range_mode="two_view",
+        range_stop_m=2.0,
+        range_stop_confirmations=1,
+        trust_model_arrival=False,
+    )
+    ctx = rendering_context()
+    _move_context(ctx, first_position, first_yaw, 1)
+    assert asyncio.run(policy.decide(ctx)).kind is DecisionKind.WAYPOINT
+    _move_context(ctx, second_position, second_yaw, 2)
+    stopped = asyncio.run(policy.decide(ctx))
+
+    assert stopped.kind is DecisionKind.MISSION_DIRECTIVE
+    assert stopped.payload.label is ProgressLabel.STOP
+    assert "two-view range" in stopped.payload.rationale
+    assert policy.stats()["vlm_range_arrivals"] == 1.0
+
+
+def test_depth_at_the_vlm_pixel_produces_metric_range():
+    ctx = rendering_context(seed=15, render_depth=True)
+    target_hit = next(hit for hit in ctx.observation.semantic_hits if hit.label == "target")
+    reply = _reply_for_world_point(
+        ctx.observation.position, ctx.observation.yaw_rad, target_hit.position
+    )
+    policy, _ = make_policy(
+        [reply],
+        range_mode="depth",
+        trust_model_arrival=False,
+    )
+    proposal = asyncio.run(policy.decide(ctx))
+
+    assert proposal.kind is DecisionKind.WAYPOINT
+    assert proposal.provenance["range_source"] == "depth"
+    assert policy.stats()["vlm_range_estimates"] == 1.0
+    assert policy.stats()["vlm_range_last_m"] == pytest.approx(
+        target_hit.distance_m, abs=0.75
+    )
+
+
+def test_confirmed_depth_range_can_stop_without_model_arrival():
+    import numpy as np
+
+    from uavlab.core.frame_store import global_store
+
+    ctx = rendering_context(render_depth=True)
+    assert ctx.observation.depth is not None
+    depth = np.full(ctx.observation.depth.shape, np.inf, dtype=np.float32)
+    depth[109:116, 109:116] = 1.0
+    global_store().put(ctx.observation.depth.uri, depth)
+    policy, _ = make_policy(
+        ['{"found": true, "u": 112, "v": 112, "arrived": false}'],
+        range_mode="depth",
+        range_stop_m=2.0,
+        range_stop_confirmations=1,
+        trust_model_arrival=False,
+    )
+    stopped = asyncio.run(policy.decide(ctx))
+
+    assert stopped.kind is DecisionKind.MISSION_DIRECTIVE
+    assert stopped.payload.label is ProgressLabel.STOP
+    assert "depth range" in stopped.payload.rationale
+    assert policy.stats()["vlm_range_arrivals"] == 1.0
+
+
+@pytest.mark.parametrize(
+    ("confirmation", "expected_kind"),
+    [
+        ('{"confirmed": true}', DecisionKind.MISSION_DIRECTIVE),
+        ('{"confirmed": false}', DecisionKind.WAYPOINT),
+    ],
+)
+def test_depth_stop_requires_a_second_semantic_crop_check(confirmation, expected_kind):
+    import numpy as np
+
+    from uavlab.core.frame_store import global_store
+
+    ctx = rendering_context(render_depth=True)
+    depth = np.full(ctx.observation.depth.shape, np.inf, dtype=np.float32)
+    depth[109:116, 109:116] = 1.0
+    global_store().put(ctx.observation.depth.uri, depth)
+    policy, backend = make_policy(
+        [
+            '{"found": true, "u": 112, "v": 112, "arrived": false}',
+            confirmation,
+        ],
+        range_mode="depth",
+        range_stop_m=2.0,
+        range_stop_confirmations=1,
+        range_semantic_confirmation=True,
+        trust_model_arrival=False,
+    )
+    result = asyncio.run(policy.decide(ctx))
+
+    assert result.kind is expected_kind
+    assert backend.calls == 2
+    assert policy.stats()["vlm_range_confirmation_calls"] == 1.0
+    expected_rejections = 0.0 if expected_kind is DecisionKind.MISSION_DIRECTIVE else 1.0
+    assert policy.stats()["vlm_range_confirmation_rejections"] == expected_rejections
 
 
 def test_target_not_found_falls_back_to_search():

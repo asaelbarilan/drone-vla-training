@@ -8,7 +8,7 @@
 # This is the first configuration in the repository whose behaviour depends on a
 # model actually seeing something.
 
-_base_: [c2_vlm_waypoint.yaml, ../models/gemma3_4b.yaml]
+_base_: [c2_vlm_waypoint.yaml, ../models/gemma3_4b_waypoint.yaml]
 
 id: c2g
 
@@ -32,6 +32,17 @@ policy:
     hop_m: 12.0
     arrival_hop_m: 4.0
     min_altitude_m: 2.0
+    # Gemma grounds a pixel reliably but did not report arrival even inside the
+    # goal radius. Read calibrated depth at Gemma's pixel. This uses no semantic
+    # detector, renderer colour, or privileged goal state and maps directly to
+    # RGB-D sensing in AirSim/Gazebo.
+    range_mode: depth
+    depth_patch_px: 3
+    range_track_tolerance_m: 2.5
+    range_stop_m: 2.0
+    range_stop_confirmations: 2
+    range_semantic_confirmation: true
+    trust_model_arrival: false
 
 staleness:
   # Raised from the 1.5 s default, and this is a *measured accommodation*, not a

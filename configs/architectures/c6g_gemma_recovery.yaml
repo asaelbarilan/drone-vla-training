@@ -4,7 +4,7 @@
 # simulated one, because the reasoner call now costs real seconds. This is the
 # configuration where the compute argument should show up most clearly.
 
-_base_: [c6_triggered_recovery.yaml, ../models/gemma3_4b.yaml]
+_base_: [c6_triggered_recovery.yaml, ../models/gemma3_4b_waypoint.yaml]
 
 id: c6g
 

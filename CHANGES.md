@@ -1649,3 +1649,51 @@ is not primarily perception.
 
 The mechanism is still unidentified. Three decisions recorded (D-31, D-32, D-33)
 so the rejected explanations are not re-tried. No code changed.
+
+## Post-D-14 learned and real-model gates
+
+The two central TODO items were resumed on the local deterministic simulator.
+The rerun first found two harness defects: training tools still looked up the
+pre-D-19 frame URI and therefore recorded zero samples, and experiment seeds
+were multiplied by 1000 while manifests recorded the unmapped values. Both are
+fixed and pinned by tests (D-37, D-38).
+
+The learned-policy rerun completed on training seeds 1000–1249: 22,025 samples,
+20 GPU epochs, 1.439 m/s validation velocity error. It did not navigate on held-
+out seeds 1–40: C7T and C8T both 0/40 success; C8T reached the goal once and its
+shield removed all collisions. D-14 was not the binding constraint (D-39).
+
+The corrected Gemma screen on seeds 1–3 scored C2 2/3, C2G 0/3 and C3G 0/3.
+A standalone C2G seed-2 run reached the goal radius but never stopped. Clean-
+frame and in-mission probes rejected target-scale prompting, Qwen3-VL 2B,
+Moondream and SmolVLM as drop-in fixes. The open problem is terminal range, not
+whether Gemma sees the target (D-40).
+
+## Taxonomy corrected to the paper's top-level comparison
+
+The design space is now represented as one classical baseline plus five
+autonomy families. The former seventh family, `fast_slow_hierarchy`, is an
+explicit subfamily of `hybrid_stack`; C3 is the primary hybrid representative
+and C12 remains the fast/slow subgroup reference. The validator, CLI, smoke
+test, family documentation and C10–C14 configs now encode that nesting.
+
+Added `core_families_local.yaml` as the frozen first local-simulator screen:
+C0, C1, C2, C3, C6 and C8 on identical seeds. Its comments state that scripted
+slots validate wiring only and are not foundation-model results. A one-seed
+end-to-end smoke completed all six cells; the output is diagnostic only (D-41).
+
+## Real-VLM RGB-D terminal gate
+
+Added a calibrated local depth-camera channel and synchronized it with the RGB
+frame before slow inference. The VLM still supplies the semantic pixel; depth
+is sampled only at that pixel. A world-point consistency check and a second
+cropped VLM call are required before stop. The shared
+`gemma3_4b_waypoint.yaml` fragment now prevents C2G–C6G from drifting apart.
+
+Rejected three unsafe variants on measurement: triangulated steering, active
+parallax steering, and depth-only stop. The last produced premature stops 24.77
+m and 27.72 m from the goal. The semantic crop gate removed the false stops but
+did not create capability: C2G, C3G and C6G remained 0/3 while scripted C2 was
+2/3. The vision task now inherits the same 90 s horizon as the non-vision task;
+C2G seed 2 reached the goal at 62.65 s but crossed it and never stopped. The
+declared 20-seed screen was therefore not run (D-42).

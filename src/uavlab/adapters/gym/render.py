@@ -24,9 +24,12 @@ VLM in the loop, on a laptop, deterministically, at screening speed.
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
 
 import numpy as np
+
+# Re-exported: the geometry is shared with every adapter and policy; the
+# rasteriser below is specific to this one.
+from uavlab.core.camera import Camera
 
 SKY_TOP = (96, 148, 210)
 SKY_BOTTOM = (176, 202, 232)
@@ -35,72 +38,6 @@ TARGET_COLOR = (206, 44, 44)
 LURE_COLOR = (188, 96, 60)
 DISTRACTOR_COLOR = (86, 132, 96)
 OBSTACLE_BASE = (128, 128, 134)
-
-
-@dataclass(slots=True)
-class Camera:
-    """Forward-facing pinhole camera rigidly mounted to the airframe."""
-
-    width: int = 224
-    height: int = 224
-    fov_deg: float = 90.0
-    pitch_rad: float = -0.15
-    """Slight downward tilt, as a survey camera would be mounted."""
-
-    @property
-    def focal_px(self) -> float:
-        return (self.width / 2.0) / math.tan(math.radians(self.fov_deg) / 2.0)
-
-    def project(self, points_world: np.ndarray, position: np.ndarray, yaw: float) -> tuple[np.ndarray, np.ndarray]:
-        """World points (N,3) -> pixel coords (N,2) and camera depth (N,).
-
-        Depth is returned separately so the caller can cull behind-camera points
-        and sort by distance; a projected pixel alone cannot tell you either.
-        """
-        rel = points_world - position
-        cos_y, sin_y = math.cos(-yaw), math.sin(-yaw)
-        # Rotate into a body frame whose +x axis is the direction of travel.
-        fwd = rel[:, 0] * cos_y - rel[:, 1] * sin_y
-        left = rel[:, 0] * sin_y + rel[:, 1] * cos_y
-        up = rel[:, 2].copy()
-
-        cos_p, sin_p = math.cos(-self.pitch_rad), math.sin(-self.pitch_rad)
-        fwd_p = fwd * cos_p - up * sin_p
-        up_p = fwd * sin_p + up * cos_p
-
-        depth = fwd_p
-        safe = np.where(np.abs(depth) < 1e-6, 1e-6, depth)
-        u = self.width / 2.0 - self.focal_px * (left / safe)
-        v = self.height / 2.0 - self.focal_px * (up_p / safe)
-        return np.stack([u, v], axis=-1), depth
-
-    def unproject(
-        self, u: float, v: float, depth_m: float, position: np.ndarray, yaw: float
-    ) -> np.ndarray:
-        """Pixel + assumed depth -> a world point. Exact inverse of `project`.
-
-        This is what turns "the model pointed at that part of the image" into a
-        waypoint, which is the whole mechanism of the point-and-fly family: the
-        VLM never emits a coordinate, it emits a *pixel*, and the geometry is
-        done by code that can be checked.
-
-        Depth cannot be recovered from one pixel, so the caller supplies it —
-        normally a fixed hop distance. That is a real limitation of the design,
-        not an implementation shortcut, and it is why these policies propose a
-        direction repeatedly rather than one final destination.
-        """
-        left = (self.width / 2.0 - u) * depth_m / self.focal_px
-        up_p = (self.height / 2.0 - v) * depth_m / self.focal_px
-        fwd_p = depth_m
-
-        cos_p, sin_p = math.cos(-self.pitch_rad), math.sin(-self.pitch_rad)
-        fwd = fwd_p * cos_p + up_p * sin_p
-        up = -fwd_p * sin_p + up_p * cos_p
-
-        cos_y, sin_y = math.cos(-yaw), math.sin(-yaw)
-        rel_x = fwd * cos_y + left * sin_y
-        rel_y = -fwd * sin_y + left * cos_y
-        return position + np.array([rel_x, rel_y, up])
 
 
 def _box_corners(center: np.ndarray, half: np.ndarray) -> np.ndarray:
@@ -114,7 +51,9 @@ def _box_corners(center: np.ndarray, half: np.ndarray) -> np.ndarray:
     return center + signs * half
 
 
-def _shade(base: tuple[int, int, int], depth: float, max_depth: float = 45.0) -> tuple[int, int, int]:
+def _shade(
+    base: tuple[int, int, int], depth: float, max_depth: float = 45.0
+) -> tuple[int, int, int]:
     """Flat distance fog, so depth is legible to a vision model."""
     t = float(np.clip(depth / max_depth, 0.0, 1.0))
     return tuple(int(c * (1.0 - 0.65 * t) + 190 * 0.65 * t) for c in base)
@@ -198,6 +137,130 @@ def render_frame(
                 fill=_shade(colour, distance),
                 outline=_shade((40, 20, 20), distance),
             )
+    return image
+
+
+def render_depth_frame(
+    position: np.ndarray,
+    yaw: float,
+    obstacles: list,
+    landmarks: list,
+    target_label: str,
+    camera: Camera | None = None,
+    visible_labels: set[str] | None = None,
+) -> np.ndarray:
+    """Render calibrated camera-forward depth in metres.
+
+    This is a geometric sensor channel, not a semantic mask. Obstacles and all
+    admitted landmarks write depth; the VLM must still supply the target pixel.
+    Pixels with no rendered surface are ``inf``.
+    """
+    from PIL import Image, ImageDraw
+
+    cam = camera or Camera()
+    depth_image = Image.new("F", (cam.width, cam.height), float("inf"))
+    draw = ImageDraw.Draw(depth_image)
+
+    drawables: list[tuple[float, str, object]] = []
+    for obstacle in obstacles:
+        distance = float(np.linalg.norm(obstacle.center - position))
+        drawables.append((distance, "box", obstacle))
+    for mark in landmarks:
+        if visible_labels is not None and mark.label not in visible_labels:
+            continue
+        distance = float(np.linalg.norm(mark.position - position))
+        drawables.append((distance, "mark", mark))
+    drawables.sort(key=lambda item: -item[0])
+
+    for distance, kind, item in drawables:
+        if distance > 90.0:
+            continue
+        if kind == "box":
+            corners = _box_corners(item.center, item.half)
+            pixels, depths = cam.project(corners, position, yaw)
+            keep = depths > 0.2
+            if keep.sum() < 3:
+                continue
+            hull = _convex_hull(
+                [(float(x), float(y)) for x, y in pixels[keep]]
+            )
+            if len(hull) >= 3:
+                draw.polygon(hull, fill=float(np.min(depths[keep])))
+        else:
+            pixels, depths = cam.project(np.array([item.position]), position, yaw)
+            if depths[0] <= 0.2:
+                continue
+            u, v = float(pixels[0, 0]), float(pixels[0, 1])
+            radius = max(2.0, cam.focal_px * 1.6 / max(depths[0], 1e-3))
+            draw.rectangle(
+                [u - radius * 0.55, v - radius * 2.2, u + radius * 0.55, v + radius * 0.9],
+                fill=float(depths[0]),
+            )
+    return np.asarray(depth_image, dtype=np.float32)
+
+
+def render_down_frame(
+    position: np.ndarray,
+    yaw: float,
+    obstacles: list,
+    landmarks: list,
+    target_label: str,
+    camera: Camera | None = None,
+    visible_labels: set[str] | None = None,
+):
+    """Render a nadir RGB camera for dual-view direct-action policies.
+
+    Landmarks are painted at their ground footprint while the navigation goal
+    remains an above-object 3-D pose. That is the physical distinction a down
+    camera sees during an approach: the object is on the ground and the scored
+    vehicle pose is safely above it.
+    """
+    from PIL import Image, ImageDraw
+
+    cam = camera or Camera(pitch_rad=-math.pi / 2.0)
+    image = Image.new("RGB", (cam.width, cam.height), GROUND)
+    draw = ImageDraw.Draw(image)
+
+    drawables: list[tuple[float, str, object]] = []
+    for obstacle in obstacles:
+        drawables.append((float(np.linalg.norm(obstacle.center - position)), "box", obstacle))
+    for mark in landmarks:
+        if visible_labels is not None and mark.label not in visible_labels:
+            continue
+        drawables.append((float(np.linalg.norm(mark.position - position)), "mark", mark))
+    drawables.sort(key=lambda item: -item[0])
+
+    for distance, kind, item in drawables:
+        if kind == "box":
+            corners = _box_corners(item.center, item.half)
+            pixels, depths = cam.project(corners, position, yaw)
+            keep = depths > 0.2
+            if keep.sum() < 3:
+                continue
+            hull = _convex_hull([(float(x), float(y)) for x, y in pixels[keep]])
+            if len(hull) >= 3:
+                draw.polygon(
+                    hull,
+                    fill=_shade(OBSTACLE_BASE, distance),
+                    outline=_shade((70, 70, 76), distance),
+                )
+            continue
+
+        ground_point = np.array([[item.position[0], item.position[1], 0.0]], dtype=float)
+        pixels, depths = cam.project(ground_point, position, yaw)
+        if depths[0] <= 0.2:
+            continue
+        u, v = float(pixels[0, 0]), float(pixels[0, 1])
+        radius = max(3.0, cam.focal_px * 1.3 / max(depths[0], 1e-3))
+        if item.label == target_label:
+            colour = LURE_COLOR if getattr(item, "is_lure", False) else TARGET_COLOR
+        else:
+            colour = DISTRACTOR_COLOR
+        draw.ellipse(
+            [u - radius, v - radius, u + radius, v + radius],
+            fill=_shade(colour, distance),
+            outline=_shade((40, 20, 20), distance),
+        )
     return image
 
 

@@ -1,0 +1,1650 @@
+{
+  "run": "runs/onfly_c5_qwen_seed1060_v2",
+  "architecture": "c5_onfly_qwen",
+  "seed": 1060,
+  "success": false,
+  "stored_final_distance_m": 33.54158523418361,
+  "replay_final_distance_m": 33.54158523418361,
+  "replay_distance_error_m": 0.0,
+  "decision_frames": 89,
+  "visible_decision_frames": 0,
+  "visible_fraction": 0.0,
+  "first_visible": null,
+  "last_visible": null,
+  "visible_pixel_error_mean": null,
+  "visible_pixel_error_median": null,
+  "visible_pixel_error_max": null,
+  "closest_approach": {
+    "observation_seq": 960,
+    "t_sim_s": 47.95,
+    "distance_to_goal_m": 23.193300849413838,
+    "predicted_pixel": [
+      104.022,
+      95.0931
+    ],
+    "sampled_depth_m": 7.0,
+    "gated_range_m": 6.932417,
+    "history_pixel": "(104, 95)",
+    "target_visible": false
+  },
+  "monitor_labels": {
+    "continue": 8,
+    "lost": 37
+  },
+  "monitor_visibility_scored": 43,
+  "monitor_visibility_accuracy": 0.9767441860465116,
+  "monitor_false_lost_while_target_visible": 0,
+  "monitor_continue_while_target_absent": 8,
+  "monitor_rows": [
+    {
+      "t_sim_s": 1.2,
+      "observation_seq": 25,
+      "distance_to_goal_m": 34.88888178944354,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 3.2,
+      "observation_seq": 65,
+      "distance_to_goal_m": 32.42684485608497,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 5.2,
+      "observation_seq": 105,
+      "distance_to_goal_m": 29.19935192225301,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 7.2,
+      "observation_seq": 145,
+      "distance_to_goal_m": 26.70519464843852,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 9.2,
+      "observation_seq": 185,
+      "distance_to_goal_m": 25.166319947379314,
+      "label": "continue",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "pre-acquisition LOST contradicted by declared history; normalized; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False"
+    },
+    {
+      "t_sim_s": 11.2,
+      "observation_seq": 225,
+      "distance_to_goal_m": 25.950006593266615,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 13.2,
+      "observation_seq": 265,
+      "distance_to_goal_m": 26.09800919725636,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 15.2,
+      "observation_seq": 305,
+      "distance_to_goal_m": 26.282793960238983,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 17.2,
+      "observation_seq": 345,
+      "distance_to_goal_m": 26.401298967824957,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 19.2,
+      "observation_seq": 385,
+      "distance_to_goal_m": 25.75440355975116,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 21.2,
+      "observation_seq": 425,
+      "distance_to_goal_m": 25.79164072826928,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 23.2,
+      "observation_seq": 465,
+      "distance_to_goal_m": 25.81688275744238,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 25.2,
+      "observation_seq": 505,
+      "distance_to_goal_m": 25.8234984855629,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 27.2,
+      "observation_seq": 545,
+      "distance_to_goal_m": 25.51392825246166,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 29.2,
+      "observation_seq": 585,
+      "distance_to_goal_m": 24.36201685683894,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 31.2,
+      "observation_seq": 625,
+      "distance_to_goal_m": 25.67827453910365,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 33.2,
+      "observation_seq": 665,
+      "distance_to_goal_m": 25.92090834000453,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 35.2,
+      "observation_seq": 705,
+      "distance_to_goal_m": 25.959272455472032,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 37.2,
+      "observation_seq": 745,
+      "distance_to_goal_m": 25.987167909732584,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 39.2,
+      "observation_seq": 785,
+      "distance_to_goal_m": 26.23951566894196,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 41.2,
+      "observation_seq": 825,
+      "distance_to_goal_m": 26.232615518354567,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 43.2,
+      "observation_seq": 865,
+      "distance_to_goal_m": 25.47172668496799,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 45.2,
+      "observation_seq": 905,
+      "distance_to_goal_m": 24.567016491864564,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 47.2,
+      "observation_seq": 945,
+      "distance_to_goal_m": 23.41752627687036,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 49.2,
+      "observation_seq": 985,
+      "distance_to_goal_m": 23.651102044374948,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 51.2,
+      "observation_seq": 1025,
+      "distance_to_goal_m": 24.152230011052275,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 53.2,
+      "observation_seq": 1065,
+      "distance_to_goal_m": 24.75020011080408,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 55.2,
+      "observation_seq": 1105,
+      "distance_to_goal_m": 25.073795561557592,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 57.2,
+      "observation_seq": 1145,
+      "distance_to_goal_m": 25.633936644050753,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 59.2,
+      "observation_seq": 1185,
+      "distance_to_goal_m": 25.60150933347893,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 61.2,
+      "observation_seq": 1225,
+      "distance_to_goal_m": 25.605684219895483,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 63.2,
+      "observation_seq": 1265,
+      "distance_to_goal_m": 25.54932736469798,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 65.2,
+      "observation_seq": 1305,
+      "distance_to_goal_m": 26.270818326352742,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 67.2,
+      "observation_seq": 1345,
+      "distance_to_goal_m": 26.45658902653234,
+      "label": "continue",
+      "declared_latest_visible": true,
+      "target_visible": false,
+      "latest_visibility_correct": false,
+      "evidence": "visual STOP vetoed by synchronized depth (7.0 m > 3.0 m); earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 69.2,
+      "observation_seq": 1385,
+      "distance_to_goal_m": 26.76976383290026,
+      "label": "continue",
+      "declared_latest_visible": null,
+      "target_visible": false,
+      "latest_visibility_correct": null,
+      "evidence": "STOP awaiting confirmation 1/2"
+    },
+    {
+      "t_sim_s": 71.2,
+      "observation_seq": 1425,
+      "distance_to_goal_m": 26.90935690479576,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 73.2,
+      "observation_seq": 1465,
+      "distance_to_goal_m": 26.68280744560778,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 75.2,
+      "observation_seq": 1505,
+      "distance_to_goal_m": 25.959633334282202,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 77.2,
+      "observation_seq": 1545,
+      "distance_to_goal_m": 25.90897211103335,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 79.2,
+      "observation_seq": 1585,
+      "distance_to_goal_m": 26.575278120377344,
+      "label": "continue",
+      "declared_latest_visible": null,
+      "target_visible": false,
+      "latest_visibility_correct": null,
+      "evidence": "STOP awaiting confirmation 1/2"
+    },
+    {
+      "t_sim_s": 81.2,
+      "observation_seq": 1625,
+      "distance_to_goal_m": 27.68991990340667,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 83.2,
+      "observation_seq": 1665,
+      "distance_to_goal_m": 27.692200106159586,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 85.2,
+      "observation_seq": 1705,
+      "distance_to_goal_m": 30.26441571636904,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 87.2,
+      "observation_seq": 1745,
+      "distance_to_goal_m": 31.333859069086518,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    },
+    {
+      "t_sim_s": 89.2,
+      "observation_seq": 1785,
+      "distance_to_goal_m": 33.130912971101154,
+      "label": "lost",
+      "declared_latest_visible": false,
+      "target_visible": false,
+      "latest_visibility_correct": true,
+      "evidence": "visual monitor classified lost from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=True"
+    }
+  ],
+  "rows": [
+    {
+      "observation_seq": 1,
+      "t_sim_s": 0.0,
+      "distance_to_goal_m": 35.0060853853471,
+      "predicted_pixel": [
+        89.2893,
+        66.967
+      ],
+      "sampled_depth_m": 5.478983,
+      "gated_range_m": 5.074013,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 20,
+      "t_sim_s": 0.95,
+      "distance_to_goal_m": 35.0060853853471,
+      "predicted_pixel": [
+        89.959,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.510868,
+      "history_pixel": "(90, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 40,
+      "t_sim_s": 1.95,
+      "distance_to_goal_m": 33.972744261850316,
+      "predicted_pixel": [
+        95.986,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.734305,
+      "history_pixel": "(96, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 60,
+      "t_sim_s": 2.95,
+      "distance_to_goal_m": 32.74521443573672,
+      "predicted_pixel": [
+        93.977,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.66634,
+      "history_pixel": "(94, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 80,
+      "t_sim_s": 3.95,
+      "distance_to_goal_m": 31.15036402650955,
+      "predicted_pixel": [
+        164.516,
+        66.967
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.840892,
+      "history_pixel": "(88, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 100,
+      "t_sim_s": 4.95,
+      "distance_to_goal_m": 29.54114467048482,
+      "predicted_pixel": [
+        167.417,
+        83.7087
+      ],
+      "sampled_depth_m": 5.602617,
+      "gated_range_m": 3.736686,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 120,
+      "t_sim_s": 5.95,
+      "distance_to_goal_m": 28.16358277208516,
+      "predicted_pixel": [
+        95.0931,
+        95.0931
+      ],
+      "sampled_depth_m": 6.572269,
+      "gated_range_m": 6.295244,
+      "history_pixel": "(35, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 140,
+      "t_sim_s": 6.95,
+      "distance_to_goal_m": 26.974662706808356,
+      "predicted_pixel": [
+        183.936,
+        95.0931
+      ],
+      "sampled_depth_m": 5.321055,
+      "gated_range_m": 2.847117,
+      "history_pixel": "(184, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 160,
+      "t_sim_s": 7.95,
+      "distance_to_goal_m": 25.82699411314132,
+      "predicted_pixel": [
+        72.994,
+        66.7437
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 5.643121,
+      "history_pixel": "(4, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 180,
+      "t_sim_s": 8.95,
+      "distance_to_goal_m": 25.18683430994677,
+      "predicted_pixel": [
+        223.0,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.172662,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 200,
+      "t_sim_s": 9.95,
+      "distance_to_goal_m": 25.531108109291633,
+      "predicted_pixel": [
+        63.6186,
+        78.1281
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 5.088156,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 220,
+      "t_sim_s": 10.95,
+      "distance_to_goal_m": 25.86762895618321,
+      "predicted_pixel": [
+        106.031,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.962032,
+      "history_pixel": "(106, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 240,
+      "t_sim_s": 11.95,
+      "distance_to_goal_m": 26.083421821982604,
+      "predicted_pixel": [
+        58.038,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.754843,
+      "history_pixel": "(58, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 260,
+      "t_sim_s": 12.95,
+      "distance_to_goal_m": 26.0976417077028,
+      "predicted_pixel": [
+        22.3223,
+        66.967
+      ],
+      "sampled_depth_m": 2.730701,
+      "gated_range_m": 1.138845,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 280,
+      "t_sim_s": 13.95,
+      "distance_to_goal_m": 26.390124314559518,
+      "predicted_pixel": [
+        35.046,
+        74.3333
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 3.492496,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 300,
+      "t_sim_s": 14.95,
+      "distance_to_goal_m": 26.26327394065148,
+      "predicted_pixel": [
+        111.388,
+        178.579
+      ],
+      "sampled_depth_m": 1.786773,
+      "gated_range_m": 1.786671,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 320,
+      "t_sim_s": 15.95,
+      "distance_to_goal_m": 26.399414648748937,
+      "predicted_pixel": [
+        210.946,
+        150.676
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.563576,
+      "history_pixel": "(133, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 340,
+      "t_sim_s": 16.95,
+      "distance_to_goal_m": 26.411750478605345,
+      "predicted_pixel": [
+        154.024,
+        95.0931
+      ],
+      "sampled_depth_m": 5.553968,
+      "gated_range_m": 4.337553,
+      "history_pixel": "(154, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 360,
+      "t_sim_s": 17.95,
+      "distance_to_goal_m": 26.343416680200672,
+      "predicted_pixel": [
+        222.107,
+        111.388
+      ],
+      "sampled_depth_m": 4.370072,
+      "gated_range_m": 1.372853,
+      "history_pixel": "(148, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 380,
+      "t_sim_s": 18.95,
+      "distance_to_goal_m": 25.820395438273945,
+      "predicted_pixel": [
+        167.194,
+        111.612
+      ],
+      "sampled_depth_m": 5.925843,
+      "gated_range_m": 3.963424,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 400,
+      "t_sim_s": 19.95,
+      "distance_to_goal_m": 25.736936013544483,
+      "predicted_pixel": [
+        223.0,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.172662,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 420,
+      "t_sim_s": 20.95,
+      "distance_to_goal_m": 25.774072036511804,
+      "predicted_pixel": [
+        133.711,
+        111.612
+      ],
+      "sampled_depth_m": 5.399903,
+      "gated_range_m": 5.033152,
+      "history_pixel": "(149, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 440,
+      "t_sim_s": 21.95,
+      "distance_to_goal_m": 25.81138348584534,
+      "predicted_pixel": [
+        168.98,
+        95.0931
+      ],
+      "sampled_depth_m": 4.276208,
+      "gated_range_m": 2.795872,
+      "history_pixel": "(169, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 460,
+      "t_sim_s": 22.95,
+      "distance_to_goal_m": 25.81354558672761,
+      "predicted_pixel": [
+        223.0,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.172662,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 480,
+      "t_sim_s": 23.95,
+      "distance_to_goal_m": 25.829059055958037,
+      "predicted_pixel": [
+        78.1281,
+        89.2893
+      ],
+      "sampled_depth_m": 3.615669,
+      "gated_range_m": 3.064263,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 500,
+      "t_sim_s": 24.95,
+      "distance_to_goal_m": 25.93256647945209,
+      "predicted_pixel": [
+        126.568,
+        115.406
+      ],
+      "sampled_depth_m": 4.055003,
+      "gated_range_m": 3.926923,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 520,
+      "t_sim_s": 25.95,
+      "distance_to_goal_m": 25.577371284991003,
+      "predicted_pixel": [
+        22.3223,
+        44.6446
+      ],
+      "sampled_depth_m": 5.178283,
+      "gated_range_m": 2.159614,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 540,
+      "t_sim_s": 26.95,
+      "distance_to_goal_m": 25.584290036228886,
+      "predicted_pixel": [
+        11.1612,
+        89.2893
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.497021,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 560,
+      "t_sim_s": 27.95,
+      "distance_to_goal_m": 25.3396121424865,
+      "predicted_pixel": [
+        61.3864,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.95449,
+      "history_pixel": "(42, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 580,
+      "t_sim_s": 28.95,
+      "distance_to_goal_m": 24.41631696275355,
+      "predicted_pixel": [
+        118.085,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.960547,
+      "history_pixel": "(118, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 600,
+      "t_sim_s": 29.95,
+      "distance_to_goal_m": 24.468814592415796,
+      "predicted_pixel": [
+        79.9139,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.028877,
+      "history_pixel": "(80, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 620,
+      "t_sim_s": 30.95,
+      "distance_to_goal_m": 25.452072476280108,
+      "predicted_pixel": [
+        22.3223,
+        111.612
+      ],
+      "sampled_depth_m": 0.808666,
+      "gated_range_m": 0.337256,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 640,
+      "t_sim_s": 31.95,
+      "distance_to_goal_m": 25.89733432259909,
+      "predicted_pixel": [
+        22.3223,
+        22.3223
+      ],
+      "sampled_depth_m": 1.667603,
+      "gated_range_m": 0.695478,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 660,
+      "t_sim_s": 32.95,
+      "distance_to_goal_m": 25.920315336314182,
+      "predicted_pixel": [
+        173.444,
+        74.3333
+      ],
+      "sampled_depth_m": 1.387593,
+      "gated_range_m": 0.856012,
+      "history_pixel": "(126, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 680,
+      "t_sim_s": 33.95,
+      "distance_to_goal_m": 25.86234279765018,
+      "predicted_pixel": [
+        218.982,
+        95.0931
+      ],
+      "sampled_depth_m": 1.187013,
+      "gated_range_m": 0.389086,
+      "history_pixel": "(219, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 700,
+      "t_sim_s": 34.95,
+      "distance_to_goal_m": 25.93378744183072,
+      "predicted_pixel": [
+        102.906,
+        95.0931
+      ],
+      "sampled_depth_m": 0.848989,
+      "gated_range_m": 0.838364,
+      "history_pixel": "(103, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 720,
+      "t_sim_s": 35.95,
+      "distance_to_goal_m": 25.984457605527076,
+      "predicted_pixel": [
+        118.978,
+        95.0931
+      ],
+      "sampled_depth_m": 1.058153,
+      "gated_range_m": 1.050322,
+      "history_pixel": "(119, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 740,
+      "t_sim_s": 36.95,
+      "distance_to_goal_m": 25.9870997320644,
+      "predicted_pixel": [
+        223.0,
+        223.0
+      ],
+      "sampled_depth_m": 0.912245,
+      "gated_range_m": 0.283143,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 760,
+      "t_sim_s": 37.95,
+      "distance_to_goal_m": 26.10223180628605,
+      "predicted_pixel": [
+        154.024,
+        95.0931
+      ],
+      "sampled_depth_m": 1.158879,
+      "gated_range_m": 0.905065,
+      "history_pixel": "(154, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 780,
+      "t_sim_s": 38.95,
+      "distance_to_goal_m": 26.23548947145711,
+      "predicted_pixel": [
+        125.005,
+        95.0931
+      ],
+      "sampled_depth_m": 0.619487,
+      "gated_range_m": 0.603807,
+      "history_pixel": "(125, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 800,
+      "t_sim_s": 39.95,
+      "distance_to_goal_m": 26.233283534810454,
+      "predicted_pixel": [
+        131.032,
+        95.0931
+      ],
+      "sampled_depth_m": 0.775614,
+      "gated_range_m": 0.734581,
+      "history_pixel": "(131, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 820,
+      "t_sim_s": 40.95,
+      "distance_to_goal_m": 26.232632315974026,
+      "predicted_pixel": [
+        74.3333,
+        223.0
+      ],
+      "sampled_depth_m": 1.082172,
+      "gated_range_m": 0.884301,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 840,
+      "t_sim_s": 41.95,
+      "distance_to_goal_m": 25.863300911078333,
+      "predicted_pixel": [
+        89.2893,
+        111.612
+      ],
+      "sampled_depth_m": 4.312942,
+      "gated_range_m": 3.994157,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 860,
+      "t_sim_s": 42.95,
+      "distance_to_goal_m": 25.609723084664825,
+      "predicted_pixel": [
+        2.23223,
+        111.612
+      ],
+      "sampled_depth_m": 6.356139,
+      "gated_range_m": 2.005969,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 880,
+      "t_sim_s": 43.95,
+      "distance_to_goal_m": 25.202263819558095,
+      "predicted_pixel": [
+        68.976,
+        95.0931
+      ],
+      "sampled_depth_m": 0.915327,
+      "gated_range_m": 0.70713,
+      "history_pixel": "(69, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 900,
+      "t_sim_s": 44.95,
+      "distance_to_goal_m": 24.65699767120165,
+      "predicted_pixel": [
+        39.0641,
+        83.7087
+      ],
+      "sampled_depth_m": 5.765556,
+      "gated_range_m": 3.042471,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 920,
+      "t_sim_s": 45.95,
+      "distance_to_goal_m": 24.509726868278864,
+      "predicted_pixel": [
+        22.3223,
+        22.3223
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.919365,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 940,
+      "t_sim_s": 46.95,
+      "distance_to_goal_m": 23.634104599714803,
+      "predicted_pixel": [
+        147.104,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 5.864531,
+      "history_pixel": "(147, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 960,
+      "t_sim_s": 47.95,
+      "distance_to_goal_m": 23.193300849413838,
+      "predicted_pixel": [
+        104.022,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.932417,
+      "history_pixel": "(104, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 980,
+      "t_sim_s": 48.95,
+      "distance_to_goal_m": 23.30820940077688,
+      "predicted_pixel": [
+        41.0731,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 3.798082,
+      "history_pixel": "(41, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1000,
+      "t_sim_s": 49.95,
+      "distance_to_goal_m": 24.062836991191073,
+      "predicted_pixel": [
+        27.01,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 3.118957,
+      "history_pixel": "(27, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1020,
+      "t_sim_s": 50.95,
+      "distance_to_goal_m": 24.10609373134335,
+      "predicted_pixel": [
+        56.029,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.636033,
+      "history_pixel": "(56, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1040,
+      "t_sim_s": 51.95,
+      "distance_to_goal_m": 24.24477992065018,
+      "predicted_pixel": [
+        87.9499,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.424214,
+      "history_pixel": "(88, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1060,
+      "t_sim_s": 52.95,
+      "distance_to_goal_m": 24.557217026567837,
+      "predicted_pixel": [
+        22.3223,
+        178.579
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.919365,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1080,
+      "t_sim_s": 53.95,
+      "distance_to_goal_m": 25.042354106831635,
+      "predicted_pixel": [
+        45.984,
+        95.0931
+      ],
+      "sampled_depth_m": 2.575598,
+      "gated_range_m": 1.494589,
+      "history_pixel": "(46, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1100,
+      "t_sim_s": 54.95,
+      "distance_to_goal_m": 25.073004649393845,
+      "predicted_pixel": [
+        139.515,
+        94.8699
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.262494,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1120,
+      "t_sim_s": 55.95,
+      "distance_to_goal_m": 24.9424291144665,
+      "predicted_pixel": [
+        74.3333,
+        185.945
+      ],
+      "sampled_depth_m": 1.672013,
+      "gated_range_m": 1.366291,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1140,
+      "t_sim_s": 56.95,
+      "distance_to_goal_m": 25.561348772949017,
+      "predicted_pixel": [
+        94.8699,
+        78.1281
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.697392,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1160,
+      "t_sim_s": 57.95,
+      "distance_to_goal_m": 25.60465731665894,
+      "predicted_pixel": [
+        78.1281,
+        100.45
+      ],
+      "sampled_depth_m": 5.024569,
+      "gated_range_m": 4.258298,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1180,
+      "t_sim_s": 58.95,
+      "distance_to_goal_m": 25.601588514004778,
+      "predicted_pixel": [
+        217.643,
+        44.4214
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.336944,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1200,
+      "t_sim_s": 59.95,
+      "distance_to_goal_m": 25.59324860472289,
+      "predicted_pixel": [
+        72.5475,
+        94.8699
+      ],
+      "sampled_depth_m": 4.050412,
+      "gated_range_m": 3.250328,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1220,
+      "t_sim_s": 60.95,
+      "distance_to_goal_m": 25.628880079825933,
+      "predicted_pixel": [
+        45.5375,
+        76.3423
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.03751,
+      "history_pixel": "(143, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1240,
+      "t_sim_s": 61.95,
+      "distance_to_goal_m": 25.554682969041867,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "sampled_depth_m": 1.099026,
+      "gated_range_m": 1.099,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1260,
+      "t_sim_s": 62.95,
+      "distance_to_goal_m": 25.549461767653593,
+      "predicted_pixel": [
+        111.612,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1280,
+      "t_sim_s": 63.95,
+      "distance_to_goal_m": 25.450427591437247,
+      "predicted_pixel": [
+        170.989,
+        95.0931
+      ],
+      "sampled_depth_m": 0.365217,
+      "gated_range_m": 0.232674,
+      "history_pixel": "(171, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1300,
+      "t_sim_s": 64.95,
+      "distance_to_goal_m": 26.10007638819485,
+      "predicted_pixel": [
+        85.2713,
+        74.3333
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.300443,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1320,
+      "t_sim_s": 65.95,
+      "distance_to_goal_m": 26.43846911097943,
+      "predicted_pixel": [
+        52.9039,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.453392,
+      "history_pixel": "(53, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1340,
+      "t_sim_s": 66.95,
+      "distance_to_goal_m": 26.456133035526285,
+      "predicted_pixel": [
+        74.3333,
+        111.388
+      ],
+      "sampled_depth_m": 1.744884,
+      "gated_range_m": 1.425838,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1360,
+      "t_sim_s": 67.95,
+      "distance_to_goal_m": 27.093495808499522,
+      "predicted_pixel": [
+        52.2342,
+        66.967
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.414669,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1380,
+      "t_sim_s": 68.95,
+      "distance_to_goal_m": 26.791800650714414,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "sampled_depth_m": 2.059011,
+      "gated_range_m": 2.058963,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1400,
+      "t_sim_s": 69.95,
+      "distance_to_goal_m": 27.588973691540385,
+      "predicted_pixel": [
+        37.2783,
+        66.7437
+      ],
+      "sampled_depth_m": 6.09604,
+      "gated_range_m": 3.137898,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1420,
+      "t_sim_s": 70.95,
+      "distance_to_goal_m": 27.116470326313017,
+      "predicted_pixel": [
+        167.417,
+        200.901
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.668675,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1440,
+      "t_sim_s": 71.95,
+      "distance_to_goal_m": 26.704726105512208,
+      "predicted_pixel": [
+        172.105,
+        95.0931
+      ],
+      "sampled_depth_m": 1.926426,
+      "gated_range_m": 1.20955,
+      "history_pixel": "(172, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1460,
+      "t_sim_s": 72.95,
+      "distance_to_goal_m": 26.68335856262118,
+      "predicted_pixel": [
+        223.0,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.172662,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1480,
+      "t_sim_s": 73.95,
+      "distance_to_goal_m": 26.454232582122586,
+      "predicted_pixel": [
+        120.987,
+        95.0931
+      ],
+      "sampled_depth_m": 1.398743,
+      "gated_range_m": 1.381644,
+      "history_pixel": "(121, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1500,
+      "t_sim_s": 74.95,
+      "distance_to_goal_m": 26.017501079694146,
+      "predicted_pixel": [
+        167.417,
+        167.417
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.668675,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1520,
+      "t_sim_s": 75.95,
+      "distance_to_goal_m": 25.91389235596646,
+      "predicted_pixel": [
+        111.612,
+        223.0
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1540,
+      "t_sim_s": 76.95,
+      "distance_to_goal_m": 25.909095874542146,
+      "predicted_pixel": [
+        74.3333,
+        148.667
+      ],
+      "sampled_depth_m": 0.697147,
+      "gated_range_m": 0.569676,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1560,
+      "t_sim_s": 77.95,
+      "distance_to_goal_m": 26.15901378410104,
+      "predicted_pixel": [
+        128.353,
+        74.3333
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.723309,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1580,
+      "t_sim_s": 78.95,
+      "distance_to_goal_m": 26.450808184185156,
+      "predicted_pixel": [
+        66.7437,
+        44.4214
+      ],
+      "sampled_depth_m": 3.332926,
+      "gated_range_m": 2.511639,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1600,
+      "t_sim_s": 79.95,
+      "distance_to_goal_m": 27.372798330679622,
+      "predicted_pixel": [
+        175.007,
+        69.6456
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 4.229679,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1620,
+      "t_sim_s": 80.95,
+      "distance_to_goal_m": 27.68801969619549,
+      "predicted_pixel": [
+        78.1281,
+        37.2783
+      ],
+      "sampled_depth_m": 2.61764,
+      "gated_range_m": 2.218438,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1640,
+      "t_sim_s": 81.95,
+      "distance_to_goal_m": 27.691740904942773,
+      "predicted_pixel": [
+        110.942,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.998802,
+      "history_pixel": "(111, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1660,
+      "t_sim_s": 82.95,
+      "distance_to_goal_m": 27.69218792812046,
+      "predicted_pixel": [
+        111.612,
+        111.612
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.999839,
+      "history_pixel": "None",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1680,
+      "t_sim_s": 83.95,
+      "distance_to_goal_m": 28.413729553918845,
+      "predicted_pixel": [
+        210.946,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 2.563576,
+      "history_pixel": "(211, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1700,
+      "t_sim_s": 84.95,
+      "distance_to_goal_m": 30.02266784947281,
+      "predicted_pixel": [
+        160.051,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 5.107942,
+      "history_pixel": "(160, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1720,
+      "t_sim_s": 85.95,
+      "distance_to_goal_m": 30.471900017572402,
+      "predicted_pixel": [
+        122.996,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.872552,
+      "history_pixel": "(123, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1740,
+      "t_sim_s": 86.95,
+      "distance_to_goal_m": 31.019047355700124,
+      "predicted_pixel": [
+        122.103,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.89215,
+      "history_pixel": "(122, 95)",
+      "target_visible": false
+    },
+    {
+      "observation_seq": 1760,
+      "t_sim_s": 87.95,
+      "distance_to_goal_m": 31.696341874830942,
+      "predicted_pixel": [
+        118.978,
+        95.0931
+      ],
+      "sampled_depth_m": 7.0,
+      "gated_range_m": 6.948197,
+      "history_pixel": "(119, 95)",
+      "target_visible": false
+    }
+  ],
+  "truth_scope": "offline scoring only; not exposed to the architecture"
+}

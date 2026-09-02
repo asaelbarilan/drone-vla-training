@@ -1,0 +1,16 @@
+_base_: [c3_verifier.yaml, ../models/gemma3_4b_onfly.yaml]
+
+id: c3_onfly_gemma
+profile_of: c3
+family: hybrid_stack
+name: "OnFly decision + verifier + planner (Gemma profile)"
+description: "OnFly image-point decision and depth/bearing verification over the shared planner; no monitor."
+tags: [onfly, normalized_profile, real_model, vision, depth]
+
+verifier:
+  name: onfly_semantic_geometric
+  params:
+    max_waypoint_distance_m: 7.0
+    min_clearance_m: 1.2
+    sensing_horizon_m: 25.0
+    repair: true

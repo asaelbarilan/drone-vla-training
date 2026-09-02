@@ -1,9 +1,12 @@
 # The architectures, by family
 
-Six families are the design space. The fifteen sentinel configurations C0–C14 are
-points in it, and each differs from its parent by as few components as possible,
-so a measured difference has one candidate explanation rather than several.
-Only the *changes* from the parent are listed — everything unstated is inherited.
+One classical control baseline and five autonomy families are the top-level
+design space. The fifteen sentinel configurations C0–C14 are points in it, and
+each differs from its parent by as few components as possible, so a measured
+difference has one candidate explanation rather than several. Fast/slow
+hierarchies are a named subfamily of the hybrid stack, not a seventh peer
+family. Only the *changes* from the parent are listed — everything unstated is
+inherited.
 
 Suffixes: **g** = scripted policy replaced by Gemma 3 4B, **t** = replaced by a
 trained (behaviour-cloned) network. Neither changes anything else.
@@ -18,7 +21,7 @@ named as the design being reproduced, not as a citation that has been checked.
 
 | Config | Headline | Tweaks | Nearest published work |
 |---|---|---|---|
-| **C0** | Oracle ceiling | `authority: waypoint`; `allow_privileged_observations: true`; policy `oracle_waypoint` (`stop_radius_m 1.8`); planner `fixed_local`; shield `simple_collision`; 20 Hz control / 4 Hz decision | — (a control, not a published design) |
+| **C0** | Oracle ceiling | `authority: waypoint`; `allow_privileged_observations: true`; policy `oracle_waypoint` (`stop_radius_m 1.8`); shared planner `super_local`; shield `simple_collision`; 20 Hz control / 4 Hz decision | SUPER execution substrate |
 
 The only configuration permitted to read ground truth. It answers how much
 failure belongs to the flight stack rather than to semantic architecture: if C0
@@ -28,22 +31,28 @@ cannot fly, nothing measured about foundation models means anything.
 
 | Config | Headline | Tweaks | Nearest published work |
 |---|---|---|---|
-| **C1** | Skill-calling LLM | `authority: skill`; policy `scripted_skill` (`standoff_m 1.5`, `scan_when_lost true`, `scan_every 6`, `stop_radius_m 2.0`); planner `fixed_local`; **1 Hz decision** | TypeFly; AerialClaw |
+| **C1** | AerialClaw skill agent | `authority: skill`; real `gpt-oss:20b` policy `aerialclaw_agent`; JSON-schema one-skill turns; SOUL/BODY plus soft skills; typed runtime validation; bounded feedback/reflection history; shared `super_local`; **1 Hz semantic cycle** | **AerialClaw** |
 
-1 Hz is the architectural claim, not a tuning choice — a skill agent is expensive
-per call. `scan_every: 6` *is* a tuning choice, raised from 3 because a scan
-costs a whole decision and at 1 Hz decisions are the scarce resource.
+The accepted development gate scored 5/5 grid navigation and 5/5 object search
+with zero collisions. The LLM authors every semantic hard-skill choice; the
+BODY-derived coverage options use only launch pose and geometric range, never
+target/scoring truth. See `docs/fidelity/AerialClaw.md`.
 
 ## 3. VLM semantic waypointer — visual target and waypoint selection
 
 | Config | Headline | Tweaks | Nearest published work |
 |---|---|---|---|
 | **C2** | Point-and-fly | `authority: waypoint`; policy `vlm_waypoint` (`hop_m 12.0`, `stop_radius_m 2.0`, `stop_confidence 0.35`); planner `fixed_local`; 2 Hz decision | See-Point-Fly; the decision path of OnFly |
-| **C2G** | Point-and-fly, real VLM | policy → `vlm_point_waypoint` on `gemma3:4b` (`hop_m 12.0`, `arrival_hop_m 4.0`, `min_altitude_m 2.0`); `max_decision_age_s` 1.5 → **8.0** | as C2 |
+| **C2G** | Point-and-fly, real VLM | policy → `vlm_point_waypoint` on `gemma3:4b`; calibrated depth is sampled only at Gemma's pixel; stop requires a stable world point plus a second cropped semantic confirmation; `max_decision_age_s` 1.5 → **8.0** | as C2 |
 
 The staleness bound had to rise more than fivefold for Gemma's decisions to be
 admitted at all. That gap is itself a result about whether a model this size can
 hold waypoint authority in a real-time loop.
+
+The RGB-D terminal path prevents the measured false stops, but it does not make
+Gemma capable: C2G/C3G/C6G remain 0/3 in the safe held-out gate (D-42). Depth
+supplies geometry, not semantic identity; a wrong VLM pixel remains a wrong
+target.
 
 ## 4. Hybrid stack — semantics → safety gate → classical execution
 
@@ -58,6 +67,24 @@ C5 changes exactly one plugin against C4, so a difference between them is a
 memory result and can be nothing else. **The G variants do not currently
 separate**: the Gemma policy never consults the belief chain, so memory and
 monitor output have nowhere to land — see CHANGES.md.
+
+### Fast/slow hierarchy subfamily — slow reasoner above a fast VLA
+
+| Config | Headline | Tweaks | Nearest published work |
+|---|---|---|---|
+| **C10** | Blocking fast/slow | `semantic_supervision: periodic_reasoner`; memory `compact_semantic_state`; recovery `hierarchical_reasoner` (**`emit: directive`** — intent, never motion); `reasoner_hz 0.5`, blocking | **CognitiveDrone-R1** |
+| **C11** | + action chunks | `action_horizon: chunk`, `chunk_length 4`; policy → `chunk_vla` (`replan_after 4`) | FLIGHT; ScoutVLA |
+| **C12** | Non-blocking | `semantic_supervision: async_reasoner`; scheduler → `async_multi_rate` — the reasoner no longer blocks the executor | FLIGHT; **LiteVLA-H** |
+| **C13** | Event-triggered | `semantic_supervision: triggered_reasoner`; + monitor `local_progress`; recovery `bounded_reasoner` (`emit: directive`); scheduler → `event_triggered`, `reasoner_hz: null`, `max_calls 8` | **LiteVLA-H** (K=3 with event override) |
+| **C14** | Predictive world model | policy → `world_model_vla` (`prediction_horizon_s 1.0`) — carries target belief forward through occlusion | WorldFly |
+
+C10→C11→C12→C13 isolates one timing property at a time: action horizon, then
+blocking versus concurrent, then scheduled versus event-triggered. C14 changes
+only the policy, so a gain on the occlusion regime is a world-model result.
+
+**CognitiveDrone** reports 59.6% → 77.2% from adding a slow reasoner at
+10 Hz / 2 Hz. That +17.6 pt is the effect size C8→C10 is built to detect. It
+justifies the subgroup's five configurations, not a separate top-level family.
 
 ## 5. Selective recovery supervisor — reasoning only on failure or no progress
 
@@ -84,24 +111,6 @@ C7→C8 adds one component and nothing else, so the safety finding is a property
 of the architecture rather than of the policy in the slot. **C7T/C8T are a
 working pipeline carrying a policy that does not navigate** (success 0.03) —
 their numbers are not an architecture result.
-
-### Hierarchical variants — slow reasoner above a fast VLA
-
-| Config | Headline | Tweaks | Nearest published work |
-|---|---|---|---|
-| **C10** | Blocking fast/slow | `semantic_supervision: periodic_reasoner`; memory `compact_semantic_state`; recovery `hierarchical_reasoner` (**`emit: directive`** — intent, never motion); `reasoner_hz 0.5`, blocking | **CognitiveDrone-R1** |
-| **C11** | + action chunks | `action_horizon: chunk`, `chunk_length 4`; policy → `chunk_vla` (`replan_after 4`) | FLIGHT; ScoutVLA |
-| **C12** | Non-blocking | `semantic_supervision: async_reasoner`; scheduler → `async_multi_rate` — the reasoner no longer blocks the executor | FLIGHT; **LiteVLA-H** |
-| **C13** | Event-triggered | `semantic_supervision: triggered_reasoner`; + monitor `local_progress`; recovery `bounded_reasoner` (`emit: directive`); scheduler → `event_triggered`, `reasoner_hz: null`, `max_calls 8` | **LiteVLA-H** (K=3 with event override) |
-| **C14** | Predictive world model | policy → `world_model_vla` (`prediction_horizon_s 1.0`) — carries target belief forward through occlusion | WorldFly |
-
-C10→C11→C12→C13 isolates one timing property at a time: action horizon, then
-blocking versus concurrent, then scheduled versus event-triggered. C14 changes
-only the policy, so a gain on the occlusion regime is a world-model result.
-
-**CognitiveDrone** reports 59.6% → 77.2% from adding a slow reasoner at
-10 Hz / 2 Hz. That +17.6 pt is the effect size C8→C10 is built to detect, and
-the reason the hierarchy family has five members rather than one.
 
 ---
 

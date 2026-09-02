@@ -1,0 +1,60 @@
+{
+  "architecture": "c0",
+  "deterministic_repeat": {
+    "fields": [
+      "path_length_m",
+      "distance_to_goal_m",
+      "collisions",
+      "decisions_executed",
+      "router_plans_infeasible"
+    ],
+    "passed": true,
+    "seed": 1000
+  },
+  "development_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "held_out_seeds_used": [],
+  "paper": "SUPER",
+  "passed": true,
+  "planner": "super_local",
+  "regimes": {
+    "failure_recovery": {
+      "collisions": 0.0,
+      "downstream_shield_interventions": 0.0,
+      "failures": [],
+      "passed": true,
+      "plans_infeasible": 0.0,
+      "required_successes": 18,
+      "successes": 20
+    },
+    "grid_nav": {
+      "collisions": 0.0,
+      "downstream_shield_interventions": 0.0,
+      "failures": [],
+      "passed": true,
+      "plans_infeasible": 0.0,
+      "required_successes": 19,
+      "successes": 20
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# Development-only C5 search variant. The frozen C5 profile is unchanged.
+# This exposes only onboard odometry-derived route/heading coverage to the
+# decision prompt and strengthens the visual-acquisition confirmation gate.
+
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+
+id: c5_onfly_qwen4_coverage_dev
+profile_of: c5
+name: "C5 OnFly + Qwen3-VL 4B, coverage-aware prompt (development)"
+description: "Seed-1060 diagnostic variant with observable route coverage and stricter acquisition evidence."
+tags: [onfly, development, coverage_prompt, real_model, qwen3_vl_4b]
+
+policy:
+  params:
+    coverage_prompt: true
+
+monitor:
+  params:
+    acquisition_confirmations: 3
+    reject_depth_vetoed_acquisition: true
+    strict_attribute_evidence: true

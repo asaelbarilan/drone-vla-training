@@ -1,0 +1,30 @@
+{
+  "model": "smolvlm256:latest",
+  "seed": 2,
+  "probes": [
+    {
+      "distance_m": 2.0,
+      "image": "reports\\smolvlm256_arrival_probe\\distance_2m.png",
+      "current_reply": " 2.0.",
+      "scale_reply": " 3.0."
+    },
+    {
+      "distance_m": 4.0,
+      "image": "reports\\smolvlm256_arrival_probe\\distance_4m.png",
+      "current_reply": " The length of the red object is 224.",
+      "scale_reply": " The length of the red object is 224 pixels. The width of the red object is 224/2 = 112 pixels. The height of the red object is 224/2 = 112 pixels."
+    },
+    {
+      "distance_m": 8.0,
+      "image": "reports\\smolvlm256_arrival_probe\\distance_8m.png",
+      "current_reply": " The area of the red box is 256. The length of the side of the red box is 12. The area of the green box is 100. The lengths of the sides of the green box are 12 and 12, so the area of the green box is $12 * 12 = 144$. The answer is 144",
+      "scale_reply": " The area of the red box is 150 square units. Therefore, the length of the side of the red box is $\\frac{150}{150} = 1$. The area of the green rectangle is 100 square units. Therefore, the length of the side of the green rectangle is $\\frac{100}{100} = 1$. The lengths of the two sides of the green rectangle are 1 and"
+    },
+    {
+      "distance_m": 12.0,
+      "image": "reports\\smolvlm256_arrival_probe\\distance_12m.png",
+      "current_reply": " 2.",
+      "scale_reply": " 2."
+    }
+  ]
+}

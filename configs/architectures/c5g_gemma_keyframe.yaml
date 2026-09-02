@@ -4,7 +4,7 @@
 # the scripted policy's belief decayed cleanly, whereas a real model's failure to
 # see the target is noisy and correlated with viewpoint.
 
-_base_: [c5_keyframe_memory.yaml, ../models/gemma3_4b.yaml]
+_base_: [c5_keyframe_memory.yaml, ../models/gemma3_4b_waypoint.yaml]
 
 id: c5g
 

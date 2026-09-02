@@ -1,0 +1,13 @@
+_base_: grid_nav_vision.yaml
+
+id: grid_nav_aerovla
+
+params:
+  render: true
+  render_depth: true
+  render_down: true
+  coarse_goal_direction: true
+  image_size: 224
+  camera_pitch_rad: -0.15
+  down_camera_fov_deg: 90.0
+

@@ -1,0 +1,163 @@
+{
+  "run": "runs/onfly_c5_qwen4_native_seed1061_v4",
+  "model": "qwen3-vl:8b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 35.2,
+      "actual_monitor_result_t_s": 35.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 113,
+        "done_reason": "stop",
+        "latency_s": 19.1315
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 37.2,
+      "actual_monitor_result_t_s": 37.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 113,
+        "done_reason": "stop",
+        "latency_s": 1.2088
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 39.2,
+      "actual_monitor_result_t_s": 39.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 113,
+        "done_reason": "stop",
+        "latency_s": 1.1875
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 41.2,
+      "actual_monitor_result_t_s": 41.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 113,
+        "done_reason": "stop",
+        "latency_s": 1.2424
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 43.2,
+      "actual_monitor_result_t_s": 43.2,
+      "image_count": 6,
+      "model_image_count": 6,
+      "layout": "multi_image",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": true,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "STOP"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 113,
+        "done_reason": "stop",
+        "latency_s": 1.2115
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

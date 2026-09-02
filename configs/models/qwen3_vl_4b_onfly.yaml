@@ -1,0 +1,23 @@
+# Parameter-size-matched local backend for the OnFly paper profile.
+#
+# The paper uses Qwen3-VL-4B-AWQ with an FP16 vision tower.  Ollama's public
+# qwen3-vl:4b build is Q4_K_M rather than AWQ, while keeping most vision tensors
+# in F16.  This is therefore a declared compatible-backend test, not checkpoint
+# equivalence.  Full installed blob digest:
+# 9c60bdd691c1897bbfe5ddbc67336848e18c346b7ee2ab8541b135f208e5bb38
+
+_base_: qwen3_vl_8b_onfly.yaml
+
+policy:
+  params:
+    model_id: qwen3-vl:4b
+
+inference:
+  params:
+    model_id: qwen3-vl:4b
+    expected_digest: 9c60bdd691c1897bbfe5ddbc67336848e18c346b7ee2ab8541b135f208e5bb38
+    # With Ollama schema constraints, this build places the JSON object in the
+    # thinking field and leaves content empty even when think=false.  A raw
+    # unconstrained request behaves differently, so the schema gate—not the raw
+    # chat probe—defines the executable adapter contract.
+    response_channel: thinking

@@ -7,7 +7,19 @@ which adapter it came from.
 
 from __future__ import annotations
 
+from typing import Literal
+
 from uavlab.contracts.common import Frame, StrictModel, Vec3
+
+CoarseGoalDirection = Literal[
+    "straight ahead",
+    "forward-right",
+    "to your right",
+    "to your right rear",
+    "forward-left",
+    "to your left",
+    "to your left rear",
+]
 
 
 class CameraIntrinsics(StrictModel):
@@ -82,6 +94,8 @@ class ObservationPacket(StrictModel):
     frame: Frame = Frame.ENU
 
     rgb: SensorRef | None = None
+    rgb_down: SensorRef | None = None
+    """Optional downward RGB camera, independent of the forward ``rgb`` view."""
     depth: SensorRef | None = None
     intrinsics: CameraIntrinsics | None = None
     imu: IMUSample | None = None
@@ -102,6 +116,15 @@ class ObservationPacket(StrictModel):
     vertical_clearance_m: float = float("inf")
 
     battery_frac: float = 1.0
+
+    coarse_goal_direction: CoarseGoalDirection | None = None
+    """Bucketed target-relative navigation prior, never an exact bearing.
+
+    This channel exists for tasks that explicitly provide a target-location
+    prior, as AeroVLA assumes. Unknown-location object search leaves it
+    ``None``. The environment may use localization to produce the bucket, but
+    policies never receive the target coordinate or continuous angle.
+    """
 
     privileged: dict[str, object] | None = None
     """Ground-truth channel for oracle/fake plugins only.

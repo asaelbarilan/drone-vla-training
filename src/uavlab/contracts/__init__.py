@@ -6,6 +6,7 @@ know about a plugin, that plugin's design would have leaked into the shared
 interface and architectures would stop being interchangeable.
 """
 
+from uavlab.contracts.admission import AdmissionDecision, AdmissionRuntime
 from uavlab.contracts.common import (
     NANOS_PER_SECOND,
     DecisionKind,
@@ -51,6 +52,8 @@ from uavlab.contracts.safety import SafetyDecision
 __all__ = [
     "NANOS_PER_SECOND",
     "ActionChunk",
+    "AdmissionDecision",
+    "AdmissionRuntime",
     "CameraIntrinsics",
     "ControlCommand",
     "DecisionEnvelope",
@@ -103,6 +106,7 @@ REQUIRED_CONTRACTS: tuple[str, ...] = (
     "SafetyDecision",
     "ProgressState",
     "RecoveryRequest",
+    "AdmissionDecision",
     "Trajectory",
     "ControlCommand",
     "EpisodeEvent",

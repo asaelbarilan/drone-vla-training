@@ -1,0 +1,41 @@
+# Frozen model/decoding profile for the controlled architecture comparison.
+# Architecture-specific prompts and authority types differ; weights, digest,
+# decoding, latency charge, and response channel do not.
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  params:
+    model_id: qwen3-vl:4b
+
+inference:
+  name: ollama
+  params:
+    host: http://localhost:11434
+    model_id: qwen3-vl:4b
+    expected_digest: 9c60bdd691c1897bbfe5ddbc67336848e18c346b7ee2ab8541b135f208e5bb38
+    temperature: 0.0
+    # AerialClaw's typed decision object is the longest output contract. Freeze
+    # the shared cap high enough for that contract; shorter architectures still
+    # stop at their schema-complete JSON rather than consuming the full cap.
+    num_predict: 512
+    # Six 224px OnFly memory frames require about 6.5k prompt tokens. Ollama's
+    # 4096 default rejects the request, so freeze one sufficient context for
+    # every architecture using the shared Qwen checkpoint.
+    num_ctx: 8192
+    sampling_seed: 0
+    timeout_s: 180.0
+    endpoint: chat
+    keep_alive: 30m
+    think: false
+    response_channel: thinking
+    charge_mode: fixed
+    fixed_latency_s:
+      policy: 1.2
+
+staleness:
+  max_decision_age_s: 4.0
+  reject_stale: true

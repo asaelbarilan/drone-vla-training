@@ -1,0 +1,22 @@
+_base_: [c7_direct_vla.yaml, ../models/aerovla_native.yaml]
+
+id: c7_aerovla_native
+profile_of: c7
+ablation_of: null
+family: direct_vla
+name: "Official AeroVLA checkpoint, bare"
+description: "Official OpenVLA-7B plus released AeroVLA LoRA; fails closed if unavailable."
+tags: [direct_vla, aerovla, native_profile, official_checkpoint]
+
+semantic_memory: no_memory
+memory:
+  name: no_memory
+
+scheduler:
+  kind: periodic
+  control_hz: 20.0
+  decision_hz: 10.0
+
+staleness:
+  max_decision_age_s: 1.5
+  reject_stale: true

@@ -1,0 +1,16 @@
+# Professor-preview trajectory maps. Development seeds only: held-out seeds
+# 1-40 remain untouched. Every runnable architecture sees the same rendered
+# RGB-D/down-camera scene and uses the shared controller/safety substrate.
+
+id: professor_end_maps_dev
+description: "Real paper ports on one shared local-simulator task for end-map inspection."
+stage: development_visualization
+architectures: [c0, c1, c2_spf, c3_onfly_qwen4, c8_aerovla_gemma]
+environments: [grid_nav_aerovla]
+seeds: [1060, 1061, 1062, 1063, 1064]
+episodes_per_cell: 1
+compare:
+  - [c0, c1]
+  - [c1, c2_spf]
+  - [c2_spf, c3_onfly_qwen4]
+  - [c3_onfly_qwen4, c8_aerovla_gemma]

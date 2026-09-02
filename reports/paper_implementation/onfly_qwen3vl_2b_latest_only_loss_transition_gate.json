@@ -1,0 +1,101 @@
+{
+  "run": "runs/onfly_c5_qwen4_native_seed1061_v4",
+  "model": "qwen3-vl:2b",
+  "prompt": "paper-compatible explicit post-acquisition LOST contract",
+  "rows": [
+    {
+      "requested_monitor_result_t_s": 35.2,
+      "actual_monitor_result_t_s": 35.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "latest_only",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": false,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "CONTINUE"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 118,
+        "done_reason": "stop",
+        "latency_s": 6.2456
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 37.2,
+      "actual_monitor_result_t_s": 37.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "latest_only",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": false,
+          "latest_target_visible": true,
+          "latest_target_scale": "large",
+          "status": "CONTINUE"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 118,
+        "done_reason": "stop",
+        "latency_s": 0.8841
+      },
+      "message_layout": "single_message"
+    },
+    {
+      "requested_monitor_result_t_s": 43.2,
+      "actual_monitor_result_t_s": 43.2,
+      "image_count": 6,
+      "model_image_count": 1,
+      "layout": "latest_only",
+      "red_visible_by_image": [
+        false,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "model_output": {
+        "payload": {
+          "earlier_target_visible": false,
+          "latest_target_visible": true,
+          "latest_target_scale": "small",
+          "status": "CONTINUE"
+        },
+        "parse_error": null,
+        "raw_preview": null,
+        "response_channel": "thinking",
+        "content_chars": 0,
+        "thinking_chars": 118,
+        "done_reason": "stop",
+        "latency_s": 0.8412
+      },
+      "message_layout": "single_message"
+    }
+  ],
+  "truth_scope": "red-pixel visibility is offline scoring only"
+}

@@ -1,0 +1,72 @@
+{
+  "model": "gemma4:e2b",
+  "seeds": [
+    1040
+  ],
+  "distances_m": [
+    30.0,
+    12.0,
+    4.0,
+    3.0,
+    2.0,
+    1.5
+  ],
+  "valid_schema": 0,
+  "total": 6,
+  "rows": [
+    {
+      "seed": 1040,
+      "camera_distance_m": 30.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_30m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 11.4077406,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 12.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_12m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 0.712034,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 4.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_4m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 0.7016167,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 3.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_3m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 0.7049864,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 2.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_2m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 0.7027634,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 1.5,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4\\seed_1040_distance_1.5m.png",
+      "raw": "",
+      "parsed": null,
+      "latency_s": 0.7049292,
+      "server_payload": null
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "model": "qwen3-vl:8b",
+  "seeds": [
+    1040
+  ],
+  "distances_m": [
+    30.0,
+    12.0,
+    4.0,
+    2.0
+  ],
+  "valid_schema": 4,
+  "total": 4,
+  "rows": [
+    {
+      "seed": 1040,
+      "camera_distance_m": 30.0,
+      "image": "reports\\paper_implementation\\spf_probe\\seed_1040_distance_30m.png",
+      "raw": "{\"u\": 500, \"v\": 400, \"distance\": 5}",
+      "parsed": {
+        "u": 500,
+        "v": 400,
+        "distance": 5
+      },
+      "latency_s": 3.1212382,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 12.0,
+      "image": "reports\\paper_implementation\\spf_probe\\seed_1040_distance_12m.png",
+      "raw": "{\"u\": 500, \"v\": 400, \"distance\": 5}",
+      "parsed": {
+        "u": 500,
+        "v": 400,
+        "distance": 5
+      },
+      "latency_s": 0.7907468,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 4.0,
+      "image": "reports\\paper_implementation\\spf_probe\\seed_1040_distance_4m.png",
+      "raw": "{\"u\": 500, \"v\": 500, \"distance\": 10}",
+      "parsed": {
+        "u": 500,
+        "v": 500,
+        "distance": 10
+      },
+      "latency_s": 0.8032263,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 2.0,
+      "image": "reports\\paper_implementation\\spf_probe\\seed_1040_distance_2m.png",
+      "raw": "{\"u\": 500, \"v\": 500, \"distance\": 10}",
+      "parsed": {
+        "u": 500,
+        "v": 500,
+        "distance": 10
+      },
+      "latency_s": 0.8240288,
+      "server_payload": null
+    }
+  ]
+}

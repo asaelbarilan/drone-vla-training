@@ -1,0 +1,32 @@
+[
+  {
+    "t_sim_s": 0.0,
+    "distance_to_goal_m": 35.00130924024281,
+    "target_visible": false,
+    "predicted_pixel": [
+      111.612,
+      111.612
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 39.95,
+    "distance_to_goal_m": 30.039048753292157,
+    "target_visible": false,
+    "predicted_pixel": [
+      137.952,
+      62.9489
+    ],
+    "monitor": "-"
+  },
+  {
+    "t_sim_s": 79.95,
+    "distance_to_goal_m": 47.08775094178622,
+    "target_visible": false,
+    "predicted_pixel": [
+      97.1021,
+      114.067
+    ],
+    "monitor": "-"
+  }
+]

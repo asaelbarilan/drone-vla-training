@@ -1,0 +1,23 @@
+{
+  "system": "AeroVLA",
+  "date": "2026-08-25",
+  "status": "mechanism_integrated_not_accepted",
+  "native_profile": {
+    "status": "resource_blocked",
+    "local_vram_gb": 8,
+    "paper_vram_gb": 17,
+    "base_model_size_gb": 15.1,
+    "fallback": false
+  },
+  "gemma_profile": {
+    "seed": 1060,
+    "artifact": "runs/aerovla_dev_seed1060_v3",
+    "success": false,
+    "termination": "timeout",
+    "model_calls": 19,
+    "unique_actions": [[49, 49, 49]],
+    "collisions": 0,
+    "fallback": false
+  },
+  "heldout_seeds_used": []
+}

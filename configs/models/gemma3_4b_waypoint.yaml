@@ -1,0 +1,28 @@
+# Shared real-VLM waypoint slot. Keeping this in one fragment prevents C2G-C6G
+# from silently drifting apart when grounding/range behavior changes.
+
+_base_: gemma3_4b.yaml
+
+perception:
+  name: identity
+  params:
+    charge_latency: false
+
+policy:
+  name: vlm_point_waypoint
+  params:
+    model_id: gemma3:4b
+    hop_m: 12.0
+    arrival_hop_m: 4.0
+    min_altitude_m: 2.0
+    range_mode: depth
+    depth_patch_px: 3
+    range_track_tolerance_m: 2.5
+    range_stop_m: 2.0
+    range_stop_confirmations: 2
+    range_semantic_confirmation: true
+    trust_model_arrival: false
+
+staleness:
+  max_decision_age_s: 8.0
+  reject_stale: true

@@ -1,0 +1,2539 @@
+{
+  "architecture": "c1",
+  "configuration_ok": true,
+  "deterministic_repeat": {
+    "final_distance_delta_m": 0.05219942633774827,
+    "passed": false,
+    "same_success": true,
+    "same_termination": true,
+    "same_typed_sequence": false,
+    "seed": 1020,
+    "tolerance_m": 0.25
+  },
+  "development_seeds": [
+    1020,
+    1021,
+    1022,
+    1023,
+    1024
+  ],
+  "held_out_seeds_used": [],
+  "model_resource": {
+    "available": true,
+    "details": {
+      "context_length": 262144,
+      "embedding_length": 2048,
+      "families": [
+        "qwen35"
+      ],
+      "family": "qwen35",
+      "format": "gguf",
+      "parameter_size": "2.3B",
+      "parent_model": "",
+      "quantization_level": "Q8_0"
+    },
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "model_id": "qwen3.5:2b",
+    "size": 2741192820
+  },
+  "paper": "AerialClaw",
+  "passed": false,
+  "regimes": {
+    "grid_nav": {
+      "collisions": 0.0,
+      "mechanism_observed_every_run": false,
+      "passed": false,
+      "required_successes": 4,
+      "runs": [
+        {
+          "calls": 4.0,
+          "distance_to_goal_m": 0.4928403374067735,
+          "mechanism": {
+            "inference_calls": 4,
+            "super_plans": 27,
+            "typed_decisions": 28,
+            "verifier_events": 27
+          },
+          "parse_failures": 0.0,
+          "seed": 1020,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.06,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 31.02,
+                "y": 16.81,
+                "z": 3.07
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "label": "target",
+                "x": 30.56,
+                "y": 16.54,
+                "z": 2.72
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: Mission completed: landed at target."
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 3.0,
+          "distance_to_goal_m": 35.0065391021913,
+          "mechanism": {
+            "inference_calls": 3,
+            "super_plans": 0,
+            "typed_decisions": 0,
+            "verifier_events": 0
+          },
+          "parse_failures": 0.0,
+          "seed": 1021,
+          "success": false,
+          "termination": "runtime_error",
+          "typed_sequence": []
+        },
+        {
+          "calls": 3.0,
+          "distance_to_goal_m": 35.10197281288372,
+          "mechanism": {
+            "inference_calls": 3,
+            "super_plans": 0,
+            "typed_decisions": 0,
+            "verifier_events": 0
+          },
+          "parse_failures": 0.0,
+          "seed": 1022,
+          "success": false,
+          "termination": "runtime_error",
+          "typed_sequence": []
+        },
+        {
+          "calls": 3.0,
+          "distance_to_goal_m": 35.09819440385686,
+          "mechanism": {
+            "inference_calls": 3,
+            "super_plans": 0,
+            "typed_decisions": 0,
+            "verifier_events": 0
+          },
+          "parse_failures": 0.0,
+          "seed": 1023,
+          "success": false,
+          "termination": "runtime_error",
+          "typed_sequence": []
+        },
+        {
+          "calls": 3.0,
+          "distance_to_goal_m": 35.00001594729586,
+          "mechanism": {
+            "inference_calls": 3,
+            "super_plans": 0,
+            "typed_decisions": 0,
+            "verifier_events": 0
+          },
+          "parse_failures": 0.0,
+          "seed": 1024,
+          "success": false,
+          "termination": "runtime_error",
+          "typed_sequence": []
+        }
+      ],
+      "runtime_errors": 4,
+      "successes": 1
+    },
+    "object_search": {
+      "collisions": 0.0,
+      "mechanism_observed_every_run": false,
+      "passed": false,
+      "required_successes": 2,
+      "runs": [
+        {
+          "calls": 12.0,
+          "distance_to_goal_m": 0.41885217729498725,
+          "mechanism": {
+            "inference_calls": 12,
+            "super_plans": 31,
+            "typed_decisions": 38,
+            "verifier_events": 32
+          },
+          "parse_failures": 0.0,
+          "seed": 1020,
+          "success": true,
+          "termination": "agent_stopped",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 28.2,
+                "y": 0.0,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 2.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: Arrival confirmed by live sensor data and bounded memory."
+              },
+              "kind": "skill",
+              "skill": "stop"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 14.5,
+                "y": 8.0,
+                "z": 3.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 2.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 26.52,
+                "y": 14.59,
+                "z": 3.33
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "reason": "AerialClaw goal completed: Mission completed: arrived at target location with low speed."
+              },
+              "kind": "skill",
+              "skill": "stop"
+            }
+          ]
+        },
+        {
+          "calls": 3.0,
+          "distance_to_goal_m": 30.00762869527095,
+          "mechanism": {
+            "inference_calls": 3,
+            "super_plans": 0,
+            "typed_decisions": 0,
+            "verifier_events": 0
+          },
+          "parse_failures": 0.0,
+          "seed": 1021,
+          "success": false,
+          "termination": "runtime_error",
+          "typed_sequence": []
+        },
+        {
+          "calls": 18.0,
+          "distance_to_goal_m": 41.855609573120994,
+          "mechanism": {
+            "inference_calls": 18,
+            "super_plans": 53,
+            "typed_decisions": 60,
+            "verifier_events": 53
+          },
+          "parse_failures": 0.0,
+          "seed": 1022,
+          "success": false,
+          "termination": "timeout",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 5.0,
+                "yaw_rate_rps": 1.0
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            }
+          ]
+        },
+        {
+          "calls": 24.0,
+          "distance_to_goal_m": 57.828617390242236,
+          "mechanism": {
+            "inference_calls": 24,
+            "super_plans": 51,
+            "typed_decisions": 62,
+            "verifier_events": 51
+          },
+          "parse_failures": 0.0,
+          "seed": 1023,
+          "success": false,
+          "termination": "timeout",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 2.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            }
+          ]
+        },
+        {
+          "calls": 28.0,
+          "distance_to_goal_m": 57.353488705379434,
+          "mechanism": {
+            "inference_calls": 28,
+            "super_plans": 43,
+            "typed_decisions": 51,
+            "verifier_events": 43
+          },
+          "parse_failures": 0.0,
+          "seed": 1024,
+          "success": false,
+          "termination": "timeout",
+          "typed_sequence": [
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": 0.0,
+                "y": 28.2,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "duration_s": 3.0,
+                "yaw_rate_rps": 1.5
+              },
+              "kind": "skill",
+              "skill": "scan"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            },
+            {
+              "args": {
+                "tolerance_m": 2.5,
+                "x": -19.9,
+                "y": 19.9,
+                "z": 8.0
+              },
+              "kind": "skill",
+              "skill": "goto"
+            }
+          ]
+        }
+      ],
+      "runtime_errors": 1,
+      "successes": 1
+    }
+  }
+}

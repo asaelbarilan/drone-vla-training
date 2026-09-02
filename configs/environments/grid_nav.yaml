@@ -5,7 +5,10 @@
 
 id: grid_nav
 task_family: long_horizon_nav
-instruction: "fly to the target tower and stop there"
+# The renderer distinguishes the semantic goal as a red tower. Naming that
+# observable attribute in the mission prevents real vision policies from
+# needing a hidden renderer legend to know which object "target" means.
+instruction: "fly to the red tower and stop there"
 max_episode_s: 90.0
 
 adapter:

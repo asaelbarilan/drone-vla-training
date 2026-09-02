@@ -1,0 +1,9 @@
+_base_: grid_nav_vision.yaml
+
+id: grid_nav_onfly
+
+params:
+  render: true
+  render_depth: true
+  image_size: 224
+  camera_pitch_rad: -0.15

@@ -28,6 +28,7 @@ class EventType(str, Enum):
     SAFETY = "safety"
     CONTROL = "control"
     MONITOR = "monitor"
+    ADMISSION = "admission"
     RECOVERY_TRIGGER = "recovery_trigger"
     RECOVERY_DECISION = "recovery_decision"
     INFERENCE_CALL = "inference_call"
@@ -64,5 +65,6 @@ class EpisodeEvent(StrictModel):
             "trace_id": self.trace_id,
         }
         for key, value in self.payload.items():
-            row[f"p_{key}"] = value if isinstance(value, (int, float, str, bool, type(None))) else str(value)
+            scalar = isinstance(value, (int, float, str, bool, type(None)))
+            row[f"p_{key}"] = value if scalar else str(value)
         return row

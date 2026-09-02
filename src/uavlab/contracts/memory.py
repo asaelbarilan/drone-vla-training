@@ -22,6 +22,8 @@ class MemoryItem(StrictModel):
     """e.g. "keyframe", "subgoal_done", "landmark", "decision"."""
     summary: str
     position: Vec3 | None = None
+    yaw_rad: float | None = None
+    """Vehicle yaw synchronized with retained visual evidence, when available."""
     label: str | None = None
     """What the remembered evidence was *of*.
 
@@ -32,6 +34,14 @@ class MemoryItem(StrictModel):
     """
     salience: float = 0.0
     """Selection score.  Keyframe memories keep the top-k by salience."""
+    image_uri: str | None = None
+    """Optional retained sensor image used by a visual monitor.
+
+    The URI resolves only to sensor pixels copied by a memory plugin; it is not
+    a simulator or environment handle.  Text-only memories leave it unset.
+    """
+    depth_uri: str | None = None
+    """Optional depth image synchronized with :attr:`image_uri`."""
 
 
 class MemorySnapshot(StrictModel):

@@ -1,0 +1,42 @@
+{
+  "model": "gemma4:e2b",
+  "seeds": [
+    1040
+  ],
+  "distances_m": [
+    12.0,
+    4.0,
+    2.0
+  ],
+  "valid_schema": 0,
+  "total": 3,
+  "rows": [
+    {
+      "seed": 1040,
+      "camera_distance_m": 12.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4_thinking\\seed_1040_distance_12m.png",
+      "raw": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   **Role:** Spatial waypoint policy for a small autonomous drone.\n    *   **Goal (MISSION):** Fly to the red tower and stop there.\n    *   **Input:** A single image (provided, though",
+      "parsed": null,
+      "latency_s": 3.0248014,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 4.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4_thinking\\seed_1040_distance_4m.png",
+      "raw": "The user wants me to act as a spatial waypoint policy for an autonomous drone.\nThe goal is to fly to the \"red tower\" and stop there.\nI need to analyze the provided image (which is missing, but I must assume I am looking at it) and select one image point for",
+      "parsed": null,
+      "latency_s": 0.6118087,
+      "server_payload": null
+    },
+    {
+      "seed": 1040,
+      "camera_distance_m": 2.0,
+      "image": "reports\\paper_implementation\\spf_probe_gemma4_thinking\\seed_1040_distance_2m.png",
+      "raw": "The user wants me to act as the spatial waypoint policy for an autonomous drone.\nThe goal is to fly to the red tower and stop there.\nI need to analyze the provided image (which is missing, but I must assume I am looking at it) and determine the next safe movement point.",
+      "parsed": null,
+      "latency_s": 0.6113707,
+      "server_payload": null
+    }
+  ]
+}

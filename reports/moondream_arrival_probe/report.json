@@ -1,0 +1,30 @@
+{
+  "model": "moondream",
+  "seed": 2,
+  "probes": [
+    {
+      "distance_m": 2.0,
+      "image": "reports\\moondream_arrival_probe\\distance_2m.png",
+      "current_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"arrived\": true}",
+      "scale_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"height_px\": 0.0}"
+    },
+    {
+      "distance_m": 4.0,
+      "image": "reports\\moondream_arrival_probe\\distance_4m.png",
+      "current_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"arrived\": true}",
+      "scale_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"height_px\": 0.0}"
+    },
+    {
+      "distance_m": 8.0,
+      "image": "reports\\moondream_arrival_probe\\distance_8m.png",
+      "current_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"arrived\": true}",
+      "scale_reply": "\n {\"found\": true, \"u\": 0.0, \"v\": 0.64, \"height_px\": 0.64}"
+    },
+    {
+      "distance_m": 12.0,
+      "image": "reports\\moondream_arrival_probe\\distance_12m.png",
+      "current_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"arrived\": true}",
+      "scale_reply": "\n {\"found\": true, \"u\": 0, \"v\": 0, \"height_px\": 0.0}"
+    }
+  ]
+}

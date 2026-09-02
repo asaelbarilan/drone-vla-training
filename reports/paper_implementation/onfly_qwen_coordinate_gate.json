@@ -1,0 +1,22 @@
+{
+  "model": "qwen3-vl:8b",
+  "model_digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+  "coordinate_contract": "relative 0..999 grid scaled to calibrated 224x224 pixels",
+  "source_run": "runs/onfly_c5_dev_seed1061",
+  "observation_seqs": [540, 648, 1080, 1134, 1296, 1728],
+  "replay_distance_to_goal_m": 18.172722664360393,
+  "original_distance_to_goal_m": 18.172722664360393,
+  "replay_distance_error_m": 0.0,
+  "samples": [
+    {"seq": 540, "truth_pixel": [68.0, 84.5], "model_point": [300, 375], "scaled_error_px": 1.30},
+    {"seq": 648, "truth_pixel": [120.0, 84.5], "model_point": [537, 377], "scaled_error_px": 0.37},
+    {"seq": 1080, "truth_pixel": [23.0, 81.0], "model_point": [97, 362], "scaled_error_px": 1.36},
+    {"seq": 1134, "truth_pixel": [218.0, 79.5], "model_point": [975, 345], "scaled_error_px": 2.51},
+    {"seq": 1296, "truth_pixel": [131.0, 82.0], "model_point": [587, 367], "scaled_error_px": 0.08},
+    {"seq": 1728, "truth_pixel": [200.0, 77.5], "model_point": [894, 347], "scaled_error_px": 0.44}
+  ],
+  "mean_error_px": 1.01,
+  "max_error_px": 2.51,
+  "gate": "PASS",
+  "scope_note": "Ground-truth red pixels are used only for offline scoring and are not accessible to the flight policy."
+}
