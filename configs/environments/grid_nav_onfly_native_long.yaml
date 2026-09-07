@@ -1,0 +1,22 @@
+# Native-dynamics OnFly with a path budget that actually permits detours.
+#
+# Why this exists. On the 90 s horizon the budget is 0.6 m/s x 90 s = 54 m
+# against a 35 m straight-line distance, leaving 19 m of slack for every detour
+# combined. Measured paths were 45-46 m, i.e. 84-86% of the budget, so the
+# vehicle is speed-saturated for essentially the whole episode and an obstacle
+# detour is often unaffordable rather than badly chosen. See D-64.
+#
+# 240 s gives 144 m, about 4.1x the straight-line distance. At that budget a
+# failure to reach the target means the architecture could not route around the
+# obstacles, which is the question being asked - not that it ran out of time.
+#
+# Nothing else changes: same scene, same 0.6 m/s envelope, same success test.
+
+_base_: grid_nav_onfly_native_dynamics.yaml
+
+id: grid_nav_onfly_native_long
+max_episode_s: 240.0
+
+params:
+  success:
+    max_flight_time_s: 240.0

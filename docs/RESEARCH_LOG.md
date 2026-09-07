@@ -1007,3 +1007,501 @@ were already covered from a current frame plus one history point. Preserve the
 frozen C5 result and test explicit visited-view/frontier state as a separately
 named extension. Evidence:
 `reports/paper_implementation/C5_VIEWPOINT_PROMPT_EXPERIMENT_20260902.md`.
+
+### D-56 — No released drone dataset ships our action space; relabelling from pose is the only path
+**When.** 2026-09-04 — survey of public aerial VLA datasets, verified against the
+HuggingFace API rather than search summaries.
+**Decision.** Treat action relabelling as mandatory rather than optional, and
+adopt a single normalisation contract — body-frame `[vx, vy, vz, yaw_rate]` in
+m/s and rad/s, clipped to `constraints.max_speed_mps` — that every external
+source must be converted into before any of it is mixed with our own data.
+**Evidence.** Five repositories were checked by fetching their metadata and one
+trajectory each, not by reading abstracts.
+
+| Repository | Pixels | Action field | Units | Verified by |
+| --- | --- | --- | --- | --- |
+| `UPB-RAT-VLA/Exp2VLA-SingleCube-v1` | 480x640 video | 6-D `[vx,vy,vz,pitch,roll,yaw]` | normalised, not m/s | `meta/info.json`, `meta/stats.json` |
+| `UPB-RAT-VLA/Exp2VLA-MultiObject-v1` | 480x640 video | same, 1500 eps / 370,500 frames | normalised | same |
+| `AutelRobotics/CosFly` | RGB + depth + instance | **none** — `drone_pose` + `nav_waypoint` at 2 Hz | metres, CARLA world frame, degrees | `data_sample/.../trajectory.json` |
+| `YunhengWang/WorldVLN_DataSet` | 333 tar shards | displacement + yaw change | metres | repo listing + paper |
+| `yoofiannan/dronevla-dfr-episodes` | **none** | `[vx,vy,vz,yaw_rate,mission_state]` at 2 Hz | m/s — exact match | `episodes.jsonl`, `stats.json` |
+
+The decisive finding is that Exp2VLA's nominal 6 degrees of freedom are not
+real. Across both releases `vy`, `pitch` and `roll` are identically zero
+(min = max = mean = std = 0), and `vx` has std 0.986 over the range [-1, 1] —
+a bang-bang keyboard signal. It is a 3-channel dataset (forward, vertical, yaw)
+with no lateral motion and no metric scale.
+
+Conversely CosFly logs no action at all but logs pose at a fixed 0.5 s cadence,
+from which our action space is an exact finite difference. Frames 0 to 1 of
+`trajectory_1777083733` give `[-3.123, -2.072, -1.600]` m/s and a yaw change of
+-3.13 deg over 0.5 s. That is our label, recovered arithmetically.
+**Rejected.** Concatenating Exp2VLA with our data as-is. Its `+-1` commands and
+our m/s commands would occupy the same output channels with different meanings,
+so the model would be taught that the same number denotes two different speeds —
+more data making the policy strictly worse. Also rejected: `dronevla-dfr`, which
+has the exact action space we want but ships no images, and so cannot train a
+model whose input is pixels.
+**Status.** Survey complete; conversion not yet written. The engineering cost is
+small and the semantic cost is where the risk sits — see the normalisation
+contract above.
+
+### D-57 — The drone-VLA field trains on discrete navigation actions, not velocity
+**When.** 2026-09-04 — survey of ~45 aerial VLA/VLN systems, cross-checked
+against two 2026 reviews and the HuggingFace API.
+**Decision.** Stop treating "find a drone VLA dataset" as a search problem. The
+field's dominant supervision signal is a discrete high-level move set, so the
+velocity-controlled subset is small enough to enumerate exhaustively, and within
+it only one release is both real-world and convertible to our action space.
+**Evidence.** Grouping the field by what the action actually *is*:
+
+*Discrete 4-DoF move sets* (forward / left / right / up / down / stop) — this is
+the majority and holds nearly all the scale: AerialVLN and AerialVLN-S (8.4k
+trajectories), OpenFly (100k), AirNav (143k real urban), UAV-ON, IndoorUAV
+(5k), LANI (6k), plus the models trained on them — NavAgent, FlightGPT, STMR,
+GeoNav, LogisticsVLN, SA-GCS, OpenVLN, SkyVLN, VLFly, AirStar, CityNavAgent,
+FSD-VLN, LongFly, UAV-CodeAgents, MMCNav.
+
+*Waypoint or path prediction*: CityNav (32k), AVDN (3k dialogs), UAV-VLA (30
+satellite images), CosFly-Track, ImagineUAV, AeroDuo (13k pairs).
+
+*Continuous low-level control* — the only group relevant to us:
+
+| System | Data | Real? | Action | Released |
+| --- | --- | --- | --- | --- |
+| UAV-Flow Colosseo | 30k trajectories, pose at 5 Hz | **yes** | pose + unified instruction | `wangxiangyu0814/UAV-Flow` |
+| OpenUAV | 12k trajectories | no | continuous 6-DoF | partial |
+| CognitiveDrone | 1,766 eps / 104,483 frames, 10 Hz, 2 cameras | no | 7-D | `kingJulio/cognitive_drone_lerobot` |
+| Exp2VLA | 494k frames | no | nominally 6-D, really 3 | yes — see [D-56](#d-56) |
+| GRaD-Nav++ | **none** — differentiable RL in 3DGS | sim-trained, real-deployed | thrust/rate | no dataset |
+| AutoFly | not published | no | `vx,vy,vz,omega_yaw` | no |
+
+**Conclusion.** Two findings matter. First, UAV-Flow is the strongest external
+candidate by a wide margin: it is the only *real-world* language-conditioned
+continuous-control release, its logs are pose at a clean 0.2 s cadence, and one
+sampled trajectory differentiates to sane body-frame velocities — vx -0.51,
+vy 0.92, vz 0.00 m/s, all under 2 m/s — so our 4-D action space is recoverable
+arithmetically. It also ships `preprocessed_logs` as start-relative 6-D pose and
+an `instruction_unified` field, both of which reduce the conversion further.
+Second, the strongest continuous result in the field (GRaD-Nav++, 67% real-world
+on trained tasks) used **no demonstration dataset at all**; it trained by
+differentiable RL in a photorealistic 3D Gaussian Splatting simulator. That is a
+standing alternative to dataset assembly and should be recorded as such rather
+than discovered late.
+**Rejected.** Training on the discrete VLN corpora. They are where the scale is,
+but a policy supervised on "move forward one step" cannot emit a velocity, and
+converting a discrete move set into a velocity requires inventing the magnitude
+we would be trying to learn.
+**Status.** Survey complete. Conversion target selected (UAV-Flow); DiffRL
+recorded as the unexplored alternative.
+
+### D-58 — Correction: `[vx, vy, vz, yaw_rate]` *is* the convention; the dead channels are padding
+**When.** 2026-09-04 — user challenged the breadth of the D-57 survey.
+**Decision.** Withdraw the D-56/D-57 claim that our action space is unusual and
+that no dataset shares it. The opposite is true, and two earlier conclusions
+built on that claim are void.
+**Evidence.** CognitiveDrone states it "generates real-time **4D** action
+commands" and that the drone "is controlled using **velocity setpoints**,
+ensuring consistency with real-world drones running **ArduPilot** firmware"
+(arXiv 2503.01378). That is `[vx, vy, vz, yaw_rate]` exactly. It is not a
+per-paper choice at all — it is the MAVLink/ArduPilot/PX4 velocity setpoint
+interface, which is why `yoofiannan/dronevla-dfr` and AutoFly independently
+report the same four fields, and why our own `_base.yaml` uses it.
+**The padding finding.** The stored vectors that appear wider than 4-D are
+manipulator-shaped containers, not richer actions. CognitiveDrone is fine-tuned
+from OpenVLA-7B, whose action head is a 7-D arm vector
+`(x, y, z, roll, pitch, yaw, gripper)`; the LeRobot mirror duly stores
+`actions float32 [7]`. Exp2VLA stores `[vx, vy, vz, pitch, roll, yaw]` with
+`vy`, `pitch` and `roll` identically zero. Both are four real degrees of freedom
+occupying a slot sized for an arm. D-56 read Exp2VLA's zero channels as a
+defective dataset; they are padding, and the reading was wrong.
+**What this changes.** The barrier to pooling is *units and per-airframe speed
+limits*, which is a scalar per dataset, not *incompatible action semantics*,
+which would have been a modelling problem. Normalisation is still the right
+representation, but as a convenience rather than a rescue. The CHANGES.md claim
+that "we are the odd one out for storing m/s" is withdrawn: we store what
+ArduPilot accepts.
+**Status.** D-56 and D-57 stand only on their per-repository measurements. Their
+conclusions about convention are superseded here.
+
+### D-59 — Survey redone from primary sources; no single action convention exists
+**When.** 2026-09-04 — 25 systems read from their own action and training-data
+sections after the D-57 review-derived survey was challenged as too narrow.
+**Decision.** Replace the D-57 grouping with a four-way taxonomy taken from
+primary sources: velocity, relative displacement, waypoint/pose, and discrete
+primitives. Full table: `docs/research/DRONE_VLA_SURVEY_20260904.md`.
+**Evidence.** RaceVLA (2503.02572) states it replaced OpenVLA's 7-D manipulator
+vector with a 4-D drone signal of three linear velocities plus yaw rate;
+CognitiveDrone (2503.01378) ties the same four fields to ArduPilot velocity
+setpoints. UAV-Flow (2505.15725) is 30,692 **real** trajectories on a DJI Mavic
+3T RTK at 5 Hz with centimetre accuracy, storing 6-DoF pose. OpenFly (100 k) and
+IndoorUAV (51 k) are the largest corpora and both emit discrete primitives.
+**Corrections this forces.** D-57's claim that the field has a single consensus
+was wrong in both directions: there is no field-wide convention, but there *is*
+a firm one within velocity-output models, and ours matches it. D-56's reading of
+Exp2VLA as a defective dataset and D-58's reading of it as mere padding are both
+superseded — its paper defines a genuinely 3-D action, deliberately omitting
+lateral velocity.
+**Two findings not previously recorded.** VLFly and See, Point, Fly reach
+real-world performance **training-free**, grounding a waypoint in the image with
+a pre-trained VLM — architecturally close to C5 OnFly and viable within 8.6 GB.
+And Think Like a Pilot and SpatialFly are both ~3 B with LoRA and frozen
+encoders, making them the hardware-matched precedents for anything we train.
+**Status.** Survey complete from primary sources. Supersedes D-57.
+
+### D-60 — C5 cannot fly past what it can see; the cause is structural, not prompting
+**When.** 2026-09-04 — comparison of C5 OnFly against See, Point, Fly (2509.22653)
+and VLFly (2506.10756) after the primary-source survey.
+**Decision.** Stop attributing C5's search failure to the prompt. Test SPF's
+VLM-predicted travel distance as a single-variable ablation of C5.
+**Evidence.** SPF is C5's architecture — VLM names a pixel, pinhole unprojection
+gives a body-frame displacement, closed loop — reached independently and
+validated on real hardware. The sole structural difference is who sets the step
+length. SPF asks the VLM for `(u, v, d_VLM)` and maps it through
+`d_adj = max(d_min, s*(d_VLM/L)^p)` with no depth sensor. C5 asks only for
+`(u, v)` and takes the distance from the depth image at `onfly.py:509`, so
+`range <= sensed_depth(u, v)`. The hop is therefore bounded by the first surface
+along the chosen ray: C5 is structurally incapable of travelling past what it
+can already see. `bearing_gated_range` compounds this by multiplying the range
+by a Gaussian in image bearing, shortening exactly the off-axis moves that
+exploration requires.
+**What this retires.** D-55 concluded that a viewpoint-selection prompt "cannot
+create coverage". The mechanism is now identified: the prompt changed which
+pixel was chosen but could not lift the depth cap on the resulting hop. The
+observation stands; the explanation was incomplete.
+**Constraint check.** SPF uses no depth sensor, so adopting `d_VLM` *removes* a
+privileged input. This makes the substrate weaker, not stronger, and so does not
+hide the search boundary.
+**Status.** Ablation specified, not yet run. Detail:
+`docs/research/C5_VS_TRAINING_FREE_VLA_20260904.md`.
+
+### D-61 — Model-named step implemented and unit-tested; evaluation deferred on GPU contention
+**When.** 2026-09-04 — implementation of the D-60 ablation.
+**Decision.** Ship the SPF step as an opt-in policy parameter rather than a
+change to C5, and defer the five-seed evaluation rather than run it against a
+busy GPU.
+**What was built.** `OnFlyDecisionAgent` gained `step_from_model` (default
+**False**, so every frozen C5 number stays reproducible). When enabled, the
+decision schema carries a third field `d` in `1..step_levels`, and the step
+becomes SPF's `d_adj = max(d_min, s * (d/L)^p)` in place of the depth-derived
+`gated` range. The sensed depth and the bearing gate are still computed and
+recorded, so `sampled_depth_m`, `gated_range_m`, `executable_range_m`,
+`step_source` and `model_step_level` sit side by side in provenance and the two
+step sources can be compared on the same run. Config:
+`configs/architectures/c5_onfly_qwen4_spf_step_dev.yaml`. Runner:
+`scripts/run_c5_spf_step_seeds.sh`.
+**One design correction made before running.** `step_scale_m` was first set to
+9.0, which would have confounded *who decides the step* with *how far a step may
+be*, and would have been rejected by the inherited verifier at image edges where
+the 3-D ray exceeds `max_waypoint_distance_m`. It is now 7.0, exactly C5's own
+`max_depth_m`, so the maximum reach is unchanged and only the source of the
+distance differs. The level ladder is 1.4, 2.8, 4.2, 5.6, 7.0 m.
+**Tests.** Five new cases in `tests/unit/test_onfly.py` cover the step curve and
+its floor, schema presence and absence, the fact that the same pixel yields two
+different ranges purely from `d`, that `step_source` still reports `depth` by
+default, and that a missing `d` fails closed.
+**Why the evaluation did not run.** `nvidia-smi` showed the 8.2 GB card at 99%
+utilisation with 7.8 GB held by UE4Editor, `valley_operator_experiment.py` and a
+loaded llama-server — a separate active experiment. Starting a second Qwen3-VL
+4B profile would have competed for the remaining ~370 MB and risked killing that
+run. No result is worth that, and a result measured under contention would not
+be trustworthy anyway.
+**Status.** Implementation complete and tested. Evaluation pending a free GPU.
+
+### D-62 — Correction: the step length is not C5's binding constraint; direction is
+**When.** 2026-09-04 — measurement on the frozen baseline runs, before spending
+GPU time on the D-60 ablation.
+**Decision.** Withdraw D-60's hypothesis and do **not** run the model-named-step
+ablation as specified. The code claim was right; the causal claim was wrong.
+**Evidence.** Measured over the four retained seed-1060/61/63/64 baseline runs:
+
+| seed | decisions | sensed depth under the 7 m cap | mean commanded range | bearing-gate loss |
+| ---: | ---: | ---: | ---: | ---: |
+| 1060 | 89 | 35% | 5.31 m | 10% |
+| 1061 | 85 | 35% | 5.09 m | 13% |
+| 1063 | 89 | 15% | 6.21 m | 5% |
+| 1064 | 89 | 17% | 5.45 m | 18% |
+
+Two facts follow, and both contradict D-60. First, the depth ceiling binds only
+35% of the time on seed 1060 — most steps are limited by the configured
+`max_depth_m = 7.0`, not by an obstacle. Second, and decisively, the vehicle
+travels a mean of **0.517 m** between consecutive decisions against a mean
+commanded range of **5.315 m**: it realises **9.7%** of the step before the
+waypoint is replaced. The decision interval is 1.000 s (median; mean executed
+decision age 1.049 s), so at the native-dynamics 0.6 m/s the vehicle can cover
+at most 0.600 m per decision — exactly the measured maximum. A 7 m step would
+need roughly 12 s of committed flight and never gets it. The verifier accepted
+89 of 89 proposals, so it is not the limiter either.
+**Therefore.** The waypoint's *distance* is very nearly irrelevant to C5's
+trajectory; only its *direction* survives replanning. Swapping the source of the
+distance — depth-derived or model-named — changes at most a tenth of a metre per
+decision. Running it would have produced a null result that looked like a
+refutation of SPF, which it would not have been.
+**What this means for the SPF comparison.** The transferable difference is not
+the `d` field. It is that SPF *executes* the step it names before re-observing,
+whereas C5 replans over it at ~1 Hz. The meaningful experiment is commitment —
+hold a waypoint until it is reached or invalidated — and that touches the
+asynchronous schedule, which is a declared paper variable rather than a plugin
+parameter. It must be specified as such before it is run.
+**Status of the implementation.** The `step_from_model` code and its five tests
+are correct and are kept, defaulted off, as the mechanism the commitment
+experiment will need. D-60's mechanism claim is superseded; D-55's original
+observation — that direction changes do not create coverage — stands and is now
+better supported than when it was written.
+
+### D-63 — Two tests are load-sensitive, not broken
+**When.** 2026-09-04 — while validating the D-61 implementation.
+**Decision.** Record `tests/integration/test_verify.py::[c1]` and
+`tests/smoke/test_all_architectures.py::test_the_core_runtime_imports_no_heavy_dependency`
+as machine-load sensitive, so a future red run is not misread as a regression.
+**Evidence.** Both failed in a full-suite run taken while three pytest processes,
+UE4Editor, a `valley_operator_experiment.py` and a loaded llama-server were
+competing for the machine. Both pass in isolation, on the baseline tree (2
+passed in 230.6 s) and with the OnFly changes applied (2 passed in 105.2 s).
+The smoke failure is impossible to attribute to the OnFly change in any case:
+`uavlab.plugins.reasoning.onfly` is not imported by `import uavlab` or by
+`uavlab.core.orchestrator`, and a direct probe reports no forbidden module
+loaded. C1's verify test drives real `gpt-oss:20b` inference through Ollama and
+so is sensitive to GPU contention by construction.
+**Status.** No code change. Run the full suite on an otherwise idle machine
+before treating either as a real failure.
+
+### D-64 — The retained C5 benchmark is not a search task; it is a 35 m corridor with almost no slack
+**When.** 2026-09-04 — direct measurement of `grid_nav_onfly_native_dynamics` at
+reset, prompted by D-62 showing that step length cannot explain the failures.
+**Decision.** Stop describing the retained five-seed failure as a search or
+viewpoint-selection problem. It is an obstacle-detour problem under a path
+budget, and the exploration framing in D-55, D-60 and the coverage-prompt work
+was aimed at a problem this benchmark does not pose.
+**Evidence.** Measured by resetting the environment on each seed:
+
+| seed | start distance | goal bearing | occluders on the direct ray | outcome |
+| ---: | ---: | ---: | --- | --- |
+| 1060 | 35.0 m | +0.0 deg | 2, at 12.4 m and 15.6 m | never seen |
+| 1061 | 35.0 m | +0.0 deg | 1, at 15.0 m | **success** |
+| 1062 | 35.0 m | +0.0 deg | 3, at 11.7, 15.1, 24.1 m | never seen |
+| 1063 | 35.1 m | +0.0 deg | 2, at 16.4 m and 21.1 m | never seen |
+| 1064 | 35.0 m | +0.0 deg | none | seen 0-8 s, then lost |
+
+The target sits **dead ahead at 35 m on every seed**; the seed varies the
+obstacle layout, not the target bearing. There is nothing to search for and no
+viewpoint to choose — the correct opening action is to fly straight.
+
+The budget is the binding constraint. At the native-dynamics 0.6 m/s over a 90 s
+horizon the entire path budget is 54 m, of which 35 m is the straight-line
+distance, leaving **19 m of slack** for every detour, overshoot and heading
+correction combined. Measured path lengths were 45.1-46.3 m, i.e. 84-86% of the
+budget: the vehicle is speed-saturated for essentially the whole episode.
+**Reading.** Across these five seeds the outcome tracks the number of occluders
+on the straight-line ray monotonically — one occluder succeeds, two or three
+never acquire, and the zero-occluder seed is the only one that sees the target
+at all. Each detour spends slack the mission does not have. With n=5 this is a
+consistent pattern rather than a demonstrated law, but the structural facts it
+rests on (fixed 35 m, fixed bearing, 54 m budget) are exact.
+**What this retires.** The "go where you cannot yet see" boundary, as posed
+against *this* benchmark, is not the live question; D-55's viewpoint prompt and
+D-60's step-source hypothesis were both answering a question the seeds do not
+ask. It also explains why the coverage prompt's most effective component was the
+instruction to preserve the initial heading: on this benchmark the initial
+heading is the answer.
+**Consequence.** Either the benchmark should be changed so that search is
+actually required — vary the target bearing, or raise the horizon so detours are
+affordable — or C5 should be judged on obstacle detour efficiency, which is what
+it is really being asked to do. That is a benchmark-design decision and is left
+for the user.
+**Status.** Measured, recorded, no code change.
+
+### D-65 — C5's real failure is a geofence deadlock, not search, detour cost, or budget
+**When.** 2026-09-04 — 240 s horizon run (`grid_nav_onfly_native_long`) against
+the classical `c0` baseline on the same seeds.
+**Decision.** Name the retained-seed failure precisely: the vehicle reaches the
+geofence boundary and then deadlocks, because every waypoint it proposes lands
+outside the fence and is rejected, and nothing turns it around.
+**Evidence.** Seeds 1060 and 1062 both end frozen — identical position, zero
+speed — for the last 97 s and 108 s of a 240 s episode:
+
+| seed | freeze at | held | distance from home | verifier during freeze |
+| ---: | ---: | ---: | ---: | --- |
+| 1060 | 143 s | 97 s | 55.25 m | 0 accepted, 96 rejected |
+| 1062 | 132 s | 108 s | 56.05 m | 0 accepted, 107 rejected |
+
+The first rejection reason is explicit: *"target is 62.1 m from home, outside the
+60 m geofence"*. At 55 m from home with a 7 m maximum reach, every outward
+proposal lands at ~62 m and is correctly refused. The policy keeps proposing
+outward, the verifier keeps refusing, and there is no fallback, so the vehicle
+holds position until the horizon expires.
+**Why this is the intersection of two known defects.** The decision agent's
+measured centre bias — chosen `u` median 116 against an image centre of 112,
+59% of commands within 10 degrees of straight ahead — means "ahead" is what it
+almost always proposes. Ahead, at the fence, is always inadmissible. A policy
+that could steer would escape; a fence-aware fallback would also escape; C5 has
+neither, so the two defects compose into a hard deadlock.
+**What this retires.** More time does not help and the earlier budget reading is
+not the operative cause. Seeds 1060 and 1062 used only 78 m and ~80 m of a 144 m
+budget. D-64's measurement of the corridor stands, but the 90 s horizon merely
+hid this deadlock behind an earlier timeout.
+**Positive result.** Where acquisition succeeds the architecture is competent:
+seed 1061 reached the target in 85 s against `c0`'s 67 s on the same seed, at
+1.27x the time of a classical planner that already knows the goal position, with
+6% stationary ticks against 43-46% in the deadlocked seeds.
+**Confirmation on seed 1063.** The same deadlock, and the discriminator is
+clean. Every failing seed freezes at 55.3-56.1 m from home with 100% of the
+verifier calls during the freeze refused for the geofence:
+
+| seed | freeze | held | from home | rejections during freeze | geofence refusals over the whole run |
+| ---: | ---: | ---: | ---: | --- | --- |
+| 1060 | 143 s | 97 s | 55.3 m | 96/96, all geofence | 99/239 |
+| 1062 | 132 s | 108 s | 56.1 m | 107/107, all geofence | 110/239 |
+| 1063 | 109 s | 131 s | 55.5 m | 131/131, all geofence | 133/239 |
+| **1061** | — | 0 s | 34.8 m | — | **0/85** |
+
+The successful seed has **zero** geofence refusals across the entire episode;
+the three failures spend 41-56% of all verifier calls being refused for it. On
+these seeds the presence of geofence refusal separates success from failure
+perfectly.
+**Complete five-seed result.** 1/5 at 240 s, identical to 1/5 at 90 s. The extra
+150 seconds changed no outcome. Every one of the four failures ends frozen
+55.3-56.1 m from home:
+
+| seed | occluders on ray | c0 | C5 | freeze | held | from home | geofence refusals |
+| ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: |
+| 1060 | 2 | 68 s | timeout | 143 s | 97 s | 55.3 m | 99/239 |
+| 1061 | 1 | 67 s | **success, 85 s** | — | — | 34.8 m | **0/85** |
+| 1062 | 3 | 63 s | timeout | 132 s | 108 s | 56.1 m | 110/239 |
+| 1063 | 2 | 83 s | timeout | 109 s | 131 s | 55.5 m | 133/239 |
+| 1064 | **0** | 84 s | timeout | 151 s | 89 s | 55.7 m | 91/239 |
+
+**This supersedes D-64's occluder reading.** Seed 1064 has a completely clear
+line of sight to the target and still fails, by the same deadlock at the same
+radius. Occluder count does not explain the outcomes; geofence refusal does,
+and it separates the five seeds perfectly. D-64's measurements of the corridor
+geometry stand — the target really is dead ahead at 35 m on every seed — but the
+causal reading built on occluder counts was wrong, and was drawn from four
+seeds when the fifth contradicted it.
+**Status.** Complete. No fix attempted — the fallback is a real architecture
+decision, not a patch.
+
+### D-66 — Told the winning route in words, C5 does worse: 0/5 against 1/5
+**When.** 2026-09-04 — privileged capability probe, 240 s horizon, seeds 1060-1064.
+**Status of the evidence.** PRIVILEGED. The route handed to the model is derived
+from `c0`'s successful trajectory on each seed, i.e. simulator truth injected
+into the prompt. These numbers answer "can the decision agent execute a route it
+is told?" and must never be quoted as C5 performance. Configs carry
+`privileged_diagnostic` in their tags and a warning header.
+**Setup.** `c0`'s path per seed was simplified (Douglas-Peucker, 1.5 m) to 2-5
+straight legs and rendered as text — e.g. seed 1060: *"after 0 m of path, turn
+left 47 degrees and fly 12.6 m; after 13 m, turn right 31 degrees and fly 3.8 m;
+after 16 m, turn right 40 degrees and fly 23.2 m."* — and injected into the
+decision prompt alongside live onboard odometry (path flown, straight-line
+distance from home, heading change from initial) so the agent could locate
+itself on the route. Nothing else changed; the agent still emits its own pixel.
+
+| seed | no hint | with route | geofence refusals | median `u` | stationary |
+| ---: | --- | --- | --- | ---: | ---: |
+| 1060 | timeout 24.6 m | timeout 24.8 m | 99 -> 101 | 112 | 46% |
+| 1061 | **success 0.5 m** | **timeout 24.7 m** | 0 -> **128** | 101 -> 112 | 54% |
+| 1062 | timeout 24.5 m | timeout 24.5 m | 110 -> 94 | 112 | 39% |
+| 1063 | timeout 19.5 m | timeout **15.0 m** | 133 -> **0** | 116 | **3%** |
+| 1064 | timeout 25.8 m | timeout 22.8 m | 91 -> 95 | 112 | 40% |
+
+**Result. 0/5 with the route against 1/5 without.** Being told exactly where to
+fly made the architecture strictly worse.
+**The route is not ignored, but it is not followed either.** An early reading of
+seeds 1060 and 1061 alone suggested the hint was inert; seed 1063 refutes that.
+There the hint eliminated the geofence deadlock outright (133 refusals to zero),
+cut stationary time from 60% to 3%, and produced the closest approach recorded
+on that seed. On seed 1061 it did the opposite, converting the only success into
+a 128-refusal deadlock. The mechanism is live and its sign is seed-dependent.
+**Median `u` is 112 on four of five seeds, and the image centre is 112.** On the
+one seed where the agent had been steering without the hint (1061, median 101)
+the added text moved it to exactly centre. The centre bias therefore behaves
+like a fallback under prompt load rather than a fixed habit, which predicts that
+further prompt engineering degrades steering rather than improving it.
+**Consequence.** Under the pixel contract this model cannot be talked into a
+route. The remaining question is whether the failure is the model or the output
+representation, which the discrete-direction contract isolates. Acceptance there
+is bearing spread beyond +-10 degrees, not mission success.
+
+### D-67 — The steering failure is the model, not the output representation
+**When.** 2026-09-04 — privileged capability probe, route hint plus the
+five-word steering contract, 240 s horizon, seeds 1060-1064.
+**Status of the evidence.** PRIVILEGED, as D-66. The route is `c0`'s successful
+trajectory rendered as text. Not reportable as C5 performance.
+**Decision.** Close the output-contract hypothesis. Two independent output
+representations produce the same degenerate behaviour, so the pixel encoding was
+never the cause.
+**Result.** 0/5, the same as the pixel contract with the route (D-66) and worse
+than the 1/5 with no hint at all.
+
+| seed | end | t | final | n | modal word | entropy | distribution |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 1060 | agent_stopped | 23 s | 32.87 m | 23 | 65% | 0.40 | left 15, right 8 |
+| 1061 | agent_stopped | 185 s | 8.50 m | 185 | 89% | 0.23 | right 165, ahead 18, left 2 |
+| 1062 | timeout | 240 s | 30.15 m | 239 | 99% | 0.04 | left 236, right 3 |
+| 1063 | timeout | 240 s | 39.02 m | 239 | 99% | 0.03 | right 237, left 2 |
+| 1064 | timeout | 240 s | 56.11 m | 239 | 79% | 0.32 | right 189, left 50 |
+
+Entropy is normalised over the five-word vocabulary: 1.0 uses it, 0.0 is one
+word forever. The observed range is 0.03-0.40.
+**The acceptance criterion inherited from `c5_onfly_qwen4_direction_dev` is
+wrong.** It asked whether commanded bearings spread beyond +-10 degrees, which
+seeds 1061-1064 pass while emitting a single word 79-99% of the time. The test
+detects *not-centre*; it does not detect *not-constant*. Any future contract
+experiment must use a distributional measure. Recorded so the earlier criterion
+is not reused.
+**Two structural limits found alongside it.** Across all 925 decisions the model
+chose `hard_left` **zero** times and `hard_right` **zero** times, so the
+effective vocabulary is the inner three words and it then collapses onto one of
+them. Separately the vocabulary is under-ranged for the task: the five routes
+require turns of 12-72 degrees and 9 of 16 exceed the +-38 degree maximum a
+single command can express, because the bearings are bounded by the camera
+half-angle.
+**False stops persist and are unrelated to steering.** Seeds 1060 and 1061 ended
+`agent_stopped` — the monitor declaring arrival — at 32.87 m and 8.50 m from a
+2 m goal radius, with `latest_scale=large` and `acquisition_count=2/2` on 1060
+while the vehicle had moved barely 2 m. This is the acquisition latch, a defect
+independent of the decision agent.
+**Conclusion.** Qwen3-VL 4B does not steer from vision in this task under either
+representation. Combined with D-66, the capability boundary is now located in
+the model rather than in the prompt, the coordinate contract, the step source or
+the path budget, each of which has been separately excluded.
+
+### D-68 — Gemma steers and Qwen does not, and it changes nothing
+**When.** 2026-09-04 — `c5_onfly_gemma4b_direction_dev`, unprivileged (no route
+hint), 240 s horizon, seeds 1060-1064. Acts on the standing instruction to try
+Gemma 4B if the discrete-direction contract failed, which D-67 established.
+**Decision.** Separate the steering question from the failure question. They are
+not the same question, and the answers point in opposite directions.
+**Steering: the user's claim is confirmed, with no overlap between the models.**
+Normalised entropy over the five-word vocabulary, per seed:
+
+| model | 1060 | 1061 | 1062 | 1063 | 1064 | mean | modal word |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Qwen3-VL 4B | 0.40 | 0.23 | 0.04 | 0.03 | 0.32 | **0.21** | 65-99% |
+| Gemma 3 4B | 0.68 | 0.68 | 0.53 | 0.52 | 0.58 | **0.60** | 36-66% |
+
+Every Gemma seed exceeds every Qwen seed. Gemma spreads across the vocabulary;
+Qwen emits one word 79-99% of the time on its full-length runs. Gemma also
+reached `hard_right`, which Qwen never selected in 925 decisions.
+**Outcome: 0/5, worse than the 1/5 Qwen pixel baseline.**
+
+| seed | end | final | closest | stationary | geofence refusals |
+| ---: | --- | ---: | ---: | ---: | ---: |
+| 1060 | timeout | 67.02 m | 23.63 m | 27% | 64/239 |
+| 1061 | agent_stopped | 14.19 m | 14.19 m | 3% | 0/39 |
+| 1062 | timeout | 61.67 m | 22.71 m | 54% | 130/239 |
+| 1063 | timeout | 31.07 m | 16.04 m | 59% | 136/239 |
+| 1064 | timeout | 63.25 m | 26.96 m | 41% | 99/239 |
+
+Closest approaches of 16-27 m are indistinguishable from Qwen's 19-26 m. Three
+times the steering entropy bought no additional progress toward the target.
+**Conclusion. Steering was never the binding constraint on this benchmark.** The
+geofence deadlock of D-65 reappears unchanged under the model that steers well —
+64 to 136 refusals on four of five seeds — and seed 1061 adds a fourth false
+stop, at 14.19 m from a 2 m goal radius, with the same
+`latest_scale=large, acquisition_count=2/2` signature seen twice under Qwen.
+**Consequence for the fix order.** Two defects are now demonstrated to be
+model-independent and are the live blockers: the absence of any fallback when
+every proposal is refused for the geofence, and the acquisition latch that
+declares arrival at 8.5-32.9 m. The Qwen steering deficiency is real and
+measured, but fixing it alone would not have changed a single outcome here.

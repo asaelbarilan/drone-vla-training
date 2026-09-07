@@ -753,3 +753,116 @@ def test_shared_comparison_uses_full_onfly_without_mutating_c3_ablation(arch_fac
     assert representative.semantic_supervision.value == "periodic_monitor"
     assert representative.policy.params["model_id"] == "qwen3-vl:4b"
     assert representative.monitor.params["model_id"] == "qwen3-vl:4b"
+
+
+def test_model_named_step_curve_is_the_spf_adaptive_form() -> None:
+    policy = OnFlyDecisionAgent(
+        model_id="stub",
+        step_from_model=True,
+        step_levels=5,
+        step_scale_m=9.0,
+        step_exponent=1.0,
+        step_min_m=1.0,
+    )
+    assert policy._model_step_m(5) == pytest.approx(9.0)
+    assert policy._model_step_m(3) == pytest.approx(5.4)
+    assert policy._model_step_m(1) == pytest.approx(1.8)
+    floored = OnFlyDecisionAgent(
+        model_id="stub", step_from_model=True, step_levels=5, step_scale_m=2.0, step_min_m=1.5
+    )
+    assert floored._model_step_m(1) == pytest.approx(1.5)
+    with pytest.raises(ValueError):
+        policy._model_step_m(6)
+
+
+def test_schema_carries_the_step_level_only_when_enabled() -> None:
+    off = OnFlyDecisionAgent(model_id="stub")
+    assert "d" not in off._schema(224, 224)["properties"]
+    on = OnFlyDecisionAgent(model_id="stub", step_from_model=True, step_levels=5)
+    schema = on._schema(224, 224)
+    assert schema["properties"]["d"] == {"type": "integer", "minimum": 1, "maximum": 5}
+    assert "d" in schema["required"]
+
+
+def test_model_named_step_replaces_the_depth_derived_ceiling() -> None:
+    """The whole ablation: the hop is set by ``d``, never by sensed depth.
+
+    C5's own step obeys ``range <= sensed_depth(u, v)``, so it cannot cross the
+    first surface on the ray. Here the same pixel yields two different ranges
+    purely because the model named a different level.
+    """
+    ranges = []
+    for reply in ('{"u":112,"v":112,"d":1}', '{"u":112,"v":112,"d":5}'):
+        model = StubModel([reply])
+        policy = OnFlyDecisionAgent(
+            model_id="stub",
+            step_from_model=True,
+            step_levels=5,
+            step_scale_m=9.0,
+            step_min_m=1.0,
+        )
+        bind(policy, services(model))
+        policy.reset(MISSION, 1060)
+        envelope = asyncio.run(policy.decide(context()))
+        assert envelope.provenance["step_source"] == "model"
+        ranges.append(float(envelope.provenance["executable_range_m"]))
+    assert ranges == [pytest.approx(1.8), pytest.approx(9.0)]
+
+
+def test_depth_step_remains_the_default_and_is_recorded_as_such() -> None:
+    model = StubModel(['{"u":112,"v":112}'])
+    policy = OnFlyDecisionAgent(model_id="stub")
+    bind(policy, services(model))
+    policy.reset(MISSION, 1060)
+    envelope = asyncio.run(policy.decide(context()))
+    assert envelope.provenance["step_source"] == "depth"
+    assert envelope.provenance["model_step_level"] == "0"
+
+
+def test_model_named_step_fails_closed_without_a_level() -> None:
+    model = StubModel(['{"u":112,"v":112}'])
+    policy = OnFlyDecisionAgent(model_id="stub", step_from_model=True)
+    bind(policy, services(model))
+    policy.reset(MISSION, 1060)
+    with pytest.raises(RuntimeError):
+        asyncio.run(policy.decide(context()))
+
+
+def test_route_hint_reaches_the_prompt_with_live_odometry() -> None:
+    """Guard for the privileged route-hint diagnostic.
+
+    If the hint silently failed to reach the model the probe would look like a
+    capability result while actually measuring nothing, so this asserts the text
+    is present and that the odometry anchoring it is real rather than constant.
+    """
+    model = StubModel(['{"u":112,"v":112}'])
+    route = "after 0 m of path, turn left 47 degrees and fly 12.6 m."
+    policy = OnFlyDecisionAgent(model_id="stub", route_hint=route)
+    bind(policy, services(model))
+    policy.reset(MISSION, 1060)
+    ctx = context()
+    asyncio.run(policy.decide(ctx))
+    prompt = model.requests[0].prompt
+    assert route in prompt
+    assert "Onboard odometry says you have flown" in prompt
+    assert "0 m of path" in prompt
+
+    plain = StubModel(['{"u":112,"v":112}'])
+    bare = OnFlyDecisionAgent(model_id="stub")
+    bind(bare, services(plain))
+    bare.reset(MISSION, 1060)
+    asyncio.run(bare.decide(context()))
+    assert "Onboard odometry" not in plain.requests[0].prompt
+
+
+def test_route_flown_survives_the_truncated_position_window() -> None:
+    """Path length must not reset when the 12-sample prompt window rolls over."""
+    policy = OnFlyDecisionAgent(model_id="stub", route_hint="x")
+    policy.reset(MISSION, 1060)
+    for i in range(30):
+        policy._route_positions.append(Vec3(x=float(i), y=0.0, z=0.0))
+        if i:
+            policy._route_flown_m += 1.0
+        policy._route_positions = policy._route_positions[-12:]
+    assert len(policy._route_positions) == 12
+    assert policy._route_flown_m == pytest.approx(29.0)

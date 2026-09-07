@@ -1697,3 +1697,100 @@ did not create capability: C2G, C3G and C6G remained 0/3 while scripted C2 was
 2/3. The vision task now inherits the same 90 s horizon as the non-vision task;
 C2G seed 2 reached the goal at 62.65 s but crossed it and never stopped. The
 declared 20-seed screen was therefore not run (D-42).
+
+## Why no drone dataset matches our action space (2026-09-04)
+
+Short answer: there is no drone equivalent of Open X-Embodiment, and the reason
+is physical rather than sociological. A 7-DoF arm's joint angles mean the same
+thing on every 7-DoF arm, so RT-X could pool 60 manipulation datasets into one
+action space. A quadrotor's `vx = 2.0 m/s` does not mean the same thing on two
+airframes with different mass, thrust-to-weight and controller gains. So no
+pooled aerial corpus exists, and every paper generates its own data in its own
+simulator against its own dynamics. That *is* the consensus. We already followed
+it without knowing it.
+
+### Correction to D-56
+
+D-56 called Exp2VLA's `+-1` action range a defect that would corrupt training if
+mixed with our m/s data. The dead channels (`vy`, `pitch`, `roll` identically
+zero) are a real defect and that part stands. The `+-1` range is not — per-channel
+normalisation to the unit interval is the field's standard action representation,
+used by OpenVLA and RT-X precisely so that datasets with incompatible physical
+units can be pooled. I had it backwards: normalisation is the mechanism that
+makes combination possible, not the thing that breaks it.
+
+### What this implies for us
+
+Our `[vx, vy, vz, yaw_rate]` in m/s is the unusual choice, not the datasets'.
+The fix is to train on normalised actions and de-normalise per platform at
+deployment:
+
+    a_norm = clip(a_mps / constraints.max_speed_mps, -1, 1)
+
+This makes UAV-Flow directly poolable with our own data: derive velocity from
+its 5 Hz pose logs, divide by its own observed speed limit, and both corpora
+land in the same representation. It also means the AirSim transfer we care about
+becomes a rescaling problem rather than a retraining problem.
+
+### Recommendation
+
+Train on UAV-Flow (30k real trajectories) plus our 4,765 samples, both
+normalised, with a per-dataset de-normalisation constant recorded in the
+manifest. Do not chase a dataset that ships m/s -- none will, and none should.
+
+### Superseded (2026-09-04)
+
+The section above claims our `[vx, vy, vz, yaw_rate]` in m/s is the unusual
+choice and that drone datasets cannot share an action space. Both are wrong; see
+D-58 in docs/RESEARCH_LOG.md. `[vx, vy, vz, yaw_rate]` is the ArduPilot/MAVLink
+velocity setpoint and is the field's convention, which CognitiveDrone adopts
+explicitly for hardware consistency. The wider stored vectors in Exp2VLA and
+CognitiveDrone are OpenVLA's 7-D manipulator action slot with the unused
+channels zeroed - padding, not extra degrees of freedom.
+
+Normalisation is still worth doing, but for the mundane reason that airframes
+have different top speeds, not because the action spaces disagree.
+
+## C5 retained benchmark is not a search task (2026-09-04)
+
+Target is dead ahead at 35 m on all five retained seeds; the seed varies the
+obstacle layout, not the bearing. Path budget is 54 m (0.6 m/s x 90 s) against a
+35 m straight line, leaving 19 m of slack for all detours. Measured paths were
+45-46 m, so the vehicle is speed-saturated for 86% of the episode.
+
+Outcome tracks occluders on the direct ray: 1061 has one and succeeds, 1064 has
+none and is the only seed that sees the target, 1060 and 1063 have two and 1062
+has three and none of them ever acquire.
+
+Consequence: the "go where you cannot yet see" framing (D-55, D-60) answers a
+question these seeds do not ask. Full evidence in docs/RESEARCH_LOG.md D-62 and
+D-64; the SPF step ablation is implemented, defaulted off, and should not be run
+against this benchmark.
+
+## C5 capability probes — the failure is the model (2026-09-04)
+
+Four causes were tested and excluded, each with its own run:
+
+- **Path budget.** Raising the horizon from 90 s to 240 s changed nothing:
+  1/5 either way. Failures used 78-90 m of a 144 m budget (D-64).
+- **Getting stuck at the fence.** All four failures freeze 55-56 m from home
+  with 100% of verifier calls refused for the geofence; the one success has
+  zero such refusals (D-65).
+- **Not knowing the route.** Given `c0`'s winning path in words, C5 scores
+  0/5 — worse than the 1/5 it gets knowing nothing (D-66).
+- **The output contract.** Swapping the pixel for a five-word steering
+  vocabulary also scores 0/5, and the model just repeats one word instead of
+  one pixel: 99% `left` on seed 1062, 99% `right` on 1063, mean entropy 0.21
+  of a possible 1.0, and `hard_left`/`hard_right` chosen zero times in 925
+  decisions (D-67).
+
+Classical reference `c0` solves all five seeds in 63-84 s. Where C5 does work
+(seed 1061, no hint) it reaches the target in 85 s, 1.27x `c0`.
+
+Two side findings. The direction contract's acceptance criterion was unsound —
+it tested "not centre", which a model emitting one fixed word still passes. And
+the monitor declared arrival at 32.9 m and 8.5 m from a 2 m goal radius, which
+is the acquisition latch and unrelated to steering.
+
+Full detail: reports/paper_implementation/C5_CAPABILITY_PROBES_20260904.md and
+C5_LONG_HORIZON_RESULTS_20260904.md.

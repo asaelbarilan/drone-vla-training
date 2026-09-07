@@ -1,0 +1,35 @@
+# Development-only C5 variant: SPF's model-named travel distance.
+#
+# Single-variable ablation of the frozen C5 profile. Everything - prompt
+# structure, pixel contract, memory, monitor, verifier - is inherited unchanged.
+# The only difference is who decides how far to fly.
+#
+# C5 derives the step from the depth image, so `range <= sensed_depth(u, v)` and
+# a waypoint can never be placed beyond the first surface on the chosen ray.
+# See, Point, Fly (arXiv 2509.22653) instead asks the VLM for a discrete level
+# `d` and maps it through `d_adj = max(d_min, s * (d/L)^p)`, using no depth
+# sensor at all. That removes a privileged input rather than adding one.
+#
+# step_scale_m is held at 7.0 to equal C5's own `max_depth_m`, so the maximum
+# reach is identical to the frozen profile and only the *source* of the distance
+# changes. Both are camera-forward, and the inherited verifier limit
+# (max_waypoint_distance_m: 10.0) already allows for the longer 3-D ray that
+# an off-axis pixel produces. A larger scale would confound "who decides the
+# step" with "how far the step may be" and would be rejected by the verifier at
+# image edges.
+
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+
+id: c5_onfly_qwen4_spf_step_dev
+profile_of: c5
+name: "C5 OnFly + Qwen3-VL 4B, model-named step (development)"
+description: "Seed-1060 ablation replacing the depth-derived step with SPF's adaptive model-named distance."
+tags: [onfly, development, spf_step, real_model, qwen3_vl_4b]
+
+policy:
+  params:
+    step_from_model: true
+    step_levels: 5
+    step_scale_m: 7.0
+    step_exponent: 1.0
+    step_min_m: 1.0

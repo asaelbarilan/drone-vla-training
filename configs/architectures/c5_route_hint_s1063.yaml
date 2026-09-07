@@ -1,0 +1,17 @@
+# PRIVILEGED DIAGNOSTIC - NOT A REPORTABLE ARCHITECTURE.
+# The route below is derived from c0's successful trajectory on this seed, i.e.
+# it is simulator truth handed to the model in words. This profile exists only
+# to answer "can the decision agent execute a route it is told?" and its results
+# must never be quoted as C5 performance. See D-66.
+
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+
+id: c5_route_hint_s1063
+profile_of: c5
+name: "C5 OnFly + spoken route (privileged diagnostic, seed 1063)"
+description: "Capability floor probe: c0's route described verbally in the decision prompt."
+tags: [onfly, development, privileged_diagnostic, route_hint, qwen3_vl_4b]
+
+policy:
+  params:
+    route_hint: "after 0 m of path, turn right 12 degrees and fly 8.0 m; after 8 m of path, turn right 19 degrees and fly 24.5 m; after 33 m of path, turn left 61 degrees and fly 5.0 m; after 38 m of path, turn left 50 degrees and fly 10.5 m."

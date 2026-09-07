@@ -131,6 +131,25 @@ class OnFlyDecisionAgent(BasePolicy):
         self.coverage_prompt = bool(params.get("coverage_prompt", False))
         self.frontier_assist = bool(params.get("frontier_assist", False))
         self.frontier_hop_m = float(params.get("frontier_hop_m", 9.0))
+        # See, Point, Fly (arXiv 2509.22653) asks the VLM for the travel distance
+        # instead of reading it off a depth image. C5's own step is bounded above
+        # by ``sensed_depth(u, v)``, so it cannot cross the first surface on the
+        # chosen ray; SPF has no such ceiling because no depth sensor is involved.
+        # Off by default: the frozen C5 results must stay reproducible.
+        # PRIVILEGED DIAGNOSTIC ONLY. A verbal description of a route that is
+        # known to reach the target. This is simulator truth injected into the
+        # prompt, so any run using it is a capability probe - "can the agent
+        # execute a route it is told?" - and can never be reported as a result
+        # for this architecture. Empty by default and expected to stay empty in
+        # every shipped profile.
+        self.route_hint = str(params.get("route_hint", ""))
+        self.step_from_model = bool(params.get("step_from_model", False))
+        self.step_levels = int(params.get("step_levels", 5))
+        self.step_scale_m = float(params.get("step_scale_m", 9.0))
+        self.step_exponent = float(params.get("step_exponent", 1.0))
+        self.step_min_m = float(params.get("step_min_m", 1.0))
+        if self.step_levels < 1:
+            raise ValueError("step_levels must be at least 1")
         if self.coordinate_contract not in {
             "image_pixels",
             "qwen_relative_1000",
@@ -144,6 +163,7 @@ class OnFlyDecisionAgent(BasePolicy):
         self._last_model_point: tuple[int, int] | None = None
         self._rejected_model_points: list[tuple[int, int]] = []
         self._route_positions: list[Vec3] = []
+        self._route_flown_m = 0.0
         self._initial_yaw_rad: float | None = None
         self._home_position: Vec3 | None = None
         self._viewed_heading_bins: set[int] = set()
@@ -164,13 +184,14 @@ class OnFlyDecisionAgent(BasePolicy):
         self._last_model_point = None
         self._rejected_model_points = []
         self._route_positions = []
+        self._route_flown_m = 0.0
         self._initial_yaw_rad = None
         self._home_position = None
         self._viewed_heading_bins = set()
         self.model_calls = 0
         self.parse_errors = 0
 
-    def _schema(self, width: int, height: int) -> dict[str, object]:
+    def _schema_base(self, width: int, height: int) -> dict[str, object]:
         max_u, max_v = (
             (999, 999)
             if self.coordinate_contract == "qwen_relative_1000"
@@ -210,6 +231,27 @@ class OnFlyDecisionAgent(BasePolicy):
             "required": ["u", "v"],
             "additionalProperties": False,
         }
+
+    def _schema(self, width: int, height: int) -> dict[str, object]:
+        """The pixel contract, plus SPF's discrete travel distance when enabled."""
+        schema = self._schema_base(width, height)
+        if self.step_from_model:
+            properties = dict(schema["properties"])  # type: ignore[arg-type]
+            properties["d"] = {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": self.step_levels,
+            }
+            schema["properties"] = properties
+            schema["required"] = list(schema["required"]) + ["d"]  # type: ignore[arg-type]
+        return schema
+
+    def _model_step_m(self, level: int) -> float:
+        """SPF's adaptive step curve: d_adj = max(d_min, s * (d/L)^p)."""
+        if not (1 <= level <= self.step_levels):
+            raise ValueError(f"step level {level} outside 1..{self.step_levels}")
+        ratio = level / float(self.step_levels)
+        return max(self.step_min_m, self.step_scale_m * ratio**self.step_exponent)
 
     def _prompt_point(
         self, pixel: tuple[int, int] | None, width: int, height: int
@@ -295,7 +337,11 @@ class OnFlyDecisionAgent(BasePolicy):
             not self._route_positions
             or obs.position.distance_to(self._route_positions[-1]) >= 1.0
         ):
+            if self._route_positions:
+                self._route_flown_m += obs.position.distance_to(self._route_positions[-1])
             self._route_positions.append(obs.position)
+            # Truncated for the prompt, so path length is accumulated separately
+            # above rather than recomputed from this window.
             self._route_positions = self._route_positions[-12:]
         heading_bin = round((obs.yaw_rad % (2 * math.pi)) / (math.pi / 4)) % 8
         self._viewed_heading_bins.add(heading_bin)
@@ -416,6 +462,37 @@ class OnFlyDecisionAgent(BasePolicy):
                     else "Return only JSON with string direction. "
                 )
             )
+        route_text = ""
+        if self.route_hint:
+            origin = self._home_position or obs.position
+            flown = self._route_flown_m
+            turned = 0.0
+            if self._initial_yaw_rad is not None:
+                turned = math.degrees(
+                    math.atan2(
+                        math.sin(obs.yaw_rad - self._initial_yaw_rad),
+                        math.cos(obs.yaw_rad - self._initial_yaw_rad),
+                    )
+                )
+            straight = math.dist(
+                (origin.x, origin.y, origin.z), (obs.position.x, obs.position.y, obs.position.z)
+            )
+            route_text = (
+                f"A route that reaches the destination is: {self.route_hint} "
+                "Follow it. Onboard odometry says you have flown "
+                f"{flown:.0f} m of path, you are {straight:.0f} m from where you started, "
+                f"and your heading is {turned:+.0f} degrees from your initial heading. "
+                "Work out which leg of the route you are on and point at where that leg "
+                "continues. "
+            )
+        if self.step_from_model:
+            output_text += (
+                f"Also return integer d between 1 and {self.step_levels}: how far to travel "
+                "toward that point on this step. 1 is a short cautious hop; "
+                f"{self.step_levels} is a long commitment through open space. Choose a large d "
+                "to cross open ground or to continue past an occluder into terrain you cannot "
+                "yet see, and a small d when an obstacle is close ahead. "
+            )
         prompt = (
             "You are OnFly's high-frequency decision agent on a UAV. Select the next image-space "
             "navigation target for the current subtask. (0,0) is top-left. "
@@ -423,7 +500,7 @@ class OnFlyDecisionAgent(BasePolicy):
             "Match every explicitly named visual attribute in the subtask exactly, including "
             "object type, color, and relative location. A similarly shaped object with a "
             "different named attribute is a distractor, not the destination. "
-            f"{history_text} {feedback_text} {coverage_text}"
+            f"{history_text} {feedback_text} {coverage_text}{route_text}"
             f"{output_text}"
             "Do not report distance, world coordinates, completion, or flight controls."
         )
@@ -449,6 +526,8 @@ class OnFlyDecisionAgent(BasePolicy):
                 )
             else:
                 expected = {"target_visible", "u", "v"} if self.frontier_assist else {"u", "v"}
+            if self.step_from_model:
+                expected = expected | {"d"}
             if set(answer) != expected:
                 raise ValueError(f"decision JSON must contain exactly {sorted(expected)}")
             target_visible = (
@@ -462,6 +541,7 @@ class OnFlyDecisionAgent(BasePolicy):
             else:
                 model_u, model_v = int(answer["u"]), int(answer["v"])
                 u, v = self._decode_point(model_u, model_v, intr.width, intr.height)
+            model_step_level = int(answer["d"]) if self.step_from_model else 0
         except (TypeError, ValueError, json.JSONDecodeError) as exc:
             self.parse_errors += 1
             raise RuntimeError(f"invalid OnFly decision-agent output: {exc}") from exc
@@ -521,6 +601,14 @@ class OnFlyDecisionAgent(BasePolicy):
         # can exceed the gate at close range and make the verifier reject an
         # otherwise self-consistent proposal forever.
         executable_range = max(0.0, gated - self.goal_standoff_m)
+        if self.step_from_model:
+            # SPF's step: the model names the distance and no depth ceiling
+            # applies, so a waypoint may be placed beyond the first surface on
+            # the ray. ``gated`` is still computed above and recorded below, so
+            # both step sources are comparable on the same run.
+            executable_range = max(
+                0.0, self._model_step_m(model_step_level) - self.goal_standoff_m
+            )
         origin = np.array([obs.position.x, obs.position.y, obs.position.z], dtype=float)
         projected = camera.unproject(u, v, executable_range, origin, obs.yaw_rad)
         # Equation (3) lifts the complete camera ray.  Holding altitude after
@@ -543,7 +631,11 @@ class OnFlyDecisionAgent(BasePolicy):
                 stop_at_target=False,
             ),
             1.0,
-            note="OnFly image target lifted with synchronized depth and bearing gate",
+            note=(
+                "OnFly image target lifted with a model-named step (SPF)"
+                if self.step_from_model
+                else "OnFly image target lifted with synchronized depth and bearing gate"
+            ),
             extra={
                 "pixel_u": f"{u:g}",
                 "pixel_v": f"{v:g}",
@@ -557,6 +649,9 @@ class OnFlyDecisionAgent(BasePolicy):
                 "source_yaw_rad": f"{obs.yaw_rad:.9f}",
                 "sampled_depth_m": f"{depth_m:.6f}",
                 "gated_range_m": f"{gated:.6f}",
+                "executable_range_m": f"{executable_range:.6f}",
+                "step_source": "model" if self.step_from_model else "depth",
+                "model_step_level": str(model_step_level),
                 "history_pixel": str(history_pixel),
                 "history_model_point": str(history),
                 "rgb_digest": obs.rgb.digest,
