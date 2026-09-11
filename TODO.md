@@ -10,6 +10,15 @@ becomes a decision with evidence.
 
 ---
 
+## D-94: inspect one shared decision before choosing the next experiment
+
+The flight debugger is ready: `reports/debugger/index.html` and
+`docs/FLIGHT_DEBUGGER.md`. First select a failure moment and record expected
+versus observed behavior with its run/time/decision ID. Distinguish source image,
+model proposal, routing and actual control before proposing a causal test.
+No more model calls or navigation runs are scheduled. Future authorized runs
+should enable exact diagnostic capture; old missing raw evidence stays missing.
+
 ## D-93: positive grounding before more navigation tuning
 
 The five-flight autonomous debugging budget is complete. None passed; leave

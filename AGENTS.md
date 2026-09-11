@@ -16,6 +16,28 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: shared visual debugger ready — D-94 (2026-09-11)
+
+User requested visibility before further navigation changes. Open
+`reports/debugger/index.html`; guide: `docs/FLIGHT_DEBUGGER.md`.
+Three existing seed-1061 flights are loaded: guarded Gemma failure, repaired
+Gemma baseline failure and historical Qwen success. All 5,305 positions and
+final distances match saved logs; all 396 decision sources match. No inference
+or new navigation experiment was run. 335 unit/contract tests and browser checks pass.
+
+Use `uavlab debugger RUN_DIR [RUN_DIR ...]` for zero-inference export; the older
+`uavlab replay` command actually reruns inference. Old missing prompts/outputs
+are labeled, camera/observer views are reconstructed, and code references are
+current checkout unless an actual snapshot was captured. The exporter currently
+supports grid3d without injected failures and rejects mismatched trajectories.
+
+For the next separately authorized development run, append `--debug-capture`
+with a fresh output directory (or `Orchestrator(..., debug_capture=True)`). It
+preserves request prompts/images/schema, returned payload, failures, full paths
+and actual code locations. Defaults remain unchanged. First inspect a shared
+moment and agree on the observed mismatch; do not start another blind sweep.
+Quota blocks, held-out restrictions and shared resident Gemma remain in force.
+
 ## Latest: bounded debugging completed — D-87–D-93 (2026-09-11)
 
 Five adaptive Gemma flights on seed 1061 all timed out. No collisions or

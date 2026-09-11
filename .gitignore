@@ -49,3 +49,7 @@ tmp/gemma_runtime_repair/
 
 .local/*_quota_stop
 .local/*_quota_stop_*
+
+# Generated portable debugger and browser QA images (rebuild from saved logs)
+reports/debugger/*.html
+reports/debugger/*.png

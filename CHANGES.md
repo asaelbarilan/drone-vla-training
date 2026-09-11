@@ -1,5 +1,17 @@
 # Build log
 
+## 2026-09-11 — debugger delivered and verified
+
+Standalone page: reports/debugger/index.html; guide: docs/FLIGHT_DEBUGGER.md.
+Three historical flights loaded, 5,305 poses and final distances exact, 396
+source frames aligned. Final validation: 335 unit/contract tests pass; browser
+checks pass both over localhost and as a standalone file, including responsive
+layout and downloaded review notes. No model/API calls or new flight experiments.
+Updated handoff to inspect one shared moment before selecting further tests.
+Design and replay implementation committed at 20dfe1d/c95399c; exact capture
+and browser checks committed at 1f1448a. Generated HTML/images are ignored and
+rebuildable without inference; the small validation manifest is tracked.
+
 ## 2026-09-11 — opt-in exact debugger capture
 
 Added run --debug-capture and the zero-inference debugger export command.

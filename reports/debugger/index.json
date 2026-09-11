@@ -1,0 +1,57 @@
+{
+  "html": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\reports\\debugger\\index.html",
+  "runs": [
+    {
+      "name": "c5_guarded_monitor_20260911_s1061",
+      "frames": 1801,
+      "decisions": 134,
+      "run_commit": "120ed27d06d01f4097825128dba3cefd75fb22a0",
+      "run_dirty": true,
+      "max_position_error_m": 0.0,
+      "checked_positions": 1800,
+      "final_distance_error_m": 0.0,
+      "source_reference_checks": 89,
+      "missing_source_frames": 0,
+      "recorded_calls": 0,
+      "events_sha256": "e95050ac6bbac695162cf3b36e5c5cc4cdeafe8aed2d95eff1136aed2127b7c9",
+      "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+    },
+    {
+      "name": "c5_gemma_runtime_fixed_target_stop_20260907_s1061",
+      "frames": 1801,
+      "decisions": 134,
+      "run_commit": "90ac641652c63822ded2404730f7d2a5a4cfbce6",
+      "run_dirty": true,
+      "max_position_error_m": 0.0,
+      "checked_positions": 1800,
+      "final_distance_error_m": 0.0,
+      "source_reference_checks": 89,
+      "missing_source_frames": 0,
+      "recorded_calls": 0,
+      "events_sha256": "81a305a8635f3e5816b82da60ca655888d96fbadf5e5884ed4954be225bbfeb5",
+      "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+    },
+    {
+      "name": "c5_fix_gate_20260907_fence90_s1061",
+      "frames": 1706,
+      "decisions": 128,
+      "run_commit": "90ac641652c63822ded2404730f7d2a5a4cfbce6",
+      "run_dirty": true,
+      "max_position_error_m": 0.0,
+      "checked_positions": 1705,
+      "final_distance_error_m": 0.0,
+      "source_reference_checks": 85,
+      "missing_source_frames": 0,
+      "recorded_calls": 0,
+      "events_sha256": "29b83605cdb439755da2cc9ff3b653766ca5a57071f0cc6cdaf3da92c4cf2e52",
+      "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+    }
+  ],
+  "validation": {
+    "unit_contract_tests_passed": 335,
+    "browser_checks": "passed on localhost and standalone file",
+    "model_calls": 0,
+    "new_navigation_experiments": 0,
+    "implementation_commit": "1f1448a"
+  }
+}

@@ -1908,4 +1908,11 @@ interaction reference. Old unavailable evidence must remain explicitly missing;
 reconstructed views and current-code references must be labeled. Replay must
 validate all available logged positions and the final distance; truth overlays
 are diagnostic only. No change to model, policy, controller or experiment defaults.
-**Status.** Implementation authorized by user; validation pending.
+**Status.** Implemented. Portable HTML built from three saved development flights;
+5,305 positions and three final distances match exactly, all 396 source frames
+matched. 335 unit/contract tests and browser interaction checks pass. No model
+calls. The debugger explicitly supports grid3d without injected failures; this
+simulator-specific diagnostic is registered in the portability contract test.
+Opt-in `--debug-capture` preserves exact requests/returned outputs, source
+snapshots and full paths; default experiment behavior is unchanged. User guide:
+`docs/FLIGHT_DEBUGGER.md`. Inspect a shared moment before selecting another test.
