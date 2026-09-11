@@ -13,5 +13,20 @@
     "monitor_visibility_accuracy": 0.37777777777777777,
     "replay_error_m": 0.0,
     "run": "c5_ground_monitor_20260911_s1061"
+  },
+  {
+    "index": 2,
+    "commit": "9d8f92a",
+    "profile": "c5_gemma_grounded_policy_dev",
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "final_m": 40.25334711950584,
+    "closest_m": 21.80193050055752,
+    "collisions": 0.0,
+    "visible_decision_frames": 3,
+    "monitor_visibility_accuracy": 0.6666666666666666,
+    "replay_error_m": 0.0,
+    "run": "c5_grounded_policy_20260911_s1061"
   }
 ]

@@ -1,5 +1,13 @@
 # Build log
 
+## 2026-09-11 — run 2/5 outcome
+
+D-88 result: timeout, final 40.25 m, closest
+21.80 m, collisions 0. Fresh point proposals
+alone did not solve navigation. Logs expose gray descriptions labeled target.
+Proceed to the independently committed D-89 attribute guard, same seed.
+
+
 ## 2026-09-11 — D-89 declared attribute consistency candidate
 
 Flight 2 exposes gray-object descriptions labeled as the red target. Added
