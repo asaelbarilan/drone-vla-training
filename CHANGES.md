@@ -1,5 +1,13 @@
 # Build log
 
+## 2026-09-11 — run 4/5 outcome
+
+Original policy plus guarded monitor timed out: final 14.62 m,
+closest 14.32 m, no collision or false stop. Monitor visibility
+accuracy 33.3%; no navigation success. Use
+fifth/final run for D-91 cue-only ablation on the same development seed.
+
+
 ## 2026-09-11 — D-91 final-run candidate
 
 Prepared a one-setting ablation of D-90: omit the previous-goal point cue.

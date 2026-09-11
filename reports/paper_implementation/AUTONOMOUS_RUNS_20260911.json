@@ -44,5 +44,20 @@
     "replay_error_m": 0.0,
     "contradictory_target_claims": 48,
     "run": "c5_attribute_guard_20260911_s1061"
+  },
+  {
+    "index": 4,
+    "commit": "f3f27d5",
+    "profile": "c5_gemma_guarded_monitor_dev",
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "final_m": 14.615451620564222,
+    "closest_m": 14.323557827459739,
+    "collisions": 0.0,
+    "visible_decision_frames": 39,
+    "monitor_visibility_accuracy": 0.3333333333333333,
+    "replay_error_m": 0.0,
+    "run": "c5_guarded_monitor_20260911_s1061"
   }
 ]
