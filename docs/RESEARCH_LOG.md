@@ -1863,3 +1863,9 @@ the active local default and available to valley.
 
 
 **D-87 run 1 outcome.** Seed 1061 timeout, final 14.15 m, no collisions or false stop; 38 visible decision frames, monitor accuracy 37.8%. Exact replay error zero. Identity remains unreliable. D-88 will be run next; no default promotion.
+
+
+### D-89 — Check declared attributes before selecting a target
+**Decision.** Add opt-in semantic color consistency to D-88 policy and D-87 monitor. For instructions with exactly one explicit supported color, require the VLM-reported candidate color to match it. The policy also provides an exploration alternative in the same call; a mismatched candidate cannot become a target and selects that model-proposed alternative. Monitor mismatch cannot establish acquisition or STOP. Ambiguous/multicolor instructions are rejected by this opt-in mode rather than guessed.
+**Rationale.** Flight 2 explicitly describes a gray rectangular building while labeling it target. This is a contradiction in model outputs, not absent visual information. The guard compares language attributes only: no RGB thresholding, simulator truth, scripted search or extra learned model. Color recognition remains the VLM's responsibility and hallucinated matching colors can still fail.
+**Status.** Task-contract-limited experimental semantic verifier, not a faithful OnFly reproduction. Run after flight 2 is scored; keep frozen defaults.

@@ -1,5 +1,15 @@
 # Build log
 
+## 2026-09-11 — D-89 declared attribute consistency candidate
+
+Flight 2 exposes gray-object descriptions labeled as the red target. Added
+an opt-in comparison between VLM-reported object color and the single explicit
+mission color. Mismatched policy candidates use a model-proposed exploration
+alternative; mismatched monitor candidates cannot acquire or stop. No image
+color thresholds or truth. Ambiguous color instructions fail explicitly.
+This is a limited semantic-contract experiment, not a claimed source replica.
+
+
 ## 2026-09-11 — run 1/5 outcome
 
 D-87 monitor-only trial on 1061 timed out at 14.15 m, no collisions or false

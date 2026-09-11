@@ -14,6 +14,7 @@ import base64
 import io
 import json
 import math
+import re
 from dataclasses import dataclass
 from typing import Any
 
@@ -56,6 +57,30 @@ def _extract_json(text: object) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError("model response JSON is not an object")
     return value
+
+
+_COLORS = (
+    "red",
+    "green",
+    "blue",
+    "gray",
+    "yellow",
+    "orange",
+    "purple",
+    "pink",
+    "brown",
+    "black",
+    "white",
+)
+
+
+def _mission_color(instruction: str) -> str:
+    """Parse one explicit positive color constraint, never inspect sensor pixels."""
+    words = re.findall(r"[a-z]+", instruction.lower().replace("grey", "gray"))
+    colors = set(words) & set(_COLORS)
+    if len(colors) != 1 or set(words) & {"not", "except", "excluding", "without"}:
+        raise ValueError("semantic_color_guard requires one unambiguous positive color")
+    return next(iter(colors))
 
 
 def bearing_gated_range(
@@ -130,6 +155,10 @@ class OnFlyDecisionAgent(BasePolicy):
         self.coordinate_contract = str(params.get("coordinate_contract", "image_pixels"))
         self.previous_goal_prompt = bool(params.get("previous_goal_prompt", True))
         self.grounded_waypoints = bool(params.get("grounded_waypoints", False))
+        self.semantic_color_guard = bool(params.get("semantic_color_guard", False))
+        if self.semantic_color_guard and not self.grounded_waypoints:
+            raise ValueError("semantic_color_guard requires grounded_waypoints")
+        self._required_color = None
         self.coverage_prompt = bool(params.get("coverage_prompt", False))
         self.frontier_assist = bool(params.get("frontier_assist", False))
         self.frontier_hop_m = float(params.get("frontier_hop_m", 9.0))
@@ -185,6 +214,9 @@ class OnFlyDecisionAgent(BasePolicy):
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         super().reset(mission, seed)
+        self._required_color = (
+            _mission_color(mission.instruction) if self.semantic_color_guard else None
+        )
         self._previous_goal = None
         self._last_model_point = None
         self._rejected_model_points = []
@@ -248,6 +280,15 @@ class OnFlyDecisionAgent(BasePolicy):
                 **properties,
             }
             schema["required"] = ["evidence", "kind", *schema["required"]]
+            if self.semantic_color_guard:
+                schema["properties"]["observed_color"] = {
+                    "type": "string",
+                    "enum": [*_COLORS, "unknown"],
+                }
+                schema["properties"]["explore_u"] = properties["u"]
+                schema["properties"]["explore_v"] = properties["v"]
+                schema["required"] += ["observed_color", "explore_u", "explore_v"]
+
         if self.step_from_model:
             properties = dict(schema["properties"])  # type: ignore[arg-type]
             properties["d"] = {
@@ -523,6 +564,14 @@ class OnFlyDecisionAgent(BasePolicy):
                 "requested attributes; a similar shape alone is insufficient. "
                 f"{feedback_text} Return JSON with evidence, kind, u, v."
             )
+            if self.semantic_color_guard:
+                prompt += (
+                    " Report observed_color for the object at u,v from its actual appearance, "
+                    "even if it differs from the requested color. In evidence describe THAT "
+                    "object only. Also supply explore_u,explore_v at an open passage near "
+                    "flight height as an alternative if this object does not match. "
+                    "The alternative must avoid the object's face and reveal more terrain."
+                )
             if self.step_from_model:
                 prompt += (
                     f" Also return d from 1 to {self.step_levels} for intended travel amount: "
@@ -554,6 +603,8 @@ class OnFlyDecisionAgent(BasePolicy):
                 expected = {"target_visible", "u", "v"} if self.frontier_assist else {"u", "v"}
             if self.grounded_waypoints:
                 expected |= {"evidence", "kind"}
+                if self.semantic_color_guard:
+                    expected |= {"observed_color", "explore_u", "explore_v"}
             if self.step_from_model:
                 expected = expected | {"d"}
             if set(answer) != expected:
@@ -565,6 +616,16 @@ class OnFlyDecisionAgent(BasePolicy):
                 ):
                     raise ValueError("invalid grounded waypoint evidence")
                 target_visible = answer["kind"] == "target"
+                if self.semantic_color_guard:
+                    if answer["observed_color"] not in {*_COLORS, "unknown"}:
+                        raise ValueError("invalid observed color")
+                    answer["raw_kind"] = answer["kind"]
+                    target_visible = (
+                        target_visible and answer["observed_color"] == self._required_color
+                    )
+                    if not target_visible:
+                        answer["kind"] = "exploration"
+                        answer["u"], answer["v"] = answer["explore_u"], answer["explore_v"]
 
             if self.coordinate_contract == "discrete_direction":
                 model_u, model_v = self._direction_to_point(str(answer["direction"]), intr, camera)
@@ -669,6 +730,15 @@ class OnFlyDecisionAgent(BasePolicy):
                 **(
                     {"waypoint_kind": answer["kind"], "visual_evidence": answer["evidence"]}
                     if self.grounded_waypoints
+                    else {}
+                ),
+                **(
+                    {
+                        "observed_color": answer["observed_color"],
+                        "required_color": self._required_color,
+                        "raw_waypoint_kind": answer["raw_kind"],
+                    }
+                    if self.semantic_color_guard
                     else {}
                 ),
                 "pixel_u": f"{u:g}",
@@ -1095,6 +1165,10 @@ class OnFlyMonitor:
         self.structured_evidence = bool(params.get("structured_evidence", False))
         self.target_bound_stop = bool(params.get("target_bound_stop", False))
         self.current_grounding = bool(params.get("current_grounding", False))
+        self.semantic_color_guard = bool(params.get("semantic_color_guard", False))
+        if self.semantic_color_guard and not self.current_grounding:
+            raise ValueError("semantic_color_guard requires current_grounding")
+        self._required_color = None
         if self.current_grounding and not self.target_bound_stop:
             raise ValueError("current_grounding requires target_bound_stop")
         if self.target_bound_stop and not self.structured_evidence:
@@ -1140,6 +1214,9 @@ class OnFlyMonitor:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._stop_count = self.calls = self.parse_errors = 0
+        self._required_color = (
+            _mission_color(mission.instruction) if self.semantic_color_guard else None
+        )
         self._arrival_point = None
         self._arrival_seq = -1
         self._ever_acquired = False
@@ -1275,6 +1352,16 @@ class OnFlyMonitor:
                 "required": ["evidence", "visible", "u", "v"],
                 "additionalProperties": False,
             }
+        if self.semantic_color_guard:
+            schema["properties"]["observed_color"] = {
+                "type": "string",
+                "enum": [*_COLORS, "unknown"],
+            }
+            schema["required"] = [*schema["required"], "observed_color"]
+            prompt += (
+                " Also report observed_color for the object at u,v. Use its actual color, "
+                "not the color requested in the mission; use unknown if no object is identified."
+            )
         result = await self.services.inference.invoke(
             InferenceRequest(
                 model_id=self.model_id,
@@ -1299,12 +1386,24 @@ class OnFlyMonitor:
         try:
             parsed = _extract_json(result.payload)
             if self.current_grounding:
-                if set(parsed) != {"evidence", "visible", "u", "v"}:
+                required = {"evidence", "visible", "u", "v"}
+                if self.semantic_color_guard:
+                    required.add("observed_color")
+                if set(parsed) != required:
                     raise ValueError("invalid current-grounding fields")
                 if type(parsed["visible"]) is not bool or not isinstance(parsed["evidence"], str):
                     raise ValueError("invalid current-grounding types")
                 visible = parsed["visible"]
                 grounding_evidence = parsed["evidence"]
+                if self.semantic_color_guard:
+                    color = parsed["observed_color"]
+                    if color not in {*_COLORS, "unknown"}:
+                        raise ValueError("invalid observed color")
+                    visible = visible and color == self._required_color
+                    grounding_evidence += (
+                        f"; color_guard={color}/{self._required_color}; matched={visible}"
+                    )
+
                 parsed = {
                     "earlier_target_visible": self._ever_acquired,
                     "latest_target_visible": visible,

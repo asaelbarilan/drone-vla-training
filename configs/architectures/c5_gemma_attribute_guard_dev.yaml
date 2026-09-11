@@ -1,0 +1,11 @@
+# D-89: compare VLM-observed color with the explicit mission constraint.
+_base_: c5_gemma_grounded_policy_dev.yaml
+id: c5_gemma_attribute_guard_dev
+profile_of: c5
+name: "C5 Gemma declared attribute consistency"
+policy:
+  params:
+    semantic_color_guard: true
+monitor:
+  params:
+    semantic_color_guard: true

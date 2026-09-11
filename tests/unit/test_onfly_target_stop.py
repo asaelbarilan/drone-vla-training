@@ -167,3 +167,71 @@ def test_grounded_waypoint_labels_only_model_identified_targets(kind):
     assert (decision.payload.target_label is not None) == (kind == "target")
     assert decision.provenance["waypoint_kind"] == kind
     assert "previous-goal" not in model.requests[0].prompt
+
+
+@pytest.mark.parametrize(
+    "color,expected",
+    [
+        ("gray", ProgressLabel.CONTINUE),
+        ("unknown", ProgressLabel.CONTINUE),
+        ("red", ProgressLabel.STOP),
+    ],
+)
+def test_attribute_guard_checks_model_color_before_arrival(color, expected):
+    ctx, monitor, model = setup_monitor()
+    monitor.current_grounding = monitor.semantic_color_guard = True
+    monitor.reset(MISSION, 1060)
+    model.replies = [
+        json.dumps(dict(evidence="a building", visible=True, u=500, v=500, observed_color=color))
+    ]
+    asyncio.run(monitor.assess(ctx))
+    fresh(ctx)
+    result = asyncio.run(monitor.assess(ctx))
+    assert result.label is expected
+    assert monitor.parse_errors == 0
+    assert "color_guard=" in result.evidence
+
+
+def test_mismatched_policy_object_uses_model_exploration_alternative():
+    ctx = context()
+    model = StubModel(
+        [
+            json.dumps(
+                dict(
+                    evidence="gray tower",
+                    kind="target",
+                    observed_color="gray",
+                    u=112,
+                    v=112,
+                    explore_u=160,
+                    explore_v=100,
+                )
+            )
+        ]
+    )
+    agent = OnFlyDecisionAgent(model_id="stub", grounded_waypoints=True, semantic_color_guard=True)
+    bind(agent, services(model))
+    agent.reset(MISSION, 1060)
+    decision = asyncio.run(agent.decide(ctx))
+    assert decision.payload.target_label is None
+    assert decision.provenance["raw_waypoint_kind"] == "target"
+    assert decision.provenance["waypoint_kind"] == "exploration"
+    assert decision.provenance["pixel_u"] == "160"
+
+
+@pytest.mark.parametrize(
+    "instruction",
+    ["fly to the tower", "fly to red or green tower", "fly to the tower that is not red"],
+)
+def test_ambiguous_color_contract_is_not_guessed(instruction):
+    from uavlab.plugins.reasoning.onfly import _mission_color
+
+    with pytest.raises(ValueError, match="unambiguous"):
+        _mission_color(instruction)
+
+
+def test_color_contract_is_not_hardcoded_to_red():
+    from uavlab.plugins.reasoning.onfly import _mission_color
+
+    assert _mission_color("fly to the blue tower") == "blue"
+    assert _mission_color("fly to the grey tower") == "gray"
