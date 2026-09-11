@@ -2013,3 +2013,24 @@ changes the selected waypoints requires measurement. All geometry truth is
 restricted to diagnostic evaluation. No VLM calls, new autonomous flights,
 reference changes or route verifier are part of this audit.
 **Status.** In progress; offline diagnostic, not a benchmark result.
+
+
+**D-97 outcome (2026-09-12).** Confirmed depth contract defect, before any
+navigation change. At decision 3bec7cd30542, source 39.95 s, the selected
+obstacle-7 pixel receives 0.213216 m from an off-screen corner instead of the
+1.732390 m surface depth along its camera ray. The 5x5 median/gate/lifting
+propagate that bad sensor value. First selected-box mismatch in this flight
+is available at 18 s; in the disputed approach it affects uncapped waypoint
+range from 30 s. Source pixels select obstacle 7 during 26–42 s. Accepted
+world goals during 32–41 s lie within 0.116146 m of each other, narrowing the
+hypothesis that repeated replacement canceled a useful distant goal during
+that phase. D-96's goal was also different/farther, not merely persistent.
+All 1,800 historical controls/positions, 89 plans and 89 full source depth
+ownership reconstructions match. Four analytical ray cases, 46 hit/reprojection
+checks, two existing camera tests, script lint and Edge UI checks pass.
+No model calls, new autonomous flights, runtime edits or verifier changes.
+Next fix the shared per-pixel depth contract with preserved historical replay,
+then validate the same pixels offline before testing navigation. This does
+not establish that sensor repair alone solves wall selection or the mission.
+Evidence: `reports/waypoint_handoff_audit_20260912/REPORT.md`; local visual
+page: `reports/debugger/waypoint_handoff.html`. Status: audit complete.

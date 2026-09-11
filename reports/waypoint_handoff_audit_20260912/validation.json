@@ -1,0 +1,23 @@
+{
+  "poses": 1800,
+  "controls": 1800,
+  "plans": 89,
+  "sources": 89,
+  "max_position_error_m": 0.0,
+  "max_control_error": 0.0,
+  "ray_box_analytical_cases": 4,
+  "ray_hits_reprojected": 46,
+  "verified_box_surface_hits": 46,
+  "max_reprojection_error": 2.5579538487363607e-13,
+  "all_depth_owner_images_bitwise_matched": 89,
+  "selected41_source_s": 39.95,
+  "selected41_painted_depth_m": 0.21321645379066467,
+  "selected41_exact_ray_depth_m": 1.7323904031892337,
+  "selected41_exact_patch_median_m": 1.7314571386928985,
+  "selected41_corner_pixel": [
+    583.5548574777737,
+    -1823.2016319834097
+  ],
+  "max_pairwise_waypoint_separation_32_41_m": 0.11614606281261594,
+  "model_calls": 0
+}

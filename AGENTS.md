@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: waypoint audit confirms depth defect — D-97 (2026-09-12)
+
+Read `reports/waypoint_handoff_audit_20260912/REPORT.md`; inspect the source
+pixel/depth/world-waypoint page at `reports/debugger/waypoint_handoff.html`.
+At the disputed decision, box depth is 0.213 m but the selected camera ray
+reaches the wall at 1.732 m. The renderer paints one off-screen corner depth
+over the entire obstacle. Full replay matches 1,800 controls, 89 plans and 89
+source depth images exactly. Selected pixels also lie on a foreground wall;
+do not claim the VLM is exonerated. Goals during 32–41 s vary by only 0.116 m,
+so large destination replacement is not supported as the cause in that phase.
+Next: fix per-pixel sensor depth, preserve the historical renderer for old
+replays, and verify the same saved pixels before a bounded flight comparison.
+No runtime fix, model calls or new flight in this audit. Camera tests (2),
+independent geometric checks, script lint and browser checks pass. No new
+verifier or architecture variant is warranted by this result alone.
+
 ## Latest: fixed-destination SUPER test succeeds — D-96 (2026-09-12)
 
 One user-authorized continuation from the exact guarded Gemma t=41.60 s state

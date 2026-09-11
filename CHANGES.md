@@ -1,5 +1,17 @@
 # Build log
 
+## 2026-09-12 — D-97 visual audit and narrowed causal claim
+
+Saved all 89 source RGB/depth captures, source-to-waypoint trace, geometric
+validation, contact sheet and interactive audit. The default decision displays
+0.21 m supplied versus 1.73 m actual selected-ray depth. Source-aligned pixels
+are on foreground obstacle 7; 32–41 s destinations stay within 0.116 m. This
+narrows the earlier persistence hypothesis: D-96 changed destination quality
+and location as well as holding it fixed. Documented the confirmed shared
+sensor defect separately from unproven full-flight causes and next steps.
+Edge navigation/value/patch checks pass with no JavaScript errors. Handoff and
+D-97 updated. No inference, navigation repair or new architecture added.
+
 ## 2026-09-12 — D-97 confirmed depth contract defect
 
 Added scripts/audit_waypoint_handoff.py. The historical replay matches all
