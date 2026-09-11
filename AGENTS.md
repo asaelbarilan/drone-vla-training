@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: user-directed physical passage test — D-95 (2026-09-12)
+
+User requested a manual crossing from guarded Gemma t=41.60 s / observation
+833. Two probes restored exact pose, velocity and yaw. Straight at 82.05 degrees
+collided after 9.85 s. Aiming 8.04 degrees right at the visible opening cleared
+both obstacles in 19.50 s without collision, with 0.213 m sampled body-to-wall
+gap. No VLM calls, model changes or runtime navigation fixes. These are
+privileged physical diagnostics, never autonomous benchmark results.
+Read `reports/passage_probe_20260912/REPORT.md` and watch
+`reports/debugger/passage_4160.html` (portable source page also in the report
+folder). Planner clearance is configured at 1.8 m; actual inferred occupancy and
+route commitment were not reconstructed in these manual probes. Next inspect
+that boundary at the user's specific state before choosing any navigation fix.
+Do not reduce safety margins or claim a VLM root cause based on this probe.
+
 ## Latest: shared visual debugger ready — D-94 (2026-09-11)
 
 User requested visibility before further navigation changes. Open

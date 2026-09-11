@@ -1932,3 +1932,19 @@ planner, controller, model or safety settings. Manual bypass of the planner is
 only a physical diagnostic, not evidence of autonomous navigation success.
 Scene truth may measure the result; this probe is privileged_diagnostic and
 must never enter the paper's architecture performance tables.
+
+
+**D-95 outcome (2026-09-12).** Both branches restored observation 833 with
+zero positional replay error and identical original velocity/yaw. Forward at
+82.05 degrees collided with the left obstacle after 9.85 s; the probe stopped
+at the first collision flag. Aimed at visually chosen image column 128/224
+(bearing 74.01 degrees, 8.04 degrees right), the same 0.6 m/s command cleared
+both obstacles in 19.50 s without collision. Minimum sampled wall distance from
+body center was 0.613 m, leaving 0.213 m beyond the 0.4 m body radius. The
+planner clearance parameter is 1.8 m. This establishes physical fit with altered
+aiming, not planner acceptance or the causal explanation of the original stall.
+Obstacle staggering matters; projected slit width is not a constant corridor
+width. No VLM calls or runtime changes. Videos, exact traces and report:
+`reports/passage_probe_20260912/REPORT.md`; browser comparison:
+`reports/debugger/passage_4160.html`. H.264 video playback verified in Edge,
+with no JavaScript errors. Implementation/script checkpoint: 2a8f489.

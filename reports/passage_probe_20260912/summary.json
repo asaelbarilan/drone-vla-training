@@ -1,0 +1,84 @@
+[
+  {
+    "title": "A - Straight ahead at the restored heading",
+    "mode": "heading",
+    "privileged_diagnostic": true,
+    "source_run": "c5_guarded_monitor_20260911_s1061",
+    "source_t_s": 41.6,
+    "source_observation_seq": 833,
+    "restoration_max_position_error_m": 0.0,
+    "initial_position": [
+      18.050505423297153,
+      11.260384395139289,
+      2.4879334073267474
+    ],
+    "initial_velocity": [
+      -0.3390547437682128,
+      -0.22320312156122826,
+      -0.014736080242315258
+    ],
+    "initial_yaw_deg": 82.0517686876299,
+    "command_bearing_deg": 82.0517686876299,
+    "command_mps": [
+      0.08296698201350812,
+      0.5942360472872461,
+      0.0
+    ],
+    "drone_radius_m": 0.4,
+    "planner_clearance_m": 1.7999999999999998,
+    "exit_y_m": 21.741288346879127,
+    "max_seconds": 24.0,
+    "model_calls": 0,
+    "outcome": "COLLISION - STOPPED AT FIRST CONTACT",
+    "elapsed_s": 9.85,
+    "final_position": [
+      18.466825947758572,
+      16.337073999457047,
+      2.4739347034388244
+    ],
+    "min_surface_clearance_m": 0.37411083019553804,
+    "collided": true,
+    "net_displacement_m": 5.0937506889703945
+  },
+  {
+    "title": "B - Aimed at the visible opening center (u=128)",
+    "mode": "opening",
+    "privileged_diagnostic": true,
+    "source_run": "c5_guarded_monitor_20260911_s1061",
+    "source_t_s": 41.6,
+    "source_observation_seq": 833,
+    "restoration_max_position_error_m": 0.0,
+    "initial_position": [
+      18.050505423297153,
+      11.260384395139289,
+      2.4879334073267474
+    ],
+    "initial_velocity": [
+      -0.3390547437682128,
+      -0.22320312156122826,
+      -0.014736080242315258
+    ],
+    "initial_yaw_deg": 82.0517686876299,
+    "command_bearing_deg": 74.01175826993254,
+    "command_mps": [
+      0.16526404763070562,
+      0.5767909452832246,
+      0.0
+    ],
+    "drone_radius_m": 0.4,
+    "planner_clearance_m": 1.7999999999999998,
+    "exit_y_m": 21.741288346879127,
+    "max_seconds": 24.0,
+    "model_calls": 0,
+    "outcome": "CLEARED BOTH OBSTACLES WITHOUT COLLISION",
+    "elapsed_s": 19.5,
+    "final_position": [
+      20.794051501250156,
+      21.747813466219544,
+      2.4739341311252785
+    ],
+    "min_surface_clearance_m": 0.6129900331676487,
+    "collided": false,
+    "net_displacement_m": 10.840360214611168
+  }
+]

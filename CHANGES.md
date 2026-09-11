@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-12 — D-95 physical crossing results and videos
+
+Executed exactly two manual probes from the requested t=41.60 s state, retaining
+velocity and simulator dynamics. Straight heading collided after 9.85 s; an
+8.04-degree rightward aim through the visible opening cleared both obstacles
+in 19.50 s, with 0.213 m minimum sampled body-to-wall gap. Both restores have
+zero logged-position error. Saved per-tick traces, source image, endpoint
+comparisons, two H.264 videos and a standalone side-by-side page. Browser
+playback checked. No VLM/API calls; no navigation implementation changed.
+Nominal planner clearance is 1.8 m; the relationship to its inferred map and
+original stall remains to be investigated. All evidence is privileged diagnostic,
+not an autonomous performance result. See reports/passage_probe_20260912/REPORT.md.
+
 ## 2026-09-12 — reproducible manual crossing script
 
 Added scripts/probe_passage_4160.py: restore every prior control and verify

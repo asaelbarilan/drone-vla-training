@@ -10,6 +10,15 @@ becomes a decision with evidence.
 
 ---
 
+## D-95: inspect the planner's geometry at the tested passage
+
+The manual physical probe is complete: the opening can be crossed from the
+selected dynamic state with an 8.04-degree aiming change, but the successful
+route's 0.613 m center-to-wall separation is below the 1.8 m planner clearance
+parameter. Next inspect inferred occupancy, inflated cells and committed route
+at that state. No runtime margin change, model call or sweep is scheduled.
+Evidence: `reports/passage_probe_20260912/REPORT.md`.
+
 ## D-94: inspect one shared decision before choosing the next experiment
 
 The flight debugger is ready: `reports/debugger/index.html` and
