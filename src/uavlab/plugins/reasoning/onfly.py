@@ -297,7 +297,7 @@ class OnFlyDecisionAgent(BasePolicy):
                 "maximum": self.step_levels,
             }
             schema["properties"] = properties
-            schema["required"] = list(schema["required"]) + ["d"]  # type: ignore[arg-type]
+            schema["required"] = [*list(schema["required"]), "d"]  # type: ignore[arg-type]
         return schema
 
     def _model_step_m(self, level: int) -> float:
@@ -350,7 +350,7 @@ class OnFlyDecisionAgent(BasePolicy):
         centre_u = intr.width / 2.0
         u = centre_u - camera.focal_px * math.tan(bearing)
         u = min(max(u, 0.0), intr.width - 1.0)
-        return int(round(u)), int(round(intr.height / 2.0))
+        return round(u), round(intr.height / 2.0)
 
     def _history_pixel(self, ctx: DecisionContext, camera: Camera) -> tuple[int, int] | None:
         if self._previous_goal is None:
@@ -1576,7 +1576,10 @@ class OnFlyMonitor:
                     f"history_continuous={history_continuous}"
                 )
         if self.current_grounding:
-            evidence += f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
+            evidence += (
+                f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
+                "; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only"
+            )
         if label is ProgressLabel.STOP:
             self._stop_count += 1
             if self._stop_count < self.stop_confirmations:

@@ -1,0 +1,8 @@
+# D-90: restore original policy, isolate grounded/attribute-checked monitoring.
+_base_: c5_gemma_ground_monitor_dev.yaml
+id: c5_gemma_guarded_monitor_dev
+profile_of: c5
+name: "C5 original policy with attribute-checked monitor"
+monitor:
+  params:
+    semantic_color_guard: true

@@ -1869,3 +1869,9 @@ the active local default and available to valley.
 **Decision.** Add opt-in semantic color consistency to D-88 policy and D-87 monitor. For instructions with exactly one explicit supported color, require the VLM-reported candidate color to match it. The policy also provides an exploration alternative in the same call; a mismatched candidate cannot become a target and selects that model-proposed alternative. Monitor mismatch cannot establish acquisition or STOP. Ambiguous/multicolor instructions are rejected by this opt-in mode rather than guessed.
 **Rationale.** Flight 2 explicitly describes a gray rectangular building while labeling it target. This is a contradiction in model outputs, not absent visual information. The guard compares language attributes only: no RGB thresholding, simulator truth, scripted search or extra learned model. Color recognition remains the VLM's responsibility and hallucinated matching colors can still fail.
 **Status.** Task-contract-limited experimental semantic verifier, not a faithful OnFly reproduction. Run after flight 2 is scored; keep frozen defaults.
+
+
+### D-90 — Retain monitor guard, restore original waypoint policy
+**Decision.** For the remaining bounded trials, isolate the current-frame/color-consistent monitor with the original waypoint policy (yaw off). D-88/D-89 policy variants remain opt-in records, not defaults. Compare on 1061, then check the selected monitor on 1060 if no new blocking defect appears.
+**Rationale.** Flight 2 regressed to 40.25 m final distance; flight 3 is rejecting gray/green target claims but its model-selected exploration travels away from the goal. The guard fixes a semantic contradiction but does not make exploration useful. Restore the stronger prior policy instead of stacking additional untested planning machinery.
+**Status.** Candidate monitor fix only; no claim of solved navigation or general capability from one seed.

@@ -1,5 +1,15 @@
 # Build log
 
+## 2026-09-11 — D-90 restore original policy for monitor isolation
+
+Prepared a profile retaining the current-frame/attribute monitor while
+restoring the original waypoint policy. New policy variants regressed; their
+commits remain available but are not promoted. Run 4 will compare on 1061
+after run 3 completes. Clarified logs that candidate scale is not a visual
+measurement and point consistency is geometry only. Removed three existing
+style warnings without behavior changes. Accumulated suite: 321 tests pass.
+
+
 ## 2026-09-11 — run 2/5 outcome
 
 D-88 result: timeout, final 40.25 m, closest
