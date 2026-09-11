@@ -1,5 +1,16 @@
 # Build log
 
+## 2026-09-11 — D-87 current-frame grounding monitor
+
+Added opt-in current-image identification, separating VLM identity from metric
+arrival and temporal confirmations. The false-stop frame is a gray obstacle;
+point consistency was only geometry, not identity. Latest image only, short
+evidence/visibility/coordinate schema; no truth or color detector. Gemma
+output ceiling raised to 192 for the evidence field. Same policy/controller.
+Regression tests cover absent coordinates, genuine near/far targets and one
+image per request. Run 1/5 will use seed 1061. Defaults unchanged.
+
+
 ## 2026-09-11 — rollback checkpoint before autonomous debugging
 
 User authorized up to five further development flights and commits after each

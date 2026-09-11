@@ -265,9 +265,7 @@ class OnFlyDecisionAgent(BasePolicy):
             round(v * 999 / max(height - 1, 1)),
         )
 
-    def _decode_point(
-        self, u: int, v: int, width: int, height: int
-    ) -> tuple[float, float]:
+    def _decode_point(self, u: int, v: int, width: int, height: int) -> tuple[float, float]:
         """Convert model coordinates to calibrated image pixels."""
         if self.coordinate_contract == "qwen_relative_1000":
             if not (0 <= u <= 999 and 0 <= v <= 999):
@@ -280,9 +278,7 @@ class OnFlyDecisionAgent(BasePolicy):
             raise ValueError("decision pixel is outside the image")
         return float(u), float(v)
 
-    def _direction_to_point(
-        self, direction: str, intr: Any, camera: Camera
-    ) -> tuple[int, int]:
+    def _direction_to_point(self, direction: str, intr: Any, camera: Camera) -> tuple[int, int]:
         """Turn a direction word into the pixel the rest of the pipeline expects.
 
         Everything downstream - range gating, waypoint construction, the verifier
@@ -531,9 +527,7 @@ class OnFlyDecisionAgent(BasePolicy):
                 raise ValueError(f"decision JSON must contain exactly {sorted(expected)}")
             target_visible = bool(answer["target_visible"]) if self.frontier_assist else True
             if self.coordinate_contract == "discrete_direction":
-                model_u, model_v = self._direction_to_point(
-                    str(answer["direction"]), intr, camera
-                )
+                model_u, model_v = self._direction_to_point(str(answer["direction"]), intr, camera)
                 u, v = float(model_u), float(model_v)
             else:
                 model_u, model_v = int(answer["u"]), int(answer["v"])
@@ -603,9 +597,7 @@ class OnFlyDecisionAgent(BasePolicy):
             # applies, so a waypoint may be placed beyond the first surface on
             # the ray. ``gated`` is still computed above and recorded below, so
             # both step sources are comparable on the same run.
-            executable_range = max(
-                0.0, self._model_step_m(model_step_level) - self.goal_standoff_m
-            )
+            executable_range = max(0.0, self._model_step_m(model_step_level) - self.goal_standoff_m)
         origin = np.array([obs.position.x, obs.position.y, obs.position.z], dtype=float)
         projected = camera.unproject(u, v, executable_range, origin, obs.yaw_rad)
         # Equation (3) lifts the complete camera ray.  Holding altitude after
@@ -924,8 +916,7 @@ class OnFlyHybridMemory(_OnFlyVisualMemoryBase):
             if frame.position.distance_to(old.position) <= self.dedupe_distance_m
         ]
         if any(
-            1.0 - float(np.dot(frame.feature, old.feature)) < self.dedupe_epsilon
-            for old in nearby
+            1.0 - float(np.dot(frame.feature, old.feature)) < self.dedupe_epsilon for old in nearby
         ):
             return
         self._frames.append(frame)
@@ -945,11 +936,7 @@ class OnFlyHybridMemory(_OnFlyVisualMemoryBase):
         unused pool entries to fill empty segment slots.
         """
         total = max(latest.distance, 1e-6)
-        candidates = [
-            frame
-            for frame in self._frames[1:]
-            if frame.seq != latest.seq
-        ]
+        candidates = [frame for frame in self._frames[1:] if frame.seq != latest.seq]
         by_seq = {frame.seq: frame for frame in candidates}
         winners: list[_VisualFrame | None] = [None] * self.budget
         for segment in range(self.budget):
@@ -963,9 +950,7 @@ class OnFlyHybridMemory(_OnFlyVisualMemoryBase):
                 continue
             center = total * (segment + 0.5) / self.budget
             in_segment = [
-                frame
-                for frame in candidates
-                if self._segment_index(frame, total) == segment
+                frame for frame in candidates if self._segment_index(frame, total) == segment
             ]
             if in_segment:
                 winners[segment] = min(
@@ -1064,6 +1049,9 @@ class OnFlyMonitor:
             )
         self.structured_evidence = bool(params.get("structured_evidence", False))
         self.target_bound_stop = bool(params.get("target_bound_stop", False))
+        self.current_grounding = bool(params.get("current_grounding", False))
+        if self.current_grounding and not self.target_bound_stop:
+            raise ValueError("current_grounding requires target_bound_stop")
         if self.target_bound_stop and not self.structured_evidence:
             raise ValueError("target_bound_stop requires structured_evidence")
         if self.target_bound_stop and (
@@ -1087,9 +1075,7 @@ class OnFlyMonitor:
         self.reject_depth_vetoed_acquisition = bool(
             params.get("reject_depth_vetoed_acquisition", False)
         )
-        self.strict_attribute_evidence = bool(
-            params.get("strict_attribute_evidence", False)
-        )
+        self.strict_attribute_evidence = bool(params.get("strict_attribute_evidence", False))
         self.lost_hold_s = float(params.get("lost_hold_s", 0.25))
         self.lost_reorient_s = float(params.get("lost_reorient_s", 2.0))
         self.lost_yaw_rate_rps = float(params.get("lost_yaw_rate_rps", 0.8))
@@ -1220,11 +1206,37 @@ class OnFlyMonitor:
                 "If the requested target cannot be identified, set both coordinates to null "
                 "and latest_target_visible=false. Mission words are a query, not evidence."
             )
+        if self.current_grounding:
+            # Identity comes only from the current image. History is maintained
+            # by the executive; geometric arrival is evaluated after grounding.
+            images = [_encode_png(current_rgb)]
+            prompt = (
+                "Describe the visible objects and colors briefly in evidence, then locate "
+                f"the destination requested by: {ctx.mission.instruction}. "
+                "The instruction is a query, not evidence that its object is present. "
+                "Set visible=true only if that exact object is identifiable in this image. "
+                "Give u,v on its visible body in a 0-999 grid (top-left origin). "
+                "If absent set visible=false and u=v=null. Return JSON only."
+            )
+            coordinate = {"type": ["integer", "null"], "minimum": 0, "maximum": 999}
+            schema = {
+                "type": "object",
+                "properties": {
+                    "evidence": {"type": "string", "maxLength": 120},
+                    "visible": {"type": "boolean"},
+                    "u": coordinate,
+                    "v": coordinate,
+                },
+                "required": ["evidence", "visible", "u", "v"],
+                "additionalProperties": False,
+            }
         result = await self.services.inference.invoke(
             InferenceRequest(
                 model_id=self.model_id,
                 role="monitor",
-                prompt_hash="onfly:monitor:target_bound_v1"
+                prompt_hash="onfly:monitor:current_grounding_v1"
+                if self.current_grounding
+                else "onfly:monitor:target_bound_v1"
                 if self.target_bound_stop
                 else "onfly:monitor:v1",
                 input_tokens=max(1, len(prompt) // 4),
@@ -1240,6 +1252,23 @@ class OnFlyMonitor:
         recovery_reacquired = False
         try:
             parsed = _extract_json(result.payload)
+            grounding_evidence = None
+            if self.current_grounding:
+                if set(parsed) != {"evidence", "visible", "u", "v"}:
+                    raise ValueError("invalid current-grounding fields")
+                if type(parsed["visible"]) is not bool or not isinstance(parsed["evidence"], str):
+                    raise ValueError("invalid current-grounding types")
+                visible = parsed["visible"]
+                grounding_evidence = parsed["evidence"]
+                parsed = {
+                    "earlier_target_visible": self._ever_acquired,
+                    "latest_target_visible": visible,
+                    "latest_target_scale": "large" if visible else "absent",
+                    # STOP is only a candidate; metric arrival must still pass.
+                    "status": "STOP" if visible else "LOST",
+                    "target_u": parsed["u"] if visible else None,
+                    "target_v": parsed["v"] if visible else None,
+                }
             expected = (
                 {
                     "earlier_target_visible",
@@ -1273,6 +1302,8 @@ class OnFlyMonitor:
             evidence = f"invalid monitor output; fail-safe CONTINUE ({exc})"
         else:
             evidence = f"visual monitor classified {label.value} from {len(images)} frames"
+            if self.current_grounding:
+                evidence += f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
             if self.structured_evidence:
                 was_acquired = self._ever_acquired
                 earlier = bool(parsed["earlier_target_visible"])
@@ -1569,11 +1600,13 @@ class OnFlySemanticGeometricVerifier(SemanticGeometricVerifier):
                 pitch_rad=camera_pitch,
             )
             endpoint = np.array(
-                [[
-                    envelope.payload.target.x,
-                    envelope.payload.target.y,
-                    envelope.payload.target.z,
-                ]],
+                [
+                    [
+                        envelope.payload.target.x,
+                        envelope.payload.target.y,
+                        envelope.payload.target.z,
+                    ]
+                ],
                 dtype=float,
             )
             origin = np.array(
@@ -1582,9 +1615,7 @@ class OnFlySemanticGeometricVerifier(SemanticGeometricVerifier):
             )
             _, endpoint_depth = camera.project(endpoint, origin, source_yaw)
             if endpoint_depth[0] < -1e-3 or endpoint_depth[0] > gated_range + 1e-3:
-                return self._reject(
-                    "OnFly endpoint exceeds its camera-forward depth/bearing gate"
-                )
+                return self._reject("OnFly endpoint exceeds its camera-forward depth/bearing gate")
         result = super().verify(envelope, ctx)
         if result.accepted and not result.reason:
             result.reason = "depth/geofence/clearance valid; ViT feature refinement unavailable"

@@ -127,3 +127,29 @@ def test_depth_snapshot_survives_inference_eviction():
     model.invoke = evict
     result = asyncio.run(monitor.assess(ctx))
     assert "target_bound_range_m=1." in result.evidence
+
+
+def test_current_grounding_absence_cannot_use_coordinates_to_stop():
+    ctx, monitor, model = setup_monitor()
+    monitor.current_grounding = True
+    model.replies = [json.dumps(dict(evidence="gray obstacle", visible=False, u=500, v=500))]
+    for _ in range(3):
+        result = asyncio.run(monitor.assess(ctx))
+        assert result.label is ProgressLabel.CONTINUE
+        fresh(ctx)
+    assert not monitor._ever_acquired
+    assert monitor.parse_errors == 0
+    assert all(request.image_count == 1 for request in model.requests)
+
+
+@pytest.mark.parametrize(
+    "depth,expected", [(1.0, ProgressLabel.STOP), (20.0, ProgressLabel.CONTINUE)]
+)
+def test_current_grounding_keeps_metric_arrival_gate(depth, expected):
+    ctx, monitor, model = setup_monitor(depth_m=depth)
+    monitor.current_grounding = True
+    model.replies = [json.dumps(dict(evidence="target visible", visible=True, u=500, v=500))]
+    asyncio.run(monitor.assess(ctx))
+    fresh(ctx)
+    assert asyncio.run(monitor.assess(ctx)).label is expected
+    assert monitor.parse_errors == 0

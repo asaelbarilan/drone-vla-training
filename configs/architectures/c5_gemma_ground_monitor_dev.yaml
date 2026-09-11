@@ -1,0 +1,11 @@
+# D-87: one-image grounding; same policy, geometry and backbone.
+_base_: c5_gemma4_e2b_runtime_fixed_target_stop_dev.yaml
+id: c5_gemma_ground_monitor_dev
+profile_of: c5
+name: "C5 Gemma current-frame grounding monitor"
+monitor:
+  params:
+    current_grounding: true
+inference:
+  params:
+    num_predict: 192

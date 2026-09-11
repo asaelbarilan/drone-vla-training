@@ -1848,3 +1848,9 @@ the active local default and available to valley.
 
 
 **D-86 outcome.** One goal-facing yaw trial failed by false stop at 63.2 s, 25.20 m from target; closest 24.74 m, zero target-visible replay frames and no collisions. Baseline closest 13.22 m and 36.4 s visible. Both exact replays match final distance; actual model Gemma E2B verified. Manifest differs only in yaw option and identifying labels. 308 unit/contract tests and focused lint pass. Do not promote or expand: yaw alone is insufficient; investigate false target identity and stop evidence offline. Historical-baseline comparison is not a controlled estimate of model stochasticity. Report: docs/research/c5_navigation_audit_20260910/YAW_RESULT_20260911.md.
+
+
+### D-87 — Current-frame grounding monitor, bounded autonomous session
+**Decision.** User authorizes four to five adaptive development flights with commits. First isolate monitor grounding: one latest image, short describe-then-identify schema; arrival remains synchronized target-pixel depth plus distinct-frame geometry. No mission-specific color detector, truth, scripted search or new backbone. Keep yaw off. Up to five flights total this session; record each result before selecting the next change.
+**Rationale.** Exact false-stop frame is a gray obstacle. Existing monitor conflates multi-image history, identity, apparent scale and status and contains conflicting one-field/six-field output instructions. Geometry consistency cannot validate identity. Prior simple grounding rejected an absent frame but missed a distant target, so navigation improvement is not assumed.
+**Status.** Opt-in development only, not a faithful source reproduction or accepted fix.
