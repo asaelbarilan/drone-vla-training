@@ -1,0 +1,14 @@
+{
+  "works": 24,
+  "meaningful": 24,
+  "primary": 24,
+  "categories": {
+    "direct_solution": 9,
+    "foundational": 5,
+    "dataset_benchmark": 6,
+    "negative_evidence": 3,
+    "recent": 1
+  },
+  "valid": true,
+  "errors": []
+}

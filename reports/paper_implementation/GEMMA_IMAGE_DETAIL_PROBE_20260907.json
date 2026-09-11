@@ -1,0 +1,28 @@
+[
+  {
+    "variant": "enlarged",
+    "prompt": "Is a red object visible? If so, is it on the left, center, or right of the image? Briefly explain using what you see.",
+    "schema": null,
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "Based on the image provided, there is **no red object** visible. The image primarily consists of a table with various cells containing text and some small icons (like the green and blue squares in the bottom right)."
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_gemma4_e2b_20260907_baseline_s1061",
+    "observation_seq": 480
+  },
+  {
+    "variant": "uniform_tiles",
+    "prompt": "The first image is the whole camera view. The next four are its top-left, top-right, bottom-left, bottom-right quadrants, in that order. Is a red object visible anywhere? If so, where in the whole view? Be concise.",
+    "schema": null,
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "No red object is visible in the image."
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_gemma4_e2b_20260907_baseline_s1061",
+    "observation_seq": 480
+  }
+]

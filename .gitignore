@@ -35,3 +35,17 @@ data/
 
 # Third-party papers, re-downloadable from the links in papers/small_vla/README.md.
 papers/**/*.pdf
+
+# Local same-weight Gemma runtime repair artifacts; scripts/results are tracked.
+tmp/gemma_repair_vendor/
+tmp/gemma_runtime_repair/
+
+# Local credential configuration
+.env
+.env.*
+!.env.example
+
+.local/gemini_quota_stop
+
+.local/*_quota_stop
+.local/*_quota_stop_*

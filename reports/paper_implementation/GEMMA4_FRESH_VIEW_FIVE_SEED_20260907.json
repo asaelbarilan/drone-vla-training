@@ -1,0 +1,107 @@
+[
+  {
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 43.931746913240445,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.40858553932584274,
+    "monitor_latency_s": 0.8479749422222222,
+    "wall_s": 80.01142190000064,
+    "run": "runs\\c5_gemma4_e2b_20260907_fresh_view_s1061",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1060,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 54.97717958913131,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.30598175617977524,
+    "monitor_latency_s": 0.71385858,
+    "wall_s": 64.46280289999959,
+    "run": "runs\\c5_gemma4_e2b_20260907_fresh_view_s1060",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1062,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 34.35358703264614,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.4405175191011236,
+    "monitor_latency_s": 0.7498441133333333,
+    "wall_s": 77.7205441999995,
+    "run": "runs\\c5_gemma4_e2b_20260907_fresh_view_s1062",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1063,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 27.401419470596174,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.3290793505617977,
+    "monitor_latency_s": 0.7871288977777777,
+    "wall_s": 69.81405989999985,
+    "run": "runs\\c5_gemma4_e2b_20260907_fresh_view_s1063",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1064,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 54.95811664446268,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.3058139617977528,
+    "monitor_latency_s": 0.7640449266666667,
+    "wall_s": 66.65741760000128,
+    "run": "runs\\c5_gemma4_e2b_20260907_fresh_view_s1064",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  }
+]

@@ -16,7 +16,123 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Where we are — 2026-09-04
+## Yaw ablation outcome — D-86 (2026-09-11)
+
+One opt-in Gemma yaw trial failed: false stop 25.20 m from target; target never
+visible in replay; closest 24.74 m. Default profile unchanged; do not expand.
+308 unit/contract tests pass. No cloud quota used, no run remains active.
+Read `docs/research/c5_navigation_audit_20260910/YAW_RESULT_20260911.md`.
+Next: inspect the saved false-stop frame and target-consistency logic offline.
+Do not treat the verified yaw discrepancy as a demonstrated navigation fix.
+
+## Research audit — D-85 (2026-09-10)
+
+Read `docs/research/c5_navigation_audit_20260910/REPORT.md` before another
+navigation change. Review retained 24 primary works from 41 candidates.
+Verified discrepancy: OnFly goal-facing yaw versus local path-carrot yaw;
+causal contribution remains untested. Repaired Gemma still has grounding error.
+C1 receives labeled metric detections, preventing an equal-input planning
+comparison. Keep the task and frozen substrate. Next: zero-call visibility,
+goal and carrot trace before considering an isolated yaw ablation under a new
+implementation decision. No new inference or flights during this review.
+Quota blocks and held-out restrictions remain in force.
+
+## Free-provider router — D-84 (2026-09-10)
+
+User requested failover among Gemini, Groq, Mistral and OpenRouter. The opt-in
+`c5_free_vlm_router_dev` profile is implemented and mock-tested. It stays on the
+working provider, switches on 429/network/5xx, persists quota blocks and never
+selects paid OpenRouter IDs. Actual provider/model are logged per call.
+306 unit/contract tests pass. This is not yet a validated navigation profile.
+Gemini, Groq and OpenRouter key-file paths are configured in ignored .env.
+User prohibits inspecting key contents; runtime reads them for authentication only.
+OpenRouter is pinned to catalog-verified zero-priced google/gemma-4-26b-a4b-it:free.
+The single requested simulation made exactly two provider attempts: Gemini 429,
+then OpenRouter 429. Both quota markers persisted, no retries or probes, no movement.
+See FREE_ROUTER_SCREEN_20260910.json. No experiment is running.
+Groq remains disabled pending free-only billing confirmation; Mistral has no key.
+Do not restart quota-blocked routes without fresh authorization. Keep Gemma resident.
+Guide: docs/FREE_VLM_ROUTER.md. Navigation remains unresolved.
+
+## Active model decision — 2026-09-07 (D-73)
+
+Use `c5_onfly_active_dev` for active C5 navigation development. Both policy
+and monitor use `gemma4:e2b`, including the actual inference backend. This is
+a working-model selection, not a passed navigation gate. Keep Gemma fixed
+while tracing waypoint proposals through verification, replanning, monitor
+interventions and actual movement. Do not infer that VLM quality is ruled out.
+
+The user authorizes sharing the resident Gemma model with the valley experiment.
+Do not load Qwen or unload Gemma for routine preparation. Shared-server measured
+latency may include contention; isolated latency benchmarks require separate
+conditions. Historical profiles/results remain frozen; the old Qwen sweep
+stays paused. This section supersedes model-selection and GPU-exclusivity
+guidance in the earlier handoff below.
+
+## Navigation investigation — D-74–D-82
+
+The same-weight Gemma runtime repair is installed on the shared `gemma4:e2b`
+tag. All 1,411 multimodal tensors are byte-verified; original package backup:
+`gemma4:e2b-before-projector-fix-20260907`. Audio remains unevaluated.
+Details: `reports/paper_implementation/GEMMA_RUNTIME_REPAIR_20260907.md`.
+
+The repaired target-bound profile finished **0/5** development flights:
+three timeouts and two false stops. No collisions. Navigation remains unresolved.
+See `GEMMA_RUNTIME_FIXED_TARGET_STOP_GATE_20260907.json`. No gate is running.
+Historical profiles keep their original digest pins.
+
+User authorized a free-tier Gemini comparison (D-81/D-82). Gemini passed three
+matched image grounding checks, but the first C5 flight hit HTTP 429 after 4 s
+and six successful calls. See `GEMINI_C5_QUOTA_SCREEN_20260907.json`.
+D-83: user requested a fresh attempt on September 10; the old quota marker
+was archived. That run stopped on HTTP 503 after 2 simulated seconds, with
+no retry or fallback. See `GEMINI_C5_SCREEN_20260910.json`. Both runs are
+interrupted and invalid for navigation conclusions. No run is active.
+Gemma remains the local default; keep its shared runner available to valley.
+295 unit/contract tests and focused Gemini lint checks pass.
+
+Next: continue diagnosing target grounding and waypoint/control flow locally.
+Image-level Gemini improvement does not establish solved navigation. D-79/D-80
+record unsuccessful prompt and depth-candidate probes; neither is deployed.
+
+## Latest tested state — 2026-09-07 (D-70–D-72)
+
+- Corrected Qwen target-bound arrival profile: **0/5**, all timeouts, no false
+  stops/collisions/parse errors; positive control regressed. Not accepted.
+- True Gemma 4 E2B baseline profile: **0/5**, all timeouts, no false stops or
+  collisions. Actual policy and monitor model IDs were verified in every log.
+- Gemma uses ~1.71 GB GPU at context 8192; measured calls ~0.35 s policy,
+  ~0.73 s monitor. Lighter/faster does not establish better navigation.
+- Qwen fence-only 90 s screen: **1/3 completed**, no recovery triggers.
+  Long-horizon boundary and combined-fix gates were paused for the Gemma
+  comparison and remain unvalidated. Nothing new is accepted.
+- Output budget for the new six-field monitor must exceed the old 48-token
+  cap; D-70 uses 96. The first truncated run is invalid, not a capability result.
+- 285 unit/contract tests pass after adding a model-ID mismatch guard.
+  See `reports/paper_implementation/GEMMA4_E2B_COMPARISON_20260907.md`.
+
+## Model identity correction — 2026-09-07
+
+D-71 supersedes the D-68 model comparison: all five c5_gemma_dir_s1060–1064
+runs actually called qwen3-vl:4b for policy and monitor. Do not cite these as
+Gemma evidence or proof that defects reproduce across models. User requested
+Gemma 4 E2B comparison; new c5_gemma4_e2b_*_dev profiles set the backend too.
+Check actual inference_call.model_id, not just policy/config display names.
+
+## Continuation — 2026-09-07
+
+User approved arrival repair first, then boundary recovery, tested separately.
+D-69 records the design. Three new `c5_onfly_*_dev` profiles isolate target-bound
+arrival, fence recovery, and their combination; frozen profiles are unchanged.
+Initial CPU regressions passed; the later real-model results are summarized
+above. Do not label the new profiles accepted.
+Details and commands: `reports/paper_implementation/C5_ARRIVAL_FENCE_FIXES_20260907.md`.
+The earlier geofence diagnosis explains terminal deadlock in long runs, not
+necessarily the original 90 s navigation failures. Steering entropy measures
+variation, not steering correctness. Target-bound depth does not guarantee
+semantic identity; validate false stops in exact replay.
+
+## Earlier handoff — 2026-09-04
 
 The harness works and catches its own defects. **C5 OnFly is the live front**,
 and this week's work located its failure precisely.
@@ -106,7 +222,7 @@ Everything else open is in [`TODO.md`](TODO.md), ordered by what it blocks.
 
 ```bash
 export PYTHONPATH=src
-python -m uavlab.cli run --arch c5_onfly_qwen4_native_dynamics \
+python -m uavlab.cli run --arch c5_onfly_active_dev \
   --env grid_nav_onfly_native_long --seed 1060 --out runs/probe
 python -m uavlab.cli verify c5          # does the architecture function
 python -m pytest tests -q               # full suite, ~10 min
@@ -118,8 +234,8 @@ Two tests are sensitive to machine load rather than broken —
 Both pass in isolation; run the suite on an idle machine before believing a red
 result (D-63).
 
-Model runs need the GPU to themselves. The profiles load a 4B VLM for both
-policy and monitor on an 8.2 GB card; check nothing else holds it first:
+For resource diagnostics, inspect GPU usage. D-73 permits the valley experiment
+to share the same resident Gemma model; GPU exclusivity is not a prerequisite:
 
 ```bash
 nvidia-smi --query-compute-apps=pid,used_memory --format=csv

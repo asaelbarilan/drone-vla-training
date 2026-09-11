@@ -81,22 +81,14 @@ def _onfly_recovery_heading(
     heading; it does not face the point's position, which would usually turn
     the vehicle backwards along its travelled path.
     """
-    target = (
-        last_normal_yaw_rad
-        if last_normal_yaw_rad is not None
-        else current_yaw_rad + math.pi
-    )
+    target = last_normal_yaw_rad if last_normal_yaw_rad is not None else current_yaw_rad + math.pi
     return math.atan2(math.sin(target), math.cos(target))
 
 
 def _onfly_monitor_anchor(ctx: DecisionContext):
     """Return the pose synchronized with the latest visual monitor evidence."""
     for item in reversed(ctx.memory.items):
-        if (
-            item.image_uri is not None
-            and item.position is not None
-            and item.yaw_rad is not None
-        ):
+        if item.image_uri is not None and item.position is not None and item.yaw_rad is not None:
             return item.position, item.yaw_rad, item.observation_seq
     return ctx.observation.position, ctx.observation.yaw_rad, ctx.observation.seq
 
@@ -435,9 +427,7 @@ class Orchestrator:
                             safety_interventions=self.log.count(EventType.SAFETY),
                         ),
                     )
-                    cause = (
-                        admission_decision.reason if admission_decision.admit else None
-                    )
+                    cause = admission_decision.reason if admission_decision.admit else None
                 else:
                     cause = gate.condition_met(
                         self.last_progress,
@@ -502,6 +492,9 @@ class Orchestrator:
             progress = await self.monitor.assess(ctx)
             self.last_progress = progress
             anchor_position, anchor_yaw, anchor_seq = _onfly_monitor_anchor(ctx)
+            if getattr(self.monitor, "target_bound_stop", False):
+                anchor_position = ctx.observation.position
+                anchor_yaw, anchor_seq = ctx.observation.yaw_rad, ctx.observation.seq
             self._emit(
                 "monitor",
                 EventType.MONITOR,
@@ -523,13 +516,8 @@ class Orchestrator:
                 self.router.stop_reason = f"monitor: {progress.evidence or 'stop'}"
             elif progress.label is ProgressLabel.LOST and self.monitor.name == "onfly_monitor":
                 current = self.latest_obs or ctx.observation
-                target_yaw = _onfly_recovery_heading(
-                    self._last_normal_yaw_rad, current.yaw_rad
-                )
-                if (
-                    not self._onfly_loss_episode_active
-                    and not self.router.reorientation_active
-                ):
+                target_yaw = _onfly_recovery_heading(self._last_normal_yaw_rad, current.yaw_rad)
+                if not self._onfly_loss_episode_active and not self.router.reorientation_active:
                     self._onfly_loss_episode_active = True
                     self.router.begin_fixed_reorientation(
                         target_yaw_rad=target_yaw,
@@ -567,6 +555,7 @@ class Orchestrator:
                 if (
                     self.monitor.name == "onfly_monitor"
                     and self.router.reorientation_active
+                    and not self.router.fence_reorientation_active
                     and (progress.recovery_anchor_valid or progress.recovery_reacquired)
                 ):
                     self.router.cancel_fixed_reorientation()
@@ -631,7 +620,21 @@ class Orchestrator:
             proposed_payload,
             trace=envelope.decision_id,
         )
+        fence_recoveries_before = self.router.counters.fence_recoveries
         outcome = self.router.accept(envelope, ctx)
+        if self.router.counters.fence_recoveries > fence_recoveries_before:
+            self._emit(
+                "verifier",
+                EventType.RECOVERY_TRIGGER,
+                {
+                    "trigger": "geofence_rejections",
+                    "cause": outcome.reason,
+                    "target_yaw_rad": math.atan2(
+                        -ctx.observation.position.y, -ctx.observation.position.x
+                    ),
+                    "recovery_count": self.router.counters.fence_recoveries,
+                },
+            )
         self.last_routing_feedback = RoutingFeedback(
             decision_id=envelope.decision_id,
             accepted=outcome.accepted,

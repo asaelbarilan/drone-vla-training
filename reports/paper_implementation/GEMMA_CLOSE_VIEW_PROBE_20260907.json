@@ -1,0 +1,92 @@
+[
+  {
+    "variant": "fresh_policy",
+    "prompt": "You are OnFly's high-frequency decision agent on a UAV. Select the next image-space navigation target for the current subtask. (0,0) is top-left. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Subtask: fly to the red tower and stop there. Match every explicitly named visual attribute in the subtask exactly, including object type, color, and relative location. A similarly shaped object with a different named attribute is a distractor, not the destination. Choose a fresh navigation point from the current image.  If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return only JSON with integer u and v. Do not report distance, world coordinates, completion, or flight controls.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "u": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "v": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        }
+      },
+      "required": [
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "{\"u\": 500, \"v\": 500}"
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_fix_gate_20260907_fence90_s1061",
+    "observation_seq": 1560
+  },
+  {
+    "variant": "plain_description",
+    "prompt": "Describe the visible red object and where it is in this image. If no red object is visible, say absent. Be concise.",
+    "schema": null,
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "Absent"
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_fix_gate_20260907_fence90_s1061",
+    "observation_seq": 1560
+  },
+  {
+    "variant": "simple_point",
+    "prompt": "Locate the red object in the image. Return its center as integer u and v on a 0 to 999 coordinate grid, with origin at the top left. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "u": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "v": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        }
+      },
+      "required": [
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "{\"u\": 499, \"v\": 499}"
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_fix_gate_20260907_fence90_s1061",
+    "observation_seq": 1560
+  },
+  {
+    "variant": "region",
+    "prompt": "Is a red object visible? If so, is it on the left, center, or right of the image? Briefly explain using what you see.",
+    "schema": null,
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "Based on the image provided, there is **no red object** visible.\n\nThe image primarily consists of a blue and white graphic, which appears to be a logo or some kind of stylized design."
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_fix_gate_20260907_fence90_s1061",
+    "observation_seq": 1560
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "onfly": {
+    "url": "https://github.com/Robotics-STAR-Lab/OnFly",
+    "status": "public_metadata_verified",
+    "license": "not_reported",
+    "default_branch": "main",
+    "pushed_at": "2026-03-14T08:09:44Z"
+  },
+  "spf": {
+    "url": "https://github.com/Hu-chih-yao/see-point-fly",
+    "status": "public_metadata_verified",
+    "license": "NOASSERTION",
+    "default_branch": "main",
+    "pushed_at": "2026-01-29T15:36:04Z"
+  },
+  "fly0": {
+    "url": "https://github.com/xuzhenxing1/Fly0",
+    "status": "public_metadata_verified",
+    "license": "Apache-2.0",
+    "default_branch": "main",
+    "pushed_at": "2026-03-31T12:01:48Z"
+  },
+  "pivot": {
+    "url": "https://github.com/google-deepmind/pivot",
+    "status": "HTTPError",
+    "license": "not_verified"
+  },
+  "vlmnav": {
+    "url": "https://github.com/Jirl-upenn/VLMnav",
+    "status": "public_metadata_verified",
+    "license": "not_reported",
+    "default_branch": "main",
+    "pushed_at": "2026-02-26T18:46:41Z"
+  },
+  "vlfm": {
+    "url": "https://github.com/rai-opensource/vlfm",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2025-11-12T18:21:04Z"
+  },
+  "vlmaps": {
+    "url": "https://github.com/vlmaps/vlmaps",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "master",
+    "pushed_at": "2024-07-09T14:03:26Z"
+  },
+  "lmnav": {
+    "url": "https://github.com/blazejosinski/lm_nav",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2025-01-14T02:20:54Z"
+  },
+  "aerialvln": {
+    "url": "https://github.com/AirVLN/AirVLN",
+    "status": "public_metadata_verified",
+    "license": "not_reported",
+    "default_branch": "main",
+    "pushed_at": "2026-03-25T02:36:58Z"
+  },
+  "vlnce": {
+    "url": "https://github.com/jacobkrantz/VLN-CE",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "master",
+    "pushed_at": "2025-01-07T18:53:33Z"
+  },
+  "openvla": {
+    "url": "https://github.com/openvla/openvla",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2025-03-23T23:41:01Z"
+  },
+  "blind": {
+    "url": "https://github.com/anguyen8/vision-llms-are-blind",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2026-05-25T18:12:30Z"
+  },
+  "geonav": {
+    "url": "https://github.com/water-cookie/citynav",
+    "status": "public_metadata_verified",
+    "license": "MIT",
+    "default_branch": "main",
+    "pushed_at": "2025-02-11T06:01:12Z"
+  }
+}

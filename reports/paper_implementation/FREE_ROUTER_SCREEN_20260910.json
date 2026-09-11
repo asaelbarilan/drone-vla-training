@@ -1,0 +1,30 @@
+{
+  "status": "quota_interrupted_before_movement",
+  "run": "runs\\c5_free_router_20260910_s1061",
+  "provider_attempts": [
+    {
+      "provider": "gemini",
+      "model_id": "gemini-3.5-flash",
+      "role": "monitor",
+      "status": 429,
+      "latency_s": 0.4273257,
+      "outcome": "failed"
+    },
+    {
+      "provider": "openrouter",
+      "model_id": "google/gemma-4-26b-a4b-it:free",
+      "role": "monitor",
+      "status": 429,
+      "latency_s": 0.6312631,
+      "outcome": "failed"
+    }
+  ],
+  "episode_end": {
+    "success": false,
+    "reason": "runtime_error",
+    "detail": "monitor: RuntimeError('No confirmed free vision provider remains available')",
+    "sim_duration_s": 0.0
+  },
+  "probe_calls": 0,
+  "automatic_retries": 0
+}

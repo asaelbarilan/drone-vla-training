@@ -1,0 +1,236 @@
+[
+  {
+    "case": "distant",
+    "prompt": "Identify the destination requested by: fly to the red tower and stop there. Is that exact object visible in this image? If yes, return the center of its visible body in u,v coordinates on a 0 to 999 grid (top-left origin). If absent use null coordinates. Check its actual color; do not infer presence from the request. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "v": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "visible",
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "response": {
+      "candidates": [
+        {
+          "content": {
+            "parts": [
+              {
+                "text": "{\"visible\": true, \"u\": 93, \"v\": 359}",
+                "thoughtSignature": "EmgKZgERTTIPp+KSnNUd3lD9aEsf+bX00PudPQzfna8m2BUfxlMjbEyEPrhJn1OmNvkUv1eRhEiddR7Stsr1DmPOXoBtDvP25a6PYYWJMRtRi2NHOPn0JMniu9SNLAv2U3AO/YO6Absv+A=="
+              }
+            ],
+            "role": "model"
+          },
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1167,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 1187,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 78
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1089
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "modelVersion": "gemini-3.5-flash",
+      "responseId": "pdmeas2ULK3Yxs0PjNmT4AI"
+    },
+    "wall_s": 1.6418420000009064
+  },
+  {
+    "case": "absent",
+    "prompt": "Identify the destination requested by: fly to the red tower and stop there. Is that exact object visible in this image? If yes, return the center of its visible body in u,v coordinates on a 0 to 999 grid (top-left origin). If absent use null coordinates. Check its actual color; do not infer presence from the request. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "v": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "visible",
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "response": {
+      "candidates": [
+        {
+          "content": {
+            "parts": [
+              {
+                "text": "{\"visible\": false, \"u\": null, \"v\": null}",
+                "thoughtSignature": "EmgKZgERTTIPX2NUvbiZrhSUSbxkb1V9Ifi/V6jj0GE2cS64CHfG/8f+1cUfHttSqFk2ozlyZBl1P9FTb8mZZD7VnaidIOzp/z84Wz3Up/BOfx/WB+cNwotxBoHNygLxwix6mpuKgior6Q=="
+              }
+            ],
+            "role": "model"
+          },
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1167,
+        "candidatesTokenCount": 15,
+        "totalTokenCount": 1182,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 78
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1089
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "modelVersion": "gemini-3.5-flash",
+      "responseId": "p9meavj_D5axnsEP-s6WyA4"
+    },
+    "wall_s": 2.195232099998975
+  },
+  {
+    "case": "false_stop",
+    "prompt": "Identify the destination requested by: fly to the red tower and stop there. Is that exact object visible in this image? If yes, return the center of its visible body in u,v coordinates on a 0 to 999 grid (top-left origin). If absent use null coordinates. Check its actual color; do not infer presence from the request. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "v": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "visible",
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "response": {
+      "candidates": [
+        {
+          "content": {
+            "parts": [
+              {
+                "text": "{\"visible\": false, \"u\": null, \"v\": null}",
+                "thoughtSignature": "EmgKZgERTTIP6HFrFXlT8ylhiiUMWZBm3vBItm7z8Y3Zwl04PPtIS/PsxWHfYLCS4Vm8ABVuhkkqWW4ZUYwilR4UqgydecODF92/wT7FSYSyJFeSo1iGiG//mZH7vA3UygUE3Rh3aGDW5w=="
+              }
+            ],
+            "role": "model"
+          },
+          "finishReason": "STOP",
+          "index": 0
+        }
+      ],
+      "usageMetadata": {
+        "promptTokenCount": 1167,
+        "candidatesTokenCount": 15,
+        "totalTokenCount": 1182,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 78
+          },
+          {
+            "modality": "IMAGE",
+            "tokenCount": 1089
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "modelVersion": "gemini-3.5-flash",
+      "responseId": "qdmearPwG7aP28oPhJDh6QY"
+    },
+    "wall_s": 1.7978879000002053
+  }
+]

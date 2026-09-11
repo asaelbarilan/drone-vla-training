@@ -8,6 +8,7 @@ stored final distance exactly or the report is rejected as inadmissible.
 from __future__ import annotations
 
 import argparse
+import ast
 import asyncio
 import json
 import math
@@ -370,7 +371,18 @@ async def analyze(run_dir: Path) -> dict:
         float(row["waypoint_distance_at_activation_m"]) for row in execution_rows
     ]
 
+    history_distances = []
+    for row in rows:
+        marker = ast.literal_eval(row["history_pixel"])
+        if marker is not None:
+            history_distances.append(math.dist(marker, row["predicted_pixel"]))
+
     return {
+        "previous_waypoint_echo": {
+            "comparisons": len(history_distances),
+            "within_one_pixel": sum(distance < 1.0 for distance in history_distances),
+            "within_three_pixels": sum(distance < 3.0 for distance in history_distances),
+        },
         "run": run_dir.as_posix(),
         "architecture": result["architecture_id"],
         "seed": result["seed"],

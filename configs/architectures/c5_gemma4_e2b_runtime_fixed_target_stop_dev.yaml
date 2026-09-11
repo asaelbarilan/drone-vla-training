@@ -1,0 +1,8 @@
+# D-78: repaired runtime, unchanged Gemma weights.
+_base_: c5_gemma4_e2b_target_stop_dev.yaml
+id: c5_gemma4_e2b_runtime_fixed_target_stop_dev
+profile_of: c5
+name: "C5 Gemma repaired runtime target-bound arrival"
+inference:
+  params:
+    expected_digest: 6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa

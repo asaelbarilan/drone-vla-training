@@ -1,0 +1,16 @@
+# D-84: mixed-provider development run; never label as a single-model result.
+_base_: c5_gemini_flash_target_stop_dev.yaml
+id: c5_free_vlm_router_dev
+name: C5 free vision provider router
+policy:
+  params:
+    model_id: free-vlm-router
+monitor:
+  params:
+    model_id: free-vlm-router
+inference:
+  name: free_vlm_router
+  params:
+    model_id: free-vlm-router
+    provider_order: [gemini, groq, mistral, openrouter]
+    quota_dir: .local

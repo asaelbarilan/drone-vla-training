@@ -267,6 +267,11 @@ class OllamaInference:
     # -- the interface ------------------------------------------------------
 
     async def invoke(self, request: InferenceRequest) -> InferenceResult:
+        if request.model_id != self.model_id:
+            raise ValueError(
+                f"{request.role} requests model {request.model_id!r}, but Ollama backend "
+                f"is configured for {self.model_id!r}"
+            )
         prompt = request.prompt
         images = list(request.images)
 

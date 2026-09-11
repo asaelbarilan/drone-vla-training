@@ -1,0 +1,82 @@
+[
+  {
+    "seed": 1060,
+    "replay_distance_error_m": 0.0,
+    "visible_decision_frames": 0,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.5765682224227988,
+      "source_motion_before_activation_max_m": 0.6298659935287962,
+      "waypoint_distance_at_activation_mean_m": 5.870501686730603,
+      "waypoint_behind_at_activation_fraction": 0.0
+    },
+    "closest_m": 23.836229359425737,
+    "history_comparisons": 83,
+    "history_within_1px": 81,
+    "history_within_3px": 81
+  },
+  {
+    "seed": 1061,
+    "replay_distance_error_m": 0.0,
+    "visible_decision_frames": 5,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.599203762200111,
+      "source_motion_before_activation_max_m": 0.6299950286716188,
+      "waypoint_distance_at_activation_mean_m": 6.639548469874367,
+      "waypoint_behind_at_activation_fraction": 0.0
+    },
+    "closest_m": 14.45331500555947,
+    "history_comparisons": 85,
+    "history_within_1px": 84,
+    "history_within_3px": 84
+  },
+  {
+    "seed": 1062,
+    "replay_distance_error_m": 0.0,
+    "visible_decision_frames": 0,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.5684886729500794,
+      "source_motion_before_activation_max_m": 0.6299991507673088,
+      "waypoint_distance_at_activation_mean_m": 5.723866741866429,
+      "waypoint_behind_at_activation_fraction": 0.011235955056179775
+    },
+    "closest_m": 21.391784834764035,
+    "history_comparisons": 84,
+    "history_within_1px": 82,
+    "history_within_3px": 82
+  },
+  {
+    "seed": 1063,
+    "replay_distance_error_m": 0.0,
+    "visible_decision_frames": 0,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.5969881555463913,
+      "source_motion_before_activation_max_m": 0.6299083547317118,
+      "waypoint_distance_at_activation_mean_m": 6.754394191532403,
+      "waypoint_behind_at_activation_fraction": 0.0
+    },
+    "closest_m": 19.73704557671098,
+    "history_comparisons": 84,
+    "history_within_1px": 83,
+    "history_within_3px": 83
+  },
+  {
+    "seed": 1064,
+    "replay_distance_error_m": 0.0,
+    "visible_decision_frames": 11,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.541743136975612,
+      "source_motion_before_activation_max_m": 0.6299876041993379,
+      "waypoint_distance_at_activation_mean_m": 4.8882862490056445,
+      "waypoint_behind_at_activation_fraction": 0.0
+    },
+    "closest_m": 21.798005862325915,
+    "history_comparisons": 82,
+    "history_within_1px": 75,
+    "history_within_3px": 75
+  }
+]

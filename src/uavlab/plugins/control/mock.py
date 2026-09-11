@@ -33,6 +33,7 @@ class MockVelocityController:
     """Proportional tracker with a fixed velocity/yaw-rate output contract."""
 
     def __init__(self, **params: Any) -> None:
+        self.face_semantic_goal = bool(params.get("face_semantic_goal", False))
         self.kp = float(params.get("kp", 1.1))
         self.max_speed_mps = float(params.get("max_speed_mps", 5.0))
         self.lookahead_m = float(params.get("lookahead_m", 3.0))
@@ -59,10 +60,21 @@ class MockVelocityController:
         velocity = self._clamp(
             Vec3(x=error.x * self.kp, y=error.y * self.kp, z=error.z * self.kp)
         )
+        yaw_error = error
+        if self.face_semantic_goal:
+            # Opt-in D-86: camera heading is independent of avoidance translation.
+            # This metadata is the planner's requested goal, never simulator truth.
+            raw_goal = trajectory.metadata.get("semantic_goal_xyz")
+            if raw_goal is None:
+                raise ValueError("goal-facing yaw requires semantic_goal_xyz metadata")
+            goal = [float(value) for value in raw_goal.split(",")]
+            if len(goal) != 3 or not all(math.isfinite(value) for value in goal):
+                raise ValueError("invalid semantic_goal_xyz metadata")
+            yaw_error = Vec3(x=goal[0] - position.x, y=goal[1] - position.y, z=0.0)
         return ControlCommand(
             t_sim_ns=ctx.t_sim_ns,
             velocity=velocity,
-            yaw_rate_rps=self._yaw_rate_toward(error, ctx),
+            yaw_rate_rps=self._yaw_rate_toward(yaw_error, ctx),
             frame=Frame.ENU,
             expires_t_sim_ns=ctx.t_sim_ns + s_to_ns(self.command_ttl_s),
             source_decision_id=trajectory.source_decision_id,

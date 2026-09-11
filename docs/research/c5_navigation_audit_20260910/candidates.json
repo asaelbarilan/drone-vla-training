@@ -1,0 +1,289 @@
+[
+  {
+    "id": "spf",
+    "title": "See, Point, Fly: A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation",
+    "url": "https://proceedings.mlr.press/v305/hu25e.html",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "spf-code",
+    "title": "Official See, Point, Fly repository",
+    "url": "https://github.com/Hu-chih-yao/see-point-fly",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "typefly",
+    "title": "TypeFly: Flying Drones with Large Language Model",
+    "url": "https://arxiv.org/abs/2312.14950",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "pivot",
+    "title": "PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs",
+    "url": "https://arxiv.org/abs/2402.07872",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "aerialvln",
+    "title": "AerialVLN: Vision-and-Language Navigation for UAVs",
+    "url": "https://arxiv.org/abs/2308.06735",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "citynav",
+    "title": "CityNav: Language-Goal Aerial Navigation Dataset with Geographic Information",
+    "url": "https://arxiv.org/abs/2406.14240",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "openuav",
+    "title": "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology",
+    "url": "https://arxiv.org/abs/2410.07087",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "openfly",
+    "title": "OpenFly: A Versatile Toolchain and Large-Scale Benchmark for Aerial Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2502.18041",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "stmr",
+    "title": "Exploring Spatial Representation to Enhance LLM Reasoning in Aerial Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2410.08500",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "geonav",
+    "title": "GeoNav: Empowering MLLMs with Dual-Scale Geospatial Reasoning for Language-Goal Aerial Navigation",
+    "url": "https://arxiv.org/abs/2504.09587",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "cognitive-drone",
+    "title": "CognitiveDrone: A VLA Model and Evaluation Benchmark for Real-Time Cognitive Task Solving and Reasoning in UAVs",
+    "url": "https://arxiv.org/abs/2503.01378",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "uav-vla",
+    "title": "UAV-VLA: Vision-Language-Action System for Large Scale Aerial Mission Generation",
+    "url": "https://arxiv.org/abs/2501.05014",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "rt-trajectory",
+    "title": "RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches",
+    "url": "https://arxiv.org/abs/2311.01977",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "moka",
+    "title": "MOKA: Open-World Robotic Manipulation through Mark-Based Visual Prompting",
+    "url": "https://arxiv.org/abs/2403.03174",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "spatialvlm",
+    "title": "SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities",
+    "url": "https://arxiv.org/abs/2401.12168",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "spatialrgpt",
+    "title": "SpatialRGPT: Grounded Spatial Reasoning in Vision-Language Models",
+    "url": "https://arxiv.org/abs/2406.01584",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "navagent",
+    "title": "NavAgent: Multi-Scale Urban Street View Fusion for UAV Embodied Vision-and-Language Navigation",
+    "url": "https://arxiv.org/abs/2411.08579",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "avdn",
+    "title": "Aerial Vision-and-Dialog Navigation",
+    "url": "https://arxiv.org/abs/2205.12219",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "vlfly",
+    "title": "Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding",
+    "url": "https://arxiv.org/abs/2506.10756",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "aerialvla-min",
+    "title": "AeroVLA: A Vision-Language-Action Model for UAV Navigation via Minimalist End-to-End Control",
+    "url": "https://arxiv.org/abs/2603.14363",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "onfly",
+    "title": "OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency",
+    "url": "https://arxiv.org/abs/2603.10682",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "aerialclaw",
+    "title": "AerialClaw: An Open-Source Framework for LLM-Driven Autonomous Aerial Agents",
+    "url": "https://arxiv.org/abs/2606.12142",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "pmr",
+    "title": "Selective Agentic Recovery for UAV Autonomy with a Persistent Mission Runtime",
+    "url": "https://arxiv.org/abs/2606.14219",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "flight",
+    "title": "Think Like a Pilot: Fine-Grained Long-Horizon UAV Navigation",
+    "url": "https://arxiv.org/abs/2606.06836",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "qwen3vl",
+    "title": "Qwen3-VL-8B-Instruct model card and official repository",
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "gemini",
+    "title": "Gemini 2.0 Flash",
+    "url": "https://deepmind.google/technologies/gemini/",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "drlsim",
+    "title": "Drone Racing League Simulator",
+    "url": "https://www.drl.io/drlsim",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "gemini-robotics",
+    "title": "Gemini Robotics: Bringing AI into the Physical World",
+    "url": "https://arxiv.org/abs/2503.20020",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "camera-goal",
+    "title": "Mapping Instructions to Actions in 3D Environments with Visual Goal Prediction",
+    "url": "https://arxiv.org/abs/1809.00786",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "quadcopter-il",
+    "title": "Following High-Level Navigation Instructions on a Simulated Quadcopter with Imitation Learning",
+    "url": "https://arxiv.org/abs/1806.00047",
+    "screen": "context_only",
+    "reason": "Outside central interface audit or redundant model/resource entry; historical ledger retained unchanged"
+  },
+  {
+    "id": "openvla",
+    "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+    "url": "https://arxiv.org/abs/2406.09246",
+    "screen": "retained",
+    "reason": "Direct causal relevance"
+  },
+  {
+    "id": "fly0",
+    "title": "Fly0: Persistent Metric Anchoring for Zero-Shot Aerial Vision-Language Navigation",
+    "url": "https://arxiv.org/html/2602.15875v2",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "vlmnav",
+    "title": "End-to-End Navigation with Vision-Language Models: Transforming Spatial Reasoning into Question-Answering",
+    "url": "https://arxiv.org/html/2411.05755",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "navid",
+    "title": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation",
+    "url": "https://arxiv.org/html/2402.15852",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "navbench",
+    "title": "NavBench: Probing Multimodal Large Language Models for Embodied Navigation",
+    "url": "https://arxiv.org/html/2506.01031",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "blind",
+    "title": "Vision language models are blind: Failing to translate detailed visual features into words",
+    "url": "https://arxiv.org/html/2407.06581",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "vlnce",
+    "title": "Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments",
+    "url": "https://arxiv.org/html/2004.02857",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "lmnav",
+    "title": "LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action",
+    "url": "https://arxiv.org/html/2207.04429",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "vlmaps",
+    "title": "Visual Language Maps for Robot Navigation",
+    "url": "https://arxiv.org/html/2210.05714",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "airanchor",
+    "title": "AirAnchor: Bridging Local and Global Spatial Information for Zero-Shot Aerial Vision-and-Language Navigation",
+    "url": "https://arxiv.org/html/2609.08442",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  },
+  {
+    "id": "vlfm",
+    "title": "VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation",
+    "url": "https://arxiv.org/html/2312.03275",
+    "screen": "retained",
+    "reason": "Additional current/direct/failure evidence"
+  }
+]

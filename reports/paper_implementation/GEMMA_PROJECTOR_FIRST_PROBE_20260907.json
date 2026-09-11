@@ -1,0 +1,17 @@
+{
+  "model": "gemma4:e2b-visionfix-dev",
+  "created_at": "2026-09-07T15:05:44.603904Z",
+  "message": {
+    "role": "assistant",
+    "content": "A red rectangular object is visible in the center of the image."
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 5063262500,
+  "load_duration": 4663261600,
+  "prompt_eval_count": 86,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 239091000,
+  "eval_count": 14,
+  "eval_duration": 151886000
+}

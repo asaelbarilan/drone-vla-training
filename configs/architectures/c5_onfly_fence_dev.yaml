@@ -1,0 +1,11 @@
+# D-69 development experiment. Frozen baseline unchanged.
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+id: c5_onfly_fence_dev
+profile_of: c5
+name: "C5 Bounded fence recovery only"
+tags: [onfly, development, real_model, fence_recovery]
+verifier:
+  params:
+    fence_recovery: true
+    fence_rejection_limit: 3
+    fence_yaw_rate_rps: 0.4

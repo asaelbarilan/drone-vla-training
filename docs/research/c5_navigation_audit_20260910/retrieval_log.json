@@ -1,0 +1,140 @@
+[
+  {
+    "id": "onfly",
+    "url": "https://arxiv.org/html/2603.10682v1",
+    "characters": 47221,
+    "status": "retrieved"
+  },
+  {
+    "id": "spf",
+    "url": "https://arxiv.org/html/2509.22653v1",
+    "characters": 54691,
+    "status": "retrieved"
+  },
+  {
+    "id": "fly0",
+    "url": "https://arxiv.org/html/2602.15875",
+    "characters": 95483,
+    "status": "retrieved"
+  },
+  {
+    "id": "pivot",
+    "url": "https://arxiv.org/html/2402.07872",
+    "characters": 72332,
+    "status": "retrieved"
+  },
+  {
+    "id": "typefly",
+    "url": "https://arxiv.org/html/2312.14950",
+    "characters": 71863,
+    "status": "retrieved"
+  },
+  {
+    "id": "aerialvln",
+    "url": "https://arxiv.org/html/2308.06735",
+    "characters": 47057,
+    "status": "retrieved"
+  },
+  {
+    "id": "citynav",
+    "url": "https://arxiv.org/html/2406.14240",
+    "characters": 60188,
+    "status": "retrieved"
+  },
+  {
+    "id": "openuav",
+    "url": "https://arxiv.org/html/2410.07087",
+    "characters": 53460,
+    "status": "retrieved"
+  },
+  {
+    "id": "openfly",
+    "url": "https://arxiv.org/html/2502.18041",
+    "characters": 74178,
+    "status": "retrieved"
+  },
+  {
+    "id": "stmr",
+    "url": "https://arxiv.org/html/2410.08500",
+    "characters": 51279,
+    "status": "retrieved"
+  },
+  {
+    "id": "spatialvlm",
+    "url": "https://arxiv.org/html/2401.12168",
+    "characters": 83685,
+    "status": "retrieved"
+  },
+  {
+    "id": "spatialrgpt",
+    "url": "https://arxiv.org/html/2406.01584",
+    "characters": 78342,
+    "status": "retrieved"
+  },
+  {
+    "id": "navid",
+    "url": "https://arxiv.org/html/2402.15852",
+    "characters": 95713,
+    "status": "retrieved"
+  },
+  {
+    "id": "vlfm",
+    "url": "https://arxiv.org/html/2312.03275",
+    "characters": 39156,
+    "status": "retrieved"
+  },
+  {
+    "id": "vlmaps",
+    "url": "https://arxiv.org/html/2210.05714",
+    "characters": 57004,
+    "status": "retrieved"
+  },
+  {
+    "id": "lmnav",
+    "url": "https://arxiv.org/html/2207.04429",
+    "characters": 66615,
+    "status": "retrieved"
+  },
+  {
+    "id": "blind",
+    "url": "https://arxiv.org/html/2407.06581",
+    "characters": 125838,
+    "status": "retrieved"
+  },
+  {
+    "id": "navbench",
+    "url": "https://arxiv.org/html/2506.01031",
+    "characters": 56519,
+    "status": "retrieved"
+  },
+  {
+    "id": "vlnce",
+    "url": "https://arxiv.org/html/2004.02857",
+    "characters": 56463,
+    "status": "retrieved"
+  },
+  {
+    "id": "moka",
+    "url": "https://arxiv.org/html/2403.03174",
+    "characters": 82260,
+    "status": "retrieved"
+  },
+  {
+    "id": "geonav",
+    "url": "https://arxiv.org/html/2504.09587",
+    "characters": 71448,
+    "status": "retrieved"
+  },
+  {
+    "id": "openvla",
+    "url": "https://arxiv.org/html/2406.09246",
+    "characters": 136022,
+    "status": "retrieved"
+  },
+  {
+    "id": "airanchor",
+    "url": "https://arxiv.org/html/2609.08442",
+    "characters": 127369,
+    "status": "retrieved"
+  }
+]

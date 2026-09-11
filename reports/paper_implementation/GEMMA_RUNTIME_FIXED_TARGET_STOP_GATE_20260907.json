@@ -1,0 +1,107 @@
+[
+  {
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 20.179437150316517,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.3530681685393258,
+    "monitor_latency_s": 0.8979641488888889,
+    "wall_s": 90.69754069999908,
+    "run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1061",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1060,
+    "success": false,
+    "termination": "agent_stopped",
+    "distance_m": 25.04501441978046,
+    "premature_stop": 1.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.37582504222222224,
+    "monitor_latency_s": 0.9001120869565217,
+    "wall_s": 47.553807100000995,
+    "run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1060",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1062,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 32.79353418024088,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.35118389438202247,
+    "monitor_latency_s": 0.8415322822222222,
+    "wall_s": 85.8328778999985,
+    "run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1062",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1063,
+    "success": false,
+    "termination": "timeout",
+    "distance_m": 27.542895398307383,
+    "premature_stop": 0.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.36558863146067416,
+    "monitor_latency_s": 0.8478358022222222,
+    "wall_s": 86.13394150000022,
+    "run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1063",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  },
+  {
+    "seed": 1064,
+    "success": false,
+    "termination": "agent_stopped",
+    "distance_m": 28.75412819112969,
+    "premature_stop": 1.0,
+    "collisions": 0.0,
+    "parse_errors": 0.0,
+    "policy_latency_s": 0.4844986789473684,
+    "monitor_latency_s": 0.97110773,
+    "wall_s": 23.57688220000091,
+    "run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1064",
+    "verified_models": {
+      "policy": [
+        "gemma4:e2b"
+      ],
+      "monitor": [
+        "gemma4:e2b"
+      ]
+    }
+  }
+]

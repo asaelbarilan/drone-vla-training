@@ -1,0 +1,1176 @@
+{
+  "search_date": "2026-09-10",
+  "works": [
+    {
+      "id": "onfly",
+      "title": "OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency",
+      "year": 2026,
+      "venue": "arXiv; repository labels IROS 2026",
+      "url": "https://arxiv.org/html/2603.10682v1",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Two VLM roles, hybrid visual memory, semantic/depth refinement and goal-facing receding-horizon execution; Table III separates model and mechanism effects."
+      ],
+      "limitations": [
+        "Author implementation remains unreleased; local clean-room implementation cannot claim exact reproduction."
+      ],
+      "task": "OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency",
+      "inputs_outputs_method": "Two VLM roles, hybrid visual memory, semantic/depth refinement and goal-facing receding-horizon execution; Table III separates model and mechanism effects.",
+      "temporal_spatial_assumptions": "Author implementation remains unreleased; local clean-room implementation cannot claim exact reproduction.",
+      "datasets": [
+        "150 private simulation tasks: 40% object, 40% precise, 20% long-range",
+        "four real-world tasks"
+      ],
+      "metrics": [
+        "SR",
+        "OSR",
+        "collision rate",
+        "flight time",
+        "decision latency",
+        "monitor latency"
+      ],
+      "quantitative_results": {
+        "SR": 67.8,
+        "without_verification_SR": 63.7,
+        "without_dual_agent_SR": 48.6,
+        "Qwen2B_SR": 43.4,
+        "Qwen30B_A3B_SR": 71.8
+      },
+      "code": {
+        "url": "https://github.com/Robotics-STAR-Lab/OnFly",
+        "status": "public_metadata_verified",
+        "license": "not_reported",
+        "default_branch": "main",
+        "pushed_at": "2026-03-14T08:09:44Z",
+        "implementation_status": "README code coming soon; root only README/assets"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not released"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not released; paper uses Qwen3-VL-4B-AWQ"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_reported",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "Jetson Orin NX 16 GB real deployment; RTX 4090 simulation evaluation; paper uses AWQ LLM and FP16 ViT",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/onfly.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "spf",
+      "title": "See, Point, Fly: A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation",
+      "year": 2025,
+      "venue": "CoRL 2025",
+      "url": "https://arxiv.org/html/2509.22653v1",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "RGB waypoint and intended step-size prediction are converted to movement; Table 2 compares interfaces under the same Gemini backbone."
+      ],
+      "limitations": [
+        "Small/distant objects, prompt sensitivity and latency are acknowledged; local normalized stop rule differs."
+      ],
+      "task": "See, Point, Fly: A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation",
+      "inputs_outputs_method": "RGB waypoint and intended step-size prediction are converted to movement; Table 2 compares interfaces under the same Gemini backbone.",
+      "temporal_spatial_assumptions": "Small/distant objects, prompt sensitivity and latency are acknowledged; local normalized stop rule differs.",
+      "datasets": [
+        "23 DRL-simulator tasks",
+        "11 real-world tasks"
+      ],
+      "metrics": [
+        "success rate",
+        "completion time"
+      ],
+      "quantitative_results": {
+        "table2_Gemini2Flash_plain_text_SR": 7,
+        "table2_Gemini2Flash_PIVOT_SR": 40,
+        "table2_Gemini2Flash_SPF_SR": 100
+      },
+      "code": {
+        "url": "https://github.com/Hu-chih-yao/see-point-fly",
+        "status": "public_metadata_verified",
+        "license": "NOASSERTION",
+        "default_branch": "main",
+        "pushed_at": "2026-01-29T15:36:04Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "supplementary task prompts and videos"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "none; training-free"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "Proprietary: use/copy/modification require express permission; verified LICENSE",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "Gemini 2.0 Flash by default; VLM 0.3-1 Hz",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/spf.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "fly0",
+      "title": "Fly0: Persistent Metric Anchoring for Zero-Shot Aerial Vision-Language Navigation",
+      "year": 2026,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2602.15875v2",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Version 2 uses uncertain region grounding, relation-aware free-space goals and persistent metric anchors between semantic updates."
+      ],
+      "limitations": [
+        "False semantic identity can remain geometrically stable; inspected public code predates v2 and is not verified equivalent."
+      ],
+      "task": "Fly0: Persistent Metric Anchoring for Zero-Shot Aerial Vision-Language Navigation",
+      "inputs_outputs_method": "Version 2 uses uncertain region grounding, relation-aware free-space goals and persistent metric anchors between semantic updates.",
+      "temporal_spatial_assumptions": "False semantic identity can remain geometrically stable; inspected public code predates v2 and is not verified equivalent.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/xuzhenxing1/Fly0",
+        "status": "public_metadata_verified",
+        "license": "Apache-2.0",
+        "default_branch": "main",
+        "pushed_at": "2026-03-31T12:01:48Z",
+        "implementation_status": "Two runtime files inspected: pixel grounding and nearby minimum-depth lift; July v2 uncertainty/anchor mechanisms not verified in released code"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "Apache-2.0",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/fly0.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "vlmnav",
+      "title": "End-to-End Navigation with Vision-Language Models: Transforming Spatial Reasoning into Question-Answering",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2411.05755",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Depth/pose-based navigable action proposals are visually annotated; a separate call judges stopping."
+      ],
+      "limitations": [
+        "ObjectNav SR 50.4% versus 12.9% without sliding reveals simulator dependence; not aerial validation."
+      ],
+      "task": "End-to-End Navigation with Vision-Language Models: Transforming Spatial Reasoning into Question-Answering",
+      "inputs_outputs_method": "Depth/pose-based navigable action proposals are visually annotated; a separate call judges stopping.",
+      "temporal_spatial_assumptions": "ObjectNav SR 50.4% versus 12.9% without sliding reveals simulator dependence; not aerial validation.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": {
+        "ObjectNav_SR": 50.4,
+        "without_sliding_SR": 12.9,
+        "without_navigability_SR": 33.2
+      },
+      "code": {
+        "url": "https://github.com/Jirl-upenn/VLMnav",
+        "status": "public_metadata_verified",
+        "license": "not_reported",
+        "default_branch": "main",
+        "pushed_at": "2026-02-26T18:46:41Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "not_reported",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/vlmnav.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "pivot",
+      "title": "PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs",
+      "year": 2024,
+      "venue": "ICML 2024",
+      "url": "https://arxiv.org/html/2402.07872",
+      "source_type": "preprint",
+      "category": "foundational",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Iterative marked action candidates turn continuous action selection into visual question answering; navigation actions lifted with depth and capped at 1 m."
+      ],
+      "limitations": [
+        "Multiple calls per action; limited action expressivity and imperfect zero-shot success."
+      ],
+      "task": "PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs",
+      "inputs_outputs_method": "Iterative marked action candidates turn continuous action selection into visual question answering; navigation actions lifted with depth and capped at 1 m.",
+      "temporal_spatial_assumptions": "Multiple calls per action; limited action expressivity and imperfect zero-shot success.",
+      "datasets": "robot manipulation and navigation evaluations",
+      "metrics": [
+        "task success"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/google-deepmind/pivot",
+        "status": "HTTPError",
+        "license": "not_verified"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "uses frozen VLMs"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "multiple VLM-selection iterations",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/pivot.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "typefly",
+      "title": "TypeFly: Flying Drones with Large Language Model",
+      "year": 2023,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2312.14950",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "LLM MiniSpec plans call perception and control skills; detector-generated location/size/color descriptions support reasoning."
+      ],
+      "limitations": [
+        "Detector and skill execution contribute to success; not raw-RGB-only VLM evidence."
+      ],
+      "task": "TypeFly: Flying Drones with Large Language Model",
+      "inputs_outputs_method": "LLM MiniSpec plans call perception and control skills; detector-generated location/size/color descriptions support reasoning.",
+      "temporal_spatial_assumptions": "Detector and skill execution contribute to success; not raw-RGB-only VLM evidence.",
+      "datasets": "task suite reported in paper",
+      "metrics": [
+        "response time",
+        "task completion"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "API LLM"
+      },
+      "licenses": {
+        "paper": "CC BY-SA 4.0",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "cloud LLM",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/typefly.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "aerialvln",
+      "title": "AerialVLN: Vision-and-Language Navigation for UAVs",
+      "year": 2023,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2308.06735",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Front-view RGB-D, explicit rotations and 4-DoF actions; separate stopped success and oracle success."
+      ],
+      "limitations": [
+        "20 m goal threshold and city-scale scenes differ from the local 2 m gate."
+      ],
+      "task": "AerialVLN: Vision-and-Language Navigation for UAVs",
+      "inputs_outputs_method": "Front-view RGB-D, explicit rotations and 4-DoF actions; separate stopped success and oracle success.",
+      "temporal_spatial_assumptions": "20 m goal threshold and city-scale scenes differ from the local 2 m gate.",
+      "datasets": [
+        "AerialVLN"
+      ],
+      "metrics": [
+        "success rate",
+        "navigation error",
+        "SPL"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/AirVLN/AirVLN",
+        "status": "public_metadata_verified",
+        "license": "not_reported",
+        "default_branch": "main",
+        "pushed_at": "2026-03-25T02:36:58Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "AerialVLN release"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "baseline checkpoints reported"
+      },
+      "licenses": {
+        "paper": "CC BY-NC-SA 4.0",
+        "code": "not_reported",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "trained navigation policies",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/aerialvln.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "citynav",
+      "title": "CityNav: Language-Goal Aerial Navigation Dataset with Geographic Information",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2406.14240",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "CityFlight uses real-city scan geometry and geographic information; 32637 human demonstration trajectories."
+      ],
+      "limitations": [
+        "Geographic priors and long-distance task setup are not interchangeable with first-person local target pursuit."
+      ],
+      "task": "CityNav: Language-Goal Aerial Navigation Dataset with Geographic Information",
+      "inputs_outputs_method": "CityFlight uses real-city scan geometry and geographic information; 32637 human demonstration trajectories.",
+      "temporal_spatial_assumptions": "Geographic priors and long-distance task setup are not interchangeable with first-person local target pursuit.",
+      "datasets": [
+        "CityNav"
+      ],
+      "metrics": [
+        "success rate",
+        "goal progress"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "dataset release reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "baseline models reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "trained aerial navigation baselines",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/citynav.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "openuav",
+      "title": "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2410.07087",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Continuous 6-DoF trajectories and realistic flight modeling distinguish UAV navigation from discrete ground-agent conventions."
+      ],
+      "limitations": [
+        "High-fidelity simulator/data/training burden; not an off-the-shelf prompt-only baseline."
+      ],
+      "task": "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology",
+      "inputs_outputs_method": "Continuous 6-DoF trajectories and realistic flight modeling distinguish UAV navigation from discrete ground-agent conventions.",
+      "temporal_spatial_assumptions": "High-fidelity simulator/data/training burden; not an off-the-shelf prompt-only baseline.",
+      "datasets": [
+        "TravelUAV/OpenUAV target-oriented VLN"
+      ],
+      "metrics": [
+        "success",
+        "navigation error",
+        "trajectory metrics"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "approximately 12k trajectories"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "baseline models reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "high-fidelity simulation",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/openuav.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "openfly",
+      "title": "OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation",
+      "year": 2025,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2502.18041",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Multi-renderer aerial data and a trained keyframe-aware navigation agent with action decoding."
+      ],
+      "limitations": [
+        "Keyframe mechanism is trained with navigation data; adding image history to arbitrary VLMs is not equivalent."
+      ],
+      "task": "OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation",
+      "inputs_outputs_method": "Multi-renderer aerial data and a trained keyframe-aware navigation agent with action decoding.",
+      "temporal_spatial_assumptions": "Keyframe mechanism is trained with navigation data; adding image history to arbitrary VLMs is not equivalent.",
+      "datasets": [
+        "OpenFly"
+      ],
+      "metrics": [
+        "navigation success",
+        "path metrics"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "large-scale benchmark release"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "baseline checkpoints reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "simulator generation and trained baselines",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/openfly.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "stmr",
+      "title": "Exploring Spatial Representation to Enhance LLM Reasoning in Aerial Vision-Language Navigation",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2410.08500",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Grounding DINO and Tokenize Anything produce depth-backed semantic/topological/metric grids for an LLM planner."
+      ],
+      "limitations": [
+        "Separate visual experts and discretized metric maps supply structure missing from raw image prompts."
+      ],
+      "task": "Exploring Spatial Representation to Enhance LLM Reasoning in Aerial Vision-Language Navigation",
+      "inputs_outputs_method": "Grounding DINO and Tokenize Anything produce depth-backed semantic/topological/metric grids for an LLM planner.",
+      "temporal_spatial_assumptions": "Separate visual experts and discretized metric maps supply structure missing from raw image prompts.",
+      "datasets": "real and simulation evaluations",
+      "metrics": [
+        "success rate"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "release announced"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "external segmentation/LLM components"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "mapping plus LLM calls",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/stmr.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "spatialvlm",
+      "title": "SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2401.12168",
+      "source_type": "preprint",
+      "category": "negative_evidence",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Spatial QA training data are synthesized with detection, depth and geometry to improve spatial reasoning."
+      ],
+      "limitations": [
+        "Does not establish zero-shot aerial navigation; training and scene assumptions matter."
+      ],
+      "task": "SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities",
+      "inputs_outputs_method": "Spatial QA training data are synthesized with detection, depth and geometry to improve spatial reasoning.",
+      "temporal_spatial_assumptions": "Does not establish zero-shot aerial navigation; training and scene assumptions matter.",
+      "datasets": [
+        "human-labeled spatial VQA",
+        "synthetic spatial data"
+      ],
+      "metrics": [
+        "spatial VQA accuracy"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "spatial datasets reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "model release reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "large VLM training",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/spatialvlm.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "spatialrgpt",
+      "title": "SpatialRGPT: Grounded Spatial Reasoning in Vision-Language Models",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2406.01584",
+      "source_type": "preprint",
+      "category": "negative_evidence",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Region-aware features and optional depth plus spatial training improve qualitative/quantitative spatial reasoning."
+      ],
+      "limitations": [
+        "Region QA benchmark gains do not validate dynamic control or exact target stopping."
+      ],
+      "task": "SpatialRGPT: Grounded Spatial Reasoning in Vision-Language Models",
+      "inputs_outputs_method": "Region-aware features and optional depth plus spatial training improve qualitative/quantitative spatial reasoning.",
+      "temporal_spatial_assumptions": "Region QA benchmark gains do not validate dynamic control or exact target stopping.",
+      "datasets": "spatial instruction data",
+      "metrics": [
+        "spatial reasoning accuracy"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "dataset reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "checkpoint reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "VLM training",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/spatialrgpt.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "navid",
+      "title": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2402.15852",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Historical/current visual tokens feed a trained RGB-only navigation model; navigation data scale materially affects results."
+      ],
+      "limitations": [
+        "Uses 510k navigation samples, not generic VLM prompting; aerial transfer unverified."
+      ],
+      "task": "NaVid: Video-based VLM Plans the Next Step for Vision-and-Language Navigation",
+      "inputs_outputs_method": "Historical/current visual tokens feed a trained RGB-only navigation model; navigation data scale materially affects results.",
+      "temporal_spatial_assumptions": "Uses 510k navigation samples, not generic VLM prompting; aerial transfer unverified.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/navid.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "navbench",
+      "title": "NavBench: Probing Multimodal Large Language Models for Embodied Navigation",
+      "year": 2025,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2506.01031",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Separates global alignment, temporal progress and local action comprehension from closed-loop execution."
+      ],
+      "limitations": [
+        "Indoor/discrete navigation benchmark; correlation is not causal proof for C5."
+      ],
+      "task": "NavBench: Probing Multimodal Large Language Models for Embodied Navigation",
+      "inputs_outputs_method": "Separates global alignment, temporal progress and local action comprehension from closed-loop execution.",
+      "temporal_spatial_assumptions": "Indoor/discrete navigation benchmark; correlation is not causal proof for C5.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/navbench.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "blind",
+      "title": "Vision language models are blind: Failing to translate detailed visual features into words",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2407.06581",
+      "source_type": "preprint",
+      "category": "negative_evidence",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Seven low-level geometric tasks expose failures on visually simple inputs; prompting does not reliably remove them."
+      ],
+      "limitations": [
+        "Tested models and task generation differ from repaired Gemma; simple renderer difficulty is a hypothesis here."
+      ],
+      "task": "Vision language models are blind: Failing to translate detailed visual features into words",
+      "inputs_outputs_method": "Seven low-level geometric tasks expose failures on visually simple inputs; prompting does not reliably remove them.",
+      "temporal_spatial_assumptions": "Tested models and task generation differ from repaired Gemma; simple renderer difficulty is a hypothesis here.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/anguyen8/vision-llms-are-blind",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "main",
+        "pushed_at": "2026-05-25T18:12:30Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/blind.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "vlnce",
+      "title": "Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments",
+      "year": 2020,
+      "venue": "ECCV 2020",
+      "url": "https://arxiv.org/html/2004.02857",
+      "source_type": "preprint",
+      "category": "dataset_benchmark",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Continuous execution removes navigation-graph assumptions and changes baseline behavior."
+      ],
+      "limitations": [
+        "Ground-agent benchmark; transfer lessons concern evaluation assumptions, not UAV performance estimates."
+      ],
+      "task": "Beyond the Nav-Graph: Vision-and-Language Navigation in Continuous Environments",
+      "inputs_outputs_method": "Continuous execution removes navigation-graph assumptions and changes baseline behavior.",
+      "temporal_spatial_assumptions": "Ground-agent benchmark; transfer lessons concern evaluation assumptions, not UAV performance estimates.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/jacobkrantz/VLN-CE",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "master",
+        "pushed_at": "2025-01-07T18:53:33Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/vlnce.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "lmnav",
+      "title": "LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action",
+      "year": 2022,
+      "venue": "CoRL 2022",
+      "url": "https://arxiv.org/html/2207.04429",
+      "source_type": "preprint",
+      "category": "foundational",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "GPT landmark extraction, CLIP associations and trained ViNG navigation are linked through a topological graph."
+      ],
+      "limitations": [
+        "Prior observations and learned navigation policy are load-bearing, despite no language-navigation fine-tuning."
+      ],
+      "task": "LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action",
+      "inputs_outputs_method": "GPT landmark extraction, CLIP associations and trained ViNG navigation are linked through a topological graph.",
+      "temporal_spatial_assumptions": "Prior observations and learned navigation policy are load-bearing, despite no language-navigation fine-tuning.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/blazejosinski/lm_nav",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "main",
+        "pushed_at": "2025-01-14T02:20:54Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/lmnav.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "vlmaps",
+      "title": "Visual Language Maps for Robot Navigation",
+      "year": 2022,
+      "venue": "ICRA 2023",
+      "url": "https://arxiv.org/html/2210.05714",
+      "source_type": "preprint",
+      "category": "foundational",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Dense language-aligned image features are fused into 3D maps using RGB-D and odometry."
+      ],
+      "limitations": [
+        "Mapping/localization and feature extraction are explicit; not a direct arbitrary-VLM pixel policy."
+      ],
+      "task": "Visual Language Maps for Robot Navigation",
+      "inputs_outputs_method": "Dense language-aligned image features are fused into 3D maps using RGB-D and odometry.",
+      "temporal_spatial_assumptions": "Mapping/localization and feature extraction are explicit; not a direct arbitrary-VLM pixel policy.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/vlmaps/vlmaps",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "master",
+        "pushed_at": "2024-07-09T14:03:26Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/vlmaps.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "moka",
+      "title": "MOKA: Open-World Robotic Manipulation through Mark-Based Visual Prompting",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2403.03174",
+      "source_type": "preprint",
+      "category": "foundational",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Keypoint/grid marks select affordances and motion waypoints; evaluation separates reasoning from execution failures."
+      ],
+      "limitations": [
+        "Manipulation evidence only; supports diagnostic methodology, not aerial navigation success."
+      ],
+      "task": "MOKA: Open-World Robotic Manipulation through Mark-Based Visual Prompting",
+      "inputs_outputs_method": "Keypoint/grid marks select affordances and motion waypoints; evaluation separates reasoning from execution failures.",
+      "temporal_spatial_assumptions": "Manipulation evidence only; supports diagnostic methodology, not aerial navigation success.",
+      "datasets": "robot manipulation evaluations",
+      "metrics": [
+        "task success"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "frozen VLM plus robot components"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "VLM calls plus manipulation stack",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/moka.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "geonav",
+      "title": "GeoNav: Empowering MLLMs with Dual-Scale Geospatial Reasoning for Language-Goal Aerial Navigation",
+      "year": 2025,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2504.09587",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Geographic landmark priors, hierarchical spatial representations and staged reasoning support aerial goal navigation."
+      ],
+      "limitations": [
+        "Prior geographic information is absent in the current local task; code link points to CityNav resource, not verified GeoNav implementation."
+      ],
+      "task": "GeoNav: Empowering MLLMs with Dual-Scale Geospatial Reasoning for Language-Goal Aerial Navigation",
+      "inputs_outputs_method": "Geographic landmark priors, hierarchical spatial representations and staged reasoning support aerial goal navigation.",
+      "temporal_spatial_assumptions": "Prior geographic information is absent in the current local task; code link points to CityNav resource, not verified GeoNav implementation.",
+      "datasets": [
+        "CityNav"
+      ],
+      "metrics": [
+        "success rate",
+        "navigation error"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/water-cookie/citynav",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "main",
+        "pushed_at": "2025-02-11T06:01:12Z",
+        "implementation_status": "CityNav benchmark resource; not verified GeoNav implementation"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "CityNav"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "MLLM plus spatial representations",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/geonav.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "openvla",
+      "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+      "year": 2024,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2406.09246",
+      "source_type": "preprint",
+      "category": "foundational",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "A VLM is trained on 970k robot demonstrations to predict 7D manipulation actions."
+      ],
+      "limitations": [
+        "Trained manipulation action interface cannot be assumed to control a UAV zero-shot."
+      ],
+      "task": "OpenVLA: An Open-Source Vision-Language-Action Model",
+      "inputs_outputs_method": "A VLM is trained on 970k robot demonstrations to predict 7D manipulation actions.",
+      "temporal_spatial_assumptions": "Trained manipulation action interface cannot be assumed to control a UAV zero-shot.",
+      "datasets": "Open X-Embodiment mixtures",
+      "metrics": [
+        "robot task success"
+      ],
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/openvla/openvla",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "main",
+        "pushed_at": "2025-03-23T23:41:01Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "training mixtures referenced"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "openvla-7b"
+      },
+      "licenses": {
+        "paper": "CC BY 4.0",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "7B VLA fine-tuning/inference",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/openvla.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "airanchor",
+      "title": "AirAnchor: Bridging Local and Global Spatial Information for Zero-Shot Aerial Vision-and-Language Navigation",
+      "year": 2026,
+      "venue": "see primary paper; proceedings not independently verified",
+      "url": "https://arxiv.org/html/2609.08442",
+      "source_type": "preprint",
+      "category": "recent",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "Object anchors link local grounding and persistent scene memory; Qwen3.6-Plus plus A-star and four skills."
+      ],
+      "limitations": [
+        "Released September 8 preprint; memory persists across episodes in a scene and needs cold-start accounting; simulation only."
+      ],
+      "task": "AirAnchor: Bridging Local and Global Spatial Information for Zero-Shot Aerial Vision-and-Language Navigation",
+      "inputs_outputs_method": "Object anchors link local grounding and persistent scene memory; Qwen3.6-Plus plus A-star and four skills.",
+      "temporal_spatial_assumptions": "Released September 8 preprint; memory persists across episodes in a scene and needs cold-start accounting; simulation only.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": null,
+        "status": "not_verified_in_this_review"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "not_verified",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/airanchor.txt",
+      "review_date": "2026-09-10"
+    },
+    {
+      "id": "vlfm",
+      "title": "VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation",
+      "year": 2023,
+      "venue": "ICRA 2024",
+      "url": "https://arxiv.org/html/2312.03275",
+      "source_type": "preprint",
+      "category": "direct_solution",
+      "decision_relevance": "Distinguish model grounding, representation, execution and evaluation assumptions in C5.",
+      "supported_claims": [
+        "BLIP-2 semantic value maps rank geometric frontiers; target detection and PointNav/robot navigation execute movement."
+      ],
+      "limitations": [
+        "Simulation PointNav trained for 2.5 billion steps; target visibility assumptions and detector false positives remain."
+      ],
+      "task": "VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation",
+      "inputs_outputs_method": "BLIP-2 semantic value maps rank geometric frontiers; target detection and PointNav/robot navigation execute movement.",
+      "temporal_spatial_assumptions": "Simulation PointNav trained for 2.5 billion steps; target visibility assumptions and detector false positives remain.",
+      "datasets": "see primary methods; no aggregate pooled score",
+      "metrics": "source-specific SR/OSR or task accuracy; not pooled",
+      "quantitative_results": "not_extracted_unless_explicitly_in_claim_or_report",
+      "code": {
+        "url": "https://github.com/rai-opensource/vlfm",
+        "status": "public_metadata_verified",
+        "license": "MIT",
+        "default_branch": "main",
+        "pushed_at": "2025-11-12T18:21:04Z"
+      },
+      "data": {
+        "status": "not_downloaded",
+        "source_report": "not_reported"
+      },
+      "weights": {
+        "status": "not_downloaded_or_executed",
+        "source_report": "not_reported"
+      },
+      "licenses": {
+        "paper": "arXiv.org perpetual non-exclusive license",
+        "code": "MIT",
+        "weights_data": "separate terms not verified; no redistribution/training recommendation"
+      },
+      "compute": "not_reported_in_inspected_sections",
+      "inspection_level": "methods_results",
+      "inspection_notes": "Methods/results/limitations inspected in cached primary text; resources separately recorded; not independently reproduced.",
+      "source_cache": "sources/vlfm.txt",
+      "review_date": "2026-09-10"
+    }
+  ]
+}

@@ -29,6 +29,17 @@ selective-recovery systems are **configurations of one codebase** rather than
 separate codebases — so that a comparison between them measures architecture
 instead of implementation effort.
 
+## Active OnFly development
+
+Use the shared Ollama `gemma4:e2b` model for policy and monitoring (D-73):
+
+```bash
+uavlab run --arch c5_onfly_active_dev --env grid_nav_onfly_native_dynamics --seed 1061 --out runs/gemma_active_probe
+```
+
+Navigation remains unresolved. This development entry point retains the tested
+Gemma baseline behavior; see `AGENTS.md` for the current debugging direction.
+
 ## Quick start
 
 No CUDA, no ROS, no Gazebo, no network, no model downloads.

@@ -115,6 +115,9 @@ class VerificationResult:
     replacement: DecisionEnvelope | None = None
     """A repaired proposal, when the verifier can fix rather than veto."""
 
+    code: str | None = None
+    """Machine-readable rejection category, independent of explanation wording."""
+
     @property
     def modified(self) -> bool:
         return self.replacement is not None

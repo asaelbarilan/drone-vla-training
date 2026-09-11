@@ -1,0 +1,17 @@
+# D-69: target-bound arrival only; frozen baseline remains unchanged.
+_base_: c5_onfly_qwen4_native_dynamics.yaml
+id: c5_onfly_target_stop_dev
+profile_of: c5
+name: "C5 target-bound arrival experiment"
+tags: [onfly, development, real_model, target_bound_stop]
+monitor:
+  params:
+    target_bound_stop: true
+    target_consistency_m: 1.0
+    camera_pitch_rad: -0.15
+    stop_max_depth_m: 2.0
+
+# The six-field monitor JSON needs 53+ tokens; 48 truncates before its closing brace.
+inference:
+  params:
+    num_predict: 96

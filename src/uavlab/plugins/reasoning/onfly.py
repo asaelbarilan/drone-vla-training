@@ -128,6 +128,7 @@ class OnFlyDecisionAgent(BasePolicy):
         self.goal_standoff_m = float(params.get("goal_standoff_m", 0.0))
         self.camera_pitch_rad = float(params.get("camera_pitch_rad", -0.15))
         self.coordinate_contract = str(params.get("coordinate_contract", "image_pixels"))
+        self.previous_goal_prompt = bool(params.get("previous_goal_prompt", True))
         self.coverage_prompt = bool(params.get("coverage_prompt", False))
         self.frontier_assist = bool(params.get("frontier_assist", False))
         self.frontier_hop_m = float(params.get("frontier_hop_m", 9.0))
@@ -156,8 +157,7 @@ class OnFlyDecisionAgent(BasePolicy):
             "discrete_direction",
         }:
             raise ValueError(
-                "coordinate_contract must be image_pixels, qwen_relative_1000 or "
-                "discrete_direction"
+                "coordinate_contract must be image_pixels, qwen_relative_1000 or discrete_direction"
             )
         self._previous_goal: Vec3 | None = None
         self._last_model_point: tuple[int, int] | None = None
@@ -333,10 +333,7 @@ class OnFlyDecisionAgent(BasePolicy):
         if self._initial_yaw_rad is None:
             self._initial_yaw_rad = obs.yaw_rad
             self._home_position = obs.position
-        if (
-            not self._route_positions
-            or obs.position.distance_to(self._route_positions[-1]) >= 1.0
-        ):
+        if not self._route_positions or obs.position.distance_to(self._route_positions[-1]) >= 1.0:
             if self._route_positions:
                 self._route_flown_m += obs.position.distance_to(self._route_positions[-1])
             self._route_positions.append(obs.position)
@@ -380,6 +377,8 @@ class OnFlyDecisionAgent(BasePolicy):
             if history is not None
             else "There is no valid previous-goal point in the current view."
         )
+        if not self.previous_goal_prompt:
+            history_text = "Choose a fresh navigation point from the current image. "
         if feedback is not None and not feedback.accepted:
             rejected = ", ".join(str(point) for point in self._rejected_model_points)
             feedback_text = (
@@ -530,9 +529,7 @@ class OnFlyDecisionAgent(BasePolicy):
                 expected = expected | {"d"}
             if set(answer) != expected:
                 raise ValueError(f"decision JSON must contain exactly {sorted(expected)}")
-            target_visible = (
-                bool(answer["target_visible"]) if self.frontier_assist else True
-            )
+            target_visible = bool(answer["target_visible"]) if self.frontier_assist else True
             if self.coordinate_contract == "discrete_direction":
                 model_u, model_v = self._direction_to_point(
                     str(answer["direction"]), intr, camera
@@ -1066,6 +1063,23 @@ class OnFlyMonitor:
                 "or history_sheet_plus_latest"
             )
         self.structured_evidence = bool(params.get("structured_evidence", False))
+        self.target_bound_stop = bool(params.get("target_bound_stop", False))
+        if self.target_bound_stop and not self.structured_evidence:
+            raise ValueError("target_bound_stop requires structured_evidence")
+        if self.target_bound_stop and (
+            self.stop_confirmations < 2 or self.layout == "latest_emphasis_sheet"
+        ):
+            raise ValueError(
+                "target_bound_stop needs two confirmations and full-resolution imagery"
+            )
+        self.target_consistency_m = float(params.get("target_consistency_m", 1.0))
+        if self.target_bound_stop and (
+            not math.isfinite(self.target_consistency_m) or self.target_consistency_m <= 0
+        ):
+            raise ValueError("target_consistency_m must be finite and positive")
+        self.camera_pitch_rad = float(params.get("camera_pitch_rad", -0.15))
+        self._arrival_point: np.ndarray | None = None
+        self._arrival_seq = -1
         self.acquisition_confirmations = int(params.get("acquisition_confirmations", 2))
         if self.acquisition_confirmations < 1:
             raise ValueError("OnFly acquisition_confirmations must be at least 1")
@@ -1095,6 +1109,8 @@ class OnFlyMonitor:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._stop_count = self.calls = self.parse_errors = 0
+        self._arrival_point = None
+        self._arrival_seq = -1
         self._ever_acquired = False
         self._acquisition_count = 0
 
@@ -1104,11 +1120,38 @@ class OnFlyMonitor:
         images: list[str] = []
         evidence_seq = ctx.observation.seq
         evidence_t_ns = ctx.observation.t_sim_ns
+        # Snapshot synchronized sensor data before inference can advance the runtime.
+        arrival_depth = None
+        current_rgb = None
+        if self.target_bound_stop:
+            if ctx.observation.depth is not None:
+                stored = global_store().get(ctx.observation.depth.uri)
+                if stored is not None:
+                    arrival_depth = np.array(stored, copy=True)
+            if ctx.observation.rgb is not None:
+                current_rgb = global_store().get(ctx.observation.rgb.uri)
         for item in ctx.memory.items:
+            if self.target_bound_stop and item.observation_seq >= ctx.observation.seq:
+                continue
             if item.image_uri and item.image_uri in _ONFLY_VISUALS:
                 images.append(_encode_png(_ONFLY_VISUALS[item.image_uri]))
                 evidence_seq = item.observation_seq
                 evidence_t_ns = item.t_sim_ns
+        if self.target_bound_stop:
+            if current_rgb is None:
+                self._stop_count = 0
+                self._arrival_point = None
+                return ProgressState(
+                    label=ProgressLabel.CONTINUE,
+                    observation_seq=ctx.observation.seq,
+                    t_sim_ns=ctx.observation.t_sim_ns,
+                    confidence=0.0,
+                    evidence="target-bound STOP unavailable: missing current RGB",
+                    monitor_name=self.name,
+                )
+            images.append(_encode_png(current_rgb))
+            evidence_seq = ctx.observation.seq
+            evidence_t_ns = ctx.observation.t_sim_ns
         if not images and ctx.observation.rgb is not None:
             current = global_store().get(ctx.observation.rgb.uri)
             if current is not None:
@@ -1159,11 +1202,31 @@ class OnFlyMonitor:
                 "latest_target_scale as absent, small, or large."
             )
             schema = _MONITOR_EVIDENCE_SCHEMA
+        if self.target_bound_stop:
+            schema = {
+                **_MONITOR_EVIDENCE_SCHEMA,
+                "properties": {
+                    **_MONITOR_EVIDENCE_SCHEMA["properties"],
+                    "target_u": {"type": ["integer", "null"], "minimum": 0, "maximum": 999},
+                    "target_v": {"type": ["integer", "null"], "minimum": 0, "maximum": 999},
+                },
+                "required": [*_MONITOR_EVIDENCE_SCHEMA["required"], "target_u", "target_v"],
+            }
+            prompt += (
+                " In the LATEST full-resolution frame, locate the actual requested target: "
+                "return target_u and target_v in normalized 0-999 image coordinates "
+                "(0,0 top-left; 999,999 bottom-right), on its visible body near flight height. "
+                "Do not point at a navigation opening, ground, or obstacle in front of it. "
+                "If the requested target cannot be identified, set both coordinates to null "
+                "and latest_target_visible=false. Mission words are a query, not evidence."
+            )
         result = await self.services.inference.invoke(
             InferenceRequest(
                 model_id=self.model_id,
                 role="monitor",
-                prompt_hash="onfly:monitor:v1",
+                prompt_hash="onfly:monitor:target_bound_v1"
+                if self.target_bound_stop
+                else "onfly:monitor:v1",
                 input_tokens=max(1, len(prompt) // 4),
                 image_count=len(images),
                 observation_seq=ctx.observation.seq,
@@ -1187,6 +1250,19 @@ class OnFlyMonitor:
                 if self.structured_evidence
                 else {"status"}
             )
+            if self.target_bound_stop:
+                expected |= {"target_u", "target_v"}
+                if (
+                    type(parsed.get("latest_target_visible")) is not bool
+                    or type(parsed.get("earlier_target_visible")) is not bool
+                    or type(parsed.get("latest_target_scale")) is not str
+                    or parsed.get("latest_target_scale") not in {"absent", "small", "large"}
+                ):
+                    raise ValueError("invalid typed target evidence")
+                for key in ("target_u", "target_v"):
+                    value = parsed.get(key)
+                    if value is not None and (type(value) is not int or not 0 <= value <= 999):
+                        raise ValueError("target coordinates must be integers in 0-999 or null")
             if set(parsed) != expected or parsed["status"] not in {"CONTINUE", "STOP", "LOST"}:
                 raise ValueError("status must be CONTINUE, STOP, or LOST")
             label = ProgressLabel(parsed["status"].lower())
@@ -1201,6 +1277,10 @@ class OnFlyMonitor:
                 was_acquired = self._ever_acquired
                 earlier = bool(parsed["earlier_target_visible"])
                 latest = bool(parsed["latest_target_visible"])
+                if self.target_bound_stop:
+                    latest = (
+                        latest and parsed["target_u"] is not None and parsed["target_v"] is not None
+                    )
                 scale = str(parsed["latest_target_scale"])
                 sampled_depth = None
                 if ctx.last_decision is not None:
@@ -1266,22 +1346,16 @@ class OnFlyMonitor:
                     # plainly visible in the newest frame. Current visual
                     # evidence therefore wins and establishes a fresh anchor.
                     evidence = (
-                        "latest target reacquired despite loss of the previous-goal "
-                        "reprojection"
+                        "latest target reacquired despite loss of the previous-goal reprojection"
                     )
                 elif self._ever_acquired and label is ProgressLabel.CONTINUE and not latest:
                     label = ProgressLabel.LOST
                     recovery_reacquired = False
                     evidence = (
-                        "post-acquisition CONTINUE contradicted by latest-frame absence; "
-                        "normalized"
+                        "post-acquisition CONTINUE contradicted by latest-frame absence; normalized"
                     )
                 elif label is ProgressLabel.STOP and (not latest or scale == "absent"):
-                    label = (
-                        ProgressLabel.LOST
-                        if self._ever_acquired
-                        else ProgressLabel.CONTINUE
-                    )
+                    label = ProgressLabel.LOST if self._ever_acquired else ProgressLabel.CONTINUE
                     evidence = "STOP contradicted by declared latest-frame absence; normalized"
                 if label is ProgressLabel.LOST and not self._ever_acquired:
                     label = ProgressLabel.CONTINUE
@@ -1290,28 +1364,34 @@ class OnFlyMonitor:
                     # fallback heading if the target is acquired later.
                     recovery_anchor_valid = True
                     evidence = "pre-acquisition LOST contradicted by declared history; normalized"
-                if label is ProgressLabel.STOP:
-                    sampled_depth = None
-                    if ctx.last_decision is not None:
-                        try:
-                            sampled_depth = float(
-                                ctx.last_decision.provenance.get("sampled_depth_m", "nan")
+                if self.target_bound_stop:
+                    label, arrival_evidence = self._target_arrival(
+                        ctx, parsed, label, arrival_depth
+                    )
+                    evidence += "; " + arrival_evidence
+                else:
+                    if label is ProgressLabel.STOP:
+                        sampled_depth = None
+                        if ctx.last_decision is not None:
+                            try:
+                                sampled_depth = float(
+                                    ctx.last_decision.provenance.get("sampled_depth_m", "nan")
+                                )
+                            except ValueError:
+                                sampled_depth = None
+                        if (
+                            sampled_depth is None
+                            or not math.isfinite(sampled_depth)
+                            or sampled_depth > self.stop_max_depth_m
+                        ):
+                            label = ProgressLabel.CONTINUE
+                            recovery_anchor_valid = latest and (
+                                not was_acquired or history_continuous is not False
                             )
-                        except ValueError:
-                            sampled_depth = None
-                    if (
-                        sampled_depth is None
-                        or not math.isfinite(sampled_depth)
-                        or sampled_depth > self.stop_max_depth_m
-                    ):
-                        label = ProgressLabel.CONTINUE
-                        recovery_anchor_valid = latest and (
-                            not was_acquired or history_continuous is not False
-                        )
-                        evidence = (
-                            "visual STOP vetoed by synchronized depth "
-                            f"({sampled_depth!r} m > {self.stop_max_depth_m:.1f} m)"
-                        )
+                            evidence = (
+                                "visual STOP vetoed by synchronized depth "
+                                f"({sampled_depth!r} m > {self.stop_max_depth_m:.1f} m)"
+                            )
                 recovery_anchor_valid = label is ProgressLabel.CONTINUE and (
                     not self._ever_acquired or latest
                 )
@@ -1329,6 +1409,7 @@ class OnFlyMonitor:
                 evidence = (
                     f"STOP awaiting confirmation {self._stop_count}/"
                     f"{self.stop_confirmations}"
+                    + (f"; {evidence}" if self.target_bound_stop else "")
                 )
         else:
             self._stop_count = 0
@@ -1341,6 +1422,65 @@ class OnFlyMonitor:
             monitor_name=self.name,
             recovery_anchor_valid=recovery_anchor_valid,
             recovery_reacquired=recovery_reacquired,
+        )
+
+    def _target_arrival(
+        self,
+        ctx: DecisionContext,
+        parsed: dict[str, Any],
+        label: ProgressLabel,
+        depth: np.ndarray | None,
+    ) -> tuple[ProgressLabel, str]:
+        """Constrain arrival with target-associated geometry; never consult scoring truth."""
+        obs = ctx.observation
+        point = None
+        distance = None
+        intr = obs.intrinsics
+        u, v = parsed.get("target_u"), parsed.get("target_v")
+        if (
+            parsed["latest_target_visible"]
+            and parsed["latest_target_scale"] != "absent"
+            and u is not None
+            and v is not None
+            and depth is not None
+            and intr is not None
+            and depth.shape == (intr.height, intr.width)
+            and intr.fx > 0
+            and intr.fy > 0
+        ):
+            px, py = u * (intr.width - 1) / 999, v * (intr.height - 1) / 999
+            # Use exactly the identified target pixel, not a median spanning an occluder.
+            d = _depth_at(depth, px, py, patch=0)
+            if d is not None:
+                left = (intr.cx - px) * d / intr.fx
+                up_camera = (intr.cy - py) * d / intr.fy
+                cp, sp = math.cos(self.camera_pitch_rad), math.sin(self.camera_pitch_rad)
+                forward, up = d * cp - up_camera * sp, d * sp + up_camera * cp
+                cy, sy = math.cos(obs.yaw_rad), math.sin(obs.yaw_rad)
+                delta = np.array([forward * cy - left * sy, forward * sy + left * cy, up])
+                point = np.array([obs.position.x, obs.position.y, obs.position.z]) + delta
+                distance = float(np.linalg.norm(delta))
+        fresh = obs.seq > self._arrival_seq
+        consistent = (
+            point is not None
+            and self._arrival_point is not None
+            and float(np.linalg.norm(point - self._arrival_point)) <= self.target_consistency_m
+        )
+        limit = min(self.stop_max_depth_m, ctx.mission.success.goal_radius_m)
+        eligible = (
+            label is ProgressLabel.STOP and distance is not None and distance <= limit and fresh
+        )
+        if not eligible or not consistent:
+            self._stop_count = 0
+        if fresh:
+            self._arrival_point = point if eligible else None
+            self._arrival_seq = obs.seq
+        if label is ProgressLabel.STOP and not eligible:
+            label = ProgressLabel.CONTINUE
+        return label, (
+            f"target_bound_range_m={distance!r}; target_pixel=({u},{v}); "
+            f"target_consistent={consistent}; fresh_frame={fresh}; "
+            f"arrival_limit_m={limit}; target_frame_seq={obs.seq}"
         )
 
     def stats(self) -> dict[str, float]:

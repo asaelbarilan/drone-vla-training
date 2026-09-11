@@ -866,3 +866,18 @@ def test_route_flown_survives_the_truncated_position_window() -> None:
         policy._route_positions = policy._route_positions[-12:]
     assert len(policy._route_positions) == 12
     assert policy._route_flown_m == pytest.approx(29.0)
+
+
+@pytest.mark.parametrize("enabled", [True, False])
+def test_previous_goal_prompt_can_be_ablated_without_losing_geometry(enabled):
+    model = StubModel(['{"u":112,"v":112}'])
+    agent = OnFlyDecisionAgent(previous_goal_prompt=enabled)
+    agent.reset(MISSION, 1060)
+    bind(agent, services(model))
+    ctx = context()
+    asyncio.run(agent.decide(ctx))
+    decision = asyncio.run(agent.decide(ctx))
+    prompt = model.requests[-1].prompt
+    assert ("previous 3D goal reprojects" in prompt) is enabled
+    assert ("Choose a fresh navigation point" in prompt) is not enabled
+    assert decision.provenance["history_pixel"] != "None"

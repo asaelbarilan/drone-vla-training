@@ -10,6 +10,13 @@ becomes a decision with evidence.
 
 ---
 
+## D-86: diagnose false target identity
+
+The offline yaw trace and one isolated trial are complete. Yaw did not rescue
+navigation; do not expand the sweep. First inspect the saved trial false-stop
+frame and target-consistency logic. Keep the opt-in yaw profile disabled by
+default and preserve task, quota and held-out restrictions.
+
 ## The headline
 
 **AerialClaw/C1 is now the first accepted real foundation-model architecture;

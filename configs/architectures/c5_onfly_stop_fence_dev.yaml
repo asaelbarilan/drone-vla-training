@@ -1,0 +1,11 @@
+# D-69 development experiment. Frozen baseline unchanged.
+_base_: c5_onfly_target_stop_dev.yaml
+id: c5_onfly_stop_fence_dev
+profile_of: c5
+name: "C5 Target-bound arrival plus fence recovery"
+tags: [onfly, development, real_model, fence_recovery]
+verifier:
+  params:
+    fence_recovery: true
+    fence_rejection_limit: 3
+    fence_yaw_rate_rps: 0.4

@@ -1,0 +1,35 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "A red rectangle is located in the upper-middle section of the image, set against the blue background.",
+            "thoughtSignature": "EmgKZgERTTIPTm39NaELYGGAEOLieer41uqLKcH1Lml2F4u5awO3YZTxT9CPapzmVW6VTBHISwCJKPg1N/JaYoOiJ1UmWkG0ZMcAInttpgAsbsQa25OYrrlBn07SiNyqt5FKp6Q+mzuXug=="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1115,
+    "candidatesTokenCount": 21,
+    "totalTokenCount": 1136,
+    "promptTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1089
+      },
+      {
+        "modality": "TEXT",
+        "tokenCount": 26
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.5-flash",
+  "responseId": "1tieavjyHvnGnsEPnIiRiAY"
+}

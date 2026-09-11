@@ -12,7 +12,7 @@ from uavlab.plugins.inference.ollama import OllamaInference, OllamaRequestError
 
 def request() -> InferenceRequest:
     return InferenceRequest(
-        model_id="model",
+        model_id="gemma3:4b",
         role="policy",
         prompt_hash="test",
         input_tokens=1,
@@ -70,3 +70,75 @@ def test_server_rejection_fails_loudly(monkeypatch) -> None:
     with pytest.raises(OllamaRequestError, match="exceeds context size"):
         asyncio.run(backend.invoke(request()))
     assert backend.stats()["inference_errors"] == 1.0
+
+
+def test_mismatched_model_is_rejected_before_network(monkeypatch) -> None:
+    backend = OllamaInference(model_id="qwen3-vl:4b")
+
+    def unexpected_call(*args, **kwargs):
+        pytest.fail("mismatched model request reached the server")
+
+    monkeypatch.setattr(backend, "_post", unexpected_call)
+    with pytest.raises(ValueError, match="requests model"):
+        asyncio.run(backend.invoke(request()))
+
+
+@pytest.mark.parametrize(
+    "name",
+    ["c5_gemma4_e2b_baseline_dev", "c5_gemma4_e2b_target_stop_dev", "c5_onfly_active_dev"],
+)
+def test_gemma_profile_uses_real_gemma_backend_and_content(name, monkeypatch):
+    from pathlib import Path
+
+    from uavlab.core.compose import load_architecture
+
+    arch = load_architecture(name, Path("configs"))
+    backend = OllamaInference(**arch.inference.params)
+    posted = []
+
+    def capture(_path, body):
+        posted.append(body)
+        return {"message": {"content": "{}"}, "eval_count": 2}
+
+    monkeypatch.setattr(backend, "_post", capture)
+    for role, component in [("policy", arch.policy), ("monitor", arch.monitor)]:
+        result = asyncio.run(
+            backend.invoke(
+                InferenceRequest(
+                    model_id=component.params["model_id"],
+                    role=role,
+                    prompt_hash="identity-test",
+                    input_tokens=1,
+                    prompt="test",
+                )
+            )
+        )
+        assert result.payload == "{}"
+    assert all(body["model"] == "gemma4:e2b" for body in posted)
+    assert all(body["think"] is False for body in posted)
+
+
+def test_historical_mislabelled_gemma_profile_fails_before_http(monkeypatch):
+    from pathlib import Path
+
+    from uavlab.core.compose import load_architecture
+
+    arch = load_architecture("c5_onfly_gemma4b_direction_dev", Path("configs"))
+    backend = OllamaInference(**arch.inference.params)
+
+    def unexpected(*args, **kwargs):
+        pytest.fail("mislabelled historical profile reached HTTP")
+
+    monkeypatch.setattr(backend, "_post", unexpected)
+    with pytest.raises(ValueError, match="requests model"):
+        asyncio.run(
+            backend.invoke(
+                InferenceRequest(
+                    model_id=arch.policy.params["model_id"],
+                    role="policy",
+                    prompt_hash="historical-identity",
+                    input_tokens=1,
+                    prompt="test",
+                )
+            )
+        )

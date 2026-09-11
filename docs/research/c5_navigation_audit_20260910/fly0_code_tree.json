@@ -1,0 +1,24 @@
+{
+  "tree_sha": "6dc95a837dc5f7fe5ff96b3469a86c1ac574f4f1",
+  "python_files": [
+    "src/airsim/core/VLM/__init__.py",
+    "src/airsim/core/VLM/llm_interface.py",
+    "src/airsim/core/__init__.py",
+    "src/airsim/core/config/__init__.py",
+    "src/airsim/core/config/config.py",
+    "src/airsim/core/control/__init__.py",
+    "src/airsim/core/control/drone_controller.py",
+    "src/airsim/core/control/ego_planner.py",
+    "src/airsim/core/detection/__init__.py",
+    "src/airsim/core/detection/visual_target_detector.py",
+    "src/airsim/core/navigation/__init__.py",
+    "src/airsim/core/navigation/navigation_handler.py",
+    "src/airsim/core/processing/__init__.py",
+    "src/airsim/core/processing/code_executor.py",
+    "src/airsim/core/processing/command_classifier.py",
+    "src/airsim/core/processing/command_processor.py",
+    "src/airsim/core/ui/__init__.py",
+    "src/airsim/core/ui/ui_utils.py",
+    "src/airsim/main.py"
+  ]
+}

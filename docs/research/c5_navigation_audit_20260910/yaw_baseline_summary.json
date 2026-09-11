@@ -1,0 +1,87 @@
+{
+  "baseline": "c5_gemma_runtime_fixed_target_stop_20260907_s1061",
+  "replay_error_m": 0.0,
+  "visible_decision_frames": 36,
+  "bbox_hits": 0,
+  "visibility_losses": [
+    {
+      "t": 17.45,
+      "yaw_deg": 0.1927651848911131,
+      "visible": false,
+      "distance_m": 27.728633619695668,
+      "target_relative_deg": 45.04456007257207,
+      "semantic_relative_deg": 9.808717488308393,
+      "motion_relative_deg": -1.4063865063658467,
+      "motion_semantic_difference_deg": -11.21510399467424,
+      "semantic_target_difference_deg": -35.235842584263686,
+      "yaw_rate": -0.03681911263755632,
+      "safety_modified": false
+    },
+    {
+      "t": 38.6,
+      "yaw_deg": 41.278294418154665,
+      "visible": false,
+      "distance_m": 16.977563218200252,
+      "target_relative_deg": 11.95190634469614,
+      "semantic_relative_deg": 2.6186198172454715,
+      "motion_relative_deg": 0.4986188304985638,
+      "motion_semantic_difference_deg": -2.120000986746908,
+      "semantic_target_difference_deg": -9.333286527450666,
+      "yaw_rate": 0.013053810456965187,
+      "safety_modified": false
+    },
+    {
+      "t": 40.25,
+      "yaw_deg": 43.8377485168455,
+      "visible": false,
+      "distance_m": 16.00829128353188,
+      "target_relative_deg": 10.078257118591262,
+      "semantic_relative_deg": 0.8630652324729995,
+      "motion_relative_deg": 0.9235498615987842,
+      "motion_semantic_difference_deg": 0.06048462912578469,
+      "semantic_target_difference_deg": -9.215191886118262,
+      "yaw_rate": 0.024178478836855255,
+      "safety_modified": false
+    },
+    {
+      "t": 58.8,
+      "yaw_deg": 96.33513084341193,
+      "visible": false,
+      "distance_m": 14.22823150571367,
+      "target_relative_deg": -45.736916873442446,
+      "semantic_relative_deg": -45.36428959359945,
+      "motion_relative_deg": 162.6001263178592,
+      "motion_semantic_difference_deg": -152.03558408854136,
+      "semantic_target_difference_deg": 0.3726272798429948,
+      "yaw_rate": 0.4,
+      "safety_modified": false
+    },
+    {
+      "t": 63.25,
+      "yaw_deg": 94.08929199862203,
+      "visible": false,
+      "distance_m": 14.306232802393138,
+      "target_relative_deg": -45.66798611436691,
+      "semantic_relative_deg": 7.695950466219835,
+      "motion_relative_deg": 13.66836091353293,
+      "motion_semantic_difference_deg": 5.972410447313094,
+      "semantic_target_difference_deg": 53.363936580586746,
+      "yaw_rate": 0.35783685193807435,
+      "safety_modified": false
+    },
+    {
+      "t": 65.45,
+      "yaw_deg": 91.80572624348085,
+      "visible": false,
+      "distance_m": 13.526183804932675,
+      "target_relative_deg": -46.12785692402747,
+      "semantic_relative_deg": 24.06230767930982,
+      "motion_relative_deg": 24.07269322751353,
+      "motion_semantic_difference_deg": 0.010385548203707677,
+      "semantic_target_difference_deg": 70.1901646033373,
+      "yaw_rate": 0.4,
+      "safety_modified": false
+    }
+  ],
+  "qualification": "Motion direction proxies the path-carrot direction during ordinary tracking; no private trajectory was reconstructed. Truth is offline scoring only. Bbox hits score the visible red body, not every semantic object surface."
+}

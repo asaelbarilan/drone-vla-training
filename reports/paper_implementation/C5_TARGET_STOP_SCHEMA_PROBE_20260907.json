@@ -1,0 +1,26 @@
+[
+  {
+    "limit": 48,
+    "done_reason": "length",
+    "tokens": 48,
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"earlier_target_visible\": false,\n  \"latest_target_visible\": false,\n  \"latest_target_scale\": \"absent\",\n  \"status\": \"LOST\",\n  \"target_u\": null,\n  \"target_v"
+    },
+    "evidence": "invalid monitor output; fail-safe CONTINUE (model response contains no JSON object)",
+    "parse_errors": 1
+  },
+  {
+    "limit": 96,
+    "done_reason": "stop",
+    "tokens": 53,
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"earlier_target_visible\": false,\n  \"latest_target_visible\": false,\n  \"latest_target_scale\": \"absent\",\n  \"status\": \"LOST\",\n  \"target_u\": null,\n  \"target_v\": null\n}"
+    },
+    "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=0; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=None",
+    "parse_errors": 0
+  }
+]

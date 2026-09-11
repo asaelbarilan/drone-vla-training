@@ -1,0 +1,92 @@
+[
+  {
+    "seed": 1060,
+    "replay_distance_error_m": 0.0,
+    "previous_waypoint_echo": {
+      "comparisons": 81,
+      "within_one_pixel": 4,
+      "within_three_pixels": 51
+    },
+    "visible_decision_frames": 0,
+    "stored_final_distance_m": 54.97717958913131,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.5333085616049703,
+      "source_motion_before_activation_max_m": 0.6300000000381157,
+      "waypoint_distance_at_activation_mean_m": 4.933259302442511,
+      "waypoint_behind_at_activation_fraction": 0.02247191011235955
+    }
+  },
+  {
+    "seed": 1061,
+    "replay_distance_error_m": 0.0,
+    "previous_waypoint_echo": {
+      "comparisons": 85,
+      "within_one_pixel": 4,
+      "within_three_pixels": 47
+    },
+    "visible_decision_frames": 0,
+    "stored_final_distance_m": 43.931746913240445,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.5700122031298205,
+      "source_motion_before_activation_max_m": 0.6299999709073052,
+      "waypoint_distance_at_activation_mean_m": 5.258570623699701,
+      "waypoint_behind_at_activation_fraction": 0.011235955056179775
+    }
+  },
+  {
+    "seed": 1062,
+    "replay_distance_error_m": 0.0,
+    "previous_waypoint_echo": {
+      "comparisons": 88,
+      "within_one_pixel": 5,
+      "within_three_pixels": 73
+    },
+    "visible_decision_frames": 0,
+    "stored_final_distance_m": 34.35358703264614,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.58639361970243,
+      "source_motion_before_activation_max_m": 0.6299999884946749,
+      "waypoint_distance_at_activation_mean_m": 6.373165218142658,
+      "waypoint_behind_at_activation_fraction": 0.0
+    }
+  },
+  {
+    "seed": 1063,
+    "replay_distance_error_m": 0.0,
+    "previous_waypoint_echo": {
+      "comparisons": 88,
+      "within_one_pixel": 3,
+      "within_three_pixels": 76
+    },
+    "visible_decision_frames": 0,
+    "stored_final_distance_m": 27.401419470596174,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.6011679770472134,
+      "source_motion_before_activation_max_m": 0.6300000006585139,
+      "waypoint_distance_at_activation_mean_m": 6.406051105032964,
+      "waypoint_behind_at_activation_fraction": 0.0
+    }
+  },
+  {
+    "seed": 1064,
+    "replay_distance_error_m": 0.0,
+    "previous_waypoint_echo": {
+      "comparisons": 88,
+      "within_one_pixel": 1,
+      "within_three_pixels": 73
+    },
+    "visible_decision_frames": 9,
+    "stored_final_distance_m": 54.95811664446268,
+    "async_execution_geometry": {
+      "decisions_scored": 89,
+      "source_motion_before_activation_mean_m": 0.6136162568497255,
+      "source_motion_before_activation_max_m": 0.6300000002217682,
+      "waypoint_distance_at_activation_mean_m": 6.323561321251374,
+      "waypoint_behind_at_activation_fraction": 0.0
+    }
+  }
+]

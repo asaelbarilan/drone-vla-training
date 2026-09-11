@@ -1,0 +1,94 @@
+{
+  "source_run": "runs\\c5_gemma4_e2b_20260907_baseline_s1061",
+  "observation_seq": 480,
+  "candidates": [
+    {
+      "box": [
+        0,
+        16,
+        25,
+        215
+      ],
+      "point": [
+        7,
+        151
+      ],
+      "area": 2536,
+      "depth": 0.5677241086959839
+    },
+    {
+      "box": [
+        15,
+        64,
+        27,
+        97
+      ],
+      "point": [
+        20,
+        80
+      ],
+      "area": 396,
+      "depth": 17.15641212463379
+    },
+    {
+      "box": [
+        38,
+        53,
+        91,
+        131
+      ],
+      "point": [
+        65,
+        91
+      ],
+      "area": 3557,
+      "depth": 8.683674812316895
+    },
+    {
+      "box": [
+        94,
+        72,
+        116,
+        113
+      ],
+      "point": [
+        105,
+        92
+      ],
+      "area": 873,
+      "depth": 18.558395385742188
+    },
+    {
+      "box": [
+        185,
+        0,
+        224,
+        175
+      ],
+      "point": [
+        208,
+        90
+      ],
+      "area": 5092,
+      "depth": 1.981153964996338
+    }
+  ],
+  "prompt": "These are crops of visible surfaces from a drone camera, labeled with IDs. Which crop shows the destination requested by: fly to the red tower and stop there? Match the actual visible color. Gray or green structures are not red. Return the ID of the matching crop, or null if none matches. Return only JSON with target_id.",
+  "response": {
+    "model": "gemma4:e2b",
+    "created_at": "2026-09-07T15:18:56.3887146Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"target_id\": null}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 472245100,
+    "load_duration": 6236300,
+    "prompt_eval_count": 183,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 327726000,
+    "eval_count": 8,
+    "eval_duration": 114974000
+  }
+}

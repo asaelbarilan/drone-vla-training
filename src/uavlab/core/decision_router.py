@@ -95,6 +95,7 @@ class _FixedReorientation:
     max_yaw_rate_rps: float
     settled: bool = False
     source_id: str = "onfly-lost-reorientation"
+    resume_on_heading: bool = False
 
 
 @dataclass(slots=True)
@@ -103,6 +104,7 @@ class RouterCounters:
     executed: int = 0
     rejected_stale: int = 0
     verifier_rejected: int = 0
+    fence_recoveries: int = 0
     verifier_modified: int = 0
     plans_requested: int = 0
     plans_infeasible: int = 0
@@ -152,6 +154,18 @@ class DecisionRouter:
         self.shield = shield
         self.controller = controller
         self.skills = skill_runtime or SkillRuntime()
+        verifier_params = arch.verifier.params if arch.verifier else {}
+        self.fence_recovery = bool(verifier_params.get("fence_recovery", False))
+        self.fence_rejection_limit = int(verifier_params.get("fence_rejection_limit", 3))
+        self.fence_yaw_rate_rps = float(verifier_params.get("fence_yaw_rate_rps", 0.4))
+        if self.fence_recovery and (
+            self.fence_rejection_limit < 1
+            or not math.isfinite(self.fence_yaw_rate_rps)
+            or self.fence_yaw_rate_rps <= 0
+        ):
+            raise ValueError("fence recovery needs a positive rejection limit and yaw rate")
+        self._fence_rejections = 0
+        self._fresh_after_reorientation_ns = -1
         self.max_age_ns = s_to_ns(arch.staleness.max_decision_age_s)
         self.reject_stale = arch.staleness.reject_stale
 
@@ -165,6 +179,8 @@ class DecisionRouter:
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self.source = None
         self._reorientation = None
+        self._fence_rejections = 0
+        self._fresh_after_reorientation_ns = -1
         self.counters = RouterCounters()
         self.stop_requested = False
         self.stop_reason = ""
@@ -178,6 +194,12 @@ class DecisionRouter:
     def accept(self, envelope: DecisionEnvelope, ctx: DecisionContext) -> RoutingOutcome:
         """Validate a proposal and, if it survives, make it authoritative."""
         self.counters.proposed += 1
+        if self.fence_reorientation_active:
+            return RoutingOutcome(accepted=False, reason="bounded fence reorientation active")
+        if envelope.source_t_sim_ns <= self._fresh_after_reorientation_ns:
+            return RoutingOutcome(
+                accepted=False, reason="fresh observation required after fence turn"
+            )
         age_ns = envelope.age_ns(ctx.t_sim_ns)
         stale = envelope.is_expired(ctx.t_sim_ns) or age_ns > self.max_age_ns
 
@@ -262,6 +284,7 @@ class DecisionRouter:
                 verification = self.verifier.verify(envelope, ctx)
                 if not verification.accepted:
                     self.counters.verifier_rejected += 1
+                    self._consider_fence_recovery(verification, ctx)
                     return RoutingOutcome(
                         accepted=False,
                         reason=f"verifier rejected: {verification.reason}",
@@ -269,6 +292,7 @@ class DecisionRouter:
                         decision_age_ns=age_ns,
                         verification=verification,
                     )
+                self._fence_rejections = 0
                 if verification.replacement is not None:
                     self.counters.verifier_modified += 1
                     replacement_payload = verification.replacement.payload
@@ -381,6 +405,36 @@ class DecisionRouter:
     def reorientation_active(self) -> bool:
         return self._reorientation is not None
 
+    @property
+    def fence_reorientation_active(self) -> bool:
+        return self._reorientation is not None and self._reorientation.resume_on_heading
+
+    def _consider_fence_recovery(self, result: VerificationResult, ctx: DecisionContext) -> None:
+        if not self.fence_recovery:
+            return
+        self._fence_rejections = self._fence_rejections + 1 if result.code == "geofence" else 0
+        if self._fence_rejections < self.fence_rejection_limit or self.reorientation_active:
+            return
+        position = ctx.observation.position
+        # Same ENU fence origin as the verifier; no target location is involved.
+        if math.hypot(position.x, position.y) < 1e-6:
+            return
+        target_yaw = math.atan2(-position.y, -position.x)
+        error = math.atan2(
+            math.sin(target_yaw - ctx.observation.yaw_rad),
+            math.cos(target_yaw - ctx.observation.yaw_rad),
+        )
+        self.begin_fixed_reorientation(
+            target_yaw_rad=target_yaw,
+            t_sim_ns=ctx.t_sim_ns,
+            hold_s=0.25,
+            max_duration_s=abs(error) / self.fence_yaw_rate_rps + 2.0,
+            yaw_rate_rps=self.fence_yaw_rate_rps,
+            resume_on_heading=True,
+        )
+        self._fence_rejections = 0
+        self.counters.fence_recoveries += 1
+
     def begin_fixed_reorientation(
         self,
         *,
@@ -389,6 +443,7 @@ class DecisionRouter:
         hold_s: float,
         max_duration_s: float,
         yaw_rate_rps: float,
+        resume_on_heading: bool = False,
     ) -> None:
         """Cancel translation, pause, then rotate toward a known heading.
 
@@ -403,6 +458,8 @@ class DecisionRouter:
             hold_until_ns=t_sim_ns + s_to_ns(max(0.0, hold_s)),
             expires_ns=t_sim_ns + s_to_ns(max(max_duration_s, hold_s, 0.05)),
             max_yaw_rate_rps=max(0.05, abs(yaw_rate_rps)),
+            resume_on_heading=resume_on_heading,
+            source_id="fence-reorientation" if resume_on_heading else "onfly-lost-reorientation",
         )
 
     def cancel_fixed_reorientation(self) -> None:
@@ -417,6 +474,9 @@ class DecisionRouter:
         # infinite hover when positional occlusion makes visual reacquisition
         # impossible from the recovered viewpoint.
         if ctx.t_sim_ns >= recovery.expires_ns:
+            if recovery.resume_on_heading:
+                self.source = None
+                self._fresh_after_reorientation_ns = ctx.t_sim_ns
             self._reorientation = None
             return self.controller.hold(ctx).model_copy(
                 update={"metadata": {"recovery": "reorientation_expired"}}
@@ -430,6 +490,13 @@ class DecisionRouter:
             math.cos(recovery.target_yaw_rad - ctx.observation.yaw_rad),
         )
         if recovery.settled or abs(error) <= math.radians(5.0):
+            if recovery.resume_on_heading:
+                self._reorientation = None
+                self.source = None
+                self._fresh_after_reorientation_ns = ctx.t_sim_ns
+                return self.controller.hold(ctx).model_copy(
+                    update={"metadata": {"recovery": "fence_turn_complete"}}
+                )
             # Keep the recovered viewpoint fixed until the next semantic
             # monitor result explicitly confirms reacquisition.  Resuming a
             # stale waypoint for the gap between monitor ticks immediately
@@ -448,7 +515,13 @@ class DecisionRouter:
             duration_s=0.1,
         )
         return self.controller.from_action(action, ctx, recovery.source_id).model_copy(
-            update={"metadata": {"recovery": "lost_reorientation"}}
+            update={
+                "metadata": {
+                    "recovery": "fence_reorientation"
+                    if recovery.resume_on_heading
+                    else "lost_reorientation"
+                }
+            }
         )
 
     def command_for_tick(
@@ -467,9 +540,7 @@ class DecisionRouter:
         # enough: a once-fresh trajectory can remain authoritative for many
         # control ticks and become stale during execution.
         source = self.source
-        source_age_ns = (
-            ctx.t_sim_ns - source.source_t_sim_ns if source is not None else None
-        )
+        source_age_ns = ctx.t_sim_ns - source.source_t_sim_ns if source is not None else None
         reject_source = (
             source_age_ns is not None
             and source_age_ns > self.max_age_ns

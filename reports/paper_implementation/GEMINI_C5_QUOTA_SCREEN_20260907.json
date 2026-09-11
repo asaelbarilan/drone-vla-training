@@ -1,0 +1,89 @@
+{
+  "seed": 1061,
+  "run": "runs\\c5_gemini_flash_20260907_s1061",
+  "status": "quota_interrupted_not_navigation_result",
+  "successful_inference_calls": 6,
+  "calls": [
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 2.7823405,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1308,
+      "image_count": 1,
+      "response_chars": 20
+    },
+    {
+      "role": "monitor",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 1.4177185,
+      "charged_s": 1.2,
+      "output_tokens": 65,
+      "prompt_tokens": 1514,
+      "image_count": 1,
+      "response_chars": 170
+    },
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 1.7955215,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1329,
+      "image_count": 1,
+      "response_chars": 20
+    },
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 2.2967973,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1329,
+      "image_count": 1,
+      "response_chars": 20
+    },
+    {
+      "role": "monitor",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 2.4996166,
+      "charged_s": 1.2,
+      "output_tokens": 65,
+      "prompt_tokens": 2660,
+      "image_count": 2,
+      "response_chars": 170
+    },
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 2.2935547,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1329,
+      "image_count": 1,
+      "response_chars": 20
+    }
+  ],
+  "episode_end": {
+    "success": false,
+    "reason": "runtime_error",
+    "detail": "monitor: RuntimeError('Gemini returned HTTP 429; no retry or fallback')",
+    "sim_duration_s": 4.0
+  },
+  "quota_stop_active": true,
+  "retries": 0,
+  "cpu_tests_passed": 295
+}

@@ -1,0 +1,19 @@
+# D-82: same C5 control flow, free-tier Gemini comparison only.
+_base_: c5_gemma4_e2b_runtime_fixed_target_stop_dev.yaml
+id: c5_gemini_flash_target_stop_dev
+profile_of: c5
+name: "C5 Gemini Flash target-bound comparison"
+policy:
+  params:
+    model_id: gemini-3.5-flash
+monitor:
+  params:
+    model_id: gemini-3.5-flash
+inference:
+  name: gemini
+  params:
+    model_id: gemini-3.5-flash
+    env_file: .env
+    quota_stop_file: .local/gemini_quota_stop
+    max_output_tokens: 256
+    expected_digest: null

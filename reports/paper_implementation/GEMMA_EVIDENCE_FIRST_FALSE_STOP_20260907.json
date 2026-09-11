@@ -1,0 +1,57 @@
+[
+  {
+    "variant": "grounding",
+    "prompt": "First describe the actual visible colors and objects in a short evidence field. Then identify the destination requested by: fly to the red tower and stop there. Is that exact object visible in this image? If yes, return the center of its visible body in u,v coordinates on a 0 to 999 grid (top-left origin). If absent use null coordinates. Check its actual color; do not infer presence from the request. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "v": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"A vertical structure, likely a tower, is visible in the center of the image. It has a light blue/gray color. The area to\", \"visible\": true, \"u\": 499, \"v\": 499}"
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_gemma_runtime_fixed_target_stop_20260907_s1060",
+    "observation_seq": 880
+  }
+]

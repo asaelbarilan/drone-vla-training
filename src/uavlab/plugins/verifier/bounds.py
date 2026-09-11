@@ -104,6 +104,7 @@ class SemanticGeometricVerifier:
             self.rejections += 1
             return VerificationResult(
                 accepted=False,
+                code="geofence",
                 reason=f"target is {radius:.1f} m from home, outside the "
                 f"{self._geofence:.0f} m geofence",
             )

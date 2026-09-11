@@ -1,0 +1,19 @@
+# D-71: real Gemma 4 E2B backend, not merely a changed policy label.
+_base_: c5_onfly_target_stop_dev.yaml
+id: c5_gemma4_e2b_target_stop_dev
+profile_of: c5
+name: "C5 Gemma 4 E2B target_stop comparison"
+tags: [onfly, development, real_model, gemma4_e2b]
+policy:
+  params:
+    model_id: gemma4:e2b
+monitor:
+  params:
+    model_id: gemma4:e2b
+inference:
+  params:
+    model_id: gemma4:e2b
+    expected_digest: 7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e
+    response_channel: content
+    think: false
+    num_predict: 96

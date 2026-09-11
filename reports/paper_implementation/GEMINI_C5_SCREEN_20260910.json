@@ -1,0 +1,49 @@
+{
+  "status": "service_error_interrupted",
+  "successful_calls": 3,
+  "calls": [
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 19.3962665,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1308,
+      "image_count": 1,
+      "response_chars": 20
+    },
+    {
+      "role": "monitor",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 8.611357,
+      "charged_s": 1.2,
+      "output_tokens": 65,
+      "prompt_tokens": 1514,
+      "image_count": 1,
+      "response_chars": 170
+    },
+    {
+      "role": "policy",
+      "model_id": "gemini-3.5-flash",
+      "resolved_model": "gemini-3.5-flash",
+      "backend": "gemini",
+      "latency_s": 15.5233578,
+      "charged_s": 1.0,
+      "output_tokens": 16,
+      "prompt_tokens": 1329,
+      "image_count": 1,
+      "response_chars": 20
+    }
+  ],
+  "episode_end": {
+    "success": false,
+    "reason": "runtime_error",
+    "detail": "decision: RuntimeError('Gemini returned HTTP 503; no retry or fallback')",
+    "sim_duration_s": 2.0
+  },
+  "automatic_retries": 0
+}

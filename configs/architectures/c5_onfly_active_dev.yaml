@@ -1,0 +1,5 @@
+# D-73: active development entry point; use the shared Gemma model.
+_base_: c5_gemma4_e2b_runtime_fixed_dev.yaml
+id: c5_onfly_active_dev
+profile_of: c5
+name: "C5 active development (Gemma 4 E2B)"

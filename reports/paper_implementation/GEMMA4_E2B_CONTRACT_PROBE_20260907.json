@@ -1,0 +1,41 @@
+[
+  {
+    "model_requested": "gemma4:e2b",
+    "image_count": 1,
+    "done_reason": "stop",
+    "tokens": 17,
+    "message": {
+      "role": "assistant",
+      "content": "{\"u\": 500, \"v\": 500}"
+    },
+    "error": null
+  },
+  {
+    "model_requested": "gemma4:e2b",
+    "image_count": 1,
+    "done_reason": "stop",
+    "tokens": 38,
+    "message": {
+      "role": "assistant",
+      "content": "{\"earlier_target_visible\": false, \"latest_target_visible\": false, \"latest_target_scale\": \"absent\", \"status\": \"CONTINUE\"}"
+    },
+    "error": null,
+    "profile": "c5_gemma4_e2b_baseline_dev",
+    "parse_errors": 0,
+    "evidence": "visual monitor classified continue from 1 frames; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=False"
+  },
+  {
+    "model_requested": "gemma4:e2b",
+    "image_count": 1,
+    "done_reason": "stop",
+    "tokens": 54,
+    "message": {
+      "role": "assistant",
+      "content": "{\"earlier_target_visible\": false, \"latest_target_visible\": false, \"latest_target_scale\": \"absent\", \"status\": \"CONTINUE\", \"target_u\": null, \"target_v\": null}"
+    },
+    "error": null,
+    "profile": "c5_gemma4_e2b_target_stop_dev",
+    "parse_errors": 0,
+    "evidence": "visual monitor classified continue from 1 frames; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=0; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=False"
+  }
+]

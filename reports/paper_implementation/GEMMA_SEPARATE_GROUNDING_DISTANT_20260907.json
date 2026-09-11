@@ -1,0 +1,52 @@
+[
+  {
+    "variant": "grounding",
+    "prompt": "Identify the destination requested by: fly to the red tower and stop there. Is that exact object visible in this image? If yes, return the center of its visible body in u,v coordinates on a 0 to 999 grid (top-left origin). If absent use null coordinates. Check its actual color; do not infer presence from the request. Return only JSON.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "v": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "visible",
+        "u",
+        "v"
+      ],
+      "additionalProperties": false
+    },
+    "model": "gemma4:e2b",
+    "message": {
+      "role": "assistant",
+      "content": "{\"visible\":false,\"u\":411,\"v\":477}"
+    },
+    "done_reason": "stop",
+    "source_run": "runs\\c5_gemma4_e2b_20260907_baseline_s1061",
+    "observation_seq": 480
+  }
+]

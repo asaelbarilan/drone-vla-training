@@ -1467,6 +1467,7 @@ the model rather than in the prompt, the coordinate contract, the step source or
 the path budget, each of which has been separately excluded.
 
 ### D-68 — Gemma steers and Qwen does not, and it changes nothing
+**Model-comparison claim superseded by D-71: all five runs actually called Qwen.**
 **When.** 2026-09-04 — `c5_onfly_gemma4b_direction_dev`, unprivileged (no route
 hint), 240 s horizon, seeds 1060-1064. Acts on the standing instruction to try
 Gemma 4B if the discrete-direction contract failed, which D-67 established.
@@ -1505,3 +1506,345 @@ model-independent and are the live blockers: the absence of any fallback when
 every proposal is refused for the geofence, and the acquisition latch that
 declares arrival at 8.5-32.9 m. The Qwen steering deficiency is real and
 measured, but fixing it alone would not have changed a single outcome here.
+
+
+### D-69 — Target-bound arrival and bounded fence recovery experiments
+**When.** 2026-09-07 — user approved separate arrival and boundary fixes.
+**Status.** Provisional; development-only profiles, baseline unchanged.
+**Decision.** First bind STOP to a monitor-authored target pixel in the current
+synchronized RGB-D observation, with finite uncapped range, distinct-frame
+confirmations and world-point consistency. A navigation waypoint's depth is
+not evidence of target range. Keep distant acquisition distinct from arrival.
+Then independently add bounded inward reorientation after repeated geofence
+rejections, using only odometry and the declared fence. Neither experiment may
+read goal truth, introduce a detector, or replace VLM waypoint decisions.
+**Evidence.** Existing STOP reads sampled_depth_m from last_decision: a policy
+navigation pixel, not a monitor-grounded target. D-65's deadlocks begin after
+109–151 s and cannot explain all 90 s failures. Steering entropy alone does not
+establish steering accuracy.
+**Validation.** Contract regressions first, then separate development profiles
+on seeds 1060–1064 (1061 positive control), plus the long profile for boundary
+recovery. Seeds 1–40 remain untouched. Mission success must be measured;
+fewer stops or refusals alone do not establish improvement.
+
+**Implementation validation (D-69).** Three separate development profiles are
+implemented. 281 unit/contract tests and 31 shared-runtime integration tests
+pass (312 total); the real-inference all-architecture termination test was
+excluded. Real-model development flights remain pending GPU availability;
+UE4Editor was left running. No new capability result is claimed. Details:
+`reports/paper_implementation/C5_ARRIVAL_FENCE_FIXES_20260907.md`.
+
+
+### D-70 — New target-evidence schema exceeded the inherited output budget
+**When.** 2026-09-07 — first real-model D-69 arrival flight.
+**Evidence.** Exact monitor request on development seed 1061: at 48 tokens,
+Ollama reports done_reason=length and the JSON is incomplete; at a 96-token
+cap, the response finishes in 53 tokens with done_reason=stop and zero parse
+errors. Artifact: `reports/paper_implementation/C5_TARGET_STOP_SCHEMA_PROBE_20260907.json`.
+**Decision.** Raise num_predict to 96 only in the target-bound development
+profile (inherited by its combined variant). Keep baseline and fence-only
+profiles unchanged. This is an output-capacity correction, not a channel or
+model swap. Retain the fixed simulated latency profile and report measured
+latency separately; this is not evidence of real-time feasibility.
+**Invalid run.** `runs/c5_target_stop_20260907_s1061` was interrupted after
+repeated truncation failures and is not a capability result. Rerun under a new
+output directory with the corrected manifest.
+
+
+### D-71 — Historical Gemma comparison used the Qwen backend
+**When.** 2026-09-07 — user requested comparison with drone_control's Gemma 4 E2B.
+**Evidence.** All five `runs/c5_gemma_dir_s1060` through `s1064` manifests set
+policy.model_id=gemma3:4b but inference.params.model_id=qwen3-vl:4b. Every
+policy and monitor inference_call event identifies qwen3-vl:4b. The backend
+uses its own configured model, not InferenceRequest.model_id. The current
+c5_onfly_gemma4b_direction_dev config overrides only policy and monitor.
+**Correction.** D-68 does not compare models. Its steering-entropy difference
+cannot be attributed to Gemma, and its model-independent-defect claim is not
+established by these runs. These five artifacts remain preserved as incorrectly
+labelled Qwen experiments; their numerical observations are not Gemma results.
+**Decision.** Prioritize a true Gemma 4 E2B comparison after the user's steering.
+Pause the queued Qwen sweep, retaining completed runs and letting the current
+flight finish. Explicitly set policy, monitor, and inference backend model IDs,
+use Gemma's content channel with think=false, and verify raw image/JSON requests
+before flights. Installed manifest digest is
+7fbdbf8f5e45a75bb122155ed546e765b4d9c53a1285f62fd9f506baa1c5a47e.
+Smaller observed GPU residency is not proof of better navigation; the same
+development seeds and model/parse/latency logs determine capability.
+
+**D-71 guard.** Ollama now rejects a request whose model_id differs from its
+configured backend before any HTTP call. This prevents the historical silently
+mislabelled experiment from recurring; previously misconfigured profiles now
+fail explicitly instead of producing misleading results. The Gemma image
+probe passed waypoint and both monitor JSON schemas with zero parse errors:
+`reports/paper_implementation/GEMMA4_E2B_CONTRACT_PROBE_20260907.json`.
+
+
+### D-72 — True Gemma 4 E2B is lighter and faster, but fails this navigation gate
+**When.** 2026-09-07 — completed model-identity-verified development screen.
+**Result.** Gemma 4 E2B scores 0/5, all timeouts; zero collisions, false stops
+and monitor parse errors. Mean measured policy call 0.353 s, monitor
+0.725 s. At 8192-token context GPU residency is 1.71 GB, versus Qwen's
+4.24 GB. The retained Qwen baseline was 1/5; the new Qwen target-bound arrival
+variant is 0/5. This does not establish superiority of either model generally.
+**Interpretation.** Gemma's resource advantage is observed; navigation improvement
+is not. The normalized simulated latency remains fixed, so potential benefit
+from a faster native Gemma schedule is not evaluated here. No model is promoted.
+**Validation.** 285 unit/contract tests pass after the identity guard. Qwen
+boundary-only 90 s evaluation is partial (1/3, zero recovery triggers);
+boundary-long and combined gates remain paused, not passed. No held-out model
+evaluation was run. Evidence:
+`reports/paper_implementation/GEMMA4_E2B_COMPARISON_20260907.md`.
+
+
+### D-73 — Keep Gemma fixed for active OnFly development
+**When.** 2026-09-07 — explicit user selection after D-72.
+**Decision.** Use gemma4:e2b for both policy and monitor through the active
+c5_onfly_active_dev profile, inheriting the identity-verified Gemma baseline.
+This supersedes D-72's operational model-selection status, not its failed
+capability gate. Historical configurations and results remain unchanged.
+**Rationale.** User wants one resident model shared with the valley experiment
+and wants navigation work focused on architecture and control flow. Do not
+load another model or unload Gemma as routine preparation for these experiments.
+Parallel valley use is authorized; record contention and do not treat shared
+server wall-clock latency as an isolated model benchmark. Fixed simulated
+latencies remain unchanged.
+**Evidence.** D-72 establishes lower measured residency and five navigation
+timeouts. This supports holding the model fixed during debugging; it does not
+prove model quality irrelevant. Navigation is still unaccepted.
+**Next diagnostic.** Trace existing Gemma runs from image and proposed waypoint
+through verification, replanning, monitor intervention and realized motion.
+Identify a concrete control-flow failure before another development sweep;
+use simulator truth only for offline diagnostics.
+
+
+### D-74 — Isolate previous-waypoint echo in Gemma policy
+**When.** 2026-09-07 — architecture-flow investigation.
+**Evidence.** Exact replay of all five D-72 flights has zero final-distance
+error. 405/418 decisions with a history point reproduce it within one image
+pixel. Only one of 445 waypoints is behind the vehicle at activation. On
+1061 the target appears at the left edge while proposals stay near the prior
+point and the vehicle passes it. Artifact:
+`reports/paper_implementation/GEMMA_FLOW_DIAGNOSTIC_20260907.json`.
+**Hypothesis.** Supplying a numeric previous-goal point biases the policy into
+echoing that point instead of reconsidering the current image. Correlation
+alone is insufficient: a matched intervention is required.
+**Decision.** Add opt-in `previous_goal_prompt=false` in a Gemma-only development
+profile. Keep internal goal projection, provenance, monitor memory, controller,
+verifier, schedule and model unchanged. The prompt explicitly requests a fresh
+image choice and supplies no previous-goal coordinates. Default remains true
+for reproducible frozen baselines.
+**Gate.** Run development seeds 1060–1064, require improved actual navigation
+without false stops/collisions, and replay steering. No privileged inputs.
+This experiment is not an accepted navigation fix until that evidence exists.
+
+
+### D-75 — Probe image detail before changing navigation logic again
+**When.** 2026-09-07.
+**Evidence.** On the same unmodified baseline source frame (1061, observation
+480), Gemma answers absent to plain target-description and region questions,
+and emits image center for both full policy and simple coordinate prompts.
+Offline replay shows a narrow visible target at the left. D-74's first three
+flights still time out despite substantially reduced waypoint copying.
+**Decision.** Diagnose image-detail sensitivity using fixed full-frame scaling
+and a uniform four-quadrant view. No detector, truth-based crop selection,
+annotation, or goal information enters the model. Use the same model and
+source frame. These are diagnostic probes, not navigation results; do not
+change the active profile without a matched flight gate.
+
+
+**D-74 outcome.** Cue removal reduced within-one-pixel echo from 405/418 to
+17/430. Navigation stayed 0/5, all timeouts, zero collisions/false stops/parse
+errors. Every replay matched stored final distance exactly. This profile is
+rejected as a navigation fix and remains a diagnostic ablation. Validation:
+288 unit/contract tests, changed-file Ruff (excluding two pre-existing OnFly
+rules), and diff whitespace check pass. Latency is not an isolated benchmark:
+small same-model probes shared the server during this sweep.
+
+### D-76 — Investigate Windows Gemma vision projector before more flights
+**When.** 2026-09-07.
+**Evidence.** Gemma says absent even on a close-view frame containing a large
+red rectangle (visually inspected exact encoded input). Full policy and simple
+point requests return image center; free descriptions hallucinate unrelated
+scenes. The generate endpoint used by drone_control reproduces the distant-frame
+chat results. Uniform crops/enlargement did not help that diagnostic frame.
+The local Ollama log contains `F16->F32 promote tensor=v.patch_embd.weight`
+with 2359296 bytes in the unified Gemma projector path.
+**External evidence.** Ollama's open Windows issue and pending fix describe
+this exact conversion as breaking E2B/E4B image processing outside Apple:
+https://github.com/ollama/ollama/issues/16532
+https://github.com/ollama/ollama/pull/16879
+Read on 2026-09-07; the PR is open, not an installed fix.
+**Interpretation.** This is strong evidence of a local runtime vision defect,
+not proof that navigation will work after repair. D-72 and D-74 numerical
+results remain preserved, but should not be interpreted as clean Gemma visual
+capability comparisons until the runtime passes actual recognition controls.
+**Decision.** Pause further navigation sweeps. Keep Gemma selected. Stage a
+reversible runtime repair or supported same-model projector path, first check
+close/absent visual controls, then re-run the Gemma baseline and navigation
+experiments. Do not restart the shared Ollama server or interrupt valley work
+as a routine diagnostic step. Do not add another model.
+**Artifacts.** `GEMMA_CLOSE_VIEW_INPUT_20260907.png`,
+`GEMMA_CLOSE_VIEW_PROBE_20260907.json`,
+`GEMMA_PROJECTOR_LOG_EXCERPT_20260907.txt` and the other interface probe JSONs
+under `reports/paper_implementation/`. Navigation remains unresolved.
+
+
+### D-77 — Stage an exact-weight split vision projector
+**When.** 2026-09-07.
+**Evidence.** Installed-version v0.33.3 source unconditionally promotes the
+unified Gemma vision patch embedding to F32. Upstream PR #16879 restricts
+that conversion to Apple. Installed E2B stores that tensor as F16.
+**Decision.** Extract a standalone clip/gemma4v projector from the installed
+Gemma blob using the same metadata translation, omitting the erroneous
+promotion. Preserve each vision tensor's bytes, dimensions and type and
+verify hashes after writing. Do not alter the installed blob or language
+weights. This is a runtime workaround for the same model, not a model swap.
+Stage it offline before any runtime mutation. Validate recognition before
+claiming repair; keep a rollback path if later activated.
+
+
+**D-77 validation.** The split vision projector preserves all 659 vision
+tensors byte-for-byte. Same-image tests now recognize the close red rectangle,
+the distant red object at the left, and correctly report the absent-target
+view. The original packaged model failed both positive controls. This verifies
+a local visual-processing improvement; coordinate and navigation competence
+remain separate gates. A first unchanged-policy flight is in progress.
+**Shared-model preservation.** Also stage a combined vision/audio projector
+using the upstream metadata/rename mapping, including its audio bias-name
+correction. All 1,411 multimodal tensors retain their original values, types
+and dimensions. This avoids discarding audio in a later shared-model repair;
+audio task quality is not established by tensor checks. Do not change the
+shared tag until the combined package passes the same visual controls.
+
+
+### D-78 — Activate the same-weight repair under the shared Gemma name
+**When.** 2026-09-07.
+**Evidence.** Combined vision/audio package passes the close-visible and absent
+visual controls with the same responses as the vision-only repair. All 1,411
+multimodal tensors are verified unchanged (renames only for audio compatibility).
+The language-model layer digest is identical. Audio quality is not evaluated.
+**Decision.** Preserve the old manifest under
+`gemma4:e2b-before-projector-fix-20260907`, then point `gemma4:e2b` at the
+repaired package so C5 and valley share one model name and resident weights.
+No server restart or service replacement. Keep historical config digests
+unchanged and override the new digest only in repaired development profiles.
+**Next navigation gate.** The first unchanged-policy repaired flight stopped
+14.356 m from the goal, zero collisions. Re-test the already implemented
+target-bound arrival check on development seeds 1060–1064 with repaired Gemma.
+Runtime repair does not establish navigation success.
+
+
+### D-79 — Probe a marked-image grounding interface
+**When.** 2026-09-07.
+**Evidence.** Repaired-runtime target-bound seed 1061 times out without false
+stop/collision. Exact replay shows 36 target-visible policy frames, but closest
+approach is 13.22 m; 47/81 proposals still echo the numeric history cue.
+**Decision.** Before another control change, probe uniform numbered image
+points with Gemma on saved close, distant and absent views. The model chooses
+an ID; calibration maps it back to an image point. Marks are uniform and use
+no detector, goal truth, semantic crop or scripted target search. This tests
+the output interface, not navigation success. Do not promote without flights.
+
+
+**D-78 gate outcome.** Repaired-runtime target-bound profile: 0/5. Seeds 1060
+and 1064 falsely stopped at 25.045 m and 28.754 m; the other three timed out.
+No collisions or monitor parse errors. The depth check cannot verify semantic
+identity when the VLM points to the wrong nearby surface.
+**D-79 outcome.** Uniform marks identify the distant target but miss the
+close target's body. A description-first schema improves one positive
+visibility answer but still marks a gray surface as the red target. No
+marked-point or prompt-only variant is promoted.
+
+### D-80 — Depth-region proposals with VLM semantic selection
+**When.** 2026-09-07.
+**Rationale.** Free coordinates are unreliable even after visual runtime
+repair; geometry must bind the semantic selection to an actual surface.
+**Decision.** Prototype generic connected depth regions and show their RGB
+crops with candidate IDs to Gemma. The model selects the requested object or
+none; the chosen region supplies an in-region sensor pixel and range. Candidate
+creation reads only calibrated depth, never RGB colors, target labels or
+simulator objects. All visible depth regions are treated identically. This is
+not scripted target search and does not add a second learned model.
+**Gate.** Check visible and distractor-only frames before implementation in
+C5, then evaluate navigation with no truth exposed to the policy. This is a
+provisional interface experiment, not an accepted fix.
+
+
+### D-81 — User-authorized Gemini Flash free-tier comparison
+**When.** 2026-09-07.
+**Decision.** User requests a brief Gemini Flash comparison, limited strictly
+to free use. This permits a temporary cloud-model comparison despite D-73's
+Gemma default. Keep the local Gemma runner available for valley. Use matched
+recorded frames first, then matched development flights if grounding passes.
+Stop at the first quota/rate-limit response; no automatic retries, model
+fallback or paid tier. Confirm that the credential belongs to a free-tier
+project before calls; HTTP 429 alone is not a spending limit on a paid project.
+**Current state.** No Gemini key found in process/user/machine environment or
+the referenced drone_control .env file. No Gemini API calls made. Need the
+location of a free-tier credential; never print or store key values in reports.
+
+
+**D-81 credential configuration.** User supplied the keys directory and asked
+for a .env referring to existing key files. The ignored project .env points
+GEMINI_API_KEY_FILE at keys/gemini_key.txt; no secret is copied into the repo.
+The probe resolves that file at call time, sends the key in an HTTP header,
+and never prints it. Calls require confirmation that project billing is
+disabled; quota exhaustion persists a local stop marker with no retries.
+
+**D-81 billing confirmed.** User confirms billing is disabled. The comparison uploads only synthetic simulator RGB frames. The close-view PNG is generated by tmp/export_close_actual.py from deterministic scene 1061, not a personal screenshot or document.
+
+
+### D-82 — Matched Gemini Flash C5 comparison
+**Evidence.** Gemini 3.5 Flash passes three same-prompt/schema recorded-frame
+grounding checks: distant target at (93,359), absent view false/null, and the
+Gemma false-stop view false/null. Artifact: GEMINI_MATCHED_GROUNDING_20260907.json.
+**Decision.** Add an opt-in Gemini backend and compare the existing target-bound
+C5 profile, changing only the inference model/backend. Keep fixed simulated
+policy/monitor latency 1.0/1.2 s, report measured cloud time separately. Start
+with development 1061; any 429 aborts calls persistently, no retry or fallback.
+A quota-interrupted flight is not a completed navigation result. Gemma remains
+the active local default and available to valley.
+
+
+**D-82 execution outcome.** The 1061 comparison stopped at the first HTTP 429, at 4.0 simulated seconds, with a persistent quota marker and no retries. This is an interrupted experiment, not a navigation failure or success. See GEMINI_C5_QUOTA_SCREEN_20260907.json and the retained run events. All 295 unit/contract tests and focused Gemini lint checks pass. The three matched grounding checks support only image-level improvement; navigation remains unresolved. No further Gemini requests are permitted under this comparison after the quota stop.
+
+
+### D-83 — User-requested fresh Gemini run, 2026-09-10
+**Decision.** User asks to run the comparison again, superseding the D-82 no-retry instruction for one fresh attempt. Archive the previous quota marker; retain the same first-429 stop, no automatic retry or paid fallback. Use development seed 1061 and the unchanged comparison profile. Billing-disabled confirmation remains in force; upload only synthetic box-world frames.
+**Evidence.** Prior attempt was quota-interrupted; new outcome pending.
+
+**D-83 outcome.** Fresh run stopped on Gemini HTTP 503 after 2.0 simulated seconds; 3 inference calls completed. No retries or paid fallback. This is a service-error interruption, not a navigation result. Artifact: GEMINI_C5_SCREEN_20260910.json.
+
+
+**D-83 second user-requested attempt.** Gemini again returned HTTP 503, this time after 10 simulated seconds. No automatic retry. Retained run: c5_gemini_flash_20260910_retry2_s1061.
+
+### D-84 — Explicit free-provider failover
+**Decision.** User requests routing among Gemini, Groq, Mistral and OpenRouter. Add an opt-in backend retaining the current provider until transport failure; then disable that provider for the run and try the next confirmed free provider once. Persist 429 blocks across runs, respect the existing Gemini quota marker, never clear blocks automatically, never use paid OpenRouter model IDs, and stop when routes are exhausted. Missing credentials or free-only confirmation disable a provider. Log actual provider/model and failed attempts; mixed-provider flights are a distinct development architecture, not a single-model comparison. Keep Gemma default and its resident runner unchanged.
+**Evidence.** Only Gemini credential file is currently available. Groq official vision documentation lists qwen/qwen3.8-27b; Mistral lists mistral-small-2506; OpenRouter supports explicitly free variants. Live non-Gemini validation awaits keys and confirmation. Mocked failover/transport tests required.
+
+**D-84 implementation check.** 306 unit/contract tests pass, including 11 new router/transport tests. Focused Ruff checks pass. Added disabled provider placeholders to ignored .env and .env.example. No non-Gemini API calls made; multi-provider live test awaits keys, free-access confirmation and a pinned available OpenRouter vision model.
+
+**D-84 credential paths.** User supplied Groq and OpenRouter files and explicitly prohibited reading their contents. Listed filenames only and configured GROQ_API_KEY_FILE to keys/groq llm.txt and OPENROUTER_API_KEY_FILE to keys/openrouter.txt in ignored .env. Verified file existence only. No key contents read or API calls made. Existing free-access flags remain unchanged.
+
+**D-84 single simulation authorization.** User requests one simulation without quota-consuming probe tests. Public unauthenticated OpenRouter catalog confirms google/gemma-4-26b-a4b-it:free accepts images and has zero prompt/completion prices; enable that pinned route with existing zero-price request caps. Gemini remains billing-disabled. Groq remains disabled unless user confirms free-only billing. No key contents inspected and no preliminary inference probes.
+
+**D-84 single-run outcome.** Gemini returned 429 and the router switched once to OpenRouter gemma-4-26b-a4b-it:free, which also returned 429. Two failed provider attempts, no successful inference, no probe calls or automatic retries; stopped before movement (0 simulated seconds). Both quota stop markers persisted. Groq/Mistral were disabled. Artifact: FREE_ROUTER_SCREEN_20260910.json. No navigation conclusion.
+
+
+### D-85 — Literature and implementation audit before further navigation trials
+**When.** 2026-09-10.
+**Decision.** Retain the basic task. Treat current C5 results as configuration-specific failures, not a demonstrated failure of the family or planning generally. Prioritize a zero-inference trace of goal bearing, path-carrot bearing, yaw, grounding and visibility. Any controller intervention needs a separate opt-in implementation decision preserving frozen profiles.
+**Rationale.** Published methods depend on spatial/action interfaces. Local goal-facing yaw is absent, but its causal role remains untested. Repaired Gemma still has grounding errors. C1 gets labeled metric observations, preventing an equal-input LLM/VLM planning conclusion.
+**Evidence.** docs/research/c5_navigation_audit_20260910/REPORT.md; 41 screened candidates and 24 primary works. Exact offline seed 1061 replay: target visible in 36/89 decision frames, median visible-frame center error 30.13 px, closest decision distance 13.22 m. These measurements do not prove yaw caused failure. No model calls, flights or navigation code changes.
+**Status.** Research complete; navigation unresolved. Existing quota and held-out restrictions remain in force.
+
+
+### D-86 — Isolated goal-facing yaw development ablation
+**When.** 2026-09-11.
+**Decision.** User authorizes D-85 trace and conditional yaw trial. Add an opt-in controller parameter that faces the planner-recorded semantic goal, preserving velocity, limits, recovery actions, model, prompts and frozen defaults. One repaired target-stop Gemma seed 1061 flight only; no provider API, other models or held-out seeds.
+**Rationale.** Exact offline replay identifies target loss at 58.8 s with motion/semantic divergence 152 degrees while semantic bearing differs from target by 0.37 degrees. Other losses also involve grounding or occlusion; yaw is not a complete explanation. Predicted pixel is outside the red-body bbox in all 36 visible decision frames (bbox score, not full-object semantic accuracy).
+**Evidence.** docs/research/c5_navigation_audit_20260910/yaw_trace_1061.json; exact distance replay. Motion direction is a carrot-direction proxy when tracking, not a reconstructed trajectory. Existing baseline reused; new run is a historical-baseline development comparison, not deterministic paired replication.
+**Status.** Provisional diagnostic only. Compare visibility, closest distance and terminal success; no automatic five-seed expansion.
+
+
+**D-86 outcome.** One goal-facing yaw trial failed by false stop at 63.2 s, 25.20 m from target; closest 24.74 m, zero target-visible replay frames and no collisions. Baseline closest 13.22 m and 36.4 s visible. Both exact replays match final distance; actual model Gemma E2B verified. Manifest differs only in yaw option and identifying labels. 308 unit/contract tests and focused lint pass. Do not promote or expand: yaw alone is insufficient; investigate false target identity and stop evidence offline. Historical-baseline comparison is not a controlled estimate of model stochasticity. Report: docs/research/c5_navigation_audit_20260910/YAW_RESULT_20260911.md.

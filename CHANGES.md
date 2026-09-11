@@ -1,5 +1,21 @@
 # Build log
 
+## 2026-09-11 — rollback checkpoint before autonomous debugging
+
+User authorized up to five further development flights and commits after each
+change. Preserve the existing repaired Gemma, target-stop, provider router and
+yaw-ablation state as the baseline checkpoint. No credentials or temporary
+files are staged. New work will use separate commits and opt-in profiles.
+
+
+## 2026-09-11 — D-86 goal-facing yaw diagnosis
+
+Completed exact offline trace and one opt-in local Gemma flight. Yaw alone did
+not rescue navigation: false stop 25.20 m away, no visible target frames.
+Historical/default profiles unchanged. 308 tests pass. See
+`docs/research/c5_navigation_audit_20260910/YAW_RESULT_20260911.md`.
+
+
 ## Behaviour-cloned policy: pipeline works, policy does not navigate
 
 The full path is built and runs end to end — `uavlab collect` → `uavlab train` →
