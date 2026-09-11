@@ -1893,3 +1893,19 @@ the active local default and available to valley.
 **Decision.** Five authorized adaptive trials on development seed 1061 are complete, all timeouts. Keep the original active profile. Retain tested diagnostic fixes and opt-in variants for reproducibility; no further flights or calls scheduled.
 **Evidence.** Final distances 14.15, 40.25, 72.45, 14.62, 77.18 m; zero collisions or premature stops. Source-aligned trial-4 monitor TP=3/FN=6/FP=0/TN=36. Three saved-image recognition calls reject a gray negative but also the clear red approach and solid-red arrival views. See AUTONOMOUS_DEBUG_20260911.md and AUTONOMOUS_RUNS_20260911.json. 323 unit/contract tests and focused lint pass; baseline plus all trial distance replays exact, all source monitor frames matched.
 **Rationale.** Semantic contradictions can be guarded in code, but useful exploration and positive target recognition remain unresolved. Fewer false claims alone is not a solved monitor. Before more flight tuning, require a passing fixed positive/negative image-grounding gate; this is not yet a defensible general planning failure claim.
+
+
+### D-94 — Shared flight debugger before more navigation changes
+**Decision.** Build an offline, synchronized flight debugger with map, replay camera,
+observer view, decision timeline, proposed/accepted actions, VLM request/response
+inspection and code locations. Start with saved development runs; no inference.
+Add opt-in diagnostic recording for exact future requests, images and outputs.
+**Rationale.** User cannot inspect the causal chain through scattered logs and
+static images. Agree on the first observable mismatch before proposing another fix.
+**Evidence.** Existing events preserve controls and source-observation IDs but omit
+raw prompts/responses and full paths. The drone_control dashboard provides the
+interaction reference. Old unavailable evidence must remain explicitly missing;
+reconstructed views and current-code references must be labeled. Replay must
+validate all available logged positions and the final distance; truth overlays
+are diagnostic only. No change to model, policy, controller or experiment defaults.
+**Status.** Implementation authorized by user; validation pending.

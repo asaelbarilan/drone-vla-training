@@ -1,5 +1,11 @@
 # Build log
 
+## 2026-09-11 — D-94 debugger design
+
+User requested a shared visual flight debugger. Scope: saved-control replay,
+synchronized flight/decision inspection, explicit evidence provenance, and
+opt-in capture for future runs. No flight or model call authorized by this work.
+
 ## 2026-09-11 — final bounded-debugging outcome, D-93
 
 Completed exactly five adaptive flights on seed 1061, all Gemma E2B: zero
