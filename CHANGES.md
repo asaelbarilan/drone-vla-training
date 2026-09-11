@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-12 — D-98 depth repair validated before flight
+
+Implemented box_ray_v2: each drawn box pixel receives camera-forward ray/box
+surface depth; invalid/near-clipped rays remain missing. RGB ownership and
+landmark/background behavior are preserved. Legacy mode stays the default for
+old profiles, and corrected depth references include their version. Added the
+matched grid_nav_onfly_depth_v2_dev environment and seven focused regressions.
+All 342 unit/contract tests pass. Saved replay preserves 1,800 poses and all 89
+source RGB/legacy-depth images; 1,146 corrected patch pixels match independent
+geometry within 4.75e-7 m. The selected sample changes 0.213216 -> 1.731457 m.
+Configuration checks confirm architecture unchanged and only depth_renderer
+changed in environment params. One authorized Gemma flight follows this commit.
+
 ## 2026-09-12 — D-98 authorized sensor repair and one flight
 
 Registered a versioned per-pixel box-depth repair with historical compatibility,

@@ -2058,3 +2058,14 @@ margin tuning or adaptive reruns. Compare with the original guarded flight;
 one seed can show a diagnostic effect but cannot establish general success.
 **Status.** Preregistered, implementation and validation pending. All changes
 and run outcomes go in CHANGES.md and separate commits.
+
+
+**D-98 preflight validation.** Implemented explicit `box_ray_v2`; historical
+`legacy_corner` remains unchanged. All 342 unit/contract tests pass. Saved
+source check retains 1,800 poses and 89 original RGB/depth images exactly;
+1,146 corrected box patch pixels match independent geometry within 4.75e-7 m.
+The disputed patch median is now 1.731457 m instead of 0.213216 m. RGB rendering
+and architecture config are unchanged; the only environment parameter change
+is the depth-renderer version. Saved-pixel corrected waypoint still points at
+the selected wall. One launch-to-90 s Gemma flight is now ready to test the
+behavioral effect, with no claim that sensor repair must solve navigation.

@@ -1,0 +1,5 @@
+# D-98: isolate corrected per-pixel box depth; all other settings inherited.
+_base_: grid_nav_onfly_native_dynamics.yaml
+id: grid_nav_onfly_depth_v2_dev
+params:
+  depth_renderer: box_ray_v2

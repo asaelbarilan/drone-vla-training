@@ -1,0 +1,7 @@
+{
+  "unit_and_contract_tests": 342,
+  "result": "passed",
+  "focused_geometric_tests": 10,
+  "known_warning": "dateutil utcfromtimestamp deprecation",
+  "model_calls_during_validation": 0
+}

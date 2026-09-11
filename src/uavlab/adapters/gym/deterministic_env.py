@@ -169,6 +169,9 @@ class DeterministicEnv:
         the scripted-policy sweeps never look at an image."""
         self.render_depth = bool(params.get("render_depth", False))
         """Expose a calibrated depth-camera channel alongside RGB when enabled."""
+        self.depth_renderer = str(params.get("depth_renderer", "legacy_corner"))
+        if self.depth_renderer not in {"legacy_corner", "box_ray_v2"}:
+            raise ValueError(f"Unknown depth renderer: {self.depth_renderer!r}")
         self.render_down = bool(params.get("render_down", False))
         """Render the ordinary downward RGB camera used by AeroVLA profiles."""
         self.coarse_goal_direction = bool(params.get("coarse_goal_direction", False))
@@ -410,6 +413,8 @@ class DeterministicEnv:
         """
         p = self.vehicle.position
         raw = f"{kind}|{self._seq}|{p[0]:.3f}|{p[1]:.3f}|{p[2]:.3f}|{self.vehicle.yaw:.3f}"
+        if kind == "depth" and self.depth_renderer != "legacy_corner":
+            raw += f"|{self.depth_renderer}"
         digest = hashlib.sha256(raw.encode()).hexdigest()[:16]
 
         if (
@@ -455,6 +460,7 @@ class DeterministicEnv:
                 self.target_label,
                 camera=self._camera,
                 visible_labels=visible_labels,
+                renderer=self.depth_renderer,
             )
             shape = tuple(int(x) for x in image.shape)
         uri = f"frame://{self._frame_ns}/{kind}/{self._seq}"

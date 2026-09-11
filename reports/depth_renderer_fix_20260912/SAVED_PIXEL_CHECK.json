@@ -1,0 +1,1723 @@
+{
+  "summary": {
+    "poses_matched": 1800,
+    "source_rgb_and_legacy_depth_images_matched": 89,
+    "surface_patch_pixels_checked": 1146,
+    "max_surface_depth_error_m": 4.7494743604659106e-07,
+    "only_environment_change": "depth_renderer=box_ray_v2",
+    "architecture_unchanged": true,
+    "model_calls": 0,
+    "selected_decision": {
+      "source_seq": 800,
+      "available_s": 41.0,
+      "old_sample_m": 0.21321645379066467,
+      "corrected_sample_m": 1.7314571142196655,
+      "new_waypoint": [
+        19.399017039899704,
+        12.521237014444443,
+        2.141621453507353
+      ],
+      "old_waypoint": [
+        18.370537698428137,
+        11.458747582458379,
+        2.5158253077150197
+      ],
+      "waypoint_change_m": 1.5253465420748589,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 5.788905799164468e-08
+    }
+  },
+  "sources": [
+    {
+      "source_seq": 1,
+      "available_s": 1.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        5.542840671927655,
+        4.971779917363051,
+        5.426493872474543
+      ],
+      "old_waypoint": [
+        5.542840671927655,
+        4.971779917363051,
+        5.426493872474543
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 20,
+      "available_s": 2.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        5.522128719056761,
+        4.990692385559536,
+        5.412424845393398
+      ],
+      "old_waypoint": [
+        5.522128719056761,
+        4.990692385559536,
+        5.412424845393398
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 40,
+      "available_s": 3.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        5.6896627490855956,
+        5.1103480773283705,
+        5.472469841452655
+      ],
+      "old_waypoint": [
+        5.6896627490855956,
+        5.1103480773283705,
+        5.472469841452655
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 60,
+      "available_s": 4.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        6.050112033897408,
+        5.408084761967604,
+        5.6414507343280835
+      ],
+      "old_waypoint": [
+        6.050112033897408,
+        5.408084761967604,
+        5.6414507343280835
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 80,
+      "available_s": 5.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        6.489225073567284,
+        5.774622778111183,
+        5.880543622058636
+      ],
+      "old_waypoint": [
+        6.489225073567284,
+        5.774622778111183,
+        5.880543622058636
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 100,
+      "available_s": 6.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        6.950833999486981,
+        6.164873842362072,
+        6.119154881751139
+      ],
+      "old_waypoint": [
+        6.950833999486981,
+        6.164873842362072,
+        6.119154881751139
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 120,
+      "available_s": 7.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        7.4323463119746185,
+        6.552828678686729,
+        6.407914226206615
+      ],
+      "old_waypoint": [
+        7.4323463119746185,
+        6.552828678686729,
+        6.407914226206615
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 140,
+      "available_s": 8.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        7.910629268362282,
+        6.9563478685959765,
+        6.709727492523567
+      ],
+      "old_waypoint": [
+        7.910629268362282,
+        6.9563478685959765,
+        6.709727492523567
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 160,
+      "available_s": 9.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        6.9122343832309205,
+        3.5215105104819298,
+        4.87817076307352
+      ],
+      "old_waypoint": [
+        6.9122343832309205,
+        3.5215105104819298,
+        4.87817076307352
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 180,
+      "available_s": 10.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        7.035414096997506,
+        3.6711832936772693,
+        3.7299864774174862
+      ],
+      "old_waypoint": [
+        7.035414096997506,
+        3.6711832936772693,
+        3.7299864774174862
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 200,
+      "available_s": 11.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        9.758827877332223,
+        3.9749059339973503,
+        4.182565746588345
+      ],
+      "old_waypoint": [
+        9.758827877332223,
+        3.9749059339973503,
+        4.182565746588345
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 220,
+      "available_s": 12.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        10.825684443729992,
+        4.294745827005821,
+        2.2398636554915274
+      ],
+      "old_waypoint": [
+        10.825684443729992,
+        4.294745827005821,
+        2.2398636554915274
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 240,
+      "available_s": 13.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        11.292435243556561,
+        4.3729256074917835,
+        2.1676056524345286
+      ],
+      "old_waypoint": [
+        11.292435243556561,
+        4.3729256074917835,
+        2.1676056524345286
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 260,
+      "available_s": 14.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        11.787105657799218,
+        4.42776525408413,
+        2.0837692468328344
+      ],
+      "old_waypoint": [
+        11.787105657799218,
+        4.42776525408413,
+        2.0837692468328344
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 280,
+      "available_s": 15.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        12.495866445758022,
+        4.566640327989356,
+        1.9265528196426147
+      ],
+      "old_waypoint": [
+        12.495866445758022,
+        4.566640327989356,
+        1.9265528196426147
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 300,
+      "available_s": 16.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        13.064409062447172,
+        4.6766084374129235,
+        1.803524752618677
+      ],
+      "old_waypoint": [
+        13.064409062447172,
+        4.6766084374129235,
+        1.803524752618677
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 320,
+      "available_s": 17.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        13.369618803734049,
+        4.719441581204815,
+        1.7144646398489072
+      ],
+      "old_waypoint": [
+        13.369618803734049,
+        4.719441581204815,
+        1.7144646398489072
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 340,
+      "available_s": 18.0,
+      "old_sample_m": 6.059680938720703,
+      "corrected_sample_m": 6.937455177307129,
+      "new_waypoint": [
+        14.224480808367968,
+        3.393567574119539,
+        1.4622073537817313
+      ],
+      "old_waypoint": [
+        13.37345211997039,
+        3.4240688201313865,
+        1.701053343181134
+      ],
+      "waypoint_change_m": 0.884436295691305,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.692951200979678e-07
+    },
+    {
+      "source_seq": 360,
+      "available_s": 19.0,
+      "old_sample_m": 12.544142723083496,
+      "corrected_sample_m": 13.781876564025879,
+      "new_waypoint": [
+        12.444504842499093,
+        7.398308942016039,
+        2.8134689980680045
+      ],
+      "old_waypoint": [
+        12.444504842499093,
+        7.398308942016039,
+        2.8134689980680045
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.7181572959686946e-07
+    },
+    {
+      "source_seq": 380,
+      "available_s": 20.0,
+      "old_sample_m": 11.780511856079102,
+      "corrected_sample_m": 13.126848220825195,
+      "new_waypoint": [
+        12.384561750378607,
+        7.354908289688561,
+        2.826727160500736
+      ],
+      "old_waypoint": [
+        12.384561750378607,
+        7.354908289688561,
+        2.826727160500736
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.7299535488321e-07
+    },
+    {
+      "source_seq": 400,
+      "available_s": 21.0,
+      "old_sample_m": 11.880922317504883,
+      "corrected_sample_m": 14.255086898803711,
+      "new_waypoint": [
+        13.99242839643723,
+        8.92975292202557,
+        2.572041435646173
+      ],
+      "old_waypoint": [
+        13.99242839643723,
+        8.92975292202557,
+        2.572041435646173
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 20,
+      "max_patch_error_m": 4.405547642249985e-07
+    },
+    {
+      "source_seq": 420,
+      "available_s": 22.0,
+      "old_sample_m": 11.165657043457031,
+      "corrected_sample_m": 13.828989028930664,
+      "new_waypoint": [
+        14.500477119128568,
+        9.435409896618884,
+        2.493919432731756
+      ],
+      "old_waypoint": [
+        14.500477119128568,
+        9.435409896618884,
+        2.493919432731756
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 20,
+      "max_patch_error_m": 4.6970762568321334e-07
+    },
+    {
+      "source_seq": 440,
+      "available_s": 23.0,
+      "old_sample_m": 10.527408599853516,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        14.792038256261662,
+        9.964249505905162,
+        2.424985722321824
+      ],
+      "old_waypoint": [
+        14.792038256261662,
+        9.964249505905162,
+        2.424985722321824
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 5,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 460,
+      "available_s": 24.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        15.181841157783136,
+        10.40590935808274,
+        2.3698386883607037
+      ],
+      "old_waypoint": [
+        15.181841157783136,
+        10.40590935808274,
+        2.3698386883607037
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 480,
+      "available_s": 25.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        15.465523655992943,
+        10.732446480544013,
+        2.277434370264198
+      ],
+      "old_waypoint": [
+        15.465523655992943,
+        10.732446480544013,
+        2.277434370264198
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 500,
+      "available_s": 26.0,
+      "old_sample_m": 9.002141952514648,
+      "corrected_sample_m": 11.114200592041016,
+      "new_waypoint": [
+        16.07297995070956,
+        10.790378532474246,
+        2.690718615732827
+      ],
+      "old_waypoint": [
+        16.07297995070956,
+        10.790378532474246,
+        2.690718615732827
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.7494743604659106e-07
+    },
+    {
+      "source_seq": 520,
+      "available_s": 27.0,
+      "old_sample_m": 8.406576156616211,
+      "corrected_sample_m": 9.23958969116211,
+      "new_waypoint": [
+        17.549170654222326,
+        10.705192321439,
+        3.665222107681136
+      ],
+      "old_waypoint": [
+        17.549170654222326,
+        10.705192321439,
+        3.665222107681136
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.5594301312235075e-07
+    },
+    {
+      "source_seq": 540,
+      "available_s": 28.0,
+      "old_sample_m": 7.812636852264404,
+      "corrected_sample_m": 8.647366523742676,
+      "new_waypoint": [
+        18.035892788854856,
+        11.068784988267392,
+        3.720269205154719
+      ],
+      "old_waypoint": [
+        18.035892788854856,
+        11.068784988267392,
+        3.720269205154719
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 4.4924177267091636e-07
+    },
+    {
+      "source_seq": 560,
+      "available_s": 29.0,
+      "old_sample_m": 7.219338893890381,
+      "corrected_sample_m": 8.048456192016602,
+      "new_waypoint": [
+        18.527462227926133,
+        11.41228430671888,
+        3.7202692051818533
+      ],
+      "old_waypoint": [
+        18.527462227926133,
+        11.41228430671888,
+        3.7202692051818533
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 3.917505164707791e-07
+    },
+    {
+      "source_seq": 580,
+      "available_s": 30.0,
+      "old_sample_m": 6.615199565887451,
+      "corrected_sample_m": 7.481967926025391,
+      "new_waypoint": [
+        19.004379725350642,
+        11.792108967646406,
+        3.7209416950045338
+      ],
+      "old_waypoint": [
+        18.690372661410255,
+        11.557313320915597,
+        3.7005476706235556
+      ],
+      "waypoint_change_m": 0.3926134844330407,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3463813469959405e-07
+    },
+    {
+      "source_seq": 600,
+      "available_s": 31.0,
+      "old_sample_m": 6.009551525115967,
+      "corrected_sample_m": 7.16414213180542,
+      "new_waypoint": [
+        19.27619315587517,
+        12.07537600793063,
+        2.300406011901564
+      ],
+      "old_waypoint": [
+        18.498022252129367,
+        11.481043729723721,
+        2.448908611748239
+      ],
+      "waypoint_change_m": 0.990370554144456,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3505091029107916e-07
+    },
+    {
+      "source_seq": 620,
+      "available_s": 32.0,
+      "old_sample_m": 5.403311252593994,
+      "corrected_sample_m": 6.654086112976074,
+      "new_waypoint": [
+        19.41408486063117,
+        12.305799134764072,
+        2.299771825183256
+      ],
+      "old_waypoint": [
+        18.44420968078714,
+        11.541081899187551,
+        2.4971746119861478
+      ],
+      "waypoint_change_m": 1.2507670347042394,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2226717000251028e-07
+    },
+    {
+      "source_seq": 640,
+      "available_s": 33.0,
+      "old_sample_m": 4.856344223022461,
+      "corrected_sample_m": 6.027316570281982,
+      "new_waypoint": [
+        19.330332635485,
+        12.24788453574637,
+        2.3076716679675338
+      ],
+      "old_waypoint": [
+        18.4387032549222,
+        11.536766577459773,
+        2.5101627528709494
+      ],
+      "waypoint_change_m": 1.1583153035101739,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3282509609146018e-07
+    },
+    {
+      "source_seq": 660,
+      "available_s": 34.0,
+      "old_sample_m": 4.271064758300781,
+      "corrected_sample_m": 5.430975437164307,
+      "new_waypoint": [
+        19.277595481055616,
+        12.214698399347522,
+        2.2788725520580377
+      ],
+      "old_waypoint": [
+        18.415746760655406,
+        11.510222336041512,
+        2.507625740541351
+      ],
+      "waypoint_change_m": 1.136396832918808,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3701965989886276e-07
+    },
+    {
+      "source_seq": 680,
+      "available_s": 35.0,
+      "old_sample_m": 3.679593563079834,
+      "corrected_sample_m": 4.8599042892456055,
+      "new_waypoint": [
+        19.24748555182078,
+        12.214155414387443,
+        2.239105992808261
+      ],
+      "old_waypoint": [
+        18.398036677837066,
+        11.490730535137264,
+        2.508893168712949
+      ],
+      "waypoint_change_m": 1.1479076904145928,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3816670235987658e-07
+    },
+    {
+      "source_seq": 700,
+      "available_s": 36.0,
+      "old_sample_m": 3.0619957447052,
+      "corrected_sample_m": 4.321933269500732,
+      "new_waypoint": [
+        19.339412633480098,
+        12.315449764642123,
+        2.1980680573211817
+      ],
+      "old_waypoint": [
+        18.43549617930651,
+        11.512141120957248,
+        2.5126441835710525
+      ],
+      "waypoint_change_m": 1.249531060978861,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2867324833697467e-07
+    },
+    {
+      "source_seq": 720,
+      "available_s": 37.0,
+      "old_sample_m": 2.4298839569091797,
+      "corrected_sample_m": 3.7936155796051025,
+      "new_waypoint": [
+        19.386282370160387,
+        12.41104398009497,
+        2.1657264966165304
+      ],
+      "old_waypoint": [
+        18.419109095296562,
+        11.510424159912702,
+        2.5107739214921727
+      ],
+      "waypoint_change_m": 1.365868928385615,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 1.186637055283768e-07
+    },
+    {
+      "source_seq": 740,
+      "available_s": 38.0,
+      "old_sample_m": 1.8203768730163574,
+      "corrected_sample_m": 3.2195887565612793,
+      "new_waypoint": [
+        19.389535061543544,
+        12.440101898331456,
+        2.1659889027109647
+      ],
+      "old_waypoint": [
+        18.41006944616201,
+        11.497889424441917,
+        2.5095597865287225
+      ],
+      "waypoint_change_m": 1.4018410002118962,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 1.1918481712669404e-07
+    },
+    {
+      "source_seq": 760,
+      "available_s": 39.0,
+      "old_sample_m": 1.1818547248840332,
+      "corrected_sample_m": 2.6533496379852295,
+      "new_waypoint": [
+        19.400556730291783,
+        12.473832207220411,
+        2.1645601787670934
+      ],
+      "old_waypoint": [
+        18.37946305314112,
+        11.465377940030942,
+        2.515705022733328
+      ],
+      "waypoint_change_m": 1.4774691225111214,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 1.1798675414453896e-07
+    },
+    {
+      "source_seq": 780,
+      "available_s": 40.0,
+      "old_sample_m": 0.6550488471984863,
+      "corrected_sample_m": 2.1530394554138184,
+      "new_waypoint": [
+        19.39876422683273,
+        12.490959518155243,
+        2.159887028983448
+      ],
+      "old_waypoint": [
+        18.36823929348915,
+        11.455564868816793,
+        2.517305326758171
+      ],
+      "waypoint_change_m": 1.5039187337438344,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 1.1888434459095265e-07
+    },
+    {
+      "source_seq": 800,
+      "available_s": 41.0,
+      "old_sample_m": 0.21321645379066467,
+      "corrected_sample_m": 1.7314571142196655,
+      "new_waypoint": [
+        19.399017039899704,
+        12.521237014444443,
+        2.141621453507353
+      ],
+      "old_waypoint": [
+        18.370537698428137,
+        11.458747582458379,
+        2.5158253077150197
+      ],
+      "waypoint_change_m": 1.5253465420748589,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 5.788905799164468e-08
+    },
+    {
+      "source_seq": 820,
+      "available_s": 42.0,
+      "old_sample_m": 0.682513415813446,
+      "corrected_sample_m": 3.0706663131713867,
+      "new_waypoint": [
+        19.39765806055398,
+        14.179477554044809,
+        2.0552212435178623
+      ],
+      "old_waypoint": [
+        18.49247846038195,
+        11.997291115351176,
+        2.4038938716177585
+      ],
+      "waypoint_change_m": 2.388066239318349,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 1.1111770570337853e-07
+    },
+    {
+      "source_seq": 840,
+      "available_s": 43.0,
+      "old_sample_m": 4.461389541625977,
+      "corrected_sample_m": 5.5925188064575195,
+      "new_waypoint": [
+        17.88494609878538,
+        16.707994956285226,
+        1.6790290513516921
+      ],
+      "old_waypoint": [
+        17.892552177422466,
+        15.588716828287245,
+        1.8419460443843736
+      ],
+      "waypoint_change_m": 1.1310982834686427,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.336241866629507e-07
+    },
+    {
+      "source_seq": 860,
+      "available_s": 44.0,
+      "old_sample_m": 3.717460870742798,
+      "corrected_sample_m": 5.119607925415039,
+      "new_waypoint": [
+        17.80763488379141,
+        14.579374225569001,
+        1.9823736089089885
+      ],
+      "old_waypoint": [
+        17.71269194290631,
+        13.593564172611897,
+        2.11438565973393
+      ],
+      "waypoint_change_m": 0.9991310244898849,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3739344179318778e-07
+    },
+    {
+      "source_seq": 880,
+      "available_s": 45.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        15.923960434688464,
+        17.47306158664842,
+        -1.6261703497446027
+      ],
+      "old_waypoint": [
+        15.923960434688464,
+        17.47306158664842,
+        -1.6261703497446027
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 900,
+      "available_s": 46.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.825858660597348,
+        15.813078966931439,
+        1.6287903459393107
+      ],
+      "old_waypoint": [
+        19.825858660597348,
+        15.813078966931439,
+        1.6287903459393107
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 920,
+      "available_s": 47.0,
+      "old_sample_m": 3.312309503555298,
+      "corrected_sample_m": 5.2546868324279785,
+      "new_waypoint": [
+        15.525320318821949,
+        16.712870533722175,
+        1.6093214507293907
+      ],
+      "old_waypoint": [
+        16.02160450239838,
+        14.855975652144911,
+        1.889082821594388
+      ],
+      "waypoint_change_m": 1.9423241276172791,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.133964347450501e-07
+    },
+    {
+      "source_seq": 940,
+      "available_s": 48.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.570879307756933,
+        14.695576994725293,
+        1.8510255196386172
+      ],
+      "old_waypoint": [
+        19.570879307756933,
+        14.695576994725293,
+        1.8510255196386172
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 960,
+      "available_s": 49.0,
+      "old_sample_m": 3.6492409706115723,
+      "corrected_sample_m": 5.606173992156982,
+      "new_waypoint": [
+        15.389717250356599,
+        16.712780291565053,
+        1.5177749111517682
+      ],
+      "old_waypoint": [
+        15.87032285246436,
+        14.836893437853554,
+        1.7996327441590496
+      ],
+      "waypoint_change_m": 1.9568794216130314,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3148570349462716e-07
+    },
+    {
+      "source_seq": 980,
+      "available_s": 50.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.637810662232454,
+        15.019534540110353,
+        0.15897166818884445
+      ],
+      "old_waypoint": [
+        19.637810662232454,
+        15.019534540110353,
+        0.15897166818884445
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1000,
+      "available_s": 51.0,
+      "old_sample_m": 3.6922333240509033,
+      "corrected_sample_m": 5.6106343269348145,
+      "new_waypoint": [
+        15.480465061565928,
+        16.71261297187465,
+        1.4510762568880489
+      ],
+      "old_waypoint": [
+        15.935861092244188,
+        14.869699755339857,
+        1.727384308087903
+      ],
+      "waypoint_change_m": 1.9183484583344046,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.19889207286883e-07
+    },
+    {
+      "source_seq": 1020,
+      "available_s": 52.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.70400552787251,
+        15.360437122601756,
+        -0.01935489321271655
+      ],
+      "old_waypoint": [
+        19.70400552787251,
+        15.360437122601756,
+        -0.01935489321271655
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1040,
+      "available_s": 53.0,
+      "old_sample_m": 3.68380069732666,
+      "corrected_sample_m": 5.582535266876221,
+      "new_waypoint": [
+        15.562995355586704,
+        16.712538916998952,
+        1.3847405979856005
+      ],
+      "old_waypoint": [
+        16.007476932729556,
+        14.886986188892877,
+        1.658216085054964
+      ],
+      "waypoint_change_m": 1.8986825636590114,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3351497357992912e-07
+    },
+    {
+      "source_seq": 1060,
+      "available_s": 54.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.75928735342406,
+        15.376235456834635,
+        -0.09011065949695318
+      ],
+      "old_waypoint": [
+        19.75928735342406,
+        15.376235456834635,
+        -0.09011065949695318
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1080,
+      "available_s": 55.0,
+      "old_sample_m": 3.671412467956543,
+      "corrected_sample_m": 5.563885688781738,
+      "new_waypoint": [
+        15.614666847515009,
+        16.712504330149226,
+        1.3166980184561718
+      ],
+      "old_waypoint": [
+        16.054885273964956,
+        14.892292793178376,
+        1.589271681005369
+      ],
+      "waypoint_change_m": 1.8924213864315043,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.27055905632767e-07
+    },
+    {
+      "source_seq": 1100,
+      "available_s": 56.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.818892498827694,
+        15.39659814465738,
+        -0.2251702423336761
+      ],
+      "old_waypoint": [
+        19.818892498827694,
+        15.39659814465738,
+        -0.2251702423336761
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1120,
+      "available_s": 57.0,
+      "old_sample_m": 3.634406566619873,
+      "corrected_sample_m": 5.513459205627441,
+      "new_waypoint": [
+        15.70954273751476,
+        16.712483514781955,
+        1.2533648706554463
+      ],
+      "old_waypoint": [
+        16.145818199663314,
+        14.904981718737723,
+        1.5240055615254056
+      ],
+      "waypoint_change_m": 1.8790011722004398,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3238753144028124e-07
+    },
+    {
+      "source_seq": 1140,
+      "available_s": 58.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.896960437980255,
+        15.451950057234962,
+        -0.231281063549035
+      ],
+      "old_waypoint": [
+        19.896960437980255,
+        15.451950057234962,
+        -0.231281063549035
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1160,
+      "available_s": 59.0,
+      "old_sample_m": 3.6023097038269043,
+      "corrected_sample_m": 5.474205493927002,
+      "new_waypoint": [
+        15.783608807792454,
+        16.712474588237157,
+        1.188829526574804
+      ],
+      "old_waypoint": [
+        16.218222604110142,
+        14.91185712155429,
+        1.4584394136809085
+      ],
+      "waypoint_change_m": 1.8718445193173674,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3263259674166648e-07
+    },
+    {
+      "source_seq": 1180,
+      "available_s": 60.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.9170451763648,
+        15.453123270733458,
+        -0.3655206117145491
+      ],
+      "old_waypoint": [
+        19.9170451763648,
+        15.453123270733458,
+        -0.3655206117145491
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1200,
+      "available_s": 61.0,
+      "old_sample_m": 3.601775884628296,
+      "corrected_sample_m": 5.490031719207764,
+      "new_waypoint": [
+        15.758745118031115,
+        16.712478223945972,
+        1.1170994664991818
+      ],
+      "old_waypoint": [
+        16.197157363534227,
+        14.896123672965434,
+        1.3890656972481652
+      ],
+      "waypoint_change_m": 1.8882041156989895,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3789827441333955e-07
+    },
+    {
+      "source_seq": 1220,
+      "available_s": 62.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.884837711544023,
+        15.430837107422176,
+        -0.43465478401444835
+      ],
+      "old_waypoint": [
+        19.884837711544023,
+        15.430837107422176,
+        -0.43465478401444835
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1240,
+      "available_s": 63.0,
+      "old_sample_m": 3.6056952476501465,
+      "corrected_sample_m": 5.513062953948975,
+      "new_waypoint": [
+        15.722156561899865,
+        16.71248366146108,
+        1.0447549826450437
+      ],
+      "old_waypoint": [
+        16.165006171473465,
+        14.877744983425561,
+        1.31947390379693
+      ],
+      "waypoint_change_m": 1.9073154639487049,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2848696890065412e-07
+    },
+    {
+      "source_seq": 1260,
+      "available_s": 64.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.858928075158488,
+        15.411443388882313,
+        -0.5036370979146751
+      ],
+      "old_waypoint": [
+        19.858928075158488,
+        15.411443388882313,
+        -0.5036370979146751
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1280,
+      "available_s": 65.0,
+      "old_sample_m": 3.6064600944519043,
+      "corrected_sample_m": 5.529906272888184,
+      "new_waypoint": [
+        15.698311745380337,
+        16.712487393619114,
+        0.973364222998621
+      ],
+      "old_waypoint": [
+        16.1448944291195,
+        14.862282481874765,
+        1.250398932818201
+      ],
+      "waypoint_change_m": 1.9233934957006085,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.1772773628470077e-07
+    },
+    {
+      "source_seq": 1300,
+      "available_s": 66.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.890490459805378,
+        15.29476367022718,
+        1.1325759250654535
+      ],
+      "old_waypoint": [
+        19.890490459805378,
+        15.29476367022718,
+        1.1325759250654535
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1320,
+      "available_s": 67.0,
+      "old_sample_m": 3.6043455600738525,
+      "corrected_sample_m": 5.541255950927734,
+      "new_waypoint": [
+        15.685441678888031,
+        16.712490358146027,
+        0.9028107028204941
+      ],
+      "old_waypoint": [
+        16.135150462116382,
+        14.84933392624629,
+        1.1817846684517923
+      ],
+      "waypoint_change_m": 1.9368573393366217,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.0755677443418108e-07
+    },
+    {
+      "source_seq": 1340,
+      "available_s": 68.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.83745360270735,
+        15.389077059770896,
+        -0.6414746747183653
+      ],
+      "old_waypoint": [
+        19.83745360270735,
+        15.389077059770896,
+        -0.6414746747183653
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1360,
+      "available_s": 69.0,
+      "old_sample_m": 3.600461006164551,
+      "corrected_sample_m": 5.5492401123046875,
+      "new_waypoint": [
+        15.679215367918406,
+        16.712492123533536,
+        0.8328479593153105
+      ],
+      "old_waypoint": [
+        16.131679810641934,
+        14.837918915035154,
+        1.113531380678784
+      ],
+      "waypoint_change_m": 1.9487257295415739,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.34678258159704e-07
+    },
+    {
+      "source_seq": 1380,
+      "available_s": 70.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.834924203624922,
+        15.38242500204068,
+        -0.7102235037815845
+      ],
+      "old_waypoint": [
+        19.834924203624922,
+        15.38242500204068,
+        -0.7102235037815845
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1400,
+      "available_s": 71.0,
+      "old_sample_m": 3.5956060886383057,
+      "corrected_sample_m": 5.555370330810547,
+      "new_waypoint": [
+        15.676608888863953,
+        16.712493549068935,
+        0.7633045820288841
+      ],
+      "old_waypoint": [
+        16.131623843052502,
+        14.827353498165166,
+        1.0455701968569318
+      ],
+      "waypoint_change_m": 1.9597105646933999,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2166059743256028e-07
+    },
+    {
+      "source_seq": 1420,
+      "available_s": 72.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.834706692691086,
+        15.377075563862368,
+        -0.7788042523673133
+      ],
+      "old_waypoint": [
+        19.834706692691086,
+        15.377075563862368,
+        -0.7788042523673133
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1440,
+      "available_s": 73.0,
+      "old_sample_m": 3.590244770050049,
+      "corrected_sample_m": 5.560517311096191,
+      "new_waypoint": [
+        15.675891532551734,
+        16.712494633366447,
+        0.6940819213403281
+      ],
+      "old_waypoint": [
+        16.133346286910026,
+        14.817246420139998,
+        0.977861050589453
+      ],
+      "waypoint_change_m": 1.9702185757474835,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.1465123989372614e-07
+    },
+    {
+      "source_seq": 1460,
+      "available_s": 74.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.835677965854885,
+        15.372411956038446,
+        -0.847197554067161
+      ],
+      "old_waypoint": [
+        19.835677965854885,
+        15.372411956038446,
+        -0.847197554067161
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1480,
+      "available_s": 75.0,
+      "old_sample_m": 3.584625482559204,
+      "corrected_sample_m": 5.565147876739502,
+      "new_waypoint": [
+        15.67613962272002,
+        16.712495752737595,
+        0.6251266183461239
+      ],
+      "old_waypoint": [
+        16.135974171726016,
+        14.807387981793301,
+        0.9103820379747503
+      ],
+      "waypoint_change_m": 1.9804681481405826,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3675306781711924e-07
+    },
+    {
+      "source_seq": 1500,
+      "available_s": 76.0,
+      "old_sample_m": 0.3864140510559082,
+      "corrected_sample_m": 2.774496078491211,
+      "new_waypoint": [
+        18.100691377923283,
+        12.402713628187678,
+        0.7684421425999061
+      ],
+      "old_waypoint": [
+        17.166014174704816,
+        11.49483758364773,
+        1.3075050885200006
+      ],
+      "waypoint_change_m": 1.4101238407068537,
+      "checked_patch_surface_pixels": 16,
+      "max_patch_error_m": 1.189252927247253e-07
+    },
+    {
+      "source_seq": 1520,
+      "available_s": 77.0,
+      "old_sample_m": 3.5538129806518555,
+      "corrected_sample_m": 5.527889728546143,
+      "new_waypoint": [
+        15.745951429375888,
+        16.712487028939254,
+        0.5622872064846702
+      ],
+      "old_waypoint": [
+        16.204289438447926,
+        14.813579466012962,
+        0.8466142571428186
+      ],
+      "waypoint_change_m": 1.974022678399301,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.245484536089748e-07
+    },
+    {
+      "source_seq": 1540,
+      "available_s": 78.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.86607574822327,
+        15.614834041075754,
+        -0.9333586485361891
+      ],
+      "old_waypoint": [
+        19.86607574822327,
+        15.614834041075754,
+        -0.9333586485361891
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1560,
+      "available_s": 79.0,
+      "old_sample_m": 3.1352999210357666,
+      "corrected_sample_m": 5.11254358291626,
+      "new_waypoint": [
+        15.755042861578683,
+        16.712389203451938,
+        0.5265150151966579
+      ],
+      "old_waypoint": [
+        16.21411615971833,
+        14.810435316756342,
+        0.8112981977221951
+      ],
+      "waypoint_change_m": 1.9771895056444817,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.347161478510884e-07
+    },
+    {
+      "source_seq": 1580,
+      "available_s": 80.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.80340563171953,
+        16.10881493445479,
+        0.5443073267952194
+      ],
+      "old_waypoint": [
+        19.80340563171953,
+        16.10881493445479,
+        0.5443073267952194
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1600,
+      "available_s": 81.0,
+      "old_sample_m": 3.0424392223358154,
+      "corrected_sample_m": 5.041147708892822,
+      "new_waypoint": [
+        15.701449288850645,
+        16.712372661577,
+        0.46404344903667427
+      ],
+      "old_waypoint": [
+        16.16550625594734,
+        14.789771290958303,
+        0.7519182187052531
+      ],
+      "waypoint_change_m": 1.9986537424045243,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2118938325377258e-07
+    },
+    {
+      "source_seq": 1620,
+      "available_s": 82.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.6575300408693,
+        14.932235199023204,
+        0.6710555646202878
+      ],
+      "old_waypoint": [
+        19.6575300408693,
+        14.932235199023204,
+        0.6710555646202878
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1640,
+      "available_s": 83.0,
+      "old_sample_m": 3.048184871673584,
+      "corrected_sample_m": 5.0826802253723145,
+      "new_waypoint": [
+        15.590351639029013,
+        16.712382457614652,
+        0.393173921595555
+      ],
+      "old_waypoint": [
+        16.062717544192154,
+        14.755356917448673,
+        0.6862030878181458
+      ],
+      "waypoint_change_m": 2.034439629352428,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3272058413681407e-07
+    },
+    {
+      "source_seq": 1660,
+      "available_s": 84.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.535915679728824,
+        14.670061605583628,
+        -0.4949957655240851
+      ],
+      "old_waypoint": [
+        19.535915679728824,
+        14.670061605583628,
+        -0.4949957655240851
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1680,
+      "available_s": 85.0,
+      "old_sample_m": 3.058387517929077,
+      "corrected_sample_m": 5.121578216552734,
+      "new_waypoint": [
+        15.509813943425907,
+        16.712391194431525,
+        0.32339448990918584
+      ],
+      "old_waypoint": [
+        15.988842288272082,
+        14.727762974908295,
+        0.6205566579508932
+      ],
+      "waypoint_change_m": 2.0631341883186516,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.3381495672936126e-07
+    },
+    {
+      "source_seq": 1700,
+      "available_s": 86.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        19.484707617518144,
+        14.638551894202603,
+        -0.5592398342441647
+      ],
+      "old_waypoint": [
+        19.484707617518144,
+        14.638551894202603,
+        -0.5592398342441647
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    },
+    {
+      "source_seq": 1720,
+      "available_s": 87.0,
+      "old_sample_m": 3.308645009994507,
+      "corrected_sample_m": 4.688839912414551,
+      "new_waypoint": [
+        15.976125193748313,
+        16.714415106596913,
+        2.6205705963047263
+      ],
+      "old_waypoint": [
+        16.192169408987496,
+        15.262281715284118,
+        2.142137100084321
+      ],
+      "waypoint_change_m": 1.5441065699651677,
+      "checked_patch_surface_pixels": 25,
+      "max_patch_error_m": 2.2822118506127254e-07
+    },
+    {
+      "source_seq": 1740,
+      "available_s": 88.0,
+      "old_sample_m": 2.920846939086914,
+      "corrected_sample_m": 5.308248996734619,
+      "new_waypoint": [
+        18.652699188213084,
+        16.49200948817627,
+        0.24108097858897404
+      ],
+      "old_waypoint": [
+        17.802250427719486,
+        14.364294414577344,
+        0.5616231360443564
+      ],
+      "waypoint_change_m": 2.313694405782952,
+      "checked_patch_surface_pixels": 10,
+      "max_patch_error_m": 2.376730003916805e-07
+    },
+    {
+      "source_seq": 1760,
+      "available_s": 89.0,
+      "old_sample_m": null,
+      "corrected_sample_m": null,
+      "new_waypoint": [
+        18.55172980015836,
+        16.150008667062924,
+        0.26656534526109266
+      ],
+      "old_waypoint": [
+        18.55172980015836,
+        16.150008667062924,
+        0.26656534526109266
+      ],
+      "waypoint_change_m": 0.0,
+      "checked_patch_surface_pixels": 0,
+      "max_patch_error_m": 0.0
+    }
+  ]
+}

@@ -148,13 +148,22 @@ def render_depth_frame(
     target_label: str,
     camera: Camera | None = None,
     visible_labels: set[str] | None = None,
+    *,
+    renderer: str = "legacy_corner",
 ) -> np.ndarray:
-    """Render calibrated camera-forward depth in metres.
+    """Render camera-forward depth using an explicit sensor version.
 
-    This is a geometric sensor channel, not a semantic mask. Obstacles and all
-    admitted landmarks write depth; the VLM must still supply the target pixel.
-    Pixels with no rendered surface are ``inf``.
+    ``legacy_corner`` preserves old recorded flights byte-for-byte, including
+    their box-corner depth defect. ``box_ray_v2`` computes the actual surface
+    depth of the box shown by the unchanged RGB painter at each pixel. It does
+    not change landmark billboards or add a background/ground depth channel.
     """
+    if renderer == "box_ray_v2":
+        return _render_box_ray_depth(
+            position, yaw, obstacles, landmarks, camera or Camera(), visible_labels
+        )
+    if renderer != "legacy_corner":
+        raise ValueError(f"Unknown depth renderer: {renderer!r}")
     from PIL import Image, ImageDraw
 
     cam = camera or Camera()
@@ -197,6 +206,101 @@ def render_depth_frame(
                 fill=float(depths[0]),
             )
     return np.asarray(depth_image, dtype=np.float32)
+
+
+
+def _camera_depth_rays(cam: Camera, yaw: float) -> np.ndarray:
+    """World rays whose parameter is camera-forward depth, not slant range."""
+    origin = np.zeros(3)
+    base = cam.unproject(0.0, 0.0, 1.0, origin, yaw)
+    du = cam.unproject(1.0, 0.0, 1.0, origin, yaw) - base
+    dv = cam.unproject(0.0, 1.0, 1.0, origin, yaw) - base
+    v, u = np.indices((cam.height, cam.width), dtype=float)
+    return base[:, None, None] + du[:, None, None] * u + dv[:, None, None] * v
+
+
+def _box_depth_on_rays(
+    position: np.ndarray, rays: np.ndarray, center: np.ndarray, half: np.ndarray
+) -> np.ndarray:
+    """First box surface along each ray; invalid/near-clipped hits stay absent."""
+    enter = np.full(rays.shape[1:], -np.inf)
+    leave = np.full(rays.shape[1:], np.inf)
+    valid = np.ones(rays.shape[1:], dtype=bool)
+    for axis in range(3):
+        lower = center[axis] - half[axis] - position[axis]
+        upper = center[axis] + half[axis] - position[axis]
+        direction = rays[axis]
+        parallel = np.abs(direction) < 1e-12
+        first = np.full(direction.shape, -np.inf)
+        second = np.full(direction.shape, np.inf)
+        np.divide(lower, direction, out=first, where=~parallel)
+        np.divide(upper, direction, out=second, where=~parallel)
+        valid &= ~parallel | ((lower <= 0.0) & (upper >= 0.0))
+        enter = np.maximum(enter, np.minimum(first, second))
+        leave = np.minimum(leave, np.maximum(first, second))
+    # Do not invent a surface on the near plane or see through a too-close
+    # front face to the rear of the box. These readings are explicitly invalid.
+    valid &= (leave >= enter) & (enter > 0.2) & np.isfinite(enter)
+    return np.where(valid, enter, np.inf).astype(np.float32)
+
+
+def _render_box_ray_depth(
+    position: np.ndarray,
+    yaw: float,
+    obstacles: list,
+    landmarks: list,
+    cam: Camera,
+    visible_labels: set[str] | None,
+) -> np.ndarray:
+    """Correct surface distance without changing the RGB visibility contract.
+
+    RGB uses center-distance painter ordering and projected silhouettes. Keep
+    that ownership here: depth refers to the object the model actually sees.
+    A silhouette pixel whose ray misses its box has no valid geometric depth.
+    This isolates D-98 from a separate RGB occlusion/rasterization redesign.
+    """
+    from PIL import Image, ImageDraw
+
+    depth = np.full((cam.height, cam.width), np.inf, dtype=np.float32)
+    rays = _camera_depth_rays(cam, yaw)
+    drawables: list[tuple[float, str, object]] = [
+        (float(np.linalg.norm(o.center - position)), "box", o) for o in obstacles
+    ]
+    drawables.extend(
+        (float(np.linalg.norm(m.position - position)), "mark", m)
+        for m in landmarks
+        if visible_labels is None or m.label in visible_labels
+    )
+    drawables.sort(key=lambda item: -item[0])
+    for distance, kind, item in drawables:
+        if distance > 90.0:
+            continue
+        mask_image = Image.new("L", (cam.width, cam.height), 0)
+        draw = ImageDraw.Draw(mask_image)
+        if kind == "box":
+            pixels, corners_depth = cam.project(_box_corners(item.center, item.half), position, yaw)
+            keep = corners_depth > 0.2
+            if keep.sum() < 3:
+                continue
+            hull = _convex_hull([(float(x), float(y)) for x, y in pixels[keep]])
+            if len(hull) < 3:
+                continue
+            draw.polygon(hull, fill=1)
+            mask = np.asarray(mask_image, dtype=bool)
+            values = _box_depth_on_rays(position, rays, item.center, item.half)
+            depth[mask] = values[mask]
+        else:
+            pixels, values = cam.project(np.array([item.position]), position, yaw)
+            if values[0] <= 0.2:
+                continue
+            u, v = map(float, pixels[0])
+            radius = max(2.0, cam.focal_px * 1.6 / max(values[0], 1e-3))
+            draw.rectangle(
+                [u - radius * 0.55, v - radius * 2.2, u + radius * 0.55, v + radius * 0.9],
+                fill=1,
+            )
+            depth[np.asarray(mask_image, dtype=bool)] = float(values[0])
+    return depth
 
 
 def render_down_frame(
