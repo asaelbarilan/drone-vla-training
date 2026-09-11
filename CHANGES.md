@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-12 — D-99 two additional flights authorized
+
+User requested two more runs. Preregistered development seeds 1060 and 1062,
+90 seconds each, unchanged corrected-depth environment and guarded Gemma
+architecture, with full debug capture. Fixed sampling/timing favors using two
+additional layouts rather than repeating seed 1061. No runtime changes or
+adaptive tuning; export all three corrected-depth flights into the debugger.
+
+
 ## 2026-09-12 — D-98 single flight completed; navigation not improved
 
 Ran c5_depth_ray_v2_20260912_s1061 once with local Gemma and exact debug capture.

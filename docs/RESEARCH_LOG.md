@@ -2085,3 +2085,22 @@ scheduled. Both 1,800-pose replays and final distances match exactly. Exact
 calls/source images/paths captured, Edge comparison checks pass. Report:
 `reports/depth_renderer_fix_20260912/REPORT.md`; watch
 `reports/debugger/depth_fix_comparison.html`. Fix checkpoint `ebaa1bd`.
+
+
+### D-99 — Two additional corrected-depth development flights
+**Decision.** User requested two more flights after viewing D-98. Run exactly
+seeds 1060 and 1062, once each, using c5_gemma_guarded_monitor_dev with
+grid_nav_onfly_depth_v2_dev (90 s), shared local gemma4:e2b and debug capture.
+**Rationale.** Add two development layouts to the existing seed-1061 result.
+Identical-seed repeats with temperature zero, fixed sampling seed and fixed
+simulated latency would primarily test reproducibility. Different seeds test
+whether the observed navigation failure also occurs in other layouts. Initial
+commentary suggested the same seed; this was corrected before any flight.
+**Evidence.** D-98 validates sensor geometry but its one flight times out.
+No runtime/config changes or adaptation between these two flights; no cloud
+calls, model changes, held-out seeds, added verifier or automatic third run.
+Compare outcomes and exact visual replays for all three corrected-depth seeds.
+This is a small development screen, not a matched legacy-versus-fixed claim
+on the two new seeds or a general architecture conclusion.
+**Status.** Preregistered; two requested flights pending. Preserve each result
+and commit it before proceeding to another change.
