@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-12 — D-97 confirmed depth contract defect
+
+Added scripts/audit_waypoint_handoff.py. The historical replay matches all
+1,800 poses/controls, 89 plan metadata records and 89 source depth images.
+At decision 3bec7cd30542 (source 39.95 s), selected wall depth is 0.213216 m
+but independent ray/box depth is 1.732390 m. The supplied depth comes from
+an off-screen top corner painted over the entire box. All 46 ray hits pass
+surface and camera reprojection checks; four analytical ray cases and two
+existing camera geometry tests pass. Source pixels lie on obstacle 7 throughout
+26–42 s. Goals from 32–41 s remain within 0.116 m, so replacement frequency
+alone is not supported as the approach-stall explanation. No runtime changes,
+model calls or new autonomous flights. Visual report follows.
+
 ## 2026-09-12 — D-97 source-pixel and waypoint audit
 
 User authorized tracing the failing handoff before another navigation change.
