@@ -1,5 +1,19 @@
 # Build log
 
+## 2026-09-12 — D-99 both additional flights saved and replayed
+
+Seed 1062 timed out at 90 s: closest 21.22 m, final 37.46 m, zero collisions.
+Seed 1060's closest approach is 26.24 m (final 59.27 m). Both have 134 completed
+local Gemma calls and unchanged manifests. No further flights were run.
+Updated the existing debugger with both new runs plus corrected and historical
+seed 1061. All 7,200 logged positions and 356 policy source references match;
+zero missing source frames. Browser selection/seek/playback/raw-output checks
+pass without JavaScript errors. Saved and visually inspected closest/final
+screenshots, preserved reports/results/manifests/console logs. Runtime unchanged.
+Three corrected-depth development flights all timed out; no new causal claim
+or architecture promotion. Next inspect source-aligned approach/departure.
+
+
 ## 2026-09-12 — D-99 first additional flight completed
 
 Seed 1060 timed out at 90 s, final 59.27 m from target, zero collisions.

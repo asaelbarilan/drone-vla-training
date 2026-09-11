@@ -2114,3 +2114,19 @@ saved; exact replay and closest approach will be checked in the final export.
 Preserved result, manifest and console log. Added a zero-inference four-run
 comparison exporter; script lint passes. Seed 1062 is the remaining authorized
 flight; no parameter changes before it.
+
+
+**D-99 outcome (2026-09-12).** Both authorized additional flights completed,
+unchanged configuration: seed 1060 timeout, closest 26.24 m at 24.50 s, final
+59.27 m; seed 1062 timeout, closest 21.22 m at 39.45 s, final 37.46 m. Each
+90 s, zero collisions, 89 accepted proposals and 134 completed actual local
+Gemma calls; no inference/parse errors. Corrected-depth development total is
+0/3 including D-98, not a general architecture estimate. Exact config matching
+passes. All four debugger replays reproduce 1,800 positions each, final distance
+and 89 policy sources; no missing frames. Browser selection, seeking, new-flight
+playback and raw responses pass, zero JavaScript errors. Inspected closest/final
+maps and camera views: approach then departure, without assigning model intent.
+Evidence: reports/depth_renderer_two_runs_20260912/REPORT.md. Comparison page
+now includes the two new flights, prior corrected 1061 and historical legacy
+1061. Keep depth repair; inspect source-aligned departure decisions next. No
+further flight or inference scheduled. Status: requested two-run screen complete.

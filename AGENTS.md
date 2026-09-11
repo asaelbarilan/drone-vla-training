@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: two additional corrected-depth flights completed — D-99 (2026-09-12)
+
+User authorized exactly two more flights. Seeds 1060 and 1062 both timed out
+at 90 s with zero collisions. Closest/final target distances: 1060 26.24/59.27 m;
+1062 21.22/37.46 m. Same corrected-depth environment and guarded Gemma config
+as D-98; all 268 completed new calls actually used local gemma4:e2b. No runtime
+changes, cloud calls or adaptive tuning. Corrected-depth development total 0/3.
+Read `reports/depth_renderer_two_runs_20260912/REPORT.md`; watch the updated
+`reports/debugger/depth_fix_comparison.html` (two new flights, prior corrected
+1061 and historical legacy 1061). All replays and browser checks pass; exact
+requests/responses captured. No run remains active or scheduled. Next inspect
+source-aligned decisions around approach/departure: 1060 closest at 24.50 s,
+1062 at 39.45 s, prior corrected 1061 at 40 s. Keep the validated sensor repair;
+do not infer a full failure cause from aggregate results or silently extend the
+run budget. Rebuild comparison with `scripts/report_depth_fix_two_runs.py`.
+
 ## Latest: depth fixed; matched Gemma flight still fails — D-98 (2026-09-12)
 
 Implemented `box_ray_v2` per-pixel box depth, validated against 1,146 saved

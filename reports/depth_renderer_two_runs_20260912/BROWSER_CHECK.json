@@ -1,0 +1,47 @@
+{
+  "javascript_errors": [],
+  "runs_loaded": 4,
+  "new_run_playback_and_raw_responses": "passed",
+  "checks": [
+    {
+      "run": "c5_depth_ray_v2_20260912_s1060",
+      "cursor": "closest",
+      "distance_m": 26.24
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1060",
+      "cursor": "final",
+      "distance_m": 59.27
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1062",
+      "cursor": "closest",
+      "distance_m": 21.22
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1062",
+      "cursor": "final",
+      "distance_m": 37.46
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "cursor": "closest",
+      "distance_m": 14.94
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "cursor": "final",
+      "distance_m": 30.01
+    },
+    {
+      "run": "c5_guarded_monitor_20260911_s1061",
+      "cursor": "closest",
+      "distance_m": 14.32
+    },
+    {
+      "run": "c5_guarded_monitor_20260911_s1061",
+      "cursor": "final",
+      "distance_m": 14.62
+    }
+  ]
+}
