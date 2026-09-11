@@ -1948,3 +1948,31 @@ width. No VLM calls or runtime changes. Videos, exact traces and report:
 `reports/passage_probe_20260912/REPORT.md`; browser comparison:
 `reports/debugger/passage_4160.html`. H.264 video playback verified in Edge,
 with no JavaScript errors. Implementation/script checkpoint: 2a8f489.
+
+
+### D-96 — Fixed destination through the disputed opening with SUPER active
+**Decision.** Run one bounded privileged diagnostic from guarded Gemma seed
+1061 at t=41.60 s / observation 833. Restore physical state by exact control
+replay and reconstruct SUPER's prior replans from saved model pixel coordinates
+and synchronized depth. Validate historical plan metadata before continuation.
+Give the unchanged planner/router/controller a fixed metric destination equal
+to the successful D-95 opening probe endpoint (20.7940515013, 21.7478134662,
+2.4739341311) m. Refresh that same intent every 1 s, matching the original
+observed policy availability interval; control remains 20 Hz. Retain nominal
+1.8 m planner inflation. Stop at first collision, within 0.5 m of the waypoint,
+or at original t=90 s (48.4 s continuation). No model calls.
+**Rationale.** Separate local execution toward a persistent destination from
+repeated VLM pixel selection and depth lifting. Reconstruct recent occupancy
+and route continuity rather than silently replacing them with a cold start.
+**Evidence.** D-95 establishes a physically possible manual crossing. It does
+not establish that SUPER can choose and execute it under the current settings.
+This test replaces semantic policy, monitor and image-point verifier with an
+explicit manual metric goal; it measures the local execution boundary only.
+Map/clearance truth is for evaluation and drawing, never passed to SUPER.
+**Scope.** Preserve frozen reference configurations. A future candidate-route
+ranking or verification component is a named architecture variant/ablation,
+not a silent improvement attributed to a reproduced paper. No such component
+is implemented by this decision. See ARCHITECTURE_FAMILIES.md for the existing
+hybrid/verifier search space.
+**Status.** Preregistered; execution pending. Diagnostic only, excluded from
+architecture performance tables.

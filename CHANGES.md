@@ -1,5 +1,13 @@
 # Build log
 
+## 2026-09-12 — D-96 fixed-waypoint diagnostic design
+
+User authorized testing SUPER and the controller from the disputed 41.60 s
+state. Registered one 48.4 s maximum continuation, fixed destination from the
+previous successful manual probe, unchanged planner settings, no inference.
+Historical planner reconstruction must pass metadata checks before continuation.
+Route-quality verification remains a separately named future architecture idea.
+
 ## 2026-09-12 — D-95 physical crossing results and videos
 
 Executed exactly two manual probes from the requested t=41.60 s state, retaining
