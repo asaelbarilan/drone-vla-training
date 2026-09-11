@@ -1250,9 +1250,9 @@ class OnFlyMonitor:
         self.calls += 1
         recovery_anchor_valid = False
         recovery_reacquired = False
+        grounding_evidence = None
         try:
             parsed = _extract_json(result.payload)
-            grounding_evidence = None
             if self.current_grounding:
                 if set(parsed) != {"evidence", "visible", "u", "v"}:
                     raise ValueError("invalid current-grounding fields")
@@ -1302,8 +1302,6 @@ class OnFlyMonitor:
             evidence = f"invalid monitor output; fail-safe CONTINUE ({exc})"
         else:
             evidence = f"visual monitor classified {label.value} from {len(images)} frames"
-            if self.current_grounding:
-                evidence += f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
             if self.structured_evidence:
                 was_acquired = self._ever_acquired
                 earlier = bool(parsed["earlier_target_visible"])
@@ -1433,6 +1431,8 @@ class OnFlyMonitor:
                     f"{self.acquisition_confirmations}; "
                     f"history_continuous={history_continuous}"
                 )
+        if self.current_grounding:
+            evidence += f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
         if label is ProgressLabel.STOP:
             self._stop_count += 1
             if self._stop_count < self.stop_confirmations:

@@ -138,6 +138,7 @@ def test_current_grounding_absence_cannot_use_coordinates_to_stop():
         assert result.label is ProgressLabel.CONTINUE
         fresh(ctx)
     assert not monitor._ever_acquired
+    assert "gray obstacle" in result.evidence
     assert monitor.parse_errors == 0
     assert all(request.image_count == 1 for request in model.requests)
 

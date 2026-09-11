@@ -1,5 +1,15 @@
 # Build log
 
+## 2026-09-11 — preserve grounding evidence in normalized monitor logs
+
+Fixed diagnostic logging: absent-target normalization previously replaced the
+caption, hiding the evidence needed to debug identity. Captions now survive
+normalization; no control decisions change. Added regression assertion.
+Also corrected the prior report interpretation: navigation waypoints need not
+lie on target pixels; monitor identity errors are the direct evidence.
+Flight 1 remains on the already-loaded c87aff6 implementation.
+
+
 ## 2026-09-11 — D-87 current-frame grounding monitor
 
 Added opt-in current-image identification, separating VLM identity from metric
