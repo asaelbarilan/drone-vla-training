@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — bounded saved-image recognition controls
+
+Prepared exactly three local monitor calls after the flights: recorded gray
+false-stop view, visible red approach, and genuine-arrival red-filled view.
+They use the actual monitor prompt/schema, score recognition only, and do not
+claim navigation or geometric arrival. No extra flight or cloud quota.
+Image/depth renderer audit confirms both include admitted landmarks.
+
+
 ## 2026-09-11 — run 4/5 outcome
 
 Original policy plus guarded monitor timed out: final 14.62 m,
