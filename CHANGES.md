@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-12 — reproducible manual crossing script
+
+Added scripts/probe_passage_4160.py: restore every prior control and verify
+position/time/observation, retain original velocity, then command 0.6 m/s
+straight ahead or toward visually selected u=128 in the 224-pixel opening.
+Each branch ends at first collision, clearance of both bounding obstacles,
+or 24 seconds. Save per-tick state, collision result and map/camera MP4s.
+The local planner is bypassed only for this requested physical test.
+
 ## 2026-09-12 — D-95 exact-state passage diagnostic
 
 User explicitly requested moving through the visible gap from t=41.60 s /
