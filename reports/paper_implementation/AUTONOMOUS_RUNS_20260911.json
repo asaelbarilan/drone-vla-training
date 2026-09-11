@@ -28,5 +28,21 @@
     "monitor_visibility_accuracy": 0.6666666666666666,
     "replay_error_m": 0.0,
     "run": "c5_grounded_policy_20260911_s1061"
+  },
+  {
+    "index": 3,
+    "commit": "9f2fdc0",
+    "profile": "c5_gemma_attribute_guard_dev",
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "final_m": 72.4455625693101,
+    "closest_m": 32.93575188422589,
+    "collisions": 0.0,
+    "visible_decision_frames": 0,
+    "monitor_visibility_accuracy": 1.0,
+    "replay_error_m": 0.0,
+    "contradictory_target_claims": 48,
+    "run": "c5_attribute_guard_20260911_s1061"
   }
 ]

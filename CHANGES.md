@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — run 3/5 outcome
+
+D-89 timed out, final 72.45 m, closest 32.94 m,
+no collisions. Guard rejected 48 contradictory
+model target claims, but exploration wandered away. This policy variant is
+not retained as an improvement. Run 4 restores the original policy and tests
+only the guarded monitor on 1061. No default change.
+
+
 ## 2026-09-11 — D-90 restore original policy for monitor isolation
 
 Prepared a profile retaining the current-frame/attribute monitor while
