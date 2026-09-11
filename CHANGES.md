@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-12 — D-96 executed: fixed goal enables a wider detour
+
+Added scripts/probe_super_passage_4160.py. Historical replay matched all 833
+positions and controls exactly, all 41 plan metadata records and 41 source
+frames/depth lifts. One continuation with a fixed destination reached within
+0.489 m in 38.10 s, with no collision; all 39 replans accepted. SUPER selected
+a roughly 21.83 m route around the right obstacle. Minimum sampled body-to-wall
+gap was 0.949 m. No VLM/API calls or runtime changes. The test jointly replaces
+semantic selection, image-depth lifting and destination updates with a manual
+fixed point, and removes monitor/image-verifier interventions. It establishes
+local execution capability here, not which upstream component caused the stall.
+Focused script lint passes. Visual export and report follow.
+
 ## 2026-09-12 — D-96 fixed-waypoint diagnostic design
 
 User authorized testing SUPER and the controller from the disputed 41.60 s
