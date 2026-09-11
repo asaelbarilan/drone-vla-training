@@ -447,6 +447,7 @@ def test_the_tools_that_do_bind_to_one_environment_are_the_known_ones():
     expected = {
         "adapters/dataset_replay/replay.py",   # subclasses it on purpose
         "analysis/replay_video.py",
+        "analysis/flight_debugger.py",        # D-94 offline grid3d inspection
         "analysis/replay_run.py",              # re-flies a stored run's commands
         "training/dataset.py",
         "training/dagger.py",

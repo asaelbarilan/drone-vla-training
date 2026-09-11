@@ -10,6 +10,7 @@ analysis dependency is missing.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -19,11 +20,25 @@ from uavlab.contracts.events import EpisodeEvent, EventType
 class EventLog:
     """Buffers events, assigns sequence numbers, and persists them."""
 
-    def __init__(self, episode_id: str, out_dir: Path | None = None, keep_in_memory: bool = True):
+    def __init__(
+        self,
+        episode_id: str,
+        out_dir: Path | None = None,
+        keep_in_memory: bool = True,
+        *,
+        debug_capture: bool = False,
+    ):
         self.episode_id = episode_id
         self.out_dir = Path(out_dir) if out_dir else None
         self.keep_in_memory = keep_in_memory
         self.events: list[EpisodeEvent] = []
+        self.debug_capture = None
+        if debug_capture:
+            if self.out_dir is None:
+                raise ValueError("debug capture requires an output directory")
+            from uavlab.core.debug_capture import DebugCapture
+
+            self.debug_capture = DebugCapture(self.out_dir)
         self._seq = 0
         self._jsonl = None
         if self.out_dir is not None:
@@ -43,6 +58,11 @@ class EventLog:
         payload: dict[str, Any] | None = None,
         trace_id: str | None = None,
     ) -> EpisodeEvent:
+        if self.debug_capture is not None:
+            caller = sys._getframe(1)
+            if caller.f_code.co_name == "_emit":
+                caller = caller.f_back
+            payload = {**(payload or {}), "_debug_source": self.debug_capture.source(caller)}
         event = EpisodeEvent(
             episode_id=self.episode_id,
             seq=self._seq,
@@ -75,7 +95,7 @@ class EventLog:
         for e in self.events:
             if e.event_type is event_type:
                 v = e.payload.get(key)
-                if isinstance(v, (int, float)) and not isinstance(v, bool):
+                if isinstance(v, int | float) and not isinstance(v, bool):
                     out.append(float(v))
         return out
 

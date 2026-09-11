@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-11 — opt-in exact debugger capture
+
+Added run --debug-capture and the zero-inference debugger export command.
+Capture stores exact plugin/backend request prompts, schemas, encoded images,
+returned payloads, failed/cancelled call status, immutable source snapshots,
+typed proposals and full planned trajectories. Raw prose stays out of controls
+and the event bus. Default capture remains off; a mock paired episode preserves
+controls and simulated time. Existing captures cannot be silently overwritten.
+The debugger opens recorded source locations and exposes unassociated call
+records, while old runs retain explicit missing-data labels. Current observer
+reconstruction supports grid3d without injected failures; D-94 is the explicit
+simulator-portability exception registered in the contract test.
+
 ## 2026-09-11 — synchronized replay debugger
 
 Added a portable HTML debugger with flight map, reconstructed observer and RGB

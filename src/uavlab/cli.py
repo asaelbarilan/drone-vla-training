@@ -59,10 +59,18 @@ def cmd_run(args: argparse.Namespace) -> int:
     env = load_environment(args.env, root)
     out_dir = Path(args.out) if args.out else Path("runs") / f"{arch.id}__{env.id}__s{args.seed}"
 
+    if getattr(args, "debug_capture", False):
+        calls = out_dir / "debug" / "calls"
+        if calls.exists() and any(calls.iterdir()):
+            raise ConfigError(["Debug capture already exists; choose a fresh --out directory"])
     write_manifest(build_manifest(arch, env, seeds=[args.seed]), out_dir)
 
     orchestrator = Orchestrator(
-        arch, env, EpisodeSpec(episode_id=out_dir.name, seed=args.seed), out_dir=out_dir
+        arch,
+        env,
+        EpisodeSpec(episode_id=out_dir.name, seed=args.seed),
+        out_dir=out_dir,
+        debug_capture=getattr(args, "debug_capture", False),
     )
     result = asyncio.run(orchestrator.run())
     (out_dir / "result.json").write_text(
@@ -85,6 +93,13 @@ def cmd_run(args: argparse.Namespace) -> int:
         print(f"  {key:<38} {result.metrics[key]:>12.4f}")
     print(f"\nartifacts: {out_dir}")
     return EXIT_OK if result.error is None else EXIT_EPISODE_FAILED
+
+
+def cmd_debugger(args: argparse.Namespace) -> int:
+    from uavlab.analysis.flight_debugger import export
+
+    print(json.dumps(asyncio.run(export(args.run_dirs, args.out)), indent=2))
+    return EXIT_OK
 
 
 # -- sweep ------------------------------------------------------------------
@@ -549,6 +564,11 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--seed", type=int, default=0)
     run.add_argument("--out")
     run.add_argument("--verbose", action="store_true", default=False)
+    run.add_argument(
+        "--debug-capture",
+        action="store_true",
+        help="save exact VLM requests/responses and code/path diagnostics",
+    )
     run.set_defaults(func=cmd_run)
 
     sweep = sub.add_parser("sweep", help="run a staged experiment")
@@ -561,6 +581,11 @@ def build_parser() -> argparse.ArgumentParser:
     replay = sub.add_parser("replay", help="re-run a stored run and check determinism")
     replay.add_argument("run_dir")
     replay.set_defaults(func=cmd_replay)
+
+    debug = sub.add_parser("debugger", help="export saved-control debugger (no model calls)")
+    debug.add_argument("run_dirs", nargs="+", type=Path)
+    debug.add_argument("--out", type=Path, default=Path("reports/debugger/index.html"))
+    debug.set_defaults(func=cmd_debugger)
 
     analyze = sub.add_parser("analyze", help="aggregate stored runs")
     analyze.add_argument("run_dirs", nargs="+")

@@ -108,6 +108,19 @@ def _recordings(run_dir: Path) -> list[dict]:
     return records
 
 
+def _recorded_sources(run_dir: Path, events: list[dict], recordings: list[dict]) -> dict:
+    sources = {}
+    refs = [e["payload"].get("_debug_source") for e in events]
+    refs += [r.get("source") for r in recordings]
+    for ref in refs:
+        if not ref or ref["snapshot"] in sources:
+            continue
+        path = _inside(run_dir, ref["snapshot"])
+        if path.exists():
+            sources[ref["snapshot"]] = path.read_text(encoding="utf-8")
+    return sources
+
+
 def build_decisions(events: list[dict], frames: list[dict], recordings: list[dict]) -> list[dict]:
     """Join delayed outputs to their source observation, never the display time."""
     by_observation = {frame["observation_seq"]: i for i, frame in enumerate(frames)}
@@ -201,6 +214,8 @@ async def load_run(run_dir: Path) -> dict:
     )
     params = dict(config.params)
     params.update(config.adapter.params)
+    if params.get("failures") or any(e["event_type"] == "failure_injected" for e in events):
+        raise ValueError("Debugger observer reconstruction does not yet support injected failures")
     params["allow_privileged"] = False
     env = DeterministicEnv(**params)
     await env.reset(mission, seed)
@@ -306,6 +321,7 @@ async def load_run(run_dir: Path) -> dict:
             e for e in events if e["event_type"] not in {"control", "perception", "memory_update"}
         ],
         "recordings": recordings,
+        "recorded_sources": _recorded_sources(run_dir, events, recordings),
         "provenance": {
             "run_commit": manifest.get("git_sha"),
             "run_dirty": manifest.get("git_dirty"),

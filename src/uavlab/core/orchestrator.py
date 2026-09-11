@@ -72,9 +72,7 @@ DEFAULT_ROLE_ORDER = ("control", "decision", "monitor", "reasoner", "trigger")
 """Fixed spawn order. Determinism of the whole runtime depends on it."""
 
 
-def _onfly_recovery_heading(
-    last_normal_yaw_rad: float | None, current_yaw_rad: float
-) -> float:
+def _onfly_recovery_heading(last_normal_yaw_rad: float | None, current_yaw_rad: float) -> float:
     """Return the paper-defined heading used after an OnFly LOST signal.
 
     The last normal *point* is a stored pose.  Recovery restores that pose's
@@ -103,6 +101,7 @@ class Orchestrator:
         episode: EpisodeSpec,
         *,
         out_dir: Path | None = None,
+        debug_capture: bool = False,
         registry: PluginRegistry | None = None,
         wall_clock: WallClock | None = None,
     ) -> None:
@@ -113,7 +112,7 @@ class Orchestrator:
         self.registry = registry or REGISTRY
 
         self.clock = SimClock(wall=wall_clock)
-        self.log = EventLog(episode.episode_id, out_dir)
+        self.log = EventLog(episode.episode_id, out_dir, debug_capture=debug_capture)
         self.feature_cache = FeatureCache(
             enabled=arch.feature_cache.enabled, capacity=arch.feature_cache.capacity
         )
@@ -209,6 +208,11 @@ class Orchestrator:
             controller=self.controller,
             skill_runtime=SkillRuntime(self.mission.allowed_skills),
         )
+
+        if self.log.debug_capture is not None:
+            from uavlab.core.debug_capture import RecordingInference
+
+            self.inference = RecordingInference(self.inference, self.log.debug_capture)
 
         services = RuntimeServices(
             clock=self.clock,
@@ -523,12 +527,8 @@ class Orchestrator:
                         target_yaw_rad=target_yaw,
                         t_sim_ns=self.clock.now_ns(),
                         hold_s=float(getattr(self.monitor, "lost_hold_s", 0.25)),
-                        max_duration_s=float(
-                            getattr(self.monitor, "lost_reorient_s", 2.0)
-                        ),
-                        yaw_rate_rps=float(
-                            getattr(self.monitor, "lost_yaw_rate_rps", 0.8)
-                        ),
+                        max_duration_s=float(getattr(self.monitor, "lost_reorient_s", 2.0)),
+                        yaw_rate_rps=float(getattr(self.monitor, "lost_yaw_rate_rps", 0.8)),
                     )
                     self._emit(
                         "monitor",
@@ -598,9 +598,7 @@ class Orchestrator:
             "producer": envelope.producer,
             "confidence": envelope.confidence,
             "source_observation_seq": envelope.source_observation_seq,
-            "production_latency_s": ns_to_s(
-                envelope.produced_t_sim_ns - envelope.source_t_sim_ns
-            ),
+            "production_latency_s": ns_to_s(envelope.produced_t_sim_ns - envelope.source_t_sim_ns),
             # Typed provenance contains bounded model/config identifiers and
             # structured intermediate decisions (for example SPF's u/v/label),
             # never raw model prose. Persisting it is required to audit whether
@@ -608,6 +606,8 @@ class Orchestrator:
             # the same final authority type.
             "provenance": dict(envelope.provenance),
         }
+        if self.log.debug_capture is not None:
+            proposed_payload["decision_payload"] = envelope.payload.model_dump(mode="json")
         # Typed, bounded decision fields are safe and scientifically necessary
         # to log. Raw model text is intentionally never put on the event bus.
         skill_name = getattr(envelope.payload, "skill_name", None)
@@ -657,9 +657,7 @@ class Orchestrator:
             )
         else:
             event = (
-                EventType.DECISION_REJECTED_STALE
-                if outcome.stale
-                else EventType.DECISION_PROPOSED
+                EventType.DECISION_REJECTED_STALE if outcome.stale else EventType.DECISION_PROPOSED
             )
             self._emit(
                 origin,
@@ -693,6 +691,11 @@ class Orchestrator:
                     "planner": outcome.trajectory.planner_name,
                     "reason": outcome.trajectory.reason,
                     "planner_metadata": outcome.trajectory.metadata,
+                    **(
+                        {"trajectory": outcome.trajectory.model_dump(mode="json")}
+                        if self.log.debug_capture is not None
+                        else {}
+                    ),
                 },
                 trace=envelope.decision_id,
             )
