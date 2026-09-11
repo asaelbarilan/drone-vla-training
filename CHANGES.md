@@ -1,5 +1,16 @@
 # Build log
 
+## 2026-09-11 — synchronized replay debugger
+
+Added a portable HTML debugger with flight map, reconstructed observer and RGB
+views, policy/monitor timeline, source-frame crosshair, execution chains, code
+references and downloadable review notes. Exported two Gemma failures and the
+historical Qwen success using saved controls only. All 5,305 logged positions
+and three final distances match exactly; all 396 decision sources align.
+Four offline regression tests and focused lint pass. Headless browser renders
+without JavaScript errors. Old missing prompts, raw responses and request images
+are labeled; observer view and source-code references are reconstructed/current.
+
 ## 2026-09-11 — D-94 debugger design
 
 User requested a shared visual flight debugger. Scope: saved-control replay,
