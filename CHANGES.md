@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — D-88 auditable target/exploration proposals
+
+Prepared a separate opt-in policy interface using fresh visual evidence and
+an explicit target/exploration point label. Only model-identified targets
+receive the target label; exploration is still chosen by Gemma. Previous
+point cue omitted to address copying. Geometry/controller unchanged. This
+is a combined interface experiment; run 2 awaits scoring of run 1.
+
+
 ## 2026-09-11 — preserve grounding evidence in normalized monitor logs
 
 Fixed diagnostic logging: absent-target normalization previously replaced the

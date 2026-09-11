@@ -154,3 +154,16 @@ def test_current_grounding_keeps_metric_arrival_gate(depth, expected):
     fresh(ctx)
     assert asyncio.run(monitor.assess(ctx)).label is expected
     assert monitor.parse_errors == 0
+
+
+@pytest.mark.parametrize("kind", ["target", "exploration"])
+def test_grounded_waypoint_labels_only_model_identified_targets(kind):
+    ctx = context()
+    model = StubModel([json.dumps(dict(evidence="a structure", kind=kind, u=112, v=112))])
+    agent = OnFlyDecisionAgent(model_id="stub", grounded_waypoints=True, previous_goal_prompt=False)
+    bind(agent, services(model))
+    agent.reset(MISSION, 1060)
+    decision = asyncio.run(agent.decide(ctx))
+    assert (decision.payload.target_label is not None) == (kind == "target")
+    assert decision.provenance["waypoint_kind"] == kind
+    assert "previous-goal" not in model.requests[0].prompt

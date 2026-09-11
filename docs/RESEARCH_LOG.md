@@ -1854,3 +1854,9 @@ the active local default and available to valley.
 **Decision.** User authorizes four to five adaptive development flights with commits. First isolate monitor grounding: one latest image, short describe-then-identify schema; arrival remains synchronized target-pixel depth plus distinct-frame geometry. No mission-specific color detector, truth, scripted search or new backbone. Keep yaw off. Up to five flights total this session; record each result before selecting the next change.
 **Rationale.** Exact false-stop frame is a gray obstacle. Existing monitor conflates multi-image history, identity, apparent scale and status and contains conflicting one-field/six-field output instructions. Geometry consistency cannot validate identity. Prior simple grounding rejected an absent frame but missed a distant target, so navigation improvement is not assumed.
 **Status.** Opt-in development only, not a faithful source reproduction or accepted fix.
+
+
+### D-88 — Explicit target versus exploration waypoints
+**Decision.** Prepare an opt-in fresh-evidence policy interface: model describes the current view briefly and labels its point target or exploration. Only target points receive the mission target label. Exploration remains model-selected; no fixed heading, privileged coordinates or color detector. Remove the previous point from this variant's prompt to test the observed copy tendency. Monitor and planner remain the D-87 configuration. Run only after flight 1 is scored.
+**Rationale.** Legacy policy conflates navigation points with target-labeled waypoints and often echoes the supplied point. Target-bbox metrics were consequently ambiguous. New provenance makes the policy's claim explicit and auditable. This is a combined interface ablation, not a single-factor attribution.
+**Status.** Development candidate, no assumed success.

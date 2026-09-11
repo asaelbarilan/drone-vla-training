@@ -1,0 +1,9 @@
+# D-88: fresh evidence and explicit target/exploration proposal.
+_base_: c5_gemma_ground_monitor_dev.yaml
+id: c5_gemma_grounded_policy_dev
+profile_of: c5
+name: "C5 Gemma grounded navigation proposal"
+policy:
+  params:
+    grounded_waypoints: true
+    previous_goal_prompt: false

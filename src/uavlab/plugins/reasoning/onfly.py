@@ -129,6 +129,7 @@ class OnFlyDecisionAgent(BasePolicy):
         self.camera_pitch_rad = float(params.get("camera_pitch_rad", -0.15))
         self.coordinate_contract = str(params.get("coordinate_contract", "image_pixels"))
         self.previous_goal_prompt = bool(params.get("previous_goal_prompt", True))
+        self.grounded_waypoints = bool(params.get("grounded_waypoints", False))
         self.coverage_prompt = bool(params.get("coverage_prompt", False))
         self.frontier_assist = bool(params.get("frontier_assist", False))
         self.frontier_hop_m = float(params.get("frontier_hop_m", 9.0))
@@ -159,6 +160,10 @@ class OnFlyDecisionAgent(BasePolicy):
             raise ValueError(
                 "coordinate_contract must be image_pixels, qwen_relative_1000 or discrete_direction"
             )
+        if self.grounded_waypoints and (
+            self.frontier_assist or self.coordinate_contract == "discrete_direction"
+        ):
+            raise ValueError("grounded_waypoints requires pixel output without frontier assistance")
         self._previous_goal: Vec3 | None = None
         self._last_model_point: tuple[int, int] | None = None
         self._rejected_model_points: list[tuple[int, int]] = []
@@ -235,6 +240,14 @@ class OnFlyDecisionAgent(BasePolicy):
     def _schema(self, width: int, height: int) -> dict[str, object]:
         """The pixel contract, plus SPF's discrete travel distance when enabled."""
         schema = self._schema_base(width, height)
+        if self.grounded_waypoints:
+            properties = dict(schema["properties"])
+            schema["properties"] = {
+                "evidence": {"type": "string", "maxLength": 120},
+                "kind": {"type": "string", "enum": ["target", "exploration"]},
+                **properties,
+            }
+            schema["required"] = ["evidence", "kind", *schema["required"]]
         if self.step_from_model:
             properties = dict(schema["properties"])  # type: ignore[arg-type]
             properties["d"] = {
@@ -499,11 +512,29 @@ class OnFlyDecisionAgent(BasePolicy):
             f"{output_text}"
             "Do not report distance, world coordinates, completion, or flight controls."
         )
+        if self.grounded_waypoints:
+            prompt = (
+                f"Drone mission: {ctx.mission.instruction}. {coordinate_text} "
+                "Inspect this current camera image. In evidence use a short noun phrase "
+                "describing the visible objects and colors. If the exact requested object "
+                "is visible, set kind=target and point u,v on its visible body. Otherwise "
+                "set kind=exploration and point u,v through an open passage that can reveal "
+                "more of the scene. An obstacle face is not an open passage. Match all "
+                "requested attributes; a similar shape alone is insufficient. "
+                f"{feedback_text} Return JSON with evidence, kind, u, v."
+            )
+            if self.step_from_model:
+                prompt += (
+                    f" Also return d from 1 to {self.step_levels} for intended travel amount: "
+                    "1 is cautious and the maximum is a long move through open space."
+                )
         result = await self.services.inference.invoke(
             InferenceRequest(
                 model_id=self.model_id,
                 role="policy",
-                prompt_hash="onfly:decision:v1",
+                prompt_hash="onfly:decision:grounded_v1"
+                if self.grounded_waypoints
+                else "onfly:decision:v1",
                 input_tokens=max(1, len(prompt) // 4),
                 image_count=1,
                 observation_seq=obs.seq,
@@ -521,11 +552,20 @@ class OnFlyDecisionAgent(BasePolicy):
                 )
             else:
                 expected = {"target_visible", "u", "v"} if self.frontier_assist else {"u", "v"}
+            if self.grounded_waypoints:
+                expected |= {"evidence", "kind"}
             if self.step_from_model:
                 expected = expected | {"d"}
             if set(answer) != expected:
                 raise ValueError(f"decision JSON must contain exactly {sorted(expected)}")
             target_visible = bool(answer["target_visible"]) if self.frontier_assist else True
+            if self.grounded_waypoints:
+                if answer["kind"] not in {"target", "exploration"} or not isinstance(
+                    answer["evidence"], str
+                ):
+                    raise ValueError("invalid grounded waypoint evidence")
+                target_visible = answer["kind"] == "target"
+
             if self.coordinate_contract == "discrete_direction":
                 model_u, model_v = self._direction_to_point(str(answer["direction"]), intr, camera)
                 u, v = float(model_u), float(model_v)
@@ -615,7 +655,7 @@ class OnFlyDecisionAgent(BasePolicy):
             DecisionKind.WAYPOINT,
             WaypointGoal(
                 target=target,
-                target_label=self.target_label,
+                target_label=self.target_label if target_visible else None,
                 tolerance_m=1.0,
                 stop_at_target=False,
             ),
@@ -626,6 +666,11 @@ class OnFlyDecisionAgent(BasePolicy):
                 else "OnFly image target lifted with synchronized depth and bearing gate"
             ),
             extra={
+                **(
+                    {"waypoint_kind": answer["kind"], "visual_evidence": answer["evidence"]}
+                    if self.grounded_waypoints
+                    else {}
+                ),
                 "pixel_u": f"{u:g}",
                 "pixel_v": f"{v:g}",
                 "model_u": str(model_u),
