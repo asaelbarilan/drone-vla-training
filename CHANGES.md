@@ -1,5 +1,20 @@
 # Build log
 
+## 2026-09-11 — final bounded-debugging outcome, D-93
+
+Completed exactly five adaptive flights on seed 1061, all Gemma E2B: zero
+mission completions, five timeouts, no collisions or premature stops. Final
+distances: 14.15, 40.25, 72.45, 14.62, 77.18 m. No default promotion.
+Corrected source-aligned monitor scoring: guarded-monitor trial 4 has TP=3,
+FN=6, FP=0, TN=36. Earlier activation-frame accuracy values below are
+superseded. Three saved-image calls reject the gray view but also reject
+the positive red approach/arrival views; strict monitoring is not solved.
+Final validation: 323 unit/contract tests, focused Ruff and diff checks pass.
+All five runs plus baseline replay distance exactly. Every change has a
+commit; no run or further model call remains scheduled. Report:
+`docs/research/c5_navigation_audit_20260910/AUTONOMOUS_DEBUG_20260911.md`.
+
+
 ## 2026-09-11 — D-92 fix offline monitor scoring alignment
 
 Corrected a diagnostic bug: delayed monitor replies were scored against the

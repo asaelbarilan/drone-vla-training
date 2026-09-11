@@ -10,12 +10,14 @@ becomes a decision with evidence.
 
 ---
 
-## D-86: diagnose false target identity
+## D-93: positive grounding before more navigation tuning
 
-The offline yaw trace and one isolated trial are complete. Yaw did not rescue
-navigation; do not expand the sweep. First inspect the saved trial false-stop
-frame and target-consistency logic. Keep the opt-in yaw profile disabled by
-default and preserve task, quota and held-out restrictions.
+The five-flight autonomous debugging budget is complete. None passed; leave
+the active profile unchanged. First establish positive/negative saved-image
+grounding, including actual target pixels and distractors. The model describes
+a red rectangle but rejects the target in the positive control. Review D-92
+source-aligned scoring and D-93 report before interpreting previous metrics.
+No further flights are scheduled. Preserve task, quota and held-out restrictions.
 
 ## The headline
 

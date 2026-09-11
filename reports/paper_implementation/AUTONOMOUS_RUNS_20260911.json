@@ -10,9 +10,19 @@
     "closest_m": 14.152815370014515,
     "collisions": 0.0,
     "visible_decision_frames": 38,
-    "monitor_visibility_accuracy": 0.37777777777777777,
+    "monitor_visibility_accuracy": 0.4888888888888889,
     "replay_error_m": 0.0,
-    "run": "c5_ground_monitor_20260911_s1061"
+    "run": "c5_ground_monitor_20260911_s1061",
+    "monitor_source_frames_unmatched": 0,
+    "monitor_confusion": {
+      "tp": 1,
+      "fn": 16,
+      "fp": 7,
+      "tn": 21
+    },
+    "models": [
+      "gemma4:e2b"
+    ]
   },
   {
     "index": 2,
@@ -25,9 +35,19 @@
     "closest_m": 21.80193050055752,
     "collisions": 0.0,
     "visible_decision_frames": 3,
-    "monitor_visibility_accuracy": 0.6666666666666666,
+    "monitor_visibility_accuracy": 0.6888888888888889,
     "replay_error_m": 0.0,
-    "run": "c5_grounded_policy_20260911_s1061"
+    "run": "c5_grounded_policy_20260911_s1061",
+    "monitor_source_frames_unmatched": 0,
+    "monitor_confusion": {
+      "tp": 0,
+      "fn": 1,
+      "fp": 13,
+      "tn": 31
+    },
+    "models": [
+      "gemma4:e2b"
+    ]
   },
   {
     "index": 3,
@@ -43,7 +63,17 @@
     "monitor_visibility_accuracy": 1.0,
     "replay_error_m": 0.0,
     "contradictory_target_claims": 48,
-    "run": "c5_attribute_guard_20260911_s1061"
+    "run": "c5_attribute_guard_20260911_s1061",
+    "monitor_source_frames_unmatched": 0,
+    "monitor_confusion": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 45
+    },
+    "models": [
+      "gemma4:e2b"
+    ]
   },
   {
     "index": 4,
@@ -56,8 +86,43 @@
     "closest_m": 14.323557827459739,
     "collisions": 0.0,
     "visible_decision_frames": 39,
-    "monitor_visibility_accuracy": 0.3333333333333333,
+    "monitor_visibility_accuracy": 0.8666666666666667,
     "replay_error_m": 0.0,
-    "run": "c5_guarded_monitor_20260911_s1061"
+    "run": "c5_guarded_monitor_20260911_s1061",
+    "monitor_source_frames_unmatched": 0,
+    "monitor_confusion": {
+      "tp": 3,
+      "fn": 6,
+      "fp": 0,
+      "tn": 36
+    },
+    "models": [
+      "gemma4:e2b"
+    ]
+  },
+  {
+    "index": 5,
+    "commit": "0488cef",
+    "profile": "c5_gemma_fresh_guarded_monitor_dev",
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "final_m": 77.178252095414,
+    "collisions": 0.0,
+    "run": "c5_fresh_guarded_monitor_20260911_s1061",
+    "closest_m": 32.59360013906109,
+    "visible_decision_frames": 0,
+    "monitor_visibility_accuracy": 1.0,
+    "monitor_source_frames_unmatched": 0,
+    "monitor_confusion": {
+      "tp": 0,
+      "fn": 0,
+      "fp": 0,
+      "tn": 45
+    },
+    "replay_error_m": 0.0,
+    "models": [
+      "gemma4:e2b"
+    ]
   }
 ]

@@ -1,0 +1,188 @@
+[
+  {
+    "frame": "false_stop_gray",
+    "image": "reports\\paper_implementation\\GEMMA_YAW_FALSE_STOP_20260911.png",
+    "expected_color": "gray",
+    "model": "gemma4:e2b",
+    "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: fly to the red tower and stop there. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only. Also report observed_color for the object at u,v. Use its actual color, not the color requested in the mission; use unknown if no object is identified.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "v": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "observed_color": {
+          "type": "string",
+          "enum": [
+            "red",
+            "green",
+            "blue",
+            "gray",
+            "yellow",
+            "orange",
+            "purple",
+            "pink",
+            "brown",
+            "black",
+            "white",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "u",
+        "v",
+        "observed_color"
+      ],
+      "additionalProperties": false
+    },
+    "response": "{\"evidence\": \"A large, mostly gray, rectangular structure dominates the image. To the right, there is a section of a lighter blue/cyan\", \"visible\": false, \"u\": null, \"v\": null, \"observed_color\": \"unknown\"}",
+    "scope": "image recognition only; not arrival or navigation"
+  },
+  {
+    "frame": "visible_approach",
+    "image": "reports\\paper_implementation\\C5_VISIBLE_APPROACH_20260911.png",
+    "expected_color": "red",
+    "model": "gemma4:e2b",
+    "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: fly to the red tower and stop there. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only. Also report observed_color for the object at u,v. Use its actual color, not the color requested in the mission; use unknown if no object is identified.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "v": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "observed_color": {
+          "type": "string",
+          "enum": [
+            "red",
+            "green",
+            "blue",
+            "gray",
+            "yellow",
+            "orange",
+            "purple",
+            "pink",
+            "brown",
+            "black",
+            "white",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "u",
+        "v",
+        "observed_color"
+      ],
+      "additionalProperties": false
+    },
+    "response": "{\"evidence\": \"The image displays a block of color, primarily blue, with a vertical red rectangle in the center, and a horizontal gray/\", \"visible\" : false, \"u\" : null, \"v\" : null, \"observed_color\" : \"blue\"}",
+    "scope": "image recognition only; not arrival or navigation"
+  },
+  {
+    "frame": "genuine_arrival",
+    "image": "reports\\paper_implementation\\C5_TRUE_ARRIVAL_20260911.png",
+    "expected_color": "red",
+    "model": "gemma4:e2b",
+    "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: fly to the red tower and stop there. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only. Also report observed_color for the object at u,v. Use its actual color, not the color requested in the mission; use unknown if no object is identified.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "u": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "v": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 999
+        },
+        "observed_color": {
+          "type": "string",
+          "enum": [
+            "red",
+            "green",
+            "blue",
+            "gray",
+            "yellow",
+            "orange",
+            "purple",
+            "pink",
+            "brown",
+            "black",
+            "white",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "u",
+        "v",
+        "observed_color"
+      ],
+      "additionalProperties": false
+    },
+    "response": "{\"evidence\": \"The image is a solid block of red color.\", \"visible\": false, \"u\": null, \"v\": null, \"observed_color\": \"red\"}",
+    "scope": "image recognition only; not arrival or navigation"
+  }
+]

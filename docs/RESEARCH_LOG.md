@@ -1887,3 +1887,9 @@ the active local default and available to valley.
 **Decision.** Score monitor visibility against evidence_observation_seq, not its response/activation time. Missing source IDs are unscored and counted. Recompute all five saved-trial monitor metrics without inference.
 **Rationale.** Offline analyzers previously compared the delayed answer to the control frame at completion; the camera can move during that delay. Published intermediate visibility accuracies in D-87/D-90 and commentary are superseded by source-aligned values. Navigation success, final distance and exact control replay are unaffected.
 **Evidence.** Regression fixture changes visibility between source and completion frames. Both analyzers now use the logged source observation identifier.
+
+
+### D-93 — End bounded session; no navigation promotion
+**Decision.** Five authorized adaptive trials on development seed 1061 are complete, all timeouts. Keep the original active profile. Retain tested diagnostic fixes and opt-in variants for reproducibility; no further flights or calls scheduled.
+**Evidence.** Final distances 14.15, 40.25, 72.45, 14.62, 77.18 m; zero collisions or premature stops. Source-aligned trial-4 monitor TP=3/FN=6/FP=0/TN=36. Three saved-image recognition calls reject a gray negative but also the clear red approach and solid-red arrival views. See AUTONOMOUS_DEBUG_20260911.md and AUTONOMOUS_RUNS_20260911.json. 323 unit/contract tests and focused lint pass; baseline plus all trial distance replays exact, all source monitor frames matched.
+**Rationale.** Semantic contradictions can be guarded in code, but useful exploration and positive target recognition remain unresolved. Fewer false claims alone is not a solved monitor. Before more flight tuning, require a passing fixed positive/negative image-grounding gate; this is not yet a defensible general planning failure claim.

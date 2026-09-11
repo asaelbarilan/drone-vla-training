@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: bounded debugging completed — D-87–D-93 (2026-09-11)
+
+Five adaptive Gemma flights on seed 1061 all timed out. No collisions or
+premature stops; no variant promoted and active profile unchanged. Budget
+exhausted; no run/model call remains scheduled. Read
+`docs/research/c5_navigation_audit_20260910/AUTONOMOUS_DEBUG_20260911.md`.
+Code/log/evaluation fixes and every result are committed; checkpoint 3147bd4.
+D-92 corrects monitor scoring to the source image; earlier activation-frame
+accuracies are superseded. Trial 4 has TP=3/FN=6/FP=0/TN=36. Saved-image
+checks still miss a clear red target despite describing its rectangle.
+Next: establish reliable positive/negative image grounding before another
+navigation sweep. Do not promote stricter stopping as solved navigation.
+323 unit/contract tests and focused lint pass. Keep Gemma resident, secrets
+untouched, provider quota blocks and held-out seed restrictions in force.
+
 ## Yaw ablation outcome — D-86 (2026-09-11)
 
 One opt-in Gemma yaw trial failed: false stop 25.20 m from target; target never
@@ -241,10 +256,8 @@ to share the same resident Gemma model; GPU exclusivity is not a prerequisite:
 nvidia-smi --query-compute-apps=pid,used_memory --format=csv
 ```
 
-## Uncommitted state
+## Commit state
 
-Nothing from this session is committed. `git status` shows the new configs,
-the long-horizon environment, two reports under `reports/paper_implementation/`,
-two notes under `docs/research/`, and the `step_from_model` and `route_hint`
-parameters in `src/uavlab/plugins/reasoning/onfly.py` — both default off, both
-unit-tested, neither changing any shipped profile.
+As of D-93, all implementation/configuration changes and session outcomes are
+committed. Historical scratch scripts/logs remain untracked; credentials are
+ignored and were not staged. See CHANGES.md and git log for rollback points.

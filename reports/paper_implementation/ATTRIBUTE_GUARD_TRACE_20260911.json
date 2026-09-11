@@ -88,9 +88,11 @@
   "monitor_continue_while_target_absent": 45,
   "monitor_rows": [
     {
-      "t_sim_s": 1.2,
-      "observation_seq": 25,
-      "distance_to_goal_m": 35.01091923687245,
+      "t_sim_s": 0.0,
+      "observation_seq": 1,
+      "activation_t_sim_s": 1.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 35.02051357538948,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -98,9 +100,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image displays a landscape with a horizon line, a blue sky, and several vertical, block-like structures, likely some; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 3.2,
-      "observation_seq": 65,
-      "distance_to_goal_m": 34.64069819327478,
+      "t_sim_s": 1.95,
+      "observation_seq": 40,
+      "activation_t_sim_s": 3.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 34.887031637672095,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -108,9 +112,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=40; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a prominent, tall, gray structure on the right, suggesting a wall or building. To the\u5de6 (; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 5.2,
-      "observation_seq": 105,
-      "distance_to_goal_m": 33.92848518721591,
+      "t_sim_s": 3.95,
+      "observation_seq": 80,
+      "activation_t_sim_s": 5.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 34.38072808843165,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -118,9 +124,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=80; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with several rectangular, light-colored structures, likely towers or walls, receding into the; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 7.2,
-      "observation_seq": 145,
-      "distance_to_goal_m": 33.57512027910391,
+      "t_sim_s": 5.95,
+      "observation_seq": 120,
+      "activation_t_sim_s": 7.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 33.81950128162698,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -128,9 +136,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=120; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=False; identity_source=current_frame_vlm; grounding='A gray rectangular structure is visible, likely a building or tower, set against a plain background. The structure is a ; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 9.2,
-      "observation_seq": 185,
-      "distance_to_goal_m": 33.232721605197305,
+      "t_sim_s": 7.95,
+      "observation_seq": 160,
+      "activation_t_sim_s": 9.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 33.40317162084844,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -138,9 +148,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=160; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A gray rectangular structure is visible, likely a building or wall, set against a lighter blue background. The structure; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 11.2,
-      "observation_seq": 225,
-      "distance_to_goal_m": 33.036124940971675,
+      "t_sim_s": 9.95,
+      "observation_seq": 200,
+      "activation_t_sim_s": 11.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 33.10615746591745,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -148,9 +160,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=200; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A large, mostly plain gray rectangular structure dominates the image, suggesting a wall or a large block. The bottom of ; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 13.2,
-      "observation_seq": 265,
-      "distance_to_goal_m": 32.949877455161854,
+      "t_sim_s": 11.95,
+      "observation_seq": 240,
+      "activation_t_sim_s": 13.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 32.98609524432212,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -158,9 +172,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=240; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A large, mostly plain gray rectangular structure dominates the image, suggesting a wall or a large block. The bottom of ; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 15.2,
-      "observation_seq": 305,
-      "distance_to_goal_m": 33.25498107358694,
+      "t_sim_s": 13.95,
+      "observation_seq": 280,
+      "activation_t_sim_s": 15.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 33.14102947960455,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -168,9 +184,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=280; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a large, light-colored, vertical structure on the left, a flat, greenish-brown ground, a; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 17.2,
-      "observation_seq": 345,
-      "distance_to_goal_m": 33.938441670269945,
+      "t_sim_s": 15.95,
+      "observation_seq": 320,
+      "activation_t_sim_s": 17.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 33.405764292594846,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -178,9 +196,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=320; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A scene with a large, light-colored, vertical structure on the left, a flat, greenish-brown ground, a light blue sky, a,; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 19.2,
-      "observation_seq": 385,
-      "distance_to_goal_m": 34.9532898075664,
+      "t_sim_s": 17.95,
+      "observation_seq": 360,
+      "activation_t_sim_s": 19.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 34.315902308189415,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -188,9 +208,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=360; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, likely a tower, is visible against a light blue sky. The tower is a muted green or\u7070 (; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 21.2,
-      "observation_seq": 425,
-      "distance_to_goal_m": 35.921972816251106,
+      "t_sim_s": 19.95,
+      "observation_seq": 400,
+      "activation_t_sim_s": 21.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 35.318359945665144,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -198,9 +220,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=400; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, appearing to be a tower, is visible against a blue sky. The tower is a muted green or; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 23.2,
-      "observation_seq": 465,
-      "distance_to_goal_m": 36.89744961885753,
+      "t_sim_s": 21.95,
+      "observation_seq": 440,
+      "activation_t_sim_s": 23.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 36.28749048397328,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -208,9 +232,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=440; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A landscape scene with a flat, brownish-green foreground and a light blue sky. A thin, vertical, light green/grey object; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 25.2,
-      "observation_seq": 505,
-      "distance_to_goal_m": 37.87579472739562,
+      "t_sim_s": 23.95,
+      "observation_seq": 480,
+      "activation_t_sim_s": 25.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 37.263896369721195,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -218,9 +244,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=480; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, appearing to be a tower, is visible against a light blue sky. The tower is a muted, d; color_guard=gray/red; matched=False'"
     },
     {
-      "t_sim_s": 27.2,
-      "observation_seq": 545,
-      "distance_to_goal_m": 38.857999020096074,
+      "t_sim_s": 25.95,
+      "observation_seq": 520,
+      "activation_t_sim_s": 27.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 38.24370317053672,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -228,9 +256,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=520; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, appearing to be a tower, is visible against a blue sky. The tower is a muted green or; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 29.2,
-      "observation_seq": 585,
-      "distance_to_goal_m": 39.845771540307716,
+      "t_sim_s": 27.95,
+      "observation_seq": 560,
+      "activation_t_sim_s": 29.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 39.22751185913793,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -238,9 +268,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=560; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, appearing to be a tower, is visible against a blue sky. The tower is a muted green or; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 31.2,
-      "observation_seq": 625,
-      "distance_to_goal_m": 40.841975446203335,
+      "t_sim_s": 29.95,
+      "observation_seq": 600,
+      "activation_t_sim_s": 31.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 40.218319123686435,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -248,9 +280,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=600; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A single, tall, slender structure, appearing to be a tower, is visible against a blue sky. The tower is a muted green or; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 33.2,
-      "observation_seq": 665,
-      "distance_to_goal_m": 41.84673883009767,
+      "t_sim_s": 31.95,
+      "observation_seq": 640,
+      "activation_t_sim_s": 33.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 41.21774419175646,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -258,9 +292,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=640; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform surface in shades of blue and green, with a single, tall, rectangular object,-; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 35.2,
-      "observation_seq": 705,
-      "distance_to_goal_m": 42.86047204740697,
+      "t_sim_s": 33.95,
+      "observation_seq": 680,
+      "activation_t_sim_s": 35.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 42.22582976945322,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -268,9 +304,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=680; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding=\"The image displays a flat, mostly uniform surface in shades of green/brown and blue. A vertical, rectangular object, a '; color_guard=green/red; matched=False\""
     },
     {
-      "t_sim_s": 37.2,
-      "observation_seq": 745,
-      "distance_to_goal_m": 43.882999066181824,
+      "t_sim_s": 35.95,
+      "observation_seq": 720,
+      "activation_t_sim_s": 37.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 43.24291845121969,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -278,9 +316,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=720; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform color background, which appears to be a muted blue for the upper portion and a; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 39.2,
-      "observation_seq": 785,
-      "distance_to_goal_m": 44.91390220541841,
+      "t_sim_s": 37.95,
+      "observation_seq": 760,
+      "activation_t_sim_s": 39.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 44.26861954120568,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -288,9 +328,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=760; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform color field. There is a vertical rectangular object in the center, which is a[; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 41.2,
-      "observation_seq": 825,
-      "distance_to_goal_m": 45.95283255857414,
+      "t_sim_s": 39.95,
+      "observation_seq": 800,
+      "activation_t_sim_s": 41.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 45.30258519143876,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -298,9 +340,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=800; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform color field. There is a vertical rectangular shape in the center, colored a d-; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 43.2,
-      "observation_seq": 865,
-      "distance_to_goal_m": 46.99930523607142,
+      "t_sim_s": 41.95,
+      "observation_seq": 840,
+      "activation_t_sim_s": 43.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 46.344400323398276,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -308,9 +352,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=840; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a flat, somewhat abstract scene with a large, rectangular shape in the center, colored green. The top; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 45.2,
-      "observation_seq": 905,
-      "distance_to_goal_m": 48.052890082580845,
+      "t_sim_s": 43.95,
+      "observation_seq": 880,
+      "activation_t_sim_s": 45.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 47.393588897605134,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -318,9 +364,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=880; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a vertical rectangular object in the center, colored green, set against a lighter blue background. At; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 47.2,
-      "observation_seq": 945,
-      "distance_to_goal_m": 49.1095714796813,
+      "t_sim_s": 45.95,
+      "observation_seq": 920,
+      "activation_t_sim_s": 47.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 48.44973032434889,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -328,9 +376,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=920; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a vertical rectangular structure, likely a tower or pillar, colored green. The background is a solid,; color_guard=green/red; matched=False'"
     },
     {
-      "t_sim_s": 49.2,
-      "observation_seq": 985,
-      "distance_to_goal_m": 50.16691124593617,
+      "t_sim_s": 47.95,
+      "observation_seq": 960,
+      "activation_t_sim_s": 49.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 49.50529296125673,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -338,9 +388,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=960; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a rectangular shape in the center, colored green, and a larger area surrounding it in a light blue/h-; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 51.2,
-      "observation_seq": 1025,
-      "distance_to_goal_m": 51.22496310351509,
+      "t_sim_s": 49.95,
+      "observation_seq": 1000,
+      "activation_t_sim_s": 51.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 50.56515779964198,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -348,9 +400,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1000; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a block of color, primarily shades of green and blue, with a horizontal line separating a lighter, s\ubcbc; color_guard=unknown/red; matched=False'"
     },
     {
-      "t_sim_s": 53.2,
-      "observation_seq": 1065,
-      "distance_to_goal_m": 52.01539635709368,
+      "t_sim_s": 51.95,
+      "observation_seq": 1040,
+      "activation_t_sim_s": 53.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 51.525446972167046,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -358,9 +412,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1040; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The top portion is a light blue, and the bottom portion (; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 55.2,
-      "observation_seq": 1105,
-      "distance_to_goal_m": 53.038035461217966,
+      "t_sim_s": 53.95,
+      "observation_seq": 1080,
+      "activation_t_sim_s": 55.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 52.38338583795638,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -368,9 +424,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1080; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 57.2,
-      "observation_seq": 1145,
-      "distance_to_goal_m": 54.118611697185294,
+      "t_sim_s": 55.95,
+      "observation_seq": 1120,
+      "activation_t_sim_s": 57.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 53.44091374500927,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -378,9 +436,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1120; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 59.2,
-      "observation_seq": 1185,
-      "distance_to_goal_m": 55.209898749945985,
+      "t_sim_s": 57.95,
+      "observation_seq": 1160,
+      "activation_t_sim_s": 59.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 54.527145470977445,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -388,9 +448,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1160; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 61.2,
-      "observation_seq": 1225,
-      "distance_to_goal_m": 56.30590106567043,
+      "t_sim_s": 59.95,
+      "observation_seq": 1200,
+      "activation_t_sim_s": 61.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 55.62042225805291,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -398,9 +460,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1200; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 63.2,
-      "observation_seq": 1265,
-      "distance_to_goal_m": 57.40572278562941,
+      "t_sim_s": 61.95,
+      "observation_seq": 1240,
+      "activation_t_sim_s": 63.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 56.717897008781236,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -408,9 +472,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1240; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 65.2,
-      "observation_seq": 1305,
-      "distance_to_goal_m": 58.50926616328711,
+      "t_sim_s": 63.95,
+      "observation_seq": 1280,
+      "activation_t_sim_s": 65.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 57.81911985305808,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -418,9 +484,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1280; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 67.2,
-      "observation_seq": 1345,
-      "distance_to_goal_m": 59.616406741245754,
+      "t_sim_s": 65.95,
+      "observation_seq": 1320,
+      "activation_t_sim_s": 67.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 58.924032039548344,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -428,9 +496,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1320; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 69.2,
-      "observation_seq": 1385,
-      "distance_to_goal_m": 60.726991221259325,
+      "t_sim_s": 67.95,
+      "observation_seq": 1360,
+      "activation_t_sim_s": 69.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 60.03247885430618,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -438,9 +508,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1360; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 71.2,
-      "observation_seq": 1425,
-      "distance_to_goal_m": 61.84087771628049,
+      "t_sim_s": 69.95,
+      "observation_seq": 1400,
+      "activation_t_sim_s": 71.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 61.14432030652449,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -448,9 +520,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1400; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 73.2,
-      "observation_seq": 1465,
-      "distance_to_goal_m": 62.95790254170877,
+      "t_sim_s": 71.95,
+      "observation_seq": 1440,
+      "activation_t_sim_s": 73.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 62.259402618341085,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -458,9 +532,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1440; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 75.2,
-      "observation_seq": 1505,
-      "distance_to_goal_m": 64.07791462933213,
+      "t_sim_s": 73.95,
+      "observation_seq": 1480,
+      "activation_t_sim_s": 75.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 63.37756502567613,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -468,9 +544,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1480; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 77.2,
-      "observation_seq": 1545,
-      "distance_to_goal_m": 65.2007655363413,
+      "t_sim_s": 75.95,
+      "observation_seq": 1520,
+      "activation_t_sim_s": 77.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 64.49865892301652,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -478,9 +556,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1520; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 79.2,
-      "observation_seq": 1585,
-      "distance_to_goal_m": 66.32631364814326,
+      "t_sim_s": 77.95,
+      "observation_seq": 1560,
+      "activation_t_sim_s": 79.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 65.62253723570404,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -488,9 +568,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1560; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 81.2,
-      "observation_seq": 1625,
-      "distance_to_goal_m": 67.45442641481533,
+      "t_sim_s": 79.95,
+      "observation_seq": 1600,
+      "activation_t_sim_s": 81.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 66.74906230740163,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -498,9 +580,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1600; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 83.2,
-      "observation_seq": 1665,
-      "distance_to_goal_m": 68.58497793583372,
+      "t_sim_s": 81.95,
+      "observation_seq": 1640,
+      "activation_t_sim_s": 83.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 67.87810394387589,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -508,9 +592,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1640; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 85.2,
-      "observation_seq": 1705,
-      "distance_to_goal_m": 69.71785030391285,
+      "t_sim_s": 83.95,
+      "observation_seq": 1680,
+      "activation_t_sim_s": 85.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 69.0095392068209,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -518,9 +604,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1680; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 87.2,
-      "observation_seq": 1745,
-      "distance_to_goal_m": 70.8529325040496,
+      "t_sim_s": 85.95,
+      "observation_seq": 1720,
+      "activation_t_sim_s": 87.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 70.14325291751227,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -528,9 +616,11 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1720; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     },
     {
-      "t_sim_s": 89.2,
-      "observation_seq": 1785,
-      "distance_to_goal_m": 71.99012015200857,
+      "t_sim_s": 87.95,
+      "observation_seq": 1760,
+      "activation_t_sim_s": 89.2,
+      "comparison_frame": "source_observation",
+      "distance_to_goal_m": 71.27913653643388,
       "label": "continue",
       "declared_latest_visible": false,
       "target_visible": false,
@@ -538,6 +628,7 @@
       "evidence": "pre-acquisition LOST contradicted by declared history; normalized; target_bound_range_m=None; target_pixel=(None,None); target_consistent=False; fresh_frame=True; arrival_limit_m=2.0; target_frame_seq=1760; earlier_visible=False; latest_visible=False; latest_scale=absent; ever_acquired=False; acquisition_count=0/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a simple, two-toned horizontal color block. The upper portion is a light blue, and the lower portion,; color_guard=blue/red; matched=False'"
     }
   ],
+  "monitor_source_frames_unmatched": 0,
   "rows": [
     {
       "observation_seq": 1,
