@@ -42,6 +42,16 @@ def _wrap_angle(angle: float) -> float:
     return math.atan2(math.sin(angle), math.cos(angle))
 
 
+def _monitor_source_index(events: list[dict]) -> dict[int, list[dict]]:
+    """Never score a delayed visual answer against its completion-time frame."""
+    index: dict[int, list[dict]] = {}
+    for event in events:
+        seq = event["payload"].get("evidence_observation_seq")
+        if type(seq) is int:
+            index.setdefault(seq, []).append(event)
+    return index
+
+
 async def analyze(run_dir: Path) -> dict:
     manifest = json.loads((run_dir / "manifest.json").read_text(encoding="utf-8"))
     result = json.loads((run_dir / "result.json").read_text(encoding="utf-8"))
@@ -54,9 +64,7 @@ async def analyze(run_dir: Path) -> dict:
     ]
     by_observation = {int(event["payload"]["source_observation_seq"]): event for event in decisions}
     monitor_events = [event for event in events if event["event_type"] == "monitor"]
-    monitors_by_time: dict[int, list[dict]] = {}
-    for event in monitor_events:
-        monitors_by_time.setdefault(int(event["t_sim_ns"]), []).append(event)
+    monitors_by_observation = _monitor_source_index(monitor_events)
 
     arch = ArchitectureConfig.model_validate(manifest["architecture_config"])
     env_cfg = EnvironmentConfig.model_validate(manifest["environment_config"])
@@ -97,7 +105,7 @@ async def analyze(run_dir: Path) -> dict:
             global_store().get(observation.rgb.uri) if observation.rgb is not None else None
         )
         current_bbox = _red_bbox(current_image) if current_image is not None else None
-        for monitor_event in monitors_by_time.get(int(event["t_sim_ns"]), []):
+        for monitor_event in monitors_by_observation.get(observation.seq, []):
             evidence = str(monitor_event["payload"].get("evidence", ""))
             declared_latest = None
             if "latest_visible=True" in evidence:
@@ -108,6 +116,8 @@ async def analyze(run_dir: Path) -> dict:
                 {
                     "t_sim_s": event["t_sim_ns"] / 1e9,
                     "observation_seq": observation.seq,
+                    "activation_t_sim_s": monitor_event["t_sim_ns"] / 1e9,
+                    "comparison_frame": "source_observation",
                     "distance_to_goal_m": status.distance_to_goal_m,
                     "label": str(monitor_event["payload"]["label"]),
                     "declared_latest_visible": declared_latest,
@@ -442,6 +452,7 @@ async def analyze(run_dir: Path) -> dict:
         "monitor_false_lost_while_target_visible": false_lost_while_visible,
         "monitor_continue_while_target_absent": missed_loss_while_absent,
         "monitor_rows": monitor_rows,
+        "monitor_source_frames_unmatched": len(monitor_events) - len(monitor_rows),
         "rows": rows,
         "yaw_rows": yaw_rows,
         "truth_scope": "offline scoring only; not exposed to the architecture",

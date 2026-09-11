@@ -1881,3 +1881,9 @@ the active local default and available to valley.
 **Decision.** If D-90 seed 1061 fails, use the fifth and final flight for the same profile/seed with previous_goal_prompt=false. No new policy schema or exploration mechanism. If D-90 succeeds, use the final flight to check D-90 on another development seed instead.
 **Rationale.** During D-90, 31 of 50 comparable decisions copy the previous point within one pixel. D-88 changed several interface factors and regressed; this isolates only the continuity cue with the repaired runtime and guarded monitor. Copying can also reflect valid persistence, so improvement is not presumed.
 **Status.** Budget ends after flight 5 regardless of outcome. No default promotion without evidence beyond one development seed.
+
+
+### D-92 — Correct offline monitor image alignment
+**Decision.** Score monitor visibility against evidence_observation_seq, not its response/activation time. Missing source IDs are unscored and counted. Recompute all five saved-trial monitor metrics without inference.
+**Rationale.** Offline analyzers previously compared the delayed answer to the control frame at completion; the camera can move during that delay. Published intermediate visibility accuracies in D-87/D-90 and commentary are superseded by source-aligned values. Navigation success, final distance and exact control replay are unaffected.
+**Evidence.** Regression fixture changes visibility between source and completion frames. Both analyzers now use the logged source observation identifier.

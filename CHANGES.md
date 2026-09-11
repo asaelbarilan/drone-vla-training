@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — D-92 fix offline monitor scoring alignment
+
+Corrected a diagnostic bug: delayed monitor replies were scored against the
+completion-time image. Both analyzers now use evidence_observation_seq and
+count unmatched source frames. Prior visibility accuracy numbers are
+superseded; success and trajectory distances are unchanged. Added a
+regression where visibility changes during inference. Rescore without calls.
+
+
 ## 2026-09-11 — bounded saved-image recognition controls
 
 Prepared exactly three local monitor calls after the flights: recorded gray

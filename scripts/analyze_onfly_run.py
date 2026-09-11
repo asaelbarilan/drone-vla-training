@@ -30,11 +30,7 @@ def _events(path: Path) -> list[dict]:
 
 def _red_bbox(image) -> tuple[int, int, int, int] | None:
     rgb = np.asarray(image.convert("RGB"), dtype=np.int16)
-    mask = (
-        (rgb[..., 0] > 160)
-        & (rgb[..., 0] > rgb[..., 1] + 30)
-        & (rgb[..., 0] > rgb[..., 2] + 30)
-    )
+    mask = (rgb[..., 0] > 160) & (rgb[..., 0] > rgb[..., 1] + 30) & (rgb[..., 0] > rgb[..., 2] + 30)
     ys, xs = np.nonzero(mask)
     if not xs.size:
         return None
@@ -44,6 +40,16 @@ def _red_bbox(image) -> tuple[int, int, int, int] | None:
 def _wrap_angle(angle: float) -> float:
     """Wrap one angle to (-pi, pi] for offline bearing-error scoring."""
     return math.atan2(math.sin(angle), math.cos(angle))
+
+
+def _monitor_source_index(events: list[dict]) -> dict[int, list[dict]]:
+    """Never score a delayed visual answer against its completion-time frame."""
+    index: dict[int, list[dict]] = {}
+    for event in events:
+        seq = event["payload"].get("evidence_observation_seq")
+        if type(seq) is int:
+            index.setdefault(seq, []).append(event)
+    return index
 
 
 async def analyze(run_dir: Path) -> dict:
@@ -56,13 +62,9 @@ async def analyze(run_dir: Path) -> dict:
         if event["event_type"] == "decision_proposed"
         and event["payload"].get("producer") == "onfly_decision"
     ]
-    by_observation = {
-        int(event["payload"]["source_observation_seq"]): event for event in decisions
-    }
+    by_observation = {int(event["payload"]["source_observation_seq"]): event for event in decisions}
     monitor_events = [event for event in events if event["event_type"] == "monitor"]
-    monitors_by_time: dict[int, list[dict]] = {}
-    for event in monitor_events:
-        monitors_by_time.setdefault(int(event["t_sim_ns"]), []).append(event)
+    monitors_by_observation = _monitor_source_index(monitor_events)
 
     arch = ArchitectureConfig.model_validate(manifest["architecture_config"])
     env_cfg = EnvironmentConfig.model_validate(manifest["environment_config"])
@@ -99,7 +101,7 @@ async def analyze(run_dir: Path) -> dict:
             global_store().get(observation.rgb.uri) if observation.rgb is not None else None
         )
         current_bbox = _red_bbox(current_image) if current_image is not None else None
-        for monitor_event in monitors_by_time.get(int(event["t_sim_ns"]), []):
+        for monitor_event in monitors_by_observation.get(observation.seq, []):
             evidence = str(monitor_event["payload"].get("evidence", ""))
             declared_latest = None
             if "latest_visible=True" in evidence:
@@ -110,6 +112,8 @@ async def analyze(run_dir: Path) -> dict:
                 {
                     "t_sim_s": event["t_sim_ns"] / 1e9,
                     "observation_seq": observation.seq,
+                    "activation_t_sim_s": monitor_event["t_sim_ns"] / 1e9,
+                    "comparison_frame": "source_observation",
                     "distance_to_goal_m": status.distance_to_goal_m,
                     "label": str(monitor_event["payload"]["label"]),
                     "declared_latest_visible": declared_latest,
@@ -145,23 +149,13 @@ async def analyze(run_dir: Path) -> dict:
             camera = Camera(
                 width=intrinsics.width,
                 height=intrinsics.height,
-                fov_deg=math.degrees(
-                    2.0 * math.atan(intrinsics.width / (2.0 * intrinsics.fx))
-                ),
+                fov_deg=math.degrees(2.0 * math.atan(intrinsics.width / (2.0 * intrinsics.fx))),
                 pitch_rad=float(provenance.get("camera_pitch_rad", -0.15)),
             )
-            predicted_ray = camera.ray_world(
-                predicted_u, predicted_v, observation.yaw_rad
-            )
-            predicted_world_bearing = math.atan2(
-                float(predicted_ray[1]), float(predicted_ray[0])
-            )
-            predicted_relative_bearing = _wrap_angle(
-                predicted_world_bearing - observation.yaw_rad
-            )
-            bearing_error = _wrap_angle(
-                predicted_relative_bearing - goal_relative_bearing
-            )
+            predicted_ray = camera.ray_world(predicted_u, predicted_v, observation.yaw_rad)
+            predicted_world_bearing = math.atan2(float(predicted_ray[1]), float(predicted_ray[0]))
+            predicted_relative_bearing = _wrap_angle(predicted_world_bearing - observation.yaw_rad)
+            bearing_error = _wrap_angle(predicted_relative_bearing - goal_relative_bearing)
             row = {
                 "observation_seq": observation.seq,
                 "t_sim_s": event["t_sim_ns"] / 1e9,
@@ -249,24 +243,14 @@ async def analyze(run_dir: Path) -> dict:
         )
         activation_position, activation_yaw = activation
         waypoint_delta = waypoint - activation_position
-        waypoint_world_bearing = math.atan2(
-            float(waypoint_delta[1]), float(waypoint_delta[0])
-        )
-        waypoint_relative_bearing = _wrap_angle(
-            waypoint_world_bearing - activation_yaw
-        )
+        waypoint_world_bearing = math.atan2(float(waypoint_delta[1]), float(waypoint_delta[0]))
+        waypoint_relative_bearing = _wrap_angle(waypoint_world_bearing - activation_yaw)
         row["source_motion_before_activation_m"] = float(
             np.linalg.norm(activation_position - source_position)
         )
-        row["waypoint_distance_at_activation_m"] = float(
-            np.linalg.norm(waypoint_delta)
-        )
-        row["waypoint_relative_bearing_at_activation_deg"] = math.degrees(
-            waypoint_relative_bearing
-        )
-        row["waypoint_behind_at_activation"] = (
-            abs(waypoint_relative_bearing) > math.pi / 2.0
-        )
+        row["waypoint_distance_at_activation_m"] = float(np.linalg.norm(waypoint_delta))
+        row["waypoint_relative_bearing_at_activation_deg"] = math.degrees(waypoint_relative_bearing)
+        row["waypoint_behind_at_activation"] = abs(waypoint_relative_bearing) > math.pi / 2.0
     for current, following in pairwise(rows):
         current["distance_change_to_next_decision_m"] = (
             following["distance_to_goal_m"] - current["distance_to_goal_m"]
@@ -311,13 +295,11 @@ async def analyze(run_dir: Path) -> dict:
                 "consecutive_repeat_fraction": None,
             }
         horizontal_edge = [
-            row["predicted_pixel"][0] <= 1.0
-            or row["predicted_pixel"][0] >= image_width - 2.0
+            row["predicted_pixel"][0] <= 1.0 or row["predicted_pixel"][0] >= image_width - 2.0
             for row in sample
         ]
         vertical_edge = [
-            row["predicted_pixel"][1] <= 1.0
-            or row["predicted_pixel"][1] >= image_height - 2.0
+            row["predicted_pixel"][1] <= 1.0 or row["predicted_pixel"][1] >= image_height - 2.0
             for row in sample
         ]
         repeats = sum(
@@ -328,22 +310,19 @@ async def analyze(run_dir: Path) -> dict:
             "decisions": len(sample),
             "edge_fraction_1px": sum(
                 horizontal or vertical
-                for horizontal, vertical in zip(
-                    horizontal_edge, vertical_edge, strict=True
-                )
+                for horizontal, vertical in zip(horizontal_edge, vertical_edge, strict=True)
             )
             / len(sample),
             "corner_fraction_1px": sum(
                 horizontal and vertical
-                for horizontal, vertical in zip(
-                    horizontal_edge, vertical_edge, strict=True
-                )
+                for horizontal, vertical in zip(horizontal_edge, vertical_edge, strict=True)
             )
             / len(sample),
             "consecutive_repeat_fraction": (
                 repeats / (len(sample) - 1) if len(sample) > 1 else 0.0
             ),
         }
+
     labels: dict[str, int] = {}
     for event in monitor_events:
         label = str(event["payload"]["label"])
@@ -358,15 +337,10 @@ async def analyze(run_dir: Path) -> dict:
         row["label"] == "lost" and row["target_visible"] for row in monitor_rows
     )
     missed_loss_while_absent = sum(
-        row["label"] == "continue" and not row["target_visible"]
-        for row in monitor_rows
+        row["label"] == "continue" and not row["target_visible"] for row in monitor_rows
     )
-    execution_rows = [
-        row for row in rows if "source_motion_before_activation_m" in row
-    ]
-    source_motion = [
-        float(row["source_motion_before_activation_m"]) for row in execution_rows
-    ]
+    execution_rows = [row for row in rows if "source_motion_before_activation_m" in row]
+    source_motion = [float(row["source_motion_before_activation_m"]) for row in execution_rows]
     activation_waypoint_distance = [
         float(row["waypoint_distance_at_activation_m"]) for row in execution_rows
     ]
@@ -427,13 +401,12 @@ async def analyze(run_dir: Path) -> dict:
         "monitor_labels": labels,
         "monitor_visibility_scored": len(scored_monitor_rows),
         "monitor_visibility_accuracy": (
-            monitor_visibility_correct / len(scored_monitor_rows)
-            if scored_monitor_rows
-            else None
+            monitor_visibility_correct / len(scored_monitor_rows) if scored_monitor_rows else None
         ),
         "monitor_false_lost_while_target_visible": false_lost_while_visible,
         "monitor_continue_while_target_absent": missed_loss_while_absent,
         "monitor_rows": monitor_rows,
+        "monitor_source_frames_unmatched": len(monitor_events) - len(monitor_rows),
         "rows": rows,
         "truth_scope": "offline scoring only; not exposed to the architecture",
     }
