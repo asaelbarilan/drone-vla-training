@@ -1994,3 +1994,22 @@ Report: `reports/super_passage_probe_20260912/REPORT.md`; portable interactive
 replay in that folder; local preview `reports/debugger/super_passage_4160.html`.
 Script lint, trace checks and Edge replay interactions pass. Diagnostic only;
 never include these results in autonomous architecture performance tables.
+
+
+### D-97 — Offline visual audit of the waypoint handoff
+**Decision.** Replay the saved guarded Gemma development flight without
+inference. Reconstruct each saved policy point from its exact source pose,
+image and depth. Inspect the approach/stall window (24–50 s availability),
+including decision 3bec7cd30542 active at the user's 41.60 s cursor.
+Display source pixel, 5x5 depth sample, lifted/accepted waypoint, local paths
+and subsequent replacements together. Independently compare obstacle depth
+with ray/box intersection so a sensor defect is not mislabeled as model error.
+**Rationale.** D-96 established local execution capability with a persistent
+manual destination but changed multiple upstream mechanisms. Locate the first
+observable contract mismatch before selecting a navigation change.
+**Evidence.** Pending replay/audit. The existing depth renderer paints a whole
+box silhouette with its minimum positive corner depth; whether that materially
+changes the selected waypoints requires measurement. All geometry truth is
+restricted to diagnostic evaluation. No VLM calls, new autonomous flights,
+reference changes or route verifier are part of this audit.
+**Status.** In progress; offline diagnostic, not a benchmark result.

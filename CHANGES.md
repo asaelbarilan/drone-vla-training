@@ -1,5 +1,13 @@
 # Build log
 
+## 2026-09-12 — D-97 source-pixel and waypoint audit
+
+User authorized tracing the failing handoff before another navigation change.
+Registered an offline replay of policy source images, selected pixels, depth
+samples, accepted destinations, SUPER paths and replacements. The audit will
+independently check sensor depth against scene geometry. No model calls or
+reference navigation changes.
+
 ## 2026-09-12 — D-96 visual replay and research boundary
 
 Saved the successful fixed-destination trace, summary, validation and portable
