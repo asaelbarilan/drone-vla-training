@@ -1916,3 +1916,19 @@ simulator-specific diagnostic is registered in the portability contract test.
 Opt-in `--debug-capture` preserves exact requests/returned outputs, source
 snapshots and full paths; default experiment behavior is unchanged. User guide:
 `docs/FLIGHT_DEBUGGER.md`. Inspect a shared moment before selecting another test.
+
+
+### D-95 — User-directed physical passage probe at 41.60 seconds
+**Decision.** Restore the exact state of c5_guarded_monitor_20260911_s1061
+at t=41.60 s / observation 833 by replaying all preceding controls. Preserve
+position, velocity and yaw. From that state, issue a manual forward command
+and a separate command toward the visible opening center. Stop at first
+collision or after clearing the obstacle pair, with a bounded duration.
+**Rationale.** User identified a concrete visual bottleneck and explicitly
+requested a physical crossing attempt. Test the observation directly before
+arguing about the VLM or modifying navigation.
+**Evidence.** Pending execution. No VLM calls, no changes to the deployed
+planner, controller, model or safety settings. Manual bypass of the planner is
+only a physical diagnostic, not evidence of autonomous navigation success.
+Scene truth may measure the result; this probe is privileged_diagnostic and
+must never enter the paper's architecture performance tables.

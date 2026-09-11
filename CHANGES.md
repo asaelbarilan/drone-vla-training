@@ -1,5 +1,12 @@
 # Build log
 
+## 2026-09-12 — D-95 exact-state passage diagnostic
+
+User explicitly requested moving through the visible gap from t=41.60 s /
+observation 833 in the guarded Gemma run. Restore full dynamic state and test
+manual heading/opening-center commands, stopping at contact. No VLM calls or
+autonomy changes; privileged diagnostic only, with visual evidence saved.
+
 ## 2026-09-11 — debugger delivered and verified
 
 Standalone page: reports/debugger/index.html; guide: docs/FLIGHT_DEBUGGER.md.
