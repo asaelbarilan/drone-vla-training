@@ -1860,3 +1860,6 @@ the active local default and available to valley.
 **Decision.** Prepare an opt-in fresh-evidence policy interface: model describes the current view briefly and labels its point target or exploration. Only target points receive the mission target label. Exploration remains model-selected; no fixed heading, privileged coordinates or color detector. Remove the previous point from this variant's prompt to test the observed copy tendency. Monitor and planner remain the D-87 configuration. Run only after flight 1 is scored.
 **Rationale.** Legacy policy conflates navigation points with target-labeled waypoints and often echoes the supplied point. Target-bbox metrics were consequently ambiguous. New provenance makes the policy's claim explicit and auditable. This is a combined interface ablation, not a single-factor attribution.
 **Status.** Development candidate, no assumed success.
+
+
+**D-87 run 1 outcome.** Seed 1061 timeout, final 14.15 m, no collisions or false stop; 38 visible decision frames, monitor accuracy 37.8%. Exact replay error zero. Identity remains unreliable. D-88 will be run next; no default promotion.

@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — run 1/5 outcome
+
+D-87 monitor-only trial on 1061 timed out at 14.15 m, no collisions or false
+stop. Exact replay: 38 visible decision frames; monitor visibility accuracy
+37.8%, so identity remains unreliable. The policy still lacks fresh semantic
+commitment. Proceed with separately committed D-88 variant on the same seed.
+No defaults promoted. Full trace and run ledger retained under reports.
+
+
 ## 2026-09-11 — D-88 auditable target/exploration proposals
 
 Prepared a separate opt-in policy interface using fresh visual evidence and

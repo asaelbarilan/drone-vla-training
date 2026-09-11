@@ -1,0 +1,17 @@
+[
+  {
+    "index": 1,
+    "commit": "c87aff6",
+    "profile": "c5_gemma_ground_monitor_dev",
+    "seed": 1061,
+    "success": false,
+    "termination": "timeout",
+    "final_m": 14.152815370014515,
+    "closest_m": 14.152815370014515,
+    "collisions": 0.0,
+    "visible_decision_frames": 38,
+    "monitor_visibility_accuracy": 0.37777777777777777,
+    "replay_error_m": 0.0,
+    "run": "c5_ground_monitor_20260911_s1061"
+  }
+]
