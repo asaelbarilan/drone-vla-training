@@ -2104,3 +2104,13 @@ This is a small development screen, not a matched legacy-versus-fixed claim
 on the two new seeds or a general architecture conclusion.
 **Status.** Preregistered; two requested flights pending. Preserve each result
 and commit it before proceeding to another change.
+
+
+**D-99 first flight (seed 1060).** Completed once: timeout at 90 s, final
+59.26628 m from target, path 49.86468 m, zero collisions, 89 accepted proposals.
+All 134 completed inference events use gemma4:e2b; no inference/parse errors.
+Architecture and environment manifests exactly match D-98. Full debug capture
+saved; exact replay and closest approach will be checked in the final export.
+Preserved result, manifest and console log. Added a zero-inference four-run
+comparison exporter; script lint passes. Seed 1062 is the remaining authorized
+flight; no parameter changes before it.

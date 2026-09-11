@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-12 — D-99 first additional flight completed
+
+Seed 1060 timed out at 90 s, final 59.27 m from target, zero collisions.
+89 accepted proposals and 134 actual local Gemma calls, no inference/parse
+errors; exact configuration match to previous corrected-depth flight.
+Saved result/manifest/log and prepared a lint-checked offline comparison
+exporter. Seed 1062 follows with no runtime or configuration changes.
+
+
 ## 2026-09-12 — D-99 two additional flights authorized
 
 User requested two more runs. Preregistered development seeds 1060 and 1062,

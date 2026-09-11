@@ -1,0 +1,89 @@
+architecture : c5_gemma_guarded_monitor_dev  (C5 original policy with attribute-checked monitor)
+environment  : grid_nav_onfly_depth_v2_dev  (long_horizon_nav)
+authority    : waypoint   supervision: periodic_monitor
+memory       : compact_keyframe_memory   scheduler: async_multi_rate
+success      : False
+termination  : timeout (horizon reached)
+sim time     : 90.0s   wall: 87.09s
+
+metrics:
+  actual_control_hz                           20.0000
+  agent_stopped                                0.0000
+  arrived_without_stopping                     0.0000
+  collision_rate                               0.0000
+  collisions                                   0.0000
+  configured_control_hz                       20.0000
+  constraint_violations                      425.0000
+  control_rate_fidelity                        1.0000
+  control_updates                           1800.0000
+  correct_terminal_stop                        0.0000
+  decision_age_max_s                           2.0000
+  decision_age_median_s                        1.5000
+  decision_age_p95_s                           1.9500
+  decision_production_latency_median_s         1.0500
+  decisions_executed                          89.0000
+  decisions_proposed                          89.0000
+  distance_to_goal_m                          59.2663
+  executable_plan_rate                         1.0000
+  false_target_commitment                      0.0000
+  feature_cache_evictions                      0.0000
+  feature_cache_hit_rate                       0.0000
+  feature_cache_hits                           0.0000
+  feature_cache_misses                         0.0000
+  feature_cache_stores                         0.0000
+  flight_time_s                               90.0000
+  inference_calls_monitor                     45.0000
+  inference_calls_policy                      89.0000
+  inference_calls_total                      134.0000
+  inference_charged_s_monitor                 54.0000
+  inference_charged_s_policy                  90.0000
+  inference_errors                             0.0000
+  inference_latency_s_monitor                 42.1981
+  inference_latency_s_policy                  30.6724
+  inference_mean_latency_s_monitor             0.9377
+  inference_mean_latency_s_policy              0.3446
+  inference_server_setup_s_monitor             0.7197
+  inference_server_setup_s_policy              1.3450
+  inference_tokens_monitor                  2526.0000
+  inference_tokens_policy                   1506.0000
+  inference_tokens_total                    4032.0000
+  lure_dwell_s                                 0.0000
+  min_obstacle_distance_m                      1.3425
+  monitor_assessments                         45.0000
+  monitor_blocked_calls                        0.0000
+  monitor_lost_calls                           0.0000
+  monitor_stop_calls                           0.0000
+  onfly_decision_calls                        89.0000
+  onfly_decision_parse_errors                  0.0000
+  onfly_monitor_calls                         45.0000
+  onfly_monitor_parse_errors                   0.0000
+  out_of_bounds                                0.0000
+  path_efficiency                              0.7020
+  path_length_m                               49.8647
+  peak_rss_mb                                  0.0000
+  premature_stop                               0.0000
+  reached_goal                                 0.0000
+  reasoner_calls                               0.0000
+  reasoner_calls_per_minute                    0.0000
+  recovery_attempted                           0.0000
+  recovery_decisions                           0.0000
+  recovery_success                             0.0000
+  recovery_triggers                            0.0000
+  rejected_or_modified_proposal_rate           0.2022
+  safety_intervention_rate                     0.0000
+  safety_interventions                         0.0000
+  safety_modification_rate                     0.0000
+  safety_rejections                            0.0000
+  safety_stops                                 0.0000
+  semantic_latency_median_s                    0.3247
+  semantic_latency_p95_s                       1.0134
+  stale_action_rate                            0.0000
+  stale_rejection_rate                         0.0000
+  subgoal_completion                           0.0000
+  subgoals_completed                           0.0000
+  time_to_goal_s                              -1.0000
+  tokens_per_minute                         2688.0000
+  verifier_rejection_rate                      0.0000
+  verifier_repair_rate                         0.2022
+
+artifacts: runs\c5_depth_ray_v2_20260912_s1060
