@@ -1,5 +1,12 @@
 # Build log
 
+## 2026-09-12 — D-98 authorized sensor repair and one flight
+
+Registered a versioned per-pixel box-depth repair with historical compatibility,
+saved-pixel and geometric regressions, followed by exactly one matched 90 s
+Gemma seed-1061 flight with full debug capture. Only the depth-renderer setting
+changes; no semantic verifier, planner tuning, model swap or cloud calls.
+
 ## 2026-09-12 — D-97 visual audit and narrowed causal claim
 
 Saved all 89 source RGB/depth captures, source-to-waypoint trace, geometric

@@ -2034,3 +2034,27 @@ then validate the same pixels offline before testing navigation. This does
 not establish that sensor repair alone solves wall selection or the mission.
 Evidence: `reports/waypoint_handoff_audit_20260912/REPORT.md`; local visual
 page: `reports/debugger/waypoint_handoff.html`. Status: audit complete.
+
+
+### D-98 — Versioned per-pixel obstacle depth repair and one matched flight
+**Decision.** User authorized fixing D-97's sensor defect and running one
+simulation. Add an explicit `box_ray_v2` depth renderer: camera-forward
+ray/box intersection at each pixel of the box drawn in RGB. Preserve
+`legacy_corner` as the default for historical configurations/replays. Preserve
+RGB painter ordering, landmark billboards, missing-background-depth behavior,
+near range, controller, SUPER margins, policy and monitor settings.
+**Rationale.** Repair the proven source-depth error while isolating its effect
+from semantic architecture changes. The RGB rasterizer's other approximations
+are not a new confound introduced by this repair; invalid box-ray intersections
+remain missing depth rather than invented ranges.
+**Validation.** Test the exact off-screen-corner failure, oblique surface depth,
+near-plane/miss handling, drawn-surface occlusion, landmark behavior and legacy
+compatibility. Check all saved source pixels and preserve historical replay.
+**Run.** Exactly one development flight from launch, seed 1061, 90 s horizon,
+architecture `c5_gemma_guarded_monitor_dev`, local shared `gemma4:e2b`, debug
+capture on. New environment inherits `grid_nav_onfly_native_dynamics` with
+only `depth_renderer: box_ray_v2` changed. No API providers, model swap,
+margin tuning or adaptive reruns. Compare with the original guarded flight;
+one seed can show a diagnostic effect but cannot establish general success.
+**Status.** Preregistered, implementation and validation pending. All changes
+and run outcomes go in CHANGES.md and separate commits.
