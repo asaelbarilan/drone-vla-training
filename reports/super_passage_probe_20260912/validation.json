@@ -1,0 +1,16 @@
+{
+  "positions_checked": 763,
+  "max_command_speed_mps": 0.6000000000000002,
+  "fixed_waypoint_matches_every_plan": true,
+  "no_collisions": true,
+  "minimum_body_wall_gap_m": 0.949344777127984,
+  "path_length_m": 21.83008607497099,
+  "source_distance_to_original_waypoint_m": 0.37755339929097687,
+  "sample_period_50_ms": true,
+  "final_waypoint_distance_m": 0.48852655818991736,
+  "browser": {
+    "errors": [],
+    "camera_width": 224,
+    "playback_seek_step_and_manual_overlay": "passed"
+  }
+}

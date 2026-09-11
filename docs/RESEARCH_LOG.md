@@ -1976,3 +1976,21 @@ is implemented by this decision. See ARCHITECTURE_FAMILIES.md for the existing
 hybrid/verifier search space.
 **Status.** Preregistered; execution pending. Diagnostic only, excluded from
 architecture performance tables.
+
+
+**D-96 outcome (2026-09-12).** The single continuation reached within 0.489 m
+of the fixed waypoint in 38.10 s, with no collision. SUPER selected a 21.83 m
+wide detour around the right obstacle; all 39 replans accepted. Minimum sampled
+body-to-wall gap was 0.949 m. Restoration matched all 833 positions/controls
+exactly, all 41 historical plan metadata records and all 41 source depth lifts.
+The original active waypoint at this state was only 0.378 m away. No model
+calls or runtime/parameter changes. This shows the local stack can progress
+with a useful persistent goal here; it does not isolate pixel selection, depth
+lifting, update persistence or monitor effects. No terminal stopping or red-tower
+arrival was tested. Next inspect the source-pixel to accepted-waypoint handoff.
+No verifier was added; new route-ranking work remains a separately named
+architecture variant under the design document's frozen execution constraints.
+Report: `reports/super_passage_probe_20260912/REPORT.md`; portable interactive
+replay in that folder; local preview `reports/debugger/super_passage_4160.html`.
+Script lint, trace checks and Edge replay interactions pass. Diagnostic only;
+never include these results in autonomous architecture performance tables.

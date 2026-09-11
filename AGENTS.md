@@ -16,6 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: fixed-destination SUPER test succeeds — D-96 (2026-09-12)
+
+One user-authorized continuation from the exact guarded Gemma t=41.60 s state
+reached a manual fixed waypoint in 38.10 s, collision-free. SUPER chose a wide
+21.83 m detour around the right obstacle with unchanged settings. All 833 prior
+controls/positions and all 41 historical plan records match exactly. This is
+privileged local-stack evidence, not an autonomous benchmark or a VLM verdict.
+Read `reports/super_passage_probe_20260912/REPORT.md` and inspect
+`reports/debugger/super_passage_4160.html`. The original active waypoint was
+only 0.378 m from the restored drone. Next inspect pixel/depth/world-waypoint
+replacement together before choosing a fix. No new verifier, no inference,
+no runtime change, no next run scheduled. The design permits named architecture
+variants with frozen shared execution/observations, not silent reference changes.
+
 ## Latest: user-directed physical passage test — D-95 (2026-09-12)
 
 User requested a manual crossing from guarded Gemma t=41.60 s / observation

@@ -1,5 +1,16 @@
 # Build log
 
+## 2026-09-12 — D-96 visual replay and research boundary
+
+Saved the successful fixed-destination trace, summary, validation and portable
+interactive replay. It shows actual movement, inferred range map and exact
+planner inflation, exploratory/committed paths and 382 embedded camera frames.
+Edge playback/seek/step/overlay checks pass with no JavaScript errors; physical
+trace checks and focused script lint pass. Read the original design PDF: new
+architecture components must be separately named and compared under frozen
+shared execution and observations. Updated D-96 and AGENTS.md; no verifier
+implemented and no further model calls or experiments scheduled.
+
 ## 2026-09-12 — D-96 executed: fixed goal enables a wider detour
 
 Added scripts/probe_super_passage_4160.py. Historical replay matched all 833
