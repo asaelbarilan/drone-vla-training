@@ -2069,3 +2069,19 @@ and architecture config are unchanged; the only environment parameter change
 is the depth-renderer version. Saved-pixel corrected waypoint still points at
 the selected wall. One launch-to-90 s Gemma flight is now ready to test the
 behavioral effect, with no claim that sensor repair must solve navigation.
+
+
+**D-98 flight outcome (2026-09-12).** Completed exactly one corrected-depth
+Gemma seed-1061 flight, with all other configuration fixed and debug capture.
+Timeout at 90 s, no collisions. Final target distance 30.01488 m versus original
+14.61545 m; closest 14.93985 m versus 14.32356 m. New path length 50.59676 m,
+original 32.31351 m. All 89 proposals accepted; 89 policy and 45 monitor calls,
+all actual `gemma4:e2b`, local only. First changed pixel at 19 s after the
+changed depth at 18 s; trajectory divergence starts 28.05 s. New closest
+approach occurs at 40 s, followed by departure. Sensor correction is validated;
+this flight does not establish improved navigation. Preserve corrected mode
+and historical replay; no architecture promotion, adaptive retry or new call
+scheduled. Both 1,800-pose replays and final distances match exactly. Exact
+calls/source images/paths captured, Edge comparison checks pass. Report:
+`reports/depth_renderer_fix_20260912/REPORT.md`; watch
+`reports/debugger/depth_fix_comparison.html`. Fix checkpoint `ebaa1bd`.

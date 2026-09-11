@@ -1,5 +1,18 @@
 # Build log
 
+## 2026-09-12 — D-98 single flight completed; navigation not improved
+
+Ran c5_depth_ray_v2_20260912_s1061 once with local Gemma and exact debug capture.
+Timeout at 90 s, zero collisions; final target distance 30.01 m versus original
+14.62 m, closest 14.94 m versus 14.32 m. All 89 plans accepted, 134 completed
+model calls, no cloud use. Saved result/manifest/comparison and visual debugger;
+both 1,800-pose replays and final distances match exactly. First model-point
+change at 19 s, first trajectory divergence 28.05 s; closest approach at 40 s,
+then movement away. Geometry repair remains valid; navigation is unresolved.
+No follow-on run or architecture promotion. Browser replay checks pass.
+User requested viewing during completion; restarted the local preview server
+and provided the new run with the original selectable for comparison.
+
 ## 2026-09-12 — D-98 depth repair validated before flight
 
 Implemented box_ray_v2: each drawn box pixel receives camera-forward ray/box

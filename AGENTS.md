@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: depth fixed; matched Gemma flight still fails — D-98 (2026-09-12)
+
+Implemented `box_ray_v2` per-pixel box depth, validated against 1,146 saved
+patch pixels. All 342 unit/contract tests pass. Historical default remains
+`legacy_corner` for exact old-run replay. Use `grid_nav_onfly_depth_v2_dev`
+for the corrected sensor in this investigation; architecture is unchanged.
+One authorized Gemma seed-1061 flight timed out at 90 s: final 30.01 m versus
+14.62 m original, closest 14.94 m versus 14.32 m, zero collisions. No navigation
+improvement established; no run remains active or scheduled. All 134 completed
+calls used local gemma4:e2b, with full debug capture. Read
+`reports/depth_renderer_fix_20260912/REPORT.md`; watch
+`reports/debugger/depth_fix_comparison.html`. Both trajectories replay exactly.
+Next inspect source-aligned decisions around the new 40 s closest approach
+and subsequent departure. Do not revert correct geometry merely to recover
+an old score, infer model causality from one seed, or start an adaptive sweep.
+
 ## Latest: waypoint audit confirms depth defect — D-97 (2026-09-12)
 
 Read `reports/waypoint_handoff_audit_20260912/REPORT.md`; inspect the source
