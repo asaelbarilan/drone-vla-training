@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-11 — D-91 final-run candidate
+
+Prepared a one-setting ablation of D-90: omit the previous-goal point cue.
+Flight 4 currently copies it in 31/50 comparable decisions. Unlike D-88,
+this leaves the original point schema and all monitor behavior unchanged.
+Only run if flight 4 fails; otherwise use the last flight for a second seed.
+No more than five flights in this session.
+
+
 ## 2026-09-11 — run 3/5 outcome
 
 D-89 timed out, final 72.45 m, closest 32.94 m,

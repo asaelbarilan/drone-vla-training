@@ -1,0 +1,8 @@
+# D-91: same policy and monitor, omit only previous-point cue.
+_base_: c5_gemma_guarded_monitor_dev.yaml
+id: c5_gemma_fresh_guarded_monitor_dev
+profile_of: c5
+name: "C5 guarded monitor with fresh waypoint cue"
+policy:
+  params:
+    previous_goal_prompt: false

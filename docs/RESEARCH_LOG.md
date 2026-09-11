@@ -1875,3 +1875,9 @@ the active local default and available to valley.
 **Decision.** For the remaining bounded trials, isolate the current-frame/color-consistent monitor with the original waypoint policy (yaw off). D-88/D-89 policy variants remain opt-in records, not defaults. Compare on 1061, then check the selected monitor on 1060 if no new blocking defect appears.
 **Rationale.** Flight 2 regressed to 40.25 m final distance; flight 3 is rejecting gray/green target claims but its model-selected exploration travels away from the goal. The guard fixes a semantic contradiction but does not make exploration useful. Restore the stronger prior policy instead of stacking additional untested planning machinery.
 **Status.** Candidate monitor fix only; no claim of solved navigation or general capability from one seed.
+
+
+### D-91 — Final bounded trial: remove only previous-point cue
+**Decision.** If D-90 seed 1061 fails, use the fifth and final flight for the same profile/seed with previous_goal_prompt=false. No new policy schema or exploration mechanism. If D-90 succeeds, use the final flight to check D-90 on another development seed instead.
+**Rationale.** During D-90, 31 of 50 comparable decisions copy the previous point within one pixel. D-88 changed several interface factors and regressed; this isolates only the continuity cue with the repaired runtime and guarded monitor. Copying can also reflect valid persistence, so improvement is not presumed.
+**Status.** Budget ends after flight 5 regardless of outcome. No default promotion without evidence beyond one development seed.
