@@ -1,0 +1,16 @@
+# D-104: retain existing text-only skill protocol; use the user-requested shared Gemma.
+_base_: c1_llm_skills.yaml
+id: c1_capability_gemma_dev
+profile_of: c1
+name: "C1 AerialClaw capability screen (Gemma, text sensor interface)"
+policy:
+  params:
+    model_id: gemma4:e2b
+inference:
+  params:
+    model_id: gemma4:e2b
+    expected_digest: 6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa
+    response_channel: content
+    think: false
+    num_ctx: 8192
+    timeout_s: 180.0

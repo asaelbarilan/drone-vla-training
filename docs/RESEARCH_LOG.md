@@ -2234,3 +2234,10 @@ User input on retaining that contract versus adding visual perception is pending
 No C1 interface change is made here. Do not compare unsupported inputs as model failures.
 Rationale: measure current cross-task behavior before architecture redesign.
 Evidence: scripts/run_capability_screen.py; reports/capability_screen_20260912 (pending).
+
+D-104 continuation: C1 named Gemma profile preserves the existing text-only interface.
+Only model/runtime settings change to obey the standing shared-Gemma constraint;
+no camera integration or semantic-hit restoration. Its inherited 8.5 s policy charge
+is preserved, versus C5's 1/1.2 s policy/monitor charges: this is a compatibility
+screen, not a matched-latency or pure model-quality comparison. Awaiting any user
+steering on visual integration; no new vision protocol is inferred from silence.

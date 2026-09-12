@@ -11,7 +11,7 @@ from uavlab.core.orchestrator import Orchestrator
 from uavlab.experiments.manifest import build_manifest, write_manifest
 
 OUT = Path("reports/capability_screen_20260912")
-PROFILES = {"c0": "c0", "c5": "c5_capability_gemma_dev"}
+PROFILES = {"c0": "c0", "c5": "c5_capability_gemma_dev", "c1": "c1_capability_gemma_dev"}
 
 async def main():
     parser = argparse.ArgumentParser()
