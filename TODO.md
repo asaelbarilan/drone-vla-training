@@ -10,16 +10,17 @@ becomes a decision with evidence.
 
 ---
 
-## D-101: validate the new VLM planner with one bounded saved-frame call
+## D-102: resolve gate/planner disagreement, then test rejected-goal recovery
 
-Implementation and offline authority/geometry/GUI tests are complete (361 pass).
-Read `reports/adaptive_visual_plan_20260912/REPORT.md`. Before a flight, validate
-that local gemma4:e2b returns a valid structured plan on one saved source image;
-capture the exact prompt, schema, output and wall latency, with no automatic retries.
-No flight or model call is scheduled. Then use a named development flight in the
-corrected-depth environment. A matched no-plan SPF interface control is still needed
-before attributing differences specifically to planning. The current component
-adaptation has no full MapGPT graph or arbitrary remembered-node navigation.
+D-101 real Gemma preflight and first 90 s flight are complete. Read
+`reports/adaptive_plan_flights_20260912/REPORT.md`. Use the exact saved 19 s and
+32 s cases to test a targeted acceptance-contract correction: the gate rejects
+both while copied historical SUPER produces full known-free paths to both goals.
+This is not yet physical execution proof. Preserve schema/geofence/staleness checks
+and shared planner constraints. Separately represent rejected versus accepted goal
+state before evaluating retain/replan behavior; feedback already reaches the VLM.
+No runtime fix or further run scheduled. Do not change both mechanisms at once or
+claim that this one component adaptation establishes general VLM planning ability.
 
 ## D-100: deferred graph-candidate direction (superseded by D-101)
 

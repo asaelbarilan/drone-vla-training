@@ -2186,7 +2186,15 @@ causal test. Source-audit hash comparison required only Windows newline normaliz
 
 ## D-102 — Adaptive-plan flight and visual diagnosis (2026-09-12)
 
-Status: authorized, preflight pending.
+Status: preflight, one flight and dashboard diagnosis complete; fixes unimplemented.
 Rationale: validate D-101 on real Gemma and inspect the actual flight in the dashboard.
 Evidence: reports/adaptive_plan_flights_20260912/PLAN.md preregisters a bounded
 preflight/flight/fix budget. No performance conclusion yet.
+
+D-102 outcome: timeout 90 s, zero collisions, closest/final 23.995 m. 71 verifier
+rejections; model continues the same semantic plan despite receiving feedback.
+Copied historical SUPER accepts exact rejected goals at 19 and 32 s. This establishes
+admission disagreement plus model non-adaptation, not a VLM-only failure or proof of
+physical success with a relaxed gate. Evidence: reports/adaptive_plan_flights_20260912/
+REPORT.md, DECISION_AUDIT.json, REJECTION_PROBE.json and dashboard captures. No runtime
+fix or second full flight; no general planning-performance conclusion.

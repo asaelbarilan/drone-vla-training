@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: adaptive-plan flight visually diagnosed — D-102 (2026-09-12)
+
+Read `reports/adaptive_plan_flights_20260912/REPORT.md`; dashboard:
+`reports/debugger/adaptive_plan_comparison.html`. New seed-1061 flight timed out
+at 90 s, zero collisions, closest/final 23.995 m; stops moving near 23.75 s.
+Gate rejects 71/89 proposals from 19 s, only 18 reach SUPER. Model receives failure
+feedback but keeps s1: 32 identical center moves, then 57 retains of a rejected point.
+Copied historical SUPER finds full known-free paths to the exact rejected goals at
+19 and 32 s (641 poses/32 gates/18 plans replay-match). Do not call this physical
+execution success or a VLM-only failure. No runtime/config change, second full flight
+or further run scheduled. Next targeted change: align acceptance criteria with SUPER,
+then separately test explicit rejected/accepted goal state and retain recovery.
+User authorized flying and dashboard diagnosis; that bounded work is complete.
+One preflight plus 134 completed flight calls, one boundary cancellation; Gemma only.
+Do not repeat an unchanged stalled run or tune clearance without a case-specific test.
+
 ## Latest: VLM-authored planner implemented; offline checks pass — D-101 (2026-09-12)
 
 Read `reports/adaptive_visual_plan_20260912/REPORT.md` and

@@ -1,0 +1,24 @@
+{
+  "first_rejection_s": 19.0,
+  "first_rejection_id": "08beeb5be664",
+  "within_1cm_of_final_position_from_s": 23.75,
+  "action_counts": {
+    "move": 32,
+    "retain": 57
+  },
+  "assessment_counts": {
+    "uncertain": 89
+  },
+  "active_subgoal_ids": [
+    "s1"
+  ],
+  "revisions": {
+    "1": 2,
+    "2": 87
+  },
+  "all_move_actions": [
+    "{\"distance\": 5, \"mode\": \"move\", \"u\": 500, \"v\": 500}"
+  ],
+  "verifier_rejections": 71,
+  "planner_calls": 18
+}

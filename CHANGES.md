@@ -1,5 +1,25 @@
 # Build log
 
+## 2026-09-12 — D-102 flight completed; dashboard and boundary diagnosis saved
+
+New vlm_adaptive_plan_20260912_s1061 timed out at 90 s with zero collisions,
+11.306 m path and final/closest distance 23.995 m. Shared runtime unchanged.
+Inspected actual dashboard camera/map/observer and VLM plans at eight fixed moments
+per run; added corrected C5 seed 1061 for context. New replay matches 1,800 poses;
+zero missing source frames; Edge playback/switching passes with no JavaScript errors.
+First gate rejection is at 19 s; 71/89 proposals rejected, only 18 reach SUPER.
+Model receives matched rejection feedback but repeats center point/distance (32 moves)
+then retains a rejected world point (57 times). One plan revision, no active-step change.
+A no-inference copied-planner probe at 19 and 32 s accepts both exact rejected goals
+with full known-free paths. Replayed 641 poses, 32 gates and 18 prior plans exactly.
+This demonstrates a gate/planner disagreement, not physical success after bypassing
+it; model non-adaptation is a separate observed failure. No speculative runtime fix,
+second full flight, cloud call or model sweep. Capture: 134 completed flight calls
+plus one cancelled at the boundary, all Gemma, in addition to one preflight completion.
+Harness-only corrections and unused launch error are preserved in the report. Next
+is a targeted acceptance-contract change, separately from rejected-goal recovery.
+
+
 ## 2026-09-12 — D-102 real Gemma preflight passed
 
 One saved initial RGB call produced valid plan JSON (310 output tokens; 13.88 s

@@ -1,0 +1,204 @@
+{
+  "scope": "No inference, no continuation flight, no verifier/config change. Local planning feasibility only.",
+  "checks": {
+    "poses": 641,
+    "gate_results": 32,
+    "accepted_plans": 18
+  },
+  "probes": [
+    {
+      "available_s": 19.0,
+      "execution_observation_s": 18.95,
+      "decision_id": "08beeb5be664",
+      "position": {
+        "x": 7.54222709993392,
+        "y": 6.695626531680827,
+        "z": 1.4757310479120278,
+        "frame": "enu"
+      },
+      "proposed_goal": {
+        "x": 8.584993332406697,
+        "y": 7.621344248739067,
+        "z": 1.2649900862061778,
+        "frame": "enu"
+      },
+      "original_gate": "target lies within the minimum clearance of an observed obstacle",
+      "counterfactual_super_feasible": true,
+      "counterfactual_reason": "SUPER exploratory trajectory wholly known-free",
+      "metadata": {
+        "paper": "SUPER",
+        "replan_status": "success_no_backup",
+        "exploratory_points": "3",
+        "committed_points": "3",
+        "exploratory_prefix_points": "3",
+        "backup_points": "0",
+        "backup_known_free": "true",
+        "backup_terminal_speed_mps": "0.0",
+        "unknown_allowed_in_exploratory": "true",
+        "reaches_goal": "true",
+        "semantic_goal_xyz": "8.585,7.621,1.265",
+        "new_semantic_goal": "false"
+      },
+      "trajectory": {
+        "start_t_sim_ns": 19000000000,
+        "points": [
+          {
+            "t_offset_ns": 1175185110,
+            "position": {
+              "x": 8.063610216170309,
+              "y": 7.158485390209947,
+              "z": 1.3703605670591028,
+              "frame": "enu"
+            },
+            "velocity": {
+              "x": 0.4436604173936543,
+              "y": 0.3938603839950111,
+              "z": -0.08966287948415935,
+              "frame": "enu"
+            },
+            "yaw_rad": 0.7260068433926723
+          },
+          {
+            "t_offset_ns": 2350370219,
+            "position": {
+              "x": 8.584993332406697,
+              "y": 7.621344248739067,
+              "z": 1.2649900862061778,
+              "frame": "enu"
+            },
+            "velocity": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "frame": "enu"
+            },
+            "yaw_rad": 0.7260068433926741
+          }
+        ],
+        "source_decision_id": null,
+        "planner_name": "super_local",
+        "feasible": true,
+        "reason": "SUPER exploratory trajectory wholly known-free",
+        "metadata": {
+          "paper": "SUPER",
+          "replan_status": "success_no_backup",
+          "exploratory_points": "3",
+          "committed_points": "3",
+          "exploratory_prefix_points": "3",
+          "backup_points": "0",
+          "backup_known_free": "true",
+          "backup_terminal_speed_mps": "0.0",
+          "unknown_allowed_in_exploratory": "true",
+          "reaches_goal": "true",
+          "semantic_goal_xyz": "8.585,7.621,1.265",
+          "new_semantic_goal": "false"
+        }
+      }
+    },
+    {
+      "available_s": 32.0,
+      "execution_observation_s": 31.95,
+      "decision_id": "e2ed6a90be73",
+      "position": {
+        "x": 8.360367955230034,
+        "y": 7.421932640578126,
+        "z": 1.310386423885327,
+        "frame": "enu"
+      },
+      "proposed_goal": {
+        "x": 10.079321864050375,
+        "y": 8.419897101852921,
+        "z": 1.0099831623541702,
+        "frame": "enu"
+      },
+      "original_gate": "target lies within the minimum clearance of an observed obstacle",
+      "counterfactual_super_feasible": true,
+      "counterfactual_reason": "SUPER exploratory trajectory wholly known-free",
+      "metadata": {
+        "paper": "SUPER",
+        "replan_status": "success_no_backup",
+        "exploratory_points": "4",
+        "committed_points": "4",
+        "exploratory_prefix_points": "4",
+        "backup_points": "0",
+        "backup_known_free": "true",
+        "backup_terminal_speed_mps": "0.0",
+        "unknown_allowed_in_exploratory": "true",
+        "reaches_goal": "true",
+        "semantic_goal_xyz": "10.079,8.420,1.010",
+        "new_semantic_goal": "false"
+      },
+      "trajectory": {
+        "start_t_sim_ns": 32000000000,
+        "points": [
+          {
+            "t_offset_ns": 1458549084,
+            "position": {
+              "x": 9.0,
+              "y": 8.0,
+              "z": 1.1601847931197486,
+              "frame": "enu"
+            },
+            "velocity": {
+              "x": 0.43853995174491306,
+              "y": 0.39633041211583997,
+              "z": -0.10298016874941412,
+              "frame": "enu"
+            },
+            "yaw_rad": 0.7348829790787572
+          },
+          {
+            "t_offset_ns": 2431734643,
+            "position": {
+              "x": 9.539660932025187,
+              "y": 8.20994855092646,
+              "z": 1.0850839777369594,
+              "frame": "enu"
+            },
+            "velocity": {
+              "x": 0.5545303531026927,
+              "y": 0.21573331914494634,
+              "z": -0.07717008810742398,
+              "frame": "enu"
+            },
+            "yaw_rad": 0.37102071052776076
+          },
+          {
+            "t_offset_ns": 3404920203,
+            "position": {
+              "x": 10.079321864050375,
+              "y": 8.419897101852921,
+              "z": 1.0099831623541702,
+              "frame": "enu"
+            },
+            "velocity": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "frame": "enu"
+            },
+            "yaw_rad": 0.37102071052776076
+          }
+        ],
+        "source_decision_id": null,
+        "planner_name": "super_local",
+        "feasible": true,
+        "reason": "SUPER exploratory trajectory wholly known-free",
+        "metadata": {
+          "paper": "SUPER",
+          "replan_status": "success_no_backup",
+          "exploratory_points": "4",
+          "committed_points": "4",
+          "exploratory_prefix_points": "4",
+          "backup_points": "0",
+          "backup_known_free": "true",
+          "backup_terminal_speed_mps": "0.0",
+          "unknown_allowed_in_exploratory": "true",
+          "reaches_goal": "true",
+          "semantic_goal_xyz": "10.079,8.420,1.010",
+          "new_semantic_goal": "false"
+        }
+      }
+    }
+  ]
+}

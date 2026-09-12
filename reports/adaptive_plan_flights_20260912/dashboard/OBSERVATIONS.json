@@ -1,0 +1,254 @@
+{
+  "javascript_errors": [],
+  "runs": 2,
+  "observations": [
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 0,
+      "cursor_t": 0,
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "distance": 35.02051357538948,
+      "decision": null,
+      "source_t": null,
+      "available_t": null,
+      "decision_state": null,
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 1 \u00b7 previous subgoal: uncertain\n\nThe instruction is to 'fly to the red tower and stop there'. The current image shows a flat, open area with several vertical structures (likely buildings or towers) in the distance. I do not yet know'\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"move\",\n    \"u\": 500,\n    \"v\": 500,\n    \"distance\": 5\n  },\n  \"world_point\": {\n    \"x\": 1.486426642275719,\n    \"y\": 1.3195780943145754,\n    \"z\": 2.699596160344058,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 1,\n    \"position_enu_m\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"z\": 3,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.7260068433926703,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 10,
+      "cursor_t": 10,
+      "position": [
+        3.5715075719761815,
+        3.1706126771537013,
+        2.2782054912987046
+      ],
+      "distance": 30.285121315521252,
+      "decision": "7d01e6f9eb8d",
+      "source_t": 8.95,
+      "available_t": 10,
+      "decision_state": "accepted",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"move\",\n    \"u\": 500,\n    \"v\": 500,\n    \"distance\": 5\n  },\n  \"world_point\": {\n    \"x\": 4.59217057577801,\n    \"y\": 4.076708210689206,\n    \"z\": 2.0719315477239215,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 180,\n    \"position_enu_m\": {\n      \"x\": 3.10574393350229,\n      \"y\": 2.757130116374631,\n      \"z\": 2.3723353873798634,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.7260068433926699,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 20,
+      "cursor_t": 20,
+      "position": [
+        7.99223618713038,
+        7.095122959434445,
+        1.384785115008864
+      ],
+      "distance": 24.475055285422624,
+      "decision": "4171ef8f4d6e",
+      "source_t": 18.95,
+      "available_t": 20,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"move\",\n    \"u\": 500,\n    \"v\": 500,\n    \"distance\": 5\n  },\n  \"world_point\": {\n    \"x\": 9.028653742209633,\n    \"y\": 8.015204625995409,\n    \"z\": 1.175327208256086,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 380,\n    \"position_enu_m\": {\n      \"x\": 7.54222709993392,\n      \"y\": 6.695626531680827,\n      \"z\": 1.4757310479120278,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.726006843392675,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 30,
+      "cursor_t": 30,
+      "position": [
+        8.360357736840976,
+        7.421923569183695,
+        1.3103884890012376
+      ],
+      "distance": 23.99497451451312,
+      "decision": "fe41516b4c6d",
+      "source_t": 28.95,
+      "available_t": 30,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"move\",\n    \"u\": 500,\n    \"v\": 500,\n    \"distance\": 5\n  },\n  \"world_point\": {\n    \"x\": 10.07929162483482,\n    \"y\": 8.419870256931478,\n    \"z\": 1.0099892736389142,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 580,\n    \"position_enu_m\": {\n      \"x\": 8.360334855398301,\n      \"y\": 7.421903256139204,\n      \"z\": 1.3103931132948559,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.5260068433926633,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 40,
+      "cursor_t": 40,
+      "position": [
+        8.360369553363173,
+        7.421934059323872,
+        1.3103861009058302
+      ],
+      "distance": 23.99495911577297,
+      "decision": "6917cfdc1ff1",
+      "source_t": 38.95,
+      "available_t": 40,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"retain\"\n  },\n  \"world_point\": {\n    \"x\": 10.079321864050375,\n    \"y\": 8.419897101852921,\n    \"z\": 1.0099831623541702,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 620,\n    \"position_enu_m\": {\n      \"x\": 8.360365094613858,\n      \"y\": 7.421930101060647,\n      \"z\": 1.310387002010112,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.5260068433926633,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 50,
+      "cursor_t": 50,
+      "position": [
+        8.360369553777371,
+        7.421934059691583,
+        1.3103861008221205
+      ],
+      "distance": 23.994959115233204,
+      "decision": "f8b21d7af97d",
+      "source_t": 48.95,
+      "available_t": 50,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"retain\"\n  },\n  \"world_point\": {\n    \"x\": 10.079321864050375,\n    \"y\": 8.419897101852921,\n    \"z\": 1.0099831623541702,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 620,\n    \"position_enu_m\": {\n      \"x\": 8.360365094613858,\n      \"y\": 7.421930101060647,\n      \"z\": 1.310387002010112,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.5260068433926633,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 70,
+      "cursor_t": 70,
+      "position": [
+        8.360369553777371,
+        7.42193405969159,
+        1.3103861008221191
+      ],
+      "distance": 23.994959115233197,
+      "decision": "a27a04c922ee",
+      "source_t": 68.95,
+      "available_t": 70,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"retain\"\n  },\n  \"world_point\": {\n    \"x\": 10.079321864050375,\n    \"y\": 8.419897101852921,\n    \"z\": 1.0099831623541702,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 620,\n    \"position_enu_m\": {\n      \"x\": 8.360365094613858,\n      \"y\": 7.421930101060647,\n      \"z\": 1.310387002010112,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.5260068433926633,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "vlm_adaptive_plan_20260912_s1061",
+      "requested_t": 90,
+      "cursor_t": 90,
+      "position": [
+        8.360369553777371,
+        7.42193405969159,
+        1.3103861008221191
+      ],
+      "distance": 23.994959115233197,
+      "decision": "6583d2ace300",
+      "source_t": 87.95,
+      "available_t": 89,
+      "decision_state": "rejected",
+      "plan_text": "VLM-authored navigation plan\n\nModel beliefs and predicted views. Feasibility and execution are shown separately.\n\nRevision 2 \u00b7 previous subgoal: uncertain\n\nThe previous plan aimed to move towards the nearest vertical structure, but the instruction specified 'the red tower'. The current image does not provide sufficient visual confirmation or context to *\n\nACTIVE \u00b7 s1: Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\n\nExpected view: The drone will move towards the closest prominent vertical structure in the distance.\n\ns2: Arrive at the location of the nearest vertical structure and stop.\n\nExpected view: The drone will be stationary at the location of the nearest vertical structure.\n\ns3: Move towards the next most prominent vertical structure to the right.\n\nExpected view: The drone will move towards the next vertical structure in the line.\n\nModel scene memory\n\nThe environment consists of a flat foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible, so I will target the closest prominent vertical object. The drone has already moved towards the first structure. The next logical step is to continue along the line.\n\nDestination chosen by the model\n{\n  \"action\": {\n    \"mode\": \"retain\"\n  },\n  \"world_point\": {\n    \"x\": 10.079321864050375,\n    \"y\": 8.419897101852921,\n    \"z\": 1.0099831623541702,\n    \"frame\": \"enu\"\n  },\n  \"point_origin\": {\n    \"observation_seq\": 620,\n    \"position_enu_m\": {\n      \"x\": 8.360365094613858,\n      \"y\": 7.421930101060647,\n      \"z\": 1.310387002010112,\n      \"frame\": \"enu\"\n    },\n    \"yaw_rad\": 0.5260068433926633,\n    \"u\": 500,\n    \"v\": 500,\n    \"distance_label\": 5,\n    \"camera_forward_m\": 2.0102221212448113,\n    \"tolerance_m\": 0.35\n  }\n}\nPrevious plan and measured feedback supplied to this call"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 0,
+      "cursor_t": 0,
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "distance": 35.02051357538948,
+      "decision": null,
+      "source_t": null,
+      "available_t": null,
+      "decision_state": null
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 10,
+      "cursor_t": 10,
+      "position": [
+        3.457309444567053,
+        3.2686421456354773,
+        3.1063048214404008
+      ],
+      "distance": 30.264582150135148,
+      "decision": "4b2b9e5ec715",
+      "source_t": 8.95,
+      "available_t": 10,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 20,
+      "cursor_t": 20,
+      "position": [
+        9.15957665780551,
+        4.174848174052564,
+        3.349948402482027
+      ],
+      "distance": 25.564535625977665,
+      "decision": "75d3d8557514",
+      "source_t": 18.95,
+      "available_t": 20,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 30,
+      "cursor_t": 30,
+      "position": [
+        13.812913784400116,
+        7.866300759556049,
+        3.349948946528768
+      ],
+      "distance": 19.742081636207477,
+      "decision": "326d6e1d4655",
+      "source_t": 28.95,
+      "available_t": 30,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 40,
+      "cursor_t": 40,
+      "position": [
+        18.258308275878605,
+        10.647095453654355,
+        2.764530753381584
+      ],
+      "distance": 14.939850392409868,
+      "decision": "21dd2b959d2c",
+      "source_t": 38.95,
+      "available_t": 40,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 50,
+      "cursor_t": 50,
+      "position": [
+        18.751711645150017,
+        5.865428107612578,
+        2.411280691619469
+      ],
+      "distance": 18.97436051386405,
+      "decision": "1ec5df49de29",
+      "source_t": 48.95,
+      "available_t": 50,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 70,
+      "cursor_t": 70,
+      "position": [
+        8.368059297546543,
+        8.36100362310133,
+        2.0889983855335106
+      ],
+      "distance": 23.29750220537285,
+      "decision": "aabfb48a76a2",
+      "source_t": 68.95,
+      "available_t": 70,
+      "decision_state": "accepted"
+    },
+    {
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "requested_t": 90,
+      "cursor_t": 90,
+      "position": [
+        -2.2563013890246095,
+        13.846999942776417,
+        2.088991298821472
+      ],
+      "distance": 30.01487764181413,
+      "decision": "4a0f3ae9bea8",
+      "source_t": 87.95,
+      "available_t": 89,
+      "decision_state": "accepted"
+    }
+  ]
+}
