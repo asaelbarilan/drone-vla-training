@@ -2267,3 +2267,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Added a sequential single-seed runner that refuses overwrite/retry and captures original model calls.
 - Added a named existing-OnFly profile calibrated to the capability camera (-0.10 rad), generic monitor without task-color guard.
 - C0 remains unchanged; C1 input-contract decision pending. No new flight result claimed yet.
+
+- Screen run IDs use capability_screen_ to avoid the earlier D-103 C0 fixture integration run; detected before execution.

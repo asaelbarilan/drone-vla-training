@@ -20,7 +20,7 @@ async def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for family in args.architectures:
         for scenario in SCENARIOS:
-            name = f"capability_{family}_{scenario}_20260912_s1061"
+            name = f"capability_screen_{family}_{scenario}_20260912_s1061"
             dest = Path("runs") / name
             if dest.exists():
                 raise RuntimeError(f"Refusing to replace or retry {dest}")
