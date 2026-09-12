@@ -152,3 +152,18 @@ def test_adaptive_plan_state_is_joined_only_to_its_own_decision():
     )
     assert decisions[0]["chain"][0]["payload"]["response"]["active_id"] == "inspect"
     assert not any(e["event_type"] == "memory_update" for e in decisions[1]["chain"])
+
+
+def test_capability_replay_updates_scene_and_rejects_wrong_score(tmp_path):
+    from scripts.validate_capability_scenarios import record
+
+    folder, _ = asyncio.run(record("closing_passage", tmp_path))
+    data = asyncio.run(load_run(folder))
+    assert len(data["frames"][0]["scene"]["obstacles"]) == 2
+    assert len(data["frames"][-1]["scene"]["obstacles"]) == 3
+    assert data["frames"][-1]["scene"]["task_status"]["task_complete"]
+    result = json.loads((folder / "result.json").read_text())
+    result["status"]["task_complete"] = False
+    (folder / "result.json").write_text(json.dumps(result))
+    with pytest.raises(ValueError, match="Replay task status mismatch"):
+        asyncio.run(load_run(folder))

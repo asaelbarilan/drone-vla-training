@@ -1,3 +1,17 @@
+## 2026-09-12 — D-103: dynamic debugger and eight scenario demonstrations
+
+Extended the existing debugger to render time-varying obstacle/target state and
+private task progress. Replay verifies task outcome/counters in addition to poses
+and distance. Added reproducible no-model fixture recorder and Edge browser checks.
+Eight scripted trajectories pass without collisions; 32 dashboard seeks and eight
+playback checks pass. Normal C0/SUPER runtime also completes the known-goal task at
+5.75 s, zero collisions, using only simulated inference accounting. Final offline
+regression: 387 tests pass; 22 focused scenario checks; new tooling lint and
+git diff --check pass. Real-model
+capability remains untested. Read docs/CAPABILITY_SCENARIOS.md and the report under
+reports/capability_scenarios_20260912. Latest external research design is now linked
+from the documentation map; old concise PDF is explicitly identified as earlier.
+
 ## 2026-09-12 — D-103: enforce declared scenario altitude and fence
 
 Review found the base simulator's world bounds are wider than the task limits.

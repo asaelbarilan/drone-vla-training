@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "termination_reason": "goal_reached",
+  "sim_duration_s": 20.0,
+  "used_privileged_observations": true,
+  "validation_kind": "scripted geometry fixture; NOT architecture performance",
+  "metrics": {
+    "distance_to_goal_m": 5.000000000000785,
+    "collisions": 0.0
+  },
+  "status": {
+    "t_sim_ns": 20000000000,
+    "position": {
+      "x": 16.999999999999215,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "distance_to_goal_m": 5.000000000000785,
+    "goal_visible": true,
+    "subgoals_completed": 0,
+    "subgoals_total": 0,
+    "task_complete": true,
+    "collided": false,
+    "collision_count": 0,
+    "min_obstacle_distance_m": Infinity,
+    "out_of_bounds": false,
+    "constraint_violations": 0,
+    "path_length_m": 16.999999999999215,
+    "shortest_path_m": 0.0,
+    "speed_mps": 0.700000000003331,
+    "terminated": false,
+    "termination_reason": null,
+    "extras": {
+      "goal_radius_m": 2.0,
+      "lure_dwell_s": 0.0,
+      "landmarks": 1.0,
+      "obstacles": 0.0,
+      "skipped_injections": 0.0,
+      "min_injected_block_clearance_m": -1.0,
+      "task_complete": 1.0,
+      "target_ever_visible": 1.0,
+      "branch_correct": 0.0,
+      "wrong_branch": 0.0,
+      "passage_closed": 0.0,
+      "tracking_good_s": 15.0,
+      "tracking_total_s": 15.0,
+      "tracking_fraction": 1.0,
+      "shortest_path_valid": 0.0
+    }
+  }
+}

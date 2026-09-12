@@ -1,0 +1,149 @@
+{
+  "architecture_config": {
+    "id": "scripted_control_fixture",
+    "name": "Scripted geometry fixture",
+    "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+    "family": "classical_baseline",
+    "subfamily": null,
+    "ablation_of": null,
+    "profile_of": null,
+    "authority": "waypoint",
+    "action_horizon": null,
+    "chunk_length": 1,
+    "semantic_supervision": "none",
+    "semantic_memory": "no_memory",
+    "memory_consumers": [
+      "policy"
+    ],
+    "perception": {
+      "name": "identity",
+      "params": {
+        "min_score": 0.0,
+        "drone_radius_m": 0.4,
+        "charge_latency": true
+      }
+    },
+    "memory": {
+      "name": "no_memory",
+      "params": {}
+    },
+    "policy": {
+      "name": "oracle_waypoint",
+      "params": {
+        "stop_radius_m": 2.4
+      }
+    },
+    "verifier": null,
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "resolution_m": 0.5,
+        "planning_horizon_m": 16.0,
+        "commit_horizon_m": 2.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0,
+        "clearance_margin_m": 1.2
+      }
+    },
+    "shield": {
+      "name": "simple_collision",
+      "params": {}
+    },
+    "monitor": null,
+    "admission": null,
+    "recovery": null,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5
+      }
+    },
+    "inference": {
+      "name": "free",
+      "params": {
+        "jitter_frac": 0.0
+      }
+    },
+    "scheduler": {
+      "kind": "periodic",
+      "control_hz": 20.0,
+      "decision_hz": 4.0,
+      "monitor_hz": null,
+      "reasoner_hz": null,
+      "trigger": null,
+      "cooldown_s": 2.0,
+      "max_calls": null,
+      "trigger_check_hz": 5.0
+    },
+    "staleness": {
+      "max_decision_age_s": 1.5,
+      "reject_stale": true
+    },
+    "feature_cache": {
+      "enabled": false,
+      "capacity": 32
+    },
+    "allow_privileged_observations": true,
+    "unsafe_ablation": false,
+    "tags": [
+      "control_ceiling",
+      "macro_screening"
+    ]
+  },
+  "environment_config": {
+    "id": "capability_known_goal",
+    "adapter": {
+      "name": "capability_grid3d",
+      "params": {}
+    },
+    "task_family": "known_goal_nav",
+    "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+    "max_episode_s": 60.0,
+    "params": {
+      "scenario": "known_goal",
+      "world_size": [
+        100,
+        100,
+        12
+      ],
+      "max_speed_mps": 2,
+      "render": true,
+      "render_depth": true,
+      "image_size": 224,
+      "fov_deg": 90,
+      "camera_pitch_rad": -0.1,
+      "success": {
+        "goal_radius_m": 2,
+        "require_terminal_stop": true,
+        "max_flight_time_s": 60
+      },
+      "constraints": {
+        "max_speed_mps": 2,
+        "min_altitude_m": 0.5,
+        "max_altitude_m": 7,
+        "geofence_radius_m": 45,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ]
+    }
+  },
+  "seeds": [
+    1061
+  ],
+  "git_sha": "ff9ac042db44a12a87d6b058f05a340ab0bde43a",
+  "git_dirty": true,
+  "validation_kind": "scripted geometry fixture; NOT architecture performance",
+  "fixture_driver": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\scripts\\validate_capability_scenarios.py"
+}

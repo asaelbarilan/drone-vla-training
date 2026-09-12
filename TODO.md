@@ -10,6 +10,15 @@ becomes a decision with evidence.
 
 ---
 
+## D-103: task suite ready for subsequent architecture evaluation
+
+Eight first scenarios are implemented and physically validated with scripted
+fixtures, plus one C0/SUPER integration. Read `docs/CAPABILITY_SCENARIOS.md`.
+Future model trials should start one task at a time with exact dashboard capture;
+no trial is scheduled. Do not infer that C1/C5/MapGPT solve these tasks, and do not
+restore labeled semantic_hits just to recover historical scores. The remaining
+16 proposed scenarios are not implemented. VLA training remains separate.
+
 ## D-102: resolve gate/planner disagreement, then test rejected-goal recovery
 
 D-101 real Gemma preflight and first 90 s flight are complete. Read

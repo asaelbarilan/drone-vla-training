@@ -202,7 +202,7 @@ async def load_run(run_dir: Path) -> dict:
     events = read_events(run_dir / "events.jsonl")
     arch = ArchitectureConfig.model_validate(manifest["architecture_config"])
     config = EnvironmentConfig.model_validate(manifest["environment_config"])
-    if config.adapter.name != "grid3d":
+    if config.adapter.name not in {"grid3d", "capability_grid3d"}:
         raise ValueError(f"Replay supports grid3d, not {config.adapter.name}")
     if len(manifest["seeds"]) != 1:
         raise ValueError("One explicit seed is required for an exact replay")
@@ -222,7 +222,12 @@ async def load_run(run_dir: Path) -> dict:
     if params.get("failures") or any(e["event_type"] == "failure_injected" for e in events):
         raise ValueError("Debugger observer reconstruction does not yet support injected failures")
     params["allow_privileged"] = False
-    env = DeterministicEnv(**params)
+    if config.adapter.name == "capability_grid3d":
+        from uavlab.adapters.gym.capability_env import CapabilityEnv
+
+        env = CapabilityEnv(**params)
+    else:
+        env = DeterministicEnv(**params)
     await env.reset(mission, seed)
     scene = {
         "obstacles": [
@@ -266,6 +271,7 @@ async def load_run(run_dir: Path) -> dict:
             "rgb": _image_uri(rgb),
             "control": payload,
             "trace_id": event.get("trace_id") if event else None,
+            **({"scene": env.debug_scene()} if hasattr(env, "debug_scene") else {}),
         }
 
     try:
@@ -296,13 +302,22 @@ async def load_run(run_dir: Path) -> dict:
                 ),
                 dt_ns,
             )
-        final_distance = env.status().distance_to_goal_m
+        final_status = env.status()
+        final_distance = final_status.distance_to_goal_m
         frames.append(capture(await env.observe()))
     finally:
         await env.close()
     error = abs(final_distance - float(result["metrics"]["distance_to_goal_m"]))
     if not math.isfinite(error) or error > 1e-7:
         raise ValueError(f"Replay final distance mismatch: {error:.9g} m")
+    if config.adapter.name == "capability_grid3d":
+        saved_status = result["status"]
+        for key in ("task_complete", "subgoals_completed", "collision_count"):
+            if getattr(final_status, key) != saved_status[key]:
+                raise ValueError(f"Replay task status mismatch: {key}")
+        for key in ("tracking_good_s", "tracking_total_s", "branch_correct", "passage_closed"):
+            if abs(final_status.extras[key] - saved_status["extras"][key]) > 1e-7:
+                raise ValueError(f"Replay task metric mismatch: {key}")
     recordings = _recordings(run_dir)
     decisions = build_decisions(events, frames, recordings)
     return {

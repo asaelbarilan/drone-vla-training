@@ -28,3 +28,9 @@ Corrections do not delete the old entry. The status becomes
 `superseded by D-nn`, and if a claim was published anywhere it also goes in the
 "Superseded and corrected claims" table at the bottom, because a reader who
 meets the old claim elsewhere needs to be able to find out that it was withdrawn.
+
+## Current research framing and task suite
+
+See [CAPABILITY_SCENARIOS.md](CAPABILITY_SCENARIOS.md) for the eight capability
+regimes and latest external ASP-UAV design reference (nine architecture conditions).
+The original concise design PDF in this folder is an earlier navigation-centric draft.

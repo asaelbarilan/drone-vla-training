@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: eight capability scenarios implemented — D-103 (2026-09-12)
+
+User authorized one first scenario in each agreed category. See
+`docs/CAPABILITY_SCENARIOS.md` and `reports/capability_scenarios_20260912/REPORT.md`.
+Eight capability_* environments use the shared simulator with private task scoring;
+normal observations have no semantic-hit answers. Ordered visits, branch choice,
+closure and sustained tracking are evaluated explicitly. Legacy scoring is unchanged.
+Eight scripted geometry fixtures pass with zero collisions, plus C0/SUPER known-goal
+integration passes at 5.75 s. These are not real-model capability results.
+Dashboard: `reports/debugger/capability_scenarios.html`; C0 has its own linked page.
+No inference budget used, no training, no held-out run, no next flight scheduled.
+Latest research design is ASP-UAV_Final_Research_Design.pdf (external path in task doc):
+nine architecture conditions, eight capability regimes. Old concise PDF is earlier.
+D-102 gate repair remains open; no policy behavior was changed in D-103.
+
 ## Latest: adaptive-plan flight visually diagnosed — D-102 (2026-09-12)
 
 Read `reports/adaptive_plan_flights_20260912/REPORT.md`; dashboard:

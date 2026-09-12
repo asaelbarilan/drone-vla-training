@@ -2211,4 +2211,10 @@ handles ordered visits, branch choice, and sustained tracking; old scoring remai
 unchanged when the gate is absent. No answer-bearing semantic detections for new tasks.
 **Rationale.** Capability coverage needs distinct measurable tasks, not eight renamed
 point-goal missions. No model changes or inference are needed to validate scenarios.
-**Status.** Implementation in progress; evidence to follow.
+**Evidence.** Eight scripted continuous fixtures pass collision-free; C0/SUPER
+known-goal integration passes in 5.75 s. Private gate tests reject wrong order,
+wrong branch, wrong vehicle, stationary following, and altitude/geofence violations.
+Dynamic dashboard playback and exact task-score replay are verified. Full evidence
+and validation counts: `reports/capability_scenarios_20260912/REPORT.md`.
+**Status.** Implemented and mechanically validated; real-model capability untested.
+No changes to existing model policies or D-102 gate behavior.
