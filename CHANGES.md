@@ -2273,3 +2273,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Added opt-in C1 Gemma profile retaining its text-only inputs, skill protocol, 512-token output and inherited 8.5 s simulated latency. No visual grounding adapter added. This tests current compatibility, not visual reasoning; actual wall latency is separately recorded. Eight C0 flights completed: 6 successes, ordered_visit and follow_target fail by agent stop. C5 batch in progress.
 
 - Added inference-free replay exporter with separate C0/C1/C5 dashboard pages and complete per-run metrics/provenance.
+
+- Added headless Edge checks of real screen flights, task status, camera rendering and playback, with saved screenshots.
