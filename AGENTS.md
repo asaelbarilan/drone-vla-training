@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: VLM-authored planning specified — D-101 (2026-09-12)
+
+User superseded D-100's classical-candidate direction. Read
+`docs/research/vlm_authored_planning_20260912/REPORT.md`. Implement a separate
+adaptive visual plan + SPF waypoint variant: model authors subgoals, order,
+expected observations and points; explicit retain keeps a fixed world waypoint.
+Prior-plan/pose/routing feedback returns to the model. No classical semantic-goal
+selection, privileged target or semantic_hits. Not full MapGPT replication: source
+uses a supplied discrete graph. Keep C5/SUPER and the corrected sensor unchanged.
+Implement and verify offline before a bounded flight; no flight is scheduled.
+
 ## Latest: drone_control graph audit and comparison specified — D-100 (2026-09-12)
 
 Read `docs/research/drone_control_graph_comparison_20260912/REPORT.md` before the

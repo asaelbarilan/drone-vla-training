@@ -2163,3 +2163,15 @@ SOURCE_AUDIT.json (source hashes and checked line ranges), plus the existing val
 build typed candidate snapshots, stable identity and an observation-derived map
 adapter; display candidates and route evidence in the debugger before model trials.
 No code changes in drone_control or either runtime, no new model calls or flights.
+
+
+## D-101 — VLM-authored adaptive planning (2026-09-12)
+
+Status: source selection specified; implementation and flight validation pending.
+Supersedes D-100 next implementation direction, not its source audit.
+Rationale: user requires the VLM to author intermediate navigation goals and order.
+Select MapGPT adaptive-plan carryover with existing SPF image-point/travel mapping;
+retain shared execution, name the hybrid explicitly and record all deviations.
+Evidence: docs/research/vlm_authored_planning_20260912/REPORT.md, evidence.json and
+search_log.md; 24 prior plus 3 new primary methods, official planning code inspected.
+No autonomous performance claim.

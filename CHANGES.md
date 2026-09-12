@@ -1,5 +1,16 @@
 # Build log
 
+## 2026-09-12 — D-101 VLM-authored planning research and implementation specification
+
+User corrected D-100: the VLM should own planning and propose intermediate goals.
+Extended the validated 24-work review to 27 with MapGPT, FineCog-Nav and WMNav;
+inspected official planning code and documented supplied-graph/sensor/cost limits.
+Selected a separately named adaptive-plan plus SPF waypoint adaptation, not a
+full paper reproduction. Specification records model authority, persistent goals,
+feedback, debugger evidence and offline falsification tests. No runtime code or
+model calls changed in this documentation checkpoint. D-100 source audit remains
+valid; its proposed next implementation direction is superseded by D-101.
+
 ## 2026-09-12 — D-100 drone_control graph audit and comparison design
 
 User approved examining drone_control. Read the clean source checkout 070f2da

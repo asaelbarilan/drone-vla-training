@@ -10,7 +10,15 @@ becomes a decision with evidence.
 
 ---
 
-## D-100: build an inspectable shared graph-candidate interface
+## D-101: implement and verify VLM-authored planning
+
+Follow `docs/research/vlm_authored_planning_20260912/REPORT.md`: typed persistent
+plan, model-generated points, measured feedback, stable retained world goals,
+exact request/response capture and offline authority/geometry tests. No flight
+scheduled. A later matched SPF action-interface control is required before an
+isolated planning-effect claim.
+
+## D-100: deferred graph-candidate direction (superseded by D-101)
 
 Source audit and matched comparison are defined in
 `docs/research/drone_control_graph_comparison_20260912/REPORT.md`.
