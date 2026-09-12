@@ -2277,3 +2277,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Added headless Edge checks of real screen flights, task status, camera rendering and playback, with saved screenshots.
 
 - Added a linked capability matrix and generated report with prominent privileged-input, C1 text-interface, C5 profile and unmatched-latency limitations.
+
+- Visual review of C5 visible_target shows closest approach about 0.33 m followed by departure, without stop. Added timeline inspection evidence; task failure must not be equated with inability to reach the goal. No repair or extra flight.
