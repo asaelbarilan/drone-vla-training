@@ -2275,3 +2275,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Added inference-free replay exporter with separate C0/C1/C5 dashboard pages and complete per-run metrics/provenance.
 
 - Added headless Edge checks of real screen flights, task status, camera rendering and playback, with saved screenshots.
+
+- Added a linked capability matrix and generated report with prominent privileged-input, C1 text-interface, C5 profile and unmatched-latency limitations.
