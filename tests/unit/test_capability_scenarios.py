@@ -211,6 +211,28 @@ def test_runtime_uses_task_gate_instead_of_distance(complete, distance, expected
         status=state,
         sim_duration_ns=0,
         arch=runner.arch,
-        inference=None, feature_cache=runner.feature_cache, reached_goal_t_ns=None,
+        inference=None,
+        feature_cache=runner.feature_cache,
+        reached_goal_t_ns=None,
     )
     assert metrics["correct_terminal_stop"] == float(expected)
+
+
+@pytest.mark.parametrize("position", [(0, 0, 0.3), (0, 0, 8), (46, 0, 3)])
+def test_declared_altitude_and_fence_are_evaluator_enforced(position):
+    async def check():
+        env, mission = make_env("closing_passage")
+        # Same mission constraints as the normal orchestrator construction.
+        from uavlab.contracts.mission import MissionConstraints
+
+        config = load_environment("capability_closing_passage")
+        mission = mission.model_copy(
+            update={"constraints": MissionConstraints.model_validate(config.params["constraints"])}
+        )
+        await env.reset(mission, 1061)
+        env.vehicle.position = np.array(position, dtype=float)
+        await step(env)
+        assert env.status().out_of_bounds
+        assert not env.status().task_complete
+
+    asyncio.run(check())

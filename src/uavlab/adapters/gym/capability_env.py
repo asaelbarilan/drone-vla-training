@@ -80,6 +80,7 @@ class CapabilityEnv(DeterministicEnv):
 
     async def reset(self, mission: MissionSpec, seed: int) -> ObservationPacket:
         await super().reset(mission, seed)
+        self._mission_constraints = mission.constraints
         self.vehicle.position = point(0)
         self.vehicle.velocity[:] = 0
         self.vehicle.yaw = 0.0
@@ -199,6 +200,13 @@ class CapabilityEnv(DeterministicEnv):
         dt = ns_to_s(dt_ns)
         t = ns_to_s(self._t_ns)
         p = self.vehicle.position
+        limits = self._mission_constraints
+        if (
+            p[2] < limits.min_altitude_m
+            or p[2] > limits.max_altitude_m
+            or np.linalg.norm(p[:2] - self._start[:2]) > limits.geofence_radius_m
+        ):
+            self._out_of_bounds = True
         if self.scenario == "follow_target":
             self.goal = point(8 + 0.7 * t)
             self.landmarks[0].position = self.goal.copy()

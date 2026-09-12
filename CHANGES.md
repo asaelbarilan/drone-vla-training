@@ -1,3 +1,11 @@
+## 2026-09-12 — D-103: enforce declared scenario altitude and fence
+
+Review found the base simulator's world bounds are wider than the task limits.
+New capability scenarios now also mark actual altitude/geofence violations in
+private evaluation, so bypassing a recovery wall above the instructed 7 m cannot
+pass even if a policy omits its safety filter. Dynamics and legacy scenarios are
+unchanged. Three focused boundary negative controls added.
+
 ## 2026-09-12 — D-103: eight capability scenarios and task-aware evaluation
 
 User authorized the first scenario in each of the eight task categories. Add an
