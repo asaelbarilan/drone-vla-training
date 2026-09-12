@@ -1,0 +1,7 @@
+_base_: capability_known_goal.yaml
+id: capability_overturned_vehicle
+task_family: state_reasoning
+instruction: Find the overturned vehicle among the two vehicles. Hover above it at
+  3.2 metres altitude and stop within 2 metres of that hover point.
+params:
+  scenario: overturned_vehicle

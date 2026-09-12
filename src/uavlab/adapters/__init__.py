@@ -16,6 +16,7 @@ from __future__ import annotations
 import importlib
 
 from uavlab.adapters.dataset_replay import replay as _scene_replay
+from uavlab.adapters.gym import capability_env as _capability_env
 from uavlab.adapters.gym import deterministic_env as _deterministic_env
 
 OPTIONAL_ADAPTERS: dict[str, str] = {
@@ -35,4 +36,10 @@ def load_adapter(name: str) -> None:
     importlib.import_module(module)
 
 
-__all__ = ["OPTIONAL_ADAPTERS", "_deterministic_env", "_scene_replay", "load_adapter"]
+__all__ = [
+    "OPTIONAL_ADAPTERS",
+    "_capability_env",
+    "_deterministic_env",
+    "_scene_replay",
+    "load_adapter",
+]

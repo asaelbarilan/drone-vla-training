@@ -2198,3 +2198,17 @@ admission disagreement plus model non-adaptation, not a VLM-only failure or proo
 physical success with a relaxed gate. Evidence: reports/adaptive_plan_flights_20260912/
 REPORT.md, DECISION_AUDIT.json, REJECTION_PROBE.json and dashboard captures. No runtime
 fix or second full flight; no general planning-performance conclusion.
+
+
+### D-103 — Eight capability scenarios in the shared local simulator
+**When.** 2026-09-12.
+**Decision.** Implement first agreed scenario in each of the eight regimes from
+`general_single_uav_autonomy_benchmark_design.pdf`; research framing follows
+`C:/Users/Asael/Documents/רחפנים סקירות/מסמכי דיזיין/ASP-UAV_Final_Research_Design.pdf`.
+Nine refers to experimental architecture conditions, eight to capability regimes.
+New adapter shares grid dynamics and corrected depth. Evaluator-only task gate
+handles ordered visits, branch choice, and sustained tracking; old scoring remains
+unchanged when the gate is absent. No answer-bearing semantic detections for new tasks.
+**Rationale.** Capability coverage needs distinct measurable tasks, not eight renamed
+point-goal missions. No model changes or inference are needed to validate scenarios.
+**Status.** Implementation in progress; evidence to follow.

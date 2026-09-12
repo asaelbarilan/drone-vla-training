@@ -1,0 +1,8 @@
+_base_: capability_known_goal.yaml
+id: capability_closing_passage
+task_family: failure_recovery
+instruction: Fly toward the red pillar through the open passage. If the passage closes,
+  find another route around the wall. Stay below 7 metres and stop within 2 metres
+  of the pillar.
+params:
+  scenario: closing_passage

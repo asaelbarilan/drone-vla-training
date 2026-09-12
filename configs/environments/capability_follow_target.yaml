@@ -1,0 +1,10 @@
+_base_: capability_known_goal.yaml
+id: capability_follow_target
+task_family: fine_maneuver
+instruction: Follow the red moving marker, staying 4 to 6 metres away and keeping
+  it within 20 degrees of the camera centre. Acquire it in 5 seconds, then track until
+  20 seconds elapsed. Do not stop early.
+params:
+  scenario: follow_target
+  success:
+    require_terminal_stop: false

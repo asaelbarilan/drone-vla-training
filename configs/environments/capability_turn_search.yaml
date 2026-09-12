@@ -1,0 +1,7 @@
+_base_: capability_known_goal.yaml
+id: capability_turn_search
+task_family: object_search
+instruction: Find the red pillar, which may be outside the current view. Fly to it
+  and stop within 2 metres.
+params:
+  scenario: turn_search

@@ -155,11 +155,15 @@ def compute_metrics(
     )
     metrics.update(scheduler.stats())
 
+    if status.task_complete is not None:
+        metrics.update({f"task_{key}": value for key, value in status.extras.items()})
+
     # -- terminal-stop correctness ----------------------------------------
     # "Arrived" and "finished the mission" are different events, and only
     # architectures with supervision reliably turn the first into the second.
     goal_radius = status.extras.get("goal_radius_m", 2.0)
     within_goal = status.distance_to_goal_m <= goal_radius
+    within_goal = within_goal if status.task_complete is None else status.task_complete
     stopped = router.stop_requested
     metrics["agent_stopped"] = 1.0 if stopped else 0.0
     metrics["correct_terminal_stop"] = 1.0 if (stopped and within_goal) else 0.0

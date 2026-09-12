@@ -1,3 +1,19 @@
+## 2026-09-12 — D-103: eight capability scenarios and task-aware evaluation
+
+User authorized the first scenario in each of the eight task categories. Add an
+opt-in adapter with shared grid dynamics/RGB-D, private objective scoring, and
+no semantic-hit answers. Preserve old environments and policies. No model calls,
+VLA training, gate repair, or held-out evaluation in this task.
+
+Implemented eight capability_* YAML environments; optional colors express physical
+object appearance independently of evaluator target identity. Overturned vehicles
+use the same parts/colors, with wheels above versus below. Only RGB-D/odometry/range
+reach policies. Added task_complete evaluator gate; legacy None retains old scoring.
+Ordered visits require red before blue; conditional route has seed-controlled blockage;
+recovery closes at 3 s; following scores 4-6 m / 20 degrees in the fixed 5-20 s window.
+19 focused positive/negative tests pass. Eight continuous scripted physical fixtures
+pass with zero collisions (geometry validation only). Dashboard evidence follows.
+
 # Build log
 
 ## 2026-09-12 — D-102 flight completed; dashboard and boundary diagnosis saved

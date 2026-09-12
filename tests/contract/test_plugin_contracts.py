@@ -58,7 +58,7 @@ MISSION = MissionSpec(
     allowed_skills=("goto", "hover", "scan", "stop", "back_off", "ascend", "move", "approach"),
 )
 
-ENVIRONMENT_ADAPTERS = ["grid3d"]
+ENVIRONMENT_ADAPTERS = ["grid3d", "capability_grid3d"]
 """Adapters that need no external simulator. Live ones are covered separately."""
 
 

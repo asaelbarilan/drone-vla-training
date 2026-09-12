@@ -1,0 +1,9 @@
+_base_: capability_known_goal.yaml
+id: capability_ordered_visit
+task_family: multi_stage
+instruction: Visit the red pillar first, staying within 2 metres for at least half
+  a second, then visit the blue pillar and stop within 2 metres.
+params:
+  scenario: ordered_visit
+  success:
+    required_subgoals: 1

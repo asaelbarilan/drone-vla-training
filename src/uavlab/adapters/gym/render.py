@@ -118,8 +118,10 @@ def render_frame(
             pts = pixels[keep]
             hull = _convex_hull([(float(x), float(y)) for x, y in pts])
             if len(hull) >= 3:
-                draw.polygon(hull, fill=_shade(OBSTACLE_BASE, distance),
-                             outline=_shade((70, 70, 76), distance))
+                draw.polygon(
+                    hull, fill=_shade(getattr(item, "color", None) or OBSTACLE_BASE, distance),
+                    outline=_shade((70, 70, 76), distance),
+                )
         else:
             centre = np.array([item.position])
             pixels, depth = cam.project(centre, position, yaw)
@@ -131,6 +133,7 @@ def render_frame(
                 colour = LURE_COLOR if getattr(item, "is_lure", False) else TARGET_COLOR
             else:
                 colour = DISTRACTOR_COLOR
+            colour = getattr(item, "color", None) or colour
             # A tower, not a dot: gives the model a shape with vertical extent.
             draw.rectangle(
                 [u - radius * 0.55, v - radius * 2.2, u + radius * 0.55, v + radius * 0.9],

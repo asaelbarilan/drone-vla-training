@@ -1,0 +1,8 @@
+_base_: capability_known_goal.yaml
+id: capability_conditional_gate
+task_family: conditional_task
+instruction: At the wall ahead, use the left opening if it is clear; if the left opening
+  is blocked, use the right opening. Stay below 7 metres. Then fly to the red pillar
+  and stop within 2 metres.
+params:
+  scenario: conditional_gate

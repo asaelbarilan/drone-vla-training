@@ -21,6 +21,8 @@ class EnvironmentStatus(StrictModel):
     goal_visible: bool = False
     subgoals_completed: int = 0
     subgoals_total: int = 0
+    task_complete: bool | None = None
+    """Evaluator-only task gate. None preserves legacy point-goal scoring."""
 
     collided: bool = False
     collision_count: int = 0

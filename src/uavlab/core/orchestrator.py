@@ -721,7 +721,9 @@ class Orchestrator:
         if self.router.stop_requested:
             self._finish(TerminationReason.AGENT_STOPPED, self.router.stop_reason)
             return True
-        if within and not criteria.require_terminal_stop:
+        if (
+            within if status.task_complete is None else status.task_complete
+        ) and not criteria.require_terminal_stop:
             self._finish(TerminationReason.GOAL_REACHED, "goal radius reached")
             return True
         if now >= self.max_sim_ns:
@@ -742,7 +744,7 @@ class Orchestrator:
         if status.subgoals_total and status.subgoals_completed < criteria.required_subgoals:
             return False
         within = status.distance_to_goal_m <= criteria.goal_radius_m
-        if not within:
+        if not (within if status.task_complete is None else status.task_complete):
             return False
         if criteria.require_terminal_stop:
             return self._termination in (

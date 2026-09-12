@@ -1,0 +1,6 @@
+_base_: capability_known_goal.yaml
+id: capability_visible_target
+task_family: semantic_goal_nav
+instruction: Fly to the red pillar and stop within 2 metres.
+params:
+  scenario: visible_target

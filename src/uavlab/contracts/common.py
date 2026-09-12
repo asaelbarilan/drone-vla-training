@@ -79,11 +79,16 @@ class Vec3(StrictModel):
 class TaskFamily(str, Enum):
     """Benchmark regimes.
 
-    These are the five regimes the evaluation protocol requires; they exist so
+    Includes legacy regimes and the D-103 capability suite; these exist so
     that results are always reported per-regime rather than pooled into a
     single leaderboard number.
     """
 
+    KNOWN_GOAL_NAV = "known_goal_nav"
+    SEMANTIC_GOAL_NAV = "semantic_goal_nav"
+    STATE_REASONING = "state_reasoning"
+    CONDITIONAL_TASK = "conditional_task"
+    MULTI_STAGE = "multi_stage"
     LONG_HORIZON_NAV = "long_horizon_nav"
     OBJECT_SEARCH = "object_search"
     FAILURE_RECOVERY = "failure_recovery"

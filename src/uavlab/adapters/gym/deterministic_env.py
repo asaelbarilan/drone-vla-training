@@ -54,6 +54,7 @@ class Obstacle:
     center: np.ndarray
     half: np.ndarray
     label: str = "obstacle"
+    color: tuple[int, int, int] | None = None
 
     def distance(self, p: np.ndarray) -> float:
         delta = np.abs(p - self.center) - self.half
@@ -74,6 +75,7 @@ class Landmark:
     label: str
     is_target: bool = False
     is_lure: bool = False
+    color: tuple[int, int, int] | None = None
 
 
 @dataclass(slots=True)
