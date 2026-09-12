@@ -1,0 +1,170 @@
+{
+  "source_root": "C:\\Users\\Asael\\PycharmProjects\\drone_control",
+  "source_commit": "070f2dab42949de034d9546c4f79356d9e746ee5",
+  "source_tracked_status": "",
+  "scope": "Read-only current-code audit, not replay or performance verification. No source project code imported or executed.",
+  "model_calls": 0,
+  "new_flights": 0,
+  "files": [
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\graph_search.py",
+      "sha256": "e68768b44926ff687f9d0e40bb53cb3cad4e2fe2e49878f768ba74087e492885",
+      "line_ranges": [
+        [
+          7,
+          14
+        ],
+        [
+          55,
+          86
+        ],
+        [
+          143,
+          190
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\viewpoint_graph.py",
+      "sha256": "3be7c9df6cd68aa1a87fec4cec5a835dcf0f1374b4f3268f51debb692e3061d4",
+      "line_ranges": [
+        [
+          67,
+          122
+        ],
+        [
+          293,
+          369
+        ],
+        [
+          449,
+          502
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\frontier_search.py",
+      "sha256": "8eb8347cc357bf4e5e6d5bc7cea8f48a458bb96ca3556c497d86c8d3249cfd2b",
+      "line_ranges": [
+        [
+          40,
+          61
+        ],
+        [
+          305,
+          341
+        ],
+        [
+          467,
+          516
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\mission_planner.py",
+      "sha256": "2fbd2aaa551be1db3c73a60d8a0173f0ccbb40fc9ec2d2c0dfc0aa8925f7d4fb",
+      "line_ranges": [
+        [
+          243,
+          279
+        ],
+        [
+          293,
+          315
+        ],
+        [
+          473,
+          495
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\pilot.py",
+      "sha256": "2d05286736985cc716d67c123e89db9e23c070b0acbf7f678ebf5cb782044e82",
+      "line_ranges": [
+        [
+          1353,
+          1359
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\hybrid_agent.py",
+      "sha256": "51be79964d0e345a84f8a967450483ded15b74a49ca9a610abde42c64215b85f",
+      "line_ranges": [
+        [
+          24,
+          67
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\agent\\hierarchical_agent.py",
+      "sha256": "54d9b26adcb0723d00cde1fdf75251b7aabdb1edbff938c47615f59a09f5195c",
+      "line_ranges": [
+        [
+          4088,
+          4136
+        ],
+        [
+          4138,
+          4219
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\agent\\ollama_waypointer.py",
+      "sha256": "8fd32d490ccd788aca0147a654c3eee2d633d9b9fb8b440ab8efa367155906f9",
+      "line_ranges": [
+        [
+          1335,
+          1392
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\agent\\hypothesis_search.py",
+      "sha256": "c5ed50ce36c1bfba68dc56627aaf5cd626bbd23a2a42f871ac2ed7297bdb4516",
+      "line_ranges": [
+        [
+          1,
+          35
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\src\\vla_lite\\mapping.py",
+      "sha256": "ed4a7eddb908d72a64122eec523abb37ae49d3ba2a9ff44832d0d6dce1f8c2b5",
+      "line_ranges": [
+        [
+          270,
+          335
+        ],
+        [
+          568,
+          600
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\configs\\hybrid_agent_profiles.json",
+      "sha256": "2199ba525526c3bad8599aa84ed76eb56d8e238f7b9d584c283720c3160f934e",
+      "line_ranges": [
+        [
+          184,
+          205
+        ]
+      ]
+    },
+    {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_control\\tests\\test_frontier_menu.py",
+      "sha256": "8d706b2d230696cfbfb441be91e62f0bf374e2d852fd0d5317951fe24978f9ca",
+      "line_ranges": [
+        [
+          1,
+          25
+        ]
+      ]
+    }
+  ]
+}

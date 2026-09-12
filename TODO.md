@@ -10,6 +10,18 @@ becomes a decision with evidence.
 
 ---
 
+## D-100: build an inspectable shared graph-candidate interface
+
+Source audit and matched comparison are defined in
+`docs/research/drone_control_graph_comparison_20260912/REPORT.md`.
+First implement typed candidate snapshots with stable IDs and an observation-derived
+map adapter, then display candidates, viewing directions, route evidence and
+visited/failed state in the flight debugger using saved observations. Validate the
+geometry/identity contracts offline before adding Gemma selection. Shared target
+grounding is a separate unresolved preflight gate. Preserve the current C5 and SUPER;
+no additional flights or inference sweep is scheduled. A later graph/classical versus
+graph/Gemma comparison changes only the selector, with latency cost reported.
+
 ## D-95: inspect the planner's geometry at the tested passage
 
 The manual physical probe is complete: the opening can be crossed from the

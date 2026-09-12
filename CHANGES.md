@@ -1,5 +1,21 @@
 # Build log
 
+## 2026-09-12 — D-100 drone_control graph audit and comparison design
+
+User approved examining drone_control. Read the clean source checkout 070f2da
+without modifying it or connecting to AirSim. Verified that the older graph-search
+path selects viewpoints classically, with a mission-level LLM/heuristic planner.
+Found a separate VLM region-menu implementation; its frontier extension defaults
+off and reassigns frontier IDs per call. Recorded these as distinct paths, not one
+proven LLM graph planner; historical success comments were not rescored.
+Saved source hashes, line references, reuse boundaries and a matched classical-
+versus-Gemma graph-selector design. Stable candidate identity, known-free route
+support, explicit viewing yaw and shared image-grounding are preflight requirements.
+Keep SUPER, task and C5 frozen. Next build and visually inspect the offline candidate
+interface before model decisions or flights. Documentation only; no runtime changes,
+model calls, tests of flight performance or additional simulations.
+
+
 ## 2026-09-12 — D-99 both additional flights saved and replayed
 
 Seed 1062 timed out at 90 s: closest 21.22 m, final 37.46 m, zero collisions.

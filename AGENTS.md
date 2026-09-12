@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: drone_control graph audit and comparison specified — D-100 (2026-09-12)
+
+Read `docs/research/drone_control_graph_comparison_20260912/REPORT.md` before the
+next architecture implementation. User authorized inspecting drone_control and
+defining a comparison, now complete. The older graph path chooses nodes classically;
+a separate VLM region menu has optional frontiers OFF by default and unstable IDs.
+Do not conflate them or claim their historical success is a matched planning result.
+Proposed primary contrast: identical graph/candidates/perception/execution, classical
+versus Gemma selector. C5 remains frozen end-to-end context. Next implementation unit:
+typed candidate snapshots, stable IDs and a sensor-derived map adapter, displayed in
+the debugger and checked offline. Shared target grounding remains an explicit open
+gate. Keep SUPER and task fixed, no semantic_hits/truth shortcut, no source arena
+constants or full AirSim stack transplant. Design only: no runtime changes, model
+calls or flights in this audit; no new flight scheduled. Source hashes and ranges
+recorded; drone_control was read-only.
+
 ## Latest: two additional corrected-depth flights completed — D-99 (2026-09-12)
 
 User authorized exactly two more flights. Seeds 1060 and 1062 both timed out

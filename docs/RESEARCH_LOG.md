@@ -2130,3 +2130,36 @@ Evidence: reports/depth_renderer_two_runs_20260912/REPORT.md. Comparison page
 now includes the two new flights, prior corrected 1061 and historical legacy
 1061. Keep depth repair; inspect source-aligned departure decisions next. No
 further flight or inference scheduled. Status: requested two-run screen complete.
+
+
+### D-100 — Audit drone_control and specify a graph-selector comparison
+**Decision.** User authorized examining drone_control's frontier/viewpoint system
+and defining the next comparison. Preserve C5 as end-to-end context; propose two
+named graph variants with identical candidate generation, grounding, memory and
+execution, differing in classical versus local Gemma candidate selection. This is
+a design decision, not a runtime implementation or authorization for more flights.
+**Rationale.** D-99's 0/3 corrected-depth outcomes do not isolate planning quality.
+A shared discrete, executable candidate interface permits matched choice diagnostics
+and exposes which decisions the model actually owns. Reuse the existing source
+mechanisms before inventing another full stack.
+**Source findings (verified by inspection, not flight).** At drone_control commit
+070f2da, frontier_graph_yolo's GraphSearchSession calls classical ViewpointGraph
+selection; the mission planner can call an LLM at the mission level, but recognized
+instructions can return heuristic plans before inference. Separately, HierarchicalAgent
+supports VLM region-ID selection and an optional frontier menu, default OFF. Frontier
+IDs are re-enumerated per menu and reachability exceptions fail open. The graph
+and the VLM-menu paths must not be presented as one proven LLM graph planner.
+**Comparison contract.** Shared observation-derived geometry, stable candidate IDs,
+source/map revisions, viewing yaw, visited/failed state, target evidence and goal
+commitment. Keep task, dynamics, SUPER and stopping criteria. Geometry and shared
+image-derived grounding are offline gates before flights; no adapter semantic_hits,
+privileged goals/maps, source arena biases or source motion constants. The two graph
+arms isolate selector choice; graph versus C5 changes multiple architecture components.
+A classical selector with shared VLM perception is not an entirely model-free system.
+**Evidence.** docs/research/drone_control_graph_comparison_20260912/REPORT.md and
+SOURCE_AUDIT.json (source hashes and checked line ranges), plus the existing validated
+24-primary-work D-85 review. No new external implementation-availability claims.
+**Status.** Audit and design complete; implementation/navigation unverified. Next
+build typed candidate snapshots, stable identity and an observation-derived map
+adapter; display candidates and route evidence in the debugger before model trials.
+No code changes in drone_control or either runtime, no new model calls or flights.
