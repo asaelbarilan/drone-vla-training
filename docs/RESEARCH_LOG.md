@@ -2218,3 +2218,19 @@ Dynamic dashboard playback and exact task-score replay are verified. Full eviden
 and validation counts: `reports/capability_scenarios_20260912/REPORT.md`.
 **Status.** Implemented and mechanically validated; real-model capability untested.
 No changes to existing model policies or D-102 gate behavior.
+
+
+## D-104 - First capability screen (2026-09-12, in progress)
+
+User authorized the existing three architectures on the eight D-103 scenarios.
+Bound: one episode per cell, development seed 1061, 60 simulated seconds maximum,
+no tuning/retry sweep, no cloud calls. Save all outcomes and full debug evidence.
+C0 remains unchanged and goal-seeking: it is not an oracle task sequencer or follower.
+C5 uses existing c5_gemma_ground_monitor_dev, with camera pitch calibrated from
+-0.15 to -0.10 rad and no red-tower-specific color guard. This is an explicitly
+named profile, not an unchanged guarded-monitor replication. Gemma digest is pinned.
+C1 currently accepts text detections only; new scenarios withhold semantic hits.
+User input on retaining that contract versus adding visual perception is pending.
+No C1 interface change is made here. Do not compare unsupported inputs as model failures.
+Rationale: measure current cross-task behavior before architecture redesign.
+Evidence: scripts/run_capability_screen.py; reports/capability_screen_20260912 (pending).

@@ -1,0 +1,12 @@
+# D-104: existing generic current-frame OnFly monitor, calibrated capability camera.
+_base_: c5_gemma_ground_monitor_dev.yaml
+id: c5_capability_gemma_dev
+profile_of: c5
+name: "C5 OnFly capability screen (Gemma)"
+policy:
+  params:
+    camera_pitch_rad: -0.10
+monitor:
+  params:
+    camera_pitch_rad: -0.10
+    semantic_color_guard: false
