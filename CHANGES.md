@@ -8,6 +8,8 @@ Bounded follow-up: at most one integration recheck and one further flight after 
 concrete finding. Compare against the saved corrected C5 flight; preserve sensors,
 shared execution and Gemma. No cloud calls or model sweeps. See
 reports/adaptive_plan_flights_20260912/PLAN.md.
+Preflight harness initially passed the adapter spec instead of its name; corrected
+before any inference occurred. Runtime policy and flight configuration unchanged.
 
 ## 2026-09-12 — D-101 VLM-authored plan implemented and verified offline
 

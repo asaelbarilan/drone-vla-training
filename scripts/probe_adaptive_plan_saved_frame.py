@@ -38,7 +38,7 @@ async def main():
         success=SuccessCriteria.model_validate(cfg.params.get("success", {})),
         constraints=MissionConstraints.model_validate(cfg.params.get("constraints", {})),
     )
-    env = REGISTRY.build("environment", cfg.adapter, cfg.params)
+    env = REGISTRY.build("environment", cfg.adapter.name, {**cfg.params, **cfg.adapter.params})
     obs = await env.reset(mission, 1061)
     saved = Path("runs/c5_depth_ray_v2_20260912_s1061/debug/images/call-000001-0.png")
     image = Image.open(saved).convert("RGB")
