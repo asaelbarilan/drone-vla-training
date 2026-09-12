@@ -1,0 +1,2710 @@
+{
+  "errors": [],
+  "snapshots": 24,
+  "playback_checks": 8,
+  "checks": [
+    {
+      "name": "capability_screen_c0_closing_passage_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              14,
+              -8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              14,
+              8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              24,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          24,
+          0,
+          3
+        ],
+        "scenario": "closing_passage",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 24,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 0,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 2,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_closing_passage_20260912_s1061",
+      "t": 10,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              14,
+              -8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              14,
+              8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              14,
+              0,
+              4
+            ],
+            "half": [
+              0.6,
+              5,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              24,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          24,
+          0,
+          3
+        ],
+        "scenario": "closing_passage",
+        "vehicles": [],
+        "task_events": [
+          {
+            "t": 3,
+            "kind": "passage_closed"
+          }
+        ],
+        "task_status": {
+          "t_sim_ns": 10000000000,
+          "position": {
+            "x": 10.951855091824543,
+            "y": -10.415871354959819,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 16.695641995078166,
+          "goal_visible": false,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 2.448144908175457,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 17.97895122538546,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8628735733966353,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 3,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 1,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_closing_passage_20260912_s1061",
+      "t": 21.55,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              14,
+              -8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              14,
+              8,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              14,
+              0,
+              4
+            ],
+            "half": [
+              0.6,
+              5,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              24,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          24,
+          0,
+          3
+        ],
+        "scenario": "closing_passage",
+        "vehicles": [],
+        "task_events": [
+          {
+            "t": 3,
+            "kind": "passage_closed"
+          }
+        ],
+        "task_status": {
+          "t_sim_ns": 21550000000,
+          "position": {
+            "x": 23.34973522258469,
+            "y": -1.4440173206871119,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.5836761989723045,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 1.9866100759342584,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 38.375556844777144,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8835369756778324,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 3,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 1,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_conditional_gate_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              8,
+              -12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              0,
+              4
+            ],
+            "half": [
+              0.6,
+              2,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              5,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              16,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          0,
+          3
+        ],
+        "scenario": "conditional_gate",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 16,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 0,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 4,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_conditional_gate_20260912_s1061",
+      "t": 9.55,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              8,
+              -12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              0,
+              4
+            ],
+            "half": [
+              0.6,
+              2,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              5,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              16,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          0,
+          3
+        ],
+        "scenario": "conditional_gate",
+        "vehicles": [],
+        "task_events": [
+          {
+            "t": 5.4,
+            "kind": "gate_crossed",
+            "correct": true
+          }
+        ],
+        "task_status": {
+          "t_sim_ns": 9550000000,
+          "position": {
+            "x": 14.575200547746396,
+            "y": -0.823233382446458,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.6455293012026266,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 2.1344120542874534,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 16.873947786369868,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8961957368661484,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 4,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 1,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_conditional_gate_20260912_s1061",
+      "t": 9.55,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              8,
+              -12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              0,
+              4
+            ],
+            "half": [
+              0.6,
+              2,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              12,
+              4
+            ],
+            "half": [
+              0.6,
+              4,
+              4
+            ],
+            "color": null
+          },
+          {
+            "center": [
+              8,
+              5,
+              4
+            ],
+            "half": [
+              0.6,
+              3,
+              4
+            ],
+            "color": null
+          }
+        ],
+        "landmarks": [
+          {
+            "position": [
+              16,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          0,
+          3
+        ],
+        "scenario": "conditional_gate",
+        "vehicles": [],
+        "task_events": [
+          {
+            "t": 5.4,
+            "kind": "gate_crossed",
+            "correct": true
+          }
+        ],
+        "task_status": {
+          "t_sim_ns": 9550000000,
+          "position": {
+            "x": 14.575200547746396,
+            "y": -0.823233382446458,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.6455293012026266,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 2.1344120542874534,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 16.873947786369868,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8961957368661484,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 4,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 1,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_follow_target_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              8,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          8,
+          0,
+          3
+        ],
+        "scenario": "follow_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 8,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 0,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_follow_target_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12.059999999999999,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12.059999999999999,
+          0,
+          3
+        ],
+        "scenario": "follow_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.37958857069286,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.6804114293071386,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.37958857069286,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8708904990184065,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0.7999999999999998,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_follow_target_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12.059999999999999,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12.059999999999999,
+          0,
+          3
+        ],
+        "scenario": "follow_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.37958857069286,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.6804114293071386,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.37958857069286,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8708904990184065,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0.7999999999999998,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_known_goal_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "known_goal",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 12,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 12,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_known_goal_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "known_goal",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.435016660540807,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.564983339459193,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.435016660540807,
+          "shortest_path_m": 12,
+          "speed_mps": 1.8863938053241345,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_known_goal_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "known_goal",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.435016660540807,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.564983339459193,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.435016660540807,
+          "shortest_path_m": 12,
+          "speed_mps": 1.8863938053241345,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_ordered_visit_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              8,
+              4,
+              3
+            ],
+            "label": "red pillar",
+            "target": false,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          },
+          {
+            "position": [
+              16,
+              -4,
+              3
+            ],
+            "label": "blue pillar",
+            "target": true,
+            "color": [
+              40,
+              85,
+              220
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          -4,
+          3
+        ],
+        "scenario": "ordered_visit",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 16.492422502470642,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 1,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 0,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 2,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_ordered_visit_20260912_s1061",
+      "t": 8.55,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              8,
+              4,
+              3
+            ],
+            "label": "red pillar",
+            "target": false,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          },
+          {
+            "position": [
+              16,
+              -4,
+              3
+            ],
+            "label": "blue pillar",
+            "target": true,
+            "color": [
+              40,
+              85,
+              220
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          -4,
+          3
+        ],
+        "scenario": "ordered_visit",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 8550000000,
+          "position": {
+            "x": 14.459128983510244,
+            "y": -3.6142866985857136,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.5884137497346476,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 1,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 15.105275288398538,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8963121786032255,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 2,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_ordered_visit_20260912_s1061",
+      "t": 8.55,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              8,
+              4,
+              3
+            ],
+            "label": "red pillar",
+            "target": false,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          },
+          {
+            "position": [
+              16,
+              -4,
+              3
+            ],
+            "label": "blue pillar",
+            "target": true,
+            "color": [
+              40,
+              85,
+              220
+            ]
+          }
+        ],
+        "goal": [
+          16,
+          -4,
+          3
+        ],
+        "scenario": "ordered_visit",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 8550000000,
+          "position": {
+            "x": 14.459128983510244,
+            "y": -3.6142866985857136,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.5884137497346476,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 1,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 15.105275288398538,
+          "shortest_path_m": 0,
+          "speed_mps": 1.8963121786032255,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 2,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 0
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_overturned_vehicle_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              12,
+              -4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              -4,
+              1.45
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.35
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          }
+        ],
+        "landmarks": [],
+        "goal": [
+          12,
+          4,
+          3.2
+        ],
+        "scenario": "overturned_vehicle",
+        "vehicles": [
+          {
+            "position": [
+              12,
+              -4,
+              0.9
+            ],
+            "inverted": false
+          },
+          {
+            "position": [
+              12,
+              4,
+              0.9
+            ],
+            "inverted": true
+          }
+        ],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 12.650691680694775,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 12.650691680694775,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 0,
+            "obstacles": 12,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_overturned_vehicle_20260912_s1061",
+      "t": 6.3,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              12,
+              -4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              -4,
+              1.45
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.35
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          }
+        ],
+        "landmarks": [],
+        "goal": [
+          12,
+          4,
+          3.2
+        ],
+        "scenario": "overturned_vehicle",
+        "vehicles": [
+          {
+            "position": [
+              12,
+              -4,
+              0.9
+            ],
+            "inverted": false
+          },
+          {
+            "position": [
+              12,
+              4,
+              0.9
+            ],
+            "inverted": true
+          }
+        ],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 6300000000,
+          "position": {
+            "x": 10.512138817302015,
+            "y": 3.587725332306041,
+            "z": 3.093862612353216,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.5475679131004543,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 1.4529253161977338,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 11.258437587606213,
+          "shortest_path_m": 12.650691680694775,
+          "speed_mps": 1.874546024893609,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 0,
+            "obstacles": 12,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_overturned_vehicle_20260912_s1061",
+      "t": 6.3,
+      "scene": {
+        "obstacles": [
+          {
+            "center": [
+              12,
+              -4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              -4,
+              1.45
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -4.95,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              -3.05,
+              0.3
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.9
+            ],
+            "half": [
+              1.6,
+              0.85,
+              0.3
+            ],
+            "color": [
+              180,
+              160,
+              60
+            ]
+          },
+          {
+            "center": [
+              12,
+              4,
+              0.35
+            ],
+            "half": [
+              0.8,
+              0.65,
+              0.3
+            ],
+            "color": [
+              80,
+              120,
+              160
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              10.95,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              3.05,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          },
+          {
+            "center": [
+              13.05,
+              4.95,
+              1.4
+            ],
+            "half": [
+              0.32,
+              0.22,
+              0.28
+            ],
+            "color": [
+              25,
+              25,
+              28
+            ]
+          }
+        ],
+        "landmarks": [],
+        "goal": [
+          12,
+          4,
+          3.2
+        ],
+        "scenario": "overturned_vehicle",
+        "vehicles": [
+          {
+            "position": [
+              12,
+              -4,
+              0.9
+            ],
+            "inverted": false
+          },
+          {
+            "position": [
+              12,
+              4,
+              0.9
+            ],
+            "inverted": true
+          }
+        ],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 6300000000,
+          "position": {
+            "x": 10.512138817302015,
+            "y": 3.587725332306041,
+            "z": 3.093862612353216,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.5475679131004543,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": 1.4529253161977338,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 11.258437587606213,
+          "shortest_path_m": 12.650691680694775,
+          "speed_mps": 1.874546024893609,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 0,
+            "obstacles": 12,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_turn_search_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              -8,
+              8,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          -8,
+          8,
+          3
+        ],
+        "scenario": "turn_search",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 11.313708498984761,
+          "goal_visible": false,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 11.313708498984761,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_turn_search_20260912_s1061",
+      "t": 5.55,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              -8,
+              8,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          -8,
+          8,
+          3
+        ],
+        "scenario": "turn_search",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5550000000,
+          "position": {
+            "x": -6.960588449915313,
+            "y": 6.960588449915313,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.4699499110170064,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 9.843758587967757,
+          "shortest_path_m": 11.313708498984761,
+          "speed_mps": 1.813723145291975,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_turn_search_20260912_s1061",
+      "t": 5.55,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              -8,
+              8,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          -8,
+          8,
+          3
+        ],
+        "scenario": "turn_search",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5550000000,
+          "position": {
+            "x": -6.960588449915313,
+            "y": 6.960588449915313,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.4699499110170064,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 9.843758587967757,
+          "shortest_path_m": 11.313708498984761,
+          "speed_mps": 1.813723145291975,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_visible_target_20260912_s1061",
+      "t": 0,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "visible_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 0,
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 12,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": false,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0,
+          "shortest_path_m": 12,
+          "speed_mps": 0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 0,
+            "target_ever_visible": 0,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_visible_target_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "visible_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.435016660540807,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.564983339459193,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.435016660540807,
+          "shortest_path_m": 12,
+          "speed_mps": 1.8863938053241345,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    },
+    {
+      "name": "capability_screen_c0_visible_target_20260912_s1061",
+      "t": 5.8,
+      "scene": {
+        "obstacles": [],
+        "landmarks": [
+          {
+            "position": [
+              12,
+              0,
+              3
+            ],
+            "label": "red pillar",
+            "target": true,
+            "color": [
+              206,
+              44,
+              44
+            ]
+          }
+        ],
+        "goal": [
+          12,
+          0,
+          3
+        ],
+        "scenario": "visible_target",
+        "vehicles": [],
+        "task_events": [],
+        "task_status": {
+          "t_sim_ns": 5800000000,
+          "position": {
+            "x": 10.435016660540807,
+            "y": 0,
+            "z": 3,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 1.564983339459193,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": true,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 10.435016660540807,
+          "shortest_path_m": 12,
+          "speed_mps": 1.8863938053241345,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 2,
+            "lure_dwell_s": 0,
+            "landmarks": 1,
+            "obstacles": 0,
+            "skipped_injections": 0,
+            "min_injected_block_clearance_m": -1,
+            "task_complete": 1,
+            "target_ever_visible": 1,
+            "branch_correct": 0,
+            "wrong_branch": 0,
+            "passage_closed": 0,
+            "tracking_good_s": 0,
+            "tracking_total_s": 0,
+            "tracking_fraction": 0,
+            "shortest_path_valid": 1
+          }
+        }
+      },
+      "error": ""
+    }
+  ]
+}

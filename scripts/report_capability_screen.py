@@ -49,7 +49,7 @@ async def main():
         "Latency is not matched: C1 retains 8.5 s simulated policy charge; C5 retains 1 s policy / 1.2 s monitor. Actual wall times and model requests are saved.",
         "C0 inference entries are zero-token simulator events. C1 and C5 use local gemma4:e2b only. No cloud calls or held-out seeds.",
     ]
-    report = ["# D-104 capability screen", "", *["- " + n for n in notes], "", "| Scenario | C0 | C1 | C5 |", "|---|---|---|---|"]
+    report = ["# D-104 capability screen", "", "Read [FINDINGS.md](FINDINGS.md) before interpreting the binary scores.", "", *["- " + n for n in notes], "", "| Scenario | C0 | C1 | C5 |", "|---|---|---|---|"]
     rows = []
     from uavlab.adapters.gym.capability_env import SCENARIOS
     for scenario in SCENARIOS:
@@ -68,7 +68,7 @@ async def main():
         report.append("| " + " | ".join(md) + " |")
     report.extend(["", "## Evidence", "", "Per-cell manifest.json and result.json are copied here; C0/C1/C5_SUMMARY.json contain metrics and replay hashes. Original events and exact model requests/responses remain under runs/<run>/ with debug capture. Browser checks/screenshots are under browser/. No failed flight is removed or rerun."])
     (OUT / "REPORT.md").write_text("\n".join(report) + "\n", encoding="utf-8")
-    content = "<!doctype html><meta charset='utf-8'><title>Capability screen</title><style>body{font:17px system-ui;background:#0b1420;color:#e4ecf4;max-width:1200px;margin:40px auto;padding:20px}a{color:#60d4e0}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:14px;border-bottom:1px solid #344453}li{margin:12px 0}</style><h1>Capability screen</h1><p>Seed 1061 · September 12, 2026 · click an outcome to inspect its flight</p><table><tr><th>Scenario</th><th>C0 / SUPER</th><th>C1 / AerialClaw</th><th>C5 / OnFly</th></tr>" + "".join(rows) + "</table><h2>How to read these results</h2><ul>" + "".join("<li>" + html.escape(n) + "</li>" for n in notes) + "</ul>"
+    content = "<!doctype html><meta charset='utf-8'><title>Capability screen</title><style>body{font:17px system-ui;background:#0b1420;color:#e4ecf4;max-width:1200px;margin:40px auto;padding:20px}a{color:#60d4e0}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:14px;border-bottom:1px solid #344453}li{margin:12px 0}</style><h1>Capability screen</h1><p>Seed 1061 · September 12, 2026 · click an outcome to inspect its flight</p><table><tr><th>Scenario</th><th>C0 / SUPER</th><th>C1 / AerialClaw</th><th>C5 / OnFly</th></tr>" + "".join(rows) + "</table><p><strong>Arrival is not completion:</strong> C1 reaches the instructed coordinate but its completion contract rejects done. C5 reaches 0.335 m from the visible target but continues without a monitor stop. These scores do not establish a general planning failure.</p><h2>How to read these results</h2><ul>" + "".join("<li>" + html.escape(n) + "</li>" for n in notes) + "</ul>"
     Path("reports/debugger/capability_screen.html").write_text(content, encoding="utf-8")
 
 if __name__ == "__main__":

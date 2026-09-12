@@ -2279,3 +2279,10 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Added a linked capability matrix and generated report with prominent privileged-input, C1 text-interface, C5 profile and unmatched-latency limitations.
 
 - Visual review of C5 visible_target shows closest approach about 0.33 m followed by departure, without stop. Added timeline inspection evidence; task failure must not be equated with inability to reach the goal. No repair or extra flight.
+
+## 2026-09-12 - D-104 first capability screen completed
+- Ran all 24 cells once on seed 1061: C0 6/8, C1 0/8, C5 0/8, no runtime errors or collisions. C5 records 14 constraint violations across six runs.
+- Preserved exact model input/output and all failures. Only shared local Gemma: 745 completed requests plus 15 boundary cancellations; no cloud or repeat trials.
+- C1 retains text-only inputs; its coordinate task reaches the destination but rejects done without labeled evidence, followed by a stale stop. C5 approaches visible target to 0.335 m but fails to stop. Do not equate timeouts with planning inability.
+- Exported linked matrix and all 24 flight replays. All replay checks pass; Edge verifies 72 snapshots and 24 playbacks with no errors. Added findings, call audit and selected original protocol evidence.
+- No runtime policy change, extra flight, scheduled continuation or C1 visual integration. Next diagnostic steps documented in FINDINGS.md.

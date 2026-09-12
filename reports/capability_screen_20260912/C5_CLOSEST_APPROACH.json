@@ -1,0 +1,98 @@
+[
+  {
+    "run": "capability_screen_c5_closing_passage_20260912_s1061",
+    "closest_t": 10.2,
+    "closest_distance": 12.715280852567707,
+    "position": [
+      11.459945628329393,
+      -2.0873246187679726,
+      2.7383142130244114
+    ],
+    "final_distance": 42.77314436971514,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_conditional_gate_20260912_s1061",
+    "closest_t": 15.15,
+    "closest_distance": 8.604616069237212,
+    "position": [
+      11.719057471622417,
+      -7.419940531642458,
+      2.1891786419976125
+    ],
+    "final_distance": 27.352009598637135,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_follow_target_20260912_s1061",
+    "closest_t": 33.25,
+    "closest_distance": 1.3339594694821568,
+    "position": [
+      31.276913307150945,
+      0.007988963626550789,
+      1.6660658254857412
+    ],
+    "final_distance": 7.3667096842858495,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_known_goal_20260912_s1061",
+    "closest_t": 9.15,
+    "closest_distance": 0.7309758612646037,
+    "position": [
+      11.730055356586409,
+      -4.267727841848227e-05,
+      2.3206947685889
+    ],
+    "final_distance": 30.33605241233134,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_ordered_visit_20260912_s1061",
+    "closest_t": 12.85,
+    "closest_distance": 11.527666925772401,
+    "position": [
+      8.583802448326349,
+      4.812580411141437,
+      2.525084088218866
+    ],
+    "final_distance": 37.50675166465548,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_overturned_vehicle_20260912_s1061",
+    "closest_t": 9.55,
+    "closest_distance": 4.004997288019266,
+    "position": [
+      12.00181026011184,
+      0,
+      3
+    ],
+    "final_distance": 29.0255610081718,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_turn_search_20260912_s1061",
+    "closest_t": 1,
+    "closest_distance": 11.313708498984761,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "final_distance": 48.93317530302856,
+    "stop_calls": 0
+  },
+  {
+    "run": "capability_screen_c5_visible_target_20260912_s1061",
+    "closest_t": 13.05,
+    "closest_distance": 0.33494789949039494,
+    "position": [
+      11.997911123860732,
+      0.021560900661087897,
+      2.665753295405646
+    ],
+    "final_distance": 29.683451916634944,
+    "stop_calls": 0
+  }
+]

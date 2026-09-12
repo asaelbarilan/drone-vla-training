@@ -2241,3 +2241,13 @@ no camera integration or semantic-hit restoration. Its inherited 8.5 s policy ch
 is preserved, versus C5's 1/1.2 s policy/monitor charges: this is a compatibility
 screen, not a matched-latency or pure model-quality comparison. Awaiting any user
 steering on visual integration; no new vision protocol is inferred from silence.
+
+D-104 completed: all 24 first-screen episodes ran once. C0 6/8, C1 0/8, C5 0/8.
+Evidence: reports/capability_screen_20260912/{REPORT,FINDINGS}.md, per-cell manifests/
+results, call audit, closest-approach evidence, replay checks and browser screenshots.
+745 completed Gemma requests, 15 boundary cancellations, no cloud. C0 events simulated.
+C1 coordinate arrival/done rejection and C5 0.335 m approach/no stop invalidate a
+blanket planning-failure interpretation. Six C5 cells record constraint violations;
+all runs have zero collisions. 24 exact replays and 72 browser snapshots/24 playback
+checks pass. No policy repair or repeat flight made; no running/scheduled work remains.
+Next diagnostic scope is in FINDINGS.md; C1 visual interface question remains open.

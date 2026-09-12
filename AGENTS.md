@@ -16,6 +16,22 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: 24 capability flights completed - D-104 (2026-09-12)
+
+Read `reports/capability_screen_20260912/FINDINGS.md` before quoting scores.
+One seed 1061 per scenario/architecture: C0 6/8, C1 0/8, C5 0/8. No runtime errors.
+C1 text-only Gemma profile has no visual input; known-coordinate arrival succeeds
+physically but done is rejected by exact-label completion evidence, then stop is stale.
+C5 reaches 0.335 m from visible target, then departs without monitor stop. It also
+completes red visit and correct gate crossing. Do not call all timeouts planning failures.
+Camera pitch is calibrated; C5 uses existing generic ground monitor, no color guard.
+C1/C5 latency is inherited and unmatched. Zero collisions; C5 has constraint violations.
+745 completed Gemma calls + 15 boundary cancellations; no cloud or further flights.
+All 24 replays match; 72 browser snapshots + 24 playback checks pass.
+Dashboard: `reports/debugger/capability_screen.html`. No run active or scheduled.
+Next: saved-evidence diagnosis of C1 coordinate completion and C5 arrival/stop;
+C1 visual integration remains unresolved. Keep this batch frozen; no automatic sweep.
+
 ## Latest: eight capability scenarios implemented — D-103 (2026-09-12)
 
 User authorized one first scenario in each agreed category. See

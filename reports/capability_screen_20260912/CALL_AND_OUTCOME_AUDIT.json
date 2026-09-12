@@ -1,0 +1,332 @@
+{
+  "c0": {
+    "calls_by_status": {
+      "complete": 564
+    },
+    "models": {
+      "detector": 282,
+      "oracle": 282
+    },
+    "input_image_counts": {
+      "1": 564
+    },
+    "rows": [
+      {
+        "run": "capability_screen_c0_closing_passage_20260912_s1061",
+        "success": true,
+        "path_m": 38.375556844777144,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 4.459625600007712,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_conditional_gate_20260912_s1061",
+        "success": true,
+        "path_m": 16.873947786369868,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 1.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 1.7350232999888249,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_follow_target_20260912_s1061",
+        "success": false,
+        "path_m": 10.37958857069286,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 0.5085823000117671,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_known_goal_20260912_s1061",
+        "success": true,
+        "path_m": 10.435016660540807,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 0.5542255000036675,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_ordered_visit_20260912_s1061",
+        "success": false,
+        "path_m": 15.105275288398538,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 0.9044251000013901,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_overturned_vehicle_20260912_s1061",
+        "success": true,
+        "path_m": 11.258437587606213,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 2.5049440000002505,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_turn_search_20260912_s1061",
+        "success": true,
+        "path_m": 9.843758587967757,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 0.5066618999990169,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c0_visible_target_20260912_s1061",
+        "success": true,
+        "path_m": 10.435016660540807,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 0.5239572999998927,
+        "error": null
+      }
+    ]
+  },
+  "c1": {
+    "calls_by_status": {
+      "complete": 33,
+      "cancelled": 7
+    },
+    "models": {
+      "gemma4:e2b": 40
+    },
+    "input_image_counts": {
+      "0": 40
+    },
+    "rows": [
+      {
+        "run": "capability_screen_c1_closing_passage_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 14.1338420999964,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_conditional_gate_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 16.76934600000095,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_follow_target_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 10.722486200000276,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_known_goal_20260912_s1061",
+        "success": false,
+        "path_m": 12.0363335293541,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 13.17553890000272,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_ordered_visit_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 12.227378700001282,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_overturned_vehicle_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 21.902015200001188,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_turn_search_20260912_s1061",
+        "success": false,
+        "path_m": 22.20259482987715,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 10.66101609999896,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c1_visible_target_20260912_s1061",
+        "success": false,
+        "path_m": 0.0,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 12.282469900004799,
+        "error": null
+      }
+    ]
+  },
+  "c5": {
+    "calls_by_status": {
+      "complete": 712,
+      "cancelled": 8
+    },
+    "models": {
+      "gemma4:e2b": 720
+    },
+    "input_image_counts": {
+      "1": 720
+    },
+    "rows": [
+      {
+        "run": "capability_screen_c5_closing_passage_20260912_s1061",
+        "success": false,
+        "path_m": 51.41241325202913,
+        "collisions": 0.0,
+        "violations": 3.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 45.06762359999993,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_conditional_gate_20260912_s1061",
+        "success": false,
+        "path_m": 43.53261725298111,
+        "collisions": 0.0,
+        "violations": 2.0,
+        "subgoals": 0.0,
+        "branch_correct": 1.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 46.40229100000579,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_follow_target_20260912_s1061",
+        "success": false,
+        "path_m": 42.965244202831805,
+        "collisions": 0.0,
+        "violations": 1.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 5.899999999999999,
+        "wall_s": 47.3610614999925,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_known_goal_20260912_s1061",
+        "success": false,
+        "path_m": 43.700228015908145,
+        "collisions": 0.0,
+        "violations": 3.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 52.83932349999668,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_ordered_visit_20260912_s1061",
+        "success": false,
+        "path_m": 43.04165587443882,
+        "collisions": 0.0,
+        "violations": 2.0,
+        "subgoals": 1.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 46.52913779999653,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_overturned_vehicle_20260912_s1061",
+        "success": false,
+        "path_m": 40.74938472474966,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 47.170466399998986,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_turn_search_20260912_s1061",
+        "success": false,
+        "path_m": 40.28086317822107,
+        "collisions": 0.0,
+        "violations": 0.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 42.44810749999306,
+        "error": null
+      },
+      {
+        "run": "capability_screen_c5_visible_target_20260912_s1061",
+        "success": false,
+        "path_m": 42.21247659036594,
+        "collisions": 0.0,
+        "violations": 3.0,
+        "subgoals": 0.0,
+        "branch_correct": 0.0,
+        "tracking_good_s": 0.0,
+        "wall_s": 45.684189999999944,
+        "error": null
+      }
+    ]
+  }
+}
