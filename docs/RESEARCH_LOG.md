@@ -2182,3 +2182,11 @@ Model owns plan/order/point. No runtime model calls or autonomous flight results
 OnFly depth-equality verifier replaced only in the new SPF-based profile; shared
 execution unchanged. Future C5 comparison is end-to-end, not an isolated planning
 causal test. Source-audit hash comparison required only Windows newline normalization.
+
+
+## D-102 — Adaptive-plan flight and visual diagnosis (2026-09-12)
+
+Status: authorized, preflight pending.
+Rationale: validate D-101 on real Gemma and inspect the actual flight in the dashboard.
+Evidence: reports/adaptive_plan_flights_20260912/PLAN.md preregisters a bounded
+preflight/flight/fix budget. No performance conclusion yet.

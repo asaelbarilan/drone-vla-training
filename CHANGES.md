@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-12 — D-102 adaptive-plan flight/debug protocol
+
+User authorized flying and dashboard debugging. Registered one saved-frame Gemma
+preflight and an initial 90 s corrected-depth seed-1061 flight with full capture.
+Bounded follow-up: at most one integration recheck and one further flight after a
+concrete finding. Compare against the saved corrected C5 flight; preserve sensors,
+shared execution and Gemma. No cloud calls or model sweeps. See
+reports/adaptive_plan_flights_20260912/PLAN.md.
+
 ## 2026-09-12 — D-101 VLM-authored plan implemented and verified offline
 
 Added opt-in `adaptive_visual_plan` policy and `vlm_adaptive_plan_gemma_dev` config.
