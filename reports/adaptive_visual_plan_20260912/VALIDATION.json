@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-12",
+  "runtime_model_calls": 0,
+  "flights": 0,
+  "tests": {
+    "command": "python -m pytest tests/unit tests/contract -q",
+    "passed": 361,
+    "warnings": 1,
+    "warning": "Third-party dateutil utcfromtimestamp deprecation; no test failure"
+  },
+  "lint": "passed on all changed Python files",
+  "new_policy_tests": 17,
+  "shared_components_unchanged": {
+    "planner": true,
+    "controller": true,
+    "shield": true,
+    "monitor": true,
+    "scheduler": true,
+    "staleness": true,
+    "perception": true,
+    "memory": true
+  },
+  "model": "gemma4:e2b",
+  "actual_model_execution": "not yet validated for this new policy",
+  "gui": "8 synthetic browser fixture checks; zero JavaScript errors",
+  "new_config_sha256": "56fe3cc562d6fefa39624007464508dd1ae9310e55ec8fae39a3de7fd1489d3d"
+}

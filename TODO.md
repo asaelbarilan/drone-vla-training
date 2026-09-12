@@ -10,13 +10,16 @@ becomes a decision with evidence.
 
 ---
 
-## D-101: implement and verify VLM-authored planning
+## D-101: validate the new VLM planner with one bounded saved-frame call
 
-Follow `docs/research/vlm_authored_planning_20260912/REPORT.md`: typed persistent
-plan, model-generated points, measured feedback, stable retained world goals,
-exact request/response capture and offline authority/geometry tests. No flight
-scheduled. A later matched SPF action-interface control is required before an
-isolated planning-effect claim.
+Implementation and offline authority/geometry/GUI tests are complete (361 pass).
+Read `reports/adaptive_visual_plan_20260912/REPORT.md`. Before a flight, validate
+that local gemma4:e2b returns a valid structured plan on one saved source image;
+capture the exact prompt, schema, output and wall latency, with no automatic retries.
+No flight or model call is scheduled. Then use a named development flight in the
+corrected-depth environment. A matched no-plan SPF interface control is still needed
+before attributing differences specifically to planning. The current component
+adaptation has no full MapGPT graph or arbitrary remembered-node navigation.
 
 ## D-100: deferred graph-candidate direction (superseded by D-101)
 

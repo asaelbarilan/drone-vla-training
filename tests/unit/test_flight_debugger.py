@@ -121,3 +121,34 @@ def test_replay_checks_every_pose_and_final_state_without_inference(tmp_path, mo
     path.write_text("\n".join(json.dumps(e) for e in events))
     with pytest.raises(ValueError, match="position mismatch"):
         asyncio.run(load_run(tmp_path))
+
+
+def test_adaptive_plan_state_is_joined_only_to_its_own_decision():
+    events = [
+        event(
+            "memory_update",
+            1,
+            0,
+            {"kind": "adaptive_visual_plan", "response": {"active_id": "inspect"}},
+            "a",
+        ),
+        event(
+            "decision_proposed",
+            1,
+            1,
+            {"producer": "adaptive_visual_plan", "source_observation_seq": 7},
+            "a",
+        ),
+        event(
+            "decision_proposed",
+            2,
+            2,
+            {"producer": "onfly_decision", "source_observation_seq": 8},
+            "b",
+        ),
+    ]
+    decisions = build_decisions(
+        events, [{"observation_seq": 7, "t": 0}, {"observation_seq": 8, "t": 1}], []
+    )
+    assert decisions[0]["chain"][0]["payload"]["response"]["active_id"] == "inspect"
+    assert not any(e["event_type"] == "memory_update" for e in decisions[1]["chain"])

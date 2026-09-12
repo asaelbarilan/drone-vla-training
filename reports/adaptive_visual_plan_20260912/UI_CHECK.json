@@ -1,0 +1,14 @@
+{
+  "synthetic_browser_fixture_not_a_flight": true,
+  "checks": [
+    "plan visible",
+    "active subgoal",
+    "expected view",
+    "model memory",
+    "retained goal origin",
+    "previous feedback",
+    "HTML escaped",
+    "hidden for old runs"
+  ],
+  "javascript_errors": []
+}

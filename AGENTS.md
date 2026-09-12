@@ -16,16 +16,23 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Latest: VLM-authored planning specified — D-101 (2026-09-12)
+## Latest: VLM-authored planner implemented; offline checks pass — D-101 (2026-09-12)
 
-User superseded D-100's classical-candidate direction. Read
-`docs/research/vlm_authored_planning_20260912/REPORT.md`. Implement a separate
-adaptive visual plan + SPF waypoint variant: model authors subgoals, order,
-expected observations and points; explicit retain keeps a fixed world waypoint.
-Prior-plan/pose/routing feedback returns to the model. No classical semantic-goal
-selection, privileged target or semantic_hits. Not full MapGPT replication: source
-uses a supplied discrete graph. Keep C5/SUPER and the corrected sensor unchanged.
-Implement and verify offline before a bounded flight; no flight is scheduled.
+Read `reports/adaptive_visual_plan_20260912/REPORT.md` and
+`docs/research/vlm_authored_planning_20260912/REPORT.md`. New policy/config:
+`adaptive_visual_plan` / `vlm_adaptive_plan_gemma_dev`. VLM authors intermediate
+objectives/order/points; explicit retain keeps an anchored world goal. Strict
+output parsing, matched routing feedback and model plan/pose history are implemented.
+Debugger shows plan, active objective, expected view, memory and original point source.
+361 unit/contract tests and lint pass; 8 browser fixture checks pass. No real model
+calls or flights yet. Next one bounded saved-frame Gemma/schema check before any
+flight; no run scheduled. Use corrected-depth environment and development seeds.
+New component-level MapGPT/SPF adaptation, not full paper reproduction or isolated
+planning ablation. No supplied graph; forward-camera/backtracking limits remain.
+SPF travel and endpoint verifier differ from C5; fixed simulated charge is not wall
+latency. Shared SUPER/controller/monitor remain identical, tested. No GT/semantic_hits
+in new policy input; no secret reads, cloud retries, model swaps or held-out runs.
+D-100 next direction superseded, source audit preserved.
 
 ## Latest: drone_control graph audit and comparison specified — D-100 (2026-09-12)
 

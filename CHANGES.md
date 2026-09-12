@@ -1,5 +1,24 @@
 # Build log
 
+## 2026-09-12 — D-101 VLM-authored plan implemented and verified offline
+
+Added opt-in `adaptive_visual_plan` policy and `vlm_adaptive_plan_gemma_dev` config.
+VLM owns ordered subgoals, active step, expected views, scene memory, assessment,
+image points and travel. Explicit retain preserves the original world waypoint;
+measured pose/routing feedback returns to the next call. Strict parsing fails
+closed without changing the plan; no classical semantic-goal selection or automatic
+semantic completion. Reused SPF transforms and unchanged shared SUPER/controller.
+Changed only the incompatible depth-equality verifier to the common endpoint gate
+with repair disabled, and output cap to 768. Documented these comparison confounds.
+Added visible plan/feedback/point-origin panel to flight debugger; old runs remain
+unmodified and do not acquire invented plans. 361 unit/contract tests and changed-file
+lint pass, including 17 new policy tests and clear-space SUPER routing. Eight browser
+fixture checks pass; inspected screenshot is explicitly synthetic, not flight evidence.
+No model calls or flights. Real Gemma schema compatibility and planning quality remain
+unvalidated; next is one bounded saved-frame integration probe, then a development
+flight only after that gate. Reports and exact source hashes saved. Baselines preserved.
+
+
 ## 2026-09-12 — D-101 VLM-authored planning research and implementation specification
 
 User corrected D-100: the VLM should own planning and propose intermediate goals.

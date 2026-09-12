@@ -2167,7 +2167,7 @@ No code changes in drone_control or either runtime, no new model calls or flight
 
 ## D-101 — VLM-authored adaptive planning (2026-09-12)
 
-Status: source selection specified; implementation and flight validation pending.
+Status: component adaptation implemented; offline checks pass; real-model/flight validation pending.
 Supersedes D-100 next implementation direction, not its source audit.
 Rationale: user requires the VLM to author intermediate navigation goals and order.
 Select MapGPT adaptive-plan carryover with existing SPF image-point/travel mapping;
@@ -2175,3 +2175,10 @@ retain shared execution, name the hybrid explicitly and record all deviations.
 Evidence: docs/research/vlm_authored_planning_20260912/REPORT.md, evidence.json and
 search_log.md; 24 prior plus 3 new primary methods, official planning code inspected.
 No autonomous performance claim.
+
+D-101 implementation evidence: `reports/adaptive_visual_plan_20260912/REPORT.md`
+and `VALIDATION.json`; 361 unit/contract tests, 17 new policy tests, 8 GUI checks.
+Model owns plan/order/point. No runtime model calls or autonomous flight results.
+OnFly depth-equality verifier replaced only in the new SPF-based profile; shared
+execution unchanged. Future C5 comparison is end-to-end, not an isolated planning
+causal test. Source-audit hash comparison required only Windows newline normalization.

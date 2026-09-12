@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-12",
+  "code": [
+    {
+      "url": "https://raw.githubusercontent.com/chen-judge/MapGPT/7c642f4507a8dde6703e2c61c8fd8ff3bc4bd322/GPT/one_stage_prompt_manager.py",
+      "commit": "7c642f4507a8dde6703e2c61c8fd8ff3bc4bd322",
+      "sha256": "68fa808db245c27abb481f9e0d1349b1947315e350ffbeecd4f3fa041115f762",
+      "bytes": 19294,
+      "cache": "mapgpt_prompt.py",
+      "cache_sha256": "a4845c33b00f8db8cd4d8f2ebb1cf8a62d45b307e8b9fc2421a3d01447780c3c",
+      "match": "exact after Windows newline normalization"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chen-judge/MapGPT/7c642f4507a8dde6703e2c61c8fd8ff3bc4bd322/vln/gpt_agent.py",
+      "commit": "7c642f4507a8dde6703e2c61c8fd8ff3bc4bd322",
+      "sha256": "075dd37590bdd00a06a9c538b4724011bca36e88d4877b7cfb912bf782ad4235",
+      "bytes": 7462,
+      "cache": "mapgpt_agent.py",
+      "cache_sha256": "2963fcf9e5a0a3ae3667d0394a29e658baf2ac139385ab0d7611e080408c1d2d",
+      "match": "exact after Windows newline normalization"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/SmartDianLab/FineCogNav/9d2a6db04dd4262622d5697b63bb4a81922a498d/src/common/cognitive_agent.py",
+      "commit": "9d2a6db04dd4262622d5697b63bb4a81922a498d",
+      "sha256": "de86c8100ea6023d7c440247a0605b944dbea74f0fd51301cc09f7e76eb2702c",
+      "bytes": 57932,
+      "cache": "finecog_agent.py",
+      "cache_sha256": "7905fcde9a97fd8cecc56e493d1832ef6485a4927e2ccf853d41f29cfe7791c0",
+      "match": "exact after Windows newline normalization"
+    }
+  ],
+  "reuse": "No code or verbatim prompts copied; clean-room adaptation"
+}

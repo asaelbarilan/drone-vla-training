@@ -32,6 +32,11 @@ from uavlab.core.frame_store import global_store
 
 ROOT = Path(__file__).resolve().parents[3]
 SOURCE_MODULES = {
+    "adaptive_policy": (
+        "plugins/reasoning/adaptive_visual_plan.py",
+        "AdaptiveVisualPlanPolicy",
+        "decide",
+    ),
     "policy": ("plugins/reasoning/onfly.py", "OnFlyDecisionAgent", "decide"),
     "monitor": ("plugins/reasoning/onfly.py", "OnFlyMonitor", "assess"),
     "router": ("core/decision_router.py", "DecisionRouter", "accept"),
@@ -318,7 +323,10 @@ async def load_run(run_dir: Path) -> dict:
         "frames": frames,
         "decisions": decisions,
         "events": [
-            e for e in events if e["event_type"] not in {"control", "perception", "memory_update"}
+            e
+            for e in events
+            if e["event_type"] not in {"control", "perception", "memory_update"}
+            or e["payload"].get("kind") == "adaptive_visual_plan"
         ],
         "recordings": recordings,
         "recorded_sources": _recorded_sources(run_dir, events, recordings),
