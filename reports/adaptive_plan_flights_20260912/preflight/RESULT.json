@@ -1,0 +1,127 @@
+{
+  "source_rgb": "runs\\c5_depth_ray_v2_20260912_s1061\\debug\\images\\call-000001-0.png",
+  "source_rgb_sha256": "c81ae48079745045c81521ec203fb4aaefa87dd6be0dcd15f27c6da2446ce0ca",
+  "source_pixels_match_reconstructed_initial_pose": true,
+  "model_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+  "model_calls_budget": 1,
+  "flight": false,
+  "valid": true,
+  "decision": {
+    "decision_id": "50ed90eff95c",
+    "kind": "waypoint",
+    "payload": {
+      "kind": "waypoint",
+      "target": {
+        "x": 1.486426642275719,
+        "y": 1.3195780943145754,
+        "z": 2.699596160344058,
+        "frame": "enu"
+      },
+      "target_label": null,
+      "tolerance_m": 0.35,
+      "stop_at_target": false
+    },
+    "source_observation_seq": 0,
+    "source_t_sim_ns": 0,
+    "produced_t_wall_ns": 47310600775900,
+    "produced_t_sim_ns": 1000000000,
+    "valid_until_t_sim_ns": 3000000000,
+    "confidence": 0.65,
+    "producer": "adaptive_visual_plan",
+    "provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "model-authored adaptive plan with SPF waypoint",
+      "plan_revision": "1",
+      "active_subgoal_id": "s1",
+      "action_mode": "move",
+      "prompt_hash": "f5a6005cf005d4c062688dd0e8856b30409ea4340d455e441864dbde6019ed59",
+      "rgb_digest": "3c1a82ce9f37b41e",
+      "point_source_observation_seq": "0",
+      "implementation": "mapgpt_component_spf_adaptation",
+      "pixel_u": "112.0",
+      "pixel_v": "112.0"
+    }
+  },
+  "plan": {
+    "revision": 1,
+    "previous_response": {
+      "assessment": "uncertain",
+      "reason": "The instruction is to 'fly to the red tower and stop there'. The current image shows a flat, open area with several vertical structures (likely buildings or towers) in the distance. I do not yet know'",
+      "plan": [
+        {
+          "id": "s1",
+          "objective": "Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).",
+          "expected_view": "The drone will move towards the closest visible structure, potentially revealing a clearer path or the target itself."
+        },
+        {
+          "id": "s2",
+          "objective": "Arrive at the location of the nearest visible vertical structure.",
+          "expected_view": "The drone will be positioned near the closest structure."
+        }
+      ],
+      "active_id": "s1",
+      "scene_memory": "The environment consists of a flat, open foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible in the current RGB image to confirm which structure is the target.",
+      "action": {
+        "mode": "move",
+        "u": 500,
+        "v": 500,
+        "distance": 5
+      }
+    },
+    "proposed_world_point": {
+      "x": 1.486426642275719,
+      "y": 1.3195780943145754,
+      "z": 2.699596160344058,
+      "frame": "enu"
+    },
+    "point_origin": {
+      "observation_seq": 0,
+      "position_enu_m": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0,
+        "frame": "enu"
+      },
+      "yaw_rad": 0.7260068433926703,
+      "u": 500,
+      "v": 500,
+      "distance_label": 5,
+      "camera_forward_m": 2.0102221212448113,
+      "tolerance_m": 0.35
+    },
+    "history": [
+      {
+        "decision_id": "50ed90eff95c",
+        "t_sim_ns": 0,
+        "position_enu_m": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 3.0,
+          "frame": "enu"
+        },
+        "yaw_rad": 0.7260068433926703,
+        "active_id": "s1",
+        "action_mode": "move",
+        "proposed_world_point": {
+          "x": 1.486426642275719,
+          "y": 1.3195780943145754,
+          "z": 2.699596160344058,
+          "frame": "enu"
+        },
+        "routing": null
+      }
+    ]
+  },
+  "inference_stats": {
+    "inference_errors": 0.0,
+    "inference_calls_policy": 1.0,
+    "inference_tokens_policy": 310.0,
+    "inference_latency_s_policy": 13.8809381,
+    "inference_server_setup_s_policy": 8.0308049,
+    "inference_charged_s_policy": 1.0,
+    "inference_mean_latency_s_policy": 13.8809381,
+    "inference_calls_total": 1.0,
+    "inference_tokens_total": 310.0,
+    "reasoner_calls": 0.0
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "f5a6005cf005d4c062688dd0e8856b30409ea4340d455e441864dbde6019ed59",
+  "input_tokens": 728,
+  "image_count": 1,
+  "observation_seq": 0,
+  "prompt": "You are the navigation planner of a drone. You author the intermediate\nobjectives, their order, and the next motion destination. Use the current forward\nRGB image, mission, previous plan, your scene memory, and measured execution history.\n\nReturn strict JSON matching the schema. Write 1-5 ordered subgoals in plan, with\nstable IDs, an objective and the expected visual change at completion. Keep IDs\nfor unchanged subgoals. Set active_id to the subgoal you choose to execute now.\nAssess the PREVIOUS active subgoal as ongoing, achieved, blocked, or uncertain;\nexplain briefly what observed evidence supports continuing or changing the plan.\nThe next plan may keep, reorder, add or remove steps. Update scene_memory with\nuseful observations and failed attempts; distinguish observations from hypotheses.\nExpected views are predictions, not proof that a step succeeded.\n\nSeeing the target does not establish a traversable route. Consider obstacle faces,\nopenings, clearance uncertainty and which intermediate view could reveal a route.\nPropose your own subgoals and point; no route or candidate list is provided.\nThe classical executor only checks feasibility and routes toward YOUR destination.\nA routing acceptance is not arrival or semantic completion. Distance to a waypoint\nis measured to YOUR proposed point, never to the true mission target.\n\nFor a new destination return action={\"mode\":\"move\",\"u\":...,\"v\":...,\"distance\":...}.\nCoordinates use a 1000x1000 reference: top-left (0,0), center (500,500), bottom-right\n(1000,1000). distance is intended CAMERA-FORWARD travel, not obstacle depth:\n1=0.11m, 2=0.39m, 3=0.80m, 4=1.35m, 5=2.01m, 6=2.79m, 7=3.68m, 8=4.68m, 9=5.79m, 10=7.00m\nChoose the point and travel for the ACTIVE intermediate objective, not necessarily\nthe final target. A small move does not mean mission complete.\n\nTo continue toward the unchanged active subgoal and previously proposed WORLD\npoint, return action={\"mode\":\"retain\"}. This preserves that point despite camera\nmotion. It requires an existing point and the same active subgoal ID and content.\nTo change the subgoal or destination use move. Arrival does not automatically\nadvance the plan: decide from the image and feedback. An independent monitor owns\nfinal mission stopping. Do not issue flight controls or claim hidden geometry.\nKeep text fields concise and distinguish visible facts from your inference.\n\nINPUT STATE:\n{\"revision\": 0, \"previous_response\": null, \"proposed_world_point\": null, \"point_origin\": null, \"history\": [], \"instruction\": \"fly to the red tower and stop there\", \"observation_seq\": 0, \"t_sim_ns\": 0, \"position_enu_m\": {\"x\": 0.0, \"y\": 0.0, \"z\": 3.0, \"frame\": \"enu\"}, \"yaw_rad\": 0.7260068433926703, \"mission_constraints\": {\"max_speed_mps\": 0.6, \"max_accel_mps2\": 0.6, \"min_altitude_m\": 0.5, \"max_altitude_m\": 25.0, \"geofence_radius_m\": 60.0, \"min_obstacle_clearance_m\": 0.6}, \"distance_to_proposed_point_m\": null}",
+  "response_schema": {
+    "$defs": {
+      "Move": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "const": "move",
+            "title": "Mode",
+            "type": "string"
+          },
+          "u": {
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "U",
+            "type": "integer"
+          },
+          "v": {
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "V",
+            "type": "integer"
+          },
+          "distance": {
+            "maximum": 10,
+            "minimum": 1,
+            "title": "Distance",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "mode",
+          "u",
+          "v",
+          "distance"
+        ],
+        "title": "Move",
+        "type": "object"
+      },
+      "Retain": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "const": "retain",
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode"
+        ],
+        "title": "Retain",
+        "type": "object"
+      },
+      "Subgoal": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "maxLength": 24,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "title": "Id",
+            "type": "string"
+          },
+          "objective": {
+            "maxLength": 140,
+            "minLength": 1,
+            "title": "Objective",
+            "type": "string"
+          },
+          "expected_view": {
+            "maxLength": 140,
+            "minLength": 1,
+            "title": "Expected View",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "objective",
+          "expected_view"
+        ],
+        "title": "Subgoal",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "assessment": {
+        "enum": [
+          "ongoing",
+          "achieved",
+          "blocked",
+          "uncertain"
+        ],
+        "title": "Assessment",
+        "type": "string"
+      },
+      "reason": {
+        "maxLength": 200,
+        "minLength": 1,
+        "title": "Reason",
+        "type": "string"
+      },
+      "plan": {
+        "items": {
+          "$ref": "#/$defs/Subgoal"
+        },
+        "maxItems": 5,
+        "minItems": 1,
+        "title": "Plan",
+        "type": "array"
+      },
+      "active_id": {
+        "maxLength": 24,
+        "minLength": 1,
+        "title": "Active Id",
+        "type": "string"
+      },
+      "scene_memory": {
+        "maxLength": 360,
+        "title": "Scene Memory",
+        "type": "string"
+      },
+      "action": {
+        "discriminator": {
+          "mapping": {
+            "move": "#/$defs/Move",
+            "retain": "#/$defs/Retain"
+          },
+          "propertyName": "mode"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/Move"
+          },
+          {
+            "$ref": "#/$defs/Retain"
+          }
+        ],
+        "title": "Action"
+      }
+    },
+    "required": [
+      "assessment",
+      "reason",
+      "plan",
+      "active_id",
+      "scene_memory",
+      "action"
+    ],
+    "title": "PlanReply",
+    "type": "object"
+  },
+  "id": "call-000001",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\adaptive_visual_plan.py",
+    "line": 209,
+    "function": "decide",
+    "snapshot": "debug/sources/6619b84640b551c90f79fc53bf8af64a16d6063cad519e1147fc47a65b1a6133.py"
+  },
+  "started_t_sim_ns": 0,
+  "image_files": [
+    "debug/images/call-000001-0.png"
+  ],
+  "completed_t_sim_ns": 1000000000,
+  "response": "{\n  \"assessment\": \"uncertain\",\n  \"reason\": \"The instruction is to 'fly to the red tower and stop there'. The current image shows a flat, open area with several vertical structures (likely buildings or towers) in the distance. I do not yet know'\",\"plan\": [\n    {\n      \"id\": \"s1\",\n      \"objective\": \"Move towards the nearest visible vertical structure (assumed to be the 'red tower' based on the instruction and visual context).\",\n      \"expected_view\": \"The drone will move towards the closest visible structure, potentially revealing a clearer path or the target itself.\"\n    },\n    {\n      \"id\": \"s2\",\n      \"objective\": \"Arrive at the location of the nearest visible vertical structure.\",\n      \"expected_view\": \"The drone will be positioned near the closest structure.\"\n    }\n  ],\n  \"active_id\": \"s1\",\n  \"scene_memory\": \"The environment consists of a flat, open foreground and several vertical, block-like structures in the background. The goal is to reach the 'red tower'. No specific color information is discernible in the current RGB image to confirm which structure is the target.\",\n  \"action\": {\n    \"mode\": \"move\",\n    \"u\": 500,\n    \"v\": 500,\n    \"distance\": 5\n  }\n}",
+  "latency_ns": 13880938100,
+  "output_tokens": 310,
+  "cache_hit": false
+}

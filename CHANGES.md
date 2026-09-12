@@ -1,5 +1,14 @@
 # Build log
 
+## 2026-09-12 — D-102 real Gemma preflight passed
+
+One saved initial RGB call produced valid plan JSON (310 output tokens; 13.88 s
+measured wall latency, including 8.03 s reported setup; 1.0 s simulated charge).
+Exact image pixels match the reconstructed seed-1061 start, and Gemma digest is
+unchanged. Model proposes approaching a nearest structure while admitting color
+uncertainty; this is an observed unsupported semantic assumption, not a schema
+failure. No runtime change before the first full flight. Capture and result saved.
+
 ## 2026-09-12 — D-102 adaptive-plan flight/debug protocol
 
 User authorized flying and dashboard debugging. Registered one saved-frame Gemma
