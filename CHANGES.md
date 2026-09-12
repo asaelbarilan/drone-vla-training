@@ -2271,3 +2271,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Screen run IDs use capability_screen_ to avoid the earlier D-103 C0 fixture integration run; detected before execution.
 
 - Added opt-in C1 Gemma profile retaining its text-only inputs, skill protocol, 512-token output and inherited 8.5 s simulated latency. No visual grounding adapter added. This tests current compatibility, not visual reasoning; actual wall latency is separately recorded. Eight C0 flights completed: 6 successes, ordered_visit and follow_target fail by agent stop. C5 batch in progress.
+
+- Added inference-free replay exporter with separate C0/C1/C5 dashboard pages and complete per-run metrics/provenance.
