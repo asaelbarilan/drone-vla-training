@@ -1,0 +1,10 @@
+# D-108: explicit approach endpoint offset plus live sustained-hover completion.
+_base_: c5_arrival_window_gemma_dev.yaml
+id: c5_hover_gemma_dev
+profile_of: c5
+name: "C5 visual approach and sustained hover development variant"
+policy:
+  params:
+    goal_standoff_m: 1.0
+monitor:
+  name: onfly_hover_monitor

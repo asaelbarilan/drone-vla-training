@@ -2453,3 +2453,10 @@ Evidence: reports/targeted_contracts_20260913/VERIFICATION.json.
 User authorized autonomous run/debug/fix. Added named task with 2 s visible slow hover,
 front-side range/alignment and latched swept no-contact scoring. D-107 unchanged.
 Added wrong-side, view-loss, dwell, motion and contact negative controls.
+
+D-108 baseline: false terminal stop at 9.2 s, final 0.743 m, hover=0. Exact replay
+185 poses matches; dashboard camera at end has no pillar and drone is still moving.
+Old 2 m completion gate ignores new hover semantics. Named adaptation uses existing
+1 m endpoint standoff and new monitor checks of approach side/range, low speed,
+continuous odometry dwell, and projected VLM target with live depth visibility.
+Model still selects pixels; no target truth or automatic route/search is supplied.
