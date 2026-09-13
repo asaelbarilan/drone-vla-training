@@ -208,3 +208,29 @@ def test_debugger_matches_perception_tool_image_to_fresh_observation():
     assert result["source_seq"] == 10 and result["recording"] == record
     assert result["role"] == "perception" and result["state"] == "completed"
     assert result["first_control_t"] is None
+
+
+def test_bounded_refinement_moves_to_observed_ray_not_fabricated_range():
+    ctx = context()
+    depth = np.full((224, 224), np.inf)
+    depth[100:115, 103:121] = 12.0
+    answer = ObjectLocation(visible=True, u=499, v=533)
+    assert locate_in_depth(answer, ctx, depth, 0)[0] is None
+    position, range_m = locate_in_depth(answer, ctx, depth, 0, 0.03)
+    assert range_m == 12.0 and position is not None
+    # Nearest observed pixel is (111,114), not the original empty ray near (111,119).
+    assert position.y == pytest.approx(12 / 112)
+    assert position.z == pytest.approx(3 - 24 / 112)
+    depth[123:125, 103:121] = 30.0
+    assert locate_in_depth(answer, ctx, depth, 0, 0.03)[0] is None
+    depth[123:125, 103:121] = 12.0
+    assert locate_in_depth(answer, ctx, depth, 0, 0.03)[0] is None
+
+
+def test_refinement_never_searches_the_full_image():
+    depth = np.full((224, 224), np.inf)
+    depth[50:90, 90:130] = 12
+    assert (
+        locate_in_depth(ObjectLocation(visible=True, u=499, v=533), context(), depth, 0, 0.03)[0]
+        is None
+    )

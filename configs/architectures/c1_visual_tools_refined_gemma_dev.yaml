@@ -1,0 +1,8 @@
+# D-105: bounded image-local depth refinement, after saved-frame grounding failure.
+_base_: c1_visual_tools_gemma_dev.yaml
+id: c1_visual_tools_refined_gemma_dev
+profile_of: c1
+name: "C1 AerialClaw visual tools with bounded pixel refinement"
+policy:
+  params:
+    pixel_refinement_fraction: 0.03

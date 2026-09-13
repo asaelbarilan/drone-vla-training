@@ -2302,3 +2302,8 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Registry-contract test required configuration validation at reset rather than construction; moved it without changing run behavior. Corrected the test-directory command from tests/contracts to tests/contract.
 
 - Preflight verification: 403 unit/contract tests pass (one pre-existing dateutil deprecation warning); new visual-tool/coordinate files pass lint. No real visual-model call used for these checks. Starting exactly one visible-target tool flight.
+
+- First visual flight timed out without translation: model saw the red pillar but selected (499,533), about five image pixels below its valid-depth silhouette. Seven completed model calls; original failed flight preserved. One saved-image bbox probe also missed the object and was not adopted.
+- Added a separately named, opt-in 3%-image pixel refinement: only for invalid selected depth, finds a single connected range-consistent observed surface in the local window, moves the pixel to that surface, and unprojects its measured depth. Multiple surfaces, no depth, and distant objects remain rejected. No hidden geometry, color-coded simulator answers or new model call in refinement. Offline saved-frame validation pending before one changed-profile flight.
+
+- Saved-frame check confirms reconstructed RGB exactly matches the failed tool input; strict point has no range, bounded refinement yields measured depth 11.940 m and ENU (11.859, 0.107, 1.596), without a model call. Preparing one separately named refined-profile flight after regression checks.

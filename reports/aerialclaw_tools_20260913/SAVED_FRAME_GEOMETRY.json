@@ -1,0 +1,19 @@
+{
+  "same_saved_rgb_pixels": true,
+  "image_sha256": "e32d2f9f931972b24395ac72c7f675823778a67433f5b0587fc633e369775a24",
+  "response": {
+    "visible": true,
+    "u": 499,
+    "v": 533
+  },
+  "unrefined_position": null,
+  "refined_position": {
+    "x": 11.859113608144064,
+    "y": 0.10660759040287561,
+    "z": 1.5958340080724458,
+    "frame": "enu"
+  },
+  "measured_depth_m": 11.94005012512207,
+  "refinement_fraction": 0.03,
+  "new_model_calls": 0
+}

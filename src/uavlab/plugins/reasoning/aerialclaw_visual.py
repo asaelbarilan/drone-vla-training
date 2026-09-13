@@ -29,7 +29,13 @@ class ObjectLocation(StrictModel):
     v: StrictInt | None = Field(ge=0, le=999)
 
 
-def locate_in_depth(answer: ObjectLocation, ctx: DecisionContext, depth, pitch: float):
+def locate_in_depth(
+    answer: ObjectLocation,
+    ctx: DecisionContext,
+    depth,
+    pitch: float,
+    refinement_fraction: float = 0.0,
+):
     """Lift the selected object pixel using synchronized depth and actual intrinsics."""
     if not answer.visible:
         if answer.u is not None or answer.v is not None:
@@ -42,10 +48,37 @@ def locate_in_depth(answer: ObjectLocation, ctx: DecisionContext, depth, pitch: 
         raise ValueError("depth and intrinsics must match")
     u, v = answer.u * (intr.width - 1) / 999, answer.v * (intr.height - 1) / 999
     x, y = round(u), round(v)
-    # No fabricated range for an unobserved ray. Do not borrow a nearby object's depth.
     distance = float(depth[y, x])
     if not math.isfinite(distance) or distance <= 0:
-        return None, None
+        # Opt-in bounded pixel localization tolerance. Require one connected,
+        # consistent observed surface; never assign depth to the original empty ray.
+        radius = math.ceil(min(intr.width, intr.height) * refinement_fraction)
+        if radius <= 0:
+            return None, None
+        y0, x0 = max(0, y - radius), max(0, x - radius)
+        patch = depth[y0 : y + radius + 1, x0 : x + radius + 1]
+        mask = np.isfinite(patch) & (patch > 0)
+        ys, xs = np.where(mask)
+        if len(xs) < 3:
+            return None, None
+        values = patch[mask]
+        if float(np.ptp(values)) > max(0.25, 0.05 * float(np.median(values))):
+            return None, None
+        cells = set(zip(ys.tolist(), xs.tolist(), strict=True))
+        pending = [cells.pop()]
+        while pending:
+            row, col = pending.pop()
+            for dr, dc in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+                other = row + dr, col + dc
+                if other in cells:
+                    cells.remove(other)
+                    pending.append(other)
+        if cells:  # Several disconnected surfaces are ambiguous.
+            return None, None
+        nearest = int(np.argmin((xs + x0 - u) ** 2 + (ys + y0 - v) ** 2))
+        x, y = int(xs[nearest] + x0), int(ys[nearest] + y0)
+        u, v = float(x), float(y)
+        distance = float(depth[y, x])
     left = (intr.cx - u) * distance / intr.fx
     up_camera = (intr.cy - v) * distance / intr.fy
     cp, sp = math.cos(-pitch), math.sin(-pitch)
@@ -67,6 +100,9 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
         super().__init__(**params)
         self.query = str(params.get("visual_target_query", "")).strip()
         self.pitch = float(params.get("camera_pitch_rad", -0.10))
+        self.refinement_fraction = float(params.get("pixel_refinement_fraction", 0.0))
+        if not 0.0 <= self.refinement_fraction <= 0.03:
+            raise ValueError("pixel refinement must be within 0..3% of image size")
         self._pending = None
         self._visual_memory = None
         self._last_inspection = None
@@ -207,7 +243,9 @@ navigation points. If not found, choose scan or another search skill and inspect
         self._tool_calls += 1
         self._visual_memory = None
         answer = ObjectLocation.model_validate_json(str(result.payload))
-        position, depth_m = locate_in_depth(answer, ctx, depth, self.pitch)
+        position, depth_m = locate_in_depth(
+            answer, ctx, depth, self.pitch, self.refinement_fraction
+        )
         self._last_inspection = (obs.position, obs.yaw_rad)
         if position is not None:
             self._visual_memory = MemoryItem(
@@ -232,6 +270,7 @@ navigation points. If not found, choose scan or another search skill and inspect
             "source_observation_seq": obs.seq,
             "source_t_sim_ns": obs.t_sim_ns,
             "sampled_depth_m": depth_m,
+            "pixel_refinement_fraction": self.refinement_fraction,
         }
         self._history[-1]["feedback"] = feedback
         self._emit_tool(
