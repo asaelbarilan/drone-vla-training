@@ -2326,3 +2326,10 @@ User authorized one corrected search validation followed by comparison of C0/C1/
 The search flight counts once in the 24-cell matrix. Resolved configurations and
 source hashes freeze before launch; no tuning/retries. Five C1 text-only cells
 are explicitly integration-limited. See reports/frozen_capability_20260913/PLAN.md.
+
+## 2026-09-13 — D-106: corrected search inspected, integration conflict retained
+
+First matrix cell times out. Camera shows target during scan at 10 s; exact sole
+perception image at 21.95 s has no target. Further scan requested by the model is
+rejected by inherited full-turn coverage gate. 5 completed calls, 1 cancellation;
+1,200 replay poses match. No fix mid-comparison; see SEARCH_INSPECTED.md.
