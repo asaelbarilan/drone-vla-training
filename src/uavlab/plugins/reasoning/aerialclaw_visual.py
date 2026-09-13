@@ -100,6 +100,7 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
         super().__init__(**params)
         self.query = str(params.get("visual_target_query", "")).strip()
         self.visual_search_strategy = bool(params.get("visual_search_strategy", False))
+        self.inspected_search = bool(params.get("inspected_search", False))
         self.pitch = float(params.get("camera_pitch_rad", -0.10))
         self.refinement_fraction = float(params.get("pixel_refinement_fraction", 0.0))
         if not 0.0 <= self.refinement_fraction <= 0.03:
@@ -108,6 +109,8 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
         self._visual_memory = None
         self._last_inspection = None
         self._tool_calls = 0
+        self._inspected_origin = None
+        self._inspected_bins = set()
 
     @property
     def name(self):
@@ -123,6 +126,8 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
             raise ValueError("mission must allow detect_object")
         self._pending = self._visual_memory = self._last_inspection = None
         self._tool_calls = 0
+        self._inspected_origin = None
+        self._inspected_bins = set()
 
     def stats(self):
         return {**super().stats(), "aerialclaw_visual_tool_calls": float(self._tool_calls)}
@@ -134,6 +139,52 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
         memory = ctx.memory.model_copy(update={"items": (*ctx.memory.items, item)})
         return replace(ctx, memory=memory)
 
+    def _local_search_complete(self, ctx):
+        if not self.inspected_search:
+            return super()._local_search_complete(ctx)
+        self._reset_inspected_origin(ctx)
+        return len(self._inspected_bins) == 72
+
+    def _reset_inspected_origin(self, ctx):
+        if (
+            self._inspected_origin is None
+            or self._inspected_origin.distance_to(ctx.observation.position) > 0.5
+        ):
+            self._inspected_origin = ctx.observation.position
+            self._inspected_bins.clear()
+
+    def _record_inspected_view(self, ctx):
+        self._reset_inspected_origin(ctx)
+        intr = ctx.observation.intrinsics
+        if intr is None or intr.fx <= 0:
+            return
+        half_fov = math.atan((intr.width - 1) / (2 * intr.fx))
+        # Count a whole angular bin only when it is inside an actually inspected view.
+        for index in range(72):
+            center = (index + 0.5) * math.tau / 72
+            delta = abs((center - ctx.observation.yaw_rad + math.pi) % math.tau - math.pi)
+            if delta + math.pi / 72 <= half_fov:
+                self._inspected_bins.add(index)
+
+    def _action_protocol_error(self, action, ctx):
+        if self.inspected_search and action.skill == "scan":
+            rate = action.args.get("yaw_rate_rps", 0.6)
+            duration = action.args.get("duration_s", 1.0)
+            if (
+                isinstance(rate, bool)
+                or isinstance(duration, bool)
+                or not isinstance(rate, (int, float))
+                or not isinstance(duration, (int, float))
+                or not math.isfinite(rate * duration)
+                or abs(rate * duration) > 1.3
+            ):
+                return (
+                    "scan must turn at most 1.3 radians between requested inspections; "
+                    "choose a short scan, e.g. yaw_rate_rps=0.6, duration_s=2, "
+                    "then detect_object. Direction and next skill are your choice."
+                )
+        return super()._action_protocol_error(action, ctx)
+
     def _soft_skill_phase(self, ctx, completion):
         phase = super()._soft_skill_phase(ctx, completion)
         if phase in ("complete_supported_arrival", "approach_exact_label_target"):
@@ -144,10 +195,26 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
         delta = abs((ctx.observation.yaw_rad - yaw + math.pi) % (2 * math.pi) - math.pi)
         if position.distance_to(ctx.observation.position) > 0.5 or delta > 0.3:
             return "inspect_current_viewpoint"
+        if self.inspected_search:
+            return (
+                "choose_unvisited_coverage_goto"
+                if self._local_search_complete(ctx)
+                else "scan_current_viewpoint"
+            )
         return phase
 
     def _build_prompt(self, ctx):
         text = super()._build_prompt(ctx)
+        if self.inspected_search:
+            text += (
+                "\n## Inspected-view search contract\n"
+                "Scan is rotation only; it does not run detection or inspect intermediate frames. "
+                "Each scan turns at most 1.3 radians: abs(yaw_rate_rps)*duration_s <= 1.3. "
+                "Choose short overlapping turns, then request detect_object. "
+                "Only actually inspected views count as searched. Repeated scans are legal "
+                "until inspected coverage is complete. You choose direction and action order. "
+                f"Inspected coverage: {len(self._inspected_bins)}/72 angular bins.\n"
+            )
         if self.visual_search_strategy:
             start = text.index("## Relevant soft skill")
             end = text.index("## BODY-derived coverage reference", start)
@@ -266,6 +333,8 @@ navigation points. If not found, choose scan or another search skill and inspect
             answer, ctx, depth, self.pitch, self.refinement_fraction
         )
         self._last_inspection = (obs.position, obs.yaw_rad)
+        if self.inspected_search and not answer.visible:
+            self._record_inspected_view(ctx)
         if position is not None:
             self._visual_memory = MemoryItem(
                 observation_seq=obs.seq,

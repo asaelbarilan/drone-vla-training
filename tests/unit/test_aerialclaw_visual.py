@@ -245,3 +245,52 @@ def test_visual_search_strategy_explains_that_scan_does_not_detect():
     assert "## Additional perception hard skill" in text
     assert "## BODY-derived coverage reference" in text
     assert asyncio.run(p.decide(context())) is None
+
+
+def test_inspected_search_retries_after_physical_full_turn_and_bounds_scan():
+    from uavlab.plugins.reasoning.aerialclaw import _AgentAction
+    p, model = policy([action("scan", {"yaw_rate_rps": 0.6, "duration_s": 2})])
+    mission = MISSION.model_copy(update={"task_family": TaskFamily.OBJECT_SEARCH})
+    p.reset(mission, 1061)
+    ctx = replace(context(), mission=mission)
+    p._scan_angle_since_motion_rad = 7.5  # exact prior-flight full-turn state
+    assert p._local_search_complete(ctx)  # historical behavior retained
+    p.inspected_search = True
+    assert not p._local_search_complete(ctx)  # zero inspected views
+    envelope = asyncio.run(p.decide(ctx))
+    assert envelope.payload.skill_name == "scan" and len(model.requests) == 1
+    rejected = p._action_protocol_error(
+        _AgentAction(skill="scan", args={"yaw_rate_rps": 1.5, "duration_s": 5}), ctx
+    )
+    assert "at most 1.3 radians" in rejected
+
+
+def test_actual_inspected_views_cover_circle_once_and_reset_after_translation():
+    import math
+    p, _ = policy([])
+    p.inspected_search = True
+    ctx = context()
+    p._record_inspected_view(ctx)
+    initial = len(p._inspected_bins)
+    assert 0 < initial < 72
+    p._record_inspected_view(ctx)
+    assert len(p._inspected_bins) == initial
+    assert not p._local_search_complete(ctx)
+    for index in range(8):
+        view = replace(ctx, observation=ctx.observation.model_copy(
+            update={"yaw_rad": index * math.pi / 4}))
+        p._record_inspected_view(view)
+    assert p._local_search_complete(ctx)
+    assert not p._local_search_complete(context(position=Vec3(x=1, y=0, z=3)))
+    assert len(p._inspected_bins) == 0
+
+
+def test_only_requested_negative_detection_marks_inspected_search():
+    p, model = policy([action("detect_object", {"query":"red pillar"}),
+                       '{"visible":false,"u":null,"v":null}'])
+    p.inspected_search = True
+    asyncio.run(p.decide(context()))
+    assert not p._inspected_bins
+    asyncio.run(p.decide(context(9)))
+    assert p._inspected_bins and len(model.requests) == 2
+    assert p._active_skill is None  # inspection has no movement authority

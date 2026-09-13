@@ -1,0 +1,8 @@
+# D-107: actual inspected views, not commanded rotation, define coverage.
+_base_: c1_visual_search_gemma_dev.yaml
+id: c1_inspected_search_gemma_dev
+profile_of: c1
+name: "C1 requested-perception inspected-view search"
+policy:
+  params:
+    inspected_search: true

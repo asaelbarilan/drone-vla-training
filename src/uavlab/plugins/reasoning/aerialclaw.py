@@ -351,7 +351,7 @@ class AerialClawAgentPolicy:
                     and parsed.action is not None
                     and parsed.action.skill == "goto"
                     and bool(self._coverage_reference(ctx))
-                    and self._scan_angle_since_motion_rad < math.tau
+                    and not self._local_search_complete(ctx)
                     and self._unvisited_coverage_count(ctx) > 0
                     and not self._goto_has_target_evidence(parsed.action, ctx)
                 ):
@@ -367,7 +367,7 @@ class AerialClawAgentPolicy:
                     parsed.decision == "act"
                     and parsed.action is not None
                     and parsed.action.skill == "scan"
-                    and self._scan_angle_since_motion_rad >= math.tau
+                    and self._local_search_complete(ctx)
                     and self._unvisited_coverage_count(ctx) > 0
                 ):
                     self._protocol_rejections += 1
@@ -378,6 +378,13 @@ class AerialClawAgentPolicy:
                     )
                     parsed = None
                     continue
+                if parsed.decision == "act" and parsed.action is not None:
+                    action_error = self._action_protocol_error(parsed.action, ctx)
+                    if action_error:
+                        self._protocol_rejections += 1
+                        errors.append(action_error)
+                        parsed = None
+                        continue
                 break
             except (json.JSONDecodeError, ValidationError) as exc:
                 self._parse_failures += 1
@@ -680,7 +687,7 @@ class AerialClawAgentPolicy:
             "max_speed_mps": mission.constraints.max_speed_mps,
             "success_radius_m": mission.success.goal_radius_m,
             "scan_coverage_at_current_viewpoint_rad": round(self._scan_angle_since_motion_rad, 2),
-            "full_local_scan_completed": self._scan_angle_since_motion_rad >= math.tau,
+            "full_local_scan_completed": self._local_search_complete(ctx),
             "soft_skill_phase": soft_skill_phase,
         }
         coverage = self._coverage_reference(ctx)
@@ -925,6 +932,12 @@ Keep thinking, reflection and goal_progress to one short sentence each.
     def _unvisited_coverage_count(self, ctx: DecisionContext) -> int:
         return sum(not bool(candidate["visited"]) for candidate in self._coverage_reference(ctx))
 
+    def _local_search_complete(self, ctx: DecisionContext) -> bool:
+        return self._scan_angle_since_motion_rad >= math.tau
+
+    def _action_protocol_error(self, action: _AgentAction, ctx: DecisionContext) -> str | None:
+        return None
+
     def _soft_skill_phase(self, ctx: DecisionContext, completion: dict[str, object]) -> str:
         if bool(completion["supported"]):
             return "complete_supported_arrival"
@@ -939,7 +952,7 @@ Keep thinking, reflection and goal_progress to one short sentence each.
         )
         if target_supported:
             return "approach_exact_label_target"
-        if self._scan_angle_since_motion_rad < math.tau:
+        if not self._local_search_complete(ctx):
             return "scan_current_viewpoint"
         if self._unvisited_coverage_count(ctx) > 0:
             return "choose_unvisited_coverage_goto"

@@ -2296,3 +2296,11 @@ Evidence: reports/frozen_capability_20260913/FINDINGS.md, exact captures and das
 743 completed calls +16 cancellations, zero collisions, 14 C5 constraint violations;
 24 manifests match freeze, 19,414 poses match, 72 seeks/24 playbacks/24 close inspections.
 No runtime changes, architecture ranking, further flight or active process.
+
+## D-107 — Targeted perception/search and arrival contracts (2026-09-13)
+
+Status: in progress. Rationale: repair measured integration boundaries, then add
+explicit ordered-object support. Evidence baseline: D-106 source-aligned captures.
+Budget: three single development flights, no adaptive repeats, 60 s, Gemma only.
+See reports/targeted_contracts_20260913/PLAN.md. New behavior is opt-in, separately
+labeled from historical paper adaptations.

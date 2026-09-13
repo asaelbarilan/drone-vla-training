@@ -2368,3 +2368,10 @@ Git warned about Windows newline conversion in captured source snapshots. Added 
 scoped -text attribute for this evidence directory and renormalized its index so
 future checkouts retain original bytes. All 82 snapshot filenames match SHA-256.
 No simulation, source behavior or configuration changed.
+
+## 2026-09-13 — D-107: isolate inspected-view search contract
+
+Added opt-in observed coverage and short scan contract. Legacy angular coverage
+remains the default. Requested detections alone update conservative angular bins;
+rotation alone cannot exhaust search or reject a retry. Model selects direction,
+scan and detection; no automatic perception or semantic route planner.
