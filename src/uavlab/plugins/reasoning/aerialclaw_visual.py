@@ -99,6 +99,7 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
     def __init__(self, **params):
         super().__init__(**params)
         self.query = str(params.get("visual_target_query", "")).strip()
+        self.visual_search_strategy = bool(params.get("visual_search_strategy", False))
         self.pitch = float(params.get("camera_pitch_rad", -0.10))
         self.refinement_fraction = float(params.get("pixel_refinement_fraction", 0.0))
         if not 0.0 <= self.refinement_fraction <= 0.03:

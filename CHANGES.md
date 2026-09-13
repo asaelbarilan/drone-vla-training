@@ -2309,3 +2309,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Saved-frame check confirms reconstructed RGB exactly matches the failed tool input; strict point has no range, bounded refinement yields measured depth 11.940 m and ENU (11.859, 0.107, 1.596), without a model call. Preparing one separately named refined-profile flight after regression checks.
 
 - Refined visible-target flight succeeds at 35.7 sim s (9.50 wall s), final 1.415 m, 3 text planning calls + 1 image detection, no collisions/violations/protocol rejections. One failed point variant and one failed bbox saved-frame probe remain preserved. Per the authorized progression, extend the same profile to one turn-search run with identical 60 s horizon and no tuning.
+
+- First search flight times out with zero detection-tool calls: original passive-detector search strategy led to scan/coverage without inspection. Added a named visual_search_strategy profile replacing that advice with explicit model-requested inspection after viewpoint changes; no automatic detector invocation or navigation authoring. One final changed-profile search check planned; all failures retained.

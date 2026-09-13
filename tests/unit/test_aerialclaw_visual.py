@@ -234,3 +234,14 @@ def test_refinement_never_searches_the_full_image():
         locate_in_depth(ObjectLocation(visible=True, u=499, v=533), context(), depth, 0, 0.03)[0]
         is None
     )
+
+
+def test_visual_search_strategy_explains_that_scan_does_not_detect():
+    p, _ = policy([action("detect_object", {"query": "red pillar"})])
+    p.visual_search_strategy = True
+    text = p._build_prompt(context())
+    assert "A scan rotates the camera but never identifies objects." in text
+    assert "When phase is inspect_current_viewpoint, first call detect_object" in text
+    assert "## Additional perception hard skill" in text
+    assert "## BODY-derived coverage reference" in text
+    assert asyncio.run(p.decide(context())) is None
