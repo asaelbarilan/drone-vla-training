@@ -5,18 +5,18 @@ import base64
 import hashlib
 import json
 from pathlib import Path
+
 import numpy as np
 from PIL import Image
+
 from uavlab.adapters.gym.capability_env import CapabilityEnv
-from uavlab.contracts import MissionSpec, MemorySnapshot, PerceptionState, ControlCommand, Vec3
-from uavlab.core.frame_store import global_store
-from uavlab.core.services import bind
-from uavlab.interfaces import DecisionContext, InferenceResult
-from uavlab.plugins.reasoning.onfly import OnFlyMonitor
-from uavlab.core.services import RuntimeServices
+from uavlab.contracts import ControlCommand, MemorySnapshot, MissionSpec, PerceptionState, Vec3
 from uavlab.core.clock import SimClock
 from uavlab.core.event_log import EventLog
 from uavlab.core.feature_cache import FeatureCache
+from uavlab.core.services import RuntimeServices, bind
+from uavlab.interfaces import DecisionContext, InferenceResult
+from uavlab.plugins.reasoning.onfly import OnFlyMonitor
 
 
 def services(model):
@@ -70,10 +70,12 @@ async def main():
         if json.loads(line)["event_type"] == "control"
     ]
     result = {}
-    for variant in ("legacy", "persistent"):
+    for variant in ("legacy", "persistent", "availability_window"):
         model = SavedModel()
         params = dict(manifest["architecture_config"]["monitor"]["params"])
-        params["arrival_memory_s"] = 0 if variant == "legacy" else 3.0
+        params["arrival_memory_s"] = {"legacy": 0, "persistent": 3.0, "availability_window": 4.0}[
+            variant
+        ]
         monitor = OnFlyMonitor(**params)
         bind(monitor, services(model))
         monitor.reset(mission, 1061)
@@ -95,6 +97,17 @@ async def main():
                 < 1e-7
             )
             poses += 1
+            for row in rows:
+                if (
+                    row["label"] == "stop"
+                    and "live_recheck_accepted" not in row
+                    and obs.t_sim_ns >= row["available_t_ns"]
+                ):
+                    row["live_recheck_accepted"] = monitor.stop_still_supported(obs)
+                    row["live_recheck_t_s"] = t
+                    row["original_target_age_at_available_s"] = (
+                        obs.t_sim_ns - monitor._tracked_target_t_ns
+                    ) / 1e9
             if obs.seq in calls:
                 c = calls[obs.seq]
                 model.reply = c["response"]
@@ -111,6 +124,7 @@ async def main():
                 progress = await monitor.assess(ctx)
                 rows.append(
                     dict(
+                        available_t_ns=c["completed_t_sim_ns"],
                         source_t=t,
                         source_seq=obs.seq,
                         call=c["id"],
@@ -132,7 +146,14 @@ async def main():
         result[variant] = dict(poses=poses, monitor_inputs=len(rows), rows=rows)
     assert not any(r["label"] == "stop" for r in result["legacy"]["rows"])
     assert [r["source_t"] for r in result["persistent"]["rows"] if r["label"] == "stop"] == [11.95]
-    (OUT / "SAVED_ONFLY_ARRIVAL.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+    candidates = [r for r in result["persistent"]["rows"] if r["label"] == "stop"]
+    assert len(candidates) == 1 and candidates[0]["live_recheck_accepted"] is False
+    assert candidates[0]["original_target_age_at_available_s"] == 3.25
+    window = [r for r in result["availability_window"]["rows"] if r["label"] == "stop"]
+    assert window[0]["source_t"] == 11.95 and window[0]["live_recheck_accepted"] is True
+    (OUT / "SAVED_ONFLY_AVAILABILITY.json").write_text(
+        json.dumps(result, indent=2), encoding="utf-8"
+    )
     print(
         json.dumps({v: [(r["source_t"], r["label"]) for r in x["rows"]] for v, x in result.items()})
     )

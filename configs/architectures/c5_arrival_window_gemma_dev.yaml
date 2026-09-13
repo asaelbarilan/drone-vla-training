@@ -1,0 +1,9 @@
+# D-107: two monitor sampling periods (2 s each) include the 1.2 s response delay.
+# A 3 s source-age window expired at 3.25 s before an otherwise valid stop arrived.
+_base_: c5_arrival_memory_gemma_dev.yaml
+id: c5_arrival_window_gemma_dev
+profile_of: c5
+name: "C5 arrival window including monitor availability"
+monitor:
+  params:
+    arrival_memory_s: 4.0

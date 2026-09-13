@@ -287,3 +287,22 @@ def test_jumping_or_invalid_current_target_cannot_reuse_old_arrival_confirmation
     fresh(ctx)
     assert asyncio.run(monitor.assess(ctx)).label is not ProgressLabel.STOP
     assert monitor._tracked_target is None
+
+
+def test_availability_window_accepts_3_25s_but_expires_after_two_monitor_periods():
+    ctx, monitor, _ = memory_monitor()
+    monitor.arrival_memory_s = 4.0
+    asyncio.run(monitor.assess(ctx))
+    fresh(ctx)
+    asyncio.run(monitor.assess(ctx))
+    target = monitor._tracked_target.copy()
+    at_return = ctx.observation.model_copy(
+        update={
+            "position": Vec3(x=target[0], y=target[1], z=target[2]),
+            "t_sim_ns": monitor._tracked_target_t_ns + 3_250_000_000,
+        }
+    )
+    assert monitor.stop_still_supported(at_return)
+    assert not monitor.stop_still_supported(
+        at_return.model_copy(update={"t_sim_ns": monitor._tracked_target_t_ns + 4_000_000_001})
+    )
