@@ -22,6 +22,7 @@ from uavlab.contracts import (
     s_to_ns,
 )
 from uavlab.contracts.decision import MissionDirective
+from uavlab.core.mission_evidence import public_coordinate_goal
 from uavlab.interfaces import DecisionContext, SemanticCompletionEvidence
 
 SkillResult = WaypointGoal | KinematicAction | MissionDirective
@@ -114,6 +115,17 @@ def validate_skill_call(call: SkillCall, ctx: DecisionContext | None = None) -> 
     # it never asks the environment whether the candidate is the true target.
     if call.skill_name == "stop" and ctx is not None:
         radius = ctx.mission.success.goal_radius_m
+        coordinate = public_coordinate_goal(ctx.mission)
+        if coordinate is not None:
+            if (
+                ctx.observation.position.distance_to(coordinate) > radius
+                or ctx.observation.velocity.norm() > 0.75
+            ):
+                raise InvalidSkillArguments(
+                    "stop requires arrival at the public mission coordinate within "
+                    f"{radius:.1f} m and speed <= 0.75 m/s"
+                )
+            return
         live_supported = any(
             detection.label == "target"
             and detection.position is not None
@@ -207,9 +219,7 @@ def _skill_approach(call: SkillCall, ctx: DecisionContext) -> WaypointGoal:
 
 
 def _skill_hover(call: SkillCall, ctx: DecisionContext) -> WaypointGoal:
-    return WaypointGoal(
-        target=ctx.observation.position, tolerance_m=0.5, stop_at_target=False
-    )
+    return WaypointGoal(target=ctx.observation.position, tolerance_m=0.5, stop_at_target=False)
 
 
 def _skill_scan(call: SkillCall, ctx: DecisionContext) -> KinematicAction:
@@ -234,9 +244,7 @@ def _skill_back_off(call: SkillCall, ctx: DecisionContext) -> WaypointGoal:
 
 def _skill_ascend(call: SkillCall, ctx: DecisionContext) -> WaypointGoal:
     p = ctx.observation.position
-    return WaypointGoal(
-        target=Vec3(x=p.x, y=p.y, z=p.z + _arg(call, "dz", 2.0)), tolerance_m=0.8
-    )
+    return WaypointGoal(target=Vec3(x=p.x, y=p.y, z=p.z + _arg(call, "dz", 2.0)), tolerance_m=0.8)
 
 
 def _skill_stop(call: SkillCall, ctx: DecisionContext) -> MissionDirective:

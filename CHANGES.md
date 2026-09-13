@@ -2286,3 +2286,8 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - C1 retains text-only inputs; its coordinate task reaches the destination but rejects done without labeled evidence, followed by a stale stop. C5 approaches visible target to 0.335 m but fails to stop. Do not equate timeouts with planning inability.
 - Exported linked matrix and all 24 flight replays. All replay checks pass; Edge verifies 72 snapshots and 24 playbacks with no errors. Added findings, call audit and selected original protocol evidence.
 - No runtime policy change, extra flight, scheduled continuation or C1 visual integration. Next diagnostic steps documented in FINDINGS.md.
+
+## 2026-09-13 - D-105 AerialClaw coordinate completion repair
+- Both policy done validation and shared stop runtime now accept live odometry at the explicit public ENU coordinate for known_goal_nav only, within mission radius and speed <=0.75 m/s.
+- The coordinate is read from the unambiguous public instruction, never scoring truth or a model-proposed goal. No action is authored by this parser; the LLM still selects goto and done.
+- Legacy semantic tasks remain unchanged. Added near/far/speed, ambiguous-input and search-isolation regression checks. Validation/rerun pending.

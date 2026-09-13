@@ -30,6 +30,7 @@ from uavlab.contracts import (
     Vec3,
     s_to_ns,
 )
+from uavlab.core.mission_evidence import public_coordinate_goal
 from uavlab.core.registry import register
 from uavlab.core.sensing import widest_free_bearing
 from uavlab.core.services import RuntimeServices
@@ -210,10 +211,7 @@ class AerialClawAgentPolicy:
         coverage_visited = 0
         if self._coverage_points:
             coverage_visited = sum(
-                any(
-                    point.distance_to(previous) <= 6.0
-                    for previous in self._visited_positions
-                )
+                any(point.distance_to(previous) <= 6.0 for previous in self._visited_positions)
                 for _, point in self._coverage_points
             )
         return {
@@ -291,9 +289,7 @@ class AerialClawAgentPolicy:
                 errors.append("empty model output")
                 continue
             try:
-                parsed = _DECISION_ADAPTER.validate_python(
-                    json.loads(_strip_json_wrapper(raw))
-                )
+                parsed = _DECISION_ADAPTER.validate_python(json.loads(_strip_json_wrapper(raw)))
                 failed_dispatches = sum(
                     1
                     for step in self._history
@@ -316,9 +312,8 @@ class AerialClawAgentPolicy:
                     )
                     parsed = None
                     continue
-                if (
-                    parsed.decision == "done"
-                    and not bool(self._completion_evidence(ctx)["supported"])
+                if parsed.decision == "done" and not bool(
+                    self._completion_evidence(ctx)["supported"]
                 ):
                     self._protocol_rejections += 1
                     errors.append(
@@ -482,8 +477,7 @@ class AerialClawAgentPolicy:
         if action.skill == "goto":
             numeric = (args.get("x"), args.get("y"), args.get("z"))
             if all(
-                isinstance(value, (int, float)) and not isinstance(value, bool)
-                for value in numeric
+                isinstance(value, (int, float)) and not isinstance(value, bool) for value in numeric
             ):
                 return _ActiveSkill(
                     skill_name=action.skill,
@@ -491,9 +485,7 @@ class AerialClawAgentPolicy:
                     last_decision_id=decision_id,
                     target=Vec3(x=float(numeric[0]), y=float(numeric[1]), z=float(numeric[2])),
                     tolerance_m=float(args.get("tolerance_m", 1.0)),
-                    target_evidence_t_sim_ns=self._target_evidence_timestamp(
-                        action, ctx
-                    ),
+                    target_evidence_t_sim_ns=self._target_evidence_timestamp(action, ctx),
                 )
         if action.skill == "scan":
             return _ActiveSkill(
@@ -687,9 +679,7 @@ class AerialClawAgentPolicy:
             "altitude_m": [mission.constraints.min_altitude_m, mission.constraints.max_altitude_m],
             "max_speed_mps": mission.constraints.max_speed_mps,
             "success_radius_m": mission.success.goal_radius_m,
-            "scan_coverage_at_current_viewpoint_rad": round(
-                self._scan_angle_since_motion_rad, 2
-            ),
+            "scan_coverage_at_current_viewpoint_rad": round(self._scan_angle_since_motion_rad, 2),
             "full_local_scan_completed": self._scan_angle_since_motion_rad >= math.tau,
             "soft_skill_phase": soft_skill_phase,
         }
@@ -808,9 +798,7 @@ Keep thinking, reflection and goal_progress to one short sentence each.
             radius = min(5.0, ctx.mission.constraints.geofence_radius_m * 0.1)
         else:
             return []
-        desired_altitude = (
-            15.0 if ctx.mission.task_family.value == "long_horizon_nav" else 8.0
-        )
+        desired_altitude = 15.0 if ctx.mission.task_family.value == "long_horizon_nav" else 8.0
         altitude = min(
             ctx.mission.constraints.max_altitude_m - 1.0,
             max(ctx.mission.constraints.min_altitude_m, desired_altitude),
@@ -854,8 +842,7 @@ Keep thinking, reflection and goal_progress to one short sentence each.
                         "tolerance_m": 2.5,
                     },
                     "visited": any(
-                        point.distance_to(previous) <= 6.0
-                        for previous in self._visited_positions
+                        point.distance_to(previous) <= 6.0 for previous in self._visited_positions
                     ),
                 }
             )
@@ -872,6 +859,20 @@ Keep thinking, reflection and goal_progress to one short sentence each.
 
     def _completion_evidence(self, ctx: DecisionContext) -> dict[str, object]:
         radius = ctx.mission.success.goal_radius_m
+        coordinate = public_coordinate_goal(ctx.mission)
+        if coordinate is not None:
+            distance = ctx.observation.position.distance_to(coordinate)
+            speed = ctx.observation.velocity.norm()
+            return {
+                "supported": distance <= radius and speed <= 0.75,
+                "source": "explicit public mission coordinate and current odometry",
+                "target_distance_m": round(distance, 2),
+                "target_position_enu_m": [coordinate.x, coordinate.y, coordinate.z],
+                "evidence_age_s": 0.0,
+                "vehicle_speed_mps": round(speed, 2),
+                "required_radius_m": radius,
+                "required_max_speed_mps": 0.75,
+            }
         candidates: list[tuple[str, float, float]] = []
         for detection in ctx.perception.detections:
             if detection.label == self.target_label and detection.position is not None:
@@ -899,9 +900,7 @@ Keep thinking, reflection and goal_progress to one short sentence each.
             isinstance(completed, SemanticCompletionEvidence)
             and completed.label == self.target_label
         ):
-            completed_age_s = max(
-                0.0, (ctx.t_sim_ns - completed.completed_t_sim_ns) / 1e9
-            )
+            completed_age_s = max(0.0, (ctx.t_sim_ns - completed.completed_t_sim_ns) / 1e9)
             if completed_age_s <= 10.0:
                 candidates.append(
                     (
@@ -924,14 +923,9 @@ Keep thinking, reflection and goal_progress to one short sentence each.
         }
 
     def _unvisited_coverage_count(self, ctx: DecisionContext) -> int:
-        return sum(
-            not bool(candidate["visited"])
-            for candidate in self._coverage_reference(ctx)
-        )
+        return sum(not bool(candidate["visited"]) for candidate in self._coverage_reference(ctx))
 
-    def _soft_skill_phase(
-        self, ctx: DecisionContext, completion: dict[str, object]
-    ) -> str:
+    def _soft_skill_phase(self, ctx: DecisionContext, completion: dict[str, object]) -> str:
         if bool(completion["supported"]):
             return "complete_supported_arrival"
         target_supported = any(
@@ -966,13 +960,10 @@ Keep thinking, reflection and goal_progress to one short sentence each.
             and previous.get("args") == action.args
         )
 
-    def _target_evidence_timestamp(
-        self, action: _AgentAction, ctx: DecisionContext
-    ) -> int | None:
+    def _target_evidence_timestamp(self, action: _AgentAction, ctx: DecisionContext) -> int | None:
         values = (action.args.get("x"), action.args.get("y"), action.args.get("z"))
         if not all(
-            isinstance(value, (int, float)) and not isinstance(value, bool)
-            for value in values
+            isinstance(value, (int, float)) and not isinstance(value, bool) for value in values
         ):
             return None
         proposed = Vec3(x=float(values[0]), y=float(values[1]), z=float(values[2]))

@@ -2251,3 +2251,15 @@ blanket planning-failure interpretation. Six C5 cells record constraint violatio
 all runs have zero collisions. 24 exact replays and 72 browser snapshots/24 playback
 checks pass. No policy repair or repeat flight made; no running/scheduled work remains.
 Next diagnostic scope is in FINDINGS.md; C1 visual interface question remains open.
+
+## D-105 - AerialClaw task contract and perception tools (2026-09-13, in progress)
+
+User authorized coordinate completion repair, then a model-requested visual perception
+skill with mission/skill authority preserved. First repair aligns policy and runtime
+arrival checks on the public coordinate and odometry; no simulator truth is used.
+Only the declared known_goal_nav coordinate syntax is recognized, never hidden/search
+goals or model-invented coordinates. Existing semantic profile remains unchanged.
+Next: saved-call regression, one coordinate flight, then optical detection tool and
+one visible-pillar flight. Gemma only; no OnFly edits or broad trial sweep.
+Rationale: D-104 reached coordinate but rejected done for missing exact-label evidence.
+Evidence: tests/unit/test_aerialclaw.py; D-104 original requests/result. New evidence pending.

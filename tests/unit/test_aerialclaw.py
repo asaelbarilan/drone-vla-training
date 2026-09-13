@@ -279,9 +279,7 @@ def test_soft_skill_document_materially_changes_the_prompt() -> None:
 
 def test_completion_evidence_uses_only_exact_label_and_current_kinematics() -> None:
     policy, _ = policy_with([reply()])
-    evidence = policy._completion_evidence(
-        context(position=Vec3(x=8.0, y=4.0, z=3.0))
-    )
+    evidence = policy._completion_evidence(context(position=Vec3(x=8.0, y=4.0, z=3.0)))
     assert evidence["supported"] is True
     assert evidence["source"] == "live exact-label detection"
     prompt = policy._build_prompt(context(position=Vec3(x=8.0, y=4.0, z=3.0)))
@@ -388,3 +386,87 @@ def test_cost_only_simulated_inference_is_refused() -> None:
 def test_skill_runtime_rejects_undocumented_or_invalid_arguments(call: SkillCall) -> None:
     with pytest.raises(InvalidSkillArguments):
         SkillRuntime(MISSION.allowed_skills).expand(call, context())
+
+
+@pytest.mark.parametrize(
+    "position,speed,allowed",
+    [
+        (Vec3(x=12, y=0, z=3), 0.0, True),
+        (Vec3(x=10, y=0, z=3), 0.75, True),
+        (Vec3(x=9.99, y=0, z=3), 0.0, False),
+        (Vec3(x=12, y=0, z=3), 0.76, False),
+    ],
+)
+def test_coordinate_done_and_runtime_share_live_arrival_contract(position, speed, allowed):
+    from dataclasses import replace
+
+    mission = MISSION.model_copy(
+        update={
+            "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+            "task_family": TaskFamily.KNOWN_GOAL_NAV,
+        }
+    )
+    ctx = context(position=position)
+    ctx = replace(
+        ctx,
+        mission=mission,
+        perception=ctx.perception.model_copy(update={"detections": ()}),
+        observation=ctx.observation.model_copy(update={"velocity": Vec3(x=speed, y=0, z=0)}),
+    )
+    policy, model = policy_with([done_reply()])
+    policy.reset(mission, 1061)
+    assert policy._completion_evidence(ctx)["supported"] is allowed
+    if allowed:
+        decision = asyncio.run(policy.decide(ctx))
+        result = SkillRuntime(("stop",)).expand(decision.payload, ctx)
+        assert result.label.value == "stop"
+        assert len(model.requests) == 1
+    else:
+        with pytest.raises(InvalidSkillArguments):
+            SkillRuntime(("stop",)).expand(SkillCall(skill_name="stop"), ctx)
+
+
+def test_public_coordinate_evidence_never_uses_search_goal_or_ambiguous_text():
+    from uavlab.core.mission_evidence import public_coordinate_goal
+
+    known = MISSION.model_copy(update={"task_family": TaskFamily.KNOWN_GOAL_NAV})
+    for text in (
+        "fly to red pillar",
+        "world ENU coordinate (NaN,0,3)",
+        "world ENU coordinate (1e999,0,3)",
+        "world ENU coordinate (12,0,3), then world ENU coordinate (4,5,3)",
+    ):
+        assert public_coordinate_goal(known.model_copy(update={"instruction": text})) is None
+    instruction = "Fly to world ENU coordinate (-12.5, 2e1, 3)."
+    assert public_coordinate_goal(MISSION.model_copy(update={"instruction": instruction})) is None
+    assert public_coordinate_goal(known.model_copy(update={"instruction": instruction})) == Vec3(
+        x=-12.5, y=20, z=3
+    )
+
+
+def test_saved_d104_done_reply_passes_coordinate_contract_without_reprompt():
+    import json
+    from dataclasses import replace
+    from pathlib import Path
+
+    record = json.loads(
+        Path(
+            "reports/capability_screen_20260912/c1_coordinate_completion/call-000002.json"
+        ).read_text(encoding="utf-8")
+    )
+    mission = MISSION.model_copy(
+        update={
+            "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+            "task_family": TaskFamily.KNOWN_GOAL_NAV,
+        }
+    )
+    ctx = context(position=Vec3(x=11.92, y=0, z=3))
+    ctx = replace(
+        ctx, mission=mission, perception=ctx.perception.model_copy(update={"detections": ()})
+    )
+    policy, model = policy_with([record["response"]])
+    policy.reset(mission, 1061)
+    decision = asyncio.run(policy.decide(ctx))
+    assert SkillRuntime(("stop",)).expand(decision.payload, ctx).label.value == "stop"
+    assert policy.stats()["aerialclaw_protocol_rejections"] == 0
+    assert len(model.requests) == 1
