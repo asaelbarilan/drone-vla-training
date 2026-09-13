@@ -148,6 +148,24 @@ class AerialClawVisualAgentPolicy(AerialClawAgentPolicy):
 
     def _build_prompt(self, ctx):
         text = super()._build_prompt(ctx)
+        if self.visual_search_strategy:
+            start = text.index("## Relevant soft skill")
+            end = text.index("## BODY-derived coverage reference", start)
+            text = (
+                text[:start]
+                + """## Relevant soft skill: search with requested perception
+Passive detections are unavailable. Empty detections do NOT establish absence.
+A scan rotates the camera but never identifies objects.
+When phase is inspect_current_viewpoint, first call detect_object to inspect the view.
+After a negative detection, scan to change heading, then request detect_object again.
+Use coverage goto after inspecting searched viewpoints without finding the target.
+After a positive result, choose goto to the measured target, await skill feedback,
+and choose done when completion evidence supports arrival.
+Do not generate a stream of image navigation points.
+
+"""
+                + text[end:]
+            )
         return (
             text
             + f"""
