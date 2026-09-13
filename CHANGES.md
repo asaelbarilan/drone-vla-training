@@ -2319,3 +2319,10 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Saved all per-flight manifests/results, compressed events and exact calls/images. Published before/after debugger with explicit invalid-trial note and perception-tool evidence.
 - Final 406 unit/contract tests pass; seven trajectories replay-match, 21 browser timeline checks and seven playback checks pass. New tool and coordinate files pass lint; legacy UP038 warnings were not mass-edited.
 - No further flights or scheduled work. Next bounded step is corrected-strategy search validation. See REPORT.md and TODO.md; no general visual-planning success claimed.
+
+## 2026-09-13 — D-106: freeze 24-cell comparison before inference
+
+User authorized one corrected search validation followed by comparison of C0/C1/C5.
+The search flight counts once in the 24-cell matrix. Resolved configurations and
+source hashes freeze before launch; no tuning/retries. Five C1 text-only cells
+are explicitly integration-limited. See reports/frozen_capability_20260913/PLAN.md.

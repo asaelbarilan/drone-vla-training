@@ -1,0 +1,4674 @@
+{
+  "source_commit": "949c7b32cec5c4c183096a11f93de86e97322bad",
+  "hashes": {
+    "configs/architectures/_base.yaml": "c1716c2b07ba9d6ec0d1a5c5b8d5e4fc93f3798fd8576c1ecfdc92d82ec7f670",
+    "configs/architectures/c0_oracle.yaml": "727e083fec0155743487ae042671359ac3472e58239c293c08461777cd18b8e3",
+    "configs/architectures/c10_periodic_hierarchy.yaml": "b0b1dec4af1752ba033b8c58147f8b9619e89d919f28b233c0dad060baeb4ea3",
+    "configs/architectures/c11_chunked_hierarchy.yaml": "b19d854cde5f9a484d7eb519d823292c268677247c0bfbc6abdb1951adbf052f",
+    "configs/architectures/c12_async_hierarchy.yaml": "2b0fc51e90f76f288bbcc5c53cb5b4dfab039ceba8372b17abe4797a492d0f26",
+    "configs/architectures/c13_triggered_hierarchy.yaml": "6a42b8417b296cec8cb16b959b87869636cc4d1403fbcb084b23fe2b51d62b6b",
+    "configs/architectures/c14_world_model.yaml": "4d19d8962f2133bd956ffd8a25778f23cc5682733b609c8d6d3a6fc9e7a0c198",
+    "configs/architectures/c1_aerialclaw_qwen4_shared.yaml": "82c81c71a7cfa0038cd91ab7de43fd365246e125788be99b1fdf1a01d13d01e3",
+    "configs/architectures/c1_capability_gemma_dev.yaml": "86c6b6039329724bc17d43f3d25b1bef61c263ee636275c7b03247cd0d1bdbe6",
+    "configs/architectures/c1_llm_skills.yaml": "8885dfa7daa76f662ae955832f5aafecd7b143697785a26afc61c403017dca2b",
+    "configs/architectures/c1_visual_search_gemma_dev.yaml": "d08ce5e5495e2202ccdcb44822d3f4347e211431acd44b24150c4dfa4a0d4fde",
+    "configs/architectures/c1_visual_tools_gemma_dev.yaml": "23337495c1a2b03a18146729eb076706dbcaee60328eb641e4b7d6c5ac7f4d19",
+    "configs/architectures/c1_visual_tools_refined_gemma_dev.yaml": "7c3bae9eaca7295cc2f1b86d35695914b5b7f8394206a93275b7cf62c9778eba",
+    "configs/architectures/c2_spf.yaml": "d02ccc9a73c147e9f8fbaf3583642634c52c5f480d817833e4a6954dda572de6",
+    "configs/architectures/c2_spf_qwen4_shared.yaml": "126cfe1abc2587112e1f411c8f91a1ce387bbbe0a5cfa39dee20f93d64675b43",
+    "configs/architectures/c2_vlm_waypoint.yaml": "8f55af760dd6b487b7b0193ea0143b9ccbc345170eb8fb3cb0d254ada52ca005",
+    "configs/architectures/c2g_gemma_waypoint.yaml": "a6ad5fbafad86707a0ed501b9831242ba648377eed85edca2934a16d102c9964",
+    "configs/architectures/c3_onfly_gemma.yaml": "af4d68b2c84b80e3eb28a733598350a050f68fd047a834137b1e55ad53aa8f3b",
+    "configs/architectures/c3_onfly_qwen.yaml": "4c806678cb35364dc2f3b77c8cc08376a035f9720bcbe985a6d39878518da280",
+    "configs/architectures/c3_onfly_qwen4.yaml": "1ceee090921ff7c91e50cea5bec3eb0f1637255d75ce4e02fb8330669fd20def",
+    "configs/architectures/c3_onfly_qwen4_native_dynamics.yaml": "29058f885388390226492028999ee6d82212861a75f3d312d2a56e6ebba4b326",
+    "configs/architectures/c3_onfly_qwen4_native_shield.yaml": "855f5bb7bae203b26b18c866f3788b2373d193cd5cce64261e5cde4f72b0a94c",
+    "configs/architectures/c3_onfly_qwen4_shared.yaml": "e67e740419a7dada8c9df7527734039b68ceb4b1b04f573bd37a47d58ba568c1",
+    "configs/architectures/c3_verifier.yaml": "5cd04d08239238ad0f92d4aaf98c925c1749663b71b13bb9a74feaaaf3d55603",
+    "configs/architectures/c3g_gemma_verifier.yaml": "25d6e2314963fab867a0251a461dbee3b8cc2dabe1859a203024bb3eb6797d0b",
+    "configs/architectures/c4_onfly_gemma.yaml": "ea77bf5f9849ed8fc3e166603d8078fef0c51ac82382d00536421cf400361581",
+    "configs/architectures/c4_onfly_qwen.yaml": "09e1cc8e77bdf9d560ef6ec6ff1c4e99d4bab7098a4d2944743e0307fe32225d",
+    "configs/architectures/c4_periodic_monitor.yaml": "6aa01748961d03a44b05e40f8212458f032e1df0f35452165dcade556b3089c2",
+    "configs/architectures/c4g_gemma_monitor.yaml": "5a4ee9797e55640622e843b2bd7131f6d6a602eee01e9fe995b6a9c3e1a9dff6",
+    "configs/architectures/c5_capability_gemma_dev.yaml": "4f1d7ee81cad64cbc188d77f6ca3ff39c8a02d8f8132ef80c650cdc94531ee8b",
+    "configs/architectures/c5_free_vlm_router_dev.yaml": "84300c47ba750040c2c8f5852e28e4a48c92c731388c3dce357ddd7f0fb066a2",
+    "configs/architectures/c5_gemini_flash_target_stop_dev.yaml": "79cf42b6268b73ffefce462e70d352e8d762ae1f8fadc34ac2c6aea8a653e153",
+    "configs/architectures/c5_gemma4_e2b_baseline_dev.yaml": "4155c27b8866cb4d46b43cf6ad75483aed64d1b641f8c55a3f0665171f798bb2",
+    "configs/architectures/c5_gemma4_e2b_fresh_view_dev.yaml": "8e7ec867cf940e998192527b964e77ffefdcad7a7a0b52b50d76878746e13585",
+    "configs/architectures/c5_gemma4_e2b_projector_dev.yaml": "738f979daf46440fff5adc526d5d8afce6618f0f592ac3526a69730a5836cbd9",
+    "configs/architectures/c5_gemma4_e2b_runtime_fixed_dev.yaml": "9e68cc4d5e03f1c93b07684fcbc96514dc918af02d4d93bf29032649c9ea0199",
+    "configs/architectures/c5_gemma4_e2b_runtime_fixed_target_stop_dev.yaml": "125bac39da9df35a74adbed0fab93cc7056c19743d7643f5fd42d3165bb86181",
+    "configs/architectures/c5_gemma4_e2b_target_stop_dev.yaml": "d10ba5d122cfe91c85933726be726c99853d58b565086064e0635a90f146b42f",
+    "configs/architectures/c5_gemma_attribute_guard_dev.yaml": "bac1484b264e15ddd38af7bc509d114024d42f40d4f7ae1f81ed6427ee7e01f2",
+    "configs/architectures/c5_gemma_fresh_guarded_monitor_dev.yaml": "d1a13b549849b38622e8c4a3e62436c5e780e1020438b0498f974542d584d0f4",
+    "configs/architectures/c5_gemma_goal_yaw_dev.yaml": "cbf55dc423466250bc9cbe36e99f9712a2d05506c5cba3470bf4b7634f4fb26e",
+    "configs/architectures/c5_gemma_ground_monitor_dev.yaml": "99817c3e41675933ac73dabfdd3cc2cc6628201f7ffa2f32aae203f51174f0dd",
+    "configs/architectures/c5_gemma_grounded_policy_dev.yaml": "4b99888c4c515d7e908c5a0b3dfb1f7fd4ca439fbf4a98ccb279988fc64c765e",
+    "configs/architectures/c5_gemma_guarded_monitor_dev.yaml": "695539c04b85bb0744ca1b98b92714547ed485934d2ca9248b47a0af04a737ff",
+    "configs/architectures/c5_keyframe_memory.yaml": "bbb17450e61d5ed9c03cf865cb6ed0f18c5ba58476699b503b4b2110f6861493",
+    "configs/architectures/c5_onfly_active_dev.yaml": "f674b41424fb8e1f5f1340e6e1c95e768c3187a5f3109456133c7c173df4d415",
+    "configs/architectures/c5_onfly_fence_dev.yaml": "c55a632db6d26cc43189f4bd633b9eb75d604eacde1e24d26acc386644137ac7",
+    "configs/architectures/c5_onfly_gemma.yaml": "6eb9b46e7e498a4ec0b3ce3fc53668e2168a507ad5e302fa6a73c321d096562e",
+    "configs/architectures/c5_onfly_gemma4b_direction_dev.yaml": "e691849c8eb81d867b16e7fce564a17d9eb656d1a898d1fce2b307b6a241eea1",
+    "configs/architectures/c5_onfly_qwen.yaml": "477a37dc2b4b993700c9fd8588f487324a593211e7f6911a9bbfaf24afe0300e",
+    "configs/architectures/c5_onfly_qwen4.yaml": "599136aba5caee4e02b43604ab518a8bdff210239518b0440005e1fd800d335e",
+    "configs/architectures/c5_onfly_qwen4_corridor_frontier_dev.yaml": "4487b1694cb629867b1e3eef1520bf0366b173962947143ee862d7bcd267637e",
+    "configs/architectures/c5_onfly_qwen4_coverage_dev.yaml": "38e49a0746613e61cc61b38c075723e878862c44a7e7bbbb924526421c340088",
+    "configs/architectures/c5_onfly_qwen4_direction_dev.yaml": "702c064d91c56a1c63c82e57ebb52af18b7a53fe02826c4a37c0e948aed4786f",
+    "configs/architectures/c5_onfly_qwen4_native_dynamics.yaml": "21a8778906067abfed9989c357d3b7a9d08672d29d9bb60c92bf56ef5401a0cc",
+    "configs/architectures/c5_onfly_qwen4_shared.yaml": "361914f9c214af866de4f10217321ac8fbcef202597c8ba1299f9c030e307827",
+    "configs/architectures/c5_onfly_qwen4_spf_step_dev.yaml": "da9a678bcf3b7abcc0d9977991a1f168989c098fa3f23eba3727c7edb609b7ce",
+    "configs/architectures/c5_onfly_qwen_native_dynamics.yaml": "16f4414aed0f7bb3088024aa7c752990fc49012e871adeb3cb62768072122dd9",
+    "configs/architectures/c5_onfly_stop_fence_dev.yaml": "64a70caa7ae7eefed2bbdec8f176ca740520645a2f065d9c17f8f6a2ccf4bd44",
+    "configs/architectures/c5_onfly_target_stop_dev.yaml": "74ebe0fc89af2dcf5d961f5cdf6ea7bb0416fbd9ecd5ae223a10b7fe2097984d",
+    "configs/architectures/c5_route_direction_s1060.yaml": "2fbbf8d5a21b0f7bbd0cc551c444cd46bebf5475e724728fc2f9cd588e504f42",
+    "configs/architectures/c5_route_direction_s1061.yaml": "9e2144a69e9bd644c9abaaecd408522acacfde587b90e5938e72a9de8788c43d",
+    "configs/architectures/c5_route_direction_s1062.yaml": "e2273f5c78709df8541a5488ba86e447c984bb1772ca70ca973698131aa4eae6",
+    "configs/architectures/c5_route_direction_s1063.yaml": "c705ff5a8ab72df1b0cdfb075dfc125c75be55e9aa5e6dc6da8e697f63a7973b",
+    "configs/architectures/c5_route_direction_s1064.yaml": "01b692a23c00d11cea24a8c1676eb19e18ad8173157a9edac3ff1f4ed475b2cd",
+    "configs/architectures/c5_route_hint_s1060.yaml": "68d790c7cc8fdd57bbbfb146649c00964b12bacc1e06fc33baaba399a18330ff",
+    "configs/architectures/c5_route_hint_s1061.yaml": "69ffd7e82058631ad1798469ffd1914ae7343868e63cecd2aabf7c62e8bc3c05",
+    "configs/architectures/c5_route_hint_s1062.yaml": "829b94652b2c60b389d418982d7821cba123bd9a2957900aef89789f116f1283",
+    "configs/architectures/c5_route_hint_s1063.yaml": "9f1f93035c8b76043f4e85ff3ad46af03385a0addc66e6affdfa4e558b35665d",
+    "configs/architectures/c5_route_hint_s1064.yaml": "9291774659877deaa91a0affbdde6845b15d966a22cf393a647a2bf93588cd61",
+    "configs/architectures/c5g_gemma_keyframe.yaml": "7395ef9a4aea710abb654f8af51f115a50dc81c20d44511f25354e7fd1936923",
+    "configs/architectures/c6_pmr_qwen4_gptoss.yaml": "59a4c48337a6b8711a408b2d3c94f142e1c4a373b360ac52e1a82fa65d382f68",
+    "configs/architectures/c6_triggered_recovery.yaml": "26fb9eedfe54dfe789a0b0b029bcfcdeeece70a6fc6025d53ff6aa8bda5dc7ce",
+    "configs/architectures/c6g_gemma_recovery.yaml": "42e418572b260c2172e172aa2a3f3c96be62b9d8917877231176f3c107fc21cd",
+    "configs/architectures/c7_aerovla_gemma.yaml": "dae5d34982c06d129f5ef0e0d41343c4b8790a71d6b2a6c30096462a14fe56be",
+    "configs/architectures/c7_aerovla_native.yaml": "3fe6373592c662e060b36c65cd89b36e85fe28e8ddf52fdb560d175dd15943ee",
+    "configs/architectures/c7_direct_vla.yaml": "f943221b0fcc2cea94bbbfa1682db04cef94aea27997293b7b159e745665cdfc",
+    "configs/architectures/c7t_trained_vla.yaml": "cc0975b30f506f3ddc01f30918f74c7bb896bc0bbf8123e34cbaff7df492a50c",
+    "configs/architectures/c8_aerovla_gemma.yaml": "ceb7ee95def3ee3b37004685da1977ac391cb29922d53f414cdf1ed4ed55f611",
+    "configs/architectures/c8_aerovla_native.yaml": "019f8e7182720fc65925848016f66bc65606aef38456c9bdc73790686a097ba4",
+    "configs/architectures/c8_aerovla_qwen4_shared.yaml": "1592e9f14583d7babc4895f0a7de6e3b03472f151130fc78b49c5215d51e8ba2",
+    "configs/architectures/c8_shielded_vla.yaml": "37a318d8672c026afa78dd7ddb7d7b92c9af258199cbcf079ebd849ea55d1b00",
+    "configs/architectures/c8t_trained_vla_shield.yaml": "35635561e53c8396faa55c656ab8378000729e14c5049fc0d10b07c38b46543c",
+    "configs/architectures/c9_vla_history.yaml": "d7d638973404d853c2a63c8fcf66c411fbe40ca70812fe149bd6e0296dba0142",
+    "configs/architectures/vlm_adaptive_plan_gemma_dev.yaml": "56fe3cc562d6fefa39624007464508dd1ae9310e55ec8fae39a3de7fd1489d3d",
+    "configs/environments/capability_closing_passage.yaml": "914a343494ef2a9faf6aa9d14a463fc37f1c15f6bebe841ddbc3e4480760ef81",
+    "configs/environments/capability_conditional_gate.yaml": "feb5b11b82e9d8fbd3bab7b0443d987300e9c3acc31dcd0fb81f0b1d8af9b178",
+    "configs/environments/capability_follow_target.yaml": "43ac08698bd97a6ca468cb9dc3dc43f2b4854b38e4dfce9a9bc6adf69beec5b0",
+    "configs/environments/capability_known_goal.yaml": "e4d3cfff05e4b567f86337fc21f750d8883cdb6eb644ec5e1af59bd3ad20c6b8",
+    "configs/environments/capability_ordered_visit.yaml": "6d63fcbea9a17ff5995ad4aeb732a20c8509a025fd4b67c7291cdc027dfc7ede",
+    "configs/environments/capability_overturned_vehicle.yaml": "14b0fbdd500a917b303a49d0bc1be9d97d7c19f1e7948dad378a3ec1a2e7c5f1",
+    "configs/environments/capability_turn_search.yaml": "a379698336a120557ac7fde460c84ac43d0705db68541a136f18376c8a5e00ed",
+    "configs/environments/capability_turn_search_tools.yaml": "00fa7e73fc2907cf7cc9d8b2d2bbca8c1f0356c68aa0fa8d06e26ced12d3aa21",
+    "configs/environments/capability_visible_target.yaml": "24b2e98086831d78fdc9b7df6d113de89023166de99b090909d7694159ca3750",
+    "configs/environments/capability_visible_target_tools.yaml": "9695695319c339081e2fcf0fa45b6981228521bb94362f3ca06185c6a37b1e2a",
+    "configs/environments/failure_recovery.yaml": "1180ef62bd047fbe4c17ccf7f3aaaf0f530c8b47a5b63f4f1ccdf76fac169832",
+    "configs/environments/fine_maneuver.yaml": "2f55e6a7cce6dc764984955c2301ec56af0c05d1c1dacf99224be17eb6708509",
+    "configs/environments/grid_nav.yaml": "6f76154692032bf8fe6892acf7c196a32b600ade8b67d5505bd16492fa875e3b",
+    "configs/environments/grid_nav_aerovla.yaml": "4153e0e10233593a01900b9f02e217216afeca2ece51effa6317935dc36f5320",
+    "configs/environments/grid_nav_onfly.yaml": "9e21d974f27e41362092272e3d809d5cd2ed1948bbf90014889d002c70493338",
+    "configs/environments/grid_nav_onfly_depth_v2_dev.yaml": "25521d0d26b35338eab990d4ccb7d0e704c3fbc47cac325f930a1b3a3533a781",
+    "configs/environments/grid_nav_onfly_native_dynamics.yaml": "e7cd4b1576d7085050284ec7335f5b251c44a7cde8c78edd106eb70c7f86e1af",
+    "configs/environments/grid_nav_onfly_native_long.yaml": "b9353db7980aead4e5131a8342b9dc32e2f3e764bc25695ba7260ff50ead746f",
+    "configs/environments/grid_nav_rgb.yaml": "85917c29977353cbf395942c45c1c131e67c326f018e1e19aa1d008203209010",
+    "configs/environments/grid_nav_vision.yaml": "0e9a65cab26a3d97804f75ee47cad6b79555b7bdfded222f81798fa914b73128",
+    "configs/environments/object_search.yaml": "8eebad924f29429aaca42d0057992585e4befcfe7b433fa3a9aaac334378f6dc",
+    "configs/environments/object_search_rgb.yaml": "bef2f55cca4e61815ac4eba7ff49fd2d311e0e5570986ab8104befa4b7ddc340",
+    "configs/environments/occlusion.yaml": "0057619068b48794453e7491add3cc3c0c640819ef8ec6322119f3ac4bf90215",
+    "configs/experiments/core_families_local.yaml": "535dfd2dd43dac2e83cdfe7f8c29d92abee60fe7a32d5cd3a581295fda857c12",
+    "configs/experiments/full_c0_c14.yaml": "d11d24d6ee88247011e752835669408b7119fbc0144833653f990c9d5b37c2f1",
+    "configs/experiments/gemma_range_screen.yaml": "04951d51e5ed7822173faf79e04cd646a6b91bd4552b6433734b1c5ebd50c7d4",
+    "configs/experiments/gemma_screen.yaml": "0507bde2864c976de9f7aea60cb44e227dd1c0d7873df98112be5e0dab6d40ef",
+    "configs/experiments/macro_screen.yaml": "d56f47e1db7b40f48c692d2baba699115bc137a51e486084b89e8f6d1c5321a1",
+    "configs/experiments/memory_horizon.yaml": "eea9de43b123281d050dfccc6c1f921ce0baad0ae5dfae8c8e712464f9e17958",
+    "configs/experiments/predictive_state.yaml": "d53fa29a3d66bf4024cfaa0297139942326b87277de3817b0cbc8e1ab02fa3fa",
+    "configs/experiments/professor_end_maps_dev.yaml": "97384b70f6436a8c1a6140ba5b87d27b91d0eaf377a0171b67b81b085c62a9d0",
+    "configs/experiments/professor_end_maps_shared_qwen4_dev.yaml": "c98562afd88b93398bd9c7e94679d39eeac6c0b0374f1a98ea8c4281c6d98a04",
+    "configs/experiments/safety_screen.yaml": "5a0f0b059d088e17a8d4651d6980b688528883bd9bb2a2b8199a764927ff8765",
+    "configs/experiments/smoke.yaml": "ecd0d43ef8f7ccee93f127240e8e163037b3d50909b94d3ade33e339d9769388",
+    "configs/experiments/timing_recovery.yaml": "fa4f3a5321a2a4ddd12f9d45bfea51af25c966a22a2feb2b3b1f9d638c35b42b",
+    "configs/models/aerovla_native.yaml": "95d79d9f719a5db32ec87f3ec9d4d6f808b474c0f3bc755a2dad5d8d94d8b823",
+    "configs/models/gemma3_4b.yaml": "ee513c23e2cabe5880002d4e934f2439da82e8a2c518c3a8e898cc5cfbfc1153",
+    "configs/models/gemma3_4b_aerovla.yaml": "578b319e607d0190be3bddc69c9c080369bcd79e45ff2833a166d22bbbbefb9e",
+    "configs/models/gemma3_4b_onfly.yaml": "2d421a22d7168fdc7b6b51dfa5268053319cb9ffb128e805502e1aee93cce0ec",
+    "configs/models/gemma3_4b_waypoint.yaml": "9f97602bff800d9f7b997e510f0f19df01b4d2b9c0092d21c9bb9f8219bb85dd",
+    "configs/models/gpt_oss_20b_aerialclaw.yaml": "2a91a383901bcf98d16d972f36fa331c8948118142023409a58c9e407079291c",
+    "configs/models/qwen3_5_2b_aerialclaw.yaml": "b29fa4ba1368c64905734a5ea2ec47020b31bf66cf9ab7e51ae48f99bb470598",
+    "configs/models/qwen3_vl_4b_gpt_oss_20b_pmr.yaml": "e3f5697cf470808f1a706b09fb091be7555a860e211a41743a45a852f82c253c",
+    "configs/models/qwen3_vl_4b_onfly.yaml": "3f531400c309e569318cd8531303e8889c54a9ba56b5b4bc3fe656106b08d7e0",
+    "configs/models/qwen3_vl_4b_shared.yaml": "0d582aedd881f48aa969d77393300e7808198e66e860facd6d03e0c31b630838",
+    "configs/models/qwen3_vl_8b_onfly.yaml": "50f1ffb73e1337b64fed75d0ce2c6cd5a77a70f5f273cc422a32bd917ea79135",
+    "configs/models/qwen3_vl_8b_spf.yaml": "83acbf963fd772bdbec29b4d50cc51e0b55f70459a1fa6d32970cb57c1e10501",
+    "configs/models/sim_dual_loop.yaml": "6ca9c39c48913594580dbf77fd553f2a59129f4c0ab5b857058a14c209921ad3",
+    "configs/models/sim_free.yaml": "5ce9e1297f3e771f3120c7cee09c5eed7b3fc14efeae0090bc65623c0cadd1e9",
+    "configs/models/sim_llm_skill.yaml": "28ce49bfc3e888c419328f27d90426855dd260aa45d072e454117a9b0f399926",
+    "configs/models/sim_slow_reasoner.yaml": "c6ddf1c809727974395be09036440ea4d9910d20bf5426252eb908c5cbe65428",
+    "configs/models/sim_vla_fast.yaml": "3ed96275b9dda82df9a5584a250ad97040391db7e069b3f27a09d4edb139a95d",
+    "configs/models/sim_vlm_waypoint.yaml": "54906828ab2edabcb63c5e8fd4acebe1380419b689019df34739ddad21d4ebdf",
+    "configs/training/qwen3_vl_4b_vla_sft.yaml": "4f35662d7dfbb5b6eaa3f0afcc08693280c6ede0074c86fb3388cd7ce94e99e0",
+    "src/uavlab/__init__.py": "9f725686288bba7b915778ee17ff99ddbfd953847ba0db2b99aa0ea2816b3b74",
+    "src/uavlab/adapters/__init__.py": "40f34f87b56053cef624f25ed618352a2dd4966ead8385bd6563d6506c372865",
+    "src/uavlab/adapters/dataset_replay/__init__.py": "c3b524499a83b92c81a40e6aa61f928c35ace9aed8b646bef78b46ebc586a180",
+    "src/uavlab/adapters/dataset_replay/replay.py": "7c1c0717de6f403fdc69775d69d6dccd7b1fc808f77ee7fb47be61ffac0b51e0",
+    "src/uavlab/adapters/gazebo/__init__.py": "7d4c03297c5e6bc2dfeb82e005c4d933ce5f12a1d979db208d65c3a85085dcdc",
+    "src/uavlab/adapters/gym/__init__.py": "d0556afb241e54167d109487dbca27d8a6bc2ea6600e840fccef2c643d301439",
+    "src/uavlab/adapters/gym/capability_env.py": "0f3270462cbf79205cf1368fc0cbddaeb6c1cf132022f4ab29dd60c4e07228c7",
+    "src/uavlab/adapters/gym/deterministic_env.py": "c05d6798db7fcd359792048614b3c2afe9b9ebd08c978d2325d9f3d0a2afa7c5",
+    "src/uavlab/adapters/gym/render.py": "6eec4fe5def0765b8fe47a889f44e495570254240ba16e0874bf57d3d4101636",
+    "src/uavlab/adapters/mavsdk/__init__.py": "39cef19d9613c2d1f61755cdd6f69038239ed1ba8b531bf15d4bc821e6101a8c",
+    "src/uavlab/adapters/project_airsim/__init__.py": "13e500b11c4374bbc024528d104d01b7f7db09f986a30c01f2d6149044f98011",
+    "src/uavlab/adapters/project_airsim/adapter.py": "27b62047644e17089860cb904c8a54006746c9920ca714edbd8f6762c5f81e2c",
+    "src/uavlab/adapters/px4/__init__.py": "7de652fc56beae19886b397fe91f707b2e1653ac7e7f655a1d7f751793900160",
+    "src/uavlab/adapters/px4/adapter.py": "f17cd58cb8ae02830779d388e26c59374eab22ae89c2af946f9f84223c027c1c",
+    "src/uavlab/adapters/ros2/__init__.py": "5d14d16ff510bb5399767c1cc20eed7d1c09b00463ebdc034d05b3b4539c0655",
+    "src/uavlab/analysis/__init__.py": "6da44fa79f8e29cebac7da800563fb0e47cc02445fade9c9ce5388f533d88639",
+    "src/uavlab/analysis/flight_debugger.py": "552209800ff1b3596d7abb077cfdf274bebb7d5b8733fe3406ca6641f8472195",
+    "src/uavlab/analysis/metrics.py": "2ec9641298900ad8b12719972879ae2992284d248967c0f2bcac41c4053a961e",
+    "src/uavlab/analysis/pareto.py": "8bf6821507e22a96d71e79e2628e466a8409b58aafa1690fc95b4ffd477f655b",
+    "src/uavlab/analysis/replay_run.py": "7b469f0a7ddee48f03d601f18d49bbc01f2aacf0b78497d3cfc888f98230d7b4",
+    "src/uavlab/analysis/replay_video.py": "eab3316c76797217fe6f90193750528b839c7927ef24c89309d068dd006f0da5",
+    "src/uavlab/analysis/report.py": "e4429a7cd6d06ed971891d3f88c36bc8277fed56ac61c00e32ad444ed855dd50",
+    "src/uavlab/analysis/stats.py": "b2411f78d4df7dfbcb5327254b0a493d7b8c6b2944ec6eaefaa122ae856bc626",
+    "src/uavlab/cli.py": "e1b8f54059f975169a6453d90fd6f713816e8168b5ed9137c04c878d0694ba06",
+    "src/uavlab/contracts/__init__.py": "c59559b00b49b704f74eddb907f95da9288631d464102d1e3cd85eae20b295e4",
+    "src/uavlab/contracts/admission.py": "7923252667d725eb11c01c07187f702653df4adc096bf9003ee4268f7c91f90a",
+    "src/uavlab/contracts/common.py": "b8e365c66b48a9887cf7c661b3519ef0810bbe6b31ae441e7d111533149f572d",
+    "src/uavlab/contracts/decision.py": "cb526431002f9abfbe17d0b8c7766d7d65dce958d0f3750a7af2d58ec7c31898",
+    "src/uavlab/contracts/env_status.py": "1e98c1a90fd75f67dabfdccf505d854399e873539a5a665b8d4181a4e6d56285",
+    "src/uavlab/contracts/events.py": "c5869649dc969b8db1cef79be76e3ac0c316bbba503369b9613d9d5ee2becde3",
+    "src/uavlab/contracts/memory.py": "6b1a03c1de49c2716bb8a939c9ab24242abe03c97ad6a7153c4cf49b1e501134",
+    "src/uavlab/contracts/mission.py": "480766ce32d4e2cdfb7a3f4235270c1fe542aa728d197c2e946686f947db6f83",
+    "src/uavlab/contracts/motion.py": "74ffc9310d1a4b075899f800e02211689092fbd82ed5a845d97e25c5f1f74bea",
+    "src/uavlab/contracts/observation.py": "f2a82797ea8d3c72efe272d69df62b84e864db87cfdd52eb8facb1d7ce5da61e",
+    "src/uavlab/contracts/perception.py": "b6334f4046ef650a3caffa8afc8a9301ac4aca06d8f1ceae6ed2ac327fb05671",
+    "src/uavlab/contracts/progress.py": "bd78fd01ffc3160568a352eb4b5386b149ae7fc6e98fc61d3dc53d992b25d605",
+    "src/uavlab/contracts/safety.py": "3586e9b2797872fc1574a1779c5eb968af985b78ba33eb63c74704707c9e025f",
+    "src/uavlab/core/__init__.py": "b0c78cb658088f83be3f8ca2dddb8509b05181119abc5b00093bfe7b1af8a31f",
+    "src/uavlab/core/camera.py": "0ca43b3bc85a97057ed3f8b5c81fa4f54f5f56340184279a45c67e52dc3e42c5",
+    "src/uavlab/core/clock.py": "7d172c37598a846519a7c818df055eb52874ef3a0f2c2ca9047e4b54ee71772a",
+    "src/uavlab/core/compose.py": "f158933cbd231c8213a44a30994fe8ebdb17eafa6ab013acc56279a6cdb5bc4b",
+    "src/uavlab/core/config.py": "ff48db5242901feb9c884fe8b3978176e740017f2a4d45a373b9c9e9c5c3d807",
+    "src/uavlab/core/debug_capture.py": "1ab4ca00c93434f3fefb420a52a15d65f801450ddd4a8d56ede7f4526af7e14b",
+    "src/uavlab/core/decision_router.py": "bdadb0b09ef0c9ba8f4e5c4b34c9b9b4370d44f4b353ff4121f7187ac3a57d54",
+    "src/uavlab/core/event_log.py": "4f15f1bb0be57bc19e4187ce1d0e3941d4ee925f4758b72f608196a79be48522",
+    "src/uavlab/core/feature_cache.py": "8d64c10149adb0c7d886a975cd33322e62ec5e40aa7c6dba612130800440cfe1",
+    "src/uavlab/core/frame_store.py": "804fa13d1a3e8a6697cb0d6bda03773ff819c989bcddd10d541ec039ecea5685",
+    "src/uavlab/core/frames.py": "bb9c7cd0b3d3984055a73d64593d5a07451ce4733ae21ea1191d549416b4b211",
+    "src/uavlab/core/mission_evidence.py": "e4b3605062034d6697c091db7656d4cadfbd92653b09d3060609ab5ce5b7b27b",
+    "src/uavlab/core/orchestrator.py": "a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425",
+    "src/uavlab/core/registry.py": "b5ac5ad620dd70b0049775d614d1f75ce6fa117c0aa0819bb5f27c9a8c8e13ee",
+    "src/uavlab/core/results.py": "65ecc5f866f0ac3c58281d84841ae4d2de61f34b09cda76cc124357fd5f4d6ef",
+    "src/uavlab/core/scheduler.py": "3a5af16e5cbc15da7a3130b8853788f0e59ad78e1c21fb13137cb49cf938ef9a",
+    "src/uavlab/core/sensing.py": "4378cd776e909a409b3a08016f2be5415804ded5336d36d07dab835ce2e9138d",
+    "src/uavlab/core/services.py": "72cace9c9c354b1ddb5da7f66bed63a2b724d07574f18f0c4593ddcfb9d8e505",
+    "src/uavlab/core/skills.py": "ca6032190162e8f00d384b355fe629f54b9349f5a4096b712f11fdf31317c013",
+    "src/uavlab/experiments/__init__.py": "90c786bb28fd6567b3306e9c34cbb3f863793de0163a16516d09c77a22718bb7",
+    "src/uavlab/experiments/manifest.py": "516d961a3c687c00870a764dff11ba69cce7d67587a64a68ac6507225eec4b1c",
+    "src/uavlab/experiments/sweep.py": "7edf36153cc8a0c64325bc0844d865c32e0ed13b5df8364ece33d9a3684e4626",
+    "src/uavlab/experiments/verify.py": "f4bf7b59a0787bb59f98ad146e7214489f75a52c6c60ddc69f46a847feccde26",
+    "src/uavlab/interfaces.py": "40a7051118c7ef2b3a30131fd1939764ebe909806a9688f2d284b11195ab0580",
+    "src/uavlab/plugins/__init__.py": "f86029f0ede6c2a33561cf4aca420bbfafb1c8cce6c116e1a6caed6a1a853a93",
+    "src/uavlab/plugins/admission/__init__.py": "1475263b3935364ea4e07c4d921d86bfb1dc30b6a13c7f0abd7388f0629b5ee9",
+    "src/uavlab/plugins/admission/pmr.py": "2b14f8a8aa12447a97d1351e52c15535fb577cf50659c1beb19a00a94eb1fbf1",
+    "src/uavlab/plugins/control/__init__.py": "8232b5b84e17e7792e4e034be94a7ac11f9dfee61ef6571a43784857ffad007c",
+    "src/uavlab/plugins/control/mock.py": "95b72a961f5e036896dab10658ab6e04cd64ff0ec387389eabfbe7303ae7a9cf",
+    "src/uavlab/plugins/inference/__init__.py": "0e29c6c3899d77e41d247ff51c8d30adc72e71814759de77a40caae8c429b036",
+    "src/uavlab/plugins/inference/aerovla_hf.py": "63756880216a0989ee4b2f730aa5c97e7a86b82be938df2f93ea483ef248ae41",
+    "src/uavlab/plugins/inference/free_vlm_router.py": "a47a064945bd52641b6f8e099224af5a5e3d025a83001221fbdc40c2f8d922ce",
+    "src/uavlab/plugins/inference/gemini.py": "50a8e18ba3ffbaec586d88eeaf1d5ea24a27cccf39a107c71a7400a4419df9f1",
+    "src/uavlab/plugins/inference/gemini_client.py": "1b5c24b4a4a7bc9d81fd9ff734821b047f5b7e13391373ea76e64629c250f56e",
+    "src/uavlab/plugins/inference/ollama.py": "456462e7e3e95386e46c7d531ac6cac6f0385caa6ef379abe4abb8c197d3a626",
+    "src/uavlab/plugins/inference/role_router.py": "bb952b41cfce660d922d25688c2bce0ea73f6e1f683e9ca5505b76dcf5c1b149",
+    "src/uavlab/plugins/inference/simulated.py": "16248be650b6bd28eb3aaf484438a1d6d9dcc656ef83fbe45832bc4b3d828831",
+    "src/uavlab/plugins/memory/__init__.py": "900a6cfeb20d4eba3444a21168aefe47db58a6f1e56ef3b698ea1543026fb773",
+    "src/uavlab/plugins/memory/stores.py": "31197a022d50e01bb9a044496ad2fdb112e8e5cac55fb0aad5c5bced28d8bf51",
+    "src/uavlab/plugins/metrics/__init__.py": "90e5bc44d128d7e5c1091c1bab1d7a41faae2acb25efbc3fbd53254df2df4238",
+    "src/uavlab/plugins/monitoring/__init__.py": "303ab023f885c6a47cc657038ff5ee091a49b63ccd8ba740b9ce3a86a4ec2873",
+    "src/uavlab/plugins/monitoring/progress.py": "5a6cbcf905add042df338f2a42743acb0ef8ef6cd2cd7e1e93f7db9d48e37121",
+    "src/uavlab/plugins/perception/__init__.py": "25b49e33135d0709b23b7e19b86b17457a0e883cdd43ed56e2422ad7829f1d9e",
+    "src/uavlab/plugins/perception/identity.py": "70558126030e5b0dc3442d49d29c99a53d2630d2418675e06de0aad27a584eec",
+    "src/uavlab/plugins/planning/__init__.py": "4df3cb00afd46412e684bf4550ee9a27fbf3b3c232caf25c7754bb30dff34336",
+    "src/uavlab/plugins/planning/local.py": "ad9e63ae31076869c8942ca6cbeceb7078016c79964b61d688ff8d7553d68408",
+    "src/uavlab/plugins/planning/super.py": "40ffb8642c277ae65bfdb25a1a84215c12ac7e4f3823ae4142e4603a6c4e2367",
+    "src/uavlab/plugins/reasoning/__init__.py": "22d9902d97634ab61334cb1270004deca452350557e8dd745d6088c202ae6248",
+    "src/uavlab/plugins/reasoning/adaptive_visual_plan.py": "6619b84640b551c90f79fc53bf8af64a16d6063cad519e1147fc47a65b1a6133",
+    "src/uavlab/plugins/reasoning/aerialclaw.py": "e07eede2443ac81765412e58d8e150af05da605d33400aeb70bb0c76b781dfff",
+    "src/uavlab/plugins/reasoning/aerialclaw_visual.py": "cb3294f845d5f6efd83420cb5242005b58b1f30214d3e182ffc5fb0ae4faab1b",
+    "src/uavlab/plugins/reasoning/aerovla.py": "1b3a6f3a5e084a339948b685e25b39ff1969c95d72033880cf4c583681e816d7",
+    "src/uavlab/plugins/reasoning/base.py": "38672c76481b000dd873afed7e8fc2bce98ad43a81ff607739e50469e02ad19f",
+    "src/uavlab/plugins/reasoning/coverage.py": "d447a38480f0f098cf19e88232b8569e03fd7df963b2236ea41906abf829b411",
+    "src/uavlab/plugins/reasoning/learned.py": "2af12b736760cc2d9073fccbfd3ad1825841a620515cbe9bcff0c7ac3f25e02d",
+    "src/uavlab/plugins/reasoning/onfly.py": "b7804a878ef1db6b7380084caebeed4491cf01df6fe330d4b393d539983facb2",
+    "src/uavlab/plugins/reasoning/policies.py": "4e31e6fbd00fa7b84902c1b3956ec557153f04d65b7247cd004f17914710412f",
+    "src/uavlab/plugins/reasoning/spf.py": "11daa22fe1f7c2b6e5b7033beb499bd46cbec4d2e8f16ee47d43f8078791add6",
+    "src/uavlab/plugins/reasoning/vlm.py": "4f4a3af62d3cdabcca5efd323268a55ca0fc358aed98384f59e8d5363f75b60f",
+    "src/uavlab/plugins/recovery/__init__.py": "3664a6fbb308c4bec0ebad55bdb7f6e4d206ac998fb78b56af95d0fdb2e2a2e2",
+    "src/uavlab/plugins/recovery/pmr.py": "fafc57bf005e0ba8dbbcb8d184215a85730cd94fa19dbeb3d48a98424efc85ce",
+    "src/uavlab/plugins/recovery/reasoner.py": "c698646fb9b94f8b8e14ef264444ea253c38b48118788aa470fc559276a996fe",
+    "src/uavlab/plugins/shield/__init__.py": "5dc5d71887c189f9cfe38ea17f8583672dbe1234ed5f8cdb7d6fdc157ab44751",
+    "src/uavlab/plugins/shield/collision.py": "26c4ebb60baa92a2f2cf26b6725983fbc0c5d73bd4dc9bcd9b3845664b7e66af",
+    "src/uavlab/plugins/verifier/__init__.py": "cea156d370795891b0941332089490eb89085229347f41318be14aadded45a2c",
+    "src/uavlab/plugins/verifier/bounds.py": "1ea60fd278e670ea8c1a74e664f160b5e7f5c0eca37b4eb417e9e856cab6036b",
+    "src/uavlab/training/__init__.py": "693a9b79b2c0f5231225d55fdd27795fafbeadef5da4357b66bd44bb308623a0",
+    "src/uavlab/training/dagger.py": "4e2a151323289b16db26dceff110a2addb2433072f9afe1bad2d93a9b5508f5c",
+    "src/uavlab/training/dataset.py": "9015c6e3821ae5d81a87f98d7874c5ef04855f1401824da00a9417e9d2211c9b",
+    "src/uavlab/training/inspect_dataset.py": "6833b5c091c0e29f28d9675f83f45852b208a090423f563eefec2e479e1ca615",
+    "src/uavlab/training/policy_net.py": "d1a949b32e7df919c48dc0863364ea48086de7876e4c32a7f07453b37ac29e0b",
+    "src/uavlab/training/qwen_vla_dataset.py": "dac2b7f33baebedb66c4bdd77351aefd6c3ca8412e40945ba860c24c70cab282",
+    "src/uavlab/training/splits.py": "8ca75e47995db3de97f36e73304a46f063c06a960d92ef3f55fddfb3deab73b6",
+    "src/uavlab/training/train.py": "47752897a89fb91b56acfe17ed5b543274c9d5c7faf65af3c501370fa7dc5867"
+  },
+  "cells": [
+    {
+      "family": "c1",
+      "scenario": "turn_search",
+      "profile": "c1_visual_search_gemma_dev",
+      "environment": {
+        "id": "capability_turn_search_tools",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "object_search",
+        "instruction": "Find the red pillar, which may be outside the current view. Fly to it and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "turn_search",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "detect_object",
+            "goto",
+            "hover",
+            "scan",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_turn_search_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c1_visual_search_gemma_dev",
+        "name": "C1 AerialClaw requested-perception search strategy",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_visual_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "detect_object",
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ],
+            "visual_target_query": "red pillar",
+            "camera_pitch_rad": -0.1,
+            "pixel_refinement_fraction": 0.03,
+            "visual_search_strategy": true
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5,
+              "perception": 1.2
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "known_goal",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_known_goal",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "known_goal_nav",
+        "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "known_goal",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_known_goal_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "visible_target",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_visible_target",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "semantic_goal_nav",
+        "instruction": "Fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "visible_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_visible_target_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "turn_search",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_turn_search",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "object_search",
+        "instruction": "Find the red pillar, which may be outside the current view. Fly to it and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "turn_search",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_turn_search_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "overturned_vehicle",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_overturned_vehicle",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "state_reasoning",
+        "instruction": "Find the overturned vehicle among the two vehicles. Hover above it at 3.2 metres altitude and stop within 2 metres of that hover point.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "overturned_vehicle",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_overturned_vehicle_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "conditional_gate",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_conditional_gate",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "conditional_task",
+        "instruction": "At the wall ahead, use the left opening if it is clear; if the left opening is blocked, use the right opening. Stay below 7 metres. Then fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "conditional_gate",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_conditional_gate_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "ordered_visit",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_ordered_visit",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "multi_stage",
+        "instruction": "Visit the red pillar first, staying within 2 metres for at least half a second, then visit the blue pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "ordered_visit",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60,
+            "required_subgoals": 1
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_ordered_visit_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "closing_passage",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_closing_passage",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "failure_recovery",
+        "instruction": "Fly toward the red pillar through the open passage. If the passage closes, find another route around the wall. Stay below 7 metres and stop within 2 metres of the pillar.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "closing_passage",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_closing_passage_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c0",
+      "scenario": "follow_target",
+      "profile": "c0",
+      "environment": {
+        "id": "capability_follow_target",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "fine_maneuver",
+        "instruction": "Follow the red moving marker, staying 4 to 6 metres away and keeping it within 20 degrees of the camera centre. Acquire it in 5 seconds, then track until 20 seconds elapsed. Do not stop early.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "follow_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": false,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c0_follow_target_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c0",
+        "name": "Oracle semantic goal -> SUPER execution",
+        "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+        "family": "classical_baseline",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": null,
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "no_memory",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": true
+          }
+        },
+        "memory": {
+          "name": "no_memory",
+          "params": {}
+        },
+        "policy": {
+          "name": "oracle_waypoint",
+          "params": {
+            "stop_radius_m": 2.4
+          }
+        },
+        "verifier": null,
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": {
+          "name": "simple_collision",
+          "params": {}
+        },
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "free",
+          "params": {
+            "jitter_frac": 0.0
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 4.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 1.5,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": true,
+        "unsafe_ablation": false,
+        "tags": [
+          "control_ceiling",
+          "macro_screening"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "known_goal",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_known_goal",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "known_goal_nav",
+        "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "known_goal",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_known_goal_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "visible_target",
+      "profile": "c1_visual_search_gemma_dev",
+      "environment": {
+        "id": "capability_visible_target_tools",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "semantic_goal_nav",
+        "instruction": "Fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "visible_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "detect_object",
+            "goto",
+            "hover",
+            "scan",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_visible_target_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c1_visual_search_gemma_dev",
+        "name": "C1 AerialClaw requested-perception search strategy",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_visual_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "detect_object",
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ],
+            "visual_target_query": "red pillar",
+            "camera_pitch_rad": -0.1,
+            "pixel_refinement_fraction": 0.03,
+            "visual_search_strategy": true
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5,
+              "perception": 1.2
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "overturned_vehicle",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_overturned_vehicle",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "state_reasoning",
+        "instruction": "Find the overturned vehicle among the two vehicles. Hover above it at 3.2 metres altitude and stop within 2 metres of that hover point.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "overturned_vehicle",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_overturned_vehicle_20260913_s1061",
+      "integration_limited": true,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "conditional_gate",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_conditional_gate",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "conditional_task",
+        "instruction": "At the wall ahead, use the left opening if it is clear; if the left opening is blocked, use the right opening. Stay below 7 metres. Then fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "conditional_gate",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_conditional_gate_20260913_s1061",
+      "integration_limited": true,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "ordered_visit",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_ordered_visit",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "multi_stage",
+        "instruction": "Visit the red pillar first, staying within 2 metres for at least half a second, then visit the blue pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "ordered_visit",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60,
+            "required_subgoals": 1
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_ordered_visit_20260913_s1061",
+      "integration_limited": true,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "closing_passage",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_closing_passage",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "failure_recovery",
+        "instruction": "Fly toward the red pillar through the open passage. If the passage closes, find another route around the wall. Stay below 7 metres and stop within 2 metres of the pillar.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "closing_passage",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_closing_passage_20260913_s1061",
+      "integration_limited": true,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c1",
+      "scenario": "follow_target",
+      "profile": "c1_capability_gemma_dev",
+      "environment": {
+        "id": "capability_follow_target",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "fine_maneuver",
+        "instruction": "Follow the red moving marker, staying 4 to 6 metres away and keeping it within 20 degrees of the camera centre. Acquire it in 5 seconds, then track until 20 seconds elapsed. Do not stop early.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "follow_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": false,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c1_follow_target_20260913_s1061",
+      "integration_limited": true,
+      "architecture": {
+        "id": "c1_capability_gemma_dev",
+        "name": "C1 AerialClaw capability screen (Gemma, text sensor interface)",
+        "description": "Paper-faithful incremental AerialClaw skill composition over shared execution.",
+        "family": "llm_tool_planner",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c1",
+        "authority": "skill",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "none",
+        "semantic_memory": "short_context",
+        "memory_consumers": [
+          "policy"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "short_context",
+          "params": {
+            "window": 6,
+            "token_budget": 144
+          }
+        },
+        "policy": {
+          "name": "aerialclaw_agent",
+          "params": {
+            "model_id": "gemma4:e2b",
+            "context_steps": 6,
+            "validity_s": 5.0,
+            "max_parse_attempts": 3,
+            "allowed_skills": [
+              "goto",
+              "hover",
+              "scan",
+              "stop"
+            ]
+          }
+        },
+        "verifier": {
+          "name": "semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 30.0,
+            "min_clearance_m": 1.2,
+            "sensing_horizon_m": 25.0,
+            "repair": true,
+            "require_semantic_support": false
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2
+          }
+        },
+        "shield": null,
+        "monitor": null,
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "host": "http://localhost:11434",
+            "model_id": "gemma4:e2b",
+            "temperature": 0.0,
+            "num_predict": 512,
+            "sampling_seed": 1020,
+            "think": false,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 8.5
+            },
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "response_channel": "content",
+            "num_ctx": 8192
+          }
+        },
+        "scheduler": {
+          "kind": "periodic",
+          "control_hz": 20.0,
+          "decision_hz": 1.0,
+          "monitor_hz": null,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 20.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "skill_authority",
+          "aerialclaw",
+          "real_model"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "known_goal",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_known_goal",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "known_goal_nav",
+        "instruction": "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "known_goal",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_known_goal_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "visible_target",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_visible_target",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "semantic_goal_nav",
+        "instruction": "Fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "visible_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_visible_target_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "turn_search",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_turn_search",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "object_search",
+        "instruction": "Find the red pillar, which may be outside the current view. Fly to it and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "turn_search",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_turn_search_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "overturned_vehicle",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_overturned_vehicle",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "state_reasoning",
+        "instruction": "Find the overturned vehicle among the two vehicles. Hover above it at 3.2 metres altitude and stop within 2 metres of that hover point.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "overturned_vehicle",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_overturned_vehicle_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "conditional_gate",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_conditional_gate",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "conditional_task",
+        "instruction": "At the wall ahead, use the left opening if it is clear; if the left opening is blocked, use the right opening. Stay below 7 metres. Then fly to the red pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "conditional_gate",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_conditional_gate_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "ordered_visit",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_ordered_visit",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "multi_stage",
+        "instruction": "Visit the red pillar first, staying within 2 metres for at least half a second, then visit the blue pillar and stop within 2 metres.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "ordered_visit",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60,
+            "required_subgoals": 1
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_ordered_visit_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "closing_passage",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_closing_passage",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "failure_recovery",
+        "instruction": "Fly toward the red pillar through the open passage. If the passage closes, find another route around the wall. Stay below 7 metres and stop within 2 metres of the pillar.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "closing_passage",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": true,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_closing_passage_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    },
+    {
+      "family": "c5",
+      "scenario": "follow_target",
+      "profile": "c5_capability_gemma_dev",
+      "environment": {
+        "id": "capability_follow_target",
+        "adapter": {
+          "name": "capability_grid3d",
+          "params": {}
+        },
+        "task_family": "fine_maneuver",
+        "instruction": "Follow the red moving marker, staying 4 to 6 metres away and keeping it within 20 degrees of the camera centre. Acquire it in 5 seconds, then track until 20 seconds elapsed. Do not stop early.",
+        "max_episode_s": 60.0,
+        "params": {
+          "scenario": "follow_target",
+          "world_size": [
+            100,
+            100,
+            12
+          ],
+          "max_speed_mps": 2,
+          "render": true,
+          "render_depth": true,
+          "image_size": 224,
+          "fov_deg": 90,
+          "camera_pitch_rad": -0.1,
+          "success": {
+            "goal_radius_m": 2,
+            "require_terminal_stop": false,
+            "max_flight_time_s": 60
+          },
+          "constraints": {
+            "max_speed_mps": 2,
+            "min_altitude_m": 0.5,
+            "max_altitude_m": 7,
+            "geofence_radius_m": 45,
+            "min_obstacle_clearance_m": 0.6
+          },
+          "allowed_skills": [
+            "goto",
+            "move",
+            "approach",
+            "hover",
+            "scan",
+            "back_off",
+            "ascend",
+            "stop"
+          ]
+        }
+      },
+      "name": "frozen_c5_follow_target_20260913_s1061",
+      "integration_limited": false,
+      "architecture": {
+        "id": "c5_capability_gemma_dev",
+        "name": "C5 OnFly capability screen (Gemma)",
+        "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+        "family": "hybrid_stack",
+        "subfamily": null,
+        "ablation_of": null,
+        "profile_of": "c5",
+        "authority": "waypoint",
+        "action_horizon": null,
+        "chunk_length": 1,
+        "semantic_supervision": "periodic_monitor",
+        "semantic_memory": "compact_keyframe_memory",
+        "memory_consumers": [
+          "monitor"
+        ],
+        "perception": {
+          "name": "identity",
+          "params": {
+            "min_score": 0.0,
+            "drone_radius_m": 0.4,
+            "charge_latency": false
+          }
+        },
+        "memory": {
+          "name": "onfly_hybrid_memory",
+          "params": {
+            "window": 5,
+            "capacity": 6,
+            "min_separation_m": 3.0,
+            "keyframe_budget": 4,
+            "translation_threshold_m": 2.0,
+            "rotation_threshold_rad": 0.3490658504,
+            "dedupe_epsilon": 0.08,
+            "dedupe_distance_m": 3.0
+          }
+        },
+        "policy": {
+          "name": "onfly_decision",
+          "params": {
+            "hop_m": 12.0,
+            "stop_radius_m": 2.0,
+            "stop_confidence": 0.35,
+            "model_id": "gemma4:e2b",
+            "coordinate_contract": "qwen_relative_1000",
+            "max_depth_m": 7.0,
+            "sigma_theta": 0.65,
+            "goal_standoff_m": 0.0,
+            "camera_pitch_rad": -0.1,
+            "self_terminate": false,
+            "use_memory": false
+          }
+        },
+        "verifier": {
+          "name": "onfly_semantic_geometric",
+          "params": {
+            "max_waypoint_distance_m": 10.0,
+            "min_clearance_m": 1.2,
+            "repair": true,
+            "sensing_horizon_m": 25.0
+          }
+        },
+        "planner": {
+          "name": "super_local",
+          "params": {
+            "resolution_m": 0.5,
+            "planning_horizon_m": 16.0,
+            "commit_horizon_m": 2.5,
+            "sensing_horizon_m": 25.0,
+            "temporal_window_s": 12.0,
+            "clearance_margin_m": 1.2,
+            "max_acc_mps2": 0.6
+          }
+        },
+        "shield": null,
+        "monitor": {
+          "name": "onfly_monitor",
+          "params": {
+            "stop_confirmations": 2,
+            "lost_after_s": 8.0,
+            "model_id": "gemma4:e2b",
+            "layout": "history_sheet_plus_latest",
+            "structured_evidence": true,
+            "acquisition_confirmations": 2,
+            "stop_max_depth_m": 2.0,
+            "lost_hold_s": 0.25,
+            "lost_reorient_s": 2.0,
+            "lost_yaw_rate_rps": 0.4,
+            "target_bound_stop": true,
+            "target_consistency_m": 1.0,
+            "camera_pitch_rad": -0.1,
+            "current_grounding": true,
+            "semantic_color_guard": false
+          }
+        },
+        "admission": null,
+        "recovery": null,
+        "controller": {
+          "name": "mock_velocity",
+          "params": {
+            "kp": 1.1,
+            "lookahead_m": 3.0,
+            "max_speed_mps": 5.0,
+            "yaw_kp": 1.5,
+            "max_yaw_rate_rps": 0.4
+          }
+        },
+        "inference": {
+          "name": "ollama",
+          "params": {
+            "jitter_frac": 0.0,
+            "model_id": "gemma4:e2b",
+            "latency_s": {
+              "perception": 0.02,
+              "policy": 0.35,
+              "monitor": 1.6,
+              "reasoner": 2.4
+            },
+            "tokens_per_call": {
+              "policy": 160,
+              "monitor": 320,
+              "reasoner": 800
+            },
+            "host": "http://localhost:11434",
+            "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+            "temperature": 0.0,
+            "num_predict": 192,
+            "num_ctx": 8192,
+            "sampling_seed": 0,
+            "timeout_s": 180.0,
+            "endpoint": "chat",
+            "keep_alive": "30m",
+            "think": false,
+            "response_channel": "content",
+            "charge_mode": "fixed",
+            "fixed_latency_s": {
+              "policy": 1.0,
+              "monitor": 1.2
+            }
+          }
+        },
+        "scheduler": {
+          "kind": "async_multi_rate",
+          "control_hz": 20.0,
+          "decision_hz": 2.0,
+          "monitor_hz": 0.5,
+          "reasoner_hz": null,
+          "trigger": null,
+          "cooldown_s": 2.0,
+          "max_calls": null,
+          "trigger_check_hz": 5.0
+        },
+        "staleness": {
+          "max_decision_age_s": 4.0,
+          "reject_stale": true
+        },
+        "feature_cache": {
+          "enabled": false,
+          "capacity": 32
+        },
+        "allow_privileged_observations": false,
+        "unsafe_ablation": false,
+        "tags": [
+          "onfly",
+          "development",
+          "real_model",
+          "gemma4_e2b"
+        ]
+      }
+    }
+  ]
+}

@@ -2276,3 +2276,13 @@ calls/images/events plus scripts. All five new flights retained; 21 completed fl
 calls, five cancelled, one extra completed bbox probe. No cloud, held-out or OnFly edits.
 406 unit/contract tests and seven replay/browser cases pass. Next: one bounded
 corrected-strategy search validation, not a broad comparison or claimed planning result.
+
+## D-106 — Frozen post-repair capability comparison (2026-09-13)
+
+Status: registered; results pending.
+Rationale: close the bounded search validation and compare existing implementations
+without indefinite AerialClaw tuning. Eight tasks, three families, seed 1061, 60 s.
+Visual-tool profile only covers single-object tasks; other C1 visual task cells
+retain explicit text-only/integration-limited status. Privileged C0 and unmatched
+latency prevent an architectural ranking. No runtime change in this experiment.
+Evidence: reports/frozen_capability_20260913/PLAN.md and FREEZE.json.
