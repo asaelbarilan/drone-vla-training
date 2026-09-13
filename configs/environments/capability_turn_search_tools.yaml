@@ -1,0 +1,5 @@
+# D-105: unchanged turn-search scene with the declared perception capability.
+_base_: capability_turn_search.yaml
+id: capability_turn_search_tools
+params:
+  allowed_skills: [detect_object, goto, hover, scan, stop]
