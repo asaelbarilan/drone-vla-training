@@ -1,0 +1,126 @@
+{
+  "checks": [
+    {
+      "name": "c5_arrival_window_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_arrival_window_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "c5_arrival_window_20260913_s1061",
+      "t": 13.25,
+      "error": ""
+    },
+    {
+      "name": "c5_arrival_memory_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_arrival_memory_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "c5_arrival_memory_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "frozen_c5_visible_target_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "frozen_c5_visible_target_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "frozen_c5_visible_target_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_requested_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_requested_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_requested_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_visual_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_visual_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "c1_ordered_visual_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_ordered_visit_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_ordered_visit_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_ordered_visit_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "c1_inspected_search_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c1_inspected_search_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "c1_inspected_search_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_turn_search_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_turn_search_20260913_s1061",
+      "t": 13.2,
+      "error": ""
+    },
+    {
+      "name": "frozen_c1_turn_search_20260913_s1061",
+      "t": 60,
+      "error": ""
+    }
+  ],
+  "playbacks": 8,
+  "errors": []
+}

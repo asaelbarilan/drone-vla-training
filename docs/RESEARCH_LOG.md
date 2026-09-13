@@ -2304,3 +2304,14 @@ explicit ordered-object support. Evidence baseline: D-106 source-aligned capture
 Budget: three single development flights, no adaptive repeats, 60 s, Gemma only.
 See reports/targeted_contracts_20260913/PLAN.md. New behavior is opt-in, separately
 labeled from historical paper adaptations.
+
+D-107 outcome: bounded work complete, broader search/ordered problems unresolved.
+Final C5 arrival-window passes at 13.2 s, 0.371 m with unchanged 2 m criterion and
+live validation. Earlier 3 s window failed after response latency; final uses 4 s,
+explicitly a temporal-memory variant. Source-only probe limitations corrected by
+availability replay. C1 search still repeats detection; ordered prompt fix produces
+red detection/goto/dwell, but no transition to blue despite first-complete feedback.
+Five flights total after communicated amendment for two concrete implementation
+mistakes; all failures retained. No further flight or task active/scheduled.
+Evidence: reports/targeted_contracts_20260913/REPORT.md, RUNS.json, exact captures,
+SAVED_ONFLY_AVAILABILITY.json and browser verification. Not a reliability ranking.

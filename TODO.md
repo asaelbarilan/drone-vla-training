@@ -10,6 +10,16 @@ becomes a decision with evidence.
 
 ---
 
+## D-107: remaining tool-choice and ordered-state diagnosis
+
+C5 stationary arrival window now has one successful flight; retain as a named
+variant, not a global paper-profile replacement. Search still repeats detection;
+ordered task now completes red but does not transition to blue. Inspect exact saved
+prompts at 26.2 / 34.7 / 43.2 s: first completed is true, but per-label context still
+names the last queried red object. Audit consistent task-state/tool contracts before
+another flight or model-quality conclusion. The five-flight bounded run is complete.
+See `reports/targeted_contracts_20260913/REPORT.md` and retained failed variants.
+
 ## D-106: use the frozen failure map before further changes
 
 24-cell comparison is complete; read `reports/frozen_capability_20260913/FINDINGS.md`.

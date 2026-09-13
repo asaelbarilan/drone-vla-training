@@ -1,0 +1,61 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "monitor",
+  "prompt_hash": "onfly:monitor:current_grounding_v1",
+  "input_tokens": 104,
+  "image_count": 1,
+  "observation_seq": 1,
+  "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: Fly to the red pillar and stop within 2 metres.. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "visible": {
+        "type": "boolean"
+      },
+      "u": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "visible",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000002",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 1387,
+    "function": "assess",
+    "snapshot": "debug/sources/556f08a9d67b530dbef10139b99b1f40629cef4c9e090f952180cb81f1151e10.py"
+  },
+  "started_t_sim_ns": 0,
+  "image_files": [
+    "debug/images/call-000002-0.png"
+  ],
+  "completed_t_sim_ns": 1200000000,
+  "response": "{\"evidence\": \"The image displays a flat, mostly uniform color background. There is a vertical red rectangular shape in the center of a\",\"visible\": true, \"u\": 499, \"v\": 617}",
+  "latency_ns": 953353300,
+  "output_tokens": 52,
+  "cache_hit": false
+}

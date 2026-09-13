@@ -1,0 +1,46 @@
+{
+  "offline_suite": {
+    "command": "python -m pytest tests/unit tests/contract -q",
+    "passed": 418,
+    "warnings": 1,
+    "warning": "Third-party dateutil utcfromtimestamp deprecation",
+    "duration_s": 14.72
+  },
+  "focused_checks_before_final_flights": 37,
+  "replays": {
+    "runs": 8,
+    "checked_positions": 8665,
+    "max_position_error_m": 0.0,
+    "missing_source_frames": 0
+  },
+  "browser": {
+    "timeline_checks": 24,
+    "playbacks": 8,
+    "errors": [],
+    "exact_search_tool_image_source": true,
+    "failed_arrival_monitor_live_rejection_inspected": true
+  },
+  "direct_visual_inspection": [
+    "final successful OnFly endpoint",
+    "final ordered red-only trajectory",
+    "initial ordered both objects visible",
+    "stationary inspected search",
+    "initial arrival live rejection"
+  ],
+  "preserved_source_sha256_checks": 17,
+  "new_flights": 5,
+  "seed": 1061,
+  "new_model_calls": {
+    "complete": 131,
+    "cancelled": 5
+  },
+  "model": "gemma4:e2b",
+  "cloud_calls": 0,
+  "lint": "Focused Ruff checks pass (E501 ignored for embedded prompt/JavaScript strings); git diff --check passes",
+  "remaining_limitations": [
+    "Single-seed development variants, not reliability or architecture ranking",
+    "Search remains stationary repeating requested detection",
+    "Ordered task completes red only; inherited per-label prompt context requires audit"
+  ],
+  "further_flights_scheduled": false
+}

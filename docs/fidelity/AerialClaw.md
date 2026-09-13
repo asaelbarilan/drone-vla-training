@@ -189,3 +189,15 @@ See reports/aerialclaw_tools_20260913/REPORT.md: coordinate and visible cases pa
 search remains unvalidated after corrected strategy advice. Do not merge these
 results with the frozen GPT-OSS semantic-sensor gate or interpret unmatched charges
 as an architecture-only comparison.
+
+## D-107 named inspected-search and ordered-task extensions
+
+c1_inspected_search_gemma_dev counts requested negative-inspection views rather
+than physical rotation and bounds per-scan angle. c1_ordered_requested_gemma_dev
+supports two model-selected perception queries and odometry-derived visit/dwell
+validation from the explicit public task. No model-produced image point directly
+commands movement; only subsequent selected hard skills reach shared SUPER.
+These are named development adaptations, not claims of full paper reproduction.
+Final search flight failed through repeated detection; final ordered flight completed
+red but never requested blue. Initial inherited-strategy failure is preserved.
+See reports/targeted_contracts_20260913/REPORT.md for confounds and exact evidence.

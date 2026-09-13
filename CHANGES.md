@@ -2426,3 +2426,24 @@ new named profile uses 4 s (two monitor periods), with unchanged 2 m radius and 
 check. Availability replay tests both windows, including expiry/departure negatives.
 Explicitly amended the assistant-imposed cap to five flights, communicated before
 launch: one final flight per correction, no other adaptive retries. Preserved failures.
+
+## 2026-09-13 — D-107: final targeted outcomes and complete evidence
+
+Final C5 arrival-window flight passes at 13.2 s, 0.370503 m, no collisions or violations.
+Final ordered requested-perception flight times out but detects/reaches red and completes
+first dwell at onboard 24.3 s; later calls carry first-complete=true but repeat red goto.
+No blue query. Search remains unsuccessful. Five new flights total; initial failed
+3 s arrival and conflicting ordered prompt are preserved, not silently replaced.
+
+Exported eight-run before/after dashboard with exact requests/images/source snapshots.
+Fixed browser diagnostic selector to use decision.t, asserted the exact monitor
+source time and live-recheck rejection. All replay trajectories and browser checks pass.
+Added honest fidelity/handoff/TODO notes, including remaining per-label prompt-context
+ambiguity; no global planning-capability conclusion. No further inference scheduled.
+
+Final verification: 418 unit/contract tests pass (one third-party deprecation warning).
+Eight exact trajectory replays / 8,665 poses; 24 browser seeks and eight playbacks pass.
+Final success and ordered red-only views directly inspected. Captured source SHA-256
+filenames verified. Five new flights used 131 completed local Gemma calls and five
+boundary cancellations; no cloud. Focused Ruff and diff whitespace checks pass.
+Evidence: reports/targeted_contracts_20260913/VERIFICATION.json.

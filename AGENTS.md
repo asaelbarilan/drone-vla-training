@@ -16,6 +16,23 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: targeted contracts and one verified arrival fix — D-107 (2026-09-13)
+
+Read `reports/targeted_contracts_20260913/REPORT.md`; dashboard:
+`reports/debugger/targeted_contracts.html`. Five new flights including retained failures.
+Final C5 arrival-window variant PASSES at 13.2 s / 0.371 m, no collisions/violations:
+confirmed stationary RGB-D target survives view loss; 4 s window includes return-time
+age, live range/age check retained. Initial 3 s trial failed at 3.25 s response age.
+C1 inspected search removes the old scan gate defect but model repeats detection
+without rotating; timeout. Ordered visual tools and onboard dwell/order validation
+implemented. Initial ordered prompt retained passive-detector strategy (confounded);
+final requested-perception prompt detects/reaches red and completes first dwell,
+but repeats red goto and never queries blue. Calls 4–6 explicitly show first complete.
+Do not claim search/ordered success or model incapacity; remaining inherited single-label
+prompt context needs audit. No more flight active/scheduled; five-flight cap exhausted.
+Legacy profiles remain selectable; new mechanisms are named opt-in development variants.
+All failures, exact evidence, offline tests and dashboard checks are documented in D-107.
+
 ## Latest: frozen 24-cell post-repair comparison — D-106 (2026-09-13)
 
 Read `reports/frozen_capability_20260913/FINDINGS.md`; dashboard:
