@@ -16,7 +16,13 @@ def fixture():
     asyncio.run(env.reset(mission, 1061))
     env.vehicle.position = point(11)
     obs = asyncio.run(env.observe())
-    monitor = OnFlyHoverMonitor(current_grounding=True, target_bound_stop=True, structured_evidence=True, arrival_memory_s=4, camera_pitch_rad=-0.1)
+    monitor = OnFlyHoverMonitor(
+        current_grounding=True,
+        target_bound_stop=True,
+        structured_evidence=True,
+        arrival_memory_s=4,
+        camera_pitch_rad=-0.1,
+    )
     monitor.reset(mission, 1061)
     monitor._tracked_target = point(12)
     monitor._tracked_target_t_ns = 0

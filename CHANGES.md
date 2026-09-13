@@ -2460,3 +2460,16 @@ Old 2 m completion gate ignores new hover semantics. Named adaptation uses exist
 1 m endpoint standoff and new monitor checks of approach side/range, low speed,
 continuous odometry dwell, and projected VLM target with live depth visibility.
 Model still selects pixels; no target truth or automatic route/search is supplied.
+
+Added live hover duration, speed, view and contact fields to the debugger.
+Preflight caught an incorrect Camera import and missing constructor dependencies in
+the new unit fixture; corrected before inference. 66 focused tests passed before trial 2.
+
+Trial 2 reached stable hover: evaluator 48.9 s dwell, no contact, timeout because
+monitor lost identity in close-up (solid red/cropped image). Exact RGB-matched audit
+also found policy reprojecting old ground points at 7–8 s: missing depth defaulted to
+7 m, placing endpoints past the pillar. Next named condition uses existing grounded
+waypoint contract instead of old pixel-history steering, plus explicit earlier/current
+images in hover grounding. Current image must still support identity; live RGB-D,
+age, range, side and dwell checks unchanged. General contract test now provides this
+specialized monitor's required public mission instead of an unrelated generic mission.

@@ -1,0 +1,7 @@
+# D-108: explicit current target points; temporal identity through close-up crop.
+_base_: c5_hover_gemma_dev.yaml
+id: c5_hover_context_gemma_dev
+name: "C5 hover with grounded points and reference view"
+policy:
+  params:
+    grounded_waypoints: true

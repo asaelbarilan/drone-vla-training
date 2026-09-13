@@ -7,7 +7,7 @@ import numpy as np
 from uavlab.core.camera import Camera
 from uavlab.core.frame_store import global_store
 from uavlab.core.registry import register
-from uavlab.plugins.reasoning.onfly import OnFlyMonitor, _depth_at
+from uavlab.plugins.reasoning.onfly import OnFlyMonitor, _depth_at, _encode_png
 
 
 @register("monitor", "onfly_hover_monitor")
@@ -20,6 +20,8 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         self._hover_s = 0.0
         self._hover_last_ns = None
         self._hover_point = None
+        self._reference_image = None
+        self._reference_seq = None
 
     def _hover_geometry(self, obs):
         if self._approach is None or self._tracked_target is None:
@@ -78,8 +80,36 @@ class OnFlyHoverMonitor(OnFlyMonitor):
     def stop_still_supported(self, observation):
         return self._hover_s >= 2.0 - 1e-9 and self._hover_geometry(observation)
 
+    def _grounding_context(self, ctx, prompt, images):
+        if self._reference_image is None:
+            return (
+                prompt
+                + " Point near the center of the target body, not its foot or an image corner.",
+                images,
+            )
+        prompt = (
+            "Two camera views from the SAME flight: FIRST is an earlier reference where "
+            "the requested object was identified; SECOND is the CURRENT view. "
+            "Track object identity across approach/zoom. A nearby object can be cropped "
+            "and fill the current frame; lack of its full outline alone does not mean absence. "
+            "History alone cannot prove current visibility: check current appearance too. "
+            "Report visible and u,v for the SECOND image ONLY; choose a point near the "
+            "center of the visible target body, not an image corner. " + prompt
+        )
+        return prompt, [self._reference_image, images[-1]]
+
     async def assess(self, ctx):
+        image = global_store().get(ctx.observation.rgb.uri) if ctx.observation.rgb else None
+        snapshot = _encode_png(image) if image is not None else None
         result = await super().assess(ctx)
+        if (
+            self._reference_image is None
+            and snapshot is not None
+            and self._tracked_target_t_ns == ctx.observation.t_sim_ns
+            and self._tracked_target is not None
+        ):
+            self._reference_image = snapshot
+            self._reference_seq = ctx.observation.seq
         if self._approach is None and self._tracked_target is not None:
             p = ctx.observation.position
             delta = self._tracked_target - np.array([p.x, p.y, p.z])
@@ -88,6 +118,6 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         return result.model_copy(
             update={
                 "evidence": result.evidence
-                + f"; hover_streak_s={self._hover_s:.3f}; required_hover_s=2; live_view_depth_check=true"
+                + f"; hover_streak_s={self._hover_s:.3f}; required_hover_s=2; live_view_depth_check=true; reference_seq={self._reference_seq}"
             }
         )

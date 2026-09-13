@@ -65,10 +65,7 @@ ENVIRONMENT_ADAPTERS = ["grid3d", "capability_grid3d"]
 def services() -> RuntimeServices:
     clock = SimClock()
     inference = SimulatedInference(
-        latency_s={
-            key: 0.0
-            for key in ("perception", "policy", "monitor", "reasoner")
-        }
+        latency_s={key: 0.0 for key in ("perception", "policy", "monitor", "reasoner")}
     )
     svc = RuntimeServices(
         clock=clock,
@@ -341,7 +338,24 @@ def test_controller_produces_the_canonical_command(name):
 @pytest.mark.parametrize("name", REGISTRY.names("monitor"))
 def test_monitor_returns_a_progress_state(name):
     svc = services()
-    plugin = build("monitor", name, svc)
+    if name == "onfly_hover_monitor":
+        plugin = REGISTRY.build(
+            "monitor",
+            name,
+            dict(
+                current_grounding=True,
+                target_bound_stop=True,
+                structured_evidence=True,
+                arrival_memory_s=4,
+            ),
+        )
+        bind(plugin, svc)
+        from uavlab.core.compose import load_environment
+
+        task = load_environment("capability_approach_hover")
+        plugin.reset(MISSION.model_copy(update={"instruction": task.instruction}), 1061)
+    else:
+        plugin = build("monitor", name, svc)
     assert isinstance(plugin, MonitorPlugin)
     state = asyncio.run(plugin.assess(make_ctx(sample_observation())))
     assert isinstance(state, ProgressState)
@@ -410,7 +424,7 @@ def test_the_runtime_never_reaches_for_a_concrete_environment():
     false. This is the test that would fail on contact with AirSim, so it is
     worth failing here first, cheaply.
 
-    Scoped to `core/` and `plugins/` — the path an episode actually runs through.
+    Scoped to `core/` and `plugins/` â€” the path an episode actually runs through.
     Tooling is a separate matter and is tracked in TODO.md, because it *does*
     bind to the concrete environment and cannot move to another simulator as
     written.
@@ -436,8 +450,8 @@ def test_the_tools_that_do_bind_to_one_environment_are_the_known_ones():
     """Pin the exceptions, so a new one has to be a deliberate act.
 
     Data collection, DAgger rollouts and video capture all monkeypatch
-    `DeterministicEnv.step`. That is defensible — they need the frame and the
-    command to correspond exactly, which only the environment can guarantee —
+    `DeterministicEnv.step`. That is defensible â€” they need the frame and the
+    command to correspond exactly, which only the environment can guarantee â€”
     but it means none of them runs on another simulator, and that is a
     prerequisite for the AirSim benchmark rather than a detail.
     """
@@ -445,10 +459,10 @@ def test_the_tools_that_do_bind_to_one_environment_are_the_known_ones():
 
     root = pathlib.Path(__file__).resolve().parents[2] / "src" / "uavlab"
     expected = {
-        "adapters/dataset_replay/replay.py",   # subclasses it on purpose
+        "adapters/dataset_replay/replay.py",  # subclasses it on purpose
         "analysis/replay_video.py",
-        "analysis/flight_debugger.py",        # D-94 offline grid3d inspection
-        "analysis/replay_run.py",              # re-flies a stored run's commands
+        "analysis/flight_debugger.py",  # D-94 offline grid3d inspection
+        "analysis/replay_run.py",  # re-flies a stored run's commands
         "training/dataset.py",
         "training/dagger.py",
         "training/qwen_vla_dataset.py",

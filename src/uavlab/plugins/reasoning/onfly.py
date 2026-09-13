@@ -1384,6 +1384,8 @@ class OnFlyMonitor:
                 " Also report observed_color for the object at u,v. Use its actual color, "
                 "not the color requested in the mission; use unknown if no object is identified."
             )
+        if self.current_grounding:
+            prompt, images = self._grounding_context(ctx, prompt, images)
         result = await self.services.inference.invoke(
             InferenceRequest(
                 model_id=self.model_id,
@@ -1623,6 +1625,10 @@ class OnFlyMonitor:
             recovery_anchor_valid=recovery_anchor_valid,
             recovery_reacquired=recovery_reacquired,
         )
+
+    def _grounding_context(self, ctx, prompt, images):
+        """Optional explicit temporal grounding; legacy current-frame input unchanged."""
+        return prompt, images
 
     def stop_still_supported(self, observation) -> bool:
         """Recheck live odometry after inference delay before requesting a terminal stop."""
