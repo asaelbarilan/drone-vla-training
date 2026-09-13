@@ -2291,3 +2291,5 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Both policy done validation and shared stop runtime now accept live odometry at the explicit public ENU coordinate for known_goal_nav only, within mission radius and speed <=0.75 m/s.
 - The coordinate is read from the unambiguous public instruction, never scoring truth or a model-proposed goal. No action is authored by this parser; the LLM still selects goto and done.
 - Legacy semantic tasks remain unchanged. Added near/far/speed, ambiguous-input and search-isolation regression checks. Validation/rerun pending.
+
+- Coordinate validation: 24 unit tests pass, including original saved D-104 done response with no retry. Initial combined test command named a nonexistent test_skills.py; corrected immediately. Legacy UP038 lint warnings remain; new formatting issues corrected. One matched Gemma flight succeeds at 26.0 sim s (16.32 wall s), two completed calls, zero protocol rejections/collisions/constraint violations. Original failed run preserved.
