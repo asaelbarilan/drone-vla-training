@@ -1,0 +1,24 @@
+{
+  "unit_contract_tests_passed": 433,
+  "warnings": 1,
+  "warning": "third-party dateutil utcfromtimestamp deprecation",
+  "duration_s": 15.2,
+  "replayed_runs": 4,
+  "poses": 1835,
+  "max_position_error_m": 0.0,
+  "missing_source_frames": 0,
+  "browser_seeks": 12,
+  "browser_playbacks": 4,
+  "browser_errors": [],
+  "source_sha256_checks": 12,
+  "model_calls": {
+    "complete": 137,
+    "cancelled": 4
+  },
+  "model": "gemma4:e2b",
+  "new_flights": 4,
+  "cloud_calls": 0,
+  "direct_visual_checks": "All four endpoint camera/map/observer screenshots inspected; exact selected monitor pixels/depth audited from matched RGB replay in GROUNDING_AUDIT.json",
+  "final_success": true,
+  "speed_counter_note": "One raw violation: 2.0000000000000004 m/s command exceeds 2 by floating-point roundoff only; retained in saved results."
+}

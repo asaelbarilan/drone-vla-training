@@ -395,3 +395,15 @@ from outside.
 - Completed in D-106: corrected search flight timed out; scan/perception gate conflict documented. The prior invalid-setup run remains preserved.
 - Inspect detect_object requests after scan, coverage selection and completion before changing prompts again. Preserve 60 s horizon and model/latency provenance unless explicitly comparing a new condition.
 - Multi-object ordering and dynamic tracking require task-specific completion evidence; do not claim the current single-object visual tool solves those categories.
+
+
+## D-108 remaining limits after verified approach hover
+
+- Do not rerun unchanged approach fixture. Extend geometry only as an explicit next
+  validation, then examine generalization; one deterministic case is not reliability.
+- Exact two-image requests are authoritative; inherited current_grounding identifiers
+  should eventually distinguish reference/current hover grounding in diagnostic labels.
+- Historical speed violation rounding should be addressed separately with explicit
+  numerical tolerance tests; preserve old results and physics/replay compatibility.
+- Return to the saved AerialClaw ordered prompt-context audit and search tool-selection
+  boundary when resuming broader task suite. Neither is solved by D-108.

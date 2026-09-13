@@ -1,0 +1,46 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:v1",
+  "input_tokens": 339,
+  "image_count": 1,
+  "observation_seq": 980,
+  "prompt": "You are OnFly's high-frequency decision agent on a UAV. Select the next image-space navigation target for the current subtask. (0,0) is top-left. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Subtask: Approach the red pillar and hover about 1 metre before it on your approach side, keeping it in view, without touching it. Hold for 2 continuous seconds, then finish. Acceptance: 0.75 to 1.25 metres from its reference point, within 0.35 metres of the approach line, speed at most 0.2 m/s.. Match every explicitly named visual attribute in the subtask exactly, including object type, color, and relative location. A similarly shaped object with a different named attribute is a distractor, not the destination. There is no valid previous-goal point in the current view. The flight verifier or planner rejected the previous proposal: planner reported infeasible: exploratory corridor contains no executable segment. Rejected points in the current coordinate system: [(499, 500), (500, 500)]. Do not repeat or choose near those points. Select a visibly open, traversable continuation that makes progress around the obstruction. Return only JSON with integer u and v. Do not report distance, world coordinates, completion, or flight controls.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000075",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 580,
+    "function": "decide",
+    "snapshot": "debug/sources/556f08a9d67b530dbef10139b99b1f40629cef4c9e090f952180cb81f1151e10.py"
+  },
+  "started_t_sim_ns": 49000000000,
+  "image_files": [
+    "debug/images/call-000075-0.png"
+  ],
+  "completed_t_sim_ns": 50000000000,
+  "response": "{\"u\": 500, \"v\": 500}",
+  "latency_ns": 234173800,
+  "output_tokens": 17,
+  "cache_hit": false
+}

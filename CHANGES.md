@@ -2484,3 +2484,10 @@ arbitrary body pixel shifted monitor geometry down too. New opt-in flight-level
 adapter preserves initial onboard altitude while respecting camera-forward depth
 ceiling; hover monitor measures vertical deviation from initial odometry, not VLM
 pixel height. No evaluator threshold changed. Added exact failure negative control.
+
+D-108 final flight passes at 11.2 s / 1.0027 m / 2.1 s hover, no contact/collision.
+One speed violation is solely 2.0000000000000004 > 2.0; saved counter retained with
+exact audit. Four complete development flights, 137 Gemma calls + 4 cancellations.
+433 offline tests pass; all 1,835 poses match; 12 seeks/four playbacks and direct
+visual inspection pass. Full report, exact requests/images/sources and failed trials
+preserved. No additional run active; broader search/ordered planning remains open.

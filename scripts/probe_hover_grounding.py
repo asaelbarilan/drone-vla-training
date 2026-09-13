@@ -1,7 +1,6 @@
 """Replay exact saved monitor inputs/controls; no network or model inference."""
 
 import asyncio
-import base64
 import json
 from pathlib import Path
 
@@ -10,39 +9,9 @@ from PIL import Image
 
 from uavlab.adapters.gym.capability_env import CapabilityEnv
 from uavlab.contracts import ControlCommand, MissionSpec, Vec3
-from uavlab.core.clock import SimClock
-from uavlab.core.event_log import EventLog
-from uavlab.core.feature_cache import FeatureCache
-from uavlab.core.services import RuntimeServices
-from uavlab.interfaces import InferenceResult
-
-
-def services(model):
-    return RuntimeServices(
-        clock=SimClock(),
-        log=EventLog("saved-arrival"),
-        feature_cache=FeatureCache(),
-        inference=model,
-        episode_id="saved-arrival",
-    )
-
 
 ROOT = Path("runs/c5_hover_contract_20260913_s1061")
 OUT = Path("reports/hover_cycle_20260913")
-
-
-class SavedModel:
-    name = "saved_response_only"
-    reply = ""
-    image = b""
-
-    async def invoke(self, request):
-        from io import BytesIO
-
-        actual = np.asarray(Image.open(BytesIO(base64.b64decode(request.images[0]))).convert("RGB"))
-        expected = np.asarray(Image.open(ROOT / self.image).convert("RGB"))
-        assert np.array_equal(actual, expected), "Saved input pixels differ"
-        return InferenceResult(payload=self.reply)
 
 
 async def main():

@@ -2,3 +2,4 @@
 # Preserve captured evidence bytes and source SHA-256 names across checkouts.
 /reports/frozen_capability_20260913/** -text
 /reports/targeted_contracts_20260913/** -text
+/reports/hover_cycle_20260913/** -text

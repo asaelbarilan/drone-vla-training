@@ -1,0 +1,572 @@
+[
+  {
+    "t": 0.0,
+    "reply": {
+      "evidence": "The image displays a flat, mostly uniform color background, which is a shade of blue for the upper portion and a shade/t",
+      "visible": true,
+      "u": 499,
+      "v": 500
+    },
+    "selected_depth": 11.94005012512207,
+    "depth_min": 11.94005012512207,
+    "depth_max": Infinity,
+    "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "yaw": 0.0
+  },
+  {
+    "t": 1.95,
+    "reply": {
+      "evidence": "A single, vertical, red rectangular pillar is visible against a blue background, which is set against a muted, earthy-t/",
+      "visible": true,
+      "u": 499,
+      "v": 587
+    },
+    "selected_depth": null,
+    "depth_min": 10.906643867492676,
+    "depth_max": Infinity,
+    "position": {
+      "x": 1.0385950587031083,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "yaw": 0.0
+  },
+  {
+    "t": 3.95,
+    "reply": {
+      "evidence": "The image contains a vertical red rectangular object against a blue background, and a horizontal grey-green object at a ",
+      "visible": true,
+      "u": 499,
+      "v": 500
+    },
+    "selected_depth": 8.175365447998047,
+    "depth_min": 8.175365447998047,
+    "depth_max": Infinity,
+    "position": {
+      "x": 3.783587041798861,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "yaw": 0.0
+  },
+  {
+    "t": 5.95,
+    "reply": {
+      "evidence": "A vertical red rectangular pillar is visible against a blue background, which is set against a horizontal grey ground.",
+      "visible": true,
+      "u": 499,
+      "v": 500
+    },
+    "selected_depth": 4.9901323318481445,
+    "depth_min": 4.9901323318481445,
+    "depth_max": Infinity,
+    "position": {
+      "x": 6.9848127610288175,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "yaw": 0.0
+  },
+  {
+    "t": 7.95,
+    "reply": {
+      "evidence": "The image primarily features a large, vertical red rectangular object set against a light blue background. The bottom of",
+      "visible": true,
+      "u": 499,
+      "v": 500
+    },
+    "selected_depth": 2.202958106994629,
+    "depth_min": 2.202958106994629,
+    "depth_max": Infinity,
+    "position": {
+      "x": 9.78598106103398,
+      "y": 0.0,
+      "z": 3.0,
+      "frame": "enu"
+    },
+    "yaw": 0.0
+  },
+  {
+    "t": 9.95,
+    "reply": {
+      "evidence": "The image is a solid, uniform field of red color.",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.5658730864524841,
+    "depth_max": 0.5658730864524841,
+    "position": {
+      "x": 11.339550935096904,
+      "y": 0.006742392174579968,
+      "z": 2.580199590200336,
+      "frame": "enu"
+    },
+    "yaw": 0.3800000000000003
+  },
+  {
+    "t": 11.95,
+    "reply": {
+      "evidence": "The image is a solid, uniform color, predominantly a shade of red. There are no distinct, recognizable objects other to-",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.7164848446846008,
+    "depth_max": 0.7164848446846008,
+    "position": {
+      "x": 11.259757120416573,
+      "y": 0.002951006570549014,
+      "z": 2.8162619830527498,
+      "frame": "enu"
+    },
+    "yaw": 0.06441823704233932
+  },
+  {
+    "t": 13.95,
+    "reply": {
+      "evidence": "A solid red rectangular object is visible, and a narrow vertical blue object is visible to the left of it.",
+      "visible": true,
+      "u": 10,
+      "v": 10
+    },
+    "selected_depth": null,
+    "depth_min": 0.6727199554443359,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261226950055509,
+      "y": 0.002929301745850635,
+      "z": 2.8176133868375013,
+      "frame": "enu"
+    },
+    "yaw": 0.3444182370423395
+  },
+  {
+    "t": 15.95,
+    "reply": {
+      "evidence": "A solid red rectangular shape is visible, and a blue rectangular shape is visible to the left of it. A grey/brown shape/",
+      "visible": true,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6414919495582581,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261488071687827,
+      "y": 0.002925445789279684,
+      "z": 2.817853469601414,
+      "frame": "enu"
+    },
+    "yaw": 0.4522488595981476
+  },
+  {
+    "t": 17.95,
+    "reply": {
+      "evidence": "The image is a solid, uniform field of red color. There are no distinct objects other than this color.",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6907394528388977,
+    "depth_max": 0.6907394528388977,
+    "position": {
+      "x": 11.261425543939897,
+      "y": 0.00292636913017009,
+      "z": 2.817795979785614,
+      "frame": "enu"
+    },
+    "yaw": 0.26263188381281766
+  },
+  {
+    "t": 19.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426452407546,
+      "y": 0.0029263557149207414,
+      "z": 2.817796815056987,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 21.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171398758888245,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426075819099,
+      "y": 0.0029263612759640365,
+      "z": 2.817796468810701,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 23.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426457981566,
+      "y": 0.0029263556326098116,
+      "z": 2.8177968201818984,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 25.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460414842,
+      "y": 0.0029263555966777596,
+      "z": 2.81779682241913,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 27.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419951,
+      "y": 0.002926355596602319,
+      "z": 2.817796822423827,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 29.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 31.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 33.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 35.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 37.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 39.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 41.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 43.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 45.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 47.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 49.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 51.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 53.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 55.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  },
+  {
+    "t": 57.95,
+    "reply": {
+      "evidence": "The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with ",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "selected_depth": null,
+    "depth_min": 0.6171395778656006,
+    "depth_max": Infinity,
+    "position": {
+      "x": 11.261426460419958,
+      "y": 0.0029263555966021616,
+      "z": 2.8177968224238352,
+      "frame": "enu"
+    },
+    "yaw": 0.5226318838128179
+  }
+]

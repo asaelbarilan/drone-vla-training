@@ -2329,3 +2329,16 @@ Rationale: distinguish passing/overshooting from stable arrival. Evaluator truth
 private. Initial run uses unchanged D-107 policy/monitor; diagnose exact captures before
 adaptation. Same local Gemma, development seeds only. No automatic unbounded retry.
 Evidence: new scenario negative controls; live outcome pending.
+
+
+D-108 outcome: four retained flights. Final named c5_hover_level_gemma_dev succeeds
+11.2 s / 1.0027 m / 2.1 s hover, zero contact/collisions. Intermediate failures expose
+old stop semantics, cropped-image identity loss/invalid old-point steering, and a
+0.403 m altitude/reference-line mismatch. Repaired with explicit hover validation,
+temporal reference/current grounding, grounded waypoint contract and flight-level
+endpoint adapter. These are named engineering adaptations, not paper-fidelity or
+planning-capability results. Task thresholds/SUPER/controller unchanged. Final raw
+speed counter 1 is a 4.44e-16 m/s floating-point excess, retained and separately audited.
+Evidence: reports/hover_cycle_20260913/REPORT.md, RUNS.json, VERIFICATION.json,
+GROUNDING_AUDIT.json, SPEED_AUDIT.json and full per-flight captures. 433 tests pass;
+1,835 replay poses and 12 browser seeks/four playbacks match. No additional run active.

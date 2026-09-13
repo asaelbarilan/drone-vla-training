@@ -16,6 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: explicit approach-hover cycle completed — D-108 (2026-09-13)
+
+User authorized autonomous run/debug/fix without per-step confirmation. Latest
+reports/hover_cycle_20260913/REPORT.md and dashboard reports/debugger/hover_cycle.html.
+Four new flights; final c5_hover_level_20260913_s1061 PASSES at 11.2 s, 1.003 m,
+2.1 s visible slow hover, no contact/collision. Preserved failures: old radius stop,
+close-up identity loss, target-pixel altitude/reference-line drift. New named variant
+uses standoff, grounded pixel choices, reference/current visual grounding, initial
+onboard altitude and continuous hover validator. Do not call it native paper OnFly.
+433 tests pass; 1,835 replay poses, 12 browser seeks/four playbacks checked. Raw final
+speed violation 1 is 4.44e-16 m/s roundoff; evidence retained. No flight active.
+One fixture only; AerialClaw search/order and broader planning still unresolved.
+
 ## Latest: targeted contracts and one verified arrival fix — D-107 (2026-09-13)
 
 Read `reports/targeted_contracts_20260913/REPORT.md`; dashboard:

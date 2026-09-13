@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "name": "c5_hover_baseline_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_baseline_20260913_s1061",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_baseline_20260913_s1061",
+      "t": 9.25,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_contract_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_contract_20260913_s1061",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_contract_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_context_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_context_20260913_s1061",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_context_20260913_s1061",
+      "t": 11.25,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 11.25,
+      "error": ""
+    }
+  ],
+  "playbacks": 4,
+  "errors": []
+}

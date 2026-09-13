@@ -1,0 +1,61 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "monitor",
+  "prompt_hash": "onfly:monitor:current_grounding_v1",
+  "input_tokens": 164,
+  "image_count": 1,
+  "observation_seq": 400,
+  "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: Approach the red pillar and hover about 1 metre before it on your approach side, keeping it in view, without touching it. Hold for 2 continuous seconds, then finish. Acceptance: 0.75 to 1.25 metres from its reference point, within 0.35 metres of the approach line, speed at most 0.2 m/s.. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "visible": {
+        "type": "boolean"
+      },
+      "u": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "visible",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000032",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 1387,
+    "function": "assess",
+    "snapshot": "debug/sources/556f08a9d67b530dbef10139b99b1f40629cef4c9e090f952180cb81f1151e10.py"
+  },
+  "started_t_sim_ns": 20000000000,
+  "image_files": [
+    "debug/images/call-000032-0.png"
+  ],
+  "completed_t_sim_ns": 21200000000,
+  "response": "{\"evidence\": \"The image primarily consists of a large red rectangular area on the right and a blue rectangular area on the left, with \",\"visible\": false, \"u\": null, \"v\": null}",
+  "latency_ns": 826023800,
+  "output_tokens": 44,
+  "cache_hit": false
+}
