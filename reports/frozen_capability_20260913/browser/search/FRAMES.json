@@ -1,0 +1,720 @@
+[
+  {
+    "t": 0,
+    "observation_seq": 1,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": 0,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII=",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": 0,
+      "decision_age_s": null,
+      "safety_modified": false,
+      "source_observation_seq": null,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": null,
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 0,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": false,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 0,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 10,
+    "observation_seq": 201,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": 2.25,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAADcElEQVR4nO3csYkVYRSA0TcyJWwRppZgA4Id2MQmYmi2qU0YCeY2YR2vCBNBEFlQ7mU+5Jx4heHyed//Zmb3ePfp+w2qXlx9AfCc87j6CuAZ56FQwnzEk2aDknYeN4XSZYOS5gxKmg1KmvugpJ03K5QwG5Q0Z1DSbFDSTvfpKfMkiTRnUNI8SSLNBiXNt3jSzsMKJcwZlDRnUNKcQUmzQUk7b54kEWaDkuYMSpq3mUizQUnzJIk0G5Q0Z1DSbFDS3AclzZMk0mxQ0pxBSRMoaW4zkeYPN5DmSxJpfmmONBuUNN/iSfO6HWnOoKQ5g5LmDEqaDUqa1+1Is0FJcwYlzdtMpNmgpHmSRJoNSpozKGk2KGnug5LmSRJpNihpzqCk2aCknVdfQM7XD2//4V+9+fhl/Eq4eZL0R08PD3/184/3uzEucQadYYxLnEFnGOMSv9VJmg06wxiX+Ot2M4xxibeZhhjjDt/iZxjjEmfQGca4xAadYYxLvG43xRhX+IifYYxLfMTPMMYlbjMNMcYdNugMY1zidbsZxrjEBp1hjEucQYcY4w4bdIYxLnEfdIYxLvEkaYoxrrBBZxjjEmfQGca4xAadYYxL/NIcaZ4kzTDGJc6gM4xxiTPoDGNc4gxKmg06wxiX+MMNM4xxibeZhhjjDt/iZxjjEmfQGca4xAadYYxLTv/3ZxjjDht0hjEucQadYYxLPEkizQadYYxLzm+f3199Df8DY1ziI540gZImUNIESppASRMoaQIlTaCknVdfQNHj/X71JfCTQH/38vWrqy+BX3zEkyZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRK2g8CtRG6UDiXEQAAAABJRU5ErkJggg==",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": 1.5,
+      "decision_age_s": 10,
+      "safety_modified": false,
+      "source_observation_seq": 1,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": "b8da30ba1500",
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 10000000000,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": true,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 11,
+    "observation_seq": 221,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": -2.533185307179583,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII=",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": 1.5,
+      "decision_age_s": 11,
+      "safety_modified": false,
+      "source_observation_seq": 1,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": "b8da30ba1500",
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 11000000000,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": false,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 13.45,
+    "observation_seq": 270,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": 1.1418146928204171,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII=",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": 1.5,
+      "decision_age_s": 13.45,
+      "safety_modified": false,
+      "source_observation_seq": 1,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": "b8da30ba1500",
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 13450000000,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": false,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 22,
+    "observation_seq": 441,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": 1.216814692820417,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII=",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": 0,
+      "decision_age_s": null,
+      "safety_modified": false,
+      "source_observation_seq": null,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": null,
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 22000000000,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": false,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 40.2,
+    "observation_seq": 805,
+    "position": [
+      0,
+      0,
+      3
+    ],
+    "yaw": 1.216814692820417,
+    "velocity": [
+      0,
+      0,
+      0
+    ],
+    "distance": 11.313708498984761,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII=",
+    "control": {
+      "position_x": 0,
+      "position_y": 0,
+      "position_z": 3,
+      "vx": 1.9250000000000003,
+      "vy": 0,
+      "vz": 0,
+      "yaw_rate": -1.5,
+      "decision_age_s": 0.05,
+      "safety_modified": false,
+      "source_observation_seq": 804,
+      "_debug_source": {
+        "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+        "line": 316,
+        "function": "_control_loop",
+        "snapshot": "debug/sources/a9f4f552e5197c28aee57575e3ca09aa8555e8f21e7d60001455dd8b2eb4c425.py"
+      }
+    },
+    "trace_id": "6e5d015ae7f5",
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 40200000000,
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 3,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 11.313708498984761,
+        "goal_visible": false,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 0,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  },
+  {
+    "t": 60,
+    "observation_seq": 1201,
+    "position": [
+      21.099910450783348,
+      0,
+      5.999926601185682
+    ],
+    "yaw": 2.773348979042538,
+    "velocity": [
+      -0.00024402975804883805,
+      0,
+      -0.0001977604887579434
+    ],
+    "distance": 30.32827637463282,
+    "collided": false,
+    "rgb": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAADK0lEQVR4nO3cu00kQRRA0W5ULs7mQygr4RDERkAC62GOQQzYmwGpTACst8aKn0qi+qI5x8Qala7evP4w++3v5w2qro7+APCesR/9CeAdY1coYb7iSTNBSRv7plC6TFDS7KCkmaCkuQ9K2tiMUMJMUNLsoKSZoKQN9+kp8ySJNDsoaZ4kkWaCkuYqnrSxG6GE2UFJs4OSZgclzQQlbWyeJBFmgpJmByXN20ykmaCkeZJEmglKmh2UNBOUNPdBSfMkiTQTlDQ7KGkCJc1tJtL8cANpLpJI809zpJmgpLmKJ83rdqTZQUmzg5JmByXNBCXN63akmaCk2UFJ8zYTaSYoaZ4kkWaCkmYHJc0EJc19UNI8SSLNBCXNDkqaCUqaN+pJ8ySJNDsoaXZQ0uygpJmgpPl1O9K8zUSaq3jS7KCkmaCked2ONF/xpPmKJ81tJtJMUNK8bkeaCUqaHZQ0E5Q090FJ8ySJNBOUNDsoaSYoaf5pjjRPkkizg5JmByXNDkqaCUqaH24gzdtMpLmK/9ifh1+v/v3m7n7xJ7lAdtBP+Xl9/d9fTuezo1vABJ3n6BYYmzkwzdF9PRN0nqNbwA46z9Et4EkSaSboPEe3gCdJ8xzdAiboPEe3gB2UNBN0nqNbwH3QeY5ugfH0+PqbEPzzVoiObgE7KGkCJU2gpAmUNIGSNo7+AN/D6Xw++iNcKIF+7OWH75nDOHrSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDS/gLKyBJHGFIZQwAAAABJRU5ErkJggg==",
+    "control": {},
+    "trace_id": null,
+    "scene": {
+      "obstacles": [],
+      "landmarks": [
+        {
+          "position": [
+            -8,
+            8,
+            3
+          ],
+          "label": "red pillar",
+          "target": true,
+          "color": [
+            206,
+            44,
+            44
+          ]
+        }
+      ],
+      "goal": [
+        -8,
+        8,
+        3
+      ],
+      "scenario": "turn_search",
+      "vehicles": [],
+      "task_events": [],
+      "task_status": {
+        "t_sim_ns": 60000000000,
+        "position": {
+          "x": 21.099910450783348,
+          "y": 0,
+          "z": 5.999926601185682,
+          "frame": "enu"
+        },
+        "distance_to_goal_m": 30.32827637463282,
+        "goal_visible": true,
+        "subgoals_completed": 0,
+        "subgoals_total": 0,
+        "task_complete": false,
+        "collided": false,
+        "collision_count": 0,
+        "min_obstacle_distance_m": Infinity,
+        "out_of_bounds": false,
+        "constraint_violations": 0,
+        "path_length_m": 22.202397561341044,
+        "shortest_path_m": 11.313708498984761,
+        "speed_mps": 0.00031410147043138,
+        "terminated": false,
+        "termination_reason": null,
+        "extras": {
+          "goal_radius_m": 2,
+          "lure_dwell_s": 0,
+          "landmarks": 1,
+          "obstacles": 0,
+          "skipped_injections": 0,
+          "min_injected_block_clearance_m": -1,
+          "task_complete": 0,
+          "target_ever_visible": 1,
+          "branch_correct": 0,
+          "wrong_branch": 0,
+          "passage_closed": 0,
+          "tracking_good_s": 0,
+          "tracking_total_s": 0,
+          "tracking_fraction": 0,
+          "shortest_path_valid": 1
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,158 @@
+{
+  "architecture_config": {
+    "ablation_of": null,
+    "action_horizon": null,
+    "admission": null,
+    "allow_privileged_observations": true,
+    "authority": "waypoint",
+    "chunk_length": 1,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5
+      }
+    },
+    "description": "Control ceiling. Perfect semantics over the shared SUPER-derived execution substrate.",
+    "family": "classical_baseline",
+    "feature_cache": {
+      "capacity": 32,
+      "enabled": false
+    },
+    "id": "c0",
+    "inference": {
+      "name": "free",
+      "params": {
+        "jitter_frac": 0.0
+      }
+    },
+    "memory": {
+      "name": "no_memory",
+      "params": {}
+    },
+    "memory_consumers": [
+      "policy"
+    ],
+    "monitor": null,
+    "name": "Oracle semantic goal -> SUPER execution",
+    "perception": {
+      "name": "identity",
+      "params": {
+        "charge_latency": true,
+        "drone_radius_m": 0.4,
+        "min_score": 0.0
+      }
+    },
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "clearance_margin_m": 1.2,
+        "commit_horizon_m": 2.5,
+        "planning_horizon_m": 16.0,
+        "resolution_m": 0.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0
+      }
+    },
+    "policy": {
+      "name": "oracle_waypoint",
+      "params": {
+        "stop_radius_m": 2.4
+      }
+    },
+    "profile_of": null,
+    "recovery": null,
+    "scheduler": {
+      "control_hz": 20.0,
+      "cooldown_s": 2.0,
+      "decision_hz": 4.0,
+      "kind": "periodic",
+      "max_calls": null,
+      "monitor_hz": null,
+      "reasoner_hz": null,
+      "trigger": null,
+      "trigger_check_hz": 5.0
+    },
+    "semantic_memory": "no_memory",
+    "semantic_supervision": "none",
+    "shield": {
+      "name": "simple_collision",
+      "params": {}
+    },
+    "staleness": {
+      "max_decision_age_s": 1.5,
+      "reject_stale": true
+    },
+    "subfamily": null,
+    "tags": [
+      "control_ceiling",
+      "macro_screening"
+    ],
+    "unsafe_ablation": false,
+    "verifier": null
+  },
+  "architecture_config_hash": "51f16305a74ee5a1",
+  "architecture_id": "c0",
+  "container_image_digest": null,
+  "dependency_hash": "f7d7f12a75e081e5",
+  "environment_config": {
+    "adapter": {
+      "name": "capability_grid3d",
+      "params": {}
+    },
+    "id": "capability_overturned_vehicle",
+    "instruction": "Find the overturned vehicle among the two vehicles. Hover above it at 3.2 metres altitude and stop within 2 metres of that hover point.",
+    "max_episode_s": 60.0,
+    "params": {
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "camera_pitch_rad": -0.1,
+      "constraints": {
+        "geofence_radius_m": 45,
+        "max_altitude_m": 7,
+        "max_speed_mps": 2,
+        "min_altitude_m": 0.5,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "fov_deg": 90,
+      "image_size": 224,
+      "max_speed_mps": 2,
+      "render": true,
+      "render_depth": true,
+      "scenario": "overturned_vehicle",
+      "success": {
+        "goal_radius_m": 2,
+        "max_flight_time_s": 60,
+        "require_terminal_stop": true
+      },
+      "world_size": [
+        100,
+        100,
+        12
+      ]
+    },
+    "task_family": "state_reasoning"
+  },
+  "environment_id": "capability_overturned_vehicle",
+  "git_branch": "master",
+  "git_dirty": true,
+  "git_dirty_files": 90,
+  "git_sha": "f140c34d6c3e66682792e86bece63933818202e9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.3",
+  "schema": "uavlab/manifest/1",
+  "seeds": [
+    1061
+  ]
+}

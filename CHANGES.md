@@ -2346,3 +2346,18 @@ OnFly visible-target flight reaches 0.335 m but no stop: last identified target
 sample is 2.092 m (above 2 m threshold); next image lacks target and monitor reports
 LOST. Camera/map and exact monitor evidence are preserved in ONFLY_ARRIVAL.md.
 This observed arrival/stop boundary is not yet a validated causal repair.
+
+## 2026-09-13 — D-106: complete and preserve frozen 24-flight comparison
+
+All 24 cells finished with no runtime error, tuning or retries. C0 6/8 privileged;
+C1 2/8 raw (two passes among three supported contracts, five missing visual/task
+integration); C5 0/8, with goal arrival and partial branch/order/tracking progress.
+No policy/config change during the batch. Added failure map and per-case next checks;
+updated AGENTS/TODO/research log to supersede offline-only corrected search status.
+Retained exact calls/images/source snapshots, compressed events, manifests/results.
+
+743 completed Gemma calls (31 C1/712 C5), 16 cancelled at boundary; no cloud or keys.
+Zero collisions; 14 C5 constraint violations across six cells. All 19,414 poses and
+24 resolved manifests match; no missing source frames. 72 browser seeks/24 playbacks
+plus 24 closest-approach inspections pass. Confirmed exact C1 tool image/source links.
+Dashboard matrix labels every failure explicitly. No further run is active/scheduled.

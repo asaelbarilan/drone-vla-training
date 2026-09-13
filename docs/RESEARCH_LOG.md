@@ -2286,3 +2286,13 @@ Visual-tool profile only covers single-object tasks; other C1 visual task cells
 retain explicit text-only/integration-limited status. Privileged C0 and unmatched
 latency prevent an architectural ranking. No runtime change in this experiment.
 Evidence: reports/frozen_capability_20260913/PLAN.md and FREEZE.json.
+
+D-106 outcome: COMPLETE, 24 frozen flights. C0 6/8 privileged; C1 2/8 raw with
+five integration-limited cells; C5 0/8 with arrival/branch/red-visit progress.
+Corrected C1 search now validly tested: scan views were not inspected and further
+scan is hard-rejected. This supersedes D-105 offline-only search status. C5 visible
+arrival reaches 0.335 m; current-image range/stop timing boundary observed, not fixed.
+Evidence: reports/frozen_capability_20260913/FINDINGS.md, exact captures and dashboard.
+743 completed calls +16 cancellations, zero collisions, 14 C5 constraint violations;
+24 manifests match freeze, 19,414 poses match, 72 seeks/24 playbacks/24 close inspections.
+No runtime changes, architecture ranking, further flight or active process.

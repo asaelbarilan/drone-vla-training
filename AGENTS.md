@@ -16,6 +16,24 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: frozen 24-cell post-repair comparison — D-106 (2026-09-13)
+
+Read `reports/frozen_capability_20260913/FINDINGS.md`; dashboard:
+`reports/debugger/frozen_capability.html`. All 24 fresh seed-1061 flights complete,
+no runtime/config changes or retries: C0 6/8 (privileged), C1 2/8 raw (coordinate
+and visible target pass; five cells remain explicitly text-only/integration-limited),
+C5 0/8 with partial task progress. This is NOT an architecture ranking.
+Corrected C1 search is now flight-tested and fails: target visible during rotation
+at 10 s, sole detector input at 21.95 s has no target; further model-requested scan
+is rejected by inherited full-turn gate. Angular coverage is not inspected coverage.
+OnFly reaches 0.335 m in visible task, but range sample 2.092 m fails arrival gate
+and next image lacks target; no stop. Its isolated causal repair remains unresolved.
+743 completed Gemma calls + 16 cancellations; no cloud. All 19,414 poses replay
+exactly; 72 browser seeks / 24 playbacks / 24 closest-approach inspections pass.
+Source/config hashes and all manifests match the preflight freeze. See per-cell
+failure classifications and next isolated checks in FINDINGS.md. Preserve this batch;
+no further flight active/scheduled. Older D-105 'offline-only search' status is superseded.
+
 ## Latest: AerialClaw coordinate/visual skill repair - D-105 (2026-09-13)
 
 Read `reports/aerialclaw_tools_20260913/REPORT.md`. Coordinate completion now passes

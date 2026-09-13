@@ -1,0 +1,25 @@
+{
+  "model_id": "detector",
+  "role": "perception",
+  "prompt_hash": "19837bf8ce69c771",
+  "input_tokens": 0,
+  "image_count": 1,
+  "observation_seq": 95,
+  "prompt": "",
+  "response_schema": null,
+  "id": "call-000039",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\perception\\identity.py",
+    "line": 88,
+    "function": "perceive",
+    "snapshot": "debug/sources/70558126030e5b0dc3442d49d29c99a53d2630d2418675e06de0aad27a584eec.py"
+  },
+  "started_t_sim_ns": 4750000000,
+  "image_files": [],
+  "completed_t_sim_ns": 4750000000,
+  "response": null,
+  "latency_ns": 0,
+  "output_tokens": 0,
+  "cache_hit": false
+}

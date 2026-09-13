@@ -10,6 +10,15 @@ becomes a decision with evidence.
 
 ---
 
+## D-106: use the frozen failure map before further changes
+
+24-cell comparison is complete; read `reports/frozen_capability_20260913/FINDINGS.md`.
+First isolated contract checks: C1 scan/retry gating vs actually inspected views;
+C5 arrival range, source timing and target-view loss. Five C1 visual tasks need
+explicit capability integration before interpreting their model performance.
+Choose one check, preserve the frozen baseline, and separate a contract repair
+from a new architecture variant. No additional flight or broad sweep is scheduled.
+
 ## D-103: task suite ready for subsequent architecture evaluation
 
 Eight first scenarios are implemented and physically validated with scripted
@@ -373,6 +382,6 @@ from outside.
   rounds. Consider GRPO only after the policy reaches at least 3/5.
 
 ## D-105 follow-up: requested-perception search
-- Run one bounded development check of the corrected c1_visual_search_gemma_dev advice (offline-tested only). The prior intended-strategy flight was invalid setup, not evidence about this repair.
+- Completed in D-106: corrected search flight timed out; scan/perception gate conflict documented. The prior invalid-setup run remains preserved.
 - Inspect detect_object requests after scan, coverage selection and completion before changing prompts again. Preserve 60 s horizon and model/latency provenance unless explicitly comparing a new condition.
 - Multi-object ordering and dynamic tracking require task-specific completion evidence; do not claim the current single-object visual tool solves those categories.

@@ -1,0 +1,25 @@
+{
+  "model_id": "oracle",
+  "role": "policy",
+  "prompt_hash": "oracle_waypoint:420",
+  "input_tokens": 64,
+  "image_count": 1,
+  "observation_seq": 420,
+  "prompt": "",
+  "response_schema": null,
+  "id": "call-000170",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\base.py",
+    "line": 375,
+    "function": "charge",
+    "snapshot": "debug/sources/38672c76481b000dd873afed7e8fc2bce98ad43a81ff607739e50469e02ad19f.py"
+  },
+  "started_t_sim_ns": 21000000000,
+  "image_files": [],
+  "completed_t_sim_ns": 21000000000,
+  "response": null,
+  "latency_ns": 0,
+  "output_tokens": 0,
+  "cache_hit": false
+}

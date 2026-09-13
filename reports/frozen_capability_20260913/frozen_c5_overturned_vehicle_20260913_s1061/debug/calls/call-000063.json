@@ -1,0 +1,46 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:v1",
+  "input_tokens": 296,
+  "image_count": 1,
+  "observation_seq": 820,
+  "prompt": "You are OnFly's high-frequency decision agent on a UAV. Select the next image-space navigation target for the current subtask. (0,0) is top-left. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Subtask: Find the overturned vehicle among the two vehicles. Hover above it at 3.2 metres altitude and stop within 2 metres of that hover point.. Match every explicitly named visual attribute in the subtask exactly, including object type, color, and relative location. A similarly shaped object with a different named attribute is a distractor, not the destination. There is no valid previous-goal point in the current view. The flight verifier or planner rejected the previous proposal: verifier rejected: target is 47.4 m from home, outside the 45 m geofence. Rejected points in the current coordinate system: [(497, 582)]. Do not repeat or choose near those points. Select a visibly open, traversable continuation that makes progress around the obstruction. Return only JSON with integer u and v. Do not report distance, world coordinates, completion, or flight controls.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000063",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 580,
+    "function": "decide",
+    "snapshot": "debug/sources/b7804a878ef1db6b7380084caebeed4491cf01df6fe330d4b393d539983facb2.py"
+  },
+  "started_t_sim_ns": 41000000000,
+  "image_files": [
+    "debug/images/call-000063-0.png"
+  ],
+  "completed_t_sim_ns": 42000000000,
+  "response": "{\"u\": 497, \"v\": 582}",
+  "latency_ns": 230086100,
+  "output_tokens": 17,
+  "cache_hit": false
+}

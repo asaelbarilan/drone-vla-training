@@ -133,7 +133,7 @@ async def main():
                 tr.append("<td>Pending</td>")
                 mr.append("Pending")
                 continue
-            label = ("PASS" if row["success"] else row["termination"]) + (
+            label = ("PASS" if row["success"] else "FAIL: " + row["termination"]) + (
                 " — missing visual integration" if row["integration_limited"] else ""
             )
             url = f"frozen_capability_{family}.html#run={row['name']}&t=0"

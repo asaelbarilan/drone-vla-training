@@ -1,0 +1,46 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:v1",
+  "input_tokens": 270,
+  "image_count": 1,
+  "observation_seq": 580,
+  "prompt": "You are OnFly's high-frequency decision agent on a UAV. Select the next image-space navigation target for the current subtask. (0,0) is top-left. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Subtask: Fly toward the red pillar through the open passage. If the passage closes, find another route around the wall. Stay below 7 metres and stop within 2 metres of the pillar.. Match every explicitly named visual attribute in the subtask exactly, including object type, color, and relative location. A similarly shaped object with a different named attribute is a distractor, not the destination. There is no valid previous-goal point in the current view. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return only JSON with integer u and v. Do not report distance, world coordinates, completion, or flight controls.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000045",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 580,
+    "function": "decide",
+    "snapshot": "debug/sources/b7804a878ef1db6b7380084caebeed4491cf01df6fe330d4b393d539983facb2.py"
+  },
+  "started_t_sim_ns": 29000000000,
+  "image_files": [
+    "debug/images/call-000045-0.png"
+  ],
+  "completed_t_sim_ns": 30000000000,
+  "response": "{\"u\": 499, \"v\": 500}",
+  "latency_ns": 329494800,
+  "output_tokens": 17,
+  "cache_hit": false
+}
