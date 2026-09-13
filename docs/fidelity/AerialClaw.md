@@ -174,3 +174,18 @@ regimes with zero collisions and zero shield interventions.
 Search remains model-authored. The soft skill supplies a frozen set of
 launch-body-relative, range-fan-safe coverage options; the LLM chooses one hard
 skill per turn, and no option depends on target coordinates or scoring truth.
+
+## Development extension D-105 (2026-09-13)
+
+The frozen text-only gate above is preserved. The opt-in aerialclaw_visual_agent
+adds a requested detect_object information skill: text LLM chooses inspection;
+Gemma consumes one fresh RGB frame, depth/odometry ground its object estimate;
+LLM then chooses goto and the existing skill executor/SUPER runs it. No continuous
+image-space motion policy is introduced. Current extension is a normalized single-
+object tool, not a full upstream perception reproduction. A separately named 3%
+local depth refinement handles small pixel misses only for one unambiguous surface.
+Known-coordinate completion now validates the explicit public instruction/odometry.
+See reports/aerialclaw_tools_20260913/REPORT.md: coordinate and visible cases pass;
+search remains unvalidated after corrected strategy advice. Do not merge these
+results with the frozen GPT-OSS semantic-sensor gate or interpret unmatched charges
+as an architecture-only comparison.

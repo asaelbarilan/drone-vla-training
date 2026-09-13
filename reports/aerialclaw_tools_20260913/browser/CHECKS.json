@@ -1,0 +1,111 @@
+{
+  "checks": [
+    {
+      "run": "c1_visual_search_strategy_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_search_strategy_20260913_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_search_strategy_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_search_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_search_20260913_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_search_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "run": "c1_coordinate_completion_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "c1_coordinate_completion_20260913_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "c1_coordinate_completion_20260913_s1061",
+      "t": 26.05,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_refined_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_refined_20260913_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_refined_20260913_s1061",
+      "t": 35.75,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_visible_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_visible_20260913_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "c1_visual_tool_visible_20260913_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_known_goal_20260912_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_known_goal_20260912_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_known_goal_20260912_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_visible_target_20260912_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_visible_target_20260912_s1061",
+      "t": 10,
+      "error": ""
+    },
+    {
+      "run": "capability_screen_c1_visible_target_20260912_s1061",
+      "t": 60,
+      "error": ""
+    }
+  ],
+  "playbacks": 7,
+  "errors": []
+}

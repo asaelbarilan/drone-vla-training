@@ -72,7 +72,7 @@ async def main():
                     target.parent.mkdir(parents=True, exist_ok=True)
                     target.write_bytes((path / relative).read_bytes())
     Path("reports/debugger/aerialclaw_tools.html").write_text(
-        html_document({"schema": 1, "runs": runs, "sources": _sources()}), encoding="utf-8"
+        html_document({"schema": 1, "runs": runs, "sources": _sources()}).replace("<body>", "<body><div class=\"card\" style=\"margin:12px;padding:12px;color:#ffca76\">Development comparison: c1_visual_search_strategy_20260913_s1061 is an INVALID setup trial (old advice ran). Corrected search advice has offline tests only.</div>"), encoding="utf-8"
     )
     (OUT / "RUNS.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(

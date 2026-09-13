@@ -2263,3 +2263,16 @@ Next: saved-call regression, one coordinate flight, then optical detection tool 
 one visible-pillar flight. Gemma only; no OnFly edits or broad trial sweep.
 Rationale: D-104 reached coordinate but rejected done for missing exact-label evidence.
 Evidence: tests/unit/test_aerialclaw.py; D-104 original requests/result. New evidence pending.
+
+D-105 outcome: public-coordinate stop repair passes one matched flight at 26.0 s.
+Opt-in model-requested visual tool plus bounded local pixel refinement passes the
+visible-pillar case at 35.7 s / 1.415 m, with 3 text calls + 1 image call. The first
+strict-point variant failed; an unsuccessful bbox probe was not adopted. Search
+remains open: first search used no detection calls; intended-strategy trial was
+INVALID SETUP because a failed code insertion/test did not gate the shell chain.
+Actual search advice is now corrected and offline-tested only; no third search run.
+Rationale/limits/evidence: reports/aerialclaw_tools_20260913/REPORT.md and saved
+calls/images/events plus scripts. All five new flights retained; 21 completed flight
+calls, five cancelled, one extra completed bbox probe. No cloud, held-out or OnFly edits.
+406 unit/contract tests and seven replay/browser cases pass. Next: one bounded
+corrected-strategy search validation, not a broad comparison or claimed planning result.

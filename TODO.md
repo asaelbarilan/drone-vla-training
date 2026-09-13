@@ -371,3 +371,8 @@ from outside.
 - [ ] Evaluate the SFT adapter on development seeds 1060-1064. If it fails on
   student-induced states, add C0 labels there and repeat SFT for 2-3 DAgger
   rounds. Consider GRPO only after the policy reaches at least 3/5.
+
+## D-105 follow-up: requested-perception search
+- Run one bounded development check of the corrected c1_visual_search_gemma_dev advice (offline-tested only). The prior intended-strategy flight was invalid setup, not evidence about this repair.
+- Inspect detect_object requests after scan, coverage selection and completion before changing prompts again. Preserve 60 s horizon and model/latency provenance unless explicitly comparing a new condition.
+- Multi-object ordering and dynamic tracking require task-specific completion evidence; do not claim the current single-object visual tool solves those categories.

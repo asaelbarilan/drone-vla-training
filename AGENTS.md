@@ -16,6 +16,27 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: AerialClaw coordinate/visual skill repair - D-105 (2026-09-13)
+
+Read `reports/aerialclaw_tools_20260913/REPORT.md`. Coordinate completion now passes
+at 26.0 sim s: policy and stop runtime use the explicit public ENU instruction plus
+live odometry, without demanding visual labels. New requested visual-tool profile
+passes visible target at 35.7 sim s, final 1.415 m, zero collisions/violations: 3 text
+planning calls + 1 RGB detection. No continuous image-to-waypoint policy; SUPER unchanged.
+Strict selected-pixel detection failed before opt-in 3% local depth refinement.
+Search remains unresolved: legacy advice caused scan/coverage with zero detection calls.
+An intended-strategy run is INVALID SETUP: failed code insertion/test did not stop its
+PowerShell chain. Preserved; actual advice insertion fixed and offline-tested afterward.
+Do not claim c1_visual_search_gemma_dev has passed a flight. Explicit exit-code gates
+are required before launching from command chains. No further run is active/scheduled.
+Five new flights total (including invalid setup): 21 completed calls + 5 boundary
+cancellations; one extra unsuccessful saved-frame bbox probe. Gemma only, no cloud.
+406 unit/contract tests pass; seven exact replays, 21 browser snapshots/7 playbacks pass.
+Dashboard: `reports/debugger/aerialclaw_tools.html`. Next one bounded search validation
+of corrected advice; then task-level reasoning only after inspecting actual behavior.
+New visual profiles currently support one declared public object query; multi-stage
+and dynamic semantics remain open. Preserve D-104 and all D-105 failures.
+
 ## Latest: 24 capability flights completed - D-104 (2026-09-12)
 
 Read `reports/capability_screen_20260912/FINDINGS.md` before quoting scores.
