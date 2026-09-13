@@ -260,6 +260,9 @@ navigation points. If not found, choose scan or another search skill and inspect
             trace_id=trace,
         )
 
+    def _accept_detection_query(self, args):
+        return args == {"query": self.query}
+
     async def decide(self, ctx):
         # Capture on the NEXT observation after the model requests the tool, not
         # the potentially old observation from before the text-planning call.
@@ -273,7 +276,7 @@ navigation points. If not found, choose scan or another search skill and inspect
             return envelope
         if envelope.payload.skill_name != "detect_object":
             return envelope
-        valid = envelope.payload.args == {"query": self.query}
+        valid = self._accept_detection_query(envelope.payload.args)
         self._history[-1]["feedback"] = {
             "dispatch_accepted": valid,
             "dispatch_reason_not_completion": "perception tool queued"

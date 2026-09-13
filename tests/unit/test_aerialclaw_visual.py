@@ -249,6 +249,7 @@ def test_visual_search_strategy_explains_that_scan_does_not_detect():
 
 def test_inspected_search_retries_after_physical_full_turn_and_bounds_scan():
     from uavlab.plugins.reasoning.aerialclaw import _AgentAction
+
     p, model = policy([action("scan", {"yaw_rate_rps": 0.6, "duration_s": 2})])
     mission = MISSION.model_copy(update={"task_family": TaskFamily.OBJECT_SEARCH})
     p.reset(mission, 1061)
@@ -267,6 +268,7 @@ def test_inspected_search_retries_after_physical_full_turn_and_bounds_scan():
 
 def test_actual_inspected_views_cover_circle_once_and_reset_after_translation():
     import math
+
     p, _ = policy([])
     p.inspected_search = True
     ctx = context()
@@ -277,8 +279,9 @@ def test_actual_inspected_views_cover_circle_once_and_reset_after_translation():
     assert len(p._inspected_bins) == initial
     assert not p._local_search_complete(ctx)
     for index in range(8):
-        view = replace(ctx, observation=ctx.observation.model_copy(
-            update={"yaw_rad": index * math.pi / 4}))
+        view = replace(
+            ctx, observation=ctx.observation.model_copy(update={"yaw_rad": index * math.pi / 4})
+        )
         p._record_inspected_view(view)
     assert p._local_search_complete(ctx)
     assert not p._local_search_complete(context(position=Vec3(x=1, y=0, z=3)))
@@ -286,8 +289,9 @@ def test_actual_inspected_views_cover_circle_once_and_reset_after_translation():
 
 
 def test_only_requested_negative_detection_marks_inspected_search():
-    p, model = policy([action("detect_object", {"query":"red pillar"}),
-                       '{"visible":false,"u":null,"v":null}'])
+    p, model = policy(
+        [action("detect_object", {"query": "red pillar"}), '{"visible":false,"u":null,"v":null}']
+    )
     p.inspected_search = True
     asyncio.run(p.decide(context()))
     assert not p._inspected_bins

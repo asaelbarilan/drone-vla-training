@@ -1,0 +1,7 @@
+# D-107: model-selected object queries and ordered task evidence.
+_base_: c1_visual_tools_refined_gemma_dev.yaml
+id: c1_ordered_visual_gemma_dev
+profile_of: c1
+name: "C1 ordered visual task agent"
+policy:
+  name: aerialclaw_ordered_visual

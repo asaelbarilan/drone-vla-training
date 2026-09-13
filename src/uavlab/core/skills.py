@@ -22,7 +22,11 @@ from uavlab.contracts import (
     s_to_ns,
 )
 from uavlab.contracts.decision import MissionDirective
-from uavlab.core.mission_evidence import public_coordinate_goal
+from uavlab.core.mission_evidence import (
+    OrderedVisitEvidence,
+    public_coordinate_goal,
+    public_ordered_visit,
+)
 from uavlab.interfaces import DecisionContext, SemanticCompletionEvidence
 
 SkillResult = WaypointGoal | KinematicAction | MissionDirective
@@ -114,6 +118,18 @@ def validate_skill_call(call: SkillCall, ctx: DecisionContext | None = None) -> 
     # unchecked text verdict. This uses only the current perception contract;
     # it never asks the environment whether the candidate is the true target.
     if call.skill_name == "stop" and ctx is not None:
+        ordered = public_ordered_visit(ctx.mission)
+        if ordered is not None:
+            evidence = ctx.scratch.get("ordered_visit_evidence")
+            if (
+                not isinstance(evidence, OrderedVisitEvidence)
+                or evidence.contract != ordered
+                or not evidence.stop_supported(ctx.observation)
+            ):
+                raise InvalidSkillArguments(
+                    "stop requires observed first-object dwell then final-object arrival"
+                )
+            return
         radius = ctx.mission.success.goal_radius_m
         coordinate = public_coordinate_goal(ctx.mission)
         if coordinate is not None:

@@ -1,0 +1,5 @@
+# Unchanged task, geometry and scoring; explicitly permit requested perception.
+_base_: capability_ordered_visit.yaml
+id: capability_ordered_visit_tools
+params:
+  allowed_skills: [detect_object, goto, hover, scan, stop]

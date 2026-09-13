@@ -297,6 +297,9 @@ class Orchestrator:
         dt_ns = sched.period_ns or s_to_ns(0.05)
         while not self._stop.is_set():
             self.latest_obs = await self.env.observe()
+            observer = getattr(self.policy, "observe_task_evidence", None)
+            if observer is not None:
+                observer(self.latest_obs, self.scratch)
             ctx = self._ctx()
             command, safety, age_ns = self.router.command_for_tick(ctx)
 

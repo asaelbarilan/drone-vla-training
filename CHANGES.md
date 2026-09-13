@@ -2396,3 +2396,22 @@ never stops; bounded-confirmed target stops at source 11.95 s on the same answer
 No new inference. Negative tests cover expiry, departure, one/repeated frame,
 world-point jumps and invalid range. One fixture used integer depth and rejected
 infinity assignment; changed fixture to floating depth before flight validation.
+
+## 2026-09-13 — D-107: requested visual tools for ordered visits
+
+New opt-in two-object policy preserves red/blue identities and original source
+positions. Model selects detection queries, motion and order; shared SUPER executes.
+Public instruction supplies the ordered contract. Onboard odometry observes first
+visit dwell at control frequency; missing sample intervals reset dwell. Policy and
+runtime require first dwell then final arrival before stop. Stationary locations
+expire at 30 s. No simulator scoring state or scripted route is exposed.
+
+C5 single flight still times out: candidate at 11.95 s is recognized, but response
+arrives at 13.2 s and 3 s evidence TTL has expired. Live guard correctly refuses it.
+Saved-input probe omitted availability-time validation and was insufficient as an
+end-to-end predictor. Preserve this failure; no window tuning or extra flight.
+
+D-107 preflight: all 417 unit/contract tests pass (one existing dateutil warning).
+New ordered-contract tests reject blue-first stopping, missing dwell, observation
+gaps, expired locations and forged/unstated sequence; two queries preserve identity.
+Formatting/import lint corrections applied to test/tool code before launch.
