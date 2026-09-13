@@ -19,6 +19,7 @@ class EventType(str, Enum):
     EPISODE_END = "episode_end"
     OBSERVATION = "observation"
     PERCEPTION = "perception"
+    SKILL_TOOL = "skill_tool"
     MEMORY_UPDATE = "memory_update"
     DECISION_PROPOSED = "decision_proposed"
     DECISION_REJECTED_STALE = "decision_rejected_stale"

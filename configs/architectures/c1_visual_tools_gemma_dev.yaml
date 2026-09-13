@@ -1,0 +1,15 @@
+# D-105: opt-in single-object perception tool, existing skill flight execution.
+_base_: c1_capability_gemma_dev.yaml
+id: c1_visual_tools_gemma_dev
+profile_of: c1
+name: "C1 AerialClaw with requested RGB-D detection (Gemma)"
+policy:
+  name: aerialclaw_visual_agent
+  params:
+    allowed_skills: [detect_object, goto, hover, scan, stop]
+    visual_target_query: red pillar
+    camera_pitch_rad: -0.10
+inference:
+  params:
+    fixed_latency_s:
+      perception: 1.2

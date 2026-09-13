@@ -1,0 +1,5 @@
+# D-105: same visible-target scene/scoring, with an explicit perception capability.
+_base_: capability_visible_target.yaml
+id: capability_visible_target_tools
+params:
+  allowed_skills: [detect_object, goto, hover, scan, stop]

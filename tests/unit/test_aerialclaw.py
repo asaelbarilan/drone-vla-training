@@ -403,8 +403,7 @@ def test_coordinate_done_and_runtime_share_live_arrival_contract(position, speed
     mission = MISSION.model_copy(
         update={
             "instruction": (
-                "Fly to world ENU coordinate (12, 0, 3) metres "
-                "and stop within 2 metres."
+                "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres."
             ),
             "task_family": TaskFamily.KNOWN_GOAL_NAV,
         }
@@ -460,8 +459,7 @@ def test_saved_d104_done_reply_passes_coordinate_contract_without_reprompt():
     mission = MISSION.model_copy(
         update={
             "instruction": (
-                "Fly to world ENU coordinate (12, 0, 3) metres "
-                "and stop within 2 metres."
+                "Fly to world ENU coordinate (12, 0, 3) metres and stop within 2 metres."
             ),
             "task_family": TaskFamily.KNOWN_GOAL_NAV,
         }

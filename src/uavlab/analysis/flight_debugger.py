@@ -138,10 +138,13 @@ def build_decisions(events: list[dict], frames: list[dict], recordings: list[dic
         payload = event["payload"]
         policy = event["event_type"] == "decision_proposed" and "producer" in payload
         monitor = event["event_type"] == "monitor"
-        if not policy and not monitor:
+        tool = event["event_type"] == "skill_tool"
+        if not policy and not monitor and not tool:
             continue
-        role = "policy" if policy else "monitor"
-        seq = payload.get("source_observation_seq" if policy else "evidence_observation_seq")
+        role = payload["role"] if tool else "policy" if policy else "monitor"
+        seq = payload.get(
+            "source_observation_seq" if policy or tool else "evidence_observation_seq"
+        )
         source_index = by_observation.get(seq)
         chain = by_trace.get(event.get("trace_id"), []) if policy else [event]
         controls = [e for e in chain if e["event_type"] == "control"]
@@ -181,7 +184,7 @@ def build_decisions(events: list[dict], frames: list[dict], recordings: list[dic
                 "source_t": frames[source_index]["t"] if source_index is not None else None,
                 "state": ("accepted" if accepted else "rejected" if rejected else "unresolved")
                 if policy
-                else payload.get("label", "unknown"),
+                else payload.get("phase", payload.get("label", "unknown")),
                 "payload": payload,
                 "chain": [e for e in chain if e["event_type"] != "control"],
                 "first_control_t": controls[0]["t_sim_ns"] / 1e9 if controls else None,

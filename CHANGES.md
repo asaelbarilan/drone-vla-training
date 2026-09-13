@@ -2293,3 +2293,12 @@ C5_LONG_HORIZON_RESULTS_20260904.md.
 - Legacy semantic tasks remain unchanged. Added near/far/speed, ambiguous-input and search-isolation regression checks. Validation/rerun pending.
 
 - Coordinate validation: 24 unit tests pass, including original saved D-104 done response with no retry. Initial combined test command named a nonexistent test_skills.py; corrected immediately. Legacy UP038 lint warnings remain; new formatting issues corrected. One matched Gemma flight succeeds at 26.0 sim s (16.32 wall s), two completed calls, zero protocol rejections/collisions/constraint violations. Original failed run preserved.
+
+- Added opt-in aerialclaw_visual_agent: LLM requests detect_object, tool captures the next fresh RGB-D observation, returns a measured object location, and the LLM independently selects goto/done. No image-to-motion loop, automatic waypoint dispatch, semantic-hit input or scoring truth. Positive evidence retains original timestamp; missing/invalid depth never fabricates range.
+- New single-object profile declares red pillar from public mission, existing 8.5 s policy charge and explicit 1.2 s perception charge. Added tool events and matching capability vocabulary in an otherwise identical visible-target environment. Offline validation/flight pending.
+
+- Visual-tool offline checks caught a pitch-sign error in RGB-D lifting before any inference flight; aligned the transform with the sensor Camera convention. Tool request/result events now appear as separate, source-aligned debugger entries, including the exact detection image.
+
+- Registry-contract test required configuration validation at reset rather than construction; moved it without changing run behavior. Corrected the test-directory command from tests/contracts to tests/contract.
+
+- Preflight verification: 403 unit/contract tests pass (one pre-existing dateutil deprecation warning); new visual-tool/coordinate files pass lint. No real visual-model call used for these checks. Starting exactly one visible-target tool flight.
