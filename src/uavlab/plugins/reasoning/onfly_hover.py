@@ -17,6 +17,7 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         if "Hold for 2 continuous seconds" not in mission.instruction:
             raise ValueError("hover monitor requires the explicit D-108 hover contract")
         self._approach = None
+        self._initial_position = None
         self._hover_s = 0.0
         self._hover_last_ns = None
         self._hover_point = None
@@ -34,7 +35,11 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         origin = np.array([obs.position.x, obs.position.y, obs.position.z])
         delta = self._tracked_target - origin
         along = float(delta @ self._approach)
-        cross = float(np.linalg.norm(delta - along * self._approach))
+        sideways = delta - along * self._approach
+        vertical = (
+            obs.position.z - self._initial_position.z if self._initial_position else float("inf")
+        )
+        cross = float(math.hypot(np.linalg.norm(sideways[:2]), vertical))
         if not (
             0.75 <= np.linalg.norm(delta) <= 1.25
             and along > 0
@@ -64,6 +69,8 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         return d is not None and abs(d - z[0]) <= 0.3
 
     def observe_task_evidence(self, observation, scratch):
+        if self._initial_position is None:
+            self._initial_position = observation.position
         now = observation.t_sim_ns
         if self._hover_last_ns is not None and now <= self._hover_last_ns:
             return
@@ -113,6 +120,7 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         if self._approach is None and self._tracked_target is not None:
             p = ctx.observation.position
             delta = self._tracked_target - np.array([p.x, p.y, p.z])
+            delta[2] = 0.0
             if np.linalg.norm(delta) > 0.1:
                 self._approach = delta / np.linalg.norm(delta)
         return result.model_copy(

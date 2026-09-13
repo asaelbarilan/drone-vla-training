@@ -2473,3 +2473,14 @@ waypoint contract instead of old pixel-history steering, plus explicit earlier/c
 images in hover grounding. Current image must still support identity; live RGB-D,
 age, range, side and dwell checks unchanged. General contract test now provides this
 specialized monitor's required public mission instead of an unrelated generic mission.
+
+Before trial 3: 101 focused/contract checks passed; prior generic contract failure
+was a mismatched fixture mission, not a flight crash. No model calls from failed
+preflight commands. Added explicit earlier/current ordering check for temporal input.
+
+Trial 3: stable 1.114 m stop at 11.2 s but evaluator rejects it: vehicle z=2.597
+instead of initial z=3, exceeding 0.35 m line tolerance. The inferred target's
+arbitrary body pixel shifted monitor geometry down too. New opt-in flight-level
+adapter preserves initial onboard altitude while respecting camera-forward depth
+ceiling; hover monitor measures vertical deviation from initial odometry, not VLM
+pixel height. No evaluator threshold changed. Added exact failure negative control.

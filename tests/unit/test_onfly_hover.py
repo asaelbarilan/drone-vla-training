@@ -28,6 +28,7 @@ def fixture():
     monitor._tracked_target_t_ns = 0
     monitor._tracked_confirmations = 2
     monitor._approach = np.array([1.0, 0.0, 0.0])
+    monitor._initial_position = Vec3(x=0, y=0, z=3)
     return obs, monitor
 
 
@@ -71,3 +72,53 @@ def test_hover_cannot_be_completed_with_missing_or_changed_evidence(failure):
     m.observe_task_evidence(obs, {})
     assert m._hover_s == 0
     assert not m.stop_still_supported(obs)
+
+
+def test_temporal_reference_is_explicit_and_current_frame_remains_last():
+    obs, m = fixture()
+    prompt, images = m._grounding_context(None, "query", ["current"])
+    assert images == ["current"]
+    m._reference_image = "earlier"
+    prompt, images = m._grounding_context(None, "query", ["current"])
+    assert images == ["earlier", "current"]
+    assert "SECOND image ONLY" in prompt
+    assert "History alone cannot prove current visibility" in prompt
+
+
+def test_target_pixel_height_cannot_move_the_public_approach_line():
+    obs, m = fixture()
+    # Both vehicle and inferred target move down; relative target range is valid
+    # but initial flight-level approach is violated, as in trial 3.
+    m._tracked_target[2] -= 0.4
+    obs = obs.model_copy(update={"position": Vec3(x=11, y=0, z=2.6)})
+    for i in range(60):
+        m.observe_task_evidence(obs.model_copy(update={"t_sim_ns": i * 50_000_000}), {})
+    assert m._hover_s == 0
+    assert not m.stop_still_supported(obs)
+
+
+def test_level_approach_preserves_altitude_and_forward_depth_ceiling():
+    from tests.unit.test_onfly import MISSION, StubModel, context, services
+    from uavlab.core.camera import Camera
+    from uavlab.core.frame_store import global_store
+    from uavlab.core.services import bind
+    from uavlab.plugins.reasoning.onfly import OnFlyDecisionAgent
+
+    ctx = context()
+    depth = global_store().get(ctx.observation.depth.uri)
+    global_store().put(ctx.observation.depth.uri, np.full_like(depth, 4.0))
+    for v in (50, 170):
+        policy = OnFlyDecisionAgent(model_id="stub", hold_initial_altitude=True, goal_standoff_m=1)
+        bind(policy, services(StubModel(['{"u":112,"v":' + str(v) + "}"])))
+        policy.reset(MISSION, 1061)
+        result = asyncio.run(policy.decide(ctx))
+        target = result.payload.target
+        assert target.z == ctx.observation.position.z
+        cam = Camera(pitch_rad=policy.camera_pitch_rad)
+        p = ctx.observation.position
+        _, d = cam.project(
+            np.array([[target.x, target.y, target.z]]),
+            np.array([p.x, p.y, p.z]),
+            ctx.observation.yaw_rad,
+        )
+        assert d[0] <= float(result.provenance["executable_range_m"]) + 1e-6

@@ -1,0 +1,7 @@
+# D-108: preserve the public flight-level approach line with onboard altitude.
+_base_: c5_hover_context_gemma_dev.yaml
+id: c5_hover_level_gemma_dev
+name: "C5 level approach and visible hover development variant"
+policy:
+  params:
+    hold_initial_altitude: true

@@ -151,6 +151,7 @@ class OnFlyDecisionAgent(BasePolicy):
         self.max_depth_m = float(params.get("max_depth_m", 7.0))
         self.sigma_theta = float(params.get("sigma_theta", 0.65))
         self.goal_standoff_m = float(params.get("goal_standoff_m", 0.0))
+        self.hold_initial_altitude = bool(params.get("hold_initial_altitude", False))
         self.camera_pitch_rad = float(params.get("camera_pitch_rad", -0.15))
         self.coordinate_contract = str(params.get("coordinate_contract", "image_pixels"))
         self.previous_goal_prompt = bool(params.get("previous_goal_prompt", True))
@@ -701,6 +702,17 @@ class OnFlyDecisionAgent(BasePolicy):
             executable_range = max(0.0, self._model_step_m(model_step_level) - self.goal_standoff_m)
         origin = np.array([obs.position.x, obs.position.y, obs.position.z], dtype=float)
         projected = camera.unproject(u, v, executable_range, origin, obs.yaw_rad)
+        if self.hold_initial_altitude:
+            # Named flight-level approach adaptation, not the paper's full-ray lift.
+            # The public approach-line constraint uses initial onboard altitude.
+            projected[2] = self._home_position.z
+            _, adjusted_depth = camera.project(projected[None, :], origin, obs.yaw_rad)
+            excess = max(0.0, float(adjusted_depth[0]) - executable_range)
+            projected[:2] -= (
+                excess
+                / math.cos(self.camera_pitch_rad)
+                * np.array([math.cos(obs.yaw_rad), math.sin(obs.yaw_rad)])
+            )
         # Equation (3) lifts the complete camera ray.  Holding altitude after
         # unprojection changes its camera-forward component whenever the camera
         # is pitched, so the resulting point no longer represents ``d_f`` and
@@ -754,6 +766,9 @@ class OnFlyDecisionAgent(BasePolicy):
                 "sampled_depth_m": f"{depth_m:.6f}",
                 "gated_range_m": f"{gated:.6f}",
                 "executable_range_m": f"{executable_range:.6f}",
+                "altitude_constraint": "initial_onboard_altitude"
+                if self.hold_initial_altitude
+                else "camera_ray",
                 "step_source": "model" if self.step_from_model else "depth",
                 "model_step_level": str(model_step_level),
                 "history_pixel": str(history_pixel),
