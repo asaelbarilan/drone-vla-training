@@ -2333,3 +2333,16 @@ First matrix cell times out. Camera shows target during scan at 10 s; exact sole
 perception image at 21.95 s has no target. Further scan requested by the model is
 rejected by inherited full-turn coverage gate. 5 completed calls, 1 cancellation;
 1,200 replay poses match. No fix mid-comparison; see SEARCH_INSPECTED.md.
+
+## 2026-09-13 — D-106: frozen comparison dashboard and arrival evidence
+
+Added separate replay/report and browser-check scripts; preserved old dashboards.
+Initial tooling lint reported formatting and a loop-callback capture warning;
+formatted scripts and bound callback state, then checks pass (long HTML strings
+excluded from line-length rule). No flight source/config changed. Resolved visual
+scenes match other families except environment ID and allowed skill vocabulary.
+
+OnFly visible-target flight reaches 0.335 m but no stop: last identified target
+sample is 2.092 m (above 2 m threshold); next image lacks target and monitor reports
+LOST. Camera/map and exact monitor evidence are preserved in ONFLY_ARRIVAL.md.
+This observed arrival/stop boundary is not yet a validated causal repair.
