@@ -2375,3 +2375,24 @@ Added opt-in observed coverage and short scan contract. Legacy angular coverage
 remains the default. Requested detections alone update conservative angular bins;
 rotation alone cannot exhaust search or reject a retry. Model selects direction,
 scan and detection; no automatic perception or semantic route planner.
+
+## 2026-09-13 — D-107: bounded confirmed-target arrival variant
+
+Saved-control/response probe reproduces the current-frame arrival gap without new
+inference. Opt-in monitor retains a world target confirmed in two distinct RGB-D
+observations for at most 3 seconds, with original timestamps; arrival uses odometry
+and the unchanged 2 m bound. A live recheck after inference rejects stale/departed
+stops. No navigation or RGB change; no ground truth. Restricted to stationary
+single-object task families. Visual confirmation is separated from physical arrival.
+
+D-107 search flight outcome: timeout, no movement; six requested detections of the
+same empty view, zero scan proposals/rejections. 12 completed calls +1 boundary
+cancellation. Old gate defect is offline-repaired; search success is not established.
+No adaptive rerun. Saved-arrival probe initially had a test-helper import error;
+replaced it with direct runtime services, no model calls occurred in failed launches.
+
+Saved-input causal check: exact RGB/controls replayed through both monitors. Legacy
+never stops; bounded-confirmed target stops at source 11.95 s on the same answers.
+No new inference. Negative tests cover expiry, departure, one/repeated frame,
+world-point jumps and invalid range. One fixture used integer depth and rejected
+infinity assignment; changed fixture to floating depth before flight validation.

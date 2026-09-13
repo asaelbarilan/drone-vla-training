@@ -494,6 +494,18 @@ class Orchestrator:
         ctx = self._ctx()
         if role == "monitor" and self.monitor is not None:
             progress = await self.monitor.assess(ctx)
+            stop_check = getattr(self.monitor, "stop_still_supported", None)
+            if (
+                progress.label is ProgressLabel.STOP
+                and stop_check is not None
+                and not stop_check(self.latest_obs or ctx.observation)
+            ):
+                progress = progress.model_copy(
+                    update={
+                        "label": ProgressLabel.CONTINUE,
+                        "evidence": progress.evidence + "; stop rejected by live arrival recheck",
+                    }
+                )
             self.last_progress = progress
             anchor_position, anchor_yaw, anchor_seq = _onfly_monitor_anchor(ctx)
             if getattr(self.monitor, "target_bound_stop", False):

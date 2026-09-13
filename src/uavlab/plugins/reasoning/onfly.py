@@ -1179,6 +1179,16 @@ class OnFlyMonitor:
             raise ValueError(
                 "target_bound_stop needs two confirmations and full-resolution imagery"
             )
+        self.arrival_memory_s = float(params.get("arrival_memory_s", 0.0))
+        if not math.isfinite(self.arrival_memory_s) or not 0 <= self.arrival_memory_s <= 10:
+            raise ValueError("arrival_memory_s must be in [0, 10]")
+        if self.arrival_memory_s and not self.current_grounding:
+            raise ValueError("arrival memory requires current-frame target grounding")
+        self._tracked_target = None
+        self._tracked_target_t_ns = -1
+        self._tracked_confirmations = 0
+        self._tracked_observation_seq = -1
+        self._memory_arrival_confirmed = False
         self.target_consistency_m = float(params.get("target_consistency_m", 1.0))
         if self.target_bound_stop and (
             not math.isfinite(self.target_consistency_m) or self.target_consistency_m <= 0
@@ -1219,6 +1229,18 @@ class OnFlyMonitor:
         )
         self._arrival_point = None
         self._arrival_seq = -1
+        self._tracked_target = None
+        self._tracked_target_t_ns = -1
+        self._tracked_confirmations = 0
+        self._tracked_observation_seq = -1
+        self._memory_arrival_confirmed = False
+        if self.arrival_memory_s and mission.task_family.value not in {
+            "semantic_goal_nav",
+            "object_search",
+            "long_horizon_nav",
+        }:
+            raise ValueError("arrival memory supports stationary single-object missions only")
+        self._arrival_limit_m = min(self.stop_max_depth_m, mission.success.goal_radius_m)
         self._ever_acquired = False
         self._acquisition_count = 0
 
@@ -1582,7 +1604,7 @@ class OnFlyMonitor:
             )
         if label is ProgressLabel.STOP:
             self._stop_count += 1
-            if self._stop_count < self.stop_confirmations:
+            if self._stop_count < self.stop_confirmations and not self._memory_arrival_confirmed:
                 label = ProgressLabel.CONTINUE
                 evidence = (
                     f"STOP awaiting confirmation {self._stop_count}/"
@@ -1600,6 +1622,59 @@ class OnFlyMonitor:
             monitor_name=self.name,
             recovery_anchor_valid=recovery_anchor_valid,
             recovery_reacquired=recovery_reacquired,
+        )
+
+    def stop_still_supported(self, observation) -> bool:
+        """Recheck live odometry after inference delay before requesting a terminal stop."""
+        if not self.arrival_memory_s:
+            return True
+        if self._tracked_target is None or self._tracked_confirmations < self.stop_confirmations:
+            return False
+        age = (observation.t_sim_ns - self._tracked_target_t_ns) / 1e9
+        p = observation.position
+        distance = float(np.linalg.norm(self._tracked_target - [p.x, p.y, p.z]))
+        return 0 <= age <= self.arrival_memory_s and distance <= self._arrival_limit_m
+
+    def _remembered_target_arrival(self, ctx, parsed, label, point):
+        obs = ctx.observation
+        fresh = obs.seq > self._tracked_observation_seq
+        self._memory_arrival_confirmed = False
+        if fresh:
+            self._tracked_observation_seq = obs.seq
+            age = (obs.t_sim_ns - self._tracked_target_t_ns) / 1e9
+            if point is not None:
+                consistent = (
+                    self._tracked_target is not None
+                    and 0 <= age <= self.arrival_memory_s
+                    and float(np.linalg.norm(point - self._tracked_target))
+                    <= self.target_consistency_m
+                )
+                self._tracked_confirmations = self._tracked_confirmations + 1 if consistent else 1
+                self._tracked_target = point.copy()
+                self._tracked_target_t_ns = obs.t_sim_ns
+            elif parsed["latest_target_visible"] or not 0 <= age <= self.arrival_memory_s:
+                # Claimed visible target with invalid range is not historical confirmation.
+                self._tracked_target = None
+                self._tracked_confirmations = 0
+        supported = fresh and self.stop_still_supported(obs)
+        if supported:
+            # The distinct visual confirmations can precede physical arrival.
+            # Their original timestamps remain unchanged while odometry closes the gap.
+            label = ProgressLabel.STOP
+            self._memory_arrival_confirmed = True
+        elif label is ProgressLabel.STOP:
+            label = ProgressLabel.CONTINUE
+        p = obs.position
+        distance = (
+            float(np.linalg.norm(self._tracked_target - [p.x, p.y, p.z]))
+            if self._tracked_target is not None
+            else None
+        )
+        return label, (
+            f"arrival_source=bounded_confirmed_rgbd_target; target_range_m={distance}; "
+            f"visual_confirmations={self._tracked_confirmations}/{self.stop_confirmations}; "
+            f"original_target_t_ns={self._tracked_target_t_ns}; ttl_s={self.arrival_memory_s}; "
+            f"fresh_frame={fresh}; arrival_limit_m={self._arrival_limit_m}"
         )
 
     def _target_arrival(
@@ -1638,6 +1713,8 @@ class OnFlyMonitor:
                 delta = np.array([forward * cy - left * sy, forward * sy + left * cy, up])
                 point = np.array([obs.position.x, obs.position.y, obs.position.z]) + delta
                 distance = float(np.linalg.norm(delta))
+        if self.arrival_memory_s:
+            return self._remembered_target_arrival(ctx, parsed, label, point)
         fresh = obs.seq > self._arrival_seq
         consistent = (
             point is not None

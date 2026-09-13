@@ -235,3 +235,55 @@ def test_color_contract_is_not_hardcoded_to_red():
 
     assert _mission_color("fly to the blue tower") == "blue"
     assert _mission_color("fly to the grey tower") == "gray"
+
+
+def memory_monitor():
+    ctx, monitor, model = setup_monitor(depth_m=4.0)
+    monitor.current_grounding = True
+    monitor.arrival_memory_s = 3.0
+    monitor.reset(MISSION, 1060)
+    model.replies = [json.dumps(dict(evidence="target", visible=True, u=500, v=500))]
+    return ctx, monitor, model
+
+
+def test_confirmed_target_survives_brief_view_loss_but_not_expiry_or_departure():
+    ctx, monitor, model = memory_monitor()
+    assert asyncio.run(monitor.assess(ctx)).label is ProgressLabel.CONTINUE
+    fresh(ctx)
+    assert asyncio.run(monitor.assess(ctx)).label is ProgressLabel.CONTINUE
+    target = monitor._tracked_target.copy()
+    model.replies = [json.dumps(dict(evidence="empty", visible=False, u=None, v=None))]
+    fresh(ctx, position=Vec3(x=target[0], y=target[1], z=target[2]))
+    result = asyncio.run(monitor.assess(ctx))
+    assert result.label is ProgressLabel.STOP
+    assert monitor.stop_still_supported(ctx.observation)
+    departed = ctx.observation.model_copy(update={"position": Vec3(x=100, y=0, z=3)})
+    assert not monitor.stop_still_supported(departed)
+    fresh(ctx)  # four seconds since the actual last image: original timestamp not refreshed
+    assert asyncio.run(monitor.assess(ctx)).label is not ProgressLabel.STOP
+
+
+def test_one_image_or_repeated_source_does_not_confirm_remembered_target():
+    ctx, monitor, model = memory_monitor()
+    for _ in range(3):
+        assert asyncio.run(monitor.assess(ctx)).label is not ProgressLabel.STOP
+    assert monitor._tracked_confirmations == 1
+    target = monitor._tracked_target.copy()
+    model.replies = [json.dumps(dict(evidence="empty", visible=False, u=None, v=None))]
+    fresh(ctx, position=Vec3(x=target[0], y=target[1], z=target[2]))
+    assert asyncio.run(monitor.assess(ctx)).label is not ProgressLabel.STOP
+
+
+def test_jumping_or_invalid_current_target_cannot_reuse_old_arrival_confirmation():
+    ctx, monitor, model = memory_monitor()
+    asyncio.run(monitor.assess(ctx))
+    fresh(ctx)
+    asyncio.run(monitor.assess(ctx))
+    assert monitor._tracked_confirmations == 2
+    fresh(ctx, position=Vec3(x=100, y=0, z=3))
+    asyncio.run(monitor.assess(ctx))
+    assert monitor._tracked_confirmations == 1
+    global_store().get(ctx.observation.depth.uri)[:] = np.inf
+    fresh(ctx)
+    assert asyncio.run(monitor.assess(ctx)).label is not ProgressLabel.STOP
+    assert monitor._tracked_target is None
