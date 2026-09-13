@@ -2447,3 +2447,9 @@ Final success and ordered red-only views directly inspected. Captured source SHA
 filenames verified. Five new flights used 131 completed local Gemma calls and five
 boundary cancellations; no cloud. Focused Ruff and diff whitespace checks pass.
 Evidence: reports/targeted_contracts_20260913/VERIFICATION.json.
+
+## 2026-09-13 — D-108: approach-side hover task
+
+User authorized autonomous run/debug/fix. Added named task with 2 s visible slow hover,
+front-side range/alignment and latched swept no-contact scoring. D-107 unchanged.
+Added wrong-side, view-loss, dwell, motion and contact negative controls.

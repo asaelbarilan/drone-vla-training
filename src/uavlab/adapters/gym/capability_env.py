@@ -19,6 +19,7 @@ from uavlab.core.registry import register
 SCENARIOS = (
     "known_goal",
     "visible_target",
+    "approach_hover",
     "turn_search",
     "overturned_vehicle",
     "conditional_gate",
@@ -72,6 +73,8 @@ class CapabilityEnv(DeterministicEnv):
         self._visit_dwell_s = 0.0
         self._tracking_passed: bool | None = None
         self._task_complete = False
+        self._hover_s = 0.0
+        self._target_contact = False
         self._vehicle_truth: list[dict] = []
 
     @property
@@ -94,6 +97,8 @@ class CapabilityEnv(DeterministicEnv):
         self._vehicle_truth = []
         self._branch_ok = self._wrong_branch = self._blocked = self._seen = False
         self._task_complete = False
+        self._hover_s = 0.0
+        self._target_contact = False
         self._tracking_passed = None
         self._tracking_good_s = self._tracking_total_s = self._tracking_streak_s = 0.0
         self._dwell_s = self._visit_dwell_s = 0.0
@@ -229,7 +234,31 @@ class CapabilityEnv(DeterministicEnv):
         near = distance <= self.goal_radius_m
         self._dwell_s = self._dwell_s + dt if near else 0.0
         complete = near
-        if self.scenario == "turn_search":
+        if self.scenario == "approach_hover":
+            # The marker is not solid geometry. A swept drone-radius exclusion
+            # around its reference point implements the explicit no-contact rule.
+            segment = p - previous
+            fraction = np.clip(
+                np.dot(self.goal - previous, segment) / max(np.dot(segment, segment), 1e-12), 0, 1
+            )
+            self._target_contact |= (
+                np.linalg.norm(previous + fraction * segment - self.goal) <= self.drone_radius_m
+            )
+            approach = (self.goal - self._start) / np.linalg.norm(self.goal - self._start)
+            delta = self.goal - p
+            forward = float(np.dot(delta, approach))
+            lateral = float(np.linalg.norm(delta - forward * approach))
+            good = (
+                0.75 <= distance <= 1.25
+                and forward > 0
+                and lateral <= 0.35
+                and np.linalg.norm(self.vehicle.velocity) <= 0.2
+                and self._visible_goal()
+                and not self._target_contact
+            )
+            self._hover_s = self._hover_s + dt if good else 0.0
+            complete = self._hover_s >= 2.0 - 1e-9
+        elif self.scenario == "turn_search":
             complete &= self._seen
         elif self.scenario == "conditional_gate":
             complete &= self._branch_ok and not self._wrong_branch
@@ -258,6 +287,8 @@ class CapabilityEnv(DeterministicEnv):
         state = super().status()
         extras = dict(state.extras)
         extras.update(
+            hover_streak_s=self._hover_s,
+            target_contact=float(self._target_contact),
             task_complete=float(self._task_complete),
             target_ever_visible=float(self._seen),
             branch_correct=float(self._branch_ok),

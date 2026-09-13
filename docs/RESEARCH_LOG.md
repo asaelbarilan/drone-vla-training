@@ -2315,3 +2315,17 @@ Five flights total after communicated amendment for two concrete implementation
 mistakes; all failures retained. No further flight or task active/scheduled.
 Evidence: reports/targeted_contracts_20260913/REPORT.md, RUNS.json, exact captures,
 SAVED_ONFLY_AVAILABILITY.json and browser verification. Not a reliability ranking.
+
+
+## D-108 — explicit approach and hover; autonomous debug cycle (2026-09-13)
+
+User replaced ambiguous radius arrival with 1 m approach-side hover, target kept in
+view and no touching, and explicitly authorized run/debug/fix without per-run approval.
+Retain D-107 unchanged. New scenario: 0.75–1.25 m from marker reference, <=0.35 m
+cross-track from initial approach line, <=0.2 m/s, visible for 2 continuous seconds.
+The existing marker has no solid body: swept 0.4 m drone-radius exclusion around its
+reference implements no-contact scoring; this is not a physical pillar-contact model.
+Rationale: distinguish passing/overshooting from stable arrival. Evaluator truth stays
+private. Initial run uses unchanged D-107 policy/monitor; diagnose exact captures before
+adaptation. Same local Gemma, development seeds only. No automatic unbounded retry.
+Evidence: new scenario negative controls; live outcome pending.

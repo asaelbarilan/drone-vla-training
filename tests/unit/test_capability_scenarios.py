@@ -236,3 +236,50 @@ def test_declared_altitude_and_fence_are_evaluator_enforced(position):
         assert not env.status().task_complete
 
     asyncio.run(check())
+
+
+@pytest.mark.parametrize(
+    "position,yaw,valid",
+    [
+        ((11, 0, 3), 0, True),
+        ((13, 0, 3), math.pi, False),
+        ((11, 0, 3), math.pi, False),
+        ((11, 0.6, 3), 0, False),
+    ],
+)
+def test_hover_requires_front_view_alignment_and_continuous_dwell(position, yaw, valid):
+    async def check():
+        env, mission = make_env("approach_hover")
+        await env.reset(mission, 1061)
+        env.vehicle.position = np.array(position, dtype=float)
+        env.vehicle.yaw = yaw
+        await step(env, steps=39)
+        assert not env.status().task_complete
+        await step(env, steps=2)
+        assert env.status().task_complete is valid
+        if valid:
+            env.vehicle.yaw = math.pi
+            await step(env)
+            assert not env.status().task_complete
+            assert env.status().extras["hover_streak_s"] == 0
+
+    asyncio.run(check())
+
+
+def test_hover_contact_is_latched_and_motion_does_not_count():
+    async def check():
+        env, mission = make_env("approach_hover")
+        await env.reset(mission, 1061)
+        env.vehicle.position = point(11)
+        env.vehicle.velocity = point(0.5, 0, 0)
+        await step(env, (0.5, 0, 0), steps=10)
+        assert env.status().extras["hover_streak_s"] == 0
+        env.vehicle.position = point(12)
+        await step(env)
+        assert env.status().extras["target_contact"] == 1
+        env.vehicle.position = point(11)
+        env.vehicle.velocity[:] = 0
+        await step(env, steps=50)
+        assert not env.status().task_complete
+
+    asyncio.run(check())
