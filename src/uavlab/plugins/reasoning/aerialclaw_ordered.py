@@ -84,6 +84,22 @@ class AerialClawOrderedVisualPolicy(AerialClawVisualAgentPolicy):
     def _build_prompt(self, ctx):
         text = super()._build_prompt(ctx)
         text = text[: text.index("## Additional perception hard skill")]
+        start = text.index("## Relevant soft skill")
+        end = text.index("## BODY-derived coverage reference", start)
+        text = (
+            text[:start]
+            + (
+                "## Relevant soft skill: ordered requested perception\n"
+                "No automatic detector runs here. Empty detection lists mean no tool result, "
+                "not that the objects are absent. Start by requesting detect_object for a "
+                "mission object. Scan only rotates the camera; it does not identify objects. "
+                "After a not-found result choose a short turn and request detection again. "
+                "After localization choose goto, wait for execution feedback and first-object "
+                "dwell, then choose skills for the second object. Never treat the first "
+                "arrival as mission completion. No fixed route or object positions are supplied.\n\n"
+            )
+            + text[end:]
+        )
         contract = self._ordered.contract
         locations = {
             label: {

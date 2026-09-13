@@ -87,6 +87,10 @@ def test_two_queries_keep_identity_and_do_not_command_motion_or_complete_order()
     assert not model.requests[0].images and len(model.requests[1].images) == 1
     assert '"query":"red pillar"' in p._build_prompt(ctx)
     assert '"query":"blue pillar"' in p._build_prompt(ctx)
+    prompt = p._build_prompt(ctx)
+    assert "inspect the new passive detections" not in prompt
+    assert "Use one bounded full-turn scan" not in prompt
+    assert "Start by requesting detect_object" in prompt
     p.reset(ORDERED, 1061)
     assert not p._ordered.locations and p._ordered.first_completed_t_ns is None
 

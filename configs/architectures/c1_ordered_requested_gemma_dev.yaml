@@ -1,0 +1,5 @@
+# D-107: remove inherited passive-detector strategy from the ordered tool prompt.
+_base_: c1_ordered_visual_gemma_dev.yaml
+id: c1_ordered_requested_gemma_dev
+profile_of: c1
+name: "C1 ordered requested-perception contract"

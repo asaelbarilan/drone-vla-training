@@ -2415,3 +2415,14 @@ D-107 preflight: all 417 unit/contract tests pass (one existing dateutil warning
 New ordered-contract tests reject blue-first stopping, missing dwell, observation
 gaps, expired locations and forged/unstated sequence; two queries preserve identity.
 Formatting/import lint corrections applied to test/tool code before launch.
+
+## 2026-09-13 — D-107: correct final-audit implementation mistakes
+
+Exact ordered prompt still contained inherited passive-detector/full-turn advice;
+removed that conflicting strategy and added regression assertions. Initial ordered
+flight is evidence of an integration-confounded prompt, not a clean tool-choice test.
+Arrival candidate was valid at capture but its 3 s TTL expired at 3.25 s availability;
+new named profile uses 4 s (two monitor periods), with unchanged 2 m radius and live
+check. Availability replay tests both windows, including expiry/departure negatives.
+Explicitly amended the assistant-imposed cap to five flights, communicated before
+launch: one final flight per correction, no other adaptive retries. Preserved failures.
