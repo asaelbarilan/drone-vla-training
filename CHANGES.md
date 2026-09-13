@@ -2361,3 +2361,10 @@ Zero collisions; 14 C5 constraint violations across six cells. All 19,414 poses 
 24 resolved manifests match; no missing source frames. 72 browser seeks/24 playbacks
 plus 24 closest-approach inspections pass. Confirmed exact C1 tool image/source links.
 Dashboard matrix labels every failure explicitly. No further run is active/scheduled.
+
+## 2026-09-13 — D-106: retain exact evidence bytes in git
+
+Git warned about Windows newline conversion in captured source snapshots. Added a
+scoped -text attribute for this evidence directory and renormalized its index so
+future checkouts retain original bytes. All 82 snapshot filenames match SHA-256.
+No simulation, source behavior or configuration changed.
