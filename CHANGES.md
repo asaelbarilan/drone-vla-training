@@ -2534,3 +2534,11 @@ cancellations,zero cloud.263 frozen hashes unchanged;1,770 exact replay poses;
 REPORT.md records conservative completion and same-scene limits. New comparison at
 http://127.0.0.1:8766/hover_stable.html; first browser404 traced to Valley owning8765,
 left untouched. Evidence/scripts/docs preserved; no third new flight scheduled.
+
+
+## 2026-09-14 - D-111 navigation diagnostic profile
+
+Prepared navigation-compatible corrected C5 for original clutter seed1061. Preserved
+D-98 environment,SUPER/verifier/scheduler/inference; excludes hover-only contract,
+retains grounded points,1 m standoff,arrival memory and heading hold. Frozen before
+one diagnostic flight. No runtime edits or inference yet. See D-111.

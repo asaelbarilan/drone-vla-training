@@ -2386,3 +2386,21 @@ images exact,9 browser seeks/3 playbacks and terminal images checked. See
 reports/hover_stable_20260914/REPORT.md and VERIFICATION.json. Dashboard port8766
 leaves Valley on8765 untouched. Completion remains conservative; first-bearing
 accuracy, harder scenes and planning remain open. No third flight scheduled.
+
+
+## D-111 - Return to clutter navigation after hover repair (2026-09-14)
+
+Status: preregistered; one diagnostic flight pending. User authorized proposed
+run -> visual diagnosis -> first demonstrated repair -> matched rerun workflow.
+Use c5_clutter_stable_gemma_dev, grid_nav_onfly_depth_v2_dev, seed1061,90 seconds.
+Environment exactly matches D-98 corrected-depth comparator, including geometry,
+pitch,dynamics and success. SUPER,verifier,scheduler,inference settings unchanged.
+Transfer grounded VLM waypoint interface,1 m standoff,D-110 yaw hold and4 s confirmed
+arrival memory. Calibrated -0.15 pitch. Exclude hover-only line/altitude/dwell contract
+and two-image hover prompt: navigation allows detours/vertical motion and asks arrival.
+Use generic visual monitor without color guard. This is a named combined integration
+variant, not isolated yaw ablation or native OnFly reproduction. Inspect actual model
+input,accepted point,planner and movement before attributing outcome. No cloud/key
+reads,model changes,clearance tuning,new obstacles or broad sweep. Preserve failures.
+Evidence: D-97/98 depth contract,D-107 arrival memory,D-110 hover repair. FREEZE.json
+verifies resolved environment and unchanged execution/inference settings.

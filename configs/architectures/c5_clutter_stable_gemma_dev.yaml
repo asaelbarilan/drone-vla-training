@@ -1,0 +1,19 @@
+# D-111: navigation-compatible transfer of tested C5 integration fixes.
+_base_: c5_arrival_window_gemma_dev.yaml
+id: c5_clutter_stable_gemma_dev
+profile_of: c5
+name: "C5 grounded clutter navigation with stable near-goal heading"
+policy:
+  params:
+    camera_pitch_rad: -0.15
+    grounded_waypoints: true
+    goal_standoff_m: 1.0
+    hold_initial_altitude: false
+controller:
+  params:
+    yaw_hold_radius_m: 0.25
+monitor:
+  name: onfly_monitor
+  params:
+    camera_pitch_rad: -0.15
+    semantic_color_guard: false
