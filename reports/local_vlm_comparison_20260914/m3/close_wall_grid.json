@@ -1,0 +1,118 @@
+{
+  "model": {
+    "id": "m3",
+    "name": "qwen3-vl:2b",
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "size": 1889519687,
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "case": "close_wall",
+  "variant": "grid",
+  "input_sha256": "6061922d1e77f9e37e8361748ca420d919c376b3bd634de73b598f03ee1e6175",
+  "request": {
+    "model": "qwen3-vl:2b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+        "images": [
+          "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"
+        ]
+      }
+    ],
+    "stream": false,
+    "keep_alive": "10m",
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "cell": {
+          "type": "string",
+          "enum": [
+            "A1",
+            "B1",
+            "C1",
+            "D1",
+            "A2",
+            "B2",
+            "C2",
+            "D2",
+            "A3",
+            "B3",
+            "C3",
+            "D3",
+            "A4",
+            "B4",
+            "C4",
+            "D4",
+            "absent"
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "cell"
+      ],
+      "additionalProperties": false
+    },
+    "think": false
+  },
+  "reply": {
+    "model": "qwen3-vl:2b",
+    "created_at": "2026-09-14T17:55:15.9086032Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\"evidence\": \"The image shows a 4x4 grid with labels A1 to D4. The grid is divided into four columns (A, B, C, D) and four rows (1, 2,\", \"cell\": \"absent\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 29752666800,
+    "load_duration": 3679900,
+    "prompt_eval_count": 1148,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 27304728000,
+    "eval_count": 56,
+    "eval_duration": 2383041000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:2b",
+        "model": "qwen3-vl:2b",
+        "size": 2555411168,
+        "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "2.1B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-14T21:05:15.9091074+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 29.75
+}

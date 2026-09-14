@@ -121,7 +121,14 @@
     "case": "visible_target",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 11.812000000005355,
+    "answer": {
+      "evidence": "A1",
+      "cell": "C4"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m1",
@@ -129,7 +136,20 @@
     "case": "visible_target",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "invalid_output",
+    "seconds": 9.921999999991385,
+    "answer": {
+      "evidence": "red tower",
+      "visible": true,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "error": "Box has nonpositive area"
   },
   {
     "model": "m1",
@@ -137,7 +157,14 @@
     "case": "hidden_openings",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 9.531000000002678,
+    "answer": {
+      "evidence": "A1",
+      "cell": "C3"
+    },
+    "channel": "content",
+    "presence_correct": false
   },
   {
     "model": "m1",
@@ -145,7 +172,20 @@
     "case": "hidden_openings",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "invalid_output",
+    "seconds": 9.23399999999674,
+    "answer": {
+      "evidence": "red tower",
+      "visible": true,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "error": "Box has nonpositive area"
   },
   {
     "model": "m1",
@@ -153,7 +193,14 @@
     "case": "close_wall",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 8.5,
+    "answer": {
+      "evidence": "A1",
+      "cell": "C4"
+    },
+    "channel": "content",
+    "presence_correct": false
   },
   {
     "model": "m1",
@@ -161,7 +208,20 @@
     "case": "close_wall",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "invalid_output",
+    "seconds": 9.281000000002678,
+    "answer": {
+      "evidence": "red tower",
+      "visible": true,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "error": "Box has nonpositive area"
   },
   {
     "model": "m2",
@@ -169,7 +229,9 @@
     "case": "visible_target",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 2.187999999994645,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m2",
@@ -177,7 +239,9 @@
     "case": "visible_target",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 0.031000000002677552,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m2",
@@ -185,7 +249,9 @@
     "case": "hidden_openings",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 0.0,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m2",
@@ -193,7 +259,9 @@
     "case": "hidden_openings",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 0.031000000002677552,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m2",
@@ -201,7 +269,9 @@
     "case": "close_wall",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 0.014999999999417923,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m2",
@@ -209,23 +279,53 @@
     "case": "close_wall",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "runtime_error",
+    "seconds": 0.031000000002677552,
+    "error": "HTTP 400: {\"error\":\"{\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"Multimodal data provided, but model does not support multimodal requests.\\\",\\\"type\\\":\\\"invalid_request_error\\\"}}\"}"
   },
   {
     "model": "m3",
     "name": "qwen3-vl:2b",
     "case": "visible_target",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 32.79700000000594,
+    "answer": {
+      "evidence": "The red tower is located in the center of the grid, specifically in the B2 cell. The red tower is a single rectangular, ",
+      "cell": "B2"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m3",
     "name": "qwen3-vl:2b",
     "case": "visible_target",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 29.671999999991385,
+    "answer": {
+      "evidence": "The red tower is a single, vertical rectangular structure located between two larger gray buildings. It is positioned to",
+      "visible": true,
+      "box": [
+        333,
+        307,
+        385,
+        442
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      74.33333333333333,
+      68.52952952952953,
+      85.94094094094095,
+      98.66466466466467
+    ],
+    "iou": 0.5946308994751546,
+    "center_in_target": true
   },
   {
     "model": "m3",
@@ -233,135 +333,318 @@
     "case": "hidden_openings",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 29.452999999994063,
+    "answer": {
+      "evidence": "The image shows a 4x4 grid with labeled cells. The grid has a blue sky at the top and green ground at the bottom. There ",
+      "cell": "B2"
+    },
+    "channel": "thinking",
+    "presence_correct": false
   },
   {
     "model": "m3",
     "name": "qwen3-vl:2b",
     "case": "hidden_openings",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 29.764999999999418,
+    "answer": {
+      "evidence": "The image shows a series of gray, blocky structures resembling buildings or towers. There are no red towers visible in 3",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m3",
     "name": "qwen3-vl:2b",
     "case": "close_wall",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 29.75,
+    "answer": {
+      "evidence": "The image shows a 4x4 grid with labels A1 to D4. The grid is divided into four columns (A, B, C, D) and four rows (1, 2,",
+      "cell": "absent"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m3",
     "name": "qwen3-vl:2b",
     "case": "close_wall",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 29.764999999999418,
+    "answer": {
+      "evidence": "The image shows a 3D scene with two gray walls forming a corner and a green floor. There are no red towers visible in or",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "visible_target",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 51.062999999994645,
+    "answer": {
+      "evidence": "The red tower is a distinct vertical red structure located within the grid. It is positioned in the B2 cell, as it is a ",
+      "cell": "B2"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "visible_target",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 47.90600000000268,
+    "answer": {
+      "evidence": "A single red rectangular structure is visible in the middle distance, positioned between two gray buildings. It is the\u552f\u4e00",
+      "visible": true,
+      "box": [
+        342,
+        312,
+        384,
+        438
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      76.34234234234235,
+      69.64564564564564,
+      85.71771771771772,
+      97.77177177177177
+    ],
+    "iou": 0.7764955312474402,
+    "center_in_target": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "hidden_openings",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 44.812000000005355,
+    "answer": {
+      "evidence": "The image shows a grid with labeled cells. The visible structures are gray and green, with no red tower present. The red",
+      "cell": "absent"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "hidden_openings",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 47.04700000000594,
+    "answer": {
+      "evidence": "The image shows a scene with multiple gray buildings and a green ground, but there is no red tower visible. All visible ",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "close_wall",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 47.796999999991385,
+    "answer": {
+      "evidence": "The image shows a grid with labeled cells (A1 to D4). There is no visible red tower in any of the cells. The grid has a ",
+      "cell": "absent"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m4",
     "name": "qwen3-vl:4b",
     "case": "close_wall",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 49.46899999999732,
+    "answer": {
+      "evidence": "The image shows a gray building with a green base, but there is no red tower visible. The structures present are gray (w",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "visible_target",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 84.01600000000326,
+    "answer": {
+      "evidence": "The image shows a red rectangular tower located in the grid cell labeled B2. The grid has columns A-D and rows 1-4, with",
+      "cell": "B2"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "visible_target",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 77.65600000000268,
+    "answer": {
+      "evidence": "A small red rectangular tower is visible between two gray buildings, positioned left of center and slightly above the gr",
+      "visible": true,
+      "box": [
+        336,
+        313,
+        382,
+        440
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      75.003003003003,
+      69.86886886886887,
+      85.27127127127127,
+      98.21821821821821
+    ],
+    "iou": 0.7145342201841134,
+    "center_in_target": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "hidden_openings",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 75.04699999999139,
+    "answer": {
+      "evidence": "The image shows a grid with gray and green structures, but no red tower is visible. All structures are gray or green, so",
+      "cell": "absent"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "hidden_openings",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 76.65600000000268,
+    "answer": {
+      "evidence": "The image shows a landscape with gray buildings and a blue sky. There are no red towers visible in the image.",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "close_wall",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 76.04699999999139,
+    "answer": {
+      "evidence": "The image shows a grid with labeled cells (A1-D4). There are no visible red towers in any of the cells. The grid has a 4",
+      "cell": "absent"
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m5",
     "name": "qwen3-vl:8b",
     "case": "close_wall",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 76.68700000000536,
+    "answer": {
+      "evidence": "The image shows a gray structure and a green structure, but no red tower is visible. The task requires locating a red\u5854, ",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
   },
   {
     "model": "m6",
     "name": "qwen3.5:2b",
     "case": "visible_target",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 10.328000000008615,
+    "answer": {
+      "evidence": "A small red rectangular tower is visible in the grid, located at the intersection of column B and row 2 (cell labeled B2",
+      "cell": "B2"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m6",
@@ -369,23 +652,64 @@
     "case": "visible_target",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 5.73399999999674,
+    "answer": {
+      "evidence": "A small red rectangular structure is visible in the background, positioned between two gray buildings.",
+      "visible": true,
+      "box": [
+        298,
+        306,
+        341,
+        457
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true,
+    "box_pixels": [
+      66.52052052052052,
+      68.30630630630631,
+      76.11911911911912,
+      102.01301301301301
+    ],
+    "iou": 0.0,
+    "center_in_target": false
   },
   {
     "model": "m6",
     "name": "qwen3.5:2b",
     "case": "hidden_openings",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 5.375,
+    "answer": {
+      "evidence": "The image displays a neutral 4x4 grid over a landscape scene. The visible structures include gray towers (labeled B2, C2",
+      "cell": "absent"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m6",
     "name": "qwen3.5:2b",
     "case": "hidden_openings",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 5.734000000011292,
+    "answer": {
+      "evidence": "There is no red tower visible in this image. The scene contains only gray stone-like structures and a green ground plane",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m6",
@@ -393,23 +717,50 @@
     "case": "close_wall",
     "variant": "grid",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 5.0939999999973224,
+    "answer": {
+      "evidence": "A small red tower-like structure is visible in the bottom-right corner of the image, specifically within the gray area. ",
+      "cell": "D4"
+    },
+    "channel": "content",
+    "presence_correct": false
   },
   {
     "model": "m6",
     "name": "qwen3.5:2b",
     "case": "close_wall",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 6.782000000006519,
+    "answer": {
+      "evidence": "The image shows a gray building structure with a small portion of green at the bottom left corner. There is no red tower",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m7",
     "name": "qwen3.5:4b",
     "case": "visible_target",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 13.25,
+    "answer": {
+      "evidence": "The red tower is a small rectangular structure located in the upper-left quadrant of the image, specifically within the ",
+      "cell": "B2"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m7",
@@ -417,38 +768,99 @@
     "case": "visible_target",
     "variant": "bbox",
     "passed": false,
-    "status": "pending"
+    "status": "wrong_answer",
+    "seconds": 10.828000000008615,
+    "answer": {
+      "evidence": "A small red rectangular structure is visible between two gray buildings in the middle ground of the scene.",
+      "visible": true,
+      "box": [
+        308,
+        412,
+        356,
+        507
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true,
+    "box_pixels": [
+      68.75275275275276,
+      91.96796796796797,
+      79.46746746746747,
+      113.17417417417417
+    ],
+    "iou": 0.035409510799666186,
+    "center_in_target": false
   },
   {
     "model": "m7",
     "name": "qwen3.5:4b",
     "case": "hidden_openings",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 7.061999999990803,
+    "answer": {
+      "evidence": "The image contains gray and green structures on a blue background, but there is no red tower visible in any of the grid.",
+      "cell": "absent"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m7",
     "name": "qwen3.5:4b",
     "case": "hidden_openings",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 9.235000000000582,
+    "answer": {
+      "evidence": "The image contains only gray stone-like structures on a green ground against a blue sky. There is no red tower or any of",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m7",
     "name": "qwen3.5:4b",
     "case": "close_wall",
     "variant": "grid",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 7.328000000008615,
+    "answer": {
+      "evidence": "There is no red tower visible in the image. The image shows a grid of gray blocks with some green areas at the bottom, A",
+      "cell": "absent"
+    },
+    "channel": "content",
+    "presence_correct": true
   },
   {
     "model": "m7",
     "name": "qwen3.5:4b",
     "case": "close_wall",
     "variant": "bbox",
-    "passed": false,
-    "status": "pending"
+    "passed": true,
+    "status": "pass",
+    "seconds": 8.077999999994063,
+    "answer": {
+      "evidence": "The image contains only gray and green geometric shapes; there is no red tower visible.",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "content",
+    "presence_correct": true
   }
 ]

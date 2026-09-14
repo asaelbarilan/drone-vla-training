@@ -1,0 +1,110 @@
+{
+  "model": {
+    "id": "m3",
+    "name": "qwen3-vl:2b",
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "size": 1889519687,
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "case": "hidden_openings",
+  "variant": "bbox",
+  "input_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+  "request": {
+    "model": "qwen3-vl:2b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "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"
+        ]
+      }
+    ],
+    "stream": false,
+    "keep_alive": "10m",
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "think": false
+  },
+  "reply": {
+    "model": "qwen3-vl:2b",
+    "created_at": "2026-09-14T17:54:46.1260097Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\"evidence\": \"The image shows a series of gray, blocky structures resembling buildings or towers. There are no red towers visible in 3\", \"visible\": false, \"box\": [0, 0, 0, 0]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 29764411400,
+    "load_duration": 4686700,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 27310669000,
+    "eval_count": 52,
+    "eval_duration": 2380640000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:2b",
+        "model": "qwen3-vl:2b",
+        "size": 2555411168,
+        "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "2.1B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-14T21:04:46.1260097+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 29.764999999999418
+}

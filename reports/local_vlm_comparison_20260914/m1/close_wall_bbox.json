@@ -1,0 +1,107 @@
+{
+  "model": {
+    "id": "m1",
+    "name": "moondream:latest",
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "size": 1738451197,
+    "capabilities": [
+      "completion",
+      "vision"
+    ]
+  },
+  "case": "close_wall",
+  "variant": "bbox",
+  "input_sha256": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0",
+  "request": {
+    "model": "moondream:latest",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAEbElEQVR4nO3cPZJTRxiF4ZZrAhKcOcJEeA2I2Y1Dh14FEfsaRJkdmMxsAIdOHOCfoUajke7t231a/TwxqBS8dTT6uMPu7dt35V93d3f7/evCrN6/P+z3+97v4hvf9X4DcIpAiSZQogmUaN8Eent7ezh86PVW4CELSjSBEk2gRBMo0QRKNIESTaD8I/Af4svDQJ1CiWJBiSZQogmUaAIlmkCJJlCiCZRoRwJ1CiWHBSWaQIkmUKIJlFJSnxQpAiWcQIkmUKIdD9QplBAWlGgCJZpAiSZQogmUaAIlmkCJJlCiPRqoWz0JLCi5jzIVgRJOoEQTKNEESjSBEk2gRDsVqFMo3VlQogmUaAIlmkCJJlCiCXR2yU+KFIES7olAnULpy4ISTaBEEyjRBEo0gRJNoEQTKNGeDtQplI4sKNEESjSBTi38SZEiUMIJlGgCJZpAiXZWoE6h9GJBiSZQogmUaAIlmkCJJlCiCZRo5wbqFEoXFnRe+Y8yFYESTqBEEyjRBEo0gRJNoES7IFCnUNqzoEQTKNEESjSBEk2gRBPopIZ4UqQIlHCXBeoUSmMWlGgCJZpAiSZQogmUaAIlmkCJdnGgTqG0ZEGJJlCiCXRGozwpUgRKOIESTaBEEyjRlgTqFEozFpRoAiWaQIkmUKIJlGgCJZpAiSZQoi0M1K1+XAM9ylQsKOEESjSBEk2gRBMo0QRKNIESbXmgTqE0YEGJJlCiCZRoAiWaQOcy1pMiRaCEEyjRVgXqFMrWLCjRBEo0gRJNoEQTKNEESjSBEm1toE6hbMqCEk2gExnuSZEiUMLdrPnLHz/+Vut9wFH/B7qgth9ePiulfP70V813BPfc/Nfl19ogyo0uSVbhS9KLV8+dQtmIb/FEEyjRBEo0gRJNoEQTKNEESrQ6gTqF5hvxUaZiQQknUKIJlGgCJZpAiSZQogl0Fm/e7A+HQ+93cbFqgTqF5huxUQs6l+EaFeh0xmpUoDMaqFGBTmqURgU6ryEaFejU8hsV6OzCG60ZqFPooJIbtaBEEyilBI/oqv9+kdHd/5Fst9sdDnG/FiLQKTz23eDFq+cP/mRWowK9Hie+oT4M8TE//vR9VKMCHUyVCk+LalSgoc7/UN5CTqO7X379ue4rfv70537/uu5rXqsGc7jGH79/6d6oBW2h7xwulrCjAq0mfA6X6d6oQC826Bwu1rdRgR53lXO4WMdGpw5Uhefr1egUgc72obyRLo1eT6DmsIH2jda/g5aNT6HmsLuW99HQBTWHyVruaM9AVTiuZo22CNSH8lVq0+hWgd6PUojXqkGjmwSqyHls3ajfSSKaQFnr64hu9OICpYLtGhUodWzUqECpZotGBUpN1RsVKJXVbVSg1FexUYGyiVqNCpStVGlUoGxofaMCZVsrGxUom1vTqEBpYXGjAqWRZY0KlHYWNCpQmrq0UYHS2kWNCpQOzm9UoPRxZqMCpZtzGhUo0QRKT0+OqEDp7HSjAqW/E40KlAiPNSpQUhxt9G97SVPf5xeMAgAAAABJRU5ErkJggg=="
+        ]
+      }
+    ],
+    "stream": false,
+    "keep_alive": "10m",
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "reply": {
+    "model": "moondream:latest",
+    "created_at": "2026-09-14T17:52:41.8669168Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"red tower\", \"visible\": true, \"box\": [0,0,0,0] }"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 9248338900,
+    "load_duration": 3361000,
+    "prompt_eval_count": 870,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 8332916999,
+    "eval_count": 26,
+    "eval_duration": 858965000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "moondream:latest",
+        "model": "moondream:latest",
+        "size": 1301901474,
+        "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "phi2",
+          "families": [
+            "phi2",
+            "clip"
+          ],
+          "parameter_size": "1B",
+          "quantization_level": "Q4_0"
+        },
+        "expires_at": "2026-09-14T21:02:41.8762251+03:00",
+        "size_vram": 0,
+        "context_length": 2048
+      }
+    ]
+  },
+  "seconds": 9.281000000002678
+}

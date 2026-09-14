@@ -1,0 +1,10 @@
+{
+  "models": 8,
+  "image_panels_checked": 48,
+  "source_score_regressions": 6,
+  "negative_scoring_checks": true,
+  "thinking_channel": true,
+  "overlay_toggle": true,
+  "prompt_expansion": true,
+  "errors": []
+}

@@ -2493,3 +2493,21 @@ positive/negative validation before format selection; no further call scheduled.
 
 ## D-114 - Installed local VLM localization comparison (2026-09-14, frozen)
 User authorizes all seven models listed in the conversation: Qwen3-VL 2B/4B/8B, Qwen3.5 2B/4B, Moondream and SmolVLM2 2.2B. Freeze exact D-113 image bytes/prompts/schemas and scoring before inference, on a separate CPU-only server. No shared-server inference or unload. Full JSON content then thinking parser handles recorded Qwen channel behavior without repairing coordinates. Maximum 42 attempts, no retries; runtime/interface errors distinguished from semantic errors. This is the shared interface on installed backends, not an optimized-native-model comparison or latency benchmark. Gemma is historical; one positive plus two negatives is diagnostic only. Evidence: reports/local_vlm_comparison_20260914/FREEZE.json and seven metadata captures; historical scorer parity verified. Status: prepared; calls pending.
+
+### D-114 outcome - all seven attempted, no runtime promotion
+42 durable request records:36 completed replies,6 SmolVLM2 HTTP400 errors because
+its installed package lacks multimodal support. Qwen3-VL4B and8B pass grid3/3 and
+box3/3. Qwen3-VL2B grid2/3,box3/3. Qwen3.5 2B grid2/3,box2/3;4B grid3/3,box2/3.
+SavedGemma grid1/3,box2/3. Visible IoU:QwenVL2B .5946,4B .7765,8B .7145;
+Qwen3.5 2B0,4B .0354;Gemma .0502. Moondream grid0/3,three invalidbox outputs.
+Scoring used original frozen .5IoU+center gate; precision levels stay separate.
+Recommendation:Qwen3-VL4B for an independent image validation,2Bboxes as smaller
+candidate. No planning/navigation conclusion from one positive and two negatives.
+Shared prompts/schema rather than optimized native model interfaces; packaging,
+backend and answer channels are explicit. Qwen3-VL valid JSON is in thinking;
+Qwen3.5 in content. All raw channels retained. Requested context8192;Moondream
+actual2048 captured. CPU-only latency not comparable to GPU flight execution.
+Verification:42 request/image/schema/model identities;36 zero-VRAM residency records;
+6 historical scorer regressions,48 browserpanels,overlay/prompt controls;Ruff passes.
+Owned11435 server unloaded and stopped;shared11434 remained reachable. No downloads,
+cloud,keys read,extra retries,flights or runtime edits. Evidence:reports/local_vlm_comparison_20260914.

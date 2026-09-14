@@ -1,0 +1,90 @@
+[
+  {
+    "model": "gemma4:e2b (saved baseline)",
+    "id": "gemma",
+    "grid_visible": "pass",
+    "box_visible": "wrong_answer",
+    "box_iou": 0.05024405863497558,
+    "grid_absent": 0,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  },
+  {
+    "model": "moondream:latest",
+    "id": "m1",
+    "grid_visible": "wrong_answer",
+    "box_visible": "invalid_output",
+    "box_iou": null,
+    "grid_absent": 0,
+    "box_absent": 0,
+    "errors": 3,
+    "pending": 0
+  },
+  {
+    "model": "richardyoung/smolvlm2-2.2b-instruct:Q4_K_M",
+    "id": "m2",
+    "grid_visible": "runtime_error",
+    "box_visible": "runtime_error",
+    "box_iou": null,
+    "grid_absent": 0,
+    "box_absent": 0,
+    "errors": 6,
+    "pending": 0
+  },
+  {
+    "model": "qwen3-vl:2b",
+    "id": "m3",
+    "grid_visible": "pass",
+    "box_visible": "pass",
+    "box_iou": 0.5946308994751546,
+    "grid_absent": 1,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  },
+  {
+    "model": "qwen3-vl:4b",
+    "id": "m4",
+    "grid_visible": "pass",
+    "box_visible": "pass",
+    "box_iou": 0.7764955312474402,
+    "grid_absent": 2,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  },
+  {
+    "model": "qwen3-vl:8b",
+    "id": "m5",
+    "grid_visible": "pass",
+    "box_visible": "pass",
+    "box_iou": 0.7145342201841134,
+    "grid_absent": 2,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  },
+  {
+    "model": "qwen3.5:2b",
+    "id": "m6",
+    "grid_visible": "pass",
+    "box_visible": "wrong_answer",
+    "box_iou": 0.0,
+    "grid_absent": 1,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  },
+  {
+    "model": "qwen3.5:4b",
+    "id": "m7",
+    "grid_visible": "pass",
+    "box_visible": "wrong_answer",
+    "box_iou": 0.035409510799666186,
+    "grid_absent": 2,
+    "box_absent": 2,
+    "errors": 0,
+    "pending": 0
+  }
+]

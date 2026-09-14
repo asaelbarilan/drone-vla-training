@@ -136,5 +136,28 @@ lines += [
     "Historical Gemma used GPU/shared-server execution. No speed ranking is justified. "
     "No weights downloaded and no flight/runtime configuration promoted.",
 ]
+if proof["pending"] == 0:
+    lines += [
+        "",
+        "## Finding and next step",
+        "",
+        "Qwen3-VL 4B and 8B pass all three grid cases and all three box cases. "
+        "Qwen3-VL 2B passes all box cases but falsely selects B2 in hidden-openings grid. "
+        "Positive-box IoUs are 0.5946 (2B), 0.7765 (4B), and 0.7145 (8B), "
+        "versus saved Gemma 0.0502. Qwen3.5 2B/4B boxes miss the target "
+        "(IoU 0.0000/0.0354), despite correct visible grid cells.",
+        "",
+        "Installed Moondream: all grid answers wrong, all three box outputs invalid. "
+        "Installed SmolVLM2 package: six HTTP 400 multimodal-not-supported errors. "
+        "These are shared-interface/package limitations, not proof those model families "
+        "cannot perform native visual localization.",
+        "",
+        "Recommendation: Qwen3-VL 4B for independent saved-frame validation before "
+        "flight promotion; Qwen3-VL 2B with boxes is a smaller candidate. The 8B model "
+        "offers no additional passed cases here. Use new target positions, scales and "
+        "occlusions plus absent/distractor images with criteria frozen in advance. "
+        "This establishes a model/backend-dependent grounding difference on these inputs, "
+        "not reliable planning or navigation. No further calls or flights scheduled.",
+    ]
 (OUT / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 print(json.dumps(proof))

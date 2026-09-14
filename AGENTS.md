@@ -16,17 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Latest: seven installed local VLMs - D-114 (2026-09-14, running)
+## Latest: seven local VLM comparison complete - D-114 (2026-09-14)
 
-User requested all seven alternatives in the model table. Frozen 42-attempt maximum,
-no retries/cloud/flights; same D-113 images/prompts and 192-token budget. Separate
-CPU-only Ollama at11435; never unload/call models on Valley's shared11434 server.
-Scripts/local_vlm_comparison.py preserves attempts and refuses duplicate uncertain calls.
-Read reports/local_vlm_comparison_20260914/FREEZE.json. Gemma baseline is reused.
-Raw content and thinking retained; predeclared parser supports Qwen channel behavior.
-Do not classify SmolVLM2 package's missing multimodal support as visual reasoning failure.
-This tests installed backends with a shared format, not best native model performance.
-Results are partial until 42 durable request records exist. No flight promotion.
+42 attempts:36 replies plus6 SmolVLM2 package HTTP400 multimodal-unsupported errors.
+Same D-113 three scenes/grid+box, no retries/cloud/flights. Qwen3-VL4B and8B pass
+both formats3/3;2B boxes3/3,grid2/3. Positive boxIoU2B0.5946,4B0.7765,8B0.7145
+vs savedGemma0.0502. Qwen3.5 2B/4B miss positivebox (IoU0/0.0354). Moondream
+allgridwrong/allboxinvalid. No architecture/runtime promotion or general planning claim.
+Read reports/local_vlm_comparison_20260914/REPORT.md and dashboard
+localhost8766/local_vlm_comparison.html. All42 image/request identities checked,
+36 CPU-only residencies,48 UIpanels. Separate11435server stopped after unloading;
+shared11434 untouched,reachable. Full modelIDs/digests and rawchannels preserved.
+Candidate:Qwen3-VL4B,with2Bboxes as smaller option; next new independent image gate,
+not more tuning on these3cases. CPU latencies are not flight benchmarks. No call scheduled.
 
 ## Latest: grid/box localization probe complete - D-113 (2026-09-14)
 

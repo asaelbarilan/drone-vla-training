@@ -447,3 +447,11 @@ cell but hallucinates both absences; box rejects absences but mislocalizes posit
 Neither promoted. Add independent positive/negative cases before deciding whether
 to select/combine representations. Keep coarse cell accuracy separate from tight
 localization. No new flight until these interfaces pass relevant offline checks.
+
+
+## D-114 next gate - independent image validation
+Qwen3-VL4B passed both localization formats on the three D-113 scenes;2B passed
+all box checks. Freeze additional unseen target positions/scales/occlusions and
+absent/distractor frames before a bounded validation. No flight promotion yet.
+SmolVLM2 installed package rejected multimodal input; repair/replace packaging only
+as a separately named experiment, not a hidden retry. Preserve all baseline results.

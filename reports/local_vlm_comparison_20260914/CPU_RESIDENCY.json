@@ -1,0 +1,728 @@
+[
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:01:55.2483095+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:03:17.1296708+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:06:36.810422+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:11:58.2277605+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:18:31.1818455+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:13.7363054+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:02:05.2126699+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:03:46.843093+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:07:24.7372184+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:13:15.9515661+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:18:36.9793074+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:24.6713503+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:02:14.7584102+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:04:16.3251571+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:08:09.6229801+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:14:31.0797493+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:18:42.4633548+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:31.8236205+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:02:24.0399877+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:04:46.1260097+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:08:56.7167108+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:15:47.8412873+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:18:48.284316+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:41.1455968+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:02:32.5690744+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:05:15.9091074+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:09:44.5814388+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:17:03.9597516+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:18:53.4820126+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:48.5553948+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m1",
+    "name": "moondream:latest",
+    "model": "moondream:latest",
+    "size": 1301901474,
+    "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "phi2",
+      "families": [
+        "phi2",
+        "clip"
+      ],
+      "parameter_size": "1B",
+      "quantization_level": "Q4_0"
+    },
+    "expires_at": "2026-09-14T21:02:41.8762251+03:00",
+    "size_vram": 0,
+    "context_length": 2048
+  },
+  {
+    "experiment_model": "m3",
+    "name": "qwen3-vl:2b",
+    "model": "qwen3-vl:2b",
+    "size": 2555411168,
+    "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "2.1B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:05:45.7023437+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m4",
+    "name": "qwen3-vl:4b",
+    "model": "qwen3-vl:4b",
+    "size": 4277906963,
+    "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "4.4B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:10:34.1033514+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m5",
+    "name": "qwen3-vl:8b",
+    "model": "qwen3-vl:8b",
+    "size": 6953977773,
+    "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3vl",
+      "families": [
+        "qwen3vl"
+      ],
+      "parameter_size": "8.8B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:18:20.7398554+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m6",
+    "name": "qwen3.5:2b",
+    "model": "qwen3.5:2b",
+    "size": 2474691786,
+    "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "2.3B",
+      "quantization_level": "Q8_0"
+    },
+    "expires_at": "2026-09-14T21:19:00.3530771+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  },
+  {
+    "experiment_model": "m7",
+    "name": "qwen3.5:4b",
+    "model": "qwen3.5:4b",
+    "size": 3353450904,
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "4.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "expires_at": "2026-09-14T21:19:56.7235111+03:00",
+    "size_vram": 0,
+    "context_length": 8192
+  }
+]

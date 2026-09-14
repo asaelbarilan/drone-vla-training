@@ -1,0 +1,10 @@
+{
+  "requests_verified": 42,
+  "maximum_new_attempts": 42,
+  "historical_baseline_calls": 6,
+  "cpu_residency_checks": 36,
+  "cloud_calls": 0,
+  "flights": 0,
+  "no_runtime_changes": true,
+  "pending": 0
+}

@@ -1,0 +1,117 @@
+{
+  "model": {
+    "id": "m7",
+    "name": "qwen3.5:4b",
+    "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+    "size": 3389983735,
+    "capabilities": [
+      "completion",
+      "vision",
+      "tools",
+      "thinking"
+    ]
+  },
+  "case": "visible_target",
+  "variant": "grid",
+  "input_sha256": "f83ec15df5810fc499b9e6c12f54279aba66dd827e210f1742acbf8bb9a3abcd",
+  "request": {
+    "model": "qwen3.5:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+        "images": [
+          "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"
+        ]
+      }
+    ],
+    "stream": false,
+    "keep_alive": "10m",
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "cell": {
+          "type": "string",
+          "enum": [
+            "A1",
+            "B1",
+            "C1",
+            "D1",
+            "A2",
+            "B2",
+            "C2",
+            "D2",
+            "A3",
+            "B3",
+            "C3",
+            "D3",
+            "A4",
+            "B4",
+            "C4",
+            "D4",
+            "absent"
+          ]
+        }
+      },
+      "required": [
+        "evidence",
+        "cell"
+      ],
+      "additionalProperties": false
+    },
+    "think": false
+  },
+  "reply": {
+    "model": "qwen3.5:4b",
+    "created_at": "2026-09-14T18:09:13.7284256Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"The red tower is a small rectangular structure located in the upper-left quadrant of the image, specifically within the \",\"cell\": \"B2\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 13224291000,
+    "load_duration": 5609116900,
+    "prompt_eval_count": 177,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 4469595000,
+    "eval_count": 35,
+    "eval_duration": 3138663000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3.5:4b",
+        "model": "qwen3.5:4b",
+        "size": 3353450904,
+        "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "4.7B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-14T21:19:13.7363054+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 13.25
+}

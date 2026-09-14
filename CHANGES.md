@@ -2606,3 +2606,13 @@ localization/negative rejection/runtime errors. Reports verify base64 identity, 
 model digest, reply identity and zero VRAM residency. Offline checks reproduce six historical
 Gemma scores, reject invalid/off-target boxes, exercise thinking-channel extraction and
 48 browser panels. Qwen2B positive overlay visually inspected; no navigation claim.
+
+## 2026-09-14 - D-114 all local alternatives complete
+Finished42 attempts across seven frozen installed models:36 replies and6 unsupported
+SmolVLM2 image requests. Qwen3-VL4B/8B pass grid3/3+box3/3;2B grid2/3+box3/3.
+Qwen3.5 2B grid2/3+box2/3;4B grid3/3+box2/3, both positive boxes wrong.
+Moondream grid0/3 and allboxesinvalid. SavedGemma grid1/3+box2/3 retained unchanged.
+Dashboard/report show exactinput overlays and rawanswers;42 request identities,
+36 CPU residencies and48 UIpanels verified. No flight/runtime promotion. Recommend
+Qwen3-VL4B for new independent imagegate;one positive scene is not generalization.
+CPU-only server stopped afterunload;Valley/sharedserver not changed. No cloudcost.
