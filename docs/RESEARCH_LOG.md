@@ -2342,3 +2342,21 @@ speed counter 1 is a 4.44e-16 m/s floating-point excess, retained and separately
 Evidence: reports/hover_cycle_20260913/REPORT.md, RUNS.json, VERIFICATION.json,
 GROUNDING_AUDIT.json, SPEED_AUDIT.json and full per-flight captures. 433 tests pass;
 1,835 replay poses and 12 browser seeks/four playbacks match. No additional run active.
+
+
+## D-109 — frozen hover repetitions expose unstable completion and yaw (2026-09-14)
+
+Status: two-run validation complete; reliability not established. User explicitly
+requested two more flights; no source/config changes across either. Seed1060 passes,
+seed1062 times out; same deterministic geometry. Historical-plus-repeats 2/3.
+Rationale: test repeatability of D-108 success before expanding tasks. Evidence:
+reports/hover_repeat_20260914/REPORT.md, FREEZE.json, VERIFICATION.json,
+DEPARTURE_AUDIT.json and full captured calls/images/events/sources.
+
+Failure physically hovers >8 s but monitor rejects completion after a 1.95 s initial
+count and later 0.397 m cross-track inferred from a changing body pixel. Residual-goal
+controller yaw turns the view away; exact policy obs380 (18.95 s) is sky/ground,
+exploration command executes at20 s and causes departure. This is measured
+completion/reference/yaw coupling, not evidence of initial route-planning failure.
+Next isolate stable camera-facing orientation and temporal/metric hover reference;
+retain evaluator thresholds and saved failures. No further flight active/scheduled.

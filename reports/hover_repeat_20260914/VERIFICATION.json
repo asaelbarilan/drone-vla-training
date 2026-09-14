@@ -1,0 +1,79 @@
+{
+  "source_config_hashes_unchanged": 231,
+  "resolved_configs_match_historical_success": true,
+  "new_flights": [
+    {
+      "name": "c5_hover_repeat_20260914_s1060",
+      "success": true,
+      "sim_s": 11.2,
+      "distance_m": 1.002688503379303,
+      "hover_s": 2.1000000000000005,
+      "collisions": 0.0,
+      "contact": 0.0,
+      "raw_violations": 1.0,
+      "speed_excesses": [
+        {
+          "t": 7.1,
+          "excess_mps": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1062",
+      "success": false,
+      "sim_s": 60.0,
+      "distance_m": 32.94105404885352,
+      "hover_s": 0.0,
+      "collisions": 0.0,
+      "contact": 0.0,
+      "raw_violations": 8.0,
+      "speed_excesses": [
+        {
+          "t": 7.1,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 22.25,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 22.35,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 35.0,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 38.05,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 41.1,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 41.25,
+          "excess_mps": 4.440892098500626e-16
+        },
+        {
+          "t": 42.25,
+          "excess_mps": 4.440892098500626e-16
+        }
+      ]
+    }
+  ],
+  "source_snapshot_hashes": 6,
+  "replayed_poses": 1650,
+  "max_position_error_m": 0.0,
+  "missing_source_frames": 0,
+  "browser_seeks": 9,
+  "browser_playbacks": 3,
+  "new_call_budget": {
+    "complete": 106,
+    "cancelled": 2
+  },
+  "model": "gemma4:e2b",
+  "cloud_calls": 0,
+  "scope": "same geometry repetitions, not independent environment generalization"
+}

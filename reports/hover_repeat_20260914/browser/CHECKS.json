@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_level_20260913_s1061",
+      "t": 11.25,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1060",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1060",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1060",
+      "t": 11.25,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1062",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1062",
+      "t": 8,
+      "error": ""
+    },
+    {
+      "name": "c5_hover_repeat_20260914_s1062",
+      "t": 60,
+      "error": ""
+    }
+  ],
+  "playbacks": 3,
+  "errors": [],
+  "departure_snapshots": 5,
+  "exact_departure_input": "call-000030, obs 380"
+}

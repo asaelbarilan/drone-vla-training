@@ -2491,3 +2491,19 @@ exact audit. Four complete development flights, 137 Gemma calls + 4 cancellation
 433 offline tests pass; all 1,835 poses match; 12 seeks/four playbacks and direct
 visual inspection pass. Full report, exact requests/images/sources and failed trials
 preserved. No additional run active; broader search/ordered planning remains open.
+
+## 2026-09-14 — D-109: two unchanged hover repetitions and departure diagnosis
+
+Exactly two authorized flights: 1060 PASS (11.2 s, 1.003 m, 2.1 s hover), 1062 timeout
+(60 s, 32.94 m final). 231 source/config hashes unchanged; no runtime fixes or third
+flight. Repeat failure invalidates any broad reliability inference from D-108.
+Correction: failure did physically hover >8 s; final zero hover counter masked prior
+successful dwell. Monitor missed initial 2 s gate (1.95 reported); later arbitrary
+body-pixel reference moved cross-track to 0.397 m while actual position stayed aligned.
+Controller yaw reacts to tiny residual translation errors, rotates target out of view.
+Exact obs380 at18.95 s contains only sky/ground; exploration action executes at20 s
+and starts departure. Saved controls/images prove the sequence; scheduler race not proven.
+106 new completed Gemma calls +2 boundary cancellations; no cloud. Three replays/1,650
+poses, nine seeks/three playbacks, five departure screenshots and exact policy input
+checked. Every reported speed violation is float roundoff. Export originally blocked
+by auto-review capacity; completed after user approval. Reports and evidence retained.

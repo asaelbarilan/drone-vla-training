@@ -16,6 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: hover repeat failure diagnosed — D-109 (2026-09-14)
+
+Two user-requested unchanged repeats complete: 1060 passes,1062 times out. Same scene;
+2/3 including D-108 success is repeatability evidence only, not reliable completion.
+Read reports/hover_repeat_20260914/REPORT.md and DEPARTURE_AUDIT.json. Failed flight
+physically hovers >8 s but monitor misses completion: initial 1.95 s gate then changing
+body-pixel anchor exceeds 0.35 m cross-track despite stable drone position. Tiny
+translation errors drive +/-0.4 yaw; obs380/18.95 s loses target, exploration command
+executes at20 s and departs. No scheduler race proven, no additional run or fix.
+231 source/config hashes unchanged; 106 new Gemma calls +2 cancellations; no cloud.
+Three replays/1,650 poses and exact source images verified; dashboard hover_repeat.html.
+Next diagnose heading hold and stable/temporally coherent hover reference offline.
+
 ## Latest: explicit approach-hover cycle completed — D-108 (2026-09-13)
 
 User authorized autonomous run/debug/fix without per-step confirmation. Latest

@@ -407,3 +407,14 @@ from outside.
   numerical tolerance tests; preserve old results and physics/replay compatibility.
 - Return to the saved AerialClaw ordered prompt-context audit and search tool-selection
   boundary when resuming broader task suite. Neither is solved by D-108.
+
+
+## D-109: priority after failed frozen hover repeat
+
+1. Reproduce near-goal yaw oscillation from exact 11–19 s states; evaluate camera-facing
+   target orientation separately from translation residual. No full flight needed.
+2. Fix hover reference semantics: arbitrary body pixels are not a stable object center;
+   source 13.95 s yields false 0.397 m cross-track. Audit source/live dwell timing and
+   the initial 1.95 s miss without assuming scheduler causality or weakening scoring.
+3. Only after isolated checks, validate a named repair. The exactly-two-run request is
+   exhausted; no third flight was run. Preserve D-109 negative result and D-108 success.
