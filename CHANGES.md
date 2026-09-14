@@ -2598,3 +2598,11 @@ six-panel browser QA pass. Dashboard localhost8766/localization_formats.html.
 
 ## 2026-09-14 - D-114 local VLM comparison frozen
 User requested all seven installed alternatives from the preceding model table. Prepared an isolated CPU-only Ollama probe: same D-113 three scenes, grid and bbox prompts, 192 output tokens, 8192 context, temperature/seed zero, at most 42 attempts. Reuses six saved Gemma answers. Preserves raw requests/replies, model digests, errors, CPU residency; no inference retries or flights. CPU execution protects shared GPU server; latency is not comparable to flight runtime. Scorer reproduces all six historical Gemma verdicts and positive IoU.
+
+## 2026-09-14 - D-114 dashboard and offline verification
+Added interactive local_vlm_comparison.html generation: eight model views, exact inputs,
+optional reference/model overlays, raw prompts and both reply channels, separate positive
+localization/negative rejection/runtime errors. Reports verify base64 identity, prompt/schema,
+model digest, reply identity and zero VRAM residency. Offline checks reproduce six historical
+Gemma scores, reject invalid/off-target boxes, exercise thinking-channel extraction and
+48 browser panels. Qwen2B positive overlay visually inspected; no navigation claim.

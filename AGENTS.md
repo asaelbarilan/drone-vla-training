@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: seven installed local VLMs - D-114 (2026-09-14, running)
+
+User requested all seven alternatives in the model table. Frozen 42-attempt maximum,
+no retries/cloud/flights; same D-113 images/prompts and 192-token budget. Separate
+CPU-only Ollama at11435; never unload/call models on Valley's shared11434 server.
+Scripts/local_vlm_comparison.py preserves attempts and refuses duplicate uncertain calls.
+Read reports/local_vlm_comparison_20260914/FREEZE.json. Gemma baseline is reused.
+Raw content and thinking retained; predeclared parser supports Qwen channel behavior.
+Do not classify SmolVLM2 package's missing multimodal support as visual reasoning failure.
+This tests installed backends with a shared format, not best native model performance.
+Results are partial until 42 durable request records exist. No flight promotion.
+
 ## Latest: grid/box localization probe complete - D-113 (2026-09-14)
 
 Six local calls: grid correct B2 on visible target, false C3/B1 on absent images;
