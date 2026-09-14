@@ -2518,3 +2518,7 @@ thresholds. Saved failure checks and two bounded local Gemma flights are next.
 Validation: 442 unit/contract tests pass; saved failure replay matches 1,200 poses,
 geometry and yaw component counterchecks pass (SAVED_PROBE.json). No new model calls
 yet. New profile preserves old defaults; named development adaptation only.
+
+D-110 launch preflight rejected a 17-level config chain before inference. New profile
+now inherits the context profile directly and explicitly retains initial altitude;
+runtime/scoring unchanged. Freeze updated before the first actual flight.

@@ -59,7 +59,7 @@
     "configs\\architectures\\c5_hover_context_gemma_dev.yaml": "12026bdae26ec8a55ccab485973946605d0a2a343ce2f0519123dd5679a97563",
     "configs\\architectures\\c5_hover_gemma_dev.yaml": "2266a83e9840c5cf6dc82e966b0e12e8e40c816b1ac31868aad2a744a56a82ed",
     "configs\\architectures\\c5_hover_level_gemma_dev.yaml": "573fee11cc971c58621873bb2f121245807603be3bb6875d5f3dc4a6bb7339ef",
-    "configs\\architectures\\c5_hover_stable_gemma_dev.yaml": "fbe7cbe5738fde405ae15de5718086dd0995fcaac0ff3a60ec7b79cc74230f3b",
+    "configs\\architectures\\c5_hover_stable_gemma_dev.yaml": "3b041e991dbd5d03864fcc10c9747b3a5d63d3b3009bd63f48b8f5db29611763",
     "configs\\architectures\\c5_keyframe_memory.yaml": "bbb17450e61d5ed9c03cf865cb6ed0f18c5ba58476699b503b4b2110f6861493",
     "configs\\architectures\\c5_onfly_active_dev.yaml": "f674b41424fb8e1f5f1340e6e1c95e768c3187a5f3109456133c7c173df4d415",
     "configs\\architectures\\c5_onfly_fence_dev.yaml": "c55a632db6d26cc43189f4bd633b9eb75d604eacde1e24d26acc386644137ac7",
