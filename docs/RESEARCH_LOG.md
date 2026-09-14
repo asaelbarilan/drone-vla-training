@@ -2460,3 +2460,21 @@ QA/overlay/prompt expansion pass. Probe-only hold not installed. See
 reports/passage_choice_20260914/REPORT.md and VERIFICATION.json. Next offline pointing
 representation check (box or labeled region versus direct coordinate), not SUPER
 margin tuning or a full flight. No further inference scheduled.
+
+
+## D-113 - Saved-image grid versus bounding-box localization (2026-09-14)
+
+Status: preregistered; six local calls, no flight. User approved comparing labeled
+grid selection and bounding boxes on D-112's three exact sources. Grid uses neutral
+4x4 labels A1..D4 over224x224 RGB,with absent option. Bbox uses original unmodified
+RGB with visible flag and tight [left,top,right,bottom] on0..999; absent box zeros.
+Expect B2 on visible red and absent on other two. Box positive requires center in
+visible red body and IoU>=0.5 with diagnostic half-open pixel bounds[77,72,85,98].
+Freeze expectations before calls; no truth boxes/expected cells sent to model.
+Same pinned Gemma/options; no retries/cloud/new flight/runtime edits. These tasks
+remove navigation from the prompt and differ in both visual input and output
+representation. Coarse cell correctness is not tight localization or a controlled
+format-only improvement over D-112. One positive/two negative selected frames are
+not reliability evidence. Preserve exact modified inputs and all raw outputs.
+Evidence: reports/localization_formats_20260914/FREEZE.json. Grid inspected: labels
+and boundaries do not cover red target. No new inference yet.

@@ -2580,3 +2580,10 @@ ray<=3.18e-14 px. No runtime promotion/new flight. Three source RGBs/1,040 repla
 poses verified; six-panel report/browser overlay+prompt checks pass. Results and
 raw replies preserved; dashboard localhost8766/passage_choice.html. Next isolate
 coordinate grounding with another output representation, not control tuning.
+
+
+## 2026-09-14 - D-113 localization representation probe prepared
+
+Frozen three sources,4x4 labeled grid and original-image bbox prompts,expected
+cell/absence and tight-box criteria before6 local calls. Grid visually checked.
+No runtime changes or flights; original RGB preserved separately from annotations.

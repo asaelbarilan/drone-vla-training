@@ -1,0 +1,156 @@
+{
+  "cases": [
+    {
+      "id": "visible_target",
+      "source_run": "c5_depth_ray_v2_20260912_s1061",
+      "source_call": "call-000040",
+      "source_t": 25.95,
+      "source_sha256": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb",
+      "expected_cell": "B2",
+      "expected_box_pixels": [
+        77,
+        72,
+        85,
+        98
+      ],
+      "input_sha256": {
+        "grid": "f83ec15df5810fc499b9e6c12f54279aba66dd827e210f1742acbf8bb9a3abcd",
+        "bbox": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb"
+      }
+    },
+    {
+      "id": "hidden_openings",
+      "source_run": "c5_clutter_stable_20260914_s1061",
+      "source_call": "call-000004",
+      "source_t": 1.95,
+      "source_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+      "expected_cell": "absent",
+      "expected_box_pixels": null,
+      "input_sha256": {
+        "grid": "678578ef9a7c91cc7f444e406a8fc3ee241e5b01c6a9f2681910e66603ab3b05",
+        "bbox": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a"
+      }
+    },
+    {
+      "id": "close_wall",
+      "source_run": "c5_clutter_stable_20260914_s1061",
+      "source_call": "call-000040",
+      "source_t": 25.95,
+      "source_sha256": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0",
+      "expected_cell": "absent",
+      "expected_box_pixels": null,
+      "input_sha256": {
+        "grid": "6061922d1e77f9e37e8361748ca420d919c376b3bd634de73b598f03ee1e6175",
+        "bbox": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0"
+      }
+    }
+  ],
+  "variants": {
+    "grid": {
+      "prompt": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "cell": {
+            "type": "string",
+            "enum": [
+              "A1",
+              "B1",
+              "C1",
+              "D1",
+              "A2",
+              "B2",
+              "C2",
+              "D2",
+              "A3",
+              "B3",
+              "C3",
+              "D3",
+              "A4",
+              "B4",
+              "C4",
+              "D4",
+              "absent"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "cell"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bbox": {
+      "prompt": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "box": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "minItems": 4,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "evidence",
+          "visible",
+          "box"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "inference": {
+    "charge_mode": "fixed",
+    "endpoint": "chat",
+    "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+    "fixed_latency_s": {
+      "monitor": 1.2,
+      "policy": 1.0
+    },
+    "host": "http://localhost:11434",
+    "jitter_frac": 0.0,
+    "keep_alive": "30m",
+    "latency_s": {
+      "monitor": 1.6,
+      "perception": 0.02,
+      "policy": 0.35,
+      "reasoner": 2.4
+    },
+    "model_id": "gemma4:e2b",
+    "num_ctx": 8192,
+    "num_predict": 192,
+    "response_channel": "content",
+    "sampling_seed": 0,
+    "temperature": 0.0,
+    "think": false,
+    "timeout_s": 180.0,
+    "tokens_per_call": {
+      "monitor": 320,
+      "policy": 160,
+      "reasoner": 800
+    }
+  },
+  "calls_budget": 6,
+  "grid_size": 4,
+  "box_pass_iou": 0.5,
+  "box_pass_requires_center_in_target": true,
+  "notes": "Grid has neutral labels/lines added; bbox uses original RGB. Tasks are localization-only and differ from D-112 navigation prompt. Coarse-cell and tight-box scores measure different precision. No truth annotations sent."
+}
