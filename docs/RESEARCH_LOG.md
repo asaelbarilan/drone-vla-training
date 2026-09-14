@@ -2360,3 +2360,22 @@ exploration command executes at20 s and causes departure. This is measured
 completion/reference/yaw coupling, not evidence of initial route-planning failure.
 Next isolate stable camera-facing orientation and temporal/metric hover reference;
 retain evaluator thresholds and saved failures. No further flight active/scheduled.
+
+
+## D-110 - Stable hover reference and heading (2026-09-14)
+
+Status: offline checks pass; bounded flights pending.
+Rationale: D-109 fails after a physically valid hover. Translation residuals rotate
+camera; selecting another body pixel moves the monitor's approach line. Source-time
+geometry is combined with return-time dwell. User authorizes autonomous repair.
+New opt-in c5_hover_stable_gemma_dev retains a camera approach heading within 0.25 m
+of the translation goal, fixes the line to initial odometry and first RGB-D bearing,
+counts only intervals with valid endpoints, and resolves monitor completion against
+latest observed state after inference. Range, visibility, confirmation, age, speed,
+2-second dwell, and task scoring remain unchanged. Old profiles retain old behavior.
+This is a named engineering adaptation, not native paper OnFly or a planning result.
+Evidence: D-109 DEPARTURE_AUDIT.json. Saved control replay matches all 1,200 poses: at 13.95 s old geometry rejects, fixed
+line accepts; at 18 s the new yaw controller corrects toward retained bearing instead
+of turning away on 0.000019 m/s translation. This is a component probe, not a flight
+counterfactual. 442 unit/contract tests pass; 17 targeted checks rerun after evidence
+timestamp metadata correction. New flight results pending.

@@ -34,6 +34,10 @@ class MockVelocityController:
 
     def __init__(self, **params: Any) -> None:
         self.face_semantic_goal = bool(params.get("face_semantic_goal", False))
+        self.yaw_hold_radius_m = float(params.get("yaw_hold_radius_m", 0.0))
+        if not math.isfinite(self.yaw_hold_radius_m) or self.yaw_hold_radius_m < 0:
+            raise ValueError("yaw_hold_radius_m must be finite and nonnegative")
+        self._held_yaw = None
         self.kp = float(params.get("kp", 1.1))
         self.max_speed_mps = float(params.get("max_speed_mps", 5.0))
         self.lookahead_m = float(params.get("lookahead_m", 3.0))
@@ -48,6 +52,7 @@ class MockVelocityController:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self._max_speed_from_mission = mission.constraints.max_speed_mps
+        self._held_yaw = None
 
     @property
     def _speed_limit(self) -> float:
@@ -57,9 +62,7 @@ class MockVelocityController:
         target = self._carrot(trajectory, ctx)
         position = ctx.observation.position
         error = Vec3(x=target.x - position.x, y=target.y - position.y, z=target.z - position.z)
-        velocity = self._clamp(
-            Vec3(x=error.x * self.kp, y=error.y * self.kp, z=error.z * self.kp)
-        )
+        velocity = self._clamp(Vec3(x=error.x * self.kp, y=error.y * self.kp, z=error.z * self.kp))
         yaw_error = error
         if self.face_semantic_goal:
             # Opt-in D-86: camera heading is independent of avoidance translation.
@@ -119,9 +122,18 @@ class MockVelocityController:
         return Vec3(x=velocity.x * scale, y=velocity.y * scale, z=velocity.z * scale)
 
     def _yaw_rate_toward(self, error: Vec3, ctx: DecisionContext) -> float:
-        if abs(error.x) < 1e-6 and abs(error.y) < 1e-6:
-            return 0.0
-        desired = math.atan2(error.y, error.x)
+        if self.yaw_hold_radius_m > 0:
+            # D-110: a near-zero translation vector has no useful heading.
+            # Retain the last approach bearing until a meaningful move is requested.
+            if math.hypot(error.x, error.y) >= self.yaw_hold_radius_m:
+                self._held_yaw = math.atan2(error.y, error.x)
+            elif self._held_yaw is None:
+                self._held_yaw = ctx.observation.yaw_rad
+            desired = self._held_yaw
+        else:
+            if abs(error.x) < 1e-6 and abs(error.y) < 1e-6:
+                return 0.0
+            desired = math.atan2(error.y, error.x)
         delta = math.atan2(
             math.sin(desired - ctx.observation.yaw_rad), math.cos(desired - ctx.observation.yaw_rad)
         )

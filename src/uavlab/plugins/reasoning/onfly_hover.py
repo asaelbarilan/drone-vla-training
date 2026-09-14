@@ -4,6 +4,7 @@ import math
 
 import numpy as np
 
+from uavlab.contracts import ProgressLabel
 from uavlab.core.camera import Camera
 from uavlab.core.frame_store import global_store
 from uavlab.core.registry import register
@@ -12,6 +13,10 @@ from uavlab.plugins.reasoning.onfly import OnFlyMonitor, _depth_at, _encode_png
 
 @register("monitor", "onfly_hover_monitor")
 class OnFlyHoverMonitor(OnFlyMonitor):
+    def __init__(self, **params):
+        super().__init__(**params)
+        self.stable_hover_reference = bool(params.get("stable_hover_reference", False))
+
     def reset(self, mission, seed):
         super().reset(mission, seed)
         if "Hold for 2 continuous seconds" not in mission.instruction:
@@ -23,6 +28,8 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         self._hover_point = None
         self._reference_image = None
         self._reference_seq = None
+        self._latest_hover_obs = None
+        self._previous_hover_good = False
 
     def _hover_geometry(self, obs):
         if self._approach is None or self._tracked_target is None:
@@ -36,6 +43,12 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         delta = self._tracked_target - origin
         along = float(delta @ self._approach)
         sideways = delta - along * self._approach
+        if self.stable_hover_reference and self._initial_position is not None:
+            # The approach line belongs to the initial odometry frame; selecting
+            # another visible body pixel must not move that line underneath us.
+            start = self._initial_position
+            displacement = origin - np.array([start.x, start.y, start.z])
+            sideways = displacement - (displacement @ self._approach) * self._approach
         vertical = (
             obs.position.z - self._initial_position.z if self._initial_position else float("inf")
         )
@@ -74,18 +87,49 @@ class OnFlyHoverMonitor(OnFlyMonitor):
         now = observation.t_sim_ns
         if self._hover_last_ns is not None and now <= self._hover_last_ns:
             return
+        self._latest_hover_obs = observation
         dt = (now - self._hover_last_ns) / 1e9 if self._hover_last_ns is not None else 0
         stable = self._hover_point is None or (
             self._tracked_target is not None
             and np.linalg.norm(self._tracked_target - self._hover_point) <= 0.25
         )
         good = self._hover_geometry(observation) and stable
-        self._hover_s = self._hover_s + dt if good and 0 < dt <= 0.1 else 0.0
+        interval_good = good and (self._previous_hover_good or not self.stable_hover_reference)
+        self._hover_s = self._hover_s + dt if interval_good and 0 < dt <= 0.1 else 0.0
+        self._previous_hover_good = good
         self._hover_last_ns = now
         self._hover_point = None if self._tracked_target is None else self._tracked_target.copy()
 
     def stop_still_supported(self, observation):
+        if self.stable_hover_reference:
+            if observation.t_sim_ns != self._hover_last_ns:
+                return False
+            if self._hover_point is not None and (
+                self._tracked_target is None
+                or np.linalg.norm(self._tracked_target - self._hover_point) > 0.25
+            ):
+                return False
         return self._hover_s >= 2.0 - 1e-9 and self._hover_geometry(observation)
+
+    def _live_hover_result(self, result):
+        """Resolve completion at return time, with dwell and geometry at one timestamp."""
+        if not self.stable_hover_reference:
+            return result
+        obs = self._latest_hover_obs
+        supported = obs is not None and self.stop_still_supported(obs)
+        label = ProgressLabel.STOP if supported else result.label
+        if not supported and label is ProgressLabel.STOP:
+            label = ProgressLabel.CONTINUE
+        return result.model_copy(
+            update={
+                "label": label,
+                "t_sim_ns": obs.t_sim_ns if obs is not None else result.t_sim_ns,
+                "observation_seq": obs.seq if obs is not None else result.observation_seq,
+                "evidence": result.evidence
+                + f"; grounding_source_seq={result.observation_seq}"
+                + f"; live_hover_supported={supported}; live_hover_seq={obs.seq if obs else None}",
+            }
+        )
 
     def _grounding_context(self, ctx, prompt, images):
         if self._reference_image is None:
@@ -118,14 +162,18 @@ class OnFlyHoverMonitor(OnFlyMonitor):
             self._reference_image = snapshot
             self._reference_seq = ctx.observation.seq
         if self._approach is None and self._tracked_target is not None:
-            p = ctx.observation.position
+            p = (
+                self._initial_position if self.stable_hover_reference else None
+            ) or ctx.observation.position
             delta = self._tracked_target - np.array([p.x, p.y, p.z])
             delta[2] = 0.0
             if np.linalg.norm(delta) > 0.1:
                 self._approach = delta / np.linalg.norm(delta)
+        result = self._live_hover_result(result)
         return result.model_copy(
             update={
                 "evidence": result.evidence
-                + f"; hover_streak_s={self._hover_s:.3f}; required_hover_s=2; live_view_depth_check=true; reference_seq={self._reference_seq}"
+                + f"; hover_streak_s={self._hover_s:.3f}; required_hover_s=2; "
+                + f"live_view_depth_check=true; reference_seq={self._reference_seq}"
             }
         )

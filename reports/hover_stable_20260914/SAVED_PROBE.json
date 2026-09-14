@@ -1,0 +1,23 @@
+{
+  "saved_run": "c5_hover_repeat_20260914_s1062",
+  "poses_matched": 1200,
+  "checks": [
+    {
+      "t": 13.95,
+      "old_geometry": false,
+      "fixed_geometry": true,
+      "point": [
+        11.807095792223805,
+        -0.3739835220277717,
+        2.9129124882059343
+      ]
+    },
+    {
+      "t": 18,
+      "old_yaw_rate": -0.4,
+      "fixed_return_to_held_heading_rate": 0.4,
+      "translation_speed": 1.9059677243589678e-05
+    }
+  ],
+  "scope": "Saved-pose component checks; not a counterfactual flight; zero inference"
+}

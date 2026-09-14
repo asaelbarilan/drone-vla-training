@@ -1,0 +1,10 @@
+# D-110: fixed onboard approach line, coherent live dwell, residual yaw hold.
+_base_: c5_hover_level_gemma_dev.yaml
+id: c5_hover_stable_gemma_dev
+name: "C5 stable approach reference and hover heading development variant"
+controller:
+  params:
+    yaw_hold_radius_m: 0.25
+monitor:
+  params:
+    stable_hover_reference: true

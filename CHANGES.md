@@ -2507,3 +2507,14 @@ and starts departure. Saved controls/images prove the sequence; scheduler race n
 poses, nine seeks/three playbacks, five departure screenshots and exact policy input
 checked. Every reported speed violation is float roundoff. Export originally blocked
 by auto-review capacity; completed after user approval. Reports and evidence retained.
+
+
+## 2026-09-14 - D-110 hover reference/heading repair (validation pending)
+
+Added opt-in residual-heading hold, initial-frame approach line, two-valid-endpoint
+dwell counting and current-state monitor completion. Preserved old profiles and task
+thresholds. Saved failure checks and two bounded local Gemma flights are next.
+
+Validation: 442 unit/contract tests pass; saved failure replay matches 1,200 poses,
+geometry and yaw component counterchecks pass (SAVED_PROBE.json). No new model calls
+yet. New profile preserves old defaults; named development adaptation only.
