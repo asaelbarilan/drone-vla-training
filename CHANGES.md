@@ -2553,3 +2553,13 @@ D-111: three saved-frame local Gemma probes reject wrong target bindings using
 existing VLM-reported color check. Alternative passage quality remains uncertain.
 Enabled only policy.semantic_color_guard in named matched variant, frozen before
 one rerun. No runtime code edits or geometry/safety/model changes.
+
+
+D-111 complete: attribute rerun also timeout,closest33.343 m/final67.845 m; not
+promoted.89 exploration outputs; label correction does not establish passage/search
+quality. Two new flights and3 probes,271 completed local Gemma+2 cancellations.
+No cloud/runtime edits/third flight.5,400 replay poses exact,178 new policy images
+exact,15 seeks/3 playbacks. Raw328/465 speed violations only roundoff<=2.22e-16 m/s.
+User RGB/BGR concern checked with actual client request construction offline:RGB PNG,
+224x224,Base64,exact bytes preserved,known red remains(205,46,46). Images shown.
+See clutter_stable_20260914 report and localhost8766/clutter_stable.html.

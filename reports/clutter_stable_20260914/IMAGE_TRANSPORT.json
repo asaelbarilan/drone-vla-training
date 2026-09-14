@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "source": "runs/c5_clutter_stable_20260914_s1061/debug/images/call-000004-0.png",
+      "format": "PNG",
+      "mode": "RGB",
+      "size": [
+        224,
+        224
+      ],
+      "center_rgb": [
+        142,
+        142,
+        146
+      ],
+      "png_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+      "exact_png_bytes_preserved": true,
+      "policy_encode_preserves_rgb_pixels": true,
+      "endpoint": "/api/chat"
+    },
+    {
+      "source": "runs/c5_hover_stable_20260914_s1062/debug/images/call-000023-1.png",
+      "format": "PNG",
+      "mode": "RGB",
+      "size": [
+        224,
+        224
+      ],
+      "center_rgb": [
+        205,
+        46,
+        46
+      ],
+      "png_sha256": "b68559b9f9c04a8bb6c366020c92538be3788d6a12d215c36374a6b1bfd4fed0",
+      "exact_png_bytes_preserved": true,
+      "policy_encode_preserves_rgb_pixels": true,
+      "endpoint": "/api/chat"
+    }
+  ],
+  "network_calls": 0,
+  "scope": "Actual client request construction with intercepted transport; does not inspect Ollama internal preprocessing"
+}

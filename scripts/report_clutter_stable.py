@@ -57,7 +57,7 @@ async def main():
                 ],
             )
         )
-        if name.startswith("c5_clutter_stable_20260914_"):
+        if name.startswith(("c5_clutter_stable_20260914_", "c5_clutter_attributes_20260914_")):
             budget.update(counts)
             dest = OUT / name
             dest.mkdir(exist_ok=True)

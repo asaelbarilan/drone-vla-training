@@ -1,0 +1,1856 @@
+[
+  {
+    "name": "c5_clutter_stable_20260914_s1061",
+    "poses_matched": 1800,
+    "source_images_matched": 89,
+    "raw_speed_violations": 328,
+    "max_speed_excess_mps": 2.220446049250313e-16,
+    "effective_kinds": {
+      "exploration": 56,
+      "target": 33
+    },
+    "selected_decisions": [
+      {
+        "call": "call-000001",
+        "decision_id": "38ffca136f3b",
+        "source_t": 0.0,
+        "available_t": 1.0,
+        "reply": {
+          "evidence": "A flat, green-brown landscape with several gray, rectangular structures and a blue sky.",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          142,
+          142,
+          147
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.424997079050412,
+          "y": 3.9561213470692076,
+          "z": 2.1239676704193675,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000003",
+        "decision_id": "ce3a03a7c0d1",
+        "source_t": 0.95,
+        "available_t": 2.0,
+        "reply": {
+          "evidence": "a flat, green field and a gray structure",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          142,
+          142,
+          147
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.424997079050412,
+          "y": 3.9561213470692076,
+          "z": 2.1239676704193675,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000004",
+        "decision_id": "e460e4958d58",
+        "source_t": 1.95,
+        "available_t": 3.0,
+        "reply": {
+          "evidence": "a tall, grey, rectangular structure",
+          "kind": "target",
+          "u": 850,
+          "v": 500
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          135,
+          135,
+          141
+        ],
+        "pixel": [
+          189.74,
+          111.612
+        ],
+        "waypoint": {
+          "x": 1.8598834752711555,
+          "y": 0.4278412816944684,
+          "z": 2.7909948902640243,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000006",
+        "decision_id": "23e513fc7960",
+        "source_t": 2.95,
+        "available_t": 4.0,
+        "reply": {
+          "evidence": "a gray rectangular structure",
+          "kind": "target",
+          "u": 850,
+          "v": 500
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          141,
+          141,
+          146
+        ],
+        "pixel": [
+          189.74,
+          111.612
+        ],
+        "waypoint": {
+          "x": 3.401599617300937,
+          "y": 0.9827541591652957,
+          "z": 2.6416591845882085,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000007",
+        "decision_id": "ac2d3336b178",
+        "source_t": 3.95,
+        "available_t": 5.0,
+        "reply": {
+          "evidence": "a gray wall and a blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 6.3785109589685565,
+          "y": 3.0337853046240277,
+          "z": 2.089233669839893,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000009",
+        "decision_id": "d9d4f45e68a9",
+        "source_t": 4.95,
+        "available_t": 6.0,
+        "reply": {
+          "evidence": "a gray building and a blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          141,
+          141,
+          145
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.2998562358557475,
+          "y": 1.8242588548173777,
+          "z": 2.020087698739961,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000010",
+        "decision_id": "116d4f70810c",
+        "source_t": 5.95,
+        "available_t": 7.0,
+        "reply": {
+          "evidence": "a gray wall and a blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.388695300387,
+          "y": 3.4091515692020855,
+          "z": 1.9762199028205762,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000012",
+        "decision_id": "802ee07b3cda",
+        "source_t": 6.95,
+        "available_t": 8.0,
+        "reply": {
+          "evidence": "a gray rectangular structure",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.531369169028461,
+          "y": 4.355268667656456,
+          "z": 1.9653059894045184,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000013",
+        "decision_id": "352b987dc493",
+        "source_t": 7.95,
+        "available_t": 9.0,
+        "reply": {
+          "evidence": "a gray rectangular structure",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.784724150181187,
+          "y": 5.027237858939133,
+          "z": 1.9625189657736797,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000015",
+        "decision_id": "04af5f34b39b",
+        "source_t": 8.95,
+        "available_t": 10.0,
+        "reply": {
+          "evidence": "gray rectangular building",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.093984973464575,
+          "y": 5.598453708751646,
+          "z": 1.9617628345990827,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000016",
+        "decision_id": "69f07a49bce7",
+        "source_t": 9.95,
+        "available_t": 11.0,
+        "reply": {
+          "evidence": "gray rectangular blocks and blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          90,
+          90,
+          95
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.441220076138798,
+          "y": 6.113831510934752,
+          "z": 1.9615550689214645,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000018",
+        "decision_id": "7433365dd8f7",
+        "source_t": 10.95,
+        "available_t": 12.0,
+        "reply": {
+          "evidence": "gray rectangular blocks and a light blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          138,
+          138,
+          143
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.805366716481824,
+          "y": 6.6055015348594335,
+          "z": 1.961498917728661,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000019",
+        "decision_id": "562990e97859",
+        "source_t": 11.95,
+        "available_t": 13.0,
+        "reply": {
+          "evidence": "gray rectangular blocks and a blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          137,
+          137,
+          142
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.231873225337036,
+          "y": 7.027590115297661,
+          "z": 1.9614859188692166,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000021",
+        "decision_id": "3b87cc8883c2",
+        "source_t": 12.95,
+        "available_t": 14.0,
+        "reply": {
+          "evidence": "gray rectangular blocks and a blue sky",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          137,
+          137,
+          142
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.629540681760911,
+          "y": 7.4806783275674285,
+          "z": 1.96148273255171,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000022",
+        "decision_id": "330cb071cdee",
+        "source_t": 13.95,
+        "available_t": 15.0,
+        "reply": {
+          "evidence": "a gray rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          136,
+          136,
+          141
+        ],
+        "pixel": [
+          111.388,
+          111.388
+        ],
+        "waypoint": {
+          "x": 10.021989796571948,
+          "y": 7.940759928747523,
+          "z": 1.9733401378791173,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000024",
+        "decision_id": "472ce3bf2280",
+        "source_t": 14.95,
+        "available_t": 16.0,
+        "reply": {
+          "evidence": "gray rectangular blocks",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          136,
+          136,
+          141
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.913610658896477,
+          "y": 8.851818687603664,
+          "z": 1.9614817158085065,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000025",
+        "decision_id": "7144ab66e0f5",
+        "source_t": 15.95,
+        "available_t": 17.0,
+        "reply": {
+          "evidence": "gray rectangular blocks",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          135,
+          135,
+          140
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 10.168892691931521,
+          "y": 9.196602250232836,
+          "z": 1.9865921010962333,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000027",
+        "decision_id": "e2a753c1e43d",
+        "source_t": 16.95,
+        "available_t": 18.0,
+        "reply": {
+          "evidence": "gray rectangular building",
+          "kind": "target",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          134,
+          134,
+          140
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.694612825144027,
+          "y": 9.152729652821659,
+          "z": 2.1223545518389226,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000028",
+        "decision_id": "098422d33dd7",
+        "source_t": 17.95,
+        "available_t": 19.0,
+        "reply": {
+          "evidence": "gray rectangular building",
+          "kind": "target",
+          "u": 499,
+          "v": 499
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.388,
+          111.388
+        ],
+        "waypoint": {
+          "x": 9.586461989363983,
+          "y": 9.115971135993648,
+          "z": 2.232788748463727,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000030",
+        "decision_id": "635d275444ff",
+        "source_t": 18.95,
+        "available_t": 20.0,
+        "reply": {
+          "evidence": "gray rectangular building",
+          "kind": "target",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          133,
+          133,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.549892941003733,
+          "y": 10.885859336061396,
+          "z": 2.0846377554696254,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000031",
+        "decision_id": "3cf2e15d703d",
+        "source_t": 19.95,
+        "available_t": 21.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          133,
+          133,
+          138
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.496040317272236,
+          "y": 10.051170227246379,
+          "z": 2.2317435990706995,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000033",
+        "decision_id": "7980c0f23458",
+        "source_t": 20.95,
+        "available_t": 22.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.596063912771164,
+          "y": 11.405159678616393,
+          "z": 2.1035953159776173,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000034",
+        "decision_id": "fb3b5eda3b08",
+        "source_t": 21.95,
+        "available_t": 23.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          133,
+          133,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 9.320022414744844,
+          "y": 11.439252645879092,
+          "z": 2.0938646893449917,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000036",
+        "decision_id": "24320319470a",
+        "source_t": 22.95,
+        "available_t": 24.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "exploration",
+          "u": 499,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          133,
+          133,
+          138
+        ],
+        "pixel": [
+          111.388,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.937047145867586,
+          "y": 11.394398385781928,
+          "z": 2.095011864439681,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000037",
+        "decision_id": "e2149000d596",
+        "source_t": 23.95,
+        "available_t": 25.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          132,
+          132,
+          138
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.434767302776624,
+          "y": 11.404817526578146,
+          "z": 2.0585472970858207,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000039",
+        "decision_id": "2da46436eb8f",
+        "source_t": 24.95,
+        "available_t": 26.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "exploration",
+          "u": 499,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          132,
+          132,
+          138
+        ],
+        "pixel": [
+          111.388,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.480578728624211,
+          "y": 11.418035208639902,
+          "z": 2.026343295386493,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000040",
+        "decision_id": "19306fa3aa06",
+        "source_t": 25.95,
+        "available_t": 27.0,
+        "reply": {
+          "evidence": "a gray rectangular room",
+          "kind": "exploration",
+          "u": 500,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          132,
+          132,
+          137
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 8.065641658450717,
+          "y": 11.401472615386485,
+          "z": 2.0190444502121774,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000042",
+        "decision_id": "7fe98fdda36c",
+        "source_t": 26.95,
+        "available_t": 28.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "exploration",
+          "u": 499,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          131,
+          131,
+          137
+        ],
+        "pixel": [
+          111.388,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.4745330955357225,
+          "y": 11.418145512058679,
+          "z": 1.9989855058354977,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000043",
+        "decision_id": "43233cd14e12",
+        "source_t": 27.95,
+        "available_t": 29.0,
+        "reply": {
+          "evidence": "a tall, light-colored vertical structure",
+          "kind": "exploration",
+          "u": 499,
+          "v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          131,
+          131,
+          137
+        ],
+        "pixel": [
+          111.388,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.1319167530434475,
+          "y": 11.481801076733984,
+          "z": 1.94418262540876,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000045",
+        "decision_id": "687e150355ed",
+        "source_t": 28.95,
+        "available_t": 30.0,
+        "reply": {
+          "evidence": "a tall, light green rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.388,
+          111.388
+        ],
+        "waypoint": {
+          "x": 2.9341747768644035,
+          "y": 14.800487142704597,
+          "z": 1.1537574447713954,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000046",
+        "decision_id": "e785da6d27ee",
+        "source_t": 29.95,
+        "available_t": 31.0,
+        "reply": {
+          "evidence": "a green rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499
+        },
+        "effective_kind": "target",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.388,
+          111.388
+        ],
+        "waypoint": {
+          "x": 1.2773851897569317,
+          "y": 12.582633680614894,
+          "z": 1.1256637121002124,
+          "frame": "enu"
+        }
+      }
+    ]
+  },
+  {
+    "name": "c5_clutter_attributes_20260914_s1061",
+    "poses_matched": 1800,
+    "source_images_matched": 89,
+    "raw_speed_violations": 465,
+    "max_speed_excess_mps": 1.1102230246251565e-16,
+    "effective_kinds": {
+      "exploration": 89
+    },
+    "selected_decisions": [
+      {
+        "call": "call-000001",
+        "decision_id": "bc28107c6cc9",
+        "source_t": 0.0,
+        "available_t": 1.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "target",
+          "u": 850,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 900,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          135,
+          135,
+          141
+        ],
+        "pixel": [
+          200.901,
+          111.612
+        ],
+        "waypoint": {
+          "x": 1.2871560580684227,
+          "y": 0.06419666949796377,
+          "z": 2.851643138627974,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000003",
+        "decision_id": "699a703ca5a4",
+        "source_t": 0.95,
+        "available_t": 2.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "target",
+          "u": 850,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 900,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          135,
+          135,
+          141
+        ],
+        "pixel": [
+          200.901,
+          111.612
+        ],
+        "waypoint": {
+          "x": 1.2871560580684227,
+          "y": 0.06419666949796377,
+          "z": 2.851643138627974,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000004",
+        "decision_id": "323c3d6ac5ee",
+        "source_t": 1.95,
+        "available_t": 3.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "target",
+          "u": 750,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.790159808493201,
+          "y": 2.0432320349366484,
+          "z": 2.0993695671804096,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000006",
+        "decision_id": "499269020388",
+        "source_t": 2.95,
+        "available_t": 4.0,
+        "reply": {
+          "evidence": "gray building",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          135,
+          135,
+          140
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.076009297601303,
+          "y": 0.548043180274626,
+          "z": 2.268134976804153,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000007",
+        "decision_id": "9911ad374312",
+        "source_t": 3.95,
+        "available_t": 5.0,
+        "reply": {
+          "evidence": "tall gray building",
+          "kind": "target",
+          "u": 990,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 995,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          135,
+          135,
+          140
+        ],
+        "pixel": [
+          222.107,
+          111.612
+        ],
+        "waypoint": {
+          "x": 1.3771241788529243,
+          "y": 0.12079441359308518,
+          "z": 2.8645577997352114,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000009",
+        "decision_id": "b1dac6bcd117",
+        "source_t": 4.95,
+        "available_t": 6.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "target",
+          "u": 990,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 995,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          140
+        ],
+        "pixel": [
+          222.107,
+          111.612
+        ],
+        "waypoint": {
+          "x": 1.7901347860814134,
+          "y": 0.3627304111334542,
+          "z": 2.816889437123721,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000010",
+        "decision_id": "7d42546f1003",
+        "source_t": 5.95,
+        "available_t": 7.0,
+        "reply": {
+          "evidence": "gray rectangular building",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.071643274995805,
+          "y": 0.3359527489043025,
+          "z": 2.3159209513584513,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000012",
+        "decision_id": "7897b9fbd5f8",
+        "source_t": 6.95,
+        "available_t": 8.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.166244846673284,
+          "y": -1.2171517569764632,
+          "z": 2.2551348869014665,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000013",
+        "decision_id": "a9d8a0c5b857",
+        "source_t": 7.95,
+        "available_t": 9.0,
+        "reply": {
+          "evidence": "gray rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.120341030046377,
+          "y": -0.7523964458868628,
+          "z": 2.284049154224398,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000015",
+        "decision_id": "808487b40c39",
+        "source_t": 8.95,
+        "available_t": 10.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          134,
+          134,
+          139
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.300960368048591,
+          "y": -2.495541895298423,
+          "z": 2.118354066384666,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000016",
+        "decision_id": "7f7fa7e1ffa4",
+        "source_t": 9.95,
+        "available_t": 11.0,
+        "reply": {
+          "evidence": "A tall, light-colored rectangular structure against a blue sky.",
+          "kind": "target",
+          "u": 500,
+          "v": 250,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.377770818453104,
+          "y": -5.667138599121087,
+          "z": 1.7343442974820176,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000018",
+        "decision_id": "d1f0131a8097",
+        "source_t": 10.95,
+        "available_t": 12.0,
+        "reply": {
+          "evidence": "a tall, thin green object",
+          "kind": "target",
+          "u": 500,
+          "v": 250,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.772861114918081,
+          "y": -6.5671667615514675,
+          "z": 1.6495231963421733,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000019",
+        "decision_id": "565aed67d559",
+        "source_t": 11.95,
+        "available_t": 13.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "target",
+          "u": 0,
+          "v": 500,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.913214652857257,
+          "y": -6.502094676351149,
+          "z": 1.597908804049115,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000021",
+        "decision_id": "3375031ce2d9",
+        "source_t": 12.95,
+        "available_t": 14.0,
+        "reply": {
+          "evidence": "gray wall",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "gray",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.235388846479586,
+          "y": -3.2725812845790188,
+          "z": 2.0291086371518046,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000022",
+        "decision_id": "8c02a053ff02",
+        "source_t": 13.95,
+        "available_t": 15.0,
+        "reply": {
+          "evidence": "a light blue wall",
+          "kind": "exploration",
+          "u": 499,
+          "v": 500,
+          "observed_color": "blue",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.044764856933392,
+          "y": -6.051167438035523,
+          "z": 1.5730512031096378,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000024",
+        "decision_id": "e6625542cfcb",
+        "source_t": 14.95,
+        "available_t": 16.0,
+        "reply": {
+          "evidence": "green rectangular structure",
+          "kind": "target",
+          "u": 499,
+          "v": 250,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.332093586414,
+          "y": -7.6657511143325685,
+          "z": 1.538727680828092,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000025",
+        "decision_id": "7382db5164b7",
+        "source_t": 15.95,
+        "available_t": 17.0,
+        "reply": {
+          "evidence": "a tall, thin, green structure",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.7995674173916445,
+          "y": -8.421055856968536,
+          "z": 1.5023910446867677,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000027",
+        "decision_id": "a8ee961df9c2",
+        "source_t": 16.95,
+        "available_t": 18.0,
+        "reply": {
+          "evidence": "a single vertical green pole",
+          "kind": "target",
+          "u": 499,
+          "v": 499,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.245249793415496,
+          "y": -8.887782115570714,
+          "z": 1.493310847773887,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000028",
+        "decision_id": "6364dff8926b",
+        "source_t": 17.95,
+        "available_t": 19.0,
+        "reply": {
+          "evidence": "a green rectangular structure",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.846883693928968,
+          "y": -9.291616548944058,
+          "z": 1.4909324417841157,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000030",
+        "decision_id": "5c3f9819ba63",
+        "source_t": 18.95,
+        "available_t": 20.0,
+        "reply": {
+          "evidence": "a green rectangular tower",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 6.271531826427353,
+          "y": -9.75562911781039,
+          "z": 1.4903380191567848,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000031",
+        "decision_id": "3020299d9fda",
+        "source_t": 19.95,
+        "available_t": 21.0,
+        "reply": {
+          "evidence": "a green rectangular tower",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 6.524605851527578,
+          "y": -10.298024041820756,
+          "z": 1.4901960287915375,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000033",
+        "decision_id": "b4d2c24e4871",
+        "source_t": 20.95,
+        "available_t": 22.0,
+        "reply": {
+          "evidence": "a green rectangular structure",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 6.860422267167156,
+          "y": -10.802094292567975,
+          "z": 1.4901583130393046,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000034",
+        "decision_id": "afced5f43213",
+        "source_t": 21.95,
+        "available_t": 23.0,
+        "reply": {
+          "evidence": "a tall, thin, green tower",
+          "kind": "target",
+          "u": 847,
+          "v": 498,
+          "observed_color": "green",
+          "explore_u": 847,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          189.07,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.259987753999194,
+          "y": -8.978011444481496,
+          "z": 2.0030833425196697,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000036",
+        "decision_id": "463a4ca39c44",
+        "source_t": 22.95,
+        "available_t": 24.0,
+        "reply": {
+          "evidence": "a tall, thin, green tower",
+          "kind": "target",
+          "u": 847,
+          "v": 498,
+          "observed_color": "green",
+          "explore_u": 847,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          189.07,
+          111.612
+        ],
+        "waypoint": {
+          "x": 4.373174175035794,
+          "y": -9.489420331562176,
+          "z": 2.003081319929864,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000037",
+        "decision_id": "2056ccd8a5c8",
+        "source_t": 23.95,
+        "available_t": 25.0,
+        "reply": {
+          "evidence": "a tall, thin, green tower",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.174273453171656,
+          "y": -12.451506112896134,
+          "z": 1.479670507026088,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000039",
+        "decision_id": "5c99c9c42452",
+        "source_t": 24.95,
+        "available_t": 26.0,
+        "reply": {
+          "evidence": "a green rectangular tower",
+          "kind": "target",
+          "u": 748,
+          "v": 498,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.227959881777983,
+          "y": -12.60499332269717,
+          "z": 1.4750282498138836,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000040",
+        "decision_id": "b8de178ca37c",
+        "source_t": 25.95,
+        "available_t": 27.0,
+        "reply": {
+          "evidence": "a green rectangular tower",
+          "kind": "target",
+          "u": 847,
+          "v": 498,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.667900622508698,
+          "y": -12.633005984647761,
+          "z": 1.4734250223050018,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000042",
+        "decision_id": "fd0b552616ab",
+        "source_t": 26.95,
+        "available_t": 28.0,
+        "reply": {
+          "evidence": "a tall, thin, green tower",
+          "kind": "target",
+          "u": 500,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 500,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          111.612,
+          111.612
+        ],
+        "waypoint": {
+          "x": 7.242311207711776,
+          "y": -13.294984632439519,
+          "z": 1.472971666012728,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000043",
+        "decision_id": "eadf22b63076",
+        "source_t": 27.95,
+        "available_t": 29.0,
+        "reply": {
+          "evidence": "A tall, thin, green rectangular structure against a blue sky.",
+          "kind": "target",
+          "u": 938,
+          "v": 531,
+          "observed_color": "green",
+          "explore_u": 938,
+          "explore_v": 531
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          209.383,
+          118.532
+        ],
+        "waypoint": {
+          "x": 5.066840687618944,
+          "y": -10.262119882086749,
+          "z": 2.0133748313248665,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000045",
+        "decision_id": "a5e439fae94d",
+        "source_t": 28.95,
+        "available_t": 30.0,
+        "reply": {
+          "evidence": "A tall, thin, green rectangular structure",
+          "kind": "target",
+          "u": 948,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 948,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          211.616,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.2988052318333985,
+          "y": -10.686258272764997,
+          "z": 2.12402864144034,
+          "frame": "enu"
+        }
+      },
+      {
+        "call": "call-000046",
+        "decision_id": "205a715b40d9",
+        "source_t": 29.95,
+        "available_t": 31.0,
+        "reply": {
+          "evidence": "A tall, thin, green rectangular structure",
+          "kind": "target",
+          "u": 830,
+          "v": 500,
+          "observed_color": "green",
+          "explore_u": 830,
+          "explore_v": 500
+        },
+        "effective_kind": "exploration",
+        "pixel_rgb": [
+          104,
+          112,
+          96
+        ],
+        "pixel": [
+          185.275,
+          111.612
+        ],
+        "waypoint": {
+          "x": 5.389287865479858,
+          "y": -12.219143639695499,
+          "z": 1.9441505250758393,
+          "frame": "enu"
+        }
+      }
+    ]
+  }
+]

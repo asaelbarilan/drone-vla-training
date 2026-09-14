@@ -419,3 +419,13 @@ Completion still waits beyond two physical seconds because evidence renewals and
 monitor cadence are conservative. Do not relax scoring to make the stop earlier.
 Broader VLM planning and AerialClaw ordered/search issues above remain separate.
 No further flight is active or scheduled.
+
+
+## D-111: isolate exploration quality before another clutter flight
+
+Two new flights failed before the old narrow-gap case. Attribute check fixes label
+consistency but worsens closed-loop navigation here; do not promote or repeat blindly.
+Use exact first/source frames and accepted points from AUDIT.json to distinguish
+open passage selection from obstacle surfaces, then test a positive visible-target
+frame too. No proof SUPER cannot execute a good subgoal. RGB client transport verified;
+server-internal preprocessing remains unexamined if image concern is pursued.

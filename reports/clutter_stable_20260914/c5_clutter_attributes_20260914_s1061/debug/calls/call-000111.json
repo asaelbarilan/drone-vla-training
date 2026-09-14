@@ -1,0 +1,89 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:grounded_v1",
+  "input_tokens": 305,
+  "image_count": 1,
+  "observation_seq": 1460,
+  "prompt": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v. Report observed_color for the object at u,v from its actual appearance, even if it differs from the requested color. In evidence describe THAT object only. Also supply explore_u,explore_v at an open passage near flight height as an alternative if this object does not match. The alternative must avoid the object's face and reveal more terrain.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "target",
+          "exploration"
+        ]
+      },
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "observed_color": {
+        "type": "string",
+        "enum": [
+          "red",
+          "green",
+          "blue",
+          "gray",
+          "yellow",
+          "orange",
+          "purple",
+          "pink",
+          "brown",
+          "black",
+          "white",
+          "unknown"
+        ]
+      },
+      "explore_u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "explore_v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "kind",
+      "u",
+      "v",
+      "observed_color",
+      "explore_u",
+      "explore_v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000111",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 581,
+    "function": "decide",
+    "snapshot": "debug/sources/68eb5f63ee1769f4813e61dfb073b0766a54d6bae43fc5caff539fc577a67e43.py"
+  },
+  "started_t_sim_ns": 73000000000,
+  "image_files": [
+    "debug/images/call-000111-0.png"
+  ],
+  "completed_t_sim_ns": 74000000000,
+  "response": "{\"evidence\": \"blue and gray sky\", \"kind\": \"exploration\", \"u\": 500, \"v\": 500, \"observed_color\": \"blue\", \"explore_u\": 500, \"explore_v\": 500}",
+  "latency_ns": 706005900,
+  "output_tokens": 62,
+  "cache_hit": false
+}

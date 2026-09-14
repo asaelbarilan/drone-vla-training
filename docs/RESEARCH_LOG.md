@@ -2390,7 +2390,7 @@ accuracy, harder scenes and planning remain open. No third flight scheduled.
 
 ## D-111 - Return to clutter navigation after hover repair (2026-09-14)
 
-Status: preregistered; one diagnostic flight pending. User authorized proposed
+Status: complete: two failed diagnostic flights; no variant promotion. User authorized proposed
 run -> visual diagnosis -> first demonstrated repair -> matched rerun workflow.
 Use c5_clutter_stable_gemma_dev, grid_nav_onfly_depth_v2_dev, seed1061,90 seconds.
 Environment exactly matches D-98 corrected-depth comparator, including geometry,
@@ -2415,3 +2415,16 @@ obstacles; no passage-quality claim. Enable only that policy flag in named
 c5_clutter_attributes_gemma_dev, preserve baseline and run one matched seed1061.
 No runtime edits. This repairs an unchecked attribute contract, not proven navigation.
 REPAIR_FREEZE.json records exact configuration. No third full flight scheduled.
+
+
+D-111 completed: attribute rerun timeout90 s,closest33.343 m/final67.845 m, worse
+than first22.583/37.906.89 exploration outputs; contract consistency repair did not
+solve subgoal selection/search. No third flight or promotion. Both return-to-clutter
+runs diverge before original narrow-gap case.33 targeted tests pass;5,400 displayed
+poses exact,178 new policy source images exact,15 seeks/3 playbacks verified. Raw
+328/465 violations are solely speed roundoff<=2.22e-16/1.11e-16 m/s.271 completed
+Gemma calls total including3 probes,+2 cancellations;zero cloud. User RGB/BGR
+hypothesis checked offline through real request construction:224x224 RGB PNG as
+Base64,exact bytes preserved,red pixel(205,46,46). Server preprocessing not examined.
+Evidence: reports/clutter_stable_20260914/REPORT.md,AUDIT.json,IMAGE_TRANSPORT.json.
+Next saved-frame exploration/selected-passage contract, not another full blind run.

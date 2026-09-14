@@ -49,8 +49,33 @@
       "name": "c5_clutter_stable_20260914_s1061",
       "t": 90,
       "error": ""
+    },
+    {
+      "name": "c5_clutter_attributes_20260914_s1061",
+      "t": 0,
+      "error": ""
+    },
+    {
+      "name": "c5_clutter_attributes_20260914_s1061",
+      "t": 26,
+      "error": ""
+    },
+    {
+      "name": "c5_clutter_attributes_20260914_s1061",
+      "t": 42,
+      "error": ""
+    },
+    {
+      "name": "c5_clutter_attributes_20260914_s1061",
+      "t": 60,
+      "error": ""
+    },
+    {
+      "name": "c5_clutter_attributes_20260914_s1061",
+      "t": 90,
+      "error": ""
     }
   ],
-  "playbacks": 2,
+  "playbacks": 3,
   "errors": []
 }

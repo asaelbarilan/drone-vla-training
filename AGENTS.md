@@ -16,6 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: return-to-clutter diagnostic failed; transport verified - D-111
+
+Two new seed1061 flights complete: corrected integration timeout final37.906 m;
+matched policy attribute-contract trial timeout final67.845 m. Do not promote either
+as navigation improvement. Gray/green false target bindings observed in exact source
+images despite red mission; attribute guard removes labels but alternatives still
+fail to search. Original narrow-gap case not reached; no execution-incapacity claim.
+RGB/BGR concern: actual client encoding/request construction preserves224x224 RGB PNG
+bytes; red remains(205,46,46). Server preprocessing not examined. Zero network for
+transport test.33 tests,5,400 exact poses,178 source images,15 seeks/3 playbacks pass.
+271 completed local Gemma incl3 probes,+2 cancellations. No runtime edits or third run.
+Read reports/clutter_stable_20260914/REPORT.md. Dashboard localhost8766/clutter_stable.html.
+Next saved-frame exploration contract; retain successful hover profile from D-110.
+
 ## Latest: hover departure fixed, two bounded passes - D-110 (2026-09-14)
 
 New c5_hover_stable_gemma_dev keeps heading near translation goal, fixes the approach
