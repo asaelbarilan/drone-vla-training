@@ -2542,3 +2542,9 @@ Prepared navigation-compatible corrected C5 for original clutter seed1061. Prese
 D-98 environment,SUPER/verifier/scheduler/inference; excludes hover-only contract,
 retains grounded points,1 m standoff,arrival memory and heading hold. Frozen before
 one diagnostic flight. No runtime edits or inference yet. See D-111.
+
+D-111 first flight: timeout90 s,closest22.583 m/final37.906 m,zero collisions,
+328 raw violations pending audit.134 completed Gemma+1 cancelled. Exact source
+images confirm gray/green objects labeled target despite red mission in prompt.
+Two replays/3,600 poses and10 browser seeks/2 playbacks verified. Baseline retained
+before saved-frame attribute-contract probe; no runtime fix or rerun yet.
