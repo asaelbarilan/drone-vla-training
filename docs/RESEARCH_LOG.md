@@ -2404,3 +2404,14 @@ input,accepted point,planner and movement before attributing outcome. No cloud/k
 reads,model changes,clearance tuning,new obstacles or broad sweep. Preserve failures.
 Evidence: D-97/98 depth contract,D-107 arrival memory,D-110 hover repair. FREEZE.json
 verifies resolved environment and unchanged execution/inference settings.
+
+
+D-111 first outcome: timeout90 s,closest22.583 m/final37.906 m. Exact images and
+prompts confirm wrong target bindings (gray/green versus requested red), before
+narrow-passage planning. Existing policy semantic_color_guard uses VLM observed_color
+and VLM alternative point, not RGB detector/ground truth. Three saved-frame local
+probes remove all three wrong target bindings, but alternatives can still point at
+obstacles; no passage-quality claim. Enable only that policy flag in named
+c5_clutter_attributes_gemma_dev, preserve baseline and run one matched seed1061.
+No runtime edits. This repairs an unchecked attribute contract, not proven navigation.
+REPAIR_FREEZE.json records exact configuration. No third full flight scheduled.

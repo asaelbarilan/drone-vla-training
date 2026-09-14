@@ -1,0 +1,7 @@
+# D-111: isolate existing VLM-reported attribute/alternative-point contract.
+_base_: c5_clutter_stable_gemma_dev.yaml
+id: c5_clutter_attributes_gemma_dev
+name: "C5 clutter navigation with explicit VLM object-attribute check"
+policy:
+  params:
+    semantic_color_guard: true

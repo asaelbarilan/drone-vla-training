@@ -2548,3 +2548,8 @@ D-111 first flight: timeout90 s,closest22.583 m/final37.906 m,zero collisions,
 images confirm gray/green objects labeled target despite red mission in prompt.
 Two replays/3,600 poses and10 browser seeks/2 playbacks verified. Baseline retained
 before saved-frame attribute-contract probe; no runtime fix or rerun yet.
+
+D-111: three saved-frame local Gemma probes reject wrong target bindings using
+existing VLM-reported color check. Alternative passage quality remains uncertain.
+Enabled only policy.semantic_color_guard in named matched variant, frozen before
+one rerun. No runtime code edits or geometry/safety/model changes.
