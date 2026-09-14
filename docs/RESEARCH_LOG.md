@@ -2489,3 +2489,7 @@ six-panel browser overlay/prompt QA pass; positive pair inspected. Six local cal
 zero retries/cloud/flights/runtime changes. No format promoted or post-hoc combined
 success claimed. See reports/localization_formats_20260914/REPORT.md. Need independent
 positive/negative validation before format selection; no further call scheduled.
+
+
+## D-114 - Installed local VLM localization comparison (2026-09-14, frozen)
+User authorizes all seven models listed in the conversation: Qwen3-VL 2B/4B/8B, Qwen3.5 2B/4B, Moondream and SmolVLM2 2.2B. Freeze exact D-113 image bytes/prompts/schemas and scoring before inference, on a separate CPU-only server. No shared-server inference or unload. Full JSON content then thinking parser handles recorded Qwen channel behavior without repairing coordinates. Maximum 42 attempts, no retries; runtime/interface errors distinguished from semantic errors. This is the shared interface on installed backends, not an optimized-native-model comparison or latency benchmark. Gemma is historical; one positive plus two negatives is diagnostic only. Evidence: reports/local_vlm_comparison_20260914/FREEZE.json and seven metadata captures; historical scorer parity verified. Status: prepared; calls pending.

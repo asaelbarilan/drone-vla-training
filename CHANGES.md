@@ -2594,3 +2594,7 @@ absent frames. Box correctly rejects absences but visible box misses (IoU0.05024
 center outside). Neither promoted; no flight/runtime changes. Original RGB hashes,
 modified grid inputs,raw replies,scoring and screenshots saved. Scripts lint and
 six-panel browser QA pass. Dashboard localhost8766/localization_formats.html.
+
+
+## 2026-09-14 - D-114 local VLM comparison frozen
+User requested all seven installed alternatives from the preceding model table. Prepared an isolated CPU-only Ollama probe: same D-113 three scenes, grid and bbox prompts, 192 output tokens, 8192 context, temperature/seed zero, at most 42 attempts. Reuses six saved Gemma answers. Preserves raw requests/replies, model digests, errors, CPU residency; no inference retries or flights. CPU execution protects shared GPU server; latency is not comparable to flight runtime. Scorer reproduces all six historical Gemma verdicts and positive IoU.

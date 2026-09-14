@@ -1,0 +1,219 @@
+{
+  "decision": "D-114",
+  "models": [
+    {
+      "id": "m1",
+      "name": "moondream:latest",
+      "digest": "55fc3abd386771e5b5d1bbcc732f3c3f4df6e9f9f08f1131f9cc27ba2d1eec5b",
+      "size": 1738451197,
+      "capabilities": [
+        "completion",
+        "vision"
+      ]
+    },
+    {
+      "id": "m2",
+      "name": "richardyoung/smolvlm2-2.2b-instruct:Q4_K_M",
+      "digest": "d451d6841ecbcff817dfc3b1715afde02094b839d77cd0c6431ca1f9477be8c1",
+      "size": 1112607165,
+      "capabilities": [
+        "completion"
+      ]
+    },
+    {
+      "id": "m3",
+      "name": "qwen3-vl:2b",
+      "digest": "0635d9d857d497aeadba3d7d27485746c50554446f9f6ec01ef39788221adbe8",
+      "size": 1889519687,
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "id": "m4",
+      "name": "qwen3-vl:4b",
+      "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+      "size": 3295636135,
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "id": "m5",
+      "name": "qwen3-vl:8b",
+      "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+      "size": 6140415879,
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "id": "m6",
+      "name": "qwen3.5:2b",
+      "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+      "size": 2741192820,
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "id": "m7",
+      "name": "qwen3.5:4b",
+      "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "size": 3389983735,
+      "capabilities": [
+        "completion",
+        "vision",
+        "tools",
+        "thinking"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "visible_target",
+      "source_run": "c5_depth_ray_v2_20260912_s1061",
+      "source_call": "call-000040",
+      "source_t": 25.95,
+      "source_sha256": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb",
+      "expected_cell": "B2",
+      "expected_box_pixels": [
+        77,
+        72,
+        85,
+        98
+      ],
+      "input_sha256": {
+        "grid": "f83ec15df5810fc499b9e6c12f54279aba66dd827e210f1742acbf8bb9a3abcd",
+        "bbox": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb"
+      }
+    },
+    {
+      "id": "hidden_openings",
+      "source_run": "c5_clutter_stable_20260914_s1061",
+      "source_call": "call-000004",
+      "source_t": 1.95,
+      "source_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+      "expected_cell": "absent",
+      "expected_box_pixels": null,
+      "input_sha256": {
+        "grid": "678578ef9a7c91cc7f444e406a8fc3ee241e5b01c6a9f2681910e66603ab3b05",
+        "bbox": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a"
+      }
+    },
+    {
+      "id": "close_wall",
+      "source_run": "c5_clutter_stable_20260914_s1061",
+      "source_call": "call-000040",
+      "source_t": 25.95,
+      "source_sha256": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0",
+      "expected_cell": "absent",
+      "expected_box_pixels": null,
+      "input_sha256": {
+        "grid": "6061922d1e77f9e37e8361748ca420d919c376b3bd634de73b598f03ee1e6175",
+        "bbox": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0"
+      }
+    }
+  ],
+  "variants": {
+    "grid": {
+      "prompt": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "cell": {
+            "type": "string",
+            "enum": [
+              "A1",
+              "B1",
+              "C1",
+              "D1",
+              "A2",
+              "B2",
+              "C2",
+              "D2",
+              "A3",
+              "B3",
+              "C3",
+              "D3",
+              "A4",
+              "B4",
+              "C4",
+              "D4",
+              "absent"
+            ]
+          }
+        },
+        "required": [
+          "evidence",
+          "cell"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "bbox": {
+      "prompt": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "visible": {
+            "type": "boolean"
+          },
+          "box": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "minItems": 4,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "evidence",
+          "visible",
+          "box"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "source_freeze_sha256": "a5d941cb02d02c3dcb5c7a45cc274205fdae7b34a9ee51ba32c414efe4423032",
+  "host": "http://127.0.0.1:11435",
+  "max_inference_attempts": 42,
+  "timeout_s": 300,
+  "options": {
+    "temperature": 0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 192,
+    "num_gpu": 0,
+    "num_thread": 4
+  },
+  "keep_alive": "10m",
+  "box_pass_iou": 0.5,
+  "parser": "Whole JSON (optional enclosing markdown fence); content then thinking. First schema-valid answer wins; both channels preserved. No coordinate repair.",
+  "interpretation": "Identical D-113 prompts and schemas, including 0..999 box convention. This tests the installed model/backend/shared interface, not best native model performance. CPU-only isolated server; latency not a flight benchmark. Gemma is a reused historical baseline. Three scenes, one positive only.",
+  "errors": "No retries. HTTP/runtime errors recorded separately from valid wrong answers. Request timeout stops remaining calls for that model to avoid overlapping work."
+}
