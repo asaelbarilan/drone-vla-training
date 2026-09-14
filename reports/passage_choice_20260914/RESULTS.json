@@ -1,0 +1,344 @@
+[
+  {
+    "case": "visible_target",
+    "variant": "baseline",
+    "answer": {
+      "evidence": "red tower",
+      "kind": "target",
+      "u": 499,
+      "v": 499
+    },
+    "status": "point",
+    "pixel": [
+      111.38838838838839,
+      111.38838838838839
+    ],
+    "pixel_rgb": [
+      137,
+      137,
+      142
+    ],
+    "waypoint": {
+      "x": 16.700730707688642,
+      "y": 9.867274209956674,
+      "z": 2.4857748259882193,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "target",
+      "visual_evidence": "red tower",
+      "pixel_u": "111.388",
+      "pixel_v": "111.388",
+      "model_u": "499",
+      "model_v": "499",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "11.814377416",
+      "source_position_y": "6.494723830",
+      "source_position_z": "3.349948946",
+      "source_yaw_rad": "0.598598757",
+      "sampled_depth_m": "7.000000",
+      "gated_range_m": "6.999600",
+      "executable_range_m": "5.999600",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "b56be031770b077a",
+      "depth_digest": "288bf8b5d55658be"
+    },
+    "straight_segment_sampled_clearance_m": 2.192479652172649,
+    "straight_segment_clearance_lower_bound_m": 2.167480575291114,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": true,
+    "roundtrip_pixel_error": 2.0097183471152322e-14
+  },
+  {
+    "case": "visible_target",
+    "variant": "passage_check",
+    "answer": {
+      "evidence": "A gray rectangular structure and a red rectangular structure are visible.",
+      "kind": "target",
+      "u": 499,
+      "v": 499
+    },
+    "status": "point",
+    "pixel": [
+      111.38838838838839,
+      111.38838838838839
+    ],
+    "pixel_rgb": [
+      137,
+      137,
+      142
+    ],
+    "waypoint": {
+      "x": 16.700730707688642,
+      "y": 9.867274209956674,
+      "z": 2.4857748259882193,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "target",
+      "visual_evidence": "A gray rectangular structure and a red rectangular structure are visible.",
+      "pixel_u": "111.388",
+      "pixel_v": "111.388",
+      "model_u": "499",
+      "model_v": "499",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "11.814377416",
+      "source_position_y": "6.494723830",
+      "source_position_z": "3.349948946",
+      "source_yaw_rad": "0.598598757",
+      "sampled_depth_m": "7.000000",
+      "gated_range_m": "6.999600",
+      "executable_range_m": "5.999600",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "b56be031770b077a",
+      "depth_digest": "288bf8b5d55658be"
+    },
+    "straight_segment_sampled_clearance_m": 2.192479652172649,
+    "straight_segment_clearance_lower_bound_m": 2.167480575291114,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": true,
+    "roundtrip_pixel_error": 2.0097183471152322e-14
+  },
+  {
+    "case": "hidden_openings",
+    "variant": "baseline",
+    "answer": {
+      "evidence": "a tall, grey, rectangular structure",
+      "kind": "target",
+      "u": 850,
+      "v": 500
+    },
+    "status": "point",
+    "pixel": [
+      189.73973973973975,
+      111.61161161161161
+    ],
+    "pixel_rgb": [
+      135,
+      135,
+      141
+    ],
+    "waypoint": {
+      "x": 1.8598834752711555,
+      "y": 0.4278412816944684,
+      "z": 2.7909948902640243,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "target",
+      "visual_evidence": "a tall, grey, rectangular structure",
+      "pixel_u": "189.74",
+      "pixel_v": "111.612",
+      "model_u": "850",
+      "model_v": "500",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "0.152092696",
+      "source_position_y": "0.152092696",
+      "source_position_z": "3.000000000",
+      "source_yaw_rad": "0.771895610",
+      "sampled_depth_m": "4.927333",
+      "gated_range_m": "2.431450",
+      "executable_range_m": "1.431450",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "4539cce057dac5b8",
+      "depth_digest": "914e14746411f638"
+    },
+    "straight_segment_sampled_clearance_m": 4.198179451525957,
+    "straight_segment_clearance_lower_bound_m": 4.173286743946556,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": true,
+    "roundtrip_pixel_error": 1.4210854715202004e-14
+  },
+  {
+    "case": "hidden_openings",
+    "variant": "passage_check",
+    "answer": {
+      "evidence": "A dark, rectangular structure on the right side of the image",
+      "kind": "exploration",
+      "u": 900,
+      "v": 500
+    },
+    "status": "point",
+    "pixel": [
+      200.9009009009009,
+      111.61161161161161
+    ],
+    "pixel_rgb": [
+      135,
+      135,
+      141
+    ],
+    "waypoint": {
+      "x": 1.3792699409702192,
+      "y": 0.2699210073809753,
+      "z": 2.858082171846205,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "exploration",
+      "visual_evidence": "A dark, rectangular structure on the right side of the image",
+      "pixel_u": "200.901",
+      "pixel_v": "111.612",
+      "model_u": "900",
+      "model_v": "500",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "0.152092696",
+      "source_position_y": "0.152092696",
+      "source_position_z": "3.000000000",
+      "source_yaw_rad": "0.771895610",
+      "sampled_depth_m": "4.676876",
+      "gated_range_m": "1.971978",
+      "executable_range_m": "0.971978",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "4539cce057dac5b8",
+      "depth_digest": "914e14746411f638"
+    },
+    "straight_segment_sampled_clearance_m": 4.6787929858268935,
+    "straight_segment_clearance_lower_bound_m": 4.653973733852366,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": true,
+    "roundtrip_pixel_error": 3.1776437161565096e-14
+  },
+  {
+    "case": "close_wall",
+    "variant": "baseline",
+    "answer": {
+      "evidence": "a gray rectangular room",
+      "kind": "exploration",
+      "u": 500,
+      "v": 500
+    },
+    "status": "point",
+    "pixel": [
+      111.61161161161161,
+      111.61161161161161
+    ],
+    "pixel_rgb": [
+      132,
+      132,
+      137
+    ],
+    "waypoint": {
+      "x": 8.065641658450717,
+      "y": 11.401472615386485,
+      "z": 2.0190444502121774,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "exploration",
+      "visual_evidence": "a gray rectangular room",
+      "pixel_u": "111.612",
+      "pixel_v": "111.612",
+      "model_u": "500",
+      "model_v": "500",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "7.861723449",
+      "source_position_y": "9.913786153",
+      "source_position_z": "2.240663964",
+      "source_yaw_rad": "1.431069249",
+      "sampled_depth_m": "2.517903",
+      "gated_range_m": "2.517845",
+      "executable_range_m": "1.517845",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "42ff8f80b648a786",
+      "depth_digest": "721a084e354832c8"
+    },
+    "straight_segment_sampled_clearance_m": 0.9776793646237902,
+    "straight_segment_clearance_lower_bound_m": 0.9531976992458171,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": false,
+    "roundtrip_pixel_error": 2.842170943040401e-14
+  },
+  {
+    "case": "close_wall",
+    "variant": "passage_check",
+    "answer": {
+      "evidence": "A gray rectangular structure in the center of the image.",
+      "kind": "exploration",
+      "u": 500,
+      "v": 500
+    },
+    "status": "point",
+    "pixel": [
+      111.61161161161161,
+      111.61161161161161
+    ],
+    "pixel_rgb": [
+      132,
+      132,
+      137
+    ],
+    "waypoint": {
+      "x": 8.065641658450717,
+      "y": 11.401472615386485,
+      "z": 2.0190444502121774,
+      "frame": "enu"
+    },
+    "lift_provenance": {
+      "model_id": "gemma4:e2b",
+      "note": "OnFly image target lifted with synchronized depth and bearing gate",
+      "waypoint_kind": "exploration",
+      "visual_evidence": "A gray rectangular structure in the center of the image.",
+      "pixel_u": "111.612",
+      "pixel_v": "111.612",
+      "model_u": "500",
+      "model_v": "500",
+      "coordinate_contract": "qwen_relative_1000",
+      "camera_pitch_rad": "-0.150000000",
+      "source_position_x": "7.861723449",
+      "source_position_y": "9.913786153",
+      "source_position_z": "2.240663964",
+      "source_yaw_rad": "1.431069249",
+      "sampled_depth_m": "2.517903",
+      "gated_range_m": "2.517845",
+      "executable_range_m": "1.517845",
+      "altitude_constraint": "camera_ray",
+      "step_source": "depth",
+      "model_step_level": "0",
+      "history_pixel": "None",
+      "history_model_point": "None",
+      "rgb_digest": "42ff8f80b648a786",
+      "depth_digest": "721a084e354832c8"
+    },
+    "straight_segment_sampled_clearance_m": 0.9776793646237902,
+    "straight_segment_clearance_lower_bound_m": 0.9531976992458171,
+    "meets_0_6m_straight_clearance": true,
+    "meets_1_2m_straight_clearance": false,
+    "roundtrip_pixel_error": 2.842170943040401e-14
+  }
+]

@@ -2432,7 +2432,7 @@ Next saved-frame exploration/selected-passage contract, not another full blind r
 
 ## D-112 - Paired saved-frame passage choice and abstention probe (2026-09-14)
 
-Status: preregistered; six local Gemma calls, no full flight. User approved three
+Status: complete; no spatial improvement, no promotion or flight. User approved three
 saved-frame checks and one focused change. Freeze exact RGB-D at visible red tower
 D-98 obs520,hidden target/openings D-111 obs40,and close wall D-111 obs520. Inputs
 byte/pixel-match original recordings and saved-control replay. Expectations recorded
@@ -2447,3 +2447,16 @@ straight-segment clearance. This is not a SUPER feasibility test or proof of no 
 Only consider a flight after improvement; three selected frames cannot establish
 reliability. Preserve all replies/expectations and show paired pixels/waypoints.
 Evidence: reports/passage_choice_20260914/FREEZE.json. No new inference yet.
+
+
+D-112 outcome: all six chosen points land on gray obstacle faces. Visible target
+pair describes red but returns(499,499), image(111.388,111.388), outside red body
+x77..84/y72..97. Candidate changes hidden-target label to exploration but still
+selects right wall; close-wall reply does not hold. Existing policy pixel/waypoint
+round-trip<=3.18e-14 px. This isolates a selection/grounding failure on these inputs,
+not conversion drift or proof of general model incapacity. Six local calls,zero
+retries/cloud/flights;1,040 saved poses and3 RGB sources match; six-panel browser
+QA/overlay/prompt expansion pass. Probe-only hold not installed. See
+reports/passage_choice_20260914/REPORT.md and VERIFICATION.json. Next offline pointing
+representation check (box or labeled region versus direct coordinate), not SUPER
+margin tuning or a full flight. No further inference scheduled.

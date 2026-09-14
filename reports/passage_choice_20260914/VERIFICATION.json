@@ -1,0 +1,18 @@
+{
+  "completed_model_calls": 6,
+  "cloud_calls": 0,
+  "new_flights": 0,
+  "exact_source_pairs": 3,
+  "options_identical": true,
+  "all_six_points_land_on_visually_inspected_gray_faces": true,
+  "maximum_lift_roundtrip_pixel_error": 3.1776437161565096e-14,
+  "visible_red_diagnostic_bbox": [
+    77,
+    72,
+    84,
+    97
+  ],
+  "candidate_hold_count": 0,
+  "candidate_promoted": false,
+  "scope": "Selected-frame diagnostic, not general benchmark; visibility inferred from response, no separate target_visible field"
+}

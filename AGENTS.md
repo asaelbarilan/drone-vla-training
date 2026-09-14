@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: saved-frame pointing failure isolated - D-112 (2026-09-14)
+
+Six paired local Gemma calls complete on3 frozen sources. Both prompts name visible
+red tower but return(499,499) on gray neighbor. Hidden target: candidate corrects
+label but points at wall; close wall: no hold. All6 selected points on gray faces.
+Actual policy lift/reprojection preserves pixel<=3.18e-14 px.3 RGB sources and1,040
+saved prefix poses match. No runtime changes,promotion,cloud or new flight.
+Read reports/passage_choice_20260914/REPORT.md; localhost8766/passage_choice.html.
+Candidate hold exists only in diagnostic schema; do not treat as implemented flight
+behavior. Next offline pointing representation (box/labeled region), not SUPER
+clearance changes. Three selected cases do not establish general incapacity.
+
 ## Latest: return-to-clutter diagnostic failed; transport verified - D-111
 
 Two new seed1061 flights complete: corrected integration timeout final37.906 m;

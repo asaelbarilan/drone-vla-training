@@ -429,3 +429,12 @@ Use exact first/source frames and accepted points from AUDIT.json to distinguish
 open passage selection from obstacle surfaces, then test a positive visible-target
 frame too. No proof SUPER cannot execute a good subgoal. RGB client transport verified;
 server-internal preprocessing remains unexamined if image concern is pursued.
+
+
+## D-112: isolate image-location representation before navigation
+
+Three paired saved-frame cases show no spatial improvement: named red tower receives
+coordinate on gray neighbor,open-space requests point at walls,hold unused. Test
+localization with box/labeled image-region choice against direct normalized points,
+including absent-target control. No flight until demonstrated spatial improvement;
+probe-only hold must not be treated as a supported runtime action. See D-112 report.

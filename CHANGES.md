@@ -2571,3 +2571,12 @@ Three exact saved RGB-D frames and expectations frozen: visible red through gap,
 hidden target with openings,close wall. Paired baseline/explicit passage-check with
 hold option; no flight runtime edits. Saved replay/image identity checks pass.
 Six local calls planned, zero cloud; probe-only hold has no executable flight adapter.
+
+
+D-112 completed:6 local saved-frame calls,all six points on gray faces. Visible
+red correctly named but pixel(499,499) selects neighboring gray block. Candidate
+changes one label but no useful point,never holds. Conversion preserves selected
+ray<=3.18e-14 px. No runtime promotion/new flight. Three source RGBs/1,040 replay
+poses verified; six-panel report/browser overlay+prompt checks pass. Results and
+raw replies preserved; dashboard localhost8766/passage_choice.html. Next isolate
+coordinate grounding with another output representation, not control tuning.
