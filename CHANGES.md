@@ -2563,3 +2563,11 @@ exact,15 seeks/3 playbacks. Raw328/465 speed violations only roundoff<=2.22e-16 
 User RGB/BGR concern checked with actual client request construction offline:RGB PNG,
 224x224,Base64,exact bytes preserved,known red remains(205,46,46). Images shown.
 See clutter_stable_20260914 report and localhost8766/clutter_stable.html.
+
+
+## 2026-09-14 - D-112 six-call saved-image probe prepared
+
+Three exact saved RGB-D frames and expectations frozen: visible red through gap,
+hidden target with openings,close wall. Paired baseline/explicit passage-check with
+hold option; no flight runtime edits. Saved replay/image identity checks pass.
+Six local calls planned, zero cloud; probe-only hold has no executable flight adapter.

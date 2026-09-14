@@ -2428,3 +2428,22 @@ hypothesis checked offline through real request construction:224x224 RGB PNG as
 Base64,exact bytes preserved,red pixel(205,46,46). Server preprocessing not examined.
 Evidence: reports/clutter_stable_20260914/REPORT.md,AUDIT.json,IMAGE_TRANSPORT.json.
 Next saved-frame exploration/selected-passage contract, not another full blind run.
+
+
+## D-112 - Paired saved-frame passage choice and abstention probe (2026-09-14)
+
+Status: preregistered; six local Gemma calls, no full flight. User approved three
+saved-frame checks and one focused change. Freeze exact RGB-D at visible red tower
+D-98 obs520,hidden target/openings D-111 obs40,and close wall D-111 obs520. Inputs
+byte/pixel-match original recordings and saved-control replay. Expectations recorded
+before calls; geometry/labels never sent to model. Baseline is D-111 grounded_v1,
+without unpromoted attribute flag. Candidate adds a passage-check instruction and
+hold response option to remove mandatory waypoint commitment. It is a joint prompt/
+action-contract probe, not a prompt-only ablation or implemented flight behavior.
+Same model/digest/options/RGB per pair, six calls total with no automatic retries.
+Positive target binding, visible free-space choice and abstention evaluated separately.
+Use actual unchanged policy lifting for target/exploration replies, then offline
+straight-segment clearance. This is not a SUPER feasibility test or proof of no route.
+Only consider a flight after improvement; three selected frames cannot establish
+reliability. Preserve all replies/expectations and show paired pixels/waypoints.
+Evidence: reports/passage_choice_20260914/FREEZE.json. No new inference yet.

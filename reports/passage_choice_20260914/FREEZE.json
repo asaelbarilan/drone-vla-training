@@ -1,0 +1,869 @@
+{
+  "cases": [
+    {
+      "id": "visible_target",
+      "run": "c5_depth_ray_v2_20260912_s1061",
+      "call": "call-000040",
+      "expectation": "Red tower visible near (80,85). A target point must land on red body. Visibility alone does not prove the narrow gap traversable.",
+      "source_seq": 520,
+      "source_t": 25.95,
+      "source_sha256": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb",
+      "observation": {
+        "seq": 520,
+        "t_sim_ns": 25950000000,
+        "t_wall_ns": 25950000000,
+        "position": {
+          "x": 11.81437741621969,
+          "y": 6.494723829532274,
+          "z": 3.349948946378772,
+          "frame": "enu"
+        },
+        "velocity": {
+          "x": 0.49245069286941695,
+          "y": 0.34127198228084393,
+          "z": 2.076210952317318e-10,
+          "frame": "enu"
+        },
+        "yaw_rad": 0.5985987568522299,
+        "frame": "enu",
+        "rgb": {
+          "kind": "rgb",
+          "uri": "frame://3/rgb/520",
+          "digest": "b56be031770b077a",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "rgb_down": {
+          "kind": "rgb_down",
+          "uri": "stub://grid3d/rgb_down/520",
+          "digest": "c5a37ab9386e5331",
+          "shape": null
+        },
+        "depth": {
+          "kind": "depth",
+          "uri": "frame://3/depth/520",
+          "digest": "288bf8b5d55658be",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "intrinsics": {
+          "width": 224,
+          "height": 224,
+          "fx": 112.00000000000001,
+          "fy": 112.00000000000001,
+          "cx": 112.0,
+          "cy": 112.0
+        },
+        "imu": null,
+        "semantic_hits": [
+          {
+            "label": "target",
+            "score": 0.6496427876650062,
+            "position": {
+              "x": 26.207541376855872,
+              "y": 23.600690599767617,
+              "z": 4.141566528878495,
+              "frame": "enu"
+            },
+            "distance_m": 22.072504377104615,
+            "bearing_rad": 0.26322827206052346
+          }
+        ],
+        "free_range_m": 9.0,
+        "range_rays": [
+          25.0,
+          7.0,
+          6.0,
+          5.5,
+          25.0,
+          6.5,
+          4.0,
+          4.5,
+          6.5,
+          25.0,
+          25.0,
+          19.0,
+          9.0,
+          25.0,
+          11.0,
+          3.5,
+          3.5,
+          3.5,
+          7.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "ray_bearings_rad": [
+          -3.141592653589793,
+          -2.8797932657906435,
+          -2.6179938779914944,
+          -2.356194490192345,
+          -2.0943951023931957,
+          -1.8325957145940461,
+          -1.5707963267948966,
+          -1.3089969389957472,
+          -1.0471975511965979,
+          -0.7853981633974483,
+          -0.5235987755982991,
+          -0.2617993877991496,
+          0.0,
+          0.26179938779914913,
+          0.5235987755982987,
+          0.7853981633974478,
+          1.0471975511965974,
+          1.3089969389957465,
+          1.5707963267948966,
+          1.8325957145940457,
+          2.094395102393195,
+          2.356194490192345,
+          2.617993877991494,
+          2.879793265790643
+        ],
+        "vertical_clearance_m": 3.349948946378772,
+        "battery_frac": 0.95675,
+        "coarse_goal_direction": null,
+        "privileged": null
+      },
+      "obstacles": [
+        {
+          "center": [
+            16.026880311562344,
+            1.6203537784915056,
+            3.625553743186842
+          ],
+          "half": [
+            1.812776871593421,
+            1.812776871593421,
+            3.625553743186842
+          ]
+        },
+        {
+          "center": [
+            7.075955160358454,
+            15.942103657146518,
+            2.176382611755211
+          ],
+          "half": [
+            1.0881913058776056,
+            1.0881913058776056,
+            2.176382611755211
+          ]
+        },
+        {
+          "center": [
+            16.39842633161446,
+            19.026236588265856,
+            4.630103517226543
+          ],
+          "half": [
+            2.3150517586132713,
+            2.3150517586132713,
+            4.630103517226543
+          ]
+        },
+        {
+          "center": [
+            31.468060149488515,
+            11.041707700998643,
+            3.3512143351078914
+          ],
+          "half": [
+            1.6756071675539457,
+            1.6756071675539457,
+            3.3512143351078914
+          ]
+        },
+        {
+          "center": [
+            8.1081083211342,
+            14.181977451318092,
+            3.605650942615634
+          ],
+          "half": [
+            1.802825471307817,
+            1.802825471307817,
+            3.605650942615634
+          ]
+        },
+        {
+          "center": [
+            11.456899617771716,
+            11.450361993911333,
+            3.003717305952474
+          ],
+          "half": [
+            1.501858652976237,
+            1.501858652976237,
+            3.003717305952474
+          ]
+        },
+        {
+          "center": [
+            8.550938163453655,
+            -1.3912859726251159,
+            4.985750473313084
+          ],
+          "half": [
+            2.492875236656542,
+            2.492875236656542,
+            4.985750473313084
+          ]
+        },
+        {
+          "center": [
+            20.944656451448317,
+            12.765636915016001,
+            3.08961250204636
+          ],
+          "half": [
+            1.54480625102318,
+            1.54480625102318,
+            3.08961250204636
+          ]
+        },
+        {
+          "center": [
+            9.67423707616781,
+            -0.8783905498313054,
+            2.552453140727279
+          ],
+          "half": [
+            1.2762265703636395,
+            1.2762265703636395,
+            2.552453140727279
+          ]
+        },
+        {
+          "center": [
+            5.67857287752599,
+            17.06074600036012,
+            4.215688094104032
+          ],
+          "half": [
+            2.107844047052016,
+            2.107844047052016,
+            4.215688094104032
+          ]
+        }
+      ],
+      "pose_prefix_checked": 520,
+      "depth_renderer": "box_ray_v2"
+    },
+    {
+      "id": "hidden_openings",
+      "run": "c5_clutter_stable_20260914_s1061",
+      "call": "call-000004",
+      "expectation": "No red tower visible. Exploration should select free space between/right of structures, not a gray face. Physical feasibility checked separately.",
+      "source_seq": 40,
+      "source_t": 1.95,
+      "source_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+      "observation": {
+        "seq": 40,
+        "t_sim_ns": 1950000000,
+        "t_wall_ns": 1950000000,
+        "position": {
+          "x": 0.15209269601699688,
+          "y": 0.15209269601699688,
+          "z": 3.0,
+          "frame": "enu"
+        },
+        "velocity": {
+          "x": 0.264166493957195,
+          "y": 0.264166493957195,
+          "z": 0.0,
+          "frame": "enu"
+        },
+        "yaw_rad": 0.7718956101108643,
+        "frame": "enu",
+        "rgb": {
+          "kind": "rgb",
+          "uri": "frame://1/rgb/40",
+          "digest": "4539cce057dac5b8",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "rgb_down": {
+          "kind": "rgb_down",
+          "uri": "stub://grid3d/rgb_down/40",
+          "digest": "f7acff0550a9645a",
+          "shape": null
+        },
+        "depth": {
+          "kind": "depth",
+          "uri": "frame://1/depth/40",
+          "digest": "914e14746411f638",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "intrinsics": {
+          "width": 224,
+          "height": 224,
+          "fx": 112.00000000000001,
+          "fy": 112.00000000000001,
+          "cx": 112.0,
+          "cy": 112.0
+        },
+        "imu": null,
+        "semantic_hits": [],
+        "free_range_m": 14.0,
+        "range_rays": [
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          6.5,
+          6.0,
+          6.0,
+          14.5,
+          22.0,
+          14.0,
+          14.0,
+          15.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "ray_bearings_rad": [
+          -3.141592653589793,
+          -2.8797932657906435,
+          -2.6179938779914944,
+          -2.356194490192345,
+          -2.0943951023931957,
+          -1.8325957145940461,
+          -1.5707963267948966,
+          -1.3089969389957472,
+          -1.0471975511965979,
+          -0.7853981633974483,
+          -0.5235987755982991,
+          -0.2617993877991496,
+          0.0,
+          0.26179938779914913,
+          0.5235987755982987,
+          0.7853981633974478,
+          1.0471975511965974,
+          1.3089969389957465,
+          1.5707963267948966,
+          1.8325957145940457,
+          2.094395102393195,
+          2.356194490192345,
+          2.617993877991494,
+          2.879793265790643
+        ],
+        "vertical_clearance_m": 3.0,
+        "battery_frac": 0.99675,
+        "coarse_goal_direction": null,
+        "privileged": null
+      },
+      "obstacles": [
+        {
+          "center": [
+            16.026880311562344,
+            1.6203537784915056,
+            3.625553743186842
+          ],
+          "half": [
+            1.812776871593421,
+            1.812776871593421,
+            3.625553743186842
+          ]
+        },
+        {
+          "center": [
+            7.075955160358454,
+            15.942103657146518,
+            2.176382611755211
+          ],
+          "half": [
+            1.0881913058776056,
+            1.0881913058776056,
+            2.176382611755211
+          ]
+        },
+        {
+          "center": [
+            16.39842633161446,
+            19.026236588265856,
+            4.630103517226543
+          ],
+          "half": [
+            2.3150517586132713,
+            2.3150517586132713,
+            4.630103517226543
+          ]
+        },
+        {
+          "center": [
+            31.468060149488515,
+            11.041707700998643,
+            3.3512143351078914
+          ],
+          "half": [
+            1.6756071675539457,
+            1.6756071675539457,
+            3.3512143351078914
+          ]
+        },
+        {
+          "center": [
+            8.1081083211342,
+            14.181977451318092,
+            3.605650942615634
+          ],
+          "half": [
+            1.802825471307817,
+            1.802825471307817,
+            3.605650942615634
+          ]
+        },
+        {
+          "center": [
+            11.456899617771716,
+            11.450361993911333,
+            3.003717305952474
+          ],
+          "half": [
+            1.501858652976237,
+            1.501858652976237,
+            3.003717305952474
+          ]
+        },
+        {
+          "center": [
+            8.550938163453655,
+            -1.3912859726251159,
+            4.985750473313084
+          ],
+          "half": [
+            2.492875236656542,
+            2.492875236656542,
+            4.985750473313084
+          ]
+        },
+        {
+          "center": [
+            20.944656451448317,
+            12.765636915016001,
+            3.08961250204636
+          ],
+          "half": [
+            1.54480625102318,
+            1.54480625102318,
+            3.08961250204636
+          ]
+        },
+        {
+          "center": [
+            9.67423707616781,
+            -0.8783905498313054,
+            2.552453140727279
+          ],
+          "half": [
+            1.2762265703636395,
+            1.2762265703636395,
+            2.552453140727279
+          ]
+        },
+        {
+          "center": [
+            5.67857287752599,
+            17.06074600036012,
+            4.215688094104032
+          ],
+          "half": [
+            2.107844047052016,
+            2.107844047052016,
+            4.215688094104032
+          ]
+        }
+      ],
+      "pose_prefix_checked": 40,
+      "depth_renderer": "box_ray_v2"
+    },
+    {
+      "id": "close_wall",
+      "run": "c5_clutter_stable_20260914_s1061",
+      "call": "call-000040",
+      "expectation": "No red tower; close gray walls cover almost all view. Do not claim a confident forward passage from the thin left sliver. Abstention is acceptable; no assertion no route exists outside view.",
+      "source_seq": 520,
+      "source_t": 25.95,
+      "source_sha256": "cfe5051309fc207c4682e08c2c4e03ac011aefe50ee066724e1a451acf94afb0",
+      "observation": {
+        "seq": 520,
+        "t_sim_ns": 25950000000,
+        "t_wall_ns": 25950000000,
+        "position": {
+          "x": 7.861723448529702,
+          "y": 9.913786152799243,
+          "z": 2.2406639638465404,
+          "frame": "enu"
+        },
+        "velocity": {
+          "x": 0.03355349767391967,
+          "y": 0.5404454240318356,
+          "z": -0.08380166768863843,
+          "frame": "enu"
+        },
+        "yaw_rad": 1.4310692493333865,
+        "frame": "enu",
+        "rgb": {
+          "kind": "rgb",
+          "uri": "frame://1/rgb/520",
+          "digest": "42ff8f80b648a786",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "rgb_down": {
+          "kind": "rgb_down",
+          "uri": "stub://grid3d/rgb_down/520",
+          "digest": "2bf3718d8c3318b1",
+          "shape": null
+        },
+        "depth": {
+          "kind": "depth",
+          "uri": "frame://1/depth/520",
+          "digest": "721a084e354832c8",
+          "shape": [
+            224,
+            224
+          ]
+        },
+        "intrinsics": {
+          "width": 224,
+          "height": 224,
+          "fx": 112.00000000000001,
+          "fy": 112.00000000000001,
+          "cx": 112.0,
+          "cy": 112.0
+        },
+        "imu": null,
+        "semantic_hits": [],
+        "free_range_m": 2.5,
+        "range_rays": [
+          8.5,
+          8.5,
+          9.5,
+          10.0,
+          10.0,
+          25.0,
+          2.0,
+          2.0,
+          2.0,
+          2.5,
+          3.0,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          3.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0,
+          25.0
+        ],
+        "ray_bearings_rad": [
+          -3.141592653589793,
+          -2.8797932657906435,
+          -2.6179938779914944,
+          -2.356194490192345,
+          -2.0943951023931957,
+          -1.8325957145940461,
+          -1.5707963267948966,
+          -1.3089969389957472,
+          -1.0471975511965979,
+          -0.7853981633974483,
+          -0.5235987755982991,
+          -0.2617993877991496,
+          0.0,
+          0.26179938779914913,
+          0.5235987755982987,
+          0.7853981633974478,
+          1.0471975511965974,
+          1.3089969389957465,
+          1.5707963267948966,
+          1.8325957145940457,
+          2.094395102393195,
+          2.356194490192345,
+          2.617993877991494,
+          2.879793265790643
+        ],
+        "vertical_clearance_m": 2.2406639638465404,
+        "battery_frac": 0.95675,
+        "coarse_goal_direction": null,
+        "privileged": null
+      },
+      "obstacles": [
+        {
+          "center": [
+            16.026880311562344,
+            1.6203537784915056,
+            3.625553743186842
+          ],
+          "half": [
+            1.812776871593421,
+            1.812776871593421,
+            3.625553743186842
+          ]
+        },
+        {
+          "center": [
+            7.075955160358454,
+            15.942103657146518,
+            2.176382611755211
+          ],
+          "half": [
+            1.0881913058776056,
+            1.0881913058776056,
+            2.176382611755211
+          ]
+        },
+        {
+          "center": [
+            16.39842633161446,
+            19.026236588265856,
+            4.630103517226543
+          ],
+          "half": [
+            2.3150517586132713,
+            2.3150517586132713,
+            4.630103517226543
+          ]
+        },
+        {
+          "center": [
+            31.468060149488515,
+            11.041707700998643,
+            3.3512143351078914
+          ],
+          "half": [
+            1.6756071675539457,
+            1.6756071675539457,
+            3.3512143351078914
+          ]
+        },
+        {
+          "center": [
+            8.1081083211342,
+            14.181977451318092,
+            3.605650942615634
+          ],
+          "half": [
+            1.802825471307817,
+            1.802825471307817,
+            3.605650942615634
+          ]
+        },
+        {
+          "center": [
+            11.456899617771716,
+            11.450361993911333,
+            3.003717305952474
+          ],
+          "half": [
+            1.501858652976237,
+            1.501858652976237,
+            3.003717305952474
+          ]
+        },
+        {
+          "center": [
+            8.550938163453655,
+            -1.3912859726251159,
+            4.985750473313084
+          ],
+          "half": [
+            2.492875236656542,
+            2.492875236656542,
+            4.985750473313084
+          ]
+        },
+        {
+          "center": [
+            20.944656451448317,
+            12.765636915016001,
+            3.08961250204636
+          ],
+          "half": [
+            1.54480625102318,
+            1.54480625102318,
+            3.08961250204636
+          ]
+        },
+        {
+          "center": [
+            9.67423707616781,
+            -0.8783905498313054,
+            2.552453140727279
+          ],
+          "half": [
+            1.2762265703636395,
+            1.2762265703636395,
+            2.552453140727279
+          ]
+        },
+        {
+          "center": [
+            5.67857287752599,
+            17.06074600036012,
+            4.215688094104032
+          ],
+          "half": [
+            2.107844047052016,
+            2.107844047052016,
+            4.215688094104032
+          ]
+        }
+      ],
+      "pose_prefix_checked": 520,
+      "depth_renderer": "box_ray_v2"
+    }
+  ],
+  "variants": {
+    "baseline": {
+      "prompt": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "target",
+              "exploration"
+            ]
+          },
+          "u": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "v": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          }
+        },
+        "required": [
+          "evidence",
+          "kind",
+          "u",
+          "v"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "passage_check": {
+      "prompt": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v. Passage check overrides the requirement to always return a movement point: when the requested target is absent, inspect the space between obstacle silhouettes before choosing exploration. Choose a broad visible opening near flight height, not the center of an obstacle or empty sky above it. In evidence describe the selected opening and its bordering obstacles. If no clearly usable opening is visible, return kind=hold, u=500, v=500; these are ignored placeholders, not a movement target. A thin uncertain sliver is not enough evidence to commit. Do not invent a route outside this image.",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "evidence": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "target",
+              "exploration",
+              "hold"
+            ]
+          },
+          "u": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "v": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          }
+        },
+        "required": [
+          "evidence",
+          "kind",
+          "u",
+          "v"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "inference": {
+    "charge_mode": "fixed",
+    "endpoint": "chat",
+    "expected_digest": "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+    "fixed_latency_s": {
+      "monitor": 1.2,
+      "policy": 1.0
+    },
+    "host": "http://localhost:11434",
+    "jitter_frac": 0.0,
+    "keep_alive": "30m",
+    "latency_s": {
+      "monitor": 1.6,
+      "perception": 0.02,
+      "policy": 0.35,
+      "reasoner": 2.4
+    },
+    "model_id": "gemma4:e2b",
+    "num_ctx": 8192,
+    "num_predict": 192,
+    "response_channel": "content",
+    "sampling_seed": 0,
+    "temperature": 0.0,
+    "think": false,
+    "timeout_s": 180.0,
+    "tokens_per_call": {
+      "monitor": 320,
+      "policy": 160,
+      "reasoner": 800
+    }
+  },
+  "policy": {
+    "camera_pitch_rad": -0.15,
+    "coordinate_contract": "qwen_relative_1000",
+    "goal_standoff_m": 1.0,
+    "grounded_waypoints": true,
+    "hold_initial_altitude": false,
+    "hop_m": 12.0,
+    "max_depth_m": 7.0,
+    "model_id": "gemma4:e2b",
+    "self_terminate": false,
+    "sigma_theta": 0.65,
+    "stop_confidence": 0.35,
+    "stop_radius_m": 2.0,
+    "use_memory": false
+  },
+  "calls_budget": 6,
+  "scope": "Saved-source paired diagnostic; hold is probe-only and not installed in flight runtime. No truth or annotations sent to model."
+}
