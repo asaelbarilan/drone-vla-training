@@ -2616,3 +2616,11 @@ Dashboard/report show exactinput overlays and rawanswers;42 request identities,
 36 CPU residencies and48 UIpanels verified. No flight/runtime promotion. Recommend
 Qwen3-VL4B for new independent imagegate;one positive scene is not generalization.
 CPU-only server stopped afterunload;Valley/sharedserver not changed. No cloudcost.
+
+
+## 2026-09-14 - User-requested local model cleanup
+Removed exactly five Ollama models: qwen3-vl:8b, qwen3-vl:2b, qwen3.5:4b, qwen3.5:2b, moondream:latest.
+Verified all five absent from the local inventory afterward. Qwen3-VL4B, Gemma
+and other unlisted models remain. D-114 raw evidence, dashboard and historical
+configs remain available; removed models require reinstalling before fresh inference.
+No inference calls, flight changes or historical result changes.

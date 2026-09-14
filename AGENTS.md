@@ -16,6 +16,14 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Local model inventory change (2026-09-14)
+
+User requested deletion of qwen3-vl:8b, qwen3-vl:2b, qwen3.5:4b,
+qwen3.5:2b and moondream:latest. All five removed and absence verified.
+Qwen3-VL4B and Gemma retained; other unlisted models untouched. D-114
+results/configurations are historical evidence, not proof those weights are
+still installed. Do not automatically reinstall removed models for routine work.
+
 ## Latest: seven local VLM comparison complete - D-114 (2026-09-14)
 
 42 attempts:36 replies plus6 SmolVLM2 package HTTP400 multimodal-unsupported errors.
