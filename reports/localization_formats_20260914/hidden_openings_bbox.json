@@ -1,0 +1,57 @@
+{
+  "case": "hidden_openings",
+  "variant": "bbox",
+  "input_sha256": "23641d7a12b3b036a254d1d4ddff75ca3855a9a982298c74a5ce5dbaf9ccf93a",
+  "prompt": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "visible": {
+        "type": "boolean"
+      },
+      "box": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "required": [
+      "evidence",
+      "visible",
+      "box"
+    ],
+    "additionalProperties": false
+  },
+  "options": {
+    "temperature": 0.0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 192
+  },
+  "reply": {
+    "model": "gemma4:e2b",
+    "created_at": "2026-09-14T14:21:44.820163Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"evidence\": \"No red tower was found in the image. The image primarily shows a landscape with gray and green structures.\",\n  \"visible\": false,\n  \"box\": [\n    0,\n    0,\n    0,\n    0\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 939820900,
+    "load_duration": 4423200,
+    "prompt_eval_count": 195,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 284097000,
+    "eval_count": 62,
+    "eval_duration": 618448000
+  }
+}

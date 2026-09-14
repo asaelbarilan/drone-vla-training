@@ -2464,7 +2464,7 @@ margin tuning or a full flight. No further inference scheduled.
 
 ## D-113 - Saved-image grid versus bounding-box localization (2026-09-14)
 
-Status: preregistered; six local calls, no flight. User approved comparing labeled
+Status: complete; mixed failures, no promotion or flight. User approved comparing labeled
 grid selection and bounding boxes on D-112's three exact sources. Grid uses neutral
 4x4 labels A1..D4 over224x224 RGB,with absent option. Bbox uses original unmodified
 RGB with visible flag and tight [left,top,right,bottom] on0..999; absent box zeros.
@@ -2478,3 +2478,14 @@ format-only improvement over D-112. One positive/two negative selected frames ar
 not reliability evidence. Preserve exact modified inputs and all raw outputs.
 Evidence: reports/localization_formats_20260914/FREEZE.json. Grid inspected: labels
 and boundaries do not cover red target. No new inference yet.
+
+
+D-113 outcome: grid selects correct B2 in visible frame but hallucinates C3/B1 on
+both absences. Bbox rejects both absences, but visible box[364,333,633,384] has
+IoU0.05024 and center outside red body. Case counts1/3 grid,2/3 box reflect different
+precision requirements and must not be treated as ranking/reliability. All6 valid
+responses/hashed inputs retained; grid leaves red pixels unchanged. Scripts lint,
+six-panel browser overlay/prompt QA pass; positive pair inspected. Six local calls,
+zero retries/cloud/flights/runtime changes. No format promoted or post-hoc combined
+success claimed. See reports/localization_formats_20260914/REPORT.md. Need independent
+positive/negative validation before format selection; no further call scheduled.

@@ -1,0 +1,65 @@
+{
+  "case": "visible_target",
+  "variant": "grid",
+  "input_sha256": "f83ec15df5810fc499b9e6c12f54279aba66dd827e210f1742acbf8bb9a3abcd",
+  "prompt": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "cell": {
+        "type": "string",
+        "enum": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "A2",
+          "B2",
+          "C2",
+          "D2",
+          "A3",
+          "B3",
+          "C3",
+          "D3",
+          "A4",
+          "B4",
+          "C4",
+          "D4",
+          "absent"
+        ]
+      }
+    },
+    "required": [
+      "evidence",
+      "cell"
+    ],
+    "additionalProperties": false
+  },
+  "options": {
+    "temperature": 0.0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 192
+  },
+  "reply": {
+    "model": "gemma4:e2b",
+    "created_at": "2026-09-14T14:21:36.2752497Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"A small red structure is visible in cell B2.\", \"cell\": \"B2\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 541191300,
+    "load_duration": 12775900,
+    "prompt_eval_count": 177,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 308264000,
+    "eval_count": 23,
+    "eval_duration": 199254000
+  }
+}

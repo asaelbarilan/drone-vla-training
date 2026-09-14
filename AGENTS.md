@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: grid/box localization probe complete - D-113 (2026-09-14)
+
+Six local calls: grid correct B2 on visible target, false C3/B1 on absent images;
+box correctly rejects absences, but visible box IoU0.05024 and center on gray neighbor.
+Neither ready/promoted. No runtime changes,cloud,retries or flights. Exact original
+and grid inputs,raw responses and frozen criteria retained. Read
+reports/localization_formats_20260914/REPORT.md; localhost8766/localization_formats.html.
+Do not combine results post hoc and claim success. One positive/two negatives do not
+establish reliability. Presence and localization need independent-case validation;
+no further call or flight is scheduled. Prior D-112 next-step probe is now complete.
+
 ## Latest: saved-frame pointing failure isolated - D-112 (2026-09-14)
 
 Six paired local Gemma calls complete on3 frozen sources. Both prompts name visible

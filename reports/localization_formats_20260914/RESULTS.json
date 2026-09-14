@@ -1,0 +1,88 @@
+[
+  {
+    "case": "visible_target",
+    "variant": "grid",
+    "passed": true,
+    "answer": {
+      "evidence": "A small red structure is visible in cell B2.",
+      "cell": "B2"
+    },
+    "valid": true
+  },
+  {
+    "case": "visible_target",
+    "variant": "bbox",
+    "passed": false,
+    "answer": {
+      "evidence": "A small, red, rectangular structure is visible between two gray buildings.",
+      "visible": true,
+      "box": [
+        364,
+        333,
+        633,
+        384
+      ]
+    },
+    "valid": true,
+    "box_pixels": [
+      81.25325325325325,
+      74.33333333333333,
+      141.3003003003003,
+      85.71771771771772
+    ],
+    "iou": 0.05024405863497558,
+    "center_in_target": false
+  },
+  {
+    "case": "hidden_openings",
+    "variant": "grid",
+    "passed": false,
+    "answer": {
+      "evidence": "The image displays a landscape with various structures. There is a structure in the center-right area that is red.",
+      "cell": "C3"
+    },
+    "valid": true
+  },
+  {
+    "case": "hidden_openings",
+    "variant": "bbox",
+    "passed": true,
+    "answer": {
+      "evidence": "No red tower was found in the image. The image primarily shows a landscape with gray and green structures.",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "valid": true
+  },
+  {
+    "case": "close_wall",
+    "variant": "grid",
+    "passed": false,
+    "answer": {
+      "evidence": "The image contains a structure that appears to be a tower, colored red. It is located in the cell B1.",
+      "cell": "B1"
+    },
+    "valid": true
+  },
+  {
+    "case": "close_wall",
+    "variant": "bbox",
+    "passed": true,
+    "answer": {
+      "evidence": "No red tower is visible in the image. The image primarily shows gray and green rectangular structures.",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "valid": true
+  }
+]

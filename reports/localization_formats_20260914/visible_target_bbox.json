@@ -1,0 +1,57 @@
+{
+  "case": "visible_target",
+  "variant": "bbox",
+  "input_sha256": "59a3faf3d33f675157cd9e5442c87536182326999dfdeef3424814352713fecb",
+  "prompt": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "visible": {
+        "type": "boolean"
+      },
+      "box": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
+    "required": [
+      "evidence",
+      "visible",
+      "box"
+    ],
+    "additionalProperties": false
+  },
+  "options": {
+    "temperature": 0.0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 192
+  },
+  "reply": {
+    "model": "gemma4:e2b",
+    "created_at": "2026-09-14T14:21:39.0953029Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"A small, red, rectangular structure is visible between two gray buildings.\", \"visible\": true, \"box\": [364, 333, 633, 384]}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 768148600,
+    "load_duration": 5760500,
+    "prompt_eval_count": 195,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 273798000,
+    "eval_count": 47,
+    "eval_duration": 476088000
+  }
+}

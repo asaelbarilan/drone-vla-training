@@ -1,0 +1,65 @@
+{
+  "case": "hidden_openings",
+  "variant": "grid",
+  "input_sha256": "678578ef9a7c91cc7f444e406a8fc3ee241e5b01c6a9f2681910e66603ab3b05",
+  "prompt": "Locate the red tower in this image. This is a localization test, not navigation. A neutral 4 by 4 grid is drawn over the image: columns A,B,C,D from left to right; rows 1,2,3,4 from top to bottom. Each cell is labeled. Return the label of the cell containing the CENTER of the visible red tower. If no red tower is visible, return cell=absent. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence and cell.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "cell": {
+        "type": "string",
+        "enum": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "A2",
+          "B2",
+          "C2",
+          "D2",
+          "A3",
+          "B3",
+          "C3",
+          "D3",
+          "A4",
+          "B4",
+          "C4",
+          "D4",
+          "absent"
+        ]
+      }
+    },
+    "required": [
+      "evidence",
+      "cell"
+    ],
+    "additionalProperties": false
+  },
+  "options": {
+    "temperature": 0.0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 192
+  },
+  "reply": {
+    "model": "gemma4:e2b",
+    "created_at": "2026-09-14T14:21:41.8248714Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\"evidence\": \"The image displays a landscape with various structures. There is a structure in the center-right area that is red.\", \"cell\": \"C3\"}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 680108100,
+    "load_duration": 6333500,
+    "prompt_eval_count": 177,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 273511000,
+    "eval_count": 35,
+    "eval_duration": 386495000
+  }
+}

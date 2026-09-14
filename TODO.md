@@ -438,3 +438,12 @@ coordinate on gray neighbor,open-space requests point at walls,hold unused. Test
 localization with box/labeled image-region choice against direct normalized points,
 including absent-target control. No flight until demonstrated spatial improvement;
 probe-only hold must not be treated as a supported runtime action. See D-112 report.
+
+
+## D-113: validate presence and localization separately on independent cases
+
+The D-112 suggested grid/box probe is complete. Grid finds the single positive
+cell but hallucinates both absences; box rejects absences but mislocalizes positive.
+Neither promoted. Add independent positive/negative cases before deciding whether
+to select/combine representations. Keep coarse cell accuracy separate from tight
+localization. No new flight until these interfaces pass relevant offline checks.

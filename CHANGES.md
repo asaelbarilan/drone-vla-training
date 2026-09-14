@@ -2587,3 +2587,10 @@ coordinate grounding with another output representation, not control tuning.
 Frozen three sources,4x4 labeled grid and original-image bbox prompts,expected
 cell/absence and tight-box criteria before6 local calls. Grid visually checked.
 No runtime changes or flights; original RGB preserved separately from annotations.
+
+
+D-113 complete:6 local calls. Grid gets B2 but falsely claims red targets in both
+absent frames. Box correctly rejects absences but visible box misses (IoU0.05024,
+center outside). Neither promoted; no flight/runtime changes. Original RGB hashes,
+modified grid inputs,raw replies,scoring and screenshots saved. Scripts lint and
+six-panel browser QA pass. Dashboard localhost8766/localization_formats.html.

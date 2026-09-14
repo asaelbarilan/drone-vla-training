@@ -1,0 +1,13 @@
+{
+  "completed_calls": 6,
+  "cloud_calls": 0,
+  "flights": 0,
+  "raw_inputs_verified": 6,
+  "original_bbox_inputs_unchanged": 3,
+  "identical_model_options": true,
+  "grid_correct_cases": 1,
+  "bbox_correct_cases": 2,
+  "bbox_visible_iou": 0.05024405863497558,
+  "runtime_changed": false,
+  "promoted": false
+}
