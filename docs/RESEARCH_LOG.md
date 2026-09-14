@@ -2364,7 +2364,7 @@ retain evaluator thresholds and saved failures. No further flight active/schedul
 
 ## D-110 - Stable hover reference and heading (2026-09-14)
 
-Status: offline checks pass; bounded flights pending.
+Status: two bounded flights pass; same-scene validation only.
 Rationale: D-109 fails after a physically valid hover. Translation residuals rotate
 camera; selecting another body pixel moves the monitor's approach line. Source-time
 geometry is combined with return-time dwell. User authorizes autonomous repair.
@@ -2378,4 +2378,11 @@ Evidence: D-109 DEPARTURE_AUDIT.json. Saved control replay matches all 1,200 pos
 line accepts; at 18 s the new yaw controller corrects toward retained bearing instead
 of turning away on 0.000019 m/s translation. This is a component probe, not a flight
 counterfactual. 442 unit/contract tests pass; 17 targeted checks rerun after evidence
-timestamp metadata correction. New flight results pending.
+timestamp metadata correction. New flights: seed1062 passes at15.2 s /1.00198 m /6.1 s hover; seed1060 passes
+at13.2 s /1.00179 m /4.1 s hover. No contact/collision. Each raw speed violation
+is 4.44e-16 m/s roundoff, retained. 43 completed local Gemma calls +2 cancellations;
+zero cloud. All263 frozen hashes hold;1,770 replay poses exact,15 monitor source
+images exact,9 browser seeks/3 playbacks and terminal images checked. See
+reports/hover_stable_20260914/REPORT.md and VERIFICATION.json. Dashboard port8766
+leaves Valley on8765 untouched. Completion remains conservative; first-bearing
+accuracy, harder scenes and planning remain open. No third flight scheduled.

@@ -1,0 +1,655 @@
+[
+  {
+    "seed": 1060,
+    "poses_checked": 265,
+    "source_images_checked": 7,
+    "monitors": [
+      {
+        "call": "call-000002",
+        "source_t": 0.0,
+        "available_t": 1.2,
+        "reply": {
+          "evidence": "The image displays a flat, mostly uniform color background, which is a light blue for the upper portion and a muted, des",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 11.94005012512207,
+        "point": [
+          11.884533225738764,
+          0.0652024401763329,
+          1.8491822980140482
+        ],
+        "range_m": 11.940299943263478,
+        "along_m": 11.884712085359645,
+        "cross_m": 1.7764110486817194e-15,
+        "source_speed": 0.0,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=11.940299943263478; visual_confirmations=1/2; original_target_t_ns=0; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=False; latest_visible=True; latest_scale=large; ever_acquired=False; acquisition_count=1/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform color background, which is a light blue for the upper portion and a muted, des'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=1; live_hover_supported=False; live_hover_seq=24; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": false,
+          "evidence_observation_seq": 24,
+          "recovery_anchor_observation_seq": 1,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000005",
+        "source_t": 1.95,
+        "available_t": 3.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on",
+          "visible": true,
+          "u": 499,
+          "v": 575
+        },
+        "depth_m": null,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=0; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=False; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=40; live_hover_supported=False; live_hover_seq=64; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 64,
+          "recovery_anchor_observation_seq": 40,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000008",
+        "source_t": 3.95,
+        "available_t": 5.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-",
+          "visible": true,
+          "u": 499,
+          "v": 511
+        },
+        "depth_m": 8.175365447998047,
+        "point": [
+          11.90304643155718,
+          0.044644182474678,
+          2.0336949428064135
+        ],
+        "range_m": 8.176879560597751,
+        "along_m": 8.11958212442773,
+        "cross_m": 9.816853980089735e-05,
+        "source_speed": 1.4444790176436777,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=8.176879560597751; visual_confirmations=1/2; original_target_t_ns=3950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=80; live_hover_supported=False; live_hover_seq=104; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 104,
+          "recovery_anchor_observation_seq": 80,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000011",
+        "source_t": 5.95,
+        "available_t": 7.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 4.9901323318481445,
+        "point": [
+          11.951742788726353,
+          0.027250204264614573,
+          2.5190361378248762
+        ],
+        "range_m": 4.990236738912726,
+        "along_m": 4.967004778906087,
+        "cross_m": 8.88185195937854e-16,
+        "source_speed": 1.28717040929096,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=4.990236738912726; visual_confirmations=2/2; original_target_t_ns=5950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=120; live_hover_supported=False; live_hover_seq=144; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 144,
+          "recovery_anchor_observation_seq": 120,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000014",
+        "source_t": 7.95,
+        "available_t": 9.2,
+        "reply": {
+          "evidence": "A red, rectangular pillar is visible against a blue background, set on a green foreground. The pillar is the central and",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 1.873828411102295,
+        "point": [
+          11.98156588556024,
+          0.03780185850970999,
+          2.819394819671355
+        ],
+        "range_m": 1.8738676166605694,
+        "along_m": 1.8650801069341787,
+        "cross_m": 0.01542103517971011,
+        "source_speed": 1.3926655506071932,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=1.8738676166605694; visual_confirmations=3/2; original_target_t_ns=7950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A red, rectangular pillar is visible against a blue background, set on a green foreground. The pillar is the central and'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=160; live_hover_supported=False; live_hover_seq=184; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 184,
+          "recovery_anchor_observation_seq": 160,
+          "recovery_anchor_yaw_rad": 0.00826810801236434,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000017",
+        "source_t": 9.95,
+        "available_t": 11.2,
+        "reply": {
+          "evidence": "The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 0.996250331401825,
+        "point": [
+          11.990507185734522,
+          0.017910757669564244,
+          2.9039784167593794
+        ],
+        "range_m": 0.9962711756531945,
+        "along_m": 0.9916019821227756,
+        "cross_m": 0.007849843281594993,
+        "source_speed": 0.0187510387658957,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=0.9962711756531945; visual_confirmations=4/2; original_target_t_ns=9950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=200; live_hover_supported=False; live_hover_seq=224; hover_streak_s=1.900; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 224,
+          "recovery_anchor_observation_seq": 200,
+          "recovery_anchor_yaw_rad": -0.007916159357051426,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000020",
+        "source_t": 11.95,
+        "available_t": 13.2,
+        "reply": {
+          "evidence": "The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 0.9974470138549805,
+        "point": [
+          11.990493051470054,
+          0.01541874089473504,
+          2.903863076929453
+        ],
+        "range_m": 0.9974678831441827,
+        "along_m": 0.9927836718898234,
+        "cross_m": 0.008969434520870772,
+        "source_speed": 0.0020391553853907327,
+        "saved_monitor": {
+          "label": "stop",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "latest target reacquired despite loss of the previous-goal reprojection; arrival_source=bounded_confirmed_rgbd_target; target_range_m=0.9974678831441827; visual_confirmations=5/2; original_target_t_ns=11950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=False; identity_source=current_frame_vlm; grounding='The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=240; live_hover_supported=True; live_hover_seq=264; hover_streak_s=3.900; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 264,
+          "recovery_anchor_observation_seq": 240,
+          "recovery_anchor_yaw_rad": -0.009034385581389626,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      }
+    ],
+    "pose_samples": [
+      {
+        "t": 9.2,
+        "position": [
+          10.940041270374746,
+          0.015855583281450255,
+          3.0
+        ],
+        "yaw_deg": -0.3047374879187668,
+        "true_hover_s": 0.05,
+        "true_visible": true
+      },
+      {
+        "t": 11.2,
+        "position": [
+          10.997546546816563,
+          0.01813939330717876,
+          3.0
+        ],
+        "yaw_deg": -0.5110503549670468,
+        "true_hover_s": 2.0500000000000007,
+        "true_visible": true
+      },
+      {
+        "t": 13.2,
+        "position": [
+          10.998404834393932,
+          0.019032073727617706,
+          3.0
+        ],
+        "yaw_deg": -0.520174572353408,
+        "true_hover_s": 4.049999999999994,
+        "true_visible": true
+      }
+    ]
+  },
+  {
+    "seed": 1062,
+    "poses_checked": 305,
+    "source_images_checked": 8,
+    "monitors": [
+      {
+        "call": "call-000002",
+        "source_t": 0.0,
+        "available_t": 1.2,
+        "reply": {
+          "evidence": "The image displays a flat, mostly uniform color background, which is a light blue for the upper portion and a muted, des",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 11.94005012512207,
+        "point": [
+          11.884533225738764,
+          0.0652024401763329,
+          1.8491822980140482
+        ],
+        "range_m": 11.940299943263478,
+        "along_m": 11.884712085359645,
+        "cross_m": 1.7764110486817194e-15,
+        "source_speed": 0.0,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=11.940299943263478; visual_confirmations=1/2; original_target_t_ns=0; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=False; latest_visible=True; latest_scale=large; ever_acquired=False; acquisition_count=1/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image displays a flat, mostly uniform color background, which is a light blue for the upper portion and a muted, des'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=1; live_hover_supported=False; live_hover_seq=24; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": false,
+          "evidence_observation_seq": 24,
+          "recovery_anchor_observation_seq": 1,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000005",
+        "source_t": 1.95,
+        "available_t": 3.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on",
+          "visible": true,
+          "u": 499,
+          "v": 574
+        },
+        "depth_m": null,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=0; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=False; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=40; live_hover_supported=False; live_hover_seq=64; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 64,
+          "recovery_anchor_observation_seq": 40,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000008",
+        "source_t": 3.95,
+        "available_t": 5.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-",
+          "visible": true,
+          "u": 499,
+          "v": 547
+        },
+        "depth_m": null,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=0; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=80; live_hover_supported=False; live_hover_seq=104; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 104,
+          "recovery_anchor_observation_seq": 80,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000011",
+        "source_t": 5.95,
+        "available_t": 7.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 4.9901323318481445,
+        "point": [
+          11.951742788726353,
+          0.027250204264614573,
+          2.5190361378248762
+        ],
+        "range_m": 4.990236738912726,
+        "along_m": 4.967004778906087,
+        "cross_m": 8.88185195937854e-16,
+        "source_speed": 1.28717040929096,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=4.990236738912726; visual_confirmations=1/2; original_target_t_ns=5950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object in the mid-'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=120; live_hover_supported=False; live_hover_seq=144; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 144,
+          "recovery_anchor_observation_seq": 120,
+          "recovery_anchor_yaw_rad": 0.0,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000014",
+        "source_t": 7.95,
+        "available_t": 9.2,
+        "reply": {
+          "evidence": "The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on",
+          "visible": true,
+          "u": 499,
+          "v": 573
+        },
+        "depth_m": 1.873828411102295,
+        "point": [
+          11.954349207167361,
+          0.03757682294506534,
+          2.548126591633737
+        ],
+        "range_m": 1.8926605626832111,
+        "along_m": 1.8378626035399792,
+        "cross_m": 0.015345320362740287,
+        "source_speed": 1.3926655506071932,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=1.8926605626832111; visual_confirmations=2/2; original_target_t_ns=7950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a horizontal ground plane, a blue sky, and a vertical red rectangular object standing on'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=160; live_hover_supported=False; live_hover_seq=184; hover_streak_s=0.000; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 184,
+          "recovery_anchor_observation_seq": 160,
+          "recovery_anchor_yaw_rad": 0.00826810801236434,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000017",
+        "source_t": 9.95,
+        "available_t": 11.2,
+        "reply": {
+          "evidence": "The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 0.996250331401825,
+        "point": [
+          11.990507185734522,
+          0.017910757669564244,
+          2.9039784167593794
+        ],
+        "range_m": 0.9962711756531945,
+        "along_m": 0.9916019821227756,
+        "cross_m": 0.007849843281594993,
+        "source_speed": 0.0187510387658957,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "visual monitor classified stop from 2 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=0.9962711756531945; visual_confirmations=3/2; original_target_t_ns=9950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=200; live_hover_supported=False; live_hover_seq=224; hover_streak_s=1.950; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 224,
+          "recovery_anchor_observation_seq": 200,
+          "recovery_anchor_yaw_rad": -0.007916159357051426,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000020",
+        "source_t": 11.95,
+        "available_t": 13.2,
+        "reply": {
+          "evidence": "The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 0.9974470138549805,
+        "point": [
+          11.990493051470054,
+          0.01541874089473504,
+          2.903863076929453
+        ],
+        "range_m": 0.9974678831441827,
+        "along_m": 0.9927836718898234,
+        "cross_m": 0.008969434520870772,
+        "source_speed": 0.0020391553853907327,
+        "saved_monitor": {
+          "label": "continue",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "latest target reacquired despite loss of the previous-goal reprojection; arrival_source=bounded_confirmed_rgbd_target; target_range_m=0.9974678831441827; visual_confirmations=4/2; original_target_t_ns=11950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=False; identity_source=current_frame_vlm; grounding='The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=240; live_hover_supported=False; live_hover_seq=264; hover_streak_s=1.900; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 264,
+          "recovery_anchor_observation_seq": 240,
+          "recovery_anchor_yaw_rad": -0.009034385581389626,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      },
+      {
+        "call": "call-000023",
+        "source_t": 13.95,
+        "available_t": 15.2,
+        "reply": {
+          "evidence": "The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a",
+          "visible": true,
+          "u": 499,
+          "v": 500
+        },
+        "depth_m": 0.9970973134040833,
+        "point": [
+          11.990496664488003,
+          0.015360450572288317,
+          2.903896782103641
+        ],
+        "range_m": 0.997118175376606,
+        "along_m": 0.9924351617557188,
+        "cross_m": 0.00901536950087245,
+        "source_speed": 0.0005141810904768922,
+        "saved_monitor": {
+          "label": "stop",
+          "confidence": 1.0,
+          "stalled_for_s": 0.0,
+          "evidence": "latest target reacquired despite loss of the previous-goal reprojection; arrival_source=bounded_confirmed_rgbd_target; target_range_m=0.997118175376606; visual_confirmations=5/2; original_target_t_ns=13950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=False; identity_source=current_frame_vlm; grounding='The image displays a scene with a large red object dominating the frame, and a smaller, vertical red object positioned a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; grounding_source_seq=280; live_hover_supported=True; live_hover_seq=304; hover_streak_s=3.900; required_hover_s=2; live_view_depth_check=true; reference_seq=1",
+          "recovery_anchor_valid": true,
+          "recovery_reacquired": true,
+          "evidence_observation_seq": 304,
+          "recovery_anchor_observation_seq": 280,
+          "recovery_anchor_yaw_rad": -0.00908383930332159,
+          "blocking": false,
+          "_debug_source": {
+            "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+            "line": 518,
+            "function": "_run_supervision",
+            "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+          }
+        }
+      }
+    ],
+    "pose_samples": [
+      {
+        "t": 9.2,
+        "position": [
+          10.940041270374746,
+          0.015855583281450255,
+          3.0
+        ],
+        "yaw_deg": -0.3047374879187668,
+        "true_hover_s": 0.05,
+        "true_visible": true
+      },
+      {
+        "t": 11.2,
+        "position": [
+          10.997546546816563,
+          0.01813939330717876,
+          3.0
+        ],
+        "yaw_deg": -0.5110503549670468,
+        "true_hover_s": 2.0500000000000007,
+        "true_visible": true
+      },
+      {
+        "t": 13.2,
+        "position": [
+          10.998404834393932,
+          0.019032073727617706,
+          3.0
+        ],
+        "yaw_deg": -0.520174572353408,
+        "true_hover_s": 4.049999999999994,
+        "true_visible": true
+      },
+      {
+        "t": 15.2,
+        "position": [
+          10.998201388256307,
+          0.01905390158761578,
+          3.0
+        ],
+        "yaw_deg": -0.5205780922312743,
+        "true_hover_s": 6.0499999999999865,
+        "true_visible": true
+      }
+    ]
+  }
+]

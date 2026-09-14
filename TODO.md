@@ -409,12 +409,13 @@ from outside.
   boundary when resuming broader task suite. Neither is solved by D-108.
 
 
-## D-109: priority after failed frozen hover repeat
+## D-110: limits after hover repair
 
-1. Reproduce near-goal yaw oscillation from exact 11–19 s states; evaluate camera-facing
-   target orientation separately from translation residual. No full flight needed.
-2. Fix hover reference semantics: arbitrary body pixels are not a stable object center;
-   source 13.95 s yields false 0.397 m cross-track. Audit source/live dwell timing and
-   the initial 1.95 s miss without assuming scheduler causality or weakening scoring.
-3. Only after isolated checks, validate a named repair. The exactly-two-run request is
-   exhausted; no third flight was run. Preserve D-109 negative result and D-108 success.
+D-109 immediate repair completed with saved-state checks and two passing flights.
+Preserve both old failure and new named variant. See hover_stable_20260914/REPORT.md.
+Next hover validation should change geometry explicitly, testing estimated approach
+bearing and target-reference accuracy; another identical scene is not generalization.
+Completion still waits beyond two physical seconds because evidence renewals and
+monitor cadence are conservative. Do not relax scoring to make the stop earlier.
+Broader VLM planning and AerialClaw ordered/search issues above remain separate.
+No further flight is active or scheduled.

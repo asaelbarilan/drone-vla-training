@@ -1,0 +1,59 @@
+{
+  "model_id": "gemma4:e2b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:grounded_v1",
+  "input_tokens": 282,
+  "image_count": 1,
+  "observation_seq": 20,
+  "prompt": "Drone mission: Approach the red pillar and hover about 1 metre before it on your approach side, keeping it in view, without touching it. Hold for 2 continuous seconds, then finish. Acceptance: 0.75 to 1.25 metres from its reference point, within 0.35 metres of the approach line, speed at most 0.2 m/s.. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "target",
+          "exploration"
+        ]
+      },
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "kind",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000003",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 581,
+    "function": "decide",
+    "snapshot": "debug/sources/68eb5f63ee1769f4813e61dfb073b0766a54d6bae43fc5caff539fc577a67e43.py"
+  },
+  "started_t_sim_ns": 1000000000,
+  "image_files": [
+    "debug/images/call-000003-0.png"
+  ],
+  "completed_t_sim_ns": 2000000000,
+  "response": "{\"evidence\": \"red pillar\", \"kind\": \"target\", \"u\": 499, \"v\": 500}",
+  "latency_ns": 365561900,
+  "output_tokens": 30,
+  "cache_hit": false
+}

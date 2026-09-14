@@ -2522,3 +2522,15 @@ yet. New profile preserves old defaults; named development adaptation only.
 D-110 launch preflight rejected a 17-level config chain before inference. New profile
 now inherits the context profile directly and explicitly retains initial altitude;
 runtime/scoring unchanged. Freeze updated before the first actual flight.
+
+
+### D-110 flight and dashboard verification complete
+
+Two new unchanged flights pass: c5_hover_stable_20260914_s1062 at15.2 s/1.00198 m,
+6.1 s hover; seed1060 at13.2 s/1.00179 m,4.1 s hover. No collisions/contact;
+one raw speed roundoff violation each (4.44e-16 m/s).43 completed Gemma calls+2
+cancellations,zero cloud.263 frozen hashes unchanged;1,770 exact replay poses;
+15 exact source monitor images;9 browser seeks/3 playbacks,terminal images checked.
+REPORT.md records conservative completion and same-scene limits. New comparison at
+http://127.0.0.1:8766/hover_stable.html; first browser404 traced to Valley owning8765,
+left untouched. Evidence/scripts/docs preserved; no third new flight scheduled.

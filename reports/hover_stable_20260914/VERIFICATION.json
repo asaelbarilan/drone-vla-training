@@ -1,0 +1,51 @@
+{
+  "source_config_hashes_unchanged": 263,
+  "environment_matches_historical": true,
+  "new_flights": [
+    {
+      "name": "c5_hover_stable_20260914_s1062",
+      "success": true,
+      "sim_s": 15.2,
+      "distance_m": 1.0019772936549691,
+      "hover_s": 6.099999999999986,
+      "collisions": 0.0,
+      "contact": 0.0,
+      "raw_violations": 1.0,
+      "speed_excesses": [
+        {
+          "t": 7.1,
+          "excess_mps": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "name": "c5_hover_stable_20260914_s1060",
+      "success": true,
+      "sim_s": 13.2,
+      "distance_m": 1.0017907565167037,
+      "hover_s": 4.099999999999993,
+      "collisions": 0.0,
+      "contact": 0.0,
+      "raw_violations": 1.0,
+      "speed_excesses": [
+        {
+          "t": 7.1,
+          "excess_mps": 4.440892098500626e-16
+        }
+      ]
+    }
+  ],
+  "source_snapshot_hashes": 6,
+  "replayed_poses": 1770,
+  "max_position_error_m": 0.0,
+  "missing_source_frames": 0,
+  "browser_seeks": 9,
+  "browser_playbacks": 3,
+  "new_call_budget": {
+    "complete": 43,
+    "cancelled": 2
+  },
+  "model": "gemma4:e2b",
+  "cloud_calls": 0,
+  "scope": "same geometry repetitions, not independent environment generalization"
+}

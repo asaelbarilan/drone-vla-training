@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: hover departure fixed, two bounded passes - D-110 (2026-09-14)
+
+New c5_hover_stable_gemma_dev keeps heading near translation goal, fixes the approach
+line to initial onboard frame, and uses coherent live hover completion. 1062 passes
+15.2 s/1.002 m/6.1 s hover;1060 passes13.2 s/1.002 m/4.1 s hover. No contact/collision.
+442 tests pass; old1,200-pose component probe and1,770 dashboard poses match;15 new
+monitor images match exact source.43 Gemma calls+2 cancellations,zero cloud.
+Read reports/hover_stable_20260914/REPORT.md. Runtime commits dc869fa,b1d8a0b.
+Dashboard http://127.0.0.1:8766/hover_stable.html; Valley owns8765, do not stop it.
+Old profiles/results preserved. Same-scene repair, not a planning/generalization
+result; completion remains conservative. No further flight active or scheduled.
+
 ## Latest: hover repeat failure diagnosed — D-109 (2026-09-14)
 
 Two user-requested unchanged repeats complete: 1060 passes,1062 times out. Same scene;
