@@ -2899,3 +2899,13 @@ feasible plan atcursor time by its explicit execution owner,not the original
 decision's first plan. This prevents displaying a stale path during a commitment.
 Five browser behavior checks cover old/new/infeasible/future/unowned plans.
 Runtime flight3 remains unchanged andrunning; this is offline viewer support.
+
+
+### D-121 flight audit preparation
+
+Dedicated11435 residency confirms Qwen3-VL4B entirely onCPU(size_vram0); shared
+ValleyGPU untouched. Added completed-flight audit for original target sourceID/age,
+nonrenewing20s deadlines, deferred exploration versus executed commands, LOST
+label/action arbitration and realized control-prefix comparison against D115/D116.
+Browser review will seek each actual lease activation,midpoint anddeadline.
+No flight restart or runtime changes; cycle3 continues.

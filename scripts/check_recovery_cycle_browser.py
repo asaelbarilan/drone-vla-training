@@ -25,6 +25,13 @@ with sync_playwright() as p:
         times = [0, 33.95, 37.2, 39.2, 39.25, 40, 41, 45, 60, 90]
         if args.number >= 2:
             times = sorted(set([*times, 47.2, 48.5, 49, 51, 53.2, 55.2]))
+        if args.number == 3:
+            audit_path = Path('reports/recovery_cycle_20260915/cycle3/COMMITMENT_AUDIT.json')
+            audit = json.loads(audit_path.read_text(encoding='utf-8'))
+            for lease in audit['leases'].values():
+                times += [lease['activation_s'], lease['activation_s']+5,
+                          lease['activation_s']+13, lease['deadline_s']]
+            times = sorted(set(times))
         for t in times:
             page.evaluate('(t)=>{pause();seek(nearest(t),true)}', t)
             page.wait_for_function('document.getElementById("drone").complete')
