@@ -2923,3 +2923,18 @@ prompt/schema/image bytes match, but model response differs with CPU/GPU placeme
 different. Therefore final outcome alone is NOT clean architecture-only evidence.
 No attempt to change or restart the running flight. Await completion then full
 replay,leaseaudit and visual review. Dedicated11435 runningCPU,not stopped.
+
+
+## 2026-09-15 — D-121 final flight audit and autonomous batch completion
+
+Thirdflight timeout90s,closest/final4.647m,zero collisions. Camera shows detour and
+red reacquisition74s; all15 finalpolicy points are onred and75–90s approach monotonic.
+Fullleaseaudit zero violations; actualsourceages retained,599 leasecommands/13LOSTyaw
+deferrals.1800poses/89images exact;66UIseeks/2playbacks and7finalcaptures reviewed.
+Added reproducible finalapproach review script and cycle3/overall reports. Explicitly
+retain CPU/GPU prefixconfound, floatingpoint speedcounters and failedmission outcome.
+Rawcapture archived; earlier changes separatelycommitted. No runtimechange thisstage.
+Three of maximumfour flights used,392completedflightcalls+3cancellations,15savedprobes.
+Dedicated11435 unloaded/stopped; debugger8766 stays. No fullfourth43minuteCPUflight
+beforedeadline. Next exactcheckpointreplay then separatelyfrozen arrival/STOPextension
+in time; do not claim a90sbenchmarksuccess or validatedgeneralplanning.

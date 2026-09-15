@@ -1,0 +1,113 @@
+{
+  "leases": {
+    "fa05c6598062": {
+      "source_t_s": 10.95,
+      "source_seq": 220,
+      "activation_s": 13.0,
+      "deadline_s": 33.0,
+      "plan_times": [
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0
+      ],
+      "plan_failures": []
+    },
+    "5e99972ae521": {
+      "source_t_s": 38.95,
+      "source_seq": 780,
+      "activation_s": 41.0,
+      "deadline_s": 61.0,
+      "plan_times": [
+        41.0,
+        42.0,
+        43.0,
+        44.0
+      ],
+      "plan_failures": []
+    },
+    "a34be12bcc23": {
+      "source_t_s": 48.95,
+      "source_seq": 980,
+      "activation_s": 51.0,
+      "deadline_s": 71.0,
+      "plan_times": [
+        51.0
+      ],
+      "plan_failures": []
+    },
+    "95df44e27ab0": {
+      "source_t_s": 50.95,
+      "source_seq": 1020,
+      "activation_s": 53.0,
+      "deadline_s": 73.0,
+      "plan_times": [
+        53.0,
+        54.0,
+        55.0,
+        56.0
+      ],
+      "plan_failures": []
+    },
+    "9c91df15ddd9": {
+      "source_t_s": 56.95,
+      "source_seq": 1140,
+      "activation_s": 59.0,
+      "deadline_s": 79.0,
+      "plan_times": [
+        59.0,
+        60.0,
+        61.0,
+        62.0,
+        63.0,
+        64.0,
+        65.0,
+        66.0,
+        67.0,
+        68.0,
+        69.0,
+        70.0,
+        71.0,
+        72.0,
+        73.0,
+        74.0
+      ],
+      "plan_failures": []
+    }
+  },
+  "old_source_commands": 419,
+  "max_original_source_age_s": 18.0,
+  "deferred_lost_events": 13,
+  "deferred_lost_times_s": [
+    41.2,
+    43.2,
+    51.2,
+    53.2,
+    55.2,
+    59.2,
+    61.2,
+    63.2,
+    65.2,
+    67.2,
+    69.2,
+    71.2,
+    73.2
+  ],
+  "recovery_times_s": [
+    45.2
+  ],
+  "prefix_comparisons": [
+    {
+      "baseline": "c5_clutter_qwen4_20260915_s1061",
+      "first_different_control_s": 1.0
+    },
+    {
+      "baseline": "c5_recovery_fresh_20260915_s1061",
+      "first_different_control_s": 1.0
+    }
+  ],
+  "violations": [],
+  "notes": "CPU/GPU placement differs; comparisons inspect realized prefix, not formal deterministic equivalence. STOP remains separately evaluated by runtime."
+}

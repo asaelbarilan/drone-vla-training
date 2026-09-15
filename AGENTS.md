@@ -16,32 +16,28 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active autonomous cycles - D-116/D-117 (2026-09-15)
+## Autonomous recovery batch complete — D-116 through D-121 (2026-09-15)
 
-Read reports/recovery_cycle_20260915/STATE.json and cycle2/REPORT.md FIRST.
-Heartbeat drone-recovery-debug-cycles until16:55UTC,max4 model flights; TWO complete,THIRD reserved.
-D-116 fresh-image handoff works but mission fails. D-117 named VLM-selected return
-restores observed pose+heading in live flight; target actually reappears. Correct
-red pixels chosen after return,then movement occludes target and LOST recurs53.2s.
-Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promotion.
-393 unit tests pass;1800 new poses/79 current+1 historical input match. Dashboard
-localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
-D-120 CORRECTION: D118/D119 history was constructed atcontrol cadence,not exact
-live memory. True35.95s latesthistory34.95s; withdraw8.1sgap claim. No model reruns.
-NEXT: D-121 target_commitment variant implemented/tests pass; CYCLE3_FREEZE ready.
-ONE CPU-only flight RUNNING (PIDfile tmp/commitment_flight.pid).13s and41sleases
-observed; no restart. Prefix diverges1s beforelease,so outcome notcausallyisolated.
-Audit source ages/deadlines and dashboard after result.json exists.
-Goal_hold_component complete: verified1020poses/61plans/firstcommand.
-Retained51sgoal gives right-side detour/redreappearance64s,truthdistance16.885→10.143m
-by71s,zero collisions. Storedgoal endpoint NOT reached (closest4.928m).
-Read goal_hold_component/REPORT.md and STATE.json. Next named bounded target-goal
-commitment<=20s with explicit original-source authorization, fresh-target override,
-expiry/LOSTyaw ownership tests before ONE flight. Common planner/STOP guards stay.
-Separate from D117return and nativepaper. No more tuning D118/D119sameframes.
-15 saved-framecalls,2/4 flights.401 unit tests remain last runtime validation.
-Dedicated11435 RUNNING CPU-only (tmp/commitment_server.pid); shared11434/8765
-untouched. Unload/stop owned server afterflight. Commit each change.
+Read reports/recovery_cycle_20260915/REPORT.md, cycle3/REPORT.md and STATE.json FIRST.
+Three of four maximum flights used; all audited, no automatic launch remains.
+D116 handoff works but timeout. D117 VLM-selected viewpoint return restores red,
+then occlusion recurs; timeout. D121 named target-commitment extension clears the
+obstacle, red reappears by sampled74s and 75–90s approach is monotonic. Still timeout:
+closest/final4.64661m, zero collisions, no STOP. 134 completed calls +1 cancellation.
+Controls differ from baseline already1s before first lease13s, with CPU/GPU placement
+different. Better distance is NOT an isolated causal architecture comparison.
+Lease audit passes: original source timestamps, nonrenewing20s deadlines,419 commands
+older than4s (max18s),13 LOSTyaw deferrals.420 full-suite +20 focused tests passed.
+All1800 poses/89 inputs match;66 UI seeks/2 playbacks plus7 final captures reviewed.
+Keep native profiles unchanged. D121 is neither native OnFly nor D117 return-to-view.
+D120 correction: D118/D119 probe history used control cadence,not exact live memory;
+true35.95s latesthistory34.95s. Withdraw8.1s livegap claim; do not reuse it.
+NEXT offline: exact cached-request replay/checkpoint validation before a separately
+frozen bounded continuation for arrival/STOP beyond90s. Preserve90s failed benchmark.
+Matched inference placement/repeated seeds required for causal comparisons.
+Dedicated11435 unloaded/stopped;8766 debugger retained;shared11434/Valley untouched.
+No fourth flight: fullCPU trial takes43min, beyond remaining autonomous window.
+All changes committed independently; no cloud/key reads/reinstalls.15 saved-framecalls.
 
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115
 

@@ -1,0 +1,2414 @@
+{
+  "checks": [
+    {
+      "t": 0,
+      "observation_seq": 1,
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "yaw": 0.7260068433926703,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "distance": 35.02051357538948,
+      "collided": false,
+      "control": {
+        "position_x": 0,
+        "position_y": 0,
+        "position_z": 3,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "yaw_rate": 0,
+        "decision_age_s": null,
+        "safety_modified": false,
+        "source_observation_seq": null,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": null,
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 13,
+      "observation_seq": 261,
+      "position": [
+        5.180049506932537,
+        4.049144460862,
+        3
+      ],
+      "yaw": 0.7916056584733072,
+      "velocity": [
+        0.4258818923557273,
+        0.4206513159785759,
+        0
+      ],
+      "distance": 28.466224076370867,
+      "collided": false,
+      "control": {
+        "position_x": 5.180049506932537,
+        "position_y": 4.049144460862,
+        "position_z": 3,
+        "vx": 0.4123364988716549,
+        "vy": 0.43586535959888545,
+        "vz": 0,
+        "yaw_rate": 0.03228763187147743,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 240,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "448db29e2da0",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 18,
+      "observation_seq": 361,
+      "position": [
+        7.707262815173732,
+        5.476681215364389,
+        2.887783714491906
+      ],
+      "yaw": 0.424988245161939,
+      "velocity": [
+        0.5445476702619384,
+        0.2443682980008552,
+        -0.005223236982811205
+      ],
+      "distance": 25.65422172365798,
+      "collided": false,
+      "control": {
+        "position_x": 7.707262815173732,
+        "position_y": 5.476681215364389,
+        "position_z": 2.887783714491906,
+        "vx": 0.5266669177675324,
+        "vy": 0.2874403475310707,
+        "vz": 6.588220181446083e-05,
+        "yaw_rate": 0.11190529688954623,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 340,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "0721fd0f74ca",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 26,
+      "observation_seq": 521,
+      "position": [
+        11.99231700834313,
+        7.328541845682325,
+        3.210717710385392
+      ],
+      "yaw": 0.205683018825784,
+      "velocity": [
+        0.57475245715388,
+        0.13117259202755843,
+        0.09272099840484105
+      ],
+      "distance": 21.334225528570826,
+      "collided": false,
+      "control": {
+        "position_x": 11.99231700834313,
+        "position_y": 7.328541845682325,
+        "position_z": 3.210717710385392,
+        "vx": 0.565397094428812,
+        "vy": 0.18909384153742456,
+        "vz": 0.06759914721412089,
+        "yaw_rate": 0.1756006226351664,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 500,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "0f26ab6c4be5",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 33,
+      "observation_seq": 661,
+      "position": [
+        15.357671699405557,
+        9.58665709961619,
+        3.486574542832807
+      ],
+      "yaw": 0.9691843207750792,
+      "velocity": [
+        0.3522534643705646,
+        0.48057108170980756,
+        0.0002906776317286747
+      ],
+      "distance": 17.430127272367923,
+      "collided": false,
+      "control": {
+        "position_x": 15.357671699405557,
+        "position_y": 9.58665709961619,
+        "position_z": 3.486574542832807,
+        "vx": 0.5894980642394523,
+        "vy": -0.11176776030981865,
+        "vz": -3.6421962498026593e-06,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 640,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "d448f9bc761c",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 33.95,
+      "observation_seq": 680,
+      "position": [
+        15.774445850096638,
+        9.818409965104268,
+        3.486738241107895
+      ],
+      "yaw": 0.5891843207750788,
+      "velocity": [
+        0.4918277177422906,
+        0.07880510618521526,
+        8.901609485353554e-05
+      ],
+      "distance": 16.990994747488667,
+      "collided": false,
+      "control": {
+        "position_x": 15.774445850096638,
+        "position_y": 9.818409965104268,
+        "position_z": 3.486738241107895,
+        "vx": 0.5662873003248005,
+        "vy": -0.19828941164804673,
+        "vz": -5.214518919868208e-05,
+        "yaw_rate": -0.4,
+        "decision_age_s": 2,
+        "safety_modified": false,
+        "source_observation_seq": 640,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "d448f9bc761c",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 37.2,
+      "observation_seq": 745,
+      "position": [
+        17.563408408328133,
+        9.479696009400165,
+        3.4868061406036155
+      ],
+      "yaw": -0.2766371102374793,
+      "velocity": [
+        0.5702886450645582,
+        -0.16743846005904345,
+        1.2292701103964025e-06
+      ],
+      "distance": 16.24466882224596,
+      "collided": false,
+      "control": {
+        "position_x": 17.563408408328133,
+        "position_y": 9.479696009400165,
+        "position_z": 3.4868061406036155,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "yaw_rate": 0,
+        "decision_age_s": null,
+        "safety_modified": false,
+        "source_observation_seq": null,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": null,
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 39.2,
+      "observation_seq": 785,
+      "position": [
+        18.035558048679725,
+        9.341071456058495,
+        3.486807158332874
+      ],
+      "yaw": 0.40917348208549603,
+      "velocity": [
+        0.0732890236418372,
+        -0.021517877594127592,
+        1.5797615288806445e-07
+      ],
+      "distance": 16.11875584749094,
+      "collided": false,
+      "control": {
+        "position_x": 18.035558048679725,
+        "position_y": 9.341071456058495,
+        "position_z": 3.486807158332874,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "yaw_rate": 0,
+        "decision_age_s": null,
+        "safety_modified": false,
+        "source_observation_seq": null,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": null,
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 39.25,
+      "observation_seq": 786,
+      "position": [
+        18.039039277302713,
+        9.340049356872774,
+        3.4868071658367414
+      ],
+      "yaw": 0.40917348208549603,
+      "velocity": [
+        0.06962457245974535,
+        -0.020441983714421214,
+        1.5007734524366124e-07
+      ],
+      "distance": 16.117879612219856,
+      "collided": false,
+      "control": {
+        "position_x": 18.039039277302713,
+        "position_y": 9.340049356872774,
+        "position_z": 3.4868071658367414,
+        "vx": 0.5937419666312561,
+        "vy": -0.08643192153856198,
+        "vz": -1.3059440605699782e-08,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.3,
+        "safety_modified": false,
+        "source_observation_seq": 760,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "5c9dd04576af",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 40,
+      "observation_seq": 801,
+      "position": [
+        18.21713065869835,
+        9.308998826243178,
+        3.4868072373147845
+      ],
+      "yaw": 0.10917348208549581,
+      "velocity": [
+        0.35098527916098426,
+        -0.05542883484440424,
+        5.6052634040612485e-08
+      ],
+      "distance": 16.055656820502207,
+      "collided": false,
+      "control": {
+        "position_x": 18.21713065869835,
+        "position_y": 9.308998826243178,
+        "position_z": 3.4868072373147845,
+        "vx": 0.589842297696319,
+        "vy": -0.10993663560582066,
+        "vz": -9.971297501342667e-10,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 780,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "5637eaa1641d",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 41,
+      "observation_seq": 821,
+      "position": [
+        18.661330289276243,
+        9.23188685680765,
+        3.4868072687707925
+      ],
+      "yaw": -0.12422884990549903,
+      "velocity": [
+        0.504024997525354,
+        -0.09140884589240558,
+        1.3511736312244377e-08
+      ],
+      "distance": 15.908057859783026,
+      "collided": false,
+      "control": {
+        "position_x": 18.661330289276243,
+        "position_y": 9.23188685680765,
+        "position_z": 3.4868072687707925,
+        "vx": 0.5985930214828451,
+        "vy": -0.04106573549856541,
+        "vz": -2.440955677870008e-10,
+        "yaw_rate": 0.08359861269840918,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 800,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "da75c17ced8f",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 45,
+      "observation_seq": 901,
+      "position": [
+        20.969839169759332,
+        9.067054978438565,
+        3.4868072787677282
+      ],
+      "yaw": -0.028838321306816926,
+      "velocity": [
+        0.5981222893857371,
+        -0.019654169742233565,
+        6.598355327793314e-11
+      ],
+      "distance": 15.111346379189868,
+      "collided": false,
+      "control": {
+        "position_x": 20.969839169759332,
+        "position_y": 9.067054978438565,
+        "position_z": 3.4868072787677282,
+        "vx": 0.5997899999537041,
+        "vy": -0.015873120535536637,
+        "vz": -1.1800956043877475e-12,
+        "yaw_rate": 0.003570050311957007,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 880,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "2ca5c91ef801",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 46,
+      "observation_seq": 921,
+      "position": [
+        21.568617156398954,
+        9.049045437805013,
+        3.486807278804531
+      ],
+      "yaw": -0.025990888671641434,
+      "velocity": [
+        0.5992034923647738,
+        -0.016788152499631892,
+        1.5159115051827595e-11
+      ],
+      "distance": 14.932836764697763,
+      "collided": false,
+      "control": {
+        "position_x": 21.568617156398954,
+        "position_y": 9.049045437805013,
+        "position_z": 3.486807278804531,
+        "vx": 0.5998066377159091,
+        "vy": -0.01523145928451994,
+        "vz": -2.3542178080717306e-13,
+        "yaw_rate": 0.0009035937274556195,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 900,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "7016cd5cceef",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 47.2,
+      "observation_seq": 945,
+      "position": [
+        22.287816281335992,
+        9.032362888946711,
+        3.486807278813773
+      ],
+      "yaw": 0.023305292309522094,
+      "velocity": [
+        0.5983222850556735,
+        0.004524584315787736,
+        3.0706050095975847e-12
+      ],
+      "distance": 14.742997548124684,
+      "collided": false,
+      "control": {
+        "position_x": 22.287816281335992,
+        "position_y": 9.032362888946711,
+        "position_z": 3.486807278813773,
+        "vx": 0.592205355997154,
+        "vy": 0.09639925481187088,
+        "vz": -2.577261068094561e-13,
+        "yaw_rate": 0.20708926012761275,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 920,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "e13e5d1d9b43",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 48.5,
+      "observation_seq": 971,
+      "position": [
+        23.061275196813533,
+        9.097383863198298,
+        3.486807278815646
+      ],
+      "yaw": 0.15034649325025598,
+      "velocity": [
+        0.5931424393813615,
+        0.07609295594666923,
+        5.628099108877354e-13
+      ],
+      "distance": 14.494812948036333,
+      "collided": false,
+      "control": {
+        "position_x": 23.061275196813533,
+        "position_y": 9.097383863198298,
+        "position_z": 3.486807278815646,
+        "vx": 0.5916441015469491,
+        "vy": 0.09978605666476315,
+        "vz": -1.5172991860838185e-13,
+        "yaw_rate": 0.025109950160114955,
+        "decision_age_s": 1.55,
+        "safety_modified": false,
+        "source_observation_seq": 940,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "a8e01e008c61",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 49,
+      "observation_seq": 981,
+      "position": [
+        23.357643413527217,
+        9.138391812958965,
+        3.4868072788158377
+      ],
+      "yaw": 0.16123606405578655,
+      "velocity": [
+        0.5924100721861042,
+        0.08636763734725401,
+        2.5255862614763025e-13
+      ],
+      "distance": 14.393902693834765,
+      "collided": false,
+      "control": {
+        "position_x": 23.357643413527217,
+        "position_y": 9.138391812958965,
+        "position_z": 3.4868072788158377,
+        "vx": 0.5785828899164295,
+        "vy": 0.15887680603521964,
+        "vz": -3.0622725464333294e-15,
+        "yaw_rate": 0.16013239262249684,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 960,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "b2c72eceb674",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 51,
+      "observation_seq": 1021,
+      "position": [
+        24.53262398159588,
+        9.355039314405007,
+        3.4868072788160225
+      ],
+      "yaw": 0.1012436518493636,
+      "velocity": [
+        0.5928471308831305,
+        0.0729265525566971,
+        1.9080205725427382e-14
+      ],
+      "distance": 13.99588949357724,
+      "collided": false,
+      "control": {
+        "position_x": 24.53262398159588,
+        "position_y": 9.355039314405007,
+        "position_z": 3.4868072788160225,
+        "vx": 0.5937474754466784,
+        "vy": -0.08639407040240694,
+        "vz": -3.225332737604213e-16,
+        "yaw_rate": -0.3686040465757333,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1000,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "dd61cacdd303",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 53,
+      "observation_seq": 1061,
+      "position": [
+        25.70918778955529,
+        9.350278382008318,
+        3.4239767044736777
+      ],
+      "yaw": 0.05119788856803295,
+      "velocity": [
+        0.5791763794638624,
+        0.01938957916386101,
+        -0.10797795841358682
+      ],
+      "distance": 13.91517883207084,
+      "collided": false,
+      "control": {
+        "position_x": 25.70918778955529,
+        "position_y": 9.350278382008318,
+        "position_z": 3.4239767044736777,
+        "vx": 0.527879157009039,
+        "vy": 0.2731054535787088,
+        "vz": -0.08220101471997879,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1040,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "e0041a32fa91",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 53.2,
+      "observation_seq": 1065,
+      "position": [
+        25.823755588900504,
+        9.360284651077084,
+        3.403009098691685
+      ],
+      "yaw": 0.131197888568033,
+      "velocity": [
+        0.5690952337903098,
+        0.06757559492084783,
+        -0.10301850306557021
+      ],
+      "distance": 13.9030186874109,
+      "collided": false,
+      "control": {
+        "position_x": 25.823755588900504,
+        "position_y": 9.360284651077084,
+        "position_z": 3.403009098691685,
+        "vx": 0.5201002478147256,
+        "vy": 0.2883275825988838,
+        "vz": -0.07976802201223705,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 1040,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "e0041a32fa91",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 54,
+      "observation_seq": 1081,
+      "position": [
+        26.26313657690452,
+        9.478422179425335,
+        3.327658712170435
+      ],
+      "yaw": 0.42639375433067234,
+      "velocity": [
+        0.5324461288638098,
+        0.2071904183007227,
+        -0.0872460602976378
+      ],
+      "distance": 13.785503969475547,
+      "collided": false,
+      "control": {
+        "position_x": 26.26313657690452,
+        "position_y": 9.478422179425335,
+        "position_z": 3.327658712170435,
+        "vx": 0.5318048305681111,
+        "vy": -0.25471573066870246,
+        "vz": -0.11092122760919836,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1060,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "07502ad56fc1",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 55.2,
+      "observation_seq": 1105,
+      "position": [
+        26.887671925052427,
+        9.47175806836268,
+        3.2124587198379535
+      ],
+      "yaw": 0.10639375433067207,
+      "velocity": [
+        0.5086933753385436,
+        -0.053128716384561334,
+        -0.09630770398629912
+      ],
+      "distance": 13.818057005297131,
+      "collided": false,
+      "control": {
+        "position_x": 26.887671925052427,
+        "position_y": 9.47175806836268,
+        "position_z": 3.2124587198379535,
+        "vx": 0.5082013482622634,
+        "vy": 0.3093600288101302,
+        "vz": -0.07763866433042958,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 1080,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "de9e22333625",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 56,
+      "observation_seq": 1121,
+      "position": [
+        27.290278495451656,
+        9.533079572968747,
+        3.1415337686039186
+      ],
+      "yaw": 0.4263937543306723,
+      "velocity": [
+        0.4944247412656747,
+        0.1712972646132487,
+        -0.08218025846291514
+      ],
+      "distance": 13.78897850899656,
+      "collided": false,
+      "control": {
+        "position_x": 27.290278495451656,
+        "position_y": 9.533079572968747,
+        "position_z": 3.1415337686039186,
+        "vx": 0.5159626757102639,
+        "vy": -0.2885182574462012,
+        "vz": -0.10266319883050957,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1100,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "6463cba02b6a",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 58,
+      "observation_seq": 1161,
+      "position": [
+        28.17241155990059,
+        9.451314745509968,
+        2.9509471365634505
+      ],
+      "yaw": 0.42359310638306763,
+      "velocity": [
+        0.2912317800897572,
+        0.04574423391752125,
+        -0.0949142031498336
+      ],
+      "distance": 13.98463688515834,
+      "collided": false,
+      "control": {
+        "position_x": 28.17241155990059,
+        "position_y": 9.451314745509968,
+        "position_z": 2.9509471365634505,
+        "vx": -0.3461600663099025,
+        "vy": -0.4897405027302097,
+        "vz": -0.018095537513028757,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "494211f30937",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 59,
+      "observation_seq": 1181,
+      "position": [
+        28.205991620554148,
+        9.294416240904013,
+        2.8912393169850197
+      ],
+      "yaw": 0.023593106383067317,
+      "velocity": [
+        -0.13901135292906636,
+        -0.2814847242482624,
+        -0.03276964389404105
+      ],
+      "distance": 14.14949424740528,
+      "collided": false,
+      "control": {
+        "position_x": 28.205991620554148,
+        "position_y": 9.294416240904013,
+        "position_z": 2.8912393169850197,
+        "vx": -0.5530723572336104,
+        "vy": -0.2306450666324193,
+        "vz": -0.03022947075594503,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1160,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "09857967861f",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 60,
+      "observation_seq": 1201,
+      "position": [
+        27.90125099562612,
+        9.05247622252183,
+        2.8616481977710766
+      ],
+      "yaw": -0.37640689361693275,
+      "velocity": [
+        -0.40119680856971396,
+        -0.19344971311123277,
+        -0.02487225453962417
+      ],
+      "distance": 14.35080258201779,
+      "collided": false,
+      "control": {
+        "position_x": 27.90125099562612,
+        "position_y": 9.05247622252183,
+        "position_z": 2.8616481977710766,
+        "vx": 0.2786180355255084,
+        "vy": -0.14760022559094088,
+        "vz": -0.0545486830053398,
+        "yaw_rate": -0.1661444941023523,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1180,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "ab08c9c5f281",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 61,
+      "observation_seq": 1221,
+      "position": [
+        27.798683069963072,
+        8.902545979781262,
+        2.829695106203304
+      ],
+      "yaw": -0.16414052446590102,
+      "velocity": [
+        0.10442535889609499,
+        -0.09897049849159742,
+        -0.031564042507463336
+      ],
+      "distance": 14.490127542919648,
+      "collided": false,
+      "control": {
+        "position_x": 27.798683069963072,
+        "position_y": 8.902545979781262,
+        "position_z": 2.829695106203304,
+        "vx": 0.5744178901453773,
+        "vy": 0.16839859290485062,
+        "vz": -0.041060947244306485,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1200,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "abac198f013a",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 64,
+      "observation_seq": 1281,
+      "position": [
+        28.602946279685334,
+        8.766000303053273,
+        2.6461033550257773
+      ],
+      "yaw": -0.58439081554082,
+      "velocity": [
+        0.17674834838495743,
+        -0.2024074733484603,
+        -0.0656357879840786
+      ],
+      "distance": 14.754427920900346,
+      "collided": false,
+      "control": {
+        "position_x": 28.602946279685334,
+        "position_y": 8.766000303053273,
+        "position_z": 2.6461033550257773,
+        "vx": 0.13161360021874108,
+        "vy": -0.5853859213005934,
+        "vz": 0.0010878329452413786,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1260,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "2800d0fd6d0c",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 66,
+      "observation_seq": 1321,
+      "position": [
+        28.87713543781647,
+        7.907140984733807,
+        2.5997831974490007
+      ],
+      "yaw": -1.3157428516060852,
+      "velocity": [
+        0.10624863525945727,
+        -0.542036693436589,
+        -0.003489863923722728
+      ],
+      "distance": 15.647345406814342,
+      "collided": false,
+      "control": {
+        "position_x": 28.87713543781647,
+        "position_y": 7.907140984733807,
+        "position_z": 2.5997831974490007,
+        "vx": 0.28890463920960435,
+        "vy": -0.5258651031050112,
+        "vz": 5.272119309716766e-05,
+        "yaw_rate": 0.37098107340198794,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1300,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "9cdbd45b00a0",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 71,
+      "observation_seq": 1421,
+      "position": [
+        30.15943220527258,
+        5.270412958632147,
+        2.5971221016431865
+      ],
+      "yaw": -1.0503015394203035,
+      "velocity": [
+        0.29423085849042396,
+        -0.5219876815017394,
+        -4.017417305474724e-06
+      ],
+      "distance": 18.47196163939792,
+      "collided": false,
+      "control": {
+        "position_x": 30.15943220527258,
+        "position_y": 5.270412958632147,
+        "position_z": 2.5971221016431865,
+        "vx": 0.261233719430352,
+        "vy": -0.5401452988155885,
+        "vz": 5.238268041433276e-08,
+        "yaw_rate": -0.10503578778357936,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1400,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "8049b64d8e6f",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 72,
+      "observation_seq": 1441,
+      "position": [
+        30.43974807323185,
+        4.7408411312808365,
+        2.59711979702889
+      ],
+      "yaw": -1.1120096100590953,
+      "velocity": [
+        0.2704227558687908,
+        -0.5348977643344458,
+        -1.0899877150191442e-06
+      ],
+      "distance": 19.048226993962516,
+      "collided": false,
+      "control": {
+        "position_x": 30.43974807323185,
+        "position_y": 4.7408411312808365,
+        "position_z": 2.59711979702889,
+        "vx": 0.296912495748963,
+        "vy": -0.5213856249151119,
+        "vz": 1.3868210982934162e-08,
+        "yaw_rate": 0.08832041502007006,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1420,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "fa7898810e7f",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 73,
+      "observation_seq": 1461,
+      "position": [
+        30.721276129131905,
+        4.211655902075745,
+        2.59711917068965
+      ],
+      "yaw": -1.0605947814594514,
+      "velocity": [
+        0.28936301124957475,
+        -0.5251117632513954,
+        -2.984350359610345e-07
+      ],
+      "distance": 19.625771079714024,
+      "collided": false,
+      "control": {
+        "position_x": 30.721276129131905,
+        "position_y": 4.211655902075745,
+        "position_z": 2.59711917068965,
+        "vx": 0.25579813856984246,
+        "vy": -0.5427405570843252,
+        "vz": 3.9950314107707655e-09,
+        "yaw_rate": -0.10465439606923077,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1440,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "1d7e3e4acc39",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 79,
+      "observation_seq": 1581,
+      "position": [
+        32.359915692386345,
+        1.010374868186462,
+        2.597118937404179
+      ],
+      "yaw": -1.070864825187211,
+      "velocity": [
+        0.2826171486018296,
+        -0.5286511251452164,
+        -9.063562807820317e-11
+      ],
+      "distance": 23.12599884498439,
+      "collided": false,
+      "control": {
+        "position_x": 32.359915692386345,
+        "position_y": 1.010374868186462,
+        "position_z": 2.597118937404179,
+        "vx": 0.28708652532916623,
+        "vy": -0.5268598741358331,
+        "vz": 1.6003608806301067e-12,
+        "yaw_rate": -0.001517129086232583,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1560,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/98e631f3a2769156b7b3e7969e2eb6b2928c484a9aea7cad37ffff37a4848176.py"
+        }
+      },
+      "trace_id": "a762deda8f9b",
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 90,
+      "observation_seq": 1801,
+      "position": [
+        36.34802489976464,
+        -4.188886307360886,
+        2.597118937337756
+      ],
+      "yaw": -0.7203858386736778,
+      "velocity": [
+        0.4408462928043102,
+        -0.40478639419389356,
+        -7.170235676048556e-17
+      ],
+      "distance": 29.295107861235092,
+      "collided": false,
+      "control": {},
+      "trace_id": null,
+      "name": "c5_clutter_qwen4_20260915_s1061"
+    },
+    {
+      "t": 0,
+      "observation_seq": 1,
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "yaw": 0.7260068433926703,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "distance": 35.02051357538948,
+      "collided": false,
+      "control": {
+        "position_x": 0,
+        "position_y": 0,
+        "position_z": 3,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "yaw_rate": 0,
+        "decision_age_s": null,
+        "safety_modified": false,
+        "source_observation_seq": null,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": null,
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 13,
+      "observation_seq": 261,
+      "position": [
+        4.33375231803978,
+        2.029901726260718,
+        2.9045874250362878
+      ],
+      "yaw": 1.0418204697735953,
+      "velocity": [
+        0.2711974520116876,
+        0.5149078012709432,
+        0.0023823638421250114
+      ],
+      "distance": 30.46929519928227,
+      "collided": false,
+      "control": {
+        "position_x": 4.33375231803978,
+        "position_y": 2.029901726260718,
+        "position_z": 2.9045874250362878,
+        "vx": 0.37289721226873646,
+        "vy": 0.47005070751099565,
+        "vz": -3.808697110736469e-05,
+        "yaw_rate": -0.21251124344331696,
+        "decision_age_s": 2.05,
+        "safety_modified": false,
+        "source_observation_seq": 220,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "fa05c6598062",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 18,
+      "observation_seq": 361,
+      "position": [
+        6.484167430747997,
+        3.9948704548115326,
+        3.1083069984265213
+      ],
+      "yaw": 0.5507996636193467,
+      "velocity": [
+        0.5037541676548799,
+        0.3169357608045647,
+        0.06713085862018106
+      ],
+      "distance": 27.551896133641595,
+      "collided": false,
+      "control": {
+        "position_x": 6.484167430747997,
+        "position_y": 3.9948704548115326,
+        "position_z": 3.1083069984265213,
+        "vx": 0.5099020688025625,
+        "vy": 0.3085796910755232,
+        "vz": 0.06912636607403488,
+        "yaw_rate": -0.009876185107035917,
+        "decision_age_s": 7.05,
+        "safety_modified": false,
+        "source_observation_seq": 220,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "fa05c6598062",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 26,
+      "observation_seq": 521,
+      "position": [
+        10.366900180372452,
+        6.5902132158184905,
+        3.224403688931052
+      ],
+      "yaw": 0.3543029565720061,
+      "velocity": [
+        0.5533255458445236,
+        0.22146018214532437,
+        4.596105809194605e-06
+      ],
+      "distance": 22.976119517498546,
+      "collided": false,
+      "control": {
+        "position_x": 10.366900180372452,
+        "position_y": 6.5902132158184905,
+        "position_z": 3.224403688931052,
+        "vx": 0.5762490326472836,
+        "vy": 0.16714380746251611,
+        "vz": -5.65216643447302e-08,
+        "yaw_rate": -0.10799245680912717,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 500,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "dee4c53933dd",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 33,
+      "observation_seq": 661,
+      "position": [
+        14.083254422587979,
+        8.304177462391605,
+        3.607198084137105
+      ],
+      "yaw": 0.6328157532356166,
+      "velocity": [
+        0.4828265732560938,
+        0.349202064991768,
+        0.017110920457453258
+      ],
+      "distance": 19.222398224602298,
+      "collided": false,
+      "control": {
+        "position_x": 14.083254422587979,
+        "position_y": 8.304177462391605,
+        "position_z": 3.607198084137105,
+        "vx": 0.45850409861165636,
+        "vy": 0.3870063499384307,
+        "vz": -0.0002768820064041561,
+        "yaw_rate": 0.10233220354943467,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 640,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "1232ab1211c6",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 33.95,
+      "observation_seq": 680,
+      "position": [
+        14.532240051553321,
+        8.650618721872345,
+        3.6166317337834304
+      ],
+      "yaw": 0.6946677213298605,
+      "velocity": [
+        0.4649862836880094,
+        0.375882961580207,
+        0.004669836722648197
+      ],
+      "distance": 18.671042666914854,
+      "collided": false,
+      "control": {
+        "position_x": 14.532240051553321,
+        "position_y": 8.650618721872345,
+        "position_z": 3.6166317337834304,
+        "vx": 0.45093270602030205,
+        "vy": 0.39577355810586073,
+        "vz": -0.0047943034358168025,
+        "yaw_rate": 0.038515219479257456,
+        "decision_age_s": 2,
+        "safety_modified": false,
+        "source_observation_seq": 640,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "1232ab1211c6",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 37.2,
+      "observation_seq": 745,
+      "position": [
+        15.723928335163366,
+        10.146010180295919,
+        3.6197946762416864
+      ],
+      "yaw": 1.045900101548412,
+      "velocity": [
+        0.3300119189745107,
+        0.38742874191719245,
+        4.506739137462258e-05
+      ],
+      "distance": 16.759818740627438,
+      "collided": false,
+      "control": {
+        "position_x": 15.723928335163366,
+        "position_y": 10.146010180295919,
+        "position_z": 3.6197946762416864,
+        "vx": 0.5511161309220209,
+        "vy": -0.2372151138234154,
+        "vz": -3.3594499991291867e-06,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 720,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "46626e12c11c",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 39.2,
+      "observation_seq": 785,
+      "position": [
+        16.628731407358497,
+        10.15835428293031,
+        3.619826810371843
+      ],
+      "yaw": 0.2459001015484115,
+      "velocity": [
+        0.5123980178247741,
+        -0.17907000697016154,
+        3.5312109469879533e-06
+      ],
+      "distance": 16.201124836057502,
+      "collided": false,
+      "control": {
+        "position_x": 16.628731407358497,
+        "position_y": 10.15835428293031,
+        "position_z": 3.619826810371843,
+        "vx": 0.5382014094272933,
+        "vy": -0.26521546502863635,
+        "vz": -3.451745858016819e-07,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 760,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "0da549a0af42",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 39.25,
+      "observation_seq": 786,
+      "position": [
+        16.654415816728743,
+        10.149185418936655,
+        3.6198269772414267
+      ],
+      "yaw": 0.2259001015484115,
+      "velocity": [
+        0.5136881874049001,
+        -0.18337727987308527,
+        3.3373916703484716e-06
+      ],
+      "distance": 16.19341445030496,
+      "collided": false,
+      "control": {
+        "position_x": 16.654415816728743,
+        "position_y": 10.149185418936655,
+        "position_z": 3.6198269772414267,
+        "vx": 0.537708898044598,
+        "vy": -0.266212586035101,
+        "vz": -4.100296972234656e-07,
+        "yaw_rate": -0.4,
+        "decision_age_s": 1.3,
+        "safety_modified": false,
+        "source_observation_seq": 760,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "0da549a0af42",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 40,
+      "observation_seq": 801,
+      "position": [
+        17.044894091012466,
+        9.990656936321644,
+        3.6198285083261466
+      ],
+      "yaw": -0.0740998984515886,
+      "velocity": [
+        0.5246272248509593,
+        -0.23169751094825997,
+        1.073785014776738e-06
+      ],
+      "distance": 16.09717725040176,
+      "collided": false,
+      "control": {
+        "position_x": 17.044894091012466,
+        "position_y": 9.990656936321644,
+        "position_z": 3.6198285083261466,
+        "vx": 0.16236733418363686,
+        "vy": 0.5707232175451468,
+        "vz": 0.0889486241884275,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 780,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "5e99972ae521",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 41,
+      "observation_seq": 821,
+      "position": [
+        17.409648992651633,
+        10.07654509636196,
+        3.6540249448296955
+      ],
+      "yaw": 0.32590010154841154,
+      "velocity": [
+        0.24652700134355002,
+        0.2927410003893987,
+        0.05560676215852834
+      ],
+      "distance": 15.82043088938928,
+      "collided": false,
+      "control": {
+        "position_x": 17.409648992651633,
+        "position_y": 10.07654509636196,
+        "position_z": 3.6540249448296955,
+        "vx": 0.04852461698324697,
+        "vy": 0.5917112031651486,
+        "vz": 0.08673646058885165,
+        "yaw_rate": 0.4,
+        "decision_age_s": 2.05,
+        "safety_modified": false,
+        "source_observation_seq": 780,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "5e99972ae521",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 45,
+      "observation_seq": 901,
+      "position": [
+        17.79474701030229,
+        11.93076220713843,
+        3.904580527073837
+      ],
+      "yaw": 1.1912483939922969,
+      "velocity": [
+        0.05384111630629335,
+        0.21046971538658737,
+        0.02301479453361943
+      ],
+      "distance": 14.075179902649014,
+      "collided": false,
+      "control": {
+        "position_x": 17.79474701030229,
+        "position_y": 11.93076220713843,
+        "position_z": 3.904580527073837,
+        "vx": -0.5751946853511494,
+        "vy": 0.1707348245571439,
+        "vz": -0.0008328428624820608,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 880,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "71fd0e8727db",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 46,
+      "observation_seq": 921,
+      "position": [
+        17.756780411959802,
+        12.078685443171429,
+        3.918366945380297
+      ],
+      "yaw": 1.0512483939922967,
+      "velocity": [
+        -0.027908967037695517,
+        0.08849690911583258,
+        0.008084184913061994
+      ],
+      "distance": 13.979188933744371,
+      "collided": false,
+      "control": {
+        "position_x": 17.756780411959802,
+        "position_y": 12.078685443171429,
+        "position_z": 3.918366945380297,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "yaw_rate": -0.4,
+        "decision_age_s": null,
+        "safety_modified": false,
+        "source_observation_seq": null,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "onfly-lost-reorientation",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 47.2,
+      "observation_seq": 945,
+      "position": [
+        17.738008549726842,
+        12.138209386989224,
+        3.923804452445633
+      ],
+      "yaw": 0.8283029621291694,
+      "velocity": [
+        -0.008149112055639677,
+        0.025840126149729005,
+        0.002360493265339197
+      ],
+      "distance": 13.942967838553384,
+      "collided": false,
+      "control": {
+        "position_x": 17.738008549726842,
+        "position_y": 12.138209386989224,
+        "position_z": 3.923804452445633,
+        "vx": -0.4538385747407871,
+        "vy": -0.3924670502592231,
+        "vz": -0.00040316011124691555,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.25,
+        "safety_modified": false,
+        "source_observation_seq": 920,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "974532bec43b",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 48.5,
+      "observation_seq": 971,
+      "position": [
+        17.46199342638827,
+        11.918223862726766,
+        3.9250617010611046
+      ],
+      "yaw": 1.3483029621291698,
+      "velocity": [
+        -0.33225687579888735,
+        -0.28693446870214556,
+        0.0002763439237252185
+      ],
+      "distance": 14.285306104410434,
+      "collided": false,
+      "control": {
+        "position_x": 17.46199342638827,
+        "position_y": 11.918223862726766,
+        "position_z": 3.9250617010611046,
+        "vx": -0.4448113425412981,
+        "vy": -0.4026696209005286,
+        "vz": -0.00021436051994343062,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.55,
+        "safety_modified": false,
+        "source_observation_seq": 940,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "1be91181b582",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 49,
+      "observation_seq": 981,
+      "position": [
+        17.284781851181656,
+        11.76284054533445,
+        3.9251351678322632
+      ],
+      "yaw": 1.54830296212917,
+      "velocity": [
+        -0.360115929176145,
+        -0.3189233999983359,
+        4.9504797716233556e-05
+      ],
+      "distance": 14.516558467840392,
+      "collided": false,
+      "control": {
+        "position_x": 17.284781851181656,
+        "position_y": 11.76284054533445,
+        "position_z": 3.9251351678322632,
+        "vx": -0.31326003629982113,
+        "vy": -0.2891245998678953,
+        "vz": -2.722763874540846e-06,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 960,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "863f6f867613",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 51,
+      "observation_seq": 1021,
+      "position": [
+        16.979394167207044,
+        11.179520905504715,
+        3.9314747183135523
+      ],
+      "yaw": 1.54830296212917,
+      "velocity": [
+        0.11648716992146388,
+        -0.40175287415278166,
+        0.010412461721254105
+      ],
+      "distance": 15.164930080967276,
+      "collided": false,
+      "control": {
+        "position_x": 16.979394167207044,
+        "position_y": 11.179520905504715,
+        "position_z": 3.9314747183135523,
+        "vx": 0.31150319477987704,
+        "vy": -0.5126133037399994,
+        "vz": 0.013905411561440487,
+        "yaw_rate": -0.4,
+        "decision_age_s": 2.05,
+        "safety_modified": false,
+        "source_observation_seq": 980,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "a34be12bcc23",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 53,
+      "observation_seq": 1061,
+      "position": [
+        17.371310082715834,
+        10.679428502766491,
+        3.981501598466178
+      ],
+      "yaw": 1.3591023659108157,
+      "velocity": [
+        0.1506762467744882,
+        0.2090148554095361,
+        0.05262067849445007
+      ],
+      "distance": 15.336436782567912,
+      "collided": false,
+      "control": {
+        "position_x": 17.371310082715834,
+        "position_y": 10.679428502766491,
+        "position_z": 3.981501598466178,
+        "vx": 0.06626900969095768,
+        "vy": 0.5900766977246824,
+        "vz": 0.08612728462521929,
+        "yaw_rate": 0.14978522824152973,
+        "decision_age_s": 2.05,
+        "safety_modified": false,
+        "source_observation_seq": 1020,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "95df44e27ab0",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 53.2,
+      "observation_seq": 1065,
+      "position": [
+        17.399380468187026,
+        10.730301030487777,
+        3.9928134972594664
+      ],
+      "yaw": 1.3875602640263038,
+      "velocity": [
+        0.13433792646174625,
+        0.279788297449649,
+        0.05872874012809707
+      ],
+      "distance": 15.27851802303985,
+      "collided": false,
+      "control": {
+        "position_x": 17.399380468187026,
+        "position_y": 10.730301030487777,
+        "position_z": 3.9928134972594664,
+        "vx": 0.05711811835325712,
+        "vy": 0.5912412256288015,
+        "vz": 0.0846837273195737,
+        "yaw_rate": 0.13039170454032312,
+        "decision_age_s": 2.25,
+        "safety_modified": false,
+        "source_observation_seq": 1020,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "95df44e27ab0",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 54,
+      "observation_seq": 1081,
+      "position": [
+        17.483368081140334,
+        11.037933017192724,
+        4.046309762154707
+      ],
+      "yaw": 1.4700803719858022,
+      "velocity": [
+        0.0820872221112779,
+        0.45508232906501794,
+        0.0718089583583579
+      ],
+      "distance": 14.978229353830699,
+      "collided": false,
+      "control": {
+        "position_x": 17.483368081140334,
+        "position_y": 11.037933017192724,
+        "position_z": 4.046309762154707,
+        "vx": 0.18896118883824556,
+        "vy": 0.5666544999785492,
+        "vz": 0.056536242949962914,
+        "yaw_rate": -0.33173380171159383,
+        "decision_age_s": 3.05,
+        "safety_modified": false,
+        "source_observation_seq": 1020,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "95df44e27ab0",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 55.2,
+      "observation_seq": 1105,
+      "position": [
+        17.64388849906717,
+        11.640922751598426,
+        4.122482117530996
+      ],
+      "yaw": 1.2261317931356692,
+      "velocity": [
+        0.1804709790624238,
+        0.5251658647116413,
+        0.05545934738910486
+      ],
+      "distance": 14.395086387634521,
+      "collided": false,
+      "control": {
+        "position_x": 17.64388849906717,
+        "position_y": 11.640922751598426,
+        "position_z": 4.122482117530996,
+        "vx": 0.2949537346684916,
+        "vy": 0.5212509910160537,
+        "vz": 0.03605133520260916,
+        "yaw_rate": -0.25540755301645784,
+        "decision_age_s": 4.25,
+        "safety_modified": false,
+        "source_observation_seq": 1020,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "95df44e27ab0",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 56,
+      "observation_seq": 1121,
+      "position": [
+        17.809562723076603,
+        12.030856195087964,
+        4.158466036349441
+      ],
+      "yaw": 1.029298313620265,
+      "velocity": [
+        0.2056503066511717,
+        0.4157635298823899,
+        0.03361164474414935
+      ],
+      "distance": 13.983013350756531,
+      "collided": false,
+      "control": {
+        "position_x": 17.809562723076603,
+        "position_y": 12.030856195087964,
+        "position_z": 4.158466036349441,
+        "vx": -0.5174699476519722,
+        "vy": 0.2998752453009219,
+        "vz": 0.047955088705756245,
+        "yaw_rate": 0.4,
+        "decision_age_s": 5.05,
+        "safety_modified": false,
+        "source_observation_seq": 1020,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "95df44e27ab0",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 58,
+      "observation_seq": 1161,
+      "position": [
+        17.331320660654846,
+        12.44132604425734,
+        4.213520413595695
+      ],
+      "yaw": 1.8292983136202656,
+      "velocity": [
+        -0.42617664339839684,
+        -0.08076194376865045,
+        0.0033026472171970673
+      ],
+      "distance": 13.954289620680576,
+      "collided": false,
+      "control": {
+        "position_x": 17.331320660654846,
+        "position_y": 12.44132604425734,
+        "position_z": 4.213520413595695,
+        "vx": -0.1718959555796449,
+        "vy": -0.5748493481907383,
+        "vz": -8.567405639917746e-05,
+        "yaw_rate": 0.4,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 59,
+      "observation_seq": 1181,
+      "position": [
+        17.026678664964916,
+        12.16263170708856,
+        4.215303520454882
+      ],
+      "yaw": 2.2292983136202658,
+      "velocity": [
+        -0.20571852713417618,
+        -0.4092097392259135,
+        0.0006262561780584748
+      ],
+      "distance": 14.363056196856206,
+      "collided": false,
+      "control": {
+        "position_x": 17.026678664964916,
+        "position_y": 12.16263170708856,
+        "position_z": 4.215303520454882,
+        "vx": 0.12828166311109632,
+        "vy": -0.5861261083055674,
+        "vz": -8.486537380517636e-06,
+        "yaw_rate": 0.4,
+        "decision_age_s": 2.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 60,
+      "observation_seq": 1201,
+      "position": [
+        16.959857990628723,
+        11.686413194974344,
+        4.2156628308321205
+      ],
+      "yaw": 2.629298313620266,
+      "velocity": [
+        0.029922876859106773,
+        -0.5172429983701452,
+        0.000170815713729366
+      ],
+      "distance": 14.774907934051116,
+      "collided": false,
+      "control": {
+        "position_x": 16.959857990628723,
+        "position_y": 11.686413194974344,
+        "position_z": 4.2156628308321205,
+        "vx": 0.1830159689268683,
+        "vy": -0.5714062960008273,
+        "vz": -2.893868909890179e-06,
+        "yaw_rate": 0.4,
+        "decision_age_s": 3.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 61,
+      "observation_seq": 1221,
+      "position": [
+        17.05448425157094,
+        11.149677716618159,
+        4.215758856010304
+      ],
+      "yaw": 3.0292983136202665,
+      "velocity": [
+        0.14082957016250547,
+        -0.5476216161895731,
+        4.139303307621556e-05
+      ],
+      "distance": 15.14098371829711,
+      "collided": false,
+      "control": {
+        "position_x": 17.05448425157094,
+        "position_y": 11.149677716618159,
+        "position_z": 4.215758856010304,
+        "vx": 0.29835934300288136,
+        "vy": -0.5205590287781613,
+        "vz": -6.530826256917162e-07,
+        "yaw_rate": 0.4,
+        "decision_age_s": 4.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 64,
+      "observation_seq": 1281,
+      "position": [
+        17.969200170903306,
+        9.701097970620133,
+        4.215789686520892
+      ],
+      "yaw": -2.053886993559319,
+      "velocity": [
+        0.4575164574201941,
+        -0.35833489072069696,
+        7.084349262421328e-07
+      ],
+      "distance": 15.827731197042079,
+      "collided": false,
+      "control": {
+        "position_x": 17.969200170903306,
+        "position_y": 9.701097970620133,
+        "position_z": 4.215789686520892,
+        "vx": 0.5369313260164853,
+        "vy": -0.26777742836575796,
+        "vz": -1.3528985339230725e-08,
+        "yaw_rate": 0.4,
+        "decision_age_s": 7.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 66,
+      "observation_seq": 1321,
+      "position": [
+        18.990628142256142,
+        9.123390353620291,
+        4.215790158425434
+      ],
+      "yaw": -1.2538869935593184,
+      "velocity": [
+        0.5316718529343182,
+        -0.23185556011492967,
+        1.6114527542070865e-08
+      ],
+      "distance": 15.835759085062364,
+      "collided": false,
+      "control": {
+        "position_x": 18.990628142256142,
+        "position_y": 9.123390353620291,
+        "position_z": 4.215790158425434,
+        "vx": 0.5995245116619609,
+        "vy": -0.023882209204497767,
+        "vz": -2.146534963742591e-10,
+        "yaw_rate": 0.4,
+        "decision_age_s": 9.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 71,
+      "observation_seq": 1421,
+      "position": [
+        21.916740170306163,
+        9.01320410835532,
+        4.215790170861242
+      ],
+      "yaw": 0.22309806250031552,
+      "velocity": [
+        0.5845487827385575,
+        0.11135293520455933,
+        1.8455803016993506e-11
+      ],
+      "distance": 14.846424416341758,
+      "collided": false,
+      "control": {
+        "position_x": 21.916740170306163,
+        "position_y": 9.01320410835532,
+        "position_z": 4.215790170861242,
+        "vx": 0.573504146230057,
+        "vy": 0.17633205680457908,
+        "vz": -3.342721027904412e-13,
+        "yaw_rate": 0.11278886563323119,
+        "decision_age_s": 14.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 72,
+      "observation_seq": 1441,
+      "position": [
+        22.49609486522556,
+        9.152707449600221,
+        4.2157901708715215
+      ],
+      "yaw": 0.2992462235535557,
+      "velocity": [
+        0.5751311679271373,
+        0.16030475141065822,
+        4.2085402773298745e-12
+      ],
+      "distance": 14.555758519085439,
+      "collided": false,
+      "control": {
+        "position_x": 22.49609486522556,
+        "position_y": 9.152707449600221,
+        "position_z": 4.2157901708715215,
+        "vx": 0.5227452986725604,
+        "vy": 0.2945120586932488,
+        "vz": -7.316750675501971e-14,
+        "yaw_rate": 0.32073422422904374,
+        "decision_age_s": 15.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 73,
+      "observation_seq": 1461,
+      "position": [
+        23.04771325284068,
+        9.370613467042093,
+        4.215790170873878
+      ],
+      "yaw": 0.5026088268141177,
+      "velocity": [
+        0.533469503470258,
+        0.25989197316717905,
+        9.90512140744286e-13
+      ],
+      "distance": 14.213600858289535,
+      "collided": false,
+      "control": {
+        "position_x": 23.04771325284068,
+        "position_y": 9.370613467042093,
+        "position_z": 4.215790170873878,
+        "vx": 0.47363816997459446,
+        "vy": 0.36832985752327657,
+        "vz": -1.6221184500836417e-14,
+        "yaw_rate": 0.2375422158138022,
+        "decision_age_s": 16.05,
+        "safety_modified": false,
+        "source_observation_seq": 1140,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "9c91df15ddd9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 79,
+      "observation_seq": 1581,
+      "position": [
+        24.762704938866005,
+        12.147936038106604,
+        4.349721881916277
+      ],
+      "yaw": 1.3505573336027998,
+      "velocity": [
+        0.14351706132697498,
+        0.5734418143325999,
+        0.004004062487982081
+      ],
+      "distance": 11.17865840775556,
+      "collided": false,
+      "control": {
+        "position_x": 24.762704938866005,
+        "position_y": 12.147936038106604,
+        "position_z": 4.349721881916277,
+        "vx": 0.04144612588967428,
+        "vy": 0.5985667994869185,
+        "vz": -7.211604773929869e-05,
+        "yaw_rate": 0.22666059481098622,
+        "decision_age_s": 1.05,
+        "safety_modified": false,
+        "source_observation_seq": 1560,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 320,
+          "function": "_control_loop",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      },
+      "trace_id": "db9b4abff8b9",
+      "name": "c5_target_commitment_20260915_s1061"
+    },
+    {
+      "t": 90,
+      "observation_seq": 1801,
+      "position": [
+        25.152195887082613,
+        18.705882124058295,
+        4.352685097706507
+      ],
+      "yaw": 1.591924431232545,
+      "velocity": [
+        0.00568628400044867,
+        0.5964837436867225,
+        1.5064316548420711e-09
+      ],
+      "distance": 4.6466100018947385,
+      "collided": false,
+      "control": {},
+      "trace_id": null,
+      "name": "c5_target_commitment_20260915_s1061"
+    }
+  ],
+  "playbacks": 2,
+  "errors": []
+}

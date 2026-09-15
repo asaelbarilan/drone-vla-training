@@ -1,0 +1,1637 @@
+{
+  "name": "c5_target_commitment_20260915_s1061",
+  "poses_matched": 1800,
+  "source_images_matched": 89,
+  "historical_return_images_matched": 0,
+  "raw_speed_violations": 476,
+  "max_speed_excess_mps": 2.220446049250313e-16,
+  "effective_kinds": {
+    "exploration": 44,
+    "target": 45
+  },
+  "selected_decisions": [
+    {
+      "call": "call-000001",
+      "decision_id": "f2d763b90a4c",
+      "source_t": 0.0,
+      "available_t": 1.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        167.417,
+        111.612
+      ],
+      "waypoint": {
+        "x": 3.9192921487326746,
+        "y": 1.0520009630047686,
+        "z": 2.4643392205444856,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000003",
+      "decision_id": "ad8dc724a9b9",
+      "source_t": 0.95,
+      "available_t": 2.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        167.417,
+        111.612
+      ],
+      "waypoint": {
+        "x": 3.9192921487326746,
+        "y": 1.0520009630047686,
+        "z": 2.4643392205444856,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000004",
+      "decision_id": "ff9cfd7bfe1d",
+      "source_t": 1.95,
+      "available_t": 3.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 499,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.388,
+        111.612
+      ],
+      "waypoint": {
+        "x": 5.763675829547986,
+        "y": 2.135374390257189,
+        "z": 2.1240025616206784,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000006",
+      "decision_id": "a0912630fa4d",
+      "source_t": 2.95,
+      "available_t": 4.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 950,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        102,
+        141,
+        110
+      ],
+      "pixel": [
+        212.062,
+        100.45
+      ],
+      "waypoint": {
+        "x": 2.275113607250271,
+        "y": -1.1989437955935276,
+        "z": 2.8903880683916254,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000007",
+      "decision_id": "52cc7a955fc4",
+      "source_t": 3.95,
+      "available_t": 5.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 6.8859626365712225,
+        "y": 1.8536639568421671,
+        "z": 2.045049586933146,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000009",
+      "decision_id": "141f6bd80530",
+      "source_t": 4.95,
+      "available_t": 6.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 900,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        200.901,
+        100.45
+      ],
+      "waypoint": {
+        "x": 3.4871858478784725,
+        "y": -1.6521103807338375,
+        "z": 2.813847089654289,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000010",
+      "decision_id": "bce5488aa20c",
+      "source_t": 5.95,
+      "available_t": 7.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 350,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        148,
+        148,
+        152
+      ],
+      "pixel": [
+        78.1281,
+        100.45
+      ],
+      "waypoint": {
+        "x": 6.445897640146674,
+        "y": 2.791753069955507,
+        "z": 2.665334788672415,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000012",
+      "decision_id": "99b0b01a07e8",
+      "source_t": 6.95,
+      "available_t": 8.0,
+      "reply": {
+        "evidence": "gray structures on green ground with blue sky",
+        "kind": "exploration",
+        "u": 333,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        133,
+        133,
+        139
+      ],
+      "pixel": [
+        74.3333,
+        111.612
+      ],
+      "waypoint": {
+        "x": 4.390980893755731,
+        "y": 0.4109436046192111,
+        "z": 2.6146616664398747,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000013",
+      "decision_id": "7248eb0b4793",
+      "source_t": 7.95,
+      "available_t": 9.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 220,
+        "v": 370
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        198,
+        113,
+        113
+      ],
+      "pixel": [
+        49.1091,
+        82.5926
+      ],
+      "waypoint": {
+        "x": 5.571784373783009,
+        "y": 2.5881863192715455,
+        "z": 3.2357396026067033,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000015",
+      "decision_id": "d78c2429cd67",
+      "source_t": 8.95,
+      "available_t": 10.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 214,
+        "v": 375
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        198,
+        112,
+        112
+      ],
+      "pixel": [
+        47.7698,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 5.932741631952876,
+        "y": 2.757367855040316,
+        "z": 3.155606070821355,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000016",
+      "decision_id": "fd66f1144248",
+      "source_t": 9.95,
+      "available_t": 11.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 432,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        198,
+        111,
+        111
+      ],
+      "pixel": [
+        96.4324,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 7.881396843848444,
+        "y": 4.670046446511068,
+        "z": 3.401070259238841,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000018",
+      "decision_id": "fa05c6598062",
+      "source_t": 10.95,
+      "available_t": 12.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 635,
+        "v": 385
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        198,
+        110,
+        110
+      ],
+      "pixel": [
+        141.747,
+        85.9409
+      ],
+      "waypoint": {
+        "x": 7.781403137639185,
+        "y": 4.779924327263303,
+        "z": 3.2841705531076295,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000019",
+      "decision_id": "2a30c0e6d4b3",
+      "source_t": 11.95,
+      "available_t": 13.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 845,
+        "v": 400
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        91,
+        91,
+        96
+      ],
+      "pixel": [
+        188.624,
+        89.2893
+      ],
+      "waypoint": {
+        "x": 6.331803055726429,
+        "y": 3.6017854729019705,
+        "z": 3.0271497719895155,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000021",
+      "decision_id": "cac35e5f54d5",
+      "source_t": 12.95,
+      "available_t": 14.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        145,
+        145,
+        150
+      ],
+      "pixel": [
+        167.417,
+        100.45
+      ],
+      "waypoint": {
+        "x": 7.723857931254258,
+        "y": 4.302455156289624,
+        "z": 2.730297610129757,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000022",
+      "decision_id": "32fd49903cf5",
+      "source_t": 13.95,
+      "available_t": 15.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        138,
+        138,
+        143
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 8.253402390617378,
+        "y": 7.202530376715646,
+        "z": 2.029870372095873,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000024",
+      "decision_id": "2883eff7d2dc",
+      "source_t": 14.95,
+      "available_t": 16.0,
+      "reply": {
+        "evidence": "gray buildings",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 9.577706625696948,
+        "y": 6.742477523828679,
+        "z": 2.0526175593450313,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000025",
+      "decision_id": "be2bb9f328f2",
+      "source_t": 15.95,
+      "available_t": 17.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        144,
+        144,
+        148
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 10.293758161903321,
+        "y": 6.780617522907484,
+        "z": 2.1024974184477756,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000027",
+      "decision_id": "d9b21e8bfba9",
+      "source_t": 16.95,
+      "available_t": 18.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        143,
+        143,
+        148
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 10.957033817387856,
+        "y": 6.859010978189426,
+        "z": 2.1631589807538587,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000028",
+      "decision_id": "c58f7f9392b0",
+      "source_t": 17.95,
+      "available_t": 19.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        143,
+        143,
+        147
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 11.50424821999793,
+        "y": 7.105804926971109,
+        "z": 2.2289181259148796,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000030",
+      "decision_id": "4ca9fe6a7042",
+      "source_t": 18.95,
+      "available_t": 20.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        142,
+        142,
+        147
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 12.033944260258586,
+        "y": 7.378227918764507,
+        "z": 2.2966696250662526,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000031",
+      "decision_id": "30542c7c1e4b",
+      "source_t": 19.95,
+      "available_t": 21.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 412,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        199,
+        99,
+        99
+      ],
+      "pixel": [
+        91.968,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 11.666608146156557,
+        "y": 8.598811467477303,
+        "z": 3.7714223797838153,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000033",
+      "decision_id": "c5f67f251bcf",
+      "source_t": 20.95,
+      "available_t": 22.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 430,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        98,
+        98
+      ],
+      "pixel": [
+        95.986,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 12.211670089053623,
+        "y": 9.094942573984413,
+        "z": 4.078487959314176,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000034",
+      "decision_id": "ebbad47df030",
+      "source_t": 21.95,
+      "available_t": 23.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 499,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        97,
+        97
+      ],
+      "pixel": [
+        111.388,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 12.805702567440386,
+        "y": 9.64354147165794,
+        "z": 4.120952452360271,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000036",
+      "decision_id": "fe472f03ddad",
+      "source_t": 22.95,
+      "available_t": 24.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 515,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        96,
+        96
+      ],
+      "pixel": [
+        114.96,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 13.173188863010935,
+        "y": 10.046032118507334,
+        "z": 3.825175832007474,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000037",
+      "decision_id": "3cd2e1547fec",
+      "source_t": 23.95,
+      "available_t": 25.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 321,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        94,
+        94
+      ],
+      "pixel": [
+        71.6547,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 12.791772206742353,
+        "y": 9.567541811243727,
+        "z": 3.682369946810034,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000039",
+      "decision_id": "dee4c53933dd",
+      "source_t": 24.95,
+      "available_t": 26.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 325,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        93,
+        93
+      ],
+      "pixel": [
+        72.5475,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 13.26827494738793,
+        "y": 9.947108430816387,
+        "z": 3.687625875459002,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000040",
+      "decision_id": "1462de1511b7",
+      "source_t": 25.95,
+      "available_t": 27.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 250,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        92,
+        92
+      ],
+      "pixel": [
+        55.8058,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.21042772176639,
+        "y": 9.594515178348523,
+        "z": 3.766364146393518,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000042",
+      "decision_id": "4bbdd73a87a8",
+      "source_t": 26.95,
+      "available_t": 28.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 199,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        91,
+        91
+      ],
+      "pixel": [
+        44.4214,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.336677508814939,
+        "y": 9.381062708816367,
+        "z": 3.6696970082384,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000043",
+      "decision_id": "a53c38853a95",
+      "source_t": 27.95,
+      "available_t": 29.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 175,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        90,
+        90
+      ],
+      "pixel": [
+        39.0641,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.690254640747137,
+        "y": 9.382915662716886,
+        "z": 3.666969865635387,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000045",
+      "decision_id": "a07098402113",
+      "source_t": 28.95,
+      "available_t": 30.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 160,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        201,
+        89,
+        89
+      ],
+      "pixel": [
+        35.7157,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 14.116305903094801,
+        "y": 9.451380899857561,
+        "z": 3.717361823950933,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000046",
+      "decision_id": "89076072d2e9",
+      "source_t": 29.95,
+      "available_t": 31.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 250,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        201,
+        88,
+        88
+      ],
+      "pixel": [
+        55.8058,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 15.323906342173315,
+        "y": 10.454770710879695,
+        "z": 3.956206514064318,
+        "frame": "enu"
+      }
+    }
+  ],
+  "model_calls": {
+    "complete": 134,
+    "cancelled": 1
+  },
+  "return_phases": [],
+  "event_counts": {
+    "episode_start": 1,
+    "control": 1800,
+    "perception": 90,
+    "memory_update": 90,
+    "inference_call": 134,
+    "decision_proposed": 120,
+    "decision_executed": 58,
+    "verifier": 58,
+    "plan": 89,
+    "monitor": 45,
+    "recovery_trigger": 1,
+    "recovery_decision": 1,
+    "episode_end": 1
+  },
+  "recovery": [
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1258,
+      "component": "monitor",
+      "event_type": "recovery_trigger",
+      "t_sim_ns": 45200000000,
+      "t_wall_ns": 17649214975900,
+      "trace_id": null,
+      "payload": {
+        "trigger": "onfly_lost",
+        "cause": "visual monitor classified lost from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=37950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True; acquisition_count=0/2; history_continuous=False; identity_source=current_frame_vlm; grounding='The image shows a narrow vertical opening between two gray walls, revealing a blue sky above and a green ground below. A'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+        "target_yaw_rad": 0.7459001015484119,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 555,
+          "function": "_run_supervision",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1259,
+      "component": "recovery",
+      "event_type": "recovery_decision",
+      "t_sim_ns": 45200000000,
+      "t_wall_ns": 17649215558900,
+      "trace_id": null,
+      "payload": {
+        "kind": "fixed_reorientation",
+        "cause": "monitor_lost",
+        "producer": "onfly_lost_executive",
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 564,
+          "function": "_run_supervision",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 361,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 13000000000,
+      "t_wall_ns": 16687480864300,
+      "trace_id": "2a30c0e6d4b3",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 389,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 14000000000,
+      "t_wall_ns": 16714594199200,
+      "trace_id": "cac35e5f54d5",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 415,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 15000000000,
+      "t_wall_ns": 16746601728200,
+      "trace_id": "32fd49903cf5",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 443,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 16000000000,
+      "t_wall_ns": 16773727800400,
+      "trace_id": "2883eff7d2dc",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 469,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 17000000000,
+      "t_wall_ns": 16805771921800,
+      "trace_id": "be2bb9f328f2",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 497,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 18000000000,
+      "t_wall_ns": 16832939040200,
+      "trace_id": "d9b21e8bfba9",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1139,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 41000000000,
+      "t_wall_ns": 17508067318300,
+      "trace_id": "c4b4f15486ac",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1167,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 42000000000,
+      "t_wall_ns": 17534817515500,
+      "trace_id": "84ed8ac5db21",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1193,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 43000000000,
+      "t_wall_ns": 17565888712600,
+      "trace_id": "eae72c3084d8",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1221,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 44000000000,
+      "t_wall_ns": 17592583977100,
+      "trace_id": "d1601c924829",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1417,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 51000000000,
+      "t_wall_ns": 17796394042100,
+      "trace_id": "f630e834ce42",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1472,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 53000000000,
+      "t_wall_ns": 17853680657000,
+      "trace_id": "66d10fc6f9b4",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1500,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 54000000000,
+      "t_wall_ns": 17880709925500,
+      "trace_id": "389c9f33bac1",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1526,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 55000000000,
+      "t_wall_ns": 17912089851500,
+      "trace_id": "52d588a30141",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1554,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 56000000000,
+      "t_wall_ns": 17938959197400,
+      "trace_id": "3edc2d8c68fc",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1636,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 59000000000,
+      "t_wall_ns": 18028973107100,
+      "trace_id": "1c772cc7c2de",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1664,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 60000000000,
+      "t_wall_ns": 18056507326500,
+      "trace_id": "e723f8524870",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1690,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 61000000000,
+      "t_wall_ns": 18089568195500,
+      "trace_id": "7a987f153981",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1718,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 62000000000,
+      "t_wall_ns": 18116577933500,
+      "trace_id": "a77b06b73925",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1744,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 63000000000,
+      "t_wall_ns": 18147141640000,
+      "trace_id": "3db53cb9c364",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1772,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 64000000000,
+      "t_wall_ns": 18173320735700,
+      "trace_id": "3ea23e6c47f1",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1798,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 65000000000,
+      "t_wall_ns": 18204674606600,
+      "trace_id": "e0003b6114df",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1826,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 66000000000,
+      "t_wall_ns": 18230808593500,
+      "trace_id": "2c6a952190fd",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1852,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 67000000000,
+      "t_wall_ns": 18261524933500,
+      "trace_id": "4490f0f18a9d",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1880,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 68000000000,
+      "t_wall_ns": 18287928550000,
+      "trace_id": "84b44fcb4355",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1906,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 69000000000,
+      "t_wall_ns": 18318190672900,
+      "trace_id": "54f1cbe00fab",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1934,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 70000000000,
+      "t_wall_ns": 18344157266500,
+      "trace_id": "60300123c0cd",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1960,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 71000000000,
+      "t_wall_ns": 18374179666700,
+      "trace_id": "f5be66abccb3",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 1988,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 72000000000,
+      "t_wall_ns": 18400572151000,
+      "trace_id": "d20b0ad4aec6",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 2014,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 73000000000,
+      "t_wall_ns": 18431358783500,
+      "trace_id": "243bec621827",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    },
+    {
+      "episode_id": "c5_target_commitment_20260915_s1061",
+      "seq": 2042,
+      "component": "policy",
+      "event_type": "decision_proposed",
+      "t_sim_ns": 74000000000,
+      "t_wall_ns": 18457513914800,
+      "trace_id": "cd3b0bf82df3",
+      "payload": {
+        "kind": "waypoint",
+        "rejected": true,
+        "reason": "target commitment retained: exploratory replacement deferred",
+        "decision_age_s": 1.05,
+        "_debug_source": {
+          "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\core\\orchestrator.py",
+          "line": 684,
+          "function": "_handle_envelope",
+          "snapshot": "debug/sources/e329a9792bfc051cd3d75a6193ac0ef87a84919a3f57bdb60b2358622027eb6a.py"
+        }
+      }
+    }
+  ],
+  "monitor_labels": {
+    "continue": 31,
+    "lost": 14
+  },
+  "comparison": [
+    {
+      "name": "c5_clutter_qwen4_20260915_s1061",
+      "closest": 13.746157271886139,
+      "closest_t": 54.45,
+      "provenance": {
+        "run_commit": "67f21a81f4bafdf69a1b62ef8a4cc44835bc681e",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 1800,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 89,
+        "missing_source_frames": 0,
+        "recorded_calls": 135,
+        "events_sha256": "c19e2c9b5bd96faf62c94cceeb0bc5fda419357e61c4217151a02f29f9ffea5f",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      }
+    },
+    {
+      "name": "c5_target_commitment_20260915_s1061",
+      "closest": 4.6466100018947385,
+      "closest_t": 90.0,
+      "provenance": {
+        "run_commit": "c9eb68f79467dfeabcf555f08308c9298553a6de",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 1800,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 89,
+        "missing_source_frames": 0,
+        "recorded_calls": 135,
+        "events_sha256": "afae405b0ee326e39de4bd31e134ff20eab59c168597b334d11e0135b4480db6",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      }
+    }
+  ]
+}

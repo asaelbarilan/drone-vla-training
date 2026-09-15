@@ -1,61 +1,46 @@
-# D-116 cycle 1: handoff repair confirmed, mission still fails
+# Autonomous recovery cycles — 15 September 2026
 
-| Metric | D-115 Qwen baseline | Fresh-view handoff |
-|---|---:|---:|
-| Outcome | timeout90s | timeout90s |
-| Closest distance |13.746m|13.401m|
-| Final distance |29.295m|29.939m|
-| Collisions |0|0|
+**Three new flights completed and visually audited. None completed the mission.**
+The last named extension cleared the obstacle and approached to 4.65 m before the
+90-second timeout. All three had zero collisions. No cloud models or paid calls.
 
-No navigation improvement is established: closest approach is marginally better,
-final distance worse, and target reacquisition still fails. This is one development
-seed, not a benchmark conclusion. The repair remains opt-in; no baseline promotion.
+| Trial | Change tested | Closest / final distance | Finding |
+|---|---|---|---|
+| 1, D-116 | Fresh image after LOST reorientation | 13.40 / 29.94 m | Handoff works; navigation still fails. |
+| 2, D-117 | VLM-selected return to an observed viewpoint | 14.93 / 17.01 m | Return restores target view; later occlusion interrupts progress again. |
+| 3, D-121 | Bounded persistence of an accepted target goal | 4.65 / 4.65 m | Detour restores view; steady final approach, but no completed arrival/stop. |
 
-## Causal check
+The last trial's model output differs before the extension first activates, with
+CPU placement different from the earlier GPU runs. Its better distances therefore
+are promising descriptive evidence, not proof that the architecture change caused
+all the gain. These are development experiments, not held-out paper results.
 
-Matched controls and poses are identical until39.25s, the first changed command.
-Baseline resumes movement then from obs760 (37.95s, during recovery).
-The new profile holds through40s; it rejects the delayed obs780 (38.95s) reply
-at40s. Motion resumes at41s from obs800 captured39.95s after expiry39.2s.
-The fresh-image handoff contract is satisfied. This does not imply reacquisition.
-No new target search, timed turn extension or ground-truth route was introduced.
+## What we learned about the failure
 
-Source images at inference-start34/40/42/46s (captured0.05s earlier) were inspected:
-red target in the first; absent in the next three. The fresh policy chooses open
-space to the right of the large wall and then continues away without reacquiring.
-Dashboard at41s inspected with flight map, drone camera, observer and source timing.
-The monitor reports27 LOST, with one bounded recovery trigger, as in the baseline.
+There are separate mechanisms, not one generic "bad VLM" failure. The return trial
+shows correct red-target points followed by loss during movement. Current-visibility
+monitoring treats occlusion as LOST; fresh exploration goals and yaw recovery can
+interrupt an accepted intention. A saved-state held-goal probe and the last flight
+show that preserving the goal can let common local planning make a useful detour.
+The VLM supplies the semantic goal; this added executive persistence is a named
+architecture extension. Native paper profiles remain unchanged.
 
-![Actual source images and replies](CYCLE1_SOURCE_VIEWS.png)
+Two temporal-monitor prompt probes did not pass the selected identity/status
+checks and were not promoted into a live flight. Their historical-image construction
+was later found to use the wrong update cadence; D-120 explicitly corrects that
+limitation. Do not cite those constructed histories as exact original live requests.
 
-Next is offline diagnosis of the information given to the decision VLM. The
-`grounded_waypoints` prompt uses the current image and routing feedback; it does
-not carry persistent target-loss state or the last-confirmed view. Check this
-against the intended architecture contract before naming a temporal-context
-ablation. A new VLM memory/recovery mechanism must not be presented as the
-original paper implementation. Do not insert a scripted target search or oracle.
+## Evidence and next step
 
-## Verification
+- [Cycle 1](cycle1/REPORT.md), [cycle 2](cycle2/REPORT.md), [cycle 3](cycle3/REPORT.md).
+- [Latest flight debugger](http://127.0.0.1:8766/recovery_cycle3.html#run=c5_target_commitment_20260915_s1061&t=74).
+- D-120 [saved-state execution probe](goal_hold_component/REPORT.md).
+- 392 completed requests across the three flights, three boundary cancellations;
+  15 additional saved-frame diagnostic calls. All local. No extra model downloads.
+- Changes are committed separately; raw evidence and source snapshots are retained.
 
-117 focused tests pass (router,OnFly,fence,inference,hover,target-stop), including
-legacy behavior, delayed-reply rejection, fresh resumption and temporal-vs-obstacle
-feedback. New tooling lint passes. Source audit now filters rejection events
-without source IDs; runtime logs are unchanged. All1800 new poses and89 source
-images match; comparison has3600 exact poses. Edge:20 seeks,2 playbacks,no JS errors.
-134 completed local Qwen calls plus1 final cancellation; zero inference errors.
-427 raw speed violations are floating-point excess only (see cycle1/AUDIT.json).
-Dedicated Ollama11435 unloaded/stopped; shared11434 and Valley8765 untouched.
-
-Run `c5_recovery_fresh_20260915_s1061`, runtime commit20eafe0. Frozen configs,
-events,source images/model replies,code snapshots and browser checks retained.
-Raw evidence is not rewritten. Dashboard:
-http://127.0.0.1:8766/recovery_cycle1.html#run=c5_recovery_fresh_20260915_s1061&t=39.25
-
-Automatic follow-ups remain scheduled until16:55UTC. One of four flight slots used;
-next cycle starts offline because this did not improve mission completion.
-
-## Subsequent cycle2 completed
-
-See [cycle2/REPORT.md](cycle2/REPORT.md). VLM-selected return restores the view,
-but the flight still times out. Next offline monitor-semantics diagnosis; two
-of four model flights used.
+Next: validate an exact replay checkpoint before a bounded continuation that tests
+arrival and stopping beyond 90 s. Report that separately from the failed 90-second
+benchmark. A matched-placement comparison is also needed before attributing the
+outcome improvement to target commitment. Three of four available flight slots
+used; no rushed fourth trial. Dedicated inference stopped; debugger stays available.

@@ -1,0 +1,61 @@
+{
+  "model_id": "qwen3-vl:4b",
+  "role": "monitor",
+  "prompt_hash": "onfly:monitor:current_grounding_v1",
+  "input_tokens": 101,
+  "image_count": 1,
+  "observation_seq": 640,
+  "prompt": "Describe the visible objects and colors briefly in evidence, then locate the destination requested by: fly to the red tower and stop there. The instruction is a query, not evidence that its object is present. Set visible=true only if that exact object is identifiable in this image. Give u,v on its visible body in a 0-999 grid (top-left origin). If absent set visible=false and u=v=null. Return JSON only.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "visible": {
+        "type": "boolean"
+      },
+      "u": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "visible",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000050",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 1454,
+    "function": "assess",
+    "snapshot": "debug/sources/d4a0edb46a2db72087c07b7a3f2fe35db316e0dcd14097b52774403f337aa4ce.py"
+  },
+  "started_t_sim_ns": 32000000000,
+  "image_files": [
+    "debug/images/call-000050-0.png"
+  ],
+  "completed_t_sim_ns": 33200000000,
+  "response": "{\"evidence\": \"The image shows a 3D scene with a blue sky, green ground, and three gray structures. A small red rectangular object is\\n\\n\", \"visible\": true, \"u\": 343, \"v\": 372}",
+  "latency_ns": 4568782900,
+  "output_tokens": 57,
+  "cache_hit": false
+}

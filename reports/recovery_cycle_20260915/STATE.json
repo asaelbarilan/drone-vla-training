@@ -27,14 +27,23 @@
     },
     {
       "run": "c5_target_commitment_20260915_s1061",
-      "status": "running",
+      "status": "complete_audited",
       "architecture": "c5_target_commitment_qwen4_dev",
-      "commit": "3fd30c8"
+      "commit": "3fd30c8",
+      "outcome": "timeout",
+      "closest_m": 4.6466100018947385,
+      "final_m": 4.6466100018947385,
+      "collisions": 0,
+      "completed_calls": 134,
+      "cancelled_calls": 1
     }
   ],
-  "status": "cycle3_running",
+  "status": "complete",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Flight3 still running, inspect owned process/result before any action. Interim13-18slease preserves realtarget through explorationwall proposals and later currenttarget reappears; complete outcome pending. Run audit_target_commitment then report_recovery_cycle.py3 then check_recovery_cycle_browser.py3 after result exists. Unload/stop owned11435 after flight. No fourth flight until audited and sufficient time before16:55UTC.",
-  "server": "Dedicated11435 CPU-only running; owned serverPID tmp/commitment_server.pid, flightPID tmp/commitment_flight.pid; debugger8766 retained, shared11434/8765 untouched",
-  "saved_frame_calls": 15
+  "next": "Autonomous batch complete: three of four maximum flights used. No more automatic launches. Next offline validate exact cached request/state/control replay, then separately freeze bounded continuation to test arrival/STOP beyond90s. Preserve90s failure. Matched CPU placement/repeats needed for causal architecture comparison.",
+  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained. Shared11434 and Valley8765 not modified.",
+  "saved_frame_calls": 15,
+  "stop_reason": "All launched flights audited; another fullCPU flight needs43min, beyond remaining deadline. Do not rush unvalidated checkpoint continuation.",
+  "automation_status": "PAUSED",
+  "completed_at_utc": "2026-09-15T16:41:34.705945+00:00"
 }

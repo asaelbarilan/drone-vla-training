@@ -1,0 +1,59 @@
+{
+  "model_id": "qwen3-vl:4b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:grounded_v1",
+  "input_tokens": 219,
+  "image_count": 1,
+  "observation_seq": 900,
+  "prompt": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "target",
+          "exploration"
+        ]
+      },
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "kind",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000069",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 609,
+    "function": "decide",
+    "snapshot": "debug/sources/d4a0edb46a2db72087c07b7a3f2fe35db316e0dcd14097b52774403f337aa4ce.py"
+  },
+  "started_t_sim_ns": 45000000000,
+  "image_files": [
+    "debug/images/call-000069-0.png"
+  ],
+  "completed_t_sim_ns": 46000000000,
+  "response": "{\n  \"evidence\": \"red tower\",\n  \"kind\": \"target\",\n  \"u\": 600,\n  \"v\": 300\n}",
+  "latency_ns": 25650447600,
+  "output_tokens": 37,
+  "cache_hit": false
+}

@@ -2807,3 +2807,25 @@ prompt/schema/image bytes match, but model response differs with CPU/GPU placeme
 different. Therefore final outcome alone is NOT clean architecture-only evidence.
 No attempt to change or restart the running flight. Await completion then full
 replay,leaseaudit and visual review. Dedicated11435 runningCPU,not stopped.
+
+
+### D-121 final outcome: useful detour, mission still incomplete
+
+Flight c5_target_commitment_20260915_s1061 timed out90s at4.64661m, also closest,
+zero collisions; final speed0.59651m/s, no STOP. Actual camera/map show obstacle
+detour, red reappearance by sampled74s and monotonic approach75–90s. All15 final
+policy points land on actual red source pixels.134 completed localcalls+1cancelled.
+Five bounded leases,31 explorationdeferrals,13 LOSTyawdeferrals,419 commands with
+originalsourceage>4s (maximum18s), zero leaseauditviolations.599 total leasecommands.
+All leases end beforedeadline, so expiry/failure remain unit-tested,not live-demonstrated.
+All1800 poses/89 inputs match;66 seeks/2playbacks+7 finalcaptures visually reviewed.
+Raw476 speedviolations have maximumexcess2.22e-16m/s; original counters preserved.
+CPU-only43.27minwall; fixedpolicy1s/monitor1.2s simulatedlatency,not realtimeCPUproof.
+Source/model outputs diverge1s before firstlease13s, so this is NOT isolated causal
+improvement over D115/D116. Named extension only,not paperbaselinepromotion.
+Evidence: reports/recovery_cycle_20260915/cycle3/REPORT.md,COMMITMENT_AUDIT.json,
+AUDIT.json,FINISH_REVIEW.json and retained rawcapture.420 fullsuite+20 focusedtests.
+Next validate exact cached runtime replay before bounded longer-horizon continuation;
+preserve90s failure and test terminalSTOP separately. Need matched-placement repeats
+for causal architecture claims. Autonomous batch complete3/4maximumflights; no fourth
+43minuteCPU trial fits remainingwindow. Dedicated11435 stopped;debugger8766 retained.

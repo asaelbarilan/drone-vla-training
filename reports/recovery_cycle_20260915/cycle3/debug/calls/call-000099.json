@@ -1,0 +1,59 @@
+{
+  "model_id": "qwen3-vl:4b",
+  "role": "policy",
+  "prompt_hash": "onfly:decision:grounded_v1",
+  "input_tokens": 226,
+  "image_count": 1,
+  "observation_seq": 1300,
+  "prompt": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. The executor is continuing the previously accepted target goal during a bounded detour. The exploratory replacement was deferred, not judged blocked. Inspect this current image: report target only if it is currently identifiable. Return JSON with evidence, kind, u, v.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "kind": {
+        "type": "string",
+        "enum": [
+          "target",
+          "exploration"
+        ]
+      },
+      "u": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      },
+      "v": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999
+      }
+    },
+    "required": [
+      "evidence",
+      "kind",
+      "u",
+      "v"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000099",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\onfly.py",
+    "line": 609,
+    "function": "decide",
+    "snapshot": "debug/sources/d4a0edb46a2db72087c07b7a3f2fe35db316e0dcd14097b52774403f337aa4ce.py"
+  },
+  "started_t_sim_ns": 65000000000,
+  "image_files": [
+    "debug/images/call-000099-0.png"
+  ],
+  "completed_t_sim_ns": 66000000000,
+  "response": "{\n  \"evidence\": \"gray structure\",\n  \"kind\": \"exploration\",\n  \"u\": 650,\n  \"v\": 450\n}",
+  "latency_ns": 25941549400,
+  "output_tokens": 38,
+  "cache_hit": false
+}
