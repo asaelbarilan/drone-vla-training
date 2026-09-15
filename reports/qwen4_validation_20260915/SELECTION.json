@@ -1,0 +1,83 @@
+[
+  {
+    "run": "c5_depth_ray_v2_20260912_s1061",
+    "call": "call-000030",
+    "image": "runs\\c5_depth_ray_v2_20260912_s1061\\debug\\images\\call-000030-0.png",
+    "sha256": "194dadf24efce32d6efa14c44b2003665c5c025584329bf8097a79a8c6330c90",
+    "seq": 380,
+    "time": 18.95,
+    "box": [
+      36,
+      73,
+      44,
+      98
+    ],
+    "red_pixels": 200,
+    "id": "far_left"
+  },
+  {
+    "run": "c5_hover_stable_20260914_s1062",
+    "call": "call-000009",
+    "image": "runs\\c5_hover_stable_20260914_s1062\\debug\\images\\call-000009-0.png",
+    "sha256": "a960aa9d09844cec7613cee5c86b83438c0a9bdda3afe5abaf1fe3f165630319",
+    "seq": 100,
+    "time": 4.95,
+    "box": [
+      97,
+      41,
+      127,
+      125
+    ],
+    "red_pixels": 2520,
+    "id": "mid_center"
+  },
+  {
+    "run": "c5_hover_stable_20260914_s1062",
+    "call": "call-000015",
+    "image": "runs\\c5_hover_stable_20260914_s1062\\debug\\images\\call-000015-0.png",
+    "sha256": "3a7397326f803d79f8bebc95579d08d4a4c0f60e369719d1671a9623699800b5",
+    "seq": 180,
+    "time": 8.950000000000001,
+    "box": [
+      25,
+      0,
+      201,
+      224
+    ],
+    "red_pixels": 39424,
+    "id": "close_clipped"
+  },
+  {
+    "run": "c5_depth_ray_v2_20260912_s1060",
+    "call": "call-000018",
+    "image": "runs\\c5_depth_ray_v2_20260912_s1060\\debug\\images\\call-000018-0.png",
+    "sha256": "9a4271e7f7af64b2bb85279146905acf3df18dfdad1ebefe7e480f84782ab0e7",
+    "seq": 220,
+    "time": 10.950000000000001,
+    "box": null,
+    "red_pixels": 0,
+    "id": "absent_clutter_1060"
+  },
+  {
+    "run": "c5_depth_ray_v2_20260912_s1062",
+    "call": "call-000018",
+    "image": "runs\\c5_depth_ray_v2_20260912_s1062\\debug\\images\\call-000018-0.png",
+    "sha256": "03fa7227009c947e37fd124c20d876f7cec13f6c20476de2340a77f735bd2894",
+    "seq": 220,
+    "time": 10.950000000000001,
+    "box": null,
+    "red_pixels": 0,
+    "id": "absent_clutter_1062"
+  },
+  {
+    "run": "c5_hover_repeat_20260914_s1062",
+    "call": "call-000030",
+    "image": "runs\\c5_hover_repeat_20260914_s1062\\debug\\images\\call-000030-0.png",
+    "sha256": "9eff26adb42ebe863341617b16593efb0b6e94f84d43d172ff7e531977ea5506",
+    "seq": 380,
+    "time": 18.95,
+    "box": null,
+    "red_pixels": 0,
+    "id": "absent_after_turn"
+  }
+]

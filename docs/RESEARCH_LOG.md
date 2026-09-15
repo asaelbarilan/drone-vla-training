@@ -2511,3 +2511,14 @@ Verification:42 request/image/schema/model identities;36 zero-VRAM residency rec
 6 historical scorer regressions,48 browserpanels,overlay/prompt controls;Ruff passes.
 Owned11435 server unloaded and stopped;shared11434 remained reachable. No downloads,
 cloud,keys read,extra retries,flights or runtime edits. Evidence:reports/local_vlm_comparison_20260914.
+
+
+## D-115 - New-image Qwen3-VL4B gate (2026-09-15, frozen)
+Decision: six new RGB frames, unchanged D-114 bbox interface and installed Qwen4 digest,
+separate CPU server at11435. Freeze all-case pass before inference; only if6/6 pass
+connect Qwen to current C5 pipeline and run one seed1061 clutter flight.
+Rationale: positive D-114 result used one scene. Broaden image positions/scales and
+negative views before flight. Two positive frames share a hover run; these are new
+images, not six independent environments. Ground-truth references only in evaluation.
+Evidence: reports/qwen4_validation_20260915/FREEZE.json and selection.png.
+No flight or runtime change yet; no prompt tuning or retries permitted in this gate.

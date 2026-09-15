@@ -2624,3 +2624,12 @@ Verified all five absent from the local inventory afterward. Qwen3-VL4B, Gemma
 and other unlisted models remain. D-114 raw evidence, dashboard and historical
 configs remain available; removed models require reinstalling before fresh inference.
 No inference calls, flight changes or historical result changes.
+
+
+## 2026-09-15 - D-115 six-frame Qwen4 validation frozen
+User approved six new saved-frame bbox checks followed by one conditional clutter flight.
+Frozen unchanged D-114 bbox prompt/schema/options on three positives (far-left,medium,
+close clipped) and three absent views. Six distinct hashes excluded from previous probes;
+source bytes/observation IDs verified, offline red-body reference boxes visually checked.
+Required all6:positive IoU>=.5 and center inside;negative false/zero box. No retries.
+No inference yet. Raw selection/freeze preserved in reports/qwen4_validation_20260915.
