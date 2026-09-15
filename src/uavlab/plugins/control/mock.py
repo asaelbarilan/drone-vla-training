@@ -74,10 +74,20 @@ class MockVelocityController:
             if len(goal) != 3 or not all(math.isfinite(value) for value in goal):
                 raise ValueError("invalid semantic_goal_xyz metadata")
             yaw_error = Vec3(x=goal[0] - position.x, y=goal[1] - position.y, z=0.0)
+        yaw_rate = self._yaw_rate_toward(yaw_error, ctx)
+        if "view_yaw_rad" in trajectory.metadata:
+            view = [float(v) for v in trajectory.metadata["view_position"].split(",")]
+            tolerance = float(trajectory.metadata["view_tolerance_m"])
+            if math.dist((position.x, position.y, position.z), view) <= tolerance:
+                desired = float(trajectory.metadata["view_yaw_rad"])
+                delta = math.atan2(math.sin(desired - ctx.observation.yaw_rad),
+                                   math.cos(desired - ctx.observation.yaw_rad))
+                yaw_rate = max(-self.max_yaw_rate_rps,
+                               min(self.max_yaw_rate_rps, delta * self.yaw_kp))
         return ControlCommand(
             t_sim_ns=ctx.t_sim_ns,
             velocity=velocity,
-            yaw_rate_rps=self._yaw_rate_toward(yaw_error, ctx),
+            yaw_rate_rps=yaw_rate,
             frame=Frame.ENU,
             expires_t_sim_ns=ctx.t_sim_ns + s_to_ns(self.command_ttl_s),
             source_decision_id=trajectory.source_decision_id,

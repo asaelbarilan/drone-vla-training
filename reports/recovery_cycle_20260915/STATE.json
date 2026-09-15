@@ -15,9 +15,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "context_probe_complete_variant_component_next",
+  "status": "cycle2_ready",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Implement and component-test a separately named VLM-selected return_to_observed_view variant. See context_probe/REPORT.md. Two action-choice replies choose backtrack; four point-only replies hit obstacle faces. No flight promotion yet. Restore stored onboard pose AND heading through common verified execution; no oracle target coordinates, automatic scripted search, repeated infinite return or hidden OnFly mechanism changes. Test missing anchor/blocked return/timeout/freshness and repeat-request bound before a new flight. Keep original profiles. Only 1 of 4 flight slots used; deadline16:55UTC.",
+  "next": "393 unit tests pass; saved-state return component passes pose+heading/zero collision with target reappearing. Commit new D-117 variant then launch ONLY cycle2 frozen model flight and inspect visual reacquisition/approach repetition. One flight slot used before dispatch.",
   "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched",
   "saved_frame_calls": 6
 }

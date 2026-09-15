@@ -63,7 +63,9 @@ async def audit(name):
             c = calls[obs.seq]
             rgb = np.asarray(global_store().get(obs.rgb.uri))
             assert np.array_equal(
-                rgb, np.asarray(Image.open(root / c["image_files"][0]).convert("RGB"))
+                rgb, np.asarray(Image.open(root / c["image_files"][
+                    -1 if c.get("prompt_hash") == "observed_view_return:v1" else 0
+                ]).convert("RGB"))
             )
             images += 1
             if obs.seq in ds and obs.t_sim_ns < 30e9:

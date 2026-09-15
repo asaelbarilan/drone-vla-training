@@ -36,7 +36,9 @@ class WaypointGoal(StrictModel):
     target_label: str | None = None
     tolerance_m: float = 1.0
     stop_at_target: bool = False
-    """Explicit terminal intent, so "arrived" and "stopped" stay distinguishable."""
+    """Explicit terminal intent, so arrived and stopped stay distinguishable."""
+    view_yaw_rad: float | None = Field(default=None, allow_inf_nan=False)
+    """Optional camera heading at this waypoint, not a terminal mission stop."""
 
 
 class KinematicAction(StrictModel):

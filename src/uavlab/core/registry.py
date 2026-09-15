@@ -29,6 +29,8 @@ CATEGORIES: tuple[str, ...] = (
 T = TypeVar("T")
 
 OPTIONAL_PLUGINS: dict[tuple[str, str], str] = {
+    ("policy", "vlm_observed_view_return"): "uavlab.plugins.reasoning.observed_view",
+    ("verifier", "observed_view_return"): "uavlab.plugins.reasoning.observed_view",
     ("monitor", "onfly_hover_monitor"): "uavlab.plugins.reasoning.onfly_hover",
     ("inference", "free_vlm_router"): "uavlab.plugins.inference.free_vlm_router",
     ("inference", "gemini"): "uavlab.plugins.inference.gemini",

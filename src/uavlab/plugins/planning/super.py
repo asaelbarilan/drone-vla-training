@@ -134,6 +134,31 @@ class SuperLocalPlanner:
 
         self._update_evidence(ctx)
         start = obs.position
+        if goal.view_yaw_rad is not None and start.distance_to(goal.target) <= 1e-6:
+            # A requested observation hold has no translational A* segment.
+            # Check the current braking direction before accepting zero velocity.
+            speed = obs.velocity.norm()
+            if speed > 0.05:
+                distance = speed * speed / (2 * max(self.max_acc_mps2, 1e-6))
+                distance += self.braking_margin_m
+                stop = Vec3(x=start.x + obs.velocity.x * distance / speed,
+                            y=start.y + obs.velocity.y * distance / speed,
+                            z=start.z + obs.velocity.z * distance / speed)
+                if (not self._visible_and_clear(stop, ctx)
+                        or not self._line_clear(start, stop)
+                        or not self._min_alt <= stop.z <= self._max_alt):
+                    return self._failed(ctx, "observation hold lacks known-free braking room")
+            trajectory = self._trajectory([start, start], ctx, exploratory_points=1,
+                branch_index=0, backup_points=1, backup_required=False, reaches_goal=True)
+            trajectory = trajectory.model_copy(update={"reason": "verified observation hold",
+                "metadata": {**trajectory.metadata,
+                    "semantic_goal_xyz": f"{start.x},{start.y},{start.z}"}})
+            self._guide_cells.clear()
+            self._last_committed = trajectory
+            self.last_diagnostics = SuperDiagnostics(
+                self._replan_index, 1, 1, 1, False, True, 0.0, True, False,
+                "verified observation hold")
+            return trajectory
         local_goal = self._bounded_goal(start, goal.target)
         cells = self._astar(self._cell(start.x, start.y), self._cell(local_goal.x, local_goal.y))
         if not cells:

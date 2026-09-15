@@ -327,6 +327,14 @@ class DecisionRouter:
                     verification=verification,
                     trajectory=trajectory,
                 )
+            if effective.view_yaw_rad is not None:
+                trajectory = trajectory.model_copy(update={"metadata": {
+                    **trajectory.metadata,
+                    "view_yaw_rad": str(effective.view_yaw_rad),
+                    "view_position": ",".join(str(v) for v in (
+                        effective.target.x, effective.target.y, effective.target.z)),
+                    "view_tolerance_m": str(effective.tolerance_m),
+                }})
             self.source = _MotionSource(
                 decision_id=envelope.decision_id,
                 source_observation_seq=envelope.source_observation_seq,

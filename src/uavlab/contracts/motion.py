@@ -26,8 +26,9 @@ class Trajectory(StrictModel):
     metadata: dict[str, str] = Field(default_factory=dict)
     """Planner diagnostics kept inside the shared trajectory contract.
 
-    The controller ignores these string values; logs and fidelity tests may
-    inspect them without introducing a paper-specific handoff type.
+    Diagnostic values remain available to logs and fidelity tests. Explicit
+    shared controller options use semantic_goal_xyz and terminal view heading
+    metadata; these are populated from typed goals, never raw model text.
     """
 
     @model_validator(mode="after")

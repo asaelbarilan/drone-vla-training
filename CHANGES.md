@@ -2717,3 +2717,22 @@ is not mission completion; repeated approach-loop risk must remain visible.
 Evidence: reports/recovery_cycle_20260915/context_probe/REPORT.md, six frozen
 requests/replies, validated current-pixel overlays and browser capture. Dedicated
 11435 unloaded/stopped. Flight count remains1/4.
+
+## D-117 - VLM-selected observed-view return extension (2026-09-15)
+
+Decision: introduce a named experimental policy and bound option verifier, not a
+silent OnFly modification. Model chooses backtrack/continue/hold; backtrack binds
+to its stored observed pose+heading,one request/episode,30s anchor age,20s deadline.
+Normal waypoint provenance remains checked; option goals cannot substitute model
+coordinates and go through common geometric verification,SUPER,controller.
+Optional waypoint camera-heading contract supports pose restoration; stationary
+observation holds now have a braking-clearance-checked planner path.
+Evidence: saved784-pose prefix followed by stub-selected return restores view in9s,
+2.31cm position error,3.13deg yaw error,zero collisions,all10 plans accepted.
+Actual RGB shows target reappearing. Return component and unit negative controls
+are execution evidence,not a VLM flight result. See return_component/REPORT.md.
+Status: component validated; single model flight pending frozen test/commit gate.
+
+D-117 implementation gate:393 unit tests pass (one existing dependency warning),
+new tooling/runtime lint passes. CYCLE2_FREEZE.json freezes one Qwen4/1061 flight.
+Source-image auditing recognizes historical+current recovery input ordering.

@@ -1,0 +1,17 @@
+# D-117 experimental extension: VLM-selected observed-view return, not native OnFly.
+_base_: c5_clutter_qwen4_validated_dev.yaml
+id: c5_observed_view_return_qwen4_dev
+profile_of: c5
+name: "C5 Qwen4 plus VLM-selected observed-view return"
+description: "Named extension: policy retains one model-confirmed view and may select one verified pose+heading return."
+policy:
+  name: vlm_observed_view_return
+  params:
+    return_timeout_s: 20.0
+    anchor_max_age_s: 30.0
+    return_tolerance_m: 0.25
+verifier:
+  name: observed_view_return
+monitor:
+  params:
+    fresh_after_lost_reorientation: true
