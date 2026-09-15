@@ -86,6 +86,15 @@ class _MotionSource:
 
 
 @dataclass(slots=True)
+class _TargetCommitment:
+    """Already verified semantic goal; execution lease does not refresh its image."""
+
+    goal: WaypointGoal
+    source: _MotionSource
+    deadline_ns: int | None = None
+
+
+@dataclass(slots=True)
 class _FixedReorientation:
     """Bounded monitor-triggered executive action, not semantic motor output."""
 
@@ -117,6 +126,7 @@ class RouterCounters:
     safety_stop: int = 0
     commands_issued: int = 0
     stale_commands_executed: int = 0
+    target_commitment_commands: int = 0
     stale_commands_rejected: int = 0
     decision_age_ns_total: int = 0
     decision_age_samples: int = 0
@@ -168,6 +178,16 @@ class DecisionRouter:
         self.fresh_after_lost_reorientation = bool(
             monitor_params.get("fresh_after_lost_reorientation", False)
         )
+        self.target_commitment_s = float(arch.policy.params.get("target_commitment_s", 0.0))
+        if not math.isfinite(self.target_commitment_s) or not 0 <= self.target_commitment_s <= 20:
+            raise ValueError("target_commitment_s must be finite and in [0,20]")
+        if self.target_commitment_s and (
+            arch.policy.name != "onfly_decision" or arch.planner is None
+            or arch.planner.name != "super_local" or arch.verifier is None
+            or not arch.policy.params.get("grounded_waypoints", False)
+        ):
+            raise ValueError("target commitment requires grounded OnFly, verifier and SUPER")
+        self._target_commitment: _TargetCommitment | None = None
         self._fence_rejections = 0
         self._fresh_after_reorientation_ns = -1
         self.max_age_ns = s_to_ns(arch.staleness.max_decision_age_s)
@@ -182,6 +202,7 @@ class DecisionRouter:
 
     def reset(self, mission: MissionSpec, seed: int) -> None:
         self.source = None
+        self._target_commitment = None
         self._reorientation = None
         self._fence_rejections = 0
         self._fresh_after_reorientation_ns = -1
@@ -249,6 +270,12 @@ class DecisionRouter:
             outcome.expanded_kind = expanded.kind
             return outcome
 
+        if (
+            isinstance(payload, WaypointGoal)
+            and envelope.provenance.get("waypoint_kind") == "exploration"
+            and self.target_commitment_active(ctx, activate=True)
+        ):
+            return self._continue_target_commitment(ctx, age_ns)
         return self._accept_motion(payload, envelope, ctx, age_ns, stale)
 
     def _accept_directive(
@@ -344,6 +371,10 @@ class DecisionRouter:
                 stop_when_done=effective.stop_at_target,
                 was_stale=stale,
             )
+            self._target_commitment = None
+            if (self.target_commitment_s and effective.target_label == "target"
+                    and envelope.provenance.get("waypoint_kind") == "target"):
+                self._target_commitment = _TargetCommitment(effective, self.source)
             self.counters.executed += 1
             return RoutingOutcome(
                 accepted=True,
@@ -545,6 +576,7 @@ class DecisionRouter:
         measured *now*, at execution, which is the number that actually
         describes how obsolete the world was when the vehicle moved.
         """
+        target_lease_active = self.target_commitment_active(ctx)
         fixed_reorientation = self._fixed_reorientation_command(ctx)
 
         # Check the authoritative source *before* asking the controller to
@@ -557,6 +589,7 @@ class DecisionRouter:
             source_age_ns is not None
             and source_age_ns > self.max_age_ns
             and self.reject_stale
+            and not target_lease_active
         )
 
         if fixed_reorientation is not None:
@@ -574,7 +607,9 @@ class DecisionRouter:
         if age_ns is not None:
             self.counters.decision_age_ns_total += age_ns
             self.counters.decision_age_samples += 1
-            if age_ns > self.max_age_ns and not reject_source:
+            if target_lease_active:
+                self.counters.target_commitment_commands += 1
+            elif age_ns > self.max_age_ns and not reject_source:
                 self.counters.stale_commands_executed += 1
 
         safety: SafetyDecision | None = None
@@ -649,6 +684,62 @@ class DecisionRouter:
                 "source_t_sim_ns": src.source_t_sim_ns,
             }
         )
+
+    # -- named bounded accepted-target execution variant --------------------
+
+    def _end_target_commitment(self) -> None:
+        lease = self._target_commitment
+        if (lease is not None and lease.deadline_ns is not None and self.source is not None
+                and self.source.decision_id == lease.source.decision_id):
+            self.source = None
+        self._target_commitment = None
+
+    def target_commitment_active(self, ctx: DecisionContext, *, activate: bool = False) -> bool:
+        """Arbitrate LOST yaw and exploration without inventing fresh target evidence."""
+        lease = self._target_commitment
+        if lease is None:
+            return False
+        if (self.stop_requested or self.source is None
+                or self.source.decision_id != lease.source.decision_id
+                or ctx.observation.position.distance_to(lease.goal.target)
+                <= lease.goal.tolerance_m):
+            self._end_target_commitment()
+            return False
+        if lease.deadline_ns is not None:
+            if ctx.t_sim_ns >= lease.deadline_ns:
+                self._end_target_commitment()
+                return False
+            return True
+        if ctx.t_sim_ns - lease.source.source_t_sim_ns > self.max_age_ns:
+            self._end_target_commitment()
+            return False
+        if activate and not self.reorientation_active:
+            lease.deadline_ns = ctx.t_sim_ns + s_to_ns(self.target_commitment_s)
+            return True
+        return False
+
+    def _continue_target_commitment(self, ctx: DecisionContext, age_ns: int) -> RoutingOutcome:
+        lease = self._target_commitment
+        assert lease is not None and lease.deadline_ns is not None and self.planner is not None
+        self.counters.plans_requested += 1
+        trajectory = self.planner.plan(lease.goal, ctx)
+        trajectory = trajectory.model_copy(update={"metadata": {
+            **trajectory.metadata,
+            "target_commitment_source_id": lease.source.decision_id,
+            "target_commitment_source_seq": str(lease.source.source_observation_seq),
+            "target_commitment_source_t_ns": str(lease.source.source_t_sim_ns),
+            "target_commitment_deadline_ns": str(lease.deadline_ns),
+            "target_commitment_geometry_seq": str(ctx.observation.seq),
+        }})
+        if not trajectory.feasible:
+            self.counters.plans_infeasible += 1
+            self._end_target_commitment()
+            return RoutingOutcome(accepted=False, decision_age_ns=age_ns, trajectory=trajectory,
+                reason="target commitment ended: common planner found no feasible commitment")
+        # Incoming exploration is NOT executed. Keep the original decision/image identity.
+        self.source = dataclasses.replace(lease.source, trajectory=trajectory)
+        return RoutingOutcome(accepted=False, decision_age_ns=age_ns, trajectory=trajectory,
+            reason="target commitment retained: exploratory replacement deferred")
 
     # -- introspection ------------------------------------------------------
 

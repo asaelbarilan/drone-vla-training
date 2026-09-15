@@ -24,11 +24,16 @@
       "collisions": 0,
       "completed_calls": 124,
       "cancelled_calls": 1
+    },
+    {
+      "run": "c5_target_commitment_20260915_s1061",
+      "status": "reserved_frozen",
+      "architecture": "c5_target_commitment_qwen4_dev"
     }
   ],
-  "status": "goal_hold_component_complete_commitment_variant_next",
+  "status": "cycle3_target_commitment_ready",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "D-120 offline goalhold restores target view64s and truthdistance16.885->10.143m by71s,without collision; frozen storedgoal1m endpoint NOT reached (final6.150m). Prefix1020poses/61plans/firstcommand exact. NEXT implement separately named bounded target-goal execution commitment <=20s with explicit stored-source authorization (do not forge freshness), fresh visible-target supersession, expiry and ownership arbitration with LOST yaw. Keep common planner/STOP guards; separate from D117return/nativeOnFly. Unit-test before ONE model flight. Component removed both replacement andLOSTyaw; do not overclaim causal isolation. Read goal_hold_component/REPORT.md. Modelslots2/4,deadline16:55UTC. No further D118/D119 prompttuning; memorycadence correction retained.",
+  "next": "D-121 commit pending/final validation. Run ONE frozen c5_target_commitment_20260915_s1061 on dedicatedCPU11435; Valley active. Preserve source age/20sdeadline audit and actual dashboard. 3rd flight slot reserved, not yet started. Read CYCLE3_FREEZE.json. No other flights until outcome audited.",
   "server": "Dedicated11435 unloaded/stopped after CPU-only calls; debugger8766 retained; Valley running,shared11434/8765 untouched",
   "saved_frame_calls": 15
 }

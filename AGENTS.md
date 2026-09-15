@@ -19,7 +19,7 @@ clock. Seven families are the base; everything else is an ablation.
 ## Active autonomous cycles - D-116/D-117 (2026-09-15)
 
 Read reports/recovery_cycle_20260915/STATE.json and cycle2/REPORT.md FIRST.
-Heartbeat drone-recovery-debug-cycles until16:55UTC,max4 model flights; TWO used.
+Heartbeat drone-recovery-debug-cycles until16:55UTC,max4 model flights; TWO complete,THIRD reserved.
 D-116 fresh-image handoff works but mission fails. D-117 named VLM-selected return
 restores observed pose+heading in live flight; target actually reappears. Correct
 red pixels chosen after return,then movement occludes target and LOST recurs53.2s.
@@ -28,7 +28,9 @@ Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promot
 localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
 D-120 CORRECTION: D118/D119 history was constructed atcontrol cadence,not exact
 live memory. True35.95s latesthistory34.95s; withdraw8.1sgap claim. No model reruns.
-NEXT: goal_hold_component complete: verified1020poses/61plans/firstcommand.
+NEXT: D-121 target_commitment variant implemented/tests pass; CYCLE3_FREEZE ready.
+ONE CPU-only flight reserved; audit source ages/deadlines and dashboard afterward.
+Goal_hold_component complete: verified1020poses/61plans/firstcommand.
 Retained51sgoal gives right-side detour/redreappearance64s,truthdistance16.885→10.143m
 by71s,zero collisions. Storedgoal endpoint NOT reached (closest4.928m).
 Read goal_hold_component/REPORT.md and STATE.json. Next named bounded target-goal

@@ -510,6 +510,10 @@ class Orchestrator:
                         "evidence": progress.evidence + "; stop rejected by live arrival recheck",
                     }
                 )
+            defer_lost = (
+                progress.label is ProgressLabel.LOST
+                and self.router.target_commitment_active(self._ctx(), activate=True)
+            )
             self.last_progress = progress
             anchor_position, anchor_yaw, anchor_seq = _onfly_monitor_anchor(ctx)
             if getattr(self.monitor, "target_bound_stop", False):
@@ -520,6 +524,7 @@ class Orchestrator:
                 EventType.MONITOR,
                 {
                     "label": progress.label.value,
+                    "target_commitment_deferred_lost": defer_lost,
                     "confidence": progress.confidence,
                     "stalled_for_s": progress.stalled_for_s,
                     "evidence": progress.evidence,
@@ -534,7 +539,8 @@ class Orchestrator:
             if progress.label is ProgressLabel.STOP:
                 self.router.stop_requested = True
                 self.router.stop_reason = f"monitor: {progress.evidence or 'stop'}"
-            elif progress.label is ProgressLabel.LOST and self.monitor.name == "onfly_monitor":
+            elif (progress.label is ProgressLabel.LOST and self.monitor.name == "onfly_monitor"
+                  and not defer_lost):
                 current = self.latest_obs or ctx.observation
                 target_yaw = _onfly_recovery_heading(self._last_normal_yaw_rad, current.yaw_rad)
                 if not self._onfly_loss_episode_active and not self.router.reorientation_active:

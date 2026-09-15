@@ -1,0 +1,12 @@
+# D-121 named bounded target-goal execution commitment; no observed-view return.
+_base_: c5_clutter_qwen4_validated_dev.yaml
+id: c5_target_commitment_qwen4_dev
+profile_of: c5
+name: "C5 Qwen4 with bounded accepted-target execution"
+description: "Named extension: retain an accepted target waypoint through occlusion for <=20s, with explicit original-source lease."
+policy:
+  params:
+    target_commitment_s: 20.0
+monitor:
+  params:
+    fresh_after_lost_reorientation: true

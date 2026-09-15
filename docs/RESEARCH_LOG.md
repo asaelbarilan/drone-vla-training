@@ -2744,3 +2744,32 @@ fresh-target supersession, expiry, common planning and STOP guards; unit-test
 ownership/expiry before one model flight. Do not label as native paper repair.
 Evidence: goal_hold_component/REPORT.md,RESULT.json,VISUAL_EVALUATION.json.
 Flightcount2/4; saved-framecalls15; shared11434/Valley untouched.
+
+
+## D-121: bounded accepted-target execution variant (2026-09-15)
+
+Rationale: D-120 held-goal component restores the target after a useful detour,
+while live exploration/LOST recovery interrupts the same accepted intention.
+Add target_commitment_s=20 only in c5_target_commitment_qwen4_dev. Baselines
+default0. An already verified/planned model-target goal arms a candidate. Fresh
+exploration or monitorLOST can activate it while original source age<=4s; deadline
+is activation+20s and exploration cannot extend it. Replans use fresh onboard
+geometry but commands preserve ORIGINAL decision/image timestamp and sourceID.
+Deferred exploration is logged rejected,with retained-goal plan metadata. Age
+remains measurable; intentional lease commands have their own counter.
+Fresh verified target supersedes it. Arrival at the intermediate tolerance ends
+the lease without missionSTOP; expiry, STOP or planner failure ends execution.
+LOST label is retained andlogged; only its yaw action is deferred while the lease
+owns motion. Expiry restores ordinary recovery. Existing STOP guards unchanged.
+This is a named architecture extension,not nativeOnFly or D117return-to-view.
+
+Validation: full suite420 passed and20 focused commitment tests passed including
+new orchestrator LOST/arbitration integration. Final lint/checks before flight.
+Tests cover original-source preservation,nonrenewal,expiry,staleness,reset,
+verified supersession,rejected-target retention,planning failure,recovery ownership
+and defaultoff behavior. Policy feedback says deferred,not obstacle-rejected.
+One flight frozen in CYCLE3_FREEZE.json. CPU-only dedicated11435 while Valley runs;
+hardware placement differs from priorGPUflights, so inspect pre-lease equality and
+do not treat outcomes as a clean architecture-only comparison if prefixes differ.
+No cloud/newmodelcalls/reinstalls; fixed simulated latencies unchanged. Third of
+four flight slots reserved,2 completed; deadline16:55UTC.

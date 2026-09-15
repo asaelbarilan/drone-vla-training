@@ -406,8 +406,15 @@ class OnFlyDecisionAgent(BasePolicy):
             and not feedback.accepted
             and feedback.reason.startswith("fresh observation required after")
         )
+        commitment_deferred = bool(
+            feedback is not None and not feedback.accepted
+            and feedback.reason.startswith("target commitment retained:")
+        )
         if recovery_refresh:
             # A view-age rejection says nothing about obstacle geometry.
+            self._previous_goal = None
+            self._rejected_model_points = []
+        elif commitment_deferred:
             self._previous_goal = None
             self._rejected_model_points = []
         elif feedback is not None and not feedback.accepted and self._last_model_point is not None:
@@ -444,6 +451,12 @@ class OnFlyDecisionAgent(BasePolicy):
                 "The recovery turn ended. The previous proposal used an image captured before "
                 "the turn ended and was discarded. Choose a fresh point from this current image; "
                 "that rejection does not mean the previous point was an obstacle."
+            )
+        elif commitment_deferred:
+            feedback_text = (
+                "The executor is continuing the previously accepted target goal during a "
+                "bounded detour. The exploratory replacement was deferred, not judged blocked. "
+                "Inspect this current image: report target only if it is currently identifiable."
             )
         elif feedback is not None and not feedback.accepted:
             rejected = ", ".join(str(point) for point in self._rejected_model_points)
