@@ -16,21 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active autonomous cycles - D-116 (2026-09-15)
+## Active autonomous cycles - D-116/D-117 (2026-09-15)
 
-User authorized automatic debug/fix/run while away. Heartbeat
-`drone-recovery-debug-cycles` until16:55UTC, max4 total flights. FIRST READ
-reports/recovery_cycle_20260915/STATE.json and REPORT.md. One slot used.
-Cycle1 fresh-image recovery handoff fixed in opt-in profile,117 tests pass;
-matched control prefix until39.25s. Still timeout,closest13.401m,final29.939m.
-No navigation improvement established. Saved-view six-call probe now complete:
-all four point-only answers hit gray obstacles; both history/action-choice replies
-request backtrack. Read context_probe/REPORT.md under the cycle folder. Next
-component-test a NAMED VLM-selected return-to-observed-view extension, including
-pose+heading and bounded retry; no flight until execution contracts pass.
-Do not silently add scripted search or change the paper architecture. Archive
-and inspect actual source images/dashboard after each run,commit each change.
-Dedicated11435 stopped;8766 debugger remains; shared11434/8765 untouched.
+Read reports/recovery_cycle_20260915/STATE.json and cycle2/REPORT.md FIRST.
+Heartbeat drone-recovery-debug-cycles until16:55UTC,max4 model flights; TWO used.
+D-116 fresh-image handoff works but mission fails. D-117 named VLM-selected return
+restores observed pose+heading in live flight; target actually reappears. Correct
+red pixels chosen after return,then movement occludes target and LOST recurs53.2s.
+Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promotion.
+393 unit tests pass;1800 new poses/79 current+1 historical input match. Dashboard
+localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
+NEXT OFFLINE: current_grounding asks only visibility and maps absence to LOST;
+later CONTINUE+absence normalization also forces LOST. Audit temporary occlusion
+versus semantic route failure before more flights/extensions. Preserve current
+identity and metric STOP gates. Do not just disable supervision or hide failures.
+Dedicated11435 stopped; shared11434 and Valley8765 untouched. Commit each change.
 
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115
 

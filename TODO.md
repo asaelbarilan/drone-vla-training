@@ -470,3 +470,12 @@ D-116 context probe complete (six calls, no flight): history-point still hits
 obstacles; both action-choice cases request backtrack. Next component tests for
 a separately named VLM-selected return-to-observed-view option with pose+heading,
 verified execution and bounded retries. Read context_probe/REPORT.md before changes.
+
+## D-117 outcome / next monitor contract check
+
+Return component and live flight complete. Target reappears,correct red points
+follow,then occlusion recurs and timeout. Supersedes the pending return fixture
+above. Next offline: visibility-only current_grounding and forced CONTINUE->LOST
+normalization remove semantic progress judgment. Test their causal effect without
+weakening STOP identity/range gates or assuming every occlusion is safe.
+Read cycle2/REPORT.md and STATE.json before further work;two of four flights used.

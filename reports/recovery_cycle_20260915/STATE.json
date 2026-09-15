@@ -13,11 +13,22 @@
       "collisions": 0,
       "completed_calls": 134,
       "cancelled_calls": 1
+    },
+    {
+      "run": "c5_observed_view_return_20260915_s1061",
+      "status": "complete_audited",
+      "commit": "45a092c",
+      "outcome": "timeout",
+      "closest_m": 14.929550953811694,
+      "final_m": 17.00692928912499,
+      "collisions": 0,
+      "completed_calls": 124,
+      "cancelled_calls": 1
     }
   ],
-  "status": "cycle2_ready",
+  "status": "cycle2_complete_monitor_semantics_next",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "393 unit tests pass; saved-state return component passes pose+heading/zero collision with target reappearing. Commit new D-117 variant then launch ONLY cycle2 frozen model flight and inspect visual reacquisition/approach repetition. One flight slot used before dispatch.",
-  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched",
+  "next": "OFFLINE FIRST: inspect onfly.py current_grounding mapping visible->STOP/absent->LOST and later CONTINUE+absence normalization. VLM monitor currently only localizes one image, not semantic progress; may call recovery during valid occlusion. Reproduce contract with saved inputs; distinguish temporary occlusion from actual route failure without oracle steering. Preserve strict current-image target identity and metric STOP guard. Do not add more return features or run more flights until a frozen causal check supports a specific change. D-117 return actually works but new approach loses target again. Two of four flight slots used; deadline16:55UTC.",
+  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/8765 untouched",
   "saved_frame_calls": 6
 }

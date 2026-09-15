@@ -22,7 +22,10 @@ with sync_playwright() as p:
     for i in range(2):
         page.locator('#run').select_option(str(i))
         page.locator('#follow').check()
-        for t in [0, 33.95, 37.2, 39.2, 39.25, 40, 41, 45, 60, 90]:
+        times = [0, 33.95, 37.2, 39.2, 39.25, 40, 41, 45, 60, 90]
+        if args.number >= 2:
+            times = sorted(set([*times, 47.2, 48.5, 49, 51, 53.2, 55.2]))
+        for t in times:
             page.evaluate('(t)=>{pause();seek(nearest(t),true)}', t)
             page.wait_for_function('document.getElementById("drone").complete')
             row = page.evaluate('({...current(), name:run.name})')

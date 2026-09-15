@@ -53,3 +53,9 @@ http://127.0.0.1:8766/recovery_cycle1.html#run=c5_recovery_fresh_20260915_s1061&
 
 Automatic follow-ups remain scheduled until16:55UTC. One of four flight slots used;
 next cycle starts offline because this did not improve mission completion.
+
+## Subsequent cycle2 completed
+
+See [cycle2/REPORT.md](cycle2/REPORT.md). VLM-selected return restores the view,
+but the flight still times out. Next offline monitor-semantics diagnosis; two
+of four model flights used.

@@ -1,0 +1,49 @@
+{
+  "model_id": "qwen3-vl:4b",
+  "role": "policy",
+  "prompt_hash": "observed_view_return:v1",
+  "input_tokens": 172,
+  "image_count": 2,
+  "observation_seq": 760,
+  "prompt": "Mission: fly to the red tower and stop there. Image 1 is the historical view where the policy last identified the target. Image 2 is CURRENT. Historical visibility is not current visibility. The monitor reports LOST. Onboard displacement east,north,up metres is [2.08, -0.42, 0.0]; yaw change is -38.1 degrees. Choose action=backtrack to request a verified return to the stored camera position AND heading; action=continue to keep choosing current-image points; or action=hold to wait. A return can be rejected by geometry and is allowed only once. Do not assume hidden passages are clear. Return only JSON with evidence describing current visibility and action. No coordinates or controls.",
+  "response_schema": {
+    "type": "object",
+    "properties": {
+      "evidence": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "backtrack",
+          "continue",
+          "hold"
+        ]
+      }
+    },
+    "required": [
+      "evidence",
+      "action"
+    ],
+    "additionalProperties": false
+  },
+  "id": "call-000058",
+  "status": "complete",
+  "source": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\src\\uavlab\\plugins\\reasoning\\observed_view.py",
+    "line": 134,
+    "function": "decide",
+    "snapshot": "debug/sources/cc4e683b8fff1af33fb5697343d2ac776686a63d16acd60bafe7b4f54a1139ca.py"
+  },
+  "started_t_sim_ns": 38000000000,
+  "image_files": [
+    "debug/images/call-000058-0.png",
+    "debug/images/call-000058-1.png"
+  ],
+  "completed_t_sim_ns": 39000000000,
+  "response": "{\n  \"evidence\": \"Current image shows a gray structure with no red tower visible; historical image had a red tower but it's absent now. Monitor reports LOST, indicating the red\u5854\uff08\",\"action\": \"backtrack\"\n}",
+  "latency_ns": 2143874800,
+  "output_tokens": 51,
+  "cache_hit": false
+}

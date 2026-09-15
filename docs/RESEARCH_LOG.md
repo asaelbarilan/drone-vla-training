@@ -2619,3 +2619,18 @@ Status: component validated; single model flight pending frozen test/commit gate
 D-117 implementation gate:393 unit tests pass (one existing dependency warning),
 new tooling/runtime lint passes. CYCLE2_FREEZE.json freezes one Qwen4/1061 flight.
 Source-image auditing recognizes historical+current recovery input ordering.
+
+### D-117 cycle 2 outcome: actual return succeeds, repeated occlusion remains
+
+One live Qwen request selects backtrack39s; verified pose+heading return completes
+48.5s; actual current RGB target reappears. Decisions50/51s correctly point at red
+source pixels. After movement it disappears again and monitor reports LOST53.2s.
+Timeout90s,closest14.930m (baseline13.746m),final17.007m (baseline29.295m),zero
+collisions,min obstacle distance1.106m. Mixed metrics,not navigation improvement.
+124 completed calls+1 cancellation,zero errors.1800 new poses/79 current images/1
+historical image exact;32 browser seeks/2 playbacks pass. Actual49s dashboard
+and camera sequence inspected. Reports/recovery_cycle_20260915/cycle2/REPORT.md.
+Next offline isolate current_grounding's deterministic absence->LOST mapping and
+CONTINUE+absence normalization. These conflate occlusion with progress failure;
+causal impact needs testing before another flight. Retain strict STOP grounding
+and arrival checks. Two of four flights used; dedicated11435 stopped.

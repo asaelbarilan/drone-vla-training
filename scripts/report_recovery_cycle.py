@@ -33,6 +33,13 @@ async def main(number):
         html_document(dict(schema=1, runs=results, sources=_sources())), encoding='utf-8')
     proof = await audit(name)
     events = [json.loads(x) for x in (root / 'events.jsonl').read_text().splitlines()]
+    calls = [json.loads(p.read_text()) for p in (root/'debug/calls').glob('*.json')]
+    proof['model_calls'] = dict(Counter(c['status'] for c in calls))
+    assert all(c['model_id']=='qwen3-vl:4b' for c in calls)
+    proof['return_phases'] = [dict(t=e['t_sim_ns']/1e9, trace=e['trace_id'],
+        provenance=e['payload']['provenance']) for e in events
+        if e['event_type']=='decision_proposed' and
+        e['payload'].get('provenance',{}).get('observed_view_phase')]
     proof['event_counts'] = dict(Counter(e['event_type'] for e in events))
     proof['recovery'] = [e for e in events if e['event_type'] in
                          ['recovery_trigger', 'recovery_decision']]

@@ -1,0 +1,32 @@
+[
+  {
+    "t": 50.0,
+    "source_seq": 980,
+    "reply": "{\n  \"evidence\": \"red tower\",\n  \"kind\": \"target\",\n  \"u\": 350,\n  \"v\": 350\n}",
+    "pixel_rgb": [
+      202,
+      79,
+      79
+    ]
+  },
+  {
+    "t": 51.0,
+    "source_seq": 1000,
+    "reply": "{\n  \"evidence\": \"red tower\",\n  \"kind\": \"target\",\n  \"u\": 350,\n  \"v\": 350\n}",
+    "pixel_rgb": [
+      202,
+      79,
+      79
+    ]
+  },
+  {
+    "t": 52.0,
+    "source_seq": 1020,
+    "reply": "{\n  \"evidence\": \"gray polygonal structure\",\n  \"kind\": \"exploration\",\n  \"u\": 333,\n  \"v\": 500\n}",
+    "pixel_rgb": [
+      133,
+      133,
+      138
+    ]
+  }
+]

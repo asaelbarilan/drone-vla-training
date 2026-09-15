@@ -46,6 +46,12 @@ async def audit(name):
         if e["event_type"] == "decision_proposed"
         and "source_observation_seq" in e["payload"]
     }
+    historical_seqs = {
+        int(ds[seq]["payload"]["provenance"]["anchor_observation_seq"])
+        for seq, c in calls.items() if c.get("prompt_hash") == "observed_view_return:v1"
+    }
+    historical_frames = {}
+    history_images = 0
     for e in controls:
         obs = await env.observe()
         p = e["payload"]
@@ -59,6 +65,8 @@ async def audit(name):
         speed = float(np.linalg.norm([p["vx"], p["vy"], p["vz"]]))
         if speed > 0.6:
             excess.append(speed - 0.6)
+        if obs.seq in historical_seqs:
+            historical_frames[obs.seq] = np.asarray(global_store().get(obs.rgb.uri)).copy()
         if obs.seq in calls:
             c = calls[obs.seq]
             rgb = np.asarray(global_store().get(obs.rgb.uri))
@@ -67,6 +75,12 @@ async def audit(name):
                     -1 if c.get("prompt_hash") == "observed_view_return:v1" else 0
                 ]).convert("RGB"))
             )
+            if c.get("prompt_hash") == "observed_view_return:v1":
+                anchor_seq = int(ds[obs.seq]["payload"]["provenance"][
+                    "anchor_observation_seq"])
+                assert np.array_equal(historical_frames[anchor_seq],
+                    np.asarray(Image.open(root / c["image_files"][0]).convert("RGB")))
+                history_images += 1
             images += 1
             if obs.seq in ds and obs.t_sim_ns < 30e9:
                 d = ds[obs.seq]
@@ -100,6 +114,7 @@ async def audit(name):
         name=name,
         poses_matched=len(controls),
         source_images_matched=images,
+        historical_return_images_matched=history_images,
         raw_speed_violations=len(excess),
         max_speed_excess_mps=max(excess, default=0),
         effective_kinds=dict(
