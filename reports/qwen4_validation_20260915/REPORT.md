@@ -18,3 +18,9 @@ Six new image hashes relative to D-113/D-114, not six independent worlds. Two po
 Six new input hashes relative to D-113/D-114. Source bytes and observation IDs checked. Reference boxes visually inspected before inference; none sent to model. CPU-only execution, no cloud calls or retries. Full model digest/options/requests/replies preserved.
 
 Verified 6 request identities. Conditional flight permitted: True.
+
+## Subsequent flight completed
+
+See [FLIGHT_REPORT.md](FLIGHT_REPORT.md): one Qwen clutter flight timed out;
+closest 13.75 m versus Gemma 22.58 m. Recovery diagnosis includes actual and
+counterfactual views. Image-gate success does not imply navigation success.

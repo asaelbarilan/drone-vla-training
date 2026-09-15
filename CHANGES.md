@@ -2645,3 +2645,21 @@ New opt-in c5_clutter_qwen4_validated_dev changes only ID/name,policy+monitor+ba
 model,digest,host andresponse channel. All navigation mechanisms andfixed simcharge
 remain identical toD-111.48 existing inference/OnFly tests pass. One90s clutter
 seed1061 flight frozen;GPU server separate from sharedGemma server.
+
+## 2026-09-15 - D-115 one Qwen clutter flight and visual recovery audit
+
+retain Qwen4 as a named diagnostic profile; do not promote a general
+planning result. Six image checks pass, but the one authorized clutter flight
+still times out at 90 s (closest13.75 m versus savedGemma22.58 m), zero collisions.
+134 completed flight calls, one final cancellation, no inference errors.
+Recovery triggers correctly at37.2 s but expires10.314 degrees short; exploration
+resumes while loss remains active. Crucially, a saved-pose offline render at the
+complete saved heading still contains no target. Extending the timer alone is
+not supported as a sufficient fix. Next isolate reacquisition/expiry semantics
+and viewpoint/position recovery; any new search behavior must be named as an
+architecture extension rather than silently attributed to the original paper.
+Evidence: reports/qwen4_validation_20260915/FLIGHT_REPORT.md, FLIGHT_AUDIT.json,
+RECOVERY_COUNTERFACTUAL.json and archived flight/. 1800 poses/89 source images
+match; both dashboards replay exactly and pass Edge playback/seeks. 48 existing
+adapter/OnFly tests pass. Shared11434 untouched, dedicated11435 unloaded/stopped.
+Status: bounded gate + one flight complete; recovery repair remains open.

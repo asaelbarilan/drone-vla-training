@@ -1,0 +1,37 @@
+{
+  "stopped_owned_pid": 30460,
+  "shared_11434_untouched": true,
+  "after": {
+    "models": []
+  },
+  "unload": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:53:39.4870189Z",
+    "response": "",
+    "done": true,
+    "done_reason": "unload"
+  },
+  "before": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4235345264,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T15:12:36.8723472+03:00",
+        "size_vram": 4235345264,
+        "context_length": 8192
+      }
+    ]
+  }
+}

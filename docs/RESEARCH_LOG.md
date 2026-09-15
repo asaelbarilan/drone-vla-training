@@ -2530,3 +2530,21 @@ digest,host andthinking responsechannel plusprofile name/ID. Point-based prompts
 retained;this tests transfer from bbox localization to currentnavigation,not a new
 bbox-driven architecture. Fixed simulatedlatency unchanged;actualGPUlatency logged.
 48 adapter/OnFly tests pass. Evidence:FLIGHT_FREEZE.json,BROWSER_CHECKS.json.
+
+## D-115 outcome: validated images, unsuccessful clutter flight (2026-09-15)
+
+Decision: retain Qwen4 as a named diagnostic profile; do not promote a general
+planning result. Six image checks pass, but the one authorized clutter flight
+still times out at 90 s (closest13.75 m versus savedGemma22.58 m), zero collisions.
+134 completed flight calls, one final cancellation, no inference errors.
+Recovery triggers correctly at37.2 s but expires10.314 degrees short; exploration
+resumes while loss remains active. Crucially, a saved-pose offline render at the
+complete saved heading still contains no target. Extending the timer alone is
+not supported as a sufficient fix. Next isolate reacquisition/expiry semantics
+and viewpoint/position recovery; any new search behavior must be named as an
+architecture extension rather than silently attributed to the original paper.
+Evidence: reports/qwen4_validation_20260915/FLIGHT_REPORT.md, FLIGHT_AUDIT.json,
+RECOVERY_COUNTERFACTUAL.json and archived flight/. 1800 poses/89 source images
+match; both dashboards replay exactly and pass Edge playback/seeks. 48 existing
+adapter/OnFly tests pass. Shared11434 untouched, dedicated11435 unloaded/stopped.
+Status: bounded gate + one flight complete; recovery repair remains open.

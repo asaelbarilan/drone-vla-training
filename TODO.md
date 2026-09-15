@@ -449,9 +449,11 @@ to select/combine representations. Keep coarse cell accuracy separate from tight
 localization. No new flight until these interfaces pass relevant offline checks.
 
 
-## D-114 next gate - independent image validation
-Qwen3-VL4B passed both localization formats on the three D-113 scenes;2B passed
-all box checks. Freeze additional unseen target positions/scales/occlusions and
-absent/distractor frames before a bounded validation. No flight promotion yet.
-SmolVLM2 installed package rejected multimodal input; repair/replace packaging only
-as a separately named experiment, not a hidden retry. Preserve all baseline results.
+## D-115 next: recovery must distinguish expiry from reacquisition
+
+D-114 image gate complete:6/6; one Qwen flight remains unsuccessful. Reproduce the
+37.2-40 s loss episode using saved state. Test expiry/resumption and loss latch,
+then compare heading-only recovery with position/view recovery offline. A full
+saved heading still shows no target at the new position, so timer-only repair is
+insufficient evidence. Keep any viewpoint search/backtracking as a named variant.
+See reports/qwen4_validation_20260915/FLIGHT_REPORT.md. No broad sweep scheduled.

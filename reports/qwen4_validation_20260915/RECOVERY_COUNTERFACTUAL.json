@@ -1,0 +1,33 @@
+{
+  "method": "Same saved pose/time; actual versus saved recovery yaw. Offline render only.",
+  "views": [
+    {
+      "label": "actual_39_2",
+      "position": [
+        18.035558048679725,
+        9.341071456058495,
+        3.486807158332874
+      ],
+      "yaw_deg": 23.44391361217072,
+      "red_pixels": 0
+    },
+    {
+      "label": "saved_heading_39_2",
+      "position": [
+        18.035558048679725,
+        9.341071456058495,
+        3.486807158332874
+      ],
+      "yaw_deg": 33.75777493569408,
+      "red_pixels": 0
+    }
+  ],
+  "target_yaw_deg": 33.75777493569408,
+  "starting_yaw_deg": -15.85013887330286,
+  "remaining_error_deg": 10.31386132352336,
+  "required_turn_deg": 49.60791380899694,
+  "maximum_turn_budget_deg": 40.10704565915763,
+  "hold_s": 0.25,
+  "total_duration_s": 2.0,
+  "rate_limit_rps": 0.4
+}

@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115
+
+Read reports/qwen4_validation_20260915/FLIGHT_REPORT.md. Six new image checks pass;
+one flight times out, closest13.75 m versus Gemma22.58 m, zero collisions.
+Qwen4 profile is diagnostic, not a general replacement. Recovery fires but expires
+10.314 degrees short; completing the heading offline still does NOT reveal target.
+Next: isolate reacquisition/expiry and positional-view recovery; do not blindly
+extend the timer or attribute a new search mechanism to a published architecture.
+Flight debugger localhost8766/qwen4_clutter.html, key interval33.95-40 s.
+All1800 poses/89 source images match. Dedicated11435 stopped; shared11434 untouched.
+D-114 new-image gate below is completed by this entry. No extra flight scheduled.
+
 ## Local model inventory change (2026-09-14)
 
 User requested deletion of qwen3-vl:8b, qwen3-vl:2b, qwen3.5:4b,
