@@ -26,9 +26,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "status_probe_frozen_pending_three_calls",
+  "status": "status_probe_no_distinction_execution_probe_next",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Run three frozen status_probe calls once on CPU-only11435, preserve separate current grounding; no flight unless the frozen criteria pass. Stop tuning these same frames if it fails. Valley is currently running; leave shared11434/8765 untouched.",
-  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/8765 untouched",
-  "saved_frame_calls": 12
+  "next": "D-119 status-only probe returnsCONTINUE/LOST/LOST; no new flight or further tuning these3frames. Next OFFLINE saved-state execution test: cycle2 correct target goals50/51s are replaced52s by gray-wall exploration. Freeze hold of the last accepted51s goal, reconstruct original planner state/pose, compare whether SUPER/controller reaches that same intermediate goal within20s. No oracle steering or model call; component not mission flight. Two flight slots used; deadline16:55UTC. Read status_probe/REPORT.md.",
+  "server": "Dedicated11435 unloaded/stopped after CPU-only calls; debugger8766 retained; Valley running,shared11434/8765 untouched",
+  "saved_frame_calls": 15
 }

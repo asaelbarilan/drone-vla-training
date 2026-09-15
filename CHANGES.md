@@ -2804,3 +2804,18 @@ prompt tuning on these cases if it fails. All3 attempts retained, no retries.
 Evidence pending in reports/recovery_cycle_20260915/status_probe/FREEZE.json.
 Use CPU-only dedicated11435 while Valley runs; do not compare latency to flights.
 Frozen grounding reuse is diagnostic; live integration must charge both calls.
+
+
+### D-119 outcome: current identity respected, first occlusion still LOST
+
+Three status-only CPU calls:CONTINUE/LOST/LOST at33.95/35.95/66.95s; validJSON
+and evidence respects frozen current grounding. No experiment-entry gate pass
+because first occlusion stillLOST. Six input hashes and CPU residencies verified;
+3 dashboard cards/6 details pass. CPU+prompt both differ from D-118,not causal
+performance comparison. Keyframe history at35.95 ends27.85,omitting33.95lastvisible;
+temporal information may be insufficient. Do not tune these sameframes again.
+Next offline execution probe: hold cycle2's last accepted target-bound goal51s
+rather than replacing it with52s exploratory wall point; ask if common SUPER
+can complete it from saved state. No oracle steering/model call; intermediate
+waypoint completion is not mission success. Read status_probe/REPORT.md.
+15 saved-frame calls total,2/4 flights; dedicated11435 stopped,Valley untouched.

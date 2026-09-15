@@ -26,13 +26,13 @@ red pixels chosen after return,then movement occludes target and LOST recurs53.2
 Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promotion.
 393 unit tests pass;1800 new poses/79 current+1 historical input match. Dashboard
 localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
-NEXT: D-118 joint semantic monitor failed identity gate; no new flight.
-Read semantic_probe/REPORT.md and STATE.json. Six replies valid, but history
-contaminates current identity2/3 selected scenes. Candidate disabled.401 tests pass.
-Next bounded OFFLINE status-only temporal probe, with unchanged current-only
-grounding supplied as evidence. Temporal output cannot redefine visibility,
-coordinates or STOP; eventual live integration must charge both calls/latencies.
-Do not run this failed joint candidate or infer all temporary occlusion is safe.
+NEXT: D-119 status-only probe no useful distinction; no flight. Read STATE.json
+and status_probe/REPORT.md. Replies CONTINUE/LOST/LOST preserve identity but fail
+first-occlusion criterion. Do not tune those3frames again.15 saved-framecalls total.
+Next OFFLINE saved-state hold of cycle2's accepted51s target goal, before52s
+replacement by wall exploration; test common SUPER/controller completion within20s.
+Reconstruct planner state and pose; no oracle steering/model calls. Intermediate
+waypoint completion is not mission success.401 unit tests remain passing.
 Dedicated11435 stopped; shared11434 and Valley8765 untouched. Commit each change.
 
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115

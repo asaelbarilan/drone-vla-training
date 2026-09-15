@@ -1,0 +1,59 @@
+[
+  {
+    "case": "obs680_status",
+    "answer": {
+      "evidence": "Current image shows a red structure visible behind a large gray structure, consistent with historical sightings of the red tower in HISTORY 4 and HISTORY 5.",
+      "status": "CONTINUE"
+    },
+    "grounding": {
+      "evidence": "The image shows a scene with a blue sky, green ground, and several gray structures. There is a small red rectangular pr ",
+      "visible": true,
+      "u": 315,
+      "v": 355
+    },
+    "expected_for_flight_gate": "CONTINUE",
+    "status_gate_pass": true,
+    "schema_valid": true,
+    "images_verified": 2,
+    "cpu_only": true,
+    "wall_s": 66.75
+  },
+  {
+    "case": "obs720_status",
+    "answer": {
+      "evidence": "Current image shows a large gray structure on the left and a smaller gray rectangular object near the center, with no visible red tower; historical sequences show red tower in H4/H",
+      "status": "LOST"
+    },
+    "grounding": {
+      "evidence": "The image shows a large gray structure on the left, a smaller gray rectangular object near the center, a green ground, a",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "expected_for_flight_gate": "CONTINUE",
+    "status_gate_pass": false,
+    "schema_valid": true,
+    "images_verified": 2,
+    "cpu_only": true,
+    "wall_s": 37.35899999999856
+  },
+  {
+    "case": "obs1340_status",
+    "answer": {
+      "evidence": "Current image shows no red tower; historical sequences indicate progression toward the target but lack visible confirmation in the latest frame.",
+      "status": "LOST"
+    },
+    "grounding": {
+      "evidence": "The image shows a clear blue sky above a flat, greenish-brown ground. There are no visible objects such as a red tower.",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "expected_for_flight_gate": "LOST",
+    "status_gate_pass": true,
+    "schema_valid": true,
+    "images_verified": 2,
+    "cpu_only": true,
+    "wall_s": 65.1880000000001
+  }
+]
