@@ -1,0 +1,97 @@
+{
+  "case": "far_left",
+  "input_sha256": "194dadf24efce32d6efa14c44b2003665c5c025584329bf8097a79a8c6330c90",
+  "request": {
+    "model": "qwen3-vl:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "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"
+        ]
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "keep_alive": "10m"
+  },
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:31:29.2025752Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"A single red rectangular structure is visible in the middle distance, positioned between two gray buildings. It is the\u552f\u4e00\",\n  \"visible\": true,\n  \"box\": [159, 315, 201, 439]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 50121686100,
+    "load_duration": 5674252700,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 39363399000,
+    "eval_count": 62,
+    "eval_duration": 5046823000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4277906963,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T14:41:29.2036601+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 50.14099999999985
+}

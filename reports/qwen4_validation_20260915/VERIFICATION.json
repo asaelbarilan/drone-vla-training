@@ -1,0 +1,13 @@
+{
+  "requests_verified": 6,
+  "input_images": 6,
+  "source_bytes_exact": true,
+  "cloud_calls": 0,
+  "gate": {
+    "complete": true,
+    "passed": true,
+    "passed_cases": 6,
+    "required": 6,
+    "flight_permitted": true
+  }
+}

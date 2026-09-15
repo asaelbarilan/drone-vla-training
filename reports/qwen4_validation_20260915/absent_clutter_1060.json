@@ -1,0 +1,97 @@
+{
+  "case": "absent_clutter_1060",
+  "input_sha256": "9a4271e7f7af64b2bb85279146905acf3df18dfdad1ebefe7e480f84782ab0e7",
+  "request": {
+    "model": "qwen3-vl:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAEYUlEQVR4nO3dMW4jZRiA4QkK21HACq1g23QUkZzt2WNQcwcqag7AKWgQZ6AIpUdKn5YCUSJKJIoIZJHYjO3E89p+njK24/Hkze+Zz7Z88dV3Xw9Q9cHcGwCbCJQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkXXzx5s3c2wBrXfxw++uGi3/6/pvF4uZgW3MA47i8uZntES2Xy6Pbn+O4fPfu3XP8nvH9+y8nXvn29pfr6+thGC4v9r9neDGXP//47dzbAGs5SeIQtnp+X/U/gb5++2oclzttEqfguQ5Ad2YFJU2g5Px7Cj8IlDiBkiZQ0gTKi9t5xjRMCdSkiRlZQUkTKC2rM6ZBoGww+8tIwzBcznv3nIn7+/t1F11dXW24oUA5hD//+m3dRevTHQaBMrsN7Q4Tj0FNmp7FMb6dfn/jOH782e7roJMk0gRKyB+/D6szpkGgxAmUNIGSdnaBLhY3y6WJxNE4u0CZ6Fle59xzxjRMD9QolFlYQal4PGMaBEqcQEkTKGkCJU2gpG0RqEkTW9l/CDpYQYl4csY0CJQnFT4u90CgpJ1doPN+iQIb3N3dPf7heX1oTp1ZH306DP80unowei6BPswf1Bn3ONPtAn2YNB3dRxMtnMdlNdPTX0HVOYv9h6APmZ74SZI6j90pr6Dq3Mc4jhOvuVgsXm4zTjbQcVxeXPiex91Nf4KenvIOTjDQhxP2129fDZll4LiM4/Jh7020/wvuG5xaoP/ZuZ98/uHkGx4i5SffbXN0U5FDOqlAt/3XX/XsKT/ueN0B8fSPQZ9hylsHmh2F7lPnViamPH1JfhzuOI5P3sv0tzsG/0C7OZEV9GB1TvcSRxfTH+PJpHwKgQbr3Mr0lKd7iZRnsWOgkYP91RN2dhPfe7sEuu4hHfhp5dgXTqZ4zqf4Qx4hqfNMzHMMun/K6jwT9ZMkIZ65E383E8dOoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0gRKmkBJEyhpAiVNoKQJlDSBkiZQ0v4GBbXXgXmY5p0AAAAASUVORK5CYII="
+        ]
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "keep_alive": "10m"
+  },
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:33:41.0604817Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"The image shows a green sky and gray buildings below, with no red tower visible. The red tower is not present in the 300\",\n  \"visible\": false,\n  \"box\": [0, 0, 0, 0]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 44064913200,
+    "load_duration": 2132200,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 38598101000,
+    "eval_count": 62,
+    "eval_duration": 5396149000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4277906963,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T14:43:41.0604817+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 44.07899999999995
+}

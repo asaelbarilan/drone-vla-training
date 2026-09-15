@@ -1,0 +1,128 @@
+[
+  {
+    "case": "far_left",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "A single red rectangular structure is visible in the middle distance, positioned between two gray buildings. It is the\u552f\u4e00",
+      "visible": true,
+      "box": [
+        159,
+        315,
+        201,
+        439
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      35.492492492492495,
+      70.31531531531532,
+      44.867867867867865,
+      97.994994994995
+    ],
+    "iou": 0.7704178077762169,
+    "center_in_target": true
+  },
+  {
+    "case": "mid_center",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "A single red rectangular structure is visible, standing vertically on a gray ground plane against a blue sky background.",
+      "visible": true,
+      "box": [
+        429,
+        177,
+        569,
+        562
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      95.76276276276276,
+      39.510510510510514,
+      127.01401401401401,
+      125.45145145145145
+    ],
+    "iou": 0.9382812244965114,
+    "center_in_target": true
+  },
+  {
+    "case": "close_clipped",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "The image shows a large solid red rectangle in the center, which is the red tower. The surrounding areas are blue sky on",
+      "visible": true,
+      "box": [
+        100,
+        0,
+        898,
+        998
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true,
+    "box_pixels": [
+      22.32232232232232,
+      0.0,
+      200.45445445445446,
+      222.77677677677679
+    ],
+    "iou": 0.9766783024028584,
+    "center_in_target": true
+  },
+  {
+    "case": "absent_clutter_1060",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "The image shows a green sky and gray buildings below, with no red tower visible. The red tower is not present in the 300",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
+  },
+  {
+    "case": "absent_clutter_1062",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "The image shows a scene with gray buildings and a green ground, but there is no red tower visible. The structures are in",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
+  },
+  {
+    "case": "absent_after_turn",
+    "passed": true,
+    "status": "pass",
+    "answer": {
+      "evidence": "The image shows a clear blue sky above a flat gray ground with no red structures or towers present.",
+      "visible": false,
+      "box": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "channel": "thinking",
+    "presence_correct": true
+  }
+]

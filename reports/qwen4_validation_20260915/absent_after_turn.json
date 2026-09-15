@@ -1,0 +1,97 @@
+{
+  "case": "absent_after_turn",
+  "input_sha256": "9eff26adb42ebe863341617b16593efb0b6e94f84d43d172ff7e531977ea5506",
+  "request": {
+    "model": "qwen3-vl:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAACxklEQVR4nO3cQRECMRAAwYRaoehAByZOBCZQhALum3l0K+AxtexdAvv5/i6oepz+AHBn9ulPADdmK5QwX/GkmaCkzV4KpcsEJc0OSpoJSpr3oKTNMkIJM0FJs4OSZoKSNt7TU+YkiTQ7KGlOkkgzQUnzFE/abCOUMDsoaXZQ0uygpJmgpM1ykkSYCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDSBkuY1E2n+uIE0D0mk+dEcaSYoaZ7iSXPdjjQ7KGl2UNLsoKSZoKS5bkeaCUqaHZQ0t5lIM0FJc5JEmglKmh2UNBOUNO9BSXOSRJoJSpodlDQTlDQ36klzkkSaHZQ0OyhpdlDSTFDS/LsdaW4zkeYpnjQ7KGkmKGmu25HmK540X/Gkec1EmglKmut2pJmgpNlBSTNBSfMelDQnSaSZoKTZQUkzQUnzoznSnCSRZgclzQ5Kmh2UNBOUNH/cQJrbTKR5iifNDkqaCUraLCOUMBOUNDsoaU6SSDNBSZvP9Tr9GeAvX/GkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIEStoPVPgGtHo8LuYAAAAASUVORK5CYII="
+        ]
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "keep_alive": "10m"
+  },
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:35:04.5590858Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"The image shows a clear blue sky above a flat gray ground with no red structures or towers present.\",\n  \"visible\": false,\n  \"box\": [0, 0, 0, 0]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 40744049200,
+    "load_duration": 2747100,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 36914923000,
+    "eval_count": 51,
+    "eval_duration": 3754306000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4277906963,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T14:45:04.5595892+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 40.797000000000025
+}

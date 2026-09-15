@@ -1,0 +1,97 @@
+{
+  "case": "close_clipped",
+  "input_sha256": "3a7397326f803d79f8bebc95579d08d4a4c0f60e369719d1671a9623699800b5",
+  "request": {
+    "model": "qwen3-vl:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAADLklEQVR4nO3cwW0TURRAUYxcRCpJBbSBRB0sWFADHWRFD0kDLKkiZdCAs5r3xNXXOQVYs7j6fp43ntu3X38/Tfjz88vL09PIR3GGr+/vzz9eL37I55FLgSX32/++Ag52va77TaGsuV6Xr3jSnKAsul7X/TYwJ8Bj1+tygrLIDMrhnKAsGplBYcvAfdCByOEjl+tygrLIJok0MyhpIzPowHXAYzZJlNkkkWaTxOGcoCzyK560kfugEmXL9brMoKSZQVlkBiXNLp60gRN0onL4iE0SYWZQ0jzNRJsTlDKbJNKu1+UEZZEZlDYzKGU2SaTZJBFnk0SYTRJpEzPowGXAY24z0ebFDZR5cQNpXtzA4ZygLHKbiTSP25HmxQ0czgzKIjMoaR63I83jdsTZJBFmBiXN00y0OUEps0kizYsbSDOD0mYGpcwmiTSbJOJskgizSSLNDEqaf3VyOJskFtkkkWYGJc0MyuGcoCwauQ+qULYMvN1OnyyySaLMr3jS7OJJm3ii3hDKIo/bEeYrnjR/mqPNCUqZFzeQ5nE70sygtJlBKbPqJM2LG4izSSLMJok0Myhp/jTH4WySWGSTRJoZlDQzKIdzgrLIixtI8+IG2mySKPMrnjS7eNJGnqiXKGtskigzg5Jmk8ThnKAsGvgV//b7+8SVwAPX6/IVT5pASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCk/QPF2Q8mvHIs2AAAAABJRU5ErkJggg=="
+        ]
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "keep_alive": "10m"
+  },
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:32:56.9746055Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"The image shows a large solid red rectangle in the center, which is the red tower. The surrounding areas are blue sky on\",\n  \"visible\": true,\n  \"box\": [100, 0, 898, 998]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 43776461300,
+    "load_duration": 2679400,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 38555277000,
+    "eval_count": 63,
+    "eval_duration": 5151712000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4277906963,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T14:42:56.9828468+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 43.78099999999995
+}

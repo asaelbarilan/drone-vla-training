@@ -1,0 +1,97 @@
+{
+  "case": "mid_center",
+  "input_sha256": "a960aa9d09844cec7613cee5c86b83438c0a9bdda3afe5abaf1fe3f165630319",
+  "request": {
+    "model": "qwen3-vl:4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Locate the red tower in this image. This is a localization test, not navigation. Return visible=true and a tight bounding box around ONLY the visible red tower, excluding adjacent gray buildings. Box order is [left,top,right,bottom], using a 0..999 grid: (0,0) is the image top-left and (999,999) bottom-right. If no red tower is visible, return visible=false and box=[0,0,0,0]. Gray or green structures are not the red tower. Evidence should briefly describe what is actually visible. Return JSON with evidence, visible and box.",
+        "images": [
+          "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAADkklEQVR4nO3cwW0kZRRGURtVCpMIa9ZsIAjWEwISK1JA5EAAbJBIgjScBBk8r6zvjnxOAK3W0/Xrv6vK/frLH/+9QNV36zcAl+d1/Q7g8LwqlDAf8aTZoKQ9ry8KpcsGJc0ZlDQblDTXQUl7XqxQwmxQ0pxBSbNBSXtcp6fMnSTSnEFJcyeJNBuUNN/iSXterVDCnEFJcwYlzRmUNBuUtOfFnSTCbFDSnEFJ8zQTaTYoae4kkWaDkuYMSpoNSprroKS5k0SaDUqaMyhpAiXNZaZ3/PPbTx/6+j/+/veHvv63zg83vO/PL18+6JW/vr2Z/82XpDHzv/mnOdJs0DHzv/kWP2b+N4/bjZn/zRmUNGfQMfO/OYOOmf/NBh0z/5vH7ebM/2KDjpn/zRl0zPxvnmZaM/+TDTpm/jd3ksbM/2aDjpn/zRl0zfxPNuiY+d9cBx0z/5s7SXPmf7FBx8z/5gw6Zv43G3TM/G+eqCfNnaQx8785g46Z/80ZdMz8b86gpNmgY+Z/8+t2Y+Z/8zTTmvmffIsfM/+bM+iY+d9s0DHzv3ncbs78Lz7ix8z/5iN+zPxvLjOtmf/JBh0z/5vH7cbM/2aDjpn/zRl0zfxPNuiY+d9cBx0z/5s7SXPmf7FBx8z/5gw6Zv43G3TM/G/+aY40d5LGzP/mDDpm/jdn0DHzvzmDkmaDjpn/zQ83jJn/zdNMa+Z/8i1+zPxvzqBj5n+zQcfM//b4Ex4z/5MNOmb+N2fQMfO/uZNEmg06Zv6359+/fl2/h0/N/G8+4kkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGnP+g18A76+va3fwucl0Hd8//MP67fwqfmIJ02gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJe1/NqUR7gDJ4UkAAAAASUVORK5CYII="
+        ]
+      }
+    ],
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "evidence": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "box": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "evidence",
+        "visible",
+        "box"
+      ],
+      "additionalProperties": false
+    },
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 192,
+      "num_gpu": 0,
+      "num_thread": 4
+    },
+    "keep_alive": "10m"
+  },
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T11:32:13.1836856Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"A single red rectangular structure is visible, standing vertically on a gray ground plane against a blue sky background.\",\n  \"visible\": true,\n  \"box\": [429, 177, 569, 562]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 43942294500,
+    "load_duration": 2963800,
+    "prompt_eval_count": 1163,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 38968109000,
+    "eval_count": 61,
+    "eval_duration": 4911542000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4277906963,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T14:42:13.1841891+03:00",
+        "size_vram": 0,
+        "context_length": 8192
+      }
+    ]
+  },
+  "seconds": 43.937999999999874
+}
