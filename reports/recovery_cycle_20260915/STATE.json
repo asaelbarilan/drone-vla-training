@@ -15,8 +15,8 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "cycle1_complete_offline_diagnosis_next",
+  "status": "context_probe_frozen",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Offline only next: inspect the grounded policy input after target loss. It receives a current image and transient rejection feedback, but no persistent lost state or last-confirmed view. Check intended architecture contract before a named VLM temporal-context ablation; no scripted search or oracle route. Freeze saved inputs and success criteria before any local probe. Do not launch another unchanged flight; only 1 of 4 flight slots used.",
+  "next": "Six saved-image calls only, two positions times current_point/history_point/history_action. No runtime extension or flight yet.",
   "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched"
 }

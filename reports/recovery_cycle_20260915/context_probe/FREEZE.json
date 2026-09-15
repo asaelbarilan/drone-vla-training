@@ -1,0 +1,388 @@
+{
+  "cases": [
+    {
+      "id": "obs800_current_point",
+      "seq": 800,
+      "mode": "current_point",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. The recovery turn ended. The previous proposal used an image captured before the turn ended and was discarded. Choose a fresh point from this current image; that rejection does not mean the previous point was an obstacle. Return JSON with evidence, kind, u, v.",
+            "images": [
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAGJklEQVR4nO3cPW8cVRiG4ZkVHXKV0h2GNqaaI/EHUqWgoKPlV0BsB5yC30GJ+QyfHQ3FuGKWGiQCikAoJW2gWJTYK2/mzOxz5jxn5r40RSJH0Svlzjtnd8euz88/rLBD217eunOae4pFW+UewFoIzZPv7+eeYtEItMem0bqquLJcL+UOoAx1nXuCpWKD9guh+fs7bvR5EGiUTaN1XXFNfHGLH6CuuNNPjQ0aK4Tmr2/Psm+UpV0EOkAIzZ/fnOWeYlkIdJhNo9n3ynIuzqBjcBSdDBt0sBCax1+f5d8ty7gIdIwQmsdfnWb/lGUJF7f48Wru9OmxQUcKofnjIUs0+UWg44XQ/P7wNP+/4awvbvH7qqs69whzxgbdSwjNoy9Pcr/SnfNFoPsKofnti5PcU8wWgQpsGs2+bGZ5cQaV4SiaAoFqhNC0n5+88uYHuQeZG27xMiE0v352L/cUc8MGFau500uxQZVCaH759F7u97ZndbFB9ViiQgSaAoXKEKgeG1SIQPXoU4hAE6BQHQLVo08hAtWrOYTqEKgeeQoRaAIUqkOgevQpRKB6HEGFCDQFCpUhUD02qBCB6tGnEIHqEagQgSZAoToEqldTqA6B6vEiSYhv+YA1NqgeG1SIQPXoU4hA9XjcTogzKKyxQfVYoEIEqkefQgSqxwYVItAUKFSGQPXYoEIEqkefQgSaAIXqEKgefQoRqB6fJAkRqB55ChFoAhSqQ6B6Pn3+/MmDq789Pr799NW7uYYZh0D1Jj6Cri8e7PrS8fHtZ7/uuvW/r931+c8TiUBT0Gewvjjf9aWrFfYprk8CTWD0Bu0+llS4U4nvLhCoXnwGP10vUlLhjbpu/fpb7yX6y5MiUL1BiypdlFtKXJ8VT9TDHBtUz/OTJM+pehGonmcInlP1IlA9z1XlOVUvzqCwxgbV89xVnlP1IlA9z59u5zlVLwJNwLMEz6n6EKieZwmeU/UiUD3P057nVL0IVM+zBM+pehFoCp4xeE7Vg0D13G6mXbd+4+3T3FOMRKB6Zn1WleVIkQg0gbgcfvzo/mTP2pVbKIHqGcZgOFIkAtUzfLDNcKRIBKpn2ILhSJEINAHDHAxHikOgeoYxGI4UiUD1DM97hiNFItAUDHMwHCkKgeoZrivDkSIRqJ5hDIYjRSJQPcN1ZThSJL5pDtbYoHqGH9sYjhSJQPUMWzAcKRKB6hluK8ORInEGhTU2qJ7Vuuq69Z133s89xXgEquf2IxLc5hmEQBNw68FtniEIVM+tB7d5BiFQPaszaOU3zyAEqufWg9s8gxCo3g8X78b9wYne44uexxHvg8IagcIagcIagcIagcIagcIagcIagcIagcIagebxz5PVdD8ctGQECmsEOmddt3751tPcU+yFQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNH9yQTdetn/06xaN3M3hSpCLQXLbSuRrrVTwzSqAWdq06wiVQa4RLoEUaGm65CHRWZvCqaAtvM8EagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagSq17eXh0UHuKWaFQGGNQGVYnykQqAZ1JkKgsEagAqzPdAgU1gh0X6zPpAh0L9SZGoHCGoGOx/qcAIGORJ3TIFBYI9AxWJ+TIdDBqHNKBAprBDoM63NiBDoAdU6PQGGNQGOxPrMgUFgj0Cisz1wItB91ZkSgsEagPVifeRHoi1BndgQKawS6E+vTAYHejDpNECisEegNWJ8+CBTWCHQb69MKgV5DnW4IFNYI9DnWpyEC/R91eiJQWCPQqmJ9GiNQ6rS2atvL3DMAO60Ojw7a9nKxmbI+za2qqjo8OthkmnuYqVGnv+dn0GU2CnPXXiQtqlHWZxG2X8Uv/EgKNze8zbSEIynrsxQ73wedcaPUWZAXvVE/40ZRip5PkuZ3JGV9lqX/o845HUmpszixn8XPplGUZcDDIqU3yvos0bCnmco9klJnof4DnnkMUkIdKR8AAAAASUVORK5CYII="
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    },
+    {
+      "id": "obs800_history_point",
+      "seq": 800,
+      "mode": "history_point",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "There are two images. Image 1 is a historical frame when the policy last identified the red target. Image 2 is the CURRENT camera image. Return points only in image 2 coordinates. Historical visibility is not current visibility. Since image 1, onboard odometry translation in east,north,up metres is [2.3, -0.49, 0.0], and yaw change is -10.3 degrees. The monitor subsequently reported LOST. Use history to understand the lost target and current occlusion; do not assume a hidden passage is traversable. Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. The recovery turn ended. The previous proposal used an image captured before the turn ended and was discarded. Choose a fresh point from this current image; that rejection does not mean the previous point was an obstacle. Return JSON with evidence, kind, u, v.",
+            "images": [
+              "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",
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAGJklEQVR4nO3cPW8cVRiG4ZkVHXKV0h2GNqaaI/EHUqWgoKPlV0BsB5yC30GJ+QyfHQ3FuGKWGiQCikAoJW2gWJTYK2/mzOxz5jxn5r40RSJH0Svlzjtnd8euz88/rLBD217eunOae4pFW+UewFoIzZPv7+eeYtEItMem0bqquLJcL+UOoAx1nXuCpWKD9guh+fs7bvR5EGiUTaN1XXFNfHGLH6CuuNNPjQ0aK4Tmr2/Psm+UpV0EOkAIzZ/fnOWeYlkIdJhNo9n3ynIuzqBjcBSdDBt0sBCax1+f5d8ty7gIdIwQmsdfnWb/lGUJF7f48Wru9OmxQUcKofnjIUs0+UWg44XQ/P7wNP+/4awvbvH7qqs69whzxgbdSwjNoy9Pcr/SnfNFoPsKofnti5PcU8wWgQpsGs2+bGZ5cQaV4SiaAoFqhNC0n5+88uYHuQeZG27xMiE0v352L/cUc8MGFau500uxQZVCaH759F7u97ZndbFB9ViiQgSaAoXKEKgeG1SIQPXoU4hAE6BQHQLVo08hAtWrOYTqEKgeeQoRaAIUqkOgevQpRKB6HEGFCDQFCpUhUD02qBCB6tGnEIHqEagQgSZAoToEqldTqA6B6vEiSYhv+YA1NqgeG1SIQPXoU4hA9XjcTogzKKyxQfVYoEIEqkefQgSqxwYVItAUKFSGQPXYoEIEqkefQgSaAIXqEKgefQoRqB6fJAkRqB55ChFoAhSqQ6B6Pn3+/MmDq789Pr799NW7uYYZh0D1Jj6Cri8e7PrS8fHtZ7/uuvW/r931+c8TiUBT0Gewvjjf9aWrFfYprk8CTWD0Bu0+llS4U4nvLhCoXnwGP10vUlLhjbpu/fpb7yX6y5MiUL1BiypdlFtKXJ8VT9TDHBtUz/OTJM+pehGonmcInlP1IlA9z1XlOVUvzqCwxgbV89xVnlP1IlA9z59u5zlVLwJNwLMEz6n6EKieZwmeU/UiUD3P057nVL0IVM+zBM+pehFoCp4xeE7Vg0D13G6mXbd+4+3T3FOMRKB6Zn1WleVIkQg0gbgcfvzo/mTP2pVbKIHqGcZgOFIkAtUzfLDNcKRIBKpn2ILhSJEINAHDHAxHikOgeoYxGI4UiUD1DM97hiNFItAUDHMwHCkKgeoZrivDkSIRqJ5hDIYjRSJQPcN1ZThSJL5pDtbYoHqGH9sYjhSJQPUMWzAcKRKB6hluK8ORInEGhTU2qJ7Vuuq69Z133s89xXgEquf2IxLc5hmEQBNw68FtniEIVM+tB7d5BiFQPaszaOU3zyAEqufWg9s8gxCo3g8X78b9wYne44uexxHvg8IagcIagcIagcIagcIagcIagcIagcIagcIagebxz5PVdD8ctGQECmsEOmddt3751tPcU+yFQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNH9yQTdetn/06xaN3M3hSpCLQXLbSuRrrVTwzSqAWdq06wiVQa4RLoEUaGm65CHRWZvCqaAtvM8EagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagSq17eXh0UHuKWaFQGGNQGVYnykQqAZ1JkKgsEagAqzPdAgU1gh0X6zPpAh0L9SZGoHCGoGOx/qcAIGORJ3TIFBYI9AxWJ+TIdDBqHNKBAprBDoM63NiBDoAdU6PQGGNQGOxPrMgUFgj0Cisz1wItB91ZkSgsEagPVifeRHoi1BndgQKawS6E+vTAYHejDpNECisEegNWJ8+CBTWCHQb69MKgV5DnW4IFNYI9DnWpyEC/R91eiJQWCPQqmJ9GiNQ6rS2atvL3DMAO60Ojw7a9nKxmbI+za2qqjo8OthkmnuYqVGnv+dn0GU2CnPXXiQtqlHWZxG2X8Uv/EgKNze8zbSEIynrsxQ73wedcaPUWZAXvVE/40ZRip5PkuZ3JGV9lqX/o845HUmpszixn8XPplGUZcDDIqU3yvos0bCnmco9klJnof4DnnkMUkIdKR8AAAAASUVORK5CYII="
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    },
+    {
+      "id": "obs800_history_action",
+      "seq": 800,
+      "mode": "history_action",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "There are two images. Image 1 is a historical frame when the policy last identified the red target. Image 2 is the CURRENT camera image. Return points only in image 2 coordinates. Historical visibility is not current visibility. Since image 1, onboard odometry translation in east,north,up metres is [2.3, -0.49, 0.0], and yaw change is -10.3 degrees. The monitor subsequently reported LOST. Use history to understand the lost target and current occlusion; do not assume a hidden passage is traversable. Mission: fly to the red tower and stop there. This is a diagnosis only; no action will execute. Decide what you need to do NEXT to recover visual contact. Choose action=point only if moving toward a CURRENT image point is your preferred next step; otherwise choose turn_left, turn_right, backtrack, or hold. Left/right are relative to current camera. Do not claim current visibility based on the historical image. Return JSON with evidence describing current objects and your reason, action, kind (target if currently visible, otherwise exploration), u,v. For point use integer current-image coordinates 0..999, top-left origin; for every other action use u=v=0. No hidden goal coordinates are available.",
+            "images": [
+              "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",
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAGJklEQVR4nO3cPW8cVRiG4ZkVHXKV0h2GNqaaI/EHUqWgoKPlV0BsB5yC30GJ+QyfHQ3FuGKWGiQCikAoJW2gWJTYK2/mzOxz5jxn5r40RSJH0Svlzjtnd8euz88/rLBD217eunOae4pFW+UewFoIzZPv7+eeYtEItMem0bqquLJcL+UOoAx1nXuCpWKD9guh+fs7bvR5EGiUTaN1XXFNfHGLH6CuuNNPjQ0aK4Tmr2/Psm+UpV0EOkAIzZ/fnOWeYlkIdJhNo9n3ynIuzqBjcBSdDBt0sBCax1+f5d8ty7gIdIwQmsdfnWb/lGUJF7f48Wru9OmxQUcKofnjIUs0+UWg44XQ/P7wNP+/4awvbvH7qqs69whzxgbdSwjNoy9Pcr/SnfNFoPsKofnti5PcU8wWgQpsGs2+bGZ5cQaV4SiaAoFqhNC0n5+88uYHuQeZG27xMiE0v352L/cUc8MGFau500uxQZVCaH759F7u97ZndbFB9ViiQgSaAoXKEKgeG1SIQPXoU4hAE6BQHQLVo08hAtWrOYTqEKgeeQoRaAIUqkOgevQpRKB6HEGFCDQFCpUhUD02qBCB6tGnEIHqEagQgSZAoToEqldTqA6B6vEiSYhv+YA1NqgeG1SIQPXoU4hA9XjcTogzKKyxQfVYoEIEqkefQgSqxwYVItAUKFSGQPXYoEIEqkefQgSaAIXqEKgefQoRqB6fJAkRqB55ChFoAhSqQ6B6Pn3+/MmDq789Pr799NW7uYYZh0D1Jj6Cri8e7PrS8fHtZ7/uuvW/r931+c8TiUBT0Gewvjjf9aWrFfYprk8CTWD0Bu0+llS4U4nvLhCoXnwGP10vUlLhjbpu/fpb7yX6y5MiUL1BiypdlFtKXJ8VT9TDHBtUz/OTJM+pehGonmcInlP1IlA9z1XlOVUvzqCwxgbV89xVnlP1IlA9z59u5zlVLwJNwLMEz6n6EKieZwmeU/UiUD3P057nVL0IVM+zBM+pehFoCp4xeE7Vg0D13G6mXbd+4+3T3FOMRKB6Zn1WleVIkQg0gbgcfvzo/mTP2pVbKIHqGcZgOFIkAtUzfLDNcKRIBKpn2ILhSJEINAHDHAxHikOgeoYxGI4UiUD1DM97hiNFItAUDHMwHCkKgeoZrivDkSIRqJ5hDIYjRSJQPcN1ZThSJL5pDtbYoHqGH9sYjhSJQPUMWzAcKRKB6hluK8ORInEGhTU2qJ7Vuuq69Z133s89xXgEquf2IxLc5hmEQBNw68FtniEIVM+tB7d5BiFQPaszaOU3zyAEqufWg9s8gxCo3g8X78b9wYne44uexxHvg8IagcIagcIagcIagcIagcIagcIagcIagcIagebxz5PVdD8ctGQECmsEOmddt3751tPcU+yFQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNQGGNH9yQTdetn/06xaN3M3hSpCLQXLbSuRrrVTwzSqAWdq06wiVQa4RLoEUaGm65CHRWZvCqaAtvM8EagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagcIagSq17eXh0UHuKWaFQGGNQGVYnykQqAZ1JkKgsEagAqzPdAgU1gh0X6zPpAh0L9SZGoHCGoGOx/qcAIGORJ3TIFBYI9AxWJ+TIdDBqHNKBAprBDoM63NiBDoAdU6PQGGNQGOxPrMgUFgj0Cisz1wItB91ZkSgsEagPVifeRHoi1BndgQKawS6E+vTAYHejDpNECisEegNWJ8+CBTWCHQb69MKgV5DnW4IFNYI9DnWpyEC/R91eiJQWCPQqmJ9GiNQ6rS2atvL3DMAO60Ojw7a9nKxmbI+za2qqjo8OthkmnuYqVGnv+dn0GU2CnPXXiQtqlHWZxG2X8Uv/EgKNze8zbSEIynrsxQ73wedcaPUWZAXvVE/40ZRip5PkuZ3JGV9lqX/o845HUmpszixn8XPplGUZcDDIqU3yvos0bCnmco9klJnof4DnnkMUkIdKR8AAAAASUVORK5CYII="
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "point",
+                "turn_left",
+                "turn_right",
+                "backtrack",
+                "hold"
+              ]
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v",
+            "action"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    },
+    {
+      "id": "obs920_current_point",
+      "seq": 920,
+      "mode": "current_point",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v.",
+            "images": [
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAEDklEQVR4nO3dPa4bVRiA4bHlPmU2QaQbmluyAFoKyrRsIUgRPxIrQGIDNEhp6REbuFZEmTIrYAU0tElxJnPmHft55JZgfXn57hnPXHN69eu7BarOe78B+JTLae93AJ9wOSmUMD/iSbNBSbucFoXSZYOS5gxKmg1Kms9BSbssVihhNihpzqCk2aCkXXxOT5k7SaQ5g5LmThJpNihpruJJu5ysUMKcQUlzBiXNGZQ0G5S0y+JOEmE2KGnOoKR5mok0G5Q0d5JIs0FJcwYlzQYlzeegpLmTRJoNSpozKGkCJc3HTKT54gbSXCSR5pfmSLNBSXMVT5rH7UhzBiXNGZQ0Z1DSbFDSPG5H2iE36D9vf1r5J3zxzZvP8k7Y2lHPoA8PL9f849fVib+Q+BR3+jTT2r6vT/c5t/mOukF3Z25zuJM0yNzmsEEHmdscd3oG/QzMbYrzaVkO99rdw8PL6x8/7j6He3gd8nPQCKOb4Lz3fyEjry+//eF6fdp7dMvuc7iHlw06zugmcBU/zugmsEHHGd0EnqgnzZ2kcUY3gTPoOKObwBl0nNFN4AxKmg06zugm8O1244xuAk8zrWB023MVP87oJnAGHWd0E9ig44xuAl/csIbRbc6P+HFGN8Ehf+XjtCxfvfp592eWdx/CPbx8zLSC0W3PRdI4o5vA43bjjG4CG3Sc0U3gDLqC0W3PBh1ndBP4HHSc0U3gTtIaRrc5G3Sc0U3gDDrO6CawQccZ3QR+aY40d5LGGd0EzqDjjG4CZ9BxRjeBMyhpp9///rD3exj352+vV/4vuda4Xp++/u6Xvf7td8IXN6xielvzNNM6prcxV/GrmN7WXMWvYnpbs0FXMb2tXf56+/3e7+HATG9rPgclTaCkCZQ0gZImUNIESppASRMoaQIl7diBPnt+3v1rbNnUsQPl5gmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJe3wgXpm+bYdPlBum0AHXa9Pz56b3uaMmDSBkiZQ0gRK2mXvN7AzH1HF3Uigw525Eo+7hUBFdsP81ZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZS084f3/+79HuCjbFDSBEqaQEkTKGkCJe38+PjoQp4sG5Q0gZImUNIESppASTsvy+JCniwblDSBkiZQ0gRKmkBJ+z9QF/I02aCkCZQ0gZL2H2qNP/l4srgnAAAAAElFTkSuQmCC"
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    },
+    {
+      "id": "obs920_history_point",
+      "seq": 920,
+      "mode": "history_point",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "There are two images. Image 1 is a historical frame when the policy last identified the red target. Image 2 is the CURRENT camera image. Return points only in image 2 coordinates. Historical visibility is not current visibility. Since image 1, onboard odometry translation in east,north,up metres is [4.72, -0.73, 0.0], and yaw change is -35.9 degrees. The monitor subsequently reported LOST. Use history to understand the lost target and current occlusion; do not assume a hidden passage is traversable. Drone mission: fly to the red tower and stop there. Return the point as relative coordinates on a 1000 by 1000 reference grid: u=0 is the left edge, u=999 the right edge, v=0 the top edge, and v=999 the bottom edge. Inspect this current camera image. In evidence use a short noun phrase describing the visible objects and colors. If the exact requested object is visible, set kind=target and point u,v on its visible body. Otherwise set kind=exploration and point u,v through an open passage that can reveal more of the scene. An obstacle face is not an open passage. Match all requested attributes; a similar shape alone is insufficient. If the named destination is not currently visible, select an obviously open, traversable continuation toward the subtask; never point at a nearby obstacle surface merely because a point is required. Return JSON with evidence, kind, u, v.",
+            "images": [
+              "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",
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAEDklEQVR4nO3dPa4bVRiA4bHlPmU2QaQbmluyAFoKyrRsIUgRPxIrQGIDNEhp6REbuFZEmTIrYAU0tElxJnPmHft55JZgfXn57hnPXHN69eu7BarOe78B+JTLae93AJ9wOSmUMD/iSbNBSbucFoXSZYOS5gxKmg1Kms9BSbssVihhNihpzqCk2aCkXXxOT5k7SaQ5g5LmThJpNihpruJJu5ysUMKcQUlzBiXNGZQ0G5S0y+JOEmE2KGnOoKR5mok0G5Q0d5JIs0FJcwYlzQYlzeegpLmTRJoNSpozKGkCJc3HTKT54gbSXCSR5pfmSLNBSXMVT5rH7UhzBiXNGZQ0Z1DSbFDSPG5H2iE36D9vf1r5J3zxzZvP8k7Y2lHPoA8PL9f849fVib+Q+BR3+jTT2r6vT/c5t/mOukF3Z25zuJM0yNzmsEEHmdscd3oG/QzMbYrzaVkO99rdw8PL6x8/7j6He3gd8nPQCKOb4Lz3fyEjry+//eF6fdp7dMvuc7iHlw06zugmcBU/zugmsEHHGd0EnqgnzZ2kcUY3gTPoOKObwBl0nNFN4AxKmg06zugm8O1244xuAk8zrWB023MVP87oJnAGHWd0E9ig44xuAl/csIbRbc6P+HFGN8Ehf+XjtCxfvfp592eWdx/CPbx8zLSC0W3PRdI4o5vA43bjjG4CG3Sc0U3gDLqC0W3PBh1ndBP4HHSc0U3gTtIaRrc5G3Sc0U3gDDrO6CawQccZ3QR+aY40d5LGGd0EzqDjjG4CZ9BxRjeBMyhpp9///rD3exj352+vV/4vuda4Xp++/u6Xvf7td8IXN6xielvzNNM6prcxV/GrmN7WXMWvYnpbs0FXMb2tXf56+/3e7+HATG9rPgclTaCkCZQ0gZImUNIESppASRMoaQIl7diBPnt+3v1rbNnUsQPl5gmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJe3wgXpm+bYdPlBum0AHXa9Pz56b3uaMmDSBkiZQ0gRK2mXvN7AzH1HF3Uigw525Eo+7hUBFdsP81ZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZS084f3/+79HuCjbFDSBEqaQEkTKGkCJe38+PjoQp4sG5Q0gZImUNIESppASTsvy+JCniwblDSBkiZQ0gRKmkBJ+z9QF/I02aCkCZQ0gZL2H2qNP/l4srgnAAAAAElFTkSuQmCC"
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    },
+    {
+      "id": "obs920_history_action",
+      "seq": 920,
+      "mode": "history_action",
+      "request": {
+        "model": "qwen3-vl:4b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "There are two images. Image 1 is a historical frame when the policy last identified the red target. Image 2 is the CURRENT camera image. Return points only in image 2 coordinates. Historical visibility is not current visibility. Since image 1, onboard odometry translation in east,north,up metres is [4.72, -0.73, 0.0], and yaw change is -35.9 degrees. The monitor subsequently reported LOST. Use history to understand the lost target and current occlusion; do not assume a hidden passage is traversable. Mission: fly to the red tower and stop there. This is a diagnosis only; no action will execute. Decide what you need to do NEXT to recover visual contact. Choose action=point only if moving toward a CURRENT image point is your preferred next step; otherwise choose turn_left, turn_right, backtrack, or hold. Left/right are relative to current camera. Do not claim current visibility based on the historical image. Return JSON with evidence describing current objects and your reason, action, kind (target if currently visible, otherwise exploration), u,v. For point use integer current-image coordinates 0..999, top-left origin; for every other action use u=v=0. No hidden goal coordinates are available.",
+            "images": [
+              "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",
+              "iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAIAAACVT/22AAAEDklEQVR4nO3dPa4bVRiA4bHlPmU2QaQbmluyAFoKyrRsIUgRPxIrQGIDNEhp6REbuFZEmTIrYAU0tElxJnPmHft55JZgfXn57hnPXHN69eu7BarOe78B+JTLae93AJ9wOSmUMD/iSbNBSbucFoXSZYOS5gxKmg1Kms9BSbssVihhNihpzqCk2aCkXXxOT5k7SaQ5g5LmThJpNihpruJJu5ysUMKcQUlzBiXNGZQ0G5S0y+JOEmE2KGnOoKR5mok0G5Q0d5JIs0FJcwYlzQYlzeegpLmTRJoNSpozKGkCJc3HTKT54gbSXCSR5pfmSLNBSXMVT5rH7UhzBiXNGZQ0Z1DSbFDSPG5H2iE36D9vf1r5J3zxzZvP8k7Y2lHPoA8PL9f849fVib+Q+BR3+jTT2r6vT/c5t/mOukF3Z25zuJM0yNzmsEEHmdscd3oG/QzMbYrzaVkO99rdw8PL6x8/7j6He3gd8nPQCKOb4Lz3fyEjry+//eF6fdp7dMvuc7iHlw06zugmcBU/zugmsEHHGd0EnqgnzZ2kcUY3gTPoOKObwBl0nNFN4AxKmg06zugm8O1244xuAk8zrWB023MVP87oJnAGHWd0E9ig44xuAl/csIbRbc6P+HFGN8Ehf+XjtCxfvfp592eWdx/CPbx8zLSC0W3PRdI4o5vA43bjjG4CG3Sc0U3gDLqC0W3PBh1ndBP4HHSc0U3gTtIaRrc5G3Sc0U3gDDrO6CawQccZ3QR+aY40d5LGGd0EzqDjjG4CZ9BxRjeBMyhpp9///rD3exj352+vV/4vuda4Xp++/u6Xvf7td8IXN6xielvzNNM6prcxV/GrmN7WXMWvYnpbs0FXMb2tXf56+/3e7+HATG9rPgclTaCkCZQ0gZImUNIESppASRMoaQIl7diBPnt+3v1rbNnUsQPl5gmUNIGSJlDSBEqaQEkTKGkCJU2gpAmUNIGSJlDSBEqaQEkTKGkCJe3wgXpm+bYdPlBum0AHXa9Pz56b3uaMmDSBkiZQ0gRK2mXvN7AzH1HF3Uigw525Eo+7hUBFdsP81ZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZQ0gZImUNIESppASRMoaQIlTaCkCZS084f3/+79HuCjbFDSBEqaQEkTKGkCJe38+PjoQp4sG5Q0gZImUNIESppASTsvy+JCniwblDSBkiZQ0gRKmkBJ+z9QF/I02aCkCZQ0gZL2H2qNP/l4srgnAAAAAElFTkSuQmCC"
+            ]
+          }
+        ],
+        "stream": false,
+        "think": false,
+        "format": {
+          "type": "object",
+          "properties": {
+            "evidence": {
+              "type": "string",
+              "maxLength": 120
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "target",
+                "exploration"
+              ]
+            },
+            "u": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "v": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 999
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "point",
+                "turn_left",
+                "turn_right",
+                "backtrack",
+                "hold"
+              ]
+            }
+          },
+          "required": [
+            "evidence",
+            "kind",
+            "u",
+            "v",
+            "action"
+          ],
+          "additionalProperties": false
+        },
+        "keep_alive": "10m",
+        "options": {
+          "temperature": 0,
+          "seed": 0,
+          "num_ctx": 8192,
+          "num_predict": 192
+        }
+      }
+    }
+  ],
+  "model_digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+  "max_calls": 6,
+  "retries": 0,
+  "criteria": "All six attempts retained. Check JSON/current absence and whether point lies on obstacle face. Compare choices within each pair of saved positions. Nonpoint actions are diagnostic only, not implemented. No success/flight promotion from this probe; no oracle target direction supplied."
+}

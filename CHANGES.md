@@ -2690,3 +2690,16 @@ rejection events with no source ID from source-frame lookup. Next offline policy
 input/memory diagnosis, not another unchanged flight. One of four slots used.
 Evidence: reports/recovery_cycle_20260915/REPORT.md, CYCLE1_HANDOFF.json, cycle1/.
 Dedicated11435 unloaded/stopped. Follow-ups active until16:55UTC.
+
+### D-116 continuation: freeze six-call input/action-space diagnosis
+
+Local implementation lock confirms memory belongs to monitoring; policy is current
+image plus previous-goal reprojection. Grounded diagnostic prompt omits the latter.
+Adding last-seen images or non-point actions is therefore a named extension, not
+a repair to the published OnFly mechanism. Freeze two current images (obs800/920)
+with last policy-confirmed target obs680, three conditions each: unchanged point
+interface, history plus same point interface, history plus diagnostic action choice.
+Only onboard odometry, existing model claims and exact saved pixels are supplied.
+Six local calls maximum,no retries,no executed movement. Score current visibility
+and obstacle-face pointing; inspect action changes, do not claim navigation success
+or promote a flight from this probe. See context_probe/FREEZE.json.
