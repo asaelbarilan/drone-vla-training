@@ -2788,3 +2788,19 @@ redefine visibility/coordinates or authorize STOP. Reuse frozen grounding for
 diagnosis only; future live design must charge both calls/latencies. No oracle.
 Code/freeze02b3deb; candidate remains disabled/no enabled profile. Dedicated11435
 unloaded/stopped.12 saved-frame calls total,shared11434/Valley8765 untouched.
+
+
+## D-119: status-only temporal monitor probe (2026-09-15, provisional)
+
+Rationale: D-118 joint image-history localization corrupted current identity.
+Freeze3 local status-only calls on the same3 source contexts, with the unchanged
+D-118 current-only grounding answers supplied as timestamped evidence. Temporal
+output is limited to evidence/CONTINUE/LOST; no coordinates, visibility or STOP
+authority. No runtime change yet. This is a named architecture experiment, not
+paper-profile repair. Gate: valid schema and evidence consistent with current
+grounding, CONTINUE visible/first-occlusion and LOST sustained-loss to support a
+flight hypothesis. This criterion does not label the route traversable. No repeat
+prompt tuning on these cases if it fails. All3 attempts retained, no retries.
+Evidence pending in reports/recovery_cycle_20260915/status_probe/FREEZE.json.
+Use CPU-only dedicated11435 while Valley runs; do not compare latency to flights.
+Frozen grounding reuse is diagnostic; live integration must charge both calls.
