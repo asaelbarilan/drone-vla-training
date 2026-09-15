@@ -409,3 +409,32 @@ def test_a_new_chunk_supersedes_the_previous_one():
     router.accept(envelope(DecisionKind.ACTION_CHUNK, chunk), make_ctx())
     router.accept(envelope(DecisionKind.ACTION_CHUNK, chunk), make_ctx())
     assert router.counters.chunk_actions_discarded >= 4
+
+
+@pytest.mark.parametrize("fresh_required", [False, True])
+def test_lost_turn_expiry_does_not_resume_or_accept_pre_end_images(fresh_required):
+    router = make_router(
+        Authority.WAYPOINT,
+        semantic_supervision="periodic_monitor",
+        scheduler={"monitor_hz": 1.0},
+        monitor=ComponentSpec(name="onfly_monitor", params={
+            "fresh_after_lost_reorientation": fresh_required,
+        }),
+    )
+    router.begin_fixed_reorientation(
+        target_yaw_rad=1.0, t_sim_ns=0, hold_s=0.25,
+        max_duration_s=2.0, yaw_rate_rps=0.4,
+    )
+    waypoint = WaypointGoal(target=Vec3(x=10.0, y=0.0, z=3.0))
+    during = envelope(DecisionKind.WAYPOINT, waypoint, s_to_ns(1.0))
+    assert router.accept(during, make_ctx(s_to_ns(1.8))).accepted
+    expired, _, _ = router.command_for_tick(make_ctx(s_to_ns(2.0)))
+    assert expired.is_hold
+    next_tick, _, _ = router.command_for_tick(make_ctx(s_to_ns(2.05)))
+    assert next_tick.is_hold == fresh_required
+    late = envelope(DecisionKind.WAYPOINT, waypoint, s_to_ns(1.9))
+    assert router.accept(late, make_ctx(s_to_ns(2.1))).accepted != fresh_required
+    fresh = envelope(DecisionKind.WAYPOINT, waypoint, s_to_ns(2.1))
+    assert router.accept(fresh, make_ctx(s_to_ns(2.2))).accepted
+    resumed, _, _ = router.command_for_tick(make_ctx(s_to_ns(2.25)))
+    assert not resumed.is_hold

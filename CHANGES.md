@@ -2663,3 +2663,17 @@ RECOVERY_COUNTERFACTUAL.json and archived flight/. 1800 poses/89 source images
 match; both dashboards replay exactly and pass Edge playback/seeks. 48 existing
 adapter/OnFly tests pass. Shared11434 untouched, dedicated11435 unloaded/stopped.
 Status: bounded gate + one flight complete; recovery repair remains open.
+
+## 2026-09-15 - D-116 cycle 1: fresh observation after lost recovery
+
+User authorizes autonomous cycles for the next hours. Budget: at most four local
+flights until 16:55 UTC, state in reports/recovery_cycle_20260915/STATE.json.
+Saved D-115 evidence: at39.25 s movement resumes from obs760 captured37.95 s,
+during the37.2-39.2 s recovery. New opt-in monitor parameter clears pending
+source at expiry and rejects delayed pre-expiry images; unchanged default keeps
+legacy profiles reproducible. Fresh proposals resume normally. Policy feedback
+distinguishes this temporal rejection from obstacle evidence and clears obsolete
+point-rejection history. Timer, target search and waypoint generation unchanged.
+117 focused router,OnFly,fence,hover,target-stop,inference tests pass; lint passes.
+Initial test fixtures needed valid supervision/schema fields; no inference was
+spent on those corrections. Named profile c5_recovery_fresh_qwen4_dev.

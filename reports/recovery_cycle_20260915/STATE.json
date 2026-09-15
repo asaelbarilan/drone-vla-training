@@ -1,0 +1,9 @@
+{
+  "automation_id": "drone-recovery-debug-cycles",
+  "deadline_utc": "2026-09-15T16:55:00Z",
+  "max_flights": 4,
+  "flights": [],
+  "status": "cycle1_component_test",
+  "baseline": "c5_clutter_qwen4_20260915_s1061",
+  "next": "Test opt-in fresh observation after lost-recovery expiry; unchanged timer/search."
+}

@@ -2548,3 +2548,15 @@ RECOVERY_COUNTERFACTUAL.json and archived flight/. 1800 poses/89 source images
 match; both dashboards replay exactly and pass Edge playback/seeks. 48 existing
 adapter/OnFly tests pass. Shared11434 untouched, dedicated11435 unloaded/stopped.
 Status: bounded gate + one flight complete; recovery repair remains open.
+
+## D-116 - Autonomous recovery contract cycles (2026-09-15)
+
+Decision: test a fresh-observation handoff as an opt-in repair before adding search.
+Rationale: D-115 resumes motion from an image captured while reorienting. Expiry
+is not visual reacquisition. Discard pending pre-expiry commands and distinguish
+temporal rejection from blocked geometry in the policy feedback. A new post-turn
+proposal can still explore; no automatic backtracking or privileged navigation.
+Evidence: source obs760 at37.95 s resumes39.25 s; 117 focused tests pass including
+legacy/fixed parameterization, delayed reply rejection and fresh resumption.
+Status: implementation ready, flight outcome pending. Four-flight total cap and
+16:55 UTC deadline in reports/recovery_cycle_20260915/STATE.json.

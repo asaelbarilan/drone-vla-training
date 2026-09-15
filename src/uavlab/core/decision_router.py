@@ -164,6 +164,10 @@ class DecisionRouter:
             or self.fence_yaw_rate_rps <= 0
         ):
             raise ValueError("fence recovery needs a positive rejection limit and yaw rate")
+        monitor_params = arch.monitor.params if arch.monitor else {}
+        self.fresh_after_lost_reorientation = bool(
+            monitor_params.get("fresh_after_lost_reorientation", False)
+        )
         self._fence_rejections = 0
         self._fresh_after_reorientation_ns = -1
         self.max_age_ns = s_to_ns(arch.staleness.max_decision_age_s)
@@ -198,7 +202,7 @@ class DecisionRouter:
             return RoutingOutcome(accepted=False, reason="bounded fence reorientation active")
         if envelope.source_t_sim_ns <= self._fresh_after_reorientation_ns:
             return RoutingOutcome(
-                accepted=False, reason="fresh observation required after fence turn"
+                accepted=False, reason="fresh observation required after recovery turn"
             )
         age_ns = envelope.age_ns(ctx.t_sim_ns)
         stale = envelope.is_expired(ctx.t_sim_ns) or age_ns > self.max_age_ns
@@ -474,7 +478,7 @@ class DecisionRouter:
         # infinite hover when positional occlusion makes visual reacquisition
         # impossible from the recovered viewpoint.
         if ctx.t_sim_ns >= recovery.expires_ns:
-            if recovery.resume_on_heading:
+            if recovery.resume_on_heading or self.fresh_after_lost_reorientation:
                 self.source = None
                 self._fresh_after_reorientation_ns = ctx.t_sim_ns
             self._reorientation = None

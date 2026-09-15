@@ -881,3 +881,22 @@ def test_previous_goal_prompt_can_be_ablated_without_losing_geometry(enabled):
     assert ("previous 3D goal reprojects" in prompt) is enabled
     assert ("Choose a fresh navigation point" in prompt) is not enabled
     assert decision.provenance["history_pixel"] != "None"
+
+
+def test_turn_refresh_rejection_is_not_obstacle_evidence():
+    model = StubModel(['{"evidence":"open ground","kind":"exploration","u":500,"v":500}'])
+    agent = OnFlyDecisionAgent(grounded_waypoints=True, coordinate_contract="qwen_relative_1000")
+    bind(agent, services(model))
+    agent.reset(MISSION, 1060)
+    ctx = context()
+    asyncio.run(agent.decide(ctx))
+    ctx.last_routing_feedback = RoutingFeedback(
+        decision_id="turn-frame", accepted=False,
+        reason="fresh observation required after recovery turn",
+        proposed_kind=onfly_module.DecisionKind.WAYPOINT, expanded_kind=None, t_sim_ns=0,
+    )
+    asyncio.run(agent.decide(ctx))
+    prompt = model.requests[-1].prompt
+    assert "The recovery turn ended" in prompt
+    assert "flight verifier or planner rejected" not in prompt
+    assert not agent._rejected_model_points

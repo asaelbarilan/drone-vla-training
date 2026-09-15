@@ -401,7 +401,16 @@ class OnFlyDecisionAgent(BasePolicy):
             pitch_rad=self.camera_pitch_rad,
         )
         feedback = ctx.last_routing_feedback
-        if feedback is not None and not feedback.accepted and self._last_model_point is not None:
+        recovery_refresh = bool(
+            feedback is not None
+            and not feedback.accepted
+            and feedback.reason.startswith("fresh observation required after")
+        )
+        if recovery_refresh:
+            # A view-age rejection says nothing about obstacle geometry.
+            self._previous_goal = None
+            self._rejected_model_points = []
+        elif feedback is not None and not feedback.accepted and self._last_model_point is not None:
             if self._last_model_point not in self._rejected_model_points:
                 self._rejected_model_points.append(self._last_model_point)
                 self._rejected_model_points = self._rejected_model_points[-4:]
@@ -430,7 +439,13 @@ class OnFlyDecisionAgent(BasePolicy):
         )
         if not self.previous_goal_prompt:
             history_text = "Choose a fresh navigation point from the current image. "
-        if feedback is not None and not feedback.accepted:
+        if recovery_refresh:
+            feedback_text = (
+                "The recovery turn ended. The previous proposal used an image captured before "
+                "the turn ended and was discarded. Choose a fresh point from this current image; "
+                "that rejection does not mean the previous point was an obstacle."
+            )
+        elif feedback is not None and not feedback.accepted:
             rejected = ", ".join(str(point) for point in self._rejected_model_points)
             feedback_text = (
                 "The flight verifier or planner rejected the previous proposal: "

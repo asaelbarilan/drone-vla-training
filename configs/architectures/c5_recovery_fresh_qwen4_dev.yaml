@@ -1,0 +1,8 @@
+# D-116 cycle 1: fresh-image handoff only; unchanged recovery turn/search.
+_base_: c5_clutter_qwen4_validated_dev.yaml
+id: c5_recovery_fresh_qwen4_dev
+profile_of: c5
+name: "C5 Qwen4 with fresh image after lost recovery"
+monitor:
+  params:
+    fresh_after_lost_reorientation: true
