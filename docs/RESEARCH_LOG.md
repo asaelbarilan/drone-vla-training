@@ -2586,3 +2586,17 @@ Only onboard odometry, existing model claims and exact saved pixels are supplied
 Six local calls maximum,no retries,no executed movement. Score current visibility
 and obstacle-face pointing; inspect action changes, do not claim navigation success
 or promote a flight from this probe. See context_probe/FREEZE.json.
+
+### D-116 saved-view probe outcome: context is insufficient with point-only output
+
+Six replies complete without errors. Both current frames absent; all labels agree.
+All four point-only answers (with/without history) select gray obstacle faces;
+history-point evidence incorrectly names historical red target. Both action-choice
+answers distinguish historical/current frames and request backtrack. No action
+executed and no general planning claim. Local mechanism lock makes position return
+an architecture extension, not an OnFly repair. Next bounded component tests for
+VLM-selected return to observed pose+heading before another flight. Reacquisition
+is not mission completion; repeated approach-loop risk must remain visible.
+Evidence: reports/recovery_cycle_20260915/context_probe/REPORT.md, six frozen
+requests/replies, validated current-pixel overlays and browser capture. Dedicated
+11435 unloaded/stopped. Flight count remains1/4.

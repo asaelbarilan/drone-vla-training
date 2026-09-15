@@ -1,0 +1,45 @@
+{
+  "case": "obs920_history_action",
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T13:30:15.701857Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"Image 1 shows a red target (vertical red bar) partially obscured by a large gray structure. Image 2 shows a single gray,\",\n  \"kind\": \"exploration\",\n  \"u\": 0,\n  \"v\": 0,\n  \"action\": \"backtrack\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 1422096200,
+    "load_duration": 8148500,
+    "prompt_eval_count": 2325,
+    "prompt_eval_cached_count": 2175,
+    "prompt_eval_duration": 87952000,
+    "eval_count": 68,
+    "eval_duration": 1240174000
+  },
+  "wall_s": 1.4380000000001019,
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4235345264,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T16:40:15.701857+03:00",
+        "size_vram": 4235345264,
+        "context_length": 8192
+      }
+    ]
+  }
+}

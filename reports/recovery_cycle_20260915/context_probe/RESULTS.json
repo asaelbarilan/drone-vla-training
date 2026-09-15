@@ -1,0 +1,98 @@
+[
+  {
+    "case": "obs800_current_point",
+    "answer": {
+      "evidence": "gray wall and green ground",
+      "kind": "exploration",
+      "u": 650,
+      "v": 500
+    },
+    "selected_current_pixel_rgb": [
+      140,
+      140,
+      144
+    ],
+    "current_absence_correct": true,
+    "wall_s": 8.0,
+    "source_sha256": "d24d402c32e2d09bd2f17fd956489b43369321df0328bbccf8c8257c2b9d46d2"
+  },
+  {
+    "case": "obs800_history_point",
+    "answer": {
+      "evidence": "red tower",
+      "kind": "exploration",
+      "u": 325,
+      "v": 375
+    },
+    "selected_current_pixel_rgb": [
+      132,
+      132,
+      137
+    ],
+    "current_absence_correct": true,
+    "wall_s": 2.4689999999991414,
+    "source_sha256": "d24d402c32e2d09bd2f17fd956489b43369321df0328bbccf8c8257c2b9d46d2"
+  },
+  {
+    "case": "obs800_history_action",
+    "answer": {
+      "evidence": "Image 1 shows a red target (vertical red bar) partially visible behind a large gray structure. Image 2 shows no red bar;",
+      "kind": "exploration",
+      "u": 0,
+      "v": 0,
+      "action": "backtrack"
+    },
+    "selected_current_pixel_rgb": null,
+    "current_absence_correct": true,
+    "wall_s": 1.5779999999995198,
+    "source_sha256": "d24d402c32e2d09bd2f17fd956489b43369321df0328bbccf8c8257c2b9d46d2"
+  },
+  {
+    "case": "obs920_current_point",
+    "answer": {
+      "evidence": "gray rectangle",
+      "kind": "exploration",
+      "u": 350,
+      "v": 450
+    },
+    "selected_current_pixel_rgb": [
+      137,
+      137,
+      143
+    ],
+    "current_absence_correct": true,
+    "wall_s": 1.75,
+    "source_sha256": "5c57c54652f6f681157dec38c55f658815a163a8c2ebb9a197af086d5e4a1612"
+  },
+  {
+    "case": "obs920_history_point",
+    "answer": {
+      "evidence": "red tower",
+      "kind": "exploration",
+      "u": 350,
+      "v": 450
+    },
+    "selected_current_pixel_rgb": [
+      137,
+      137,
+      143
+    ],
+    "current_absence_correct": true,
+    "wall_s": 1.7659999999996217,
+    "source_sha256": "5c57c54652f6f681157dec38c55f658815a163a8c2ebb9a197af086d5e4a1612"
+  },
+  {
+    "case": "obs920_history_action",
+    "answer": {
+      "evidence": "Image 1 shows a red target (vertical red bar) partially obscured by a large gray structure. Image 2 shows a single gray,",
+      "kind": "exploration",
+      "u": 0,
+      "v": 0,
+      "action": "backtrack"
+    },
+    "selected_current_pixel_rgb": null,
+    "current_absence_correct": true,
+    "wall_s": 1.4380000000001019,
+    "source_sha256": "5c57c54652f6f681157dec38c55f658815a163a8c2ebb9a197af086d5e4a1612"
+  }
+]

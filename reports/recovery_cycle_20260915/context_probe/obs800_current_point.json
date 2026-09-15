@@ -1,0 +1,45 @@
+{
+  "case": "obs800_current_point",
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T13:30:06.6270224Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"gray wall and green ground\",\n  \"kind\": \"exploration\",\n  \"u\": 650,\n  \"v\": 500\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 7957917600,
+    "load_duration": 5801192200,
+    "prompt_eval_count": 1238,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 1405751000,
+    "eval_count": 41,
+    "eval_duration": 695266000
+  },
+  "wall_s": 8.0,
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4235345264,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T16:40:06.6431467+03:00",
+        "size_vram": 4235345264,
+        "context_length": 8192
+      }
+    ]
+  }
+}

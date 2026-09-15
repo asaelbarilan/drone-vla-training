@@ -23,8 +23,11 @@ User authorized automatic debug/fix/run while away. Heartbeat
 reports/recovery_cycle_20260915/STATE.json and REPORT.md. One slot used.
 Cycle1 fresh-image recovery handoff fixed in opt-in profile,117 tests pass;
 matched control prefix until39.25s. Still timeout,closest13.401m,final29.939m.
-No navigation improvement established. Next offline grounded-policy input and
-last-seen/loss-state diagnosis; no new flight without a concrete new hypothesis.
+No navigation improvement established. Saved-view six-call probe now complete:
+all four point-only answers hit gray obstacles; both history/action-choice replies
+request backtrack. Read context_probe/REPORT.md under the cycle folder. Next
+component-test a NAMED VLM-selected return-to-observed-view extension, including
+pose+heading and bounded retry; no flight until execution contracts pass.
 Do not silently add scripted search or change the paper architecture. Archive
 and inspect actual source images/dashboard after each run,commit each change.
 Dedicated11435 stopped;8766 debugger remains; shared11434/8765 untouched.

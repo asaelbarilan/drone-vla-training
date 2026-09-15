@@ -465,3 +465,8 @@ flights total before16:55UTC. Cycle1 completed: fresh-image handoff works but
 mission still fails. Next inspect current-image grounded prompt vs intended
 last-seen/loss-state contract offline; freeze evidence before a named VLM context
 ablation. Do not launch an unchanged repeat or script target search.
+
+D-116 context probe complete (six calls, no flight): history-point still hits
+obstacles; both action-choice cases request backtrack. Next component tests for
+a separately named VLM-selected return-to-observed-view option with pose+heading,
+verified execution and bounded retries. Read context_probe/REPORT.md before changes.

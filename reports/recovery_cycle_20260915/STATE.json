@@ -15,8 +15,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "context_probe_frozen",
+  "status": "context_probe_complete_variant_component_next",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Six saved-image calls only, two positions times current_point/history_point/history_action. No runtime extension or flight yet.",
-  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched"
+  "next": "Implement and component-test a separately named VLM-selected return_to_observed_view variant. See context_probe/REPORT.md. Two action-choice replies choose backtrack; four point-only replies hit obstacle faces. No flight promotion yet. Restore stored onboard pose AND heading through common verified execution; no oracle target coordinates, automatic scripted search, repeated infinite return or hidden OnFly mechanism changes. Test missing anchor/blocked return/timeout/freshness and repeat-request bound before a new flight. Keep original profiles. Only 1 of 4 flight slots used; deadline16:55UTC.",
+  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched",
+  "saved_frame_calls": 6
 }
