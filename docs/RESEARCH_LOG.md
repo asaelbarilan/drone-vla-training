@@ -2654,3 +2654,20 @@ construction and reconstructed hybrid memory. Independent monitor cases begin
 acquired, with no confirmed arrival memory; not a replay of all monitor hidden
 state. Freeze contains criteria, exact requests, input hashes, depth and poses.
 No cloud, retries or extra flight.
+
+
+### D-118 outcome: joint semantic/current monitor fails identity gate
+
+Six local calls,all validJSON,zero errors/retries. Legacy current-only passes
+current identity3/3 selected scenes; candidate history+current only1/3. At33.95s
+its point hits ground;35.95s it transfers HISTORY4/5 target to current gray wall
+and asks STOP. Runtime depth/confirmation guards block every STOP in this probe;
+false identity still forms a wrong geometric candidate,so do not promote.
+401 unit tests pass;1340 replay poses/3 sourceRGB/9 encoded inputs match;6 browser
+cards/details and actual point/history images inspected. No new flight;2/4 used.
+Read reports/recovery_cycle_20260915/semantic_probe/REPORT.md. Next offline split
+current-only grounding from status-only temporal reasoning; the latter must not
+redefine visibility/coordinates or authorize STOP. Reuse frozen grounding for
+diagnosis only; future live design must charge both calls/latencies. No oracle.
+Code/freeze02b3deb; candidate remains disabled/no enabled profile. Dedicated11435
+unloaded/stopped.12 saved-frame calls total,shared11434/Valley8765 untouched.

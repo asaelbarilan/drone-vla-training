@@ -483,6 +483,7 @@ Read cycle2/REPORT.md and STATE.json before further work;two of four flights use
 
 ## D-118: semantic monitor gate
 
-Run the six frozen requests in reports/recovery_cycle_20260915/semantic_probe;
-retain failures and inspect exact history/current images. No flight promotion
-from mere schema validity; distinguish current identity from semantic progress.
+Completed: joint monitor fails current identity on2/3 selected scenes; no flight.
+Next freeze status-only temporal judgment using unchanged current-only grounding
+as timestamped evidence. No visibility/coordinate/STOP authority in temporal output.
+See semantic_probe/REPORT.md. Future live integration must charge both calls/latency.

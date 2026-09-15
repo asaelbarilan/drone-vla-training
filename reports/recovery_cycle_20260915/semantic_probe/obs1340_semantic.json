@@ -1,0 +1,45 @@
+{
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T14:38:34.929912Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"The first image (HISTORY 1) shows a series of gray stone-like structures with a red object visible in HISTORY 3. The top\",\n  \"visible\": false,\n  \"u\": null,\n  \"v\": null,\n  \"status\": \"LOST\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2963826400,
+    "load_duration": 3261800,
+    "prompt_eval_count": 2320,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 1599940000,
+    "eval_count": 66,
+    "eval_duration": 1222542000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4235345264,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T17:48:34.929912+03:00",
+        "size_vram": 4235345264,
+        "context_length": 8192
+      }
+    ]
+  },
+  "case": "obs1340_semantic",
+  "wall_s": 3.0
+}

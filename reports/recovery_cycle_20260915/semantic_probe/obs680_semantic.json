@@ -1,0 +1,45 @@
+{
+  "reply": {
+    "model": "qwen3-vl:4b",
+    "created_at": "2026-09-15T14:38:26.0612689Z",
+    "message": {
+      "role": "assistant",
+      "content": "",
+      "thinking": "{\n  \"evidence\": \"The visible objects include multiple gray stone-like structures (monoliths) of varying sizes and shapes, set against a\u84dd\u5929\", \"visible\": true, \"u\": 323, \"v\": 500, \"status\": \"STOP\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 2816921300,
+    "load_duration": 3221200,
+    "prompt_eval_count": 2320,
+    "prompt_eval_cached_count": 4,
+    "prompt_eval_duration": 1575046000,
+    "eval_count": 61,
+    "eval_duration": 1100360000
+  },
+  "residency": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b",
+        "model": "qwen3-vl:4b",
+        "size": 4235345264,
+        "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl"
+          ],
+          "parameter_size": "4.4B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-09-15T17:48:26.061772+03:00",
+        "size_vram": 4235345264,
+        "context_length": 8192
+      }
+    ]
+  },
+  "case": "obs680_semantic",
+  "wall_s": 2.8439999999991414
+}

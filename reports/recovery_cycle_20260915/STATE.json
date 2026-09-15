@@ -26,9 +26,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "semantic_probe_frozen_pending_six_calls",
+  "status": "semantic_probe_failed_identity_no_flight",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "D-118: run the SIX frozen semantic_probe calls once, no retries; report current identity and accepted monitor status. No new flight until result supports specific hypothesis. Two flight slots used.",
+  "next": "D-118 gate FAILED: joint temporal/current prompt corrupts current target identity in2/3 saved cases (history target becomes current). NO flight with semantic_progress. Next bounded OFFLINE step: freeze status-only temporal judgment, supply unchanged current-only grounding as timestamped evidence. Temporal output cannot redefine visibility/coordinates or authorize STOP. Reuse the three frozen legacy results for this diagnostic only; live integration must account for both calls/latency. Gate must distinguish plausible brief occlusion from sustained loss without oracle steering before new flight. Two of four flight slots used; deadline16:55UTC. Read semantic_probe/REPORT.md.",
   "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/8765 untouched",
-  "saved_frame_calls": 6
+  "saved_frame_calls": 12
 }

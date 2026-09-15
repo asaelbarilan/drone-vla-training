@@ -1,0 +1,49 @@
+{
+  "cases": [
+    {
+      "case": "obs680_legacy",
+      "json_schema_valid": true,
+      "current_identity_correct": true,
+      "input_hashes_matched": 1,
+      "accepted_stop": false
+    },
+    {
+      "case": "obs680_semantic",
+      "json_schema_valid": true,
+      "current_identity_correct": false,
+      "input_hashes_matched": 2,
+      "accepted_stop": false
+    },
+    {
+      "case": "obs720_legacy",
+      "json_schema_valid": true,
+      "current_identity_correct": true,
+      "input_hashes_matched": 1,
+      "accepted_stop": false
+    },
+    {
+      "case": "obs720_semantic",
+      "json_schema_valid": true,
+      "current_identity_correct": false,
+      "input_hashes_matched": 2,
+      "accepted_stop": false
+    },
+    {
+      "case": "obs1340_legacy",
+      "json_schema_valid": true,
+      "current_identity_correct": true,
+      "input_hashes_matched": 1,
+      "accepted_stop": false
+    },
+    {
+      "case": "obs1340_semantic",
+      "json_schema_valid": true,
+      "current_identity_correct": true,
+      "input_hashes_matched": 2,
+      "accepted_stop": false
+    }
+  ],
+  "poses_matched": 1340,
+  "independent_case_state": "ever_acquired=true; no confirmed arrival memory; independent cases",
+  "gate": "FAIL: do not promote to flight"
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "case": "obs680_legacy",
+    "parsed": {
+      "evidence": "The image shows a scene with a blue sky, green ground, and several gray structures. There is a small red rectangular pr ",
+      "visible": true,
+      "u": 315,
+      "v": 355
+    },
+    "accepted": "continue",
+    "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=17.497275276175056; visual_confirmations=1/2; original_target_t_ns=33950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=1/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image shows a scene with a blue sky, green ground, and several gray structures. There is a small red rectangular pr '; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+    "rgb_point": [
+      202,
+      79,
+      79
+    ],
+    "wall_s": 6.186999999999898
+  },
+  {
+    "case": "obs680_semantic",
+    "parsed": {
+      "evidence": "The visible objects include multiple gray stone-like structures (monoliths) of varying sizes and shapes, set against a\u84dd\u5929",
+      "visible": true,
+      "u": 323,
+      "v": 500,
+      "status": "STOP"
+    },
+    "accepted": "continue",
+    "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=-1; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=1/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The visible objects include multiple gray stone-like structures (monoliths) of varying sizes and shapes, set against a\u84dd\u5929'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=vlm_history",
+    "rgb_point": [
+      104,
+      112,
+      96
+    ],
+    "wall_s": 2.8439999999991414
+  },
+  {
+    "case": "obs720_legacy",
+    "parsed": {
+      "evidence": "The image shows a large gray structure on the left, a smaller gray rectangular object near the center, a green ground, a",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "accepted": "lost",
+    "evidence": "visual monitor classified lost from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=-1; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True; acquisition_count=0/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image shows a large gray structure on the left, a smaller gray rectangular object near the center, a green ground, a'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+    "rgb_point": null,
+    "wall_s": 1.7970000000004802
+  },
+  {
+    "case": "obs720_semantic",
+    "parsed": {
+      "evidence": "The visible objects are gray stone structures (monoliths) and a red rectangular object (tower) in HISTORY 4 and HISTORY ",
+      "visible": true,
+      "u": 145,
+      "v": 715,
+      "status": "STOP"
+    },
+    "accepted": "continue",
+    "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=3.6744382690737094; visual_confirmations=1/2; original_target_t_ns=35950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=1/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The visible objects are gray stone structures (monoliths) and a red rectangular object (tower) in HISTORY 4 and HISTORY '; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=vlm_history",
+    "rgb_point": [
+      132,
+      132,
+      138
+    ],
+    "wall_s": 2.2659999999996217
+  },
+  {
+    "case": "obs1340_legacy",
+    "parsed": {
+      "evidence": "The image shows a clear blue sky above a flat, greenish-brown ground. There are no visible objects such as a red tower.",
+      "visible": false,
+      "u": null,
+      "v": null
+    },
+    "accepted": "lost",
+    "evidence": "visual monitor classified lost from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=-1; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True; acquisition_count=0/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The image shows a clear blue sky above a flat, greenish-brown ground. There are no visible objects such as a red tower.'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+    "rgb_point": null,
+    "wall_s": 1.8119999999998981
+  },
+  {
+    "case": "obs1340_semantic",
+    "parsed": {
+      "evidence": "The first image (HISTORY 1) shows a series of gray stone-like structures with a red object visible in HISTORY 3. The top",
+      "visible": false,
+      "u": null,
+      "v": null,
+      "status": "LOST"
+    },
+    "accepted": "lost",
+    "evidence": "visual monitor classified lost from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=None; visual_confirmations=0/2; original_target_t_ns=-1; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=False; latest_scale=absent; ever_acquired=True; acquisition_count=0/2; history_continuous=None; identity_source=current_frame_vlm; grounding='The first image (HISTORY 1) shows a series of gray stone-like structures with a red object visible in HISTORY 3. The top'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=vlm_history",
+    "rgb_point": null,
+    "wall_s": 3.0
+  }
+]
