@@ -27,13 +27,14 @@
     },
     {
       "run": "c5_target_commitment_20260915_s1061",
-      "status": "reserved_frozen",
-      "architecture": "c5_target_commitment_qwen4_dev"
+      "status": "running",
+      "architecture": "c5_target_commitment_qwen4_dev",
+      "commit": "3fd30c8"
     }
   ],
-  "status": "cycle3_target_commitment_ready",
+  "status": "cycle3_running",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "D-121 commit pending/final validation. Run ONE frozen c5_target_commitment_20260915_s1061 on dedicatedCPU11435; Valley active. Preserve source age/20sdeadline audit and actual dashboard. 3rd flight slot reserved, not yet started. Read CYCLE3_FREEZE.json. No other flights until outcome audited.",
+  "next": "Wait for c5_target_commitment_20260915_s1061, do not start another flight. Then audit cycle3 and actual dashboard, lease provenance/expiry, CPU residency. Owned serverPID in tmp/commitment_server.pid, flightPID tmp/commitment_flight.pid.",
   "server": "Dedicated11435 unloaded/stopped after CPU-only calls; debugger8766 retained; Valley running,shared11434/8765 untouched",
   "saved_frame_calls": 15
 }
