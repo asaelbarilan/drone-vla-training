@@ -28,14 +28,14 @@ Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promot
 localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
 D-120 CORRECTION: D118/D119 history was constructed atcontrol cadence,not exact
 live memory. True35.95s latesthistory34.95s; withdraw8.1sgap claim. No model reruns.
-NEXT: frozen goal_hold_component ready; require prefixplan/pose/command matches.
-Read STATE.json
-and status_probe/REPORT.md. Replies CONTINUE/LOST/LOST preserve identity but fail
-first-occlusion criterion. Do not tune those3frames again.15 saved-framecalls total.
-Next OFFLINE saved-state hold of cycle2's accepted51s target goal, before52s
-replacement by wall exploration; test common SUPER/controller completion within20s.
-Reconstruct planner state and pose; no oracle steering/model calls. Intermediate
-waypoint completion is not mission success.401 unit tests remain passing.
+NEXT: goal_hold_component complete: verified1020poses/61plans/firstcommand.
+Retained51sgoal gives right-side detour/redreappearance64s,truthdistance16.885→10.143m
+by71s,zero collisions. Storedgoal endpoint NOT reached (closest4.928m).
+Read goal_hold_component/REPORT.md and STATE.json. Next named bounded target-goal
+commitment<=20s with explicit original-source authorization, fresh-target override,
+expiry/LOSTyaw ownership tests before ONE flight. Common planner/STOP guards stay.
+Separate from D117return and nativepaper. No more tuning D118/D119sameframes.
+15 saved-framecalls,2/4 flights.401 unit tests remain last runtime validation.
 Dedicated11435 stopped; shared11434 and Valley8765 untouched. Commit each change.
 
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115

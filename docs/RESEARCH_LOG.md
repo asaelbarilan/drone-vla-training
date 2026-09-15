@@ -2725,3 +2725,22 @@ saved goal beyond semantic freshness as a bounded component,not live architectur
 Stop at unchanged1m tolerance,collision or20s. No oracle steering. It tests common
 executor capability,not mission success or beneficial commitment policy.
 Fixture frozen in goal_hold_component/FREEZE.json; outcome pending.
+
+
+### D-120 goal-hold outcome: useful detour, intermediate endpoint not reached
+
+Exact1,020 prefix poses/61 planner outputs/first branch command match. Holding
+accepted51s target goal for20s produces a collision-free right-side detour; red
+reappears by64s in sampled RGB,visible through71s. Evaluation-only true target
+distance16.885→10.143m. Frozen waypoint endpoint fails:closest4.928m,final6.150m
+(start5.282m),tolerance1m. All20 newplans feasible with known-free backup and
+reaches_goal=false.21 UI seeks and actual camera/map inspected. No model calls.
+This supports an execution-persistence hypothesis,not mission success or proof
+SUPER cannot reach the goal. Intervention removes both replacements and monitor
+yaw,so next live extension must make arbitration explicit. Stored goal center
+clearance0.423m is below0.6m, but1m tolerance prevents infeasibility conclusion.
+Next named bounded target-goal commitment with explicit original-source lease,
+fresh-target supersession, expiry, common planning and STOP guards; unit-test
+ownership/expiry before one model flight. Do not label as native paper repair.
+Evidence: goal_hold_component/REPORT.md,RESULT.json,VISUAL_EVALUATION.json.
+Flightcount2/4; saved-framecalls15; shared11434/Valley untouched.

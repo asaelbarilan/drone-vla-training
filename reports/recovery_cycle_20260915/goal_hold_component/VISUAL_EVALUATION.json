@@ -1,0 +1,114 @@
+{
+  "goal_truth_for_evaluation_only": [
+    26.174097920270995,
+    23.236105483924483,
+    4.198486997859644
+  ],
+  "frames": [
+    {
+      "t": 51.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 16.88502438624325
+    },
+    {
+      "t": 52.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 16.710391324600998
+    },
+    {
+      "t": 53.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 16.50935471604132
+    },
+    {
+      "t": 54.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 16.304732110883464
+    },
+    {
+      "t": 55.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 16.1111134790611
+    },
+    {
+      "t": 56.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 15.91415148863802
+    },
+    {
+      "t": 57.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 15.701333365361503
+    },
+    {
+      "t": 58.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 15.483595348237522
+    },
+    {
+      "t": 59.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 15.274462574263795
+    },
+    {
+      "t": 60.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 15.079913500231866
+    },
+    {
+      "t": 61.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 14.903333292700026
+    },
+    {
+      "t": 62.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 14.67998975184577
+    },
+    {
+      "t": 63.0,
+      "red_pixel_count": 0,
+      "distance_to_truth_m": 14.360561285236047
+    },
+    {
+      "t": 64.0,
+      "red_pixel_count": 560,
+      "distance_to_truth_m": 13.974802363210946
+    },
+    {
+      "t": 65.0,
+      "red_pixel_count": 675,
+      "distance_to_truth_m": 13.510970383225352
+    },
+    {
+      "t": 66.0,
+      "red_pixel_count": 675,
+      "distance_to_truth_m": 12.98436677941053
+    },
+    {
+      "t": 67.0,
+      "red_pixel_count": 867,
+      "distance_to_truth_m": 12.45284647610223
+    },
+    {
+      "t": 68.0,
+      "red_pixel_count": 768,
+      "distance_to_truth_m": 11.90428577364313
+    },
+    {
+      "t": 69.0,
+      "red_pixel_count": 833,
+      "distance_to_truth_m": 11.325898928613727
+    },
+    {
+      "t": 70.0,
+      "red_pixel_count": 936,
+      "distance_to_truth_m": 10.736140959239743
+    },
+    {
+      "t": 71.0,
+      "red_pixel_count": 1064,
+      "distance_to_truth_m": 10.143072923426347
+    }
+  ]
+}

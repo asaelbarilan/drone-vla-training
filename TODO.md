@@ -494,3 +494,11 @@ See semantic_probe/REPORT.md. Future live integration must charge both calls/lat
 Status-only probe complete,first occlusion stillLOST. Freeze saved-state hold
 of cycle2 accepted51s target goal for20s,with original planner/controller.
 Validate prefix state and distinguish intermediate goal from mission success.
+
+
+## D-120: bounded target-goal commitment
+
+Component restores target view during detour but does not reach intermediategoal
+within20s. Design explicit stored-source lease, fresh-target supersession, expiry
+and LOSTyaw arbitration. Unit-test before one separately named model flight.
+Do not combine with return-to-view or call nativeOnFly; see goal_hold_component/REPORT.md.

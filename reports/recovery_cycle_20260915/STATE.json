@@ -26,9 +26,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "goal_hold_fixture_frozen_pending_execution",
+  "status": "goal_hold_component_complete_commitment_variant_next",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "D-120 correction: D118/D119 history constructed atcontrol cadence,not exactruntime; true35.95history gap1s. No model reruns. Execute frozen goal_hold_component via scripts.probe_goal_hold_component run; require all prefix plans/poses and first command match before interpreting. Holdaccepted51sgoal20s, noVLM/monitor, notmissionflight. Model flightcount2/4 unchanged.",
+  "next": "D-120 offline goalhold restores target view64s and truthdistance16.885->10.143m by71s,without collision; frozen storedgoal1m endpoint NOT reached (final6.150m). Prefix1020poses/61plans/firstcommand exact. NEXT implement separately named bounded target-goal execution commitment <=20s with explicit stored-source authorization (do not forge freshness), fresh visible-target supersession, expiry and ownership arbitration with LOST yaw. Keep common planner/STOP guards; separate from D117return/nativeOnFly. Unit-test before ONE model flight. Component removed both replacement andLOSTyaw; do not overclaim causal isolation. Read goal_hold_component/REPORT.md. Modelslots2/4,deadline16:55UTC. No further D118/D119 prompttuning; memorycadence correction retained.",
   "server": "Dedicated11435 unloaded/stopped after CPU-only calls; debugger8766 retained; Valley running,shared11434/8765 untouched",
   "saved_frame_calls": 15
 }
