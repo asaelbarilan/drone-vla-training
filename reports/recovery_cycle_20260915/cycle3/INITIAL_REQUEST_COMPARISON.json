@@ -1,0 +1,18 @@
+{
+  "prompt_equal": true,
+  "schema_equal": true,
+  "image_bytes_equal": true,
+  "baseline_response": {
+    "evidence": "gray stone structures",
+    "kind": "exploration",
+    "u": 725,
+    "v": 450
+  },
+  "current_response": {
+    "evidence": "gray stone structures",
+    "kind": "exploration",
+    "u": 750,
+    "v": 500
+  },
+  "note": "Same initial prompt/schema/image, different realized model output. CPU/GPU placement differs; no isolation of numerical/backend nondeterminism. First control divergence1s precedeslease13s."
+}

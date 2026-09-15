@@ -1,0 +1,56 @@
+[
+  {
+    "seq": 200,
+    "kind": "target",
+    "pixel_rgb": [
+      198,
+      111,
+      111
+    ]
+  },
+  {
+    "seq": 220,
+    "kind": "target",
+    "pixel_rgb": [
+      198,
+      110,
+      110
+    ]
+  },
+  {
+    "seq": 240,
+    "kind": "exploration",
+    "pixel_rgb": [
+      91,
+      91,
+      96
+    ]
+  },
+  {
+    "seq": 340,
+    "kind": "exploration",
+    "pixel_rgb": [
+      143,
+      143,
+      148
+    ]
+  },
+  {
+    "seq": 400,
+    "kind": "target",
+    "pixel_rgb": [
+      199,
+      99,
+      99
+    ]
+  },
+  {
+    "seq": 760,
+    "kind": "target",
+    "pixel_rgb": [
+      202,
+      78,
+      78
+    ]
+  }
+]

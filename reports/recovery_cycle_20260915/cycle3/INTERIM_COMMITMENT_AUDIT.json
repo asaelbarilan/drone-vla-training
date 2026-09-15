@@ -1,0 +1,49 @@
+{
+  "leases": {
+    "fa05c6598062": {
+      "source_t_s": 10.95,
+      "source_seq": 220,
+      "activation_s": 13.0,
+      "deadline_s": 33.0,
+      "plan_times": [
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0
+      ],
+      "plan_failures": []
+    },
+    "5e99972ae521": {
+      "source_t_s": 38.95,
+      "source_seq": 780,
+      "activation_s": 41.0,
+      "deadline_s": 61.0,
+      "plan_times": [
+        41.0,
+        42.0
+      ],
+      "plan_failures": []
+    }
+  },
+  "old_source_commands": 78,
+  "max_original_source_age_s": 7.9,
+  "deferred_lost_events": 1,
+  "deferred_lost_times_s": [
+    41.2
+  ],
+  "recovery_times_s": [],
+  "prefix_comparisons": [
+    {
+      "baseline": "c5_clutter_qwen4_20260915_s1061",
+      "first_different_control_s": 1.0
+    },
+    {
+      "baseline": "c5_recovery_fresh_20260915_s1061",
+      "first_different_control_s": 1.0
+    }
+  ],
+  "violations": [],
+  "notes": "CPU/GPU placement differs; comparisons inspect realized prefix, not formal deterministic equivalence. STOP remains separately evaluated by runtime."
+}

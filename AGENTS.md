@@ -29,7 +29,9 @@ localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
 D-120 CORRECTION: D118/D119 history was constructed atcontrol cadence,not exact
 live memory. True35.95s latesthistory34.95s; withdraw8.1sgap claim. No model reruns.
 NEXT: D-121 target_commitment variant implemented/tests pass; CYCLE3_FREEZE ready.
-ONE CPU-only flight reserved; audit source ages/deadlines and dashboard afterward.
+ONE CPU-only flight RUNNING (PIDfile tmp/commitment_flight.pid).13s and41sleases
+observed; no restart. Prefix diverges1s beforelease,so outcome notcausallyisolated.
+Audit source ages/deadlines and dashboard after result.json exists.
 Goal_hold_component complete: verified1020poses/61plans/firstcommand.
 Retained51sgoal gives right-side detour/redreappearance64s,truthdistance16.885→10.143m
 by71s,zero collisions. Storedgoal endpoint NOT reached (closest4.928m).
@@ -38,7 +40,8 @@ commitment<=20s with explicit original-source authorization, fresh-target overri
 expiry/LOSTyaw ownership tests before ONE flight. Common planner/STOP guards stay.
 Separate from D117return and nativepaper. No more tuning D118/D119sameframes.
 15 saved-framecalls,2/4 flights.401 unit tests remain last runtime validation.
-Dedicated11435 stopped; shared11434 and Valley8765 untouched. Commit each change.
+Dedicated11435 RUNNING CPU-only (tmp/commitment_server.pid); shared11434/8765
+untouched. Unload/stop owned server afterflight. Commit each change.
 
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115
 

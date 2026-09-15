@@ -2793,3 +2793,17 @@ nonrenewing20s deadlines, deferred exploration versus executed commands, LOST
 label/action arbitration and realized control-prefix comparison against D115/D116.
 Browser review will seek each actual lease activation,midpoint anddeadline.
 No flight restart or runtime changes; cycle3 continues.
+
+
+### D-121 interim evidence, flight still running
+
+First13-18s commitment preserves a genuine model-identified red target despite
+exploration proposals on gray walls; later actual current target is visible.
+Second lease activates41s, monitorLOST41.2 is logged but yaw deferred. Partial
+source/deadline audit has zero violations; these are interim observations only.
+Source images/point overlays retained in cycle3/INTERIM_SOURCE_POINTS.*.
+Realized control differs from D115/D116 already1s, before firstlease13s. Initial
+prompt/schema/image bytes match, but model response differs with CPU/GPU placement
+different. Therefore final outcome alone is NOT clean architecture-only evidence.
+No attempt to change or restart the running flight. Await completion then full
+replay,leaseaudit and visual review. Dedicated11435 runningCPU,not stopped.
