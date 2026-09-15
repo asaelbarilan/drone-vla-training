@@ -2633,3 +2633,7 @@ close clipped) and three absent views. Six distinct hashes excluded from previou
 source bytes/observation IDs verified, offline red-body reference boxes visually checked.
 Required all6:positive IoU>=.5 and center inside;negative false/zero box. No retries.
 No inference yet. Raw selection/freeze preserved in reports/qwen4_validation_20260915.
+
+D-115 preparation correction: repaired a syntax error introduced while wrapping long
+freeze-description strings. It prevented the runner from starting; zero model requests
+were made. Frozen image files, prompt, criteria and options are unchanged.

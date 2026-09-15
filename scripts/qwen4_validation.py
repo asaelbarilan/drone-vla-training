@@ -42,28 +42,28 @@ def prepare():
             host=HOST,
             timeout_s=300,
             keep_alive="10m",
-            pass_rule(
-            "All 6 pass. Each positive: IoU>=0.5 and center inside reference. Each "
-            "negative: visible=false and zero box. No retries or prompt changes."
-        ),
-            selection(
-            "Selected using image content only, before inference; original source RGB "
-            "bytes, no crops or labels. Three positives: far-left small, mid-center, near "
-            "clipped. Three negatives: two different clutter seeds and an empty view "
-            "after turning. Reference boxes are offline red-body bounds confirmed by "
-            "visual inspection; never included in model request."
-        ),
-            limitations(
-            "Six new image hashes relative to D-113/D-114, not six independent worlds. "
-            "Two positive frames share one hover flight, and one positive comes from the "
-            "earlier clutter seed. This is a small diagnostic gate, not a planning or "
-            "generalization benchmark."
-        ),
-            conditional_flight(
-            "Only if all six pass: named Qwen3-VL4B variant of current C5 clutter "
-            "pipeline, one seed1061 flight, exact evidence and debugger inspection. No "
-            "automatic extra flights."
-        ),
+            pass_rule=(
+                "All 6 pass. Each positive: IoU>=0.5 and center inside reference. Each "
+                "negative: visible=false and zero box. No retries or prompt changes."
+            ),
+            selection=(
+                "Selected using image content only, before inference; original source RGB "
+                "bytes, no crops or labels. Three positives: far-left small, mid-center, near "
+                "clipped. Three negatives: two different clutter seeds and an empty view "
+                "after turning. Reference boxes are offline red-body bounds confirmed by "
+                "visual inspection; never included in model request."
+            ),
+            limitations=(
+                "Six new image hashes relative to D-113/D-114, not six independent worlds. "
+                "Two positive frames share one hover flight, and one positive comes from the "
+                "earlier clutter seed. This is a small diagnostic gate, not a planning or "
+                "generalization benchmark."
+            ),
+            conditional_flight=(
+                "Only if all six pass: named Qwen3-VL4B variant of current C5 clutter "
+                "pipeline, one seed1061 flight, exact evidence and debugger inspection. No "
+                "automatic extra flights."
+            ),
         ),
     )
     print("Frozen six new images and all-case acceptance gate; no inference")
