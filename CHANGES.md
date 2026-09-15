@@ -2677,3 +2677,16 @@ point-rejection history. Timer, target search and waypoint generation unchanged.
 117 focused router,OnFly,fence,hover,target-stop,inference tests pass; lint passes.
 Initial test fixtures needed valid supervision/schema fields; no inference was
 spent on those corrections. Named profile c5_recovery_fresh_qwen4_dev.
+
+### D-116 cycle 1 outcome: handoff isolated, target still lost
+
+New run c5_recovery_fresh_20260915_s1061 matches D-115 controls until39.25s.
+Fresh-view handoff works: holds,rejects delayed pre-expiry observation at40s,
+resumes41s from39.95s image. Timeout90s,closest13.401m vs13.746m,final29.939m
+vs29.295m,zero collisions. No navigation improvement or promotion. 134 calls plus
+one cancellation. 1800 poses/89 source images exact;20 browser seeks/2 playbacks
+pass; actual source strip and41s dashboard visually inspected. Tooling fix excludes
+rejection events with no source ID from source-frame lookup. Next offline policy
+input/memory diagnosis, not another unchanged flight. One of four slots used.
+Evidence: reports/recovery_cycle_20260915/REPORT.md, CYCLE1_HANDOFF.json, cycle1/.
+Dedicated11435 unloaded/stopped. Follow-ups active until16:55UTC.

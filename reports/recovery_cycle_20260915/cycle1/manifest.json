@@ -1,0 +1,243 @@
+{
+  "architecture_config": {
+    "ablation_of": null,
+    "action_horizon": null,
+    "admission": null,
+    "allow_privileged_observations": false,
+    "authority": "waypoint",
+    "chunk_length": 1,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "max_yaw_rate_rps": 0.4,
+        "yaw_hold_radius_m": 0.25,
+        "yaw_kp": 1.5
+      }
+    },
+    "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+    "family": "hybrid_stack",
+    "feature_cache": {
+      "capacity": 32,
+      "enabled": false
+    },
+    "id": "c5_recovery_fresh_qwen4_dev",
+    "inference": {
+      "name": "ollama",
+      "params": {
+        "charge_mode": "fixed",
+        "endpoint": "chat",
+        "expected_digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "fixed_latency_s": {
+          "monitor": 1.2,
+          "policy": 1.0
+        },
+        "host": "http://127.0.0.1:11435",
+        "jitter_frac": 0.0,
+        "keep_alive": "30m",
+        "latency_s": {
+          "monitor": 1.6,
+          "perception": 0.02,
+          "policy": 0.35,
+          "reasoner": 2.4
+        },
+        "model_id": "qwen3-vl:4b",
+        "num_ctx": 8192,
+        "num_predict": 192,
+        "response_channel": "thinking",
+        "sampling_seed": 0,
+        "temperature": 0.0,
+        "think": false,
+        "timeout_s": 180.0,
+        "tokens_per_call": {
+          "monitor": 320,
+          "policy": 160,
+          "reasoner": 800
+        }
+      }
+    },
+    "memory": {
+      "name": "onfly_hybrid_memory",
+      "params": {
+        "capacity": 6,
+        "dedupe_distance_m": 3.0,
+        "dedupe_epsilon": 0.08,
+        "keyframe_budget": 4,
+        "min_separation_m": 3.0,
+        "rotation_threshold_rad": 0.3490658504,
+        "translation_threshold_m": 2.0,
+        "window": 5
+      }
+    },
+    "memory_consumers": [
+      "monitor"
+    ],
+    "monitor": {
+      "name": "onfly_monitor",
+      "params": {
+        "acquisition_confirmations": 2,
+        "arrival_memory_s": 4.0,
+        "camera_pitch_rad": -0.15,
+        "current_grounding": true,
+        "fresh_after_lost_reorientation": true,
+        "layout": "history_sheet_plus_latest",
+        "lost_after_s": 8.0,
+        "lost_hold_s": 0.25,
+        "lost_reorient_s": 2.0,
+        "lost_yaw_rate_rps": 0.4,
+        "model_id": "qwen3-vl:4b",
+        "semantic_color_guard": false,
+        "stop_confirmations": 2,
+        "stop_max_depth_m": 2.0,
+        "structured_evidence": true,
+        "target_bound_stop": true,
+        "target_consistency_m": 1.0
+      }
+    },
+    "name": "C5 Qwen4 with fresh image after lost recovery",
+    "perception": {
+      "name": "identity",
+      "params": {
+        "charge_latency": false,
+        "drone_radius_m": 0.4,
+        "min_score": 0.0
+      }
+    },
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "clearance_margin_m": 1.2,
+        "commit_horizon_m": 2.5,
+        "max_acc_mps2": 0.6,
+        "planning_horizon_m": 16.0,
+        "resolution_m": 0.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0
+      }
+    },
+    "policy": {
+      "name": "onfly_decision",
+      "params": {
+        "camera_pitch_rad": -0.15,
+        "coordinate_contract": "qwen_relative_1000",
+        "goal_standoff_m": 1.0,
+        "grounded_waypoints": true,
+        "hold_initial_altitude": false,
+        "hop_m": 12.0,
+        "max_depth_m": 7.0,
+        "model_id": "qwen3-vl:4b",
+        "self_terminate": false,
+        "sigma_theta": 0.65,
+        "stop_confidence": 0.35,
+        "stop_radius_m": 2.0,
+        "use_memory": false
+      }
+    },
+    "profile_of": "c5",
+    "recovery": null,
+    "scheduler": {
+      "control_hz": 20.0,
+      "cooldown_s": 2.0,
+      "decision_hz": 2.0,
+      "kind": "async_multi_rate",
+      "max_calls": null,
+      "monitor_hz": 0.5,
+      "reasoner_hz": null,
+      "trigger": null,
+      "trigger_check_hz": 5.0
+    },
+    "semantic_memory": "compact_keyframe_memory",
+    "semantic_supervision": "periodic_monitor",
+    "shield": null,
+    "staleness": {
+      "max_decision_age_s": 4.0,
+      "reject_stale": true
+    },
+    "subfamily": null,
+    "tags": [
+      "onfly",
+      "development",
+      "real_model",
+      "gemma4_e2b"
+    ],
+    "unsafe_ablation": false,
+    "verifier": {
+      "name": "onfly_semantic_geometric",
+      "params": {
+        "max_waypoint_distance_m": 10.0,
+        "min_clearance_m": 1.2,
+        "repair": true,
+        "sensing_horizon_m": 25.0
+      }
+    }
+  },
+  "architecture_config_hash": "21c1e87ae7d93320",
+  "architecture_id": "c5_recovery_fresh_qwen4_dev",
+  "container_image_digest": null,
+  "dependency_hash": "c0a4d5978d742980",
+  "environment_config": {
+    "adapter": {
+      "name": "grid3d",
+      "params": {}
+    },
+    "id": "grid_nav_onfly_depth_v2_dev",
+    "instruction": "fly to the red tower and stop there",
+    "max_episode_s": 90.0,
+    "params": {
+      "accel_tau_s": 1.0,
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "camera_pitch_rad": -0.15,
+      "constraints": {
+        "geofence_radius_m": 60.0,
+        "max_accel_mps2": 0.6,
+        "max_altitude_m": 25.0,
+        "max_speed_mps": 0.6,
+        "min_altitude_m": 0.5,
+        "min_obstacle_clearance_m": 0.6
+      },
+      "depth_renderer": "box_ray_v2",
+      "detection_noise_m": 0.25,
+      "distractors": 3,
+      "fov_deg": 90.0,
+      "goal_distance_m": 35.0,
+      "image_size": 224,
+      "max_speed_mps": 0.6,
+      "n_obstacles": 10,
+      "render": true,
+      "render_depth": true,
+      "scene": "clutter",
+      "sensor_range_m": 45.0,
+      "subgoals": 2,
+      "success": {
+        "goal_radius_m": 2.0,
+        "max_flight_time_s": 90.0,
+        "require_terminal_stop": true,
+        "required_subgoals": 0
+      }
+    },
+    "task_family": "long_horizon_nav"
+  },
+  "environment_id": "grid_nav_onfly_depth_v2_dev",
+  "git_branch": "master",
+  "git_dirty": true,
+  "git_dirty_files": 123,
+  "git_sha": "20eafe0dfa566d17223b3e704a386739345f29e3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.12.3",
+  "schema": "uavlab/manifest/1",
+  "seeds": [
+    1061
+  ]
+}

@@ -457,3 +457,11 @@ then compare heading-only recovery with position/view recovery offline. A full
 saved heading still shows no target at the new position, so timer-only repair is
 insufficient evidence. Keep any viewpoint search/backtracking as a named variant.
 See reports/qwen4_validation_20260915/FLIGHT_REPORT.md. No broad sweep scheduled.
+
+## D-116: autonomous continuation state
+
+Read reports/recovery_cycle_20260915/STATE.json before starting work; at most four
+flights total before16:55UTC. Cycle1 completed: fresh-image handoff works but
+mission still fails. Next inspect current-image grounded prompt vs intended
+last-seen/loss-state contract offline; freeze evidence before a named VLM context
+ablation. Do not launch an unchanged repeat or script target search.

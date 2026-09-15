@@ -2,8 +2,21 @@
   "automation_id": "drone-recovery-debug-cycles",
   "deadline_utc": "2026-09-15T16:55:00Z",
   "max_flights": 4,
-  "flights": [],
-  "status": "cycle1_component_test",
+  "flights": [
+    {
+      "run": "c5_recovery_fresh_20260915_s1061",
+      "status": "complete_audited",
+      "commit": "20eafe0",
+      "outcome": "timeout",
+      "closest_m": 13.401058321896247,
+      "final_m": 29.939363994475155,
+      "collisions": 0,
+      "completed_calls": 134,
+      "cancelled_calls": 1
+    }
+  ],
+  "status": "cycle1_complete_offline_diagnosis_next",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "Test opt-in fresh observation after lost-recovery expiry; unchanged timer/search."
+  "next": "Offline only next: inspect the grounded policy input after target loss. It receives a current image and transient rejection feedback, but no persistent lost state or last-confirmed view. Check intended architecture contract before a named VLM temporal-context ablation; no scripted search or oracle route. Freeze saved inputs and success criteria before any local probe. Do not launch another unchanged flight; only 1 of 4 flight slots used.",
+  "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/Valley8765 untouched"
 }

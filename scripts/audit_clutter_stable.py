@@ -44,6 +44,7 @@ async def audit(name):
         e["payload"]["source_observation_seq"]: e
         for e in es
         if e["event_type"] == "decision_proposed"
+        and "source_observation_seq" in e["payload"]
     }
     for e in controls:
         obs = await env.observe()

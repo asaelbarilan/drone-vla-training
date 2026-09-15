@@ -16,6 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Active autonomous cycles - D-116 (2026-09-15)
+
+User authorized automatic debug/fix/run while away. Heartbeat
+`drone-recovery-debug-cycles` until16:55UTC, max4 total flights. FIRST READ
+reports/recovery_cycle_20260915/STATE.json and REPORT.md. One slot used.
+Cycle1 fresh-image recovery handoff fixed in opt-in profile,117 tests pass;
+matched control prefix until39.25s. Still timeout,closest13.401m,final29.939m.
+No navigation improvement established. Next offline grounded-policy input and
+last-seen/loss-state diagnosis; no new flight without a concrete new hypothesis.
+Do not silently add scripted search or change the paper architecture. Archive
+and inspect actual source images/dashboard after each run,commit each change.
+Dedicated11435 stopped;8766 debugger remains; shared11434/8765 untouched.
+
 ## Latest: Qwen4 six-frame gate + one clutter flight complete - D-115
 
 Read reports/qwen4_validation_20260915/FLIGHT_REPORT.md. Six new image checks pass;
