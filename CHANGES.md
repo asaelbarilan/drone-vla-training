@@ -2889,3 +2889,13 @@ hardware placement differs from priorGPUflights, so inspect pre-lease equality a
 do not treat outcomes as a clean architecture-only comparison if prefixes differ.
 No cloud/newmodelcalls/reinstalls; fixed simulated latencies unchanged. Third of
 four flight slots reserved,2 completed; deadline16:55UTC.
+
+
+### D-121 debugger provenance support
+
+Retained-goal replans are logged under rejected incoming exploration but command
+source remains the original accepted target. The debugger now chooses the latest
+feasible plan atcursor time by its explicit execution owner,not the original
+decision's first plan. This prevents displaying a stale path during a commitment.
+Five browser behavior checks cover old/new/infeasible/future/unowned plans.
+Runtime flight3 remains unchanged andrunning; this is offline viewer support.
