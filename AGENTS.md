@@ -26,7 +26,10 @@ red pixels chosen after return,then movement occludes target and LOST recurs53.2
 Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promotion.
 393 unit tests pass;1800 new poses/79 current+1 historical input match. Dashboard
 localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
-NEXT: D-119 status-only probe no useful distinction; no flight. Read STATE.json
+D-120 CORRECTION: D118/D119 history was constructed atcontrol cadence,not exact
+live memory. True35.95s latesthistory34.95s; withdraw8.1sgap claim. No model reruns.
+NEXT: frozen goal_hold_component ready; require prefixplan/pose/command matches.
+Read STATE.json
 and status_probe/REPORT.md. Replies CONTINUE/LOST/LOST preserve identity but fail
 first-occlusion criterion. Do not tune those3frames again.15 saved-framecalls total.
 Next OFFLINE saved-state hold of cycle2's accepted51s target goal, before52s

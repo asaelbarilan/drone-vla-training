@@ -1,0 +1,62 @@
+{
+  "poses_matched": 1340,
+  "memory_item_counts_matched": 68,
+  "cases": [
+    {
+      "seq": 680,
+      "current_s": 33.95,
+      "history_seqs": [
+        1,
+        200,
+        380,
+        540
+      ],
+      "history_times_s": [
+        0.0,
+        9.95,
+        18.95,
+        26.95
+      ],
+      "gap_s": 7.0
+    },
+    {
+      "seq": 720,
+      "current_s": 35.95,
+      "history_seqs": [
+        1,
+        200,
+        380,
+        540,
+        700
+      ],
+      "history_times_s": [
+        0.0,
+        9.95,
+        18.95,
+        26.95,
+        34.95
+      ],
+      "gap_s": 1.0
+    },
+    {
+      "seq": 1340,
+      "current_s": 66.95,
+      "history_seqs": [
+        1,
+        200,
+        380,
+        700,
+        1060
+      ],
+      "history_times_s": [
+        0.0,
+        9.95,
+        18.95,
+        34.95,
+        52.95
+      ],
+      "gap_s": 14.0
+    }
+  ],
+  "correction": "D118/D119 supplied densely sampled constructed history, not exact runtime memory. Current source images and recorded responses remain exact. No model re-runs."
+}

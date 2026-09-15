@@ -74,7 +74,7 @@ target at66.95s. Runtime distance/confirmation guards prevent every requested ST
 <p>These are three selected diagnostic cases, not a navigation benchmark. Each starts acquired,
 without confirmed arrival memory. 1,340 replay poses and all three source RGB images matched.
 The candidate stays disabled. No route-traversability conclusion follows from these images.</p>
-<section class="grid">'''+''.join(cards)+'</section></body></html>'
+<p style="border:2px solid #ffb76b;padding:12px"><b>D-120 correction:</b> History in these calls was constructed at control cadence, not exact live memory cadence. Current RGB and replies are exact. Actual live history at35.95s includes34.95s (1s gap); the earlier8.1s live-gap claim is withdrawn. No model reruns.</p><section class="grid">'''+''.join(cards)+'</section></body></html>'
 Path('reports/debugger/semantic_progress.html').write_text(page,encoding='utf-8')
 sheet=Image.new('RGB',(672,520),'white')
 draw=ImageDraw.Draw(sheet)

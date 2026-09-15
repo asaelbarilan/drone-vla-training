@@ -26,9 +26,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "status_probe_no_distinction_execution_probe_next",
+  "status": "goal_hold_fixture_frozen_pending_execution",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "D-119 status-only probe returnsCONTINUE/LOST/LOST; no new flight or further tuning these3frames. Next OFFLINE saved-state execution test: cycle2 correct target goals50/51s are replaced52s by gray-wall exploration. Freeze hold of the last accepted51s goal, reconstruct original planner state/pose, compare whether SUPER/controller reaches that same intermediate goal within20s. No oracle steering or model call; component not mission flight. Two flight slots used; deadline16:55UTC. Read status_probe/REPORT.md.",
+  "next": "D-120 correction: D118/D119 history constructed atcontrol cadence,not exactruntime; true35.95history gap1s. No model reruns. Execute frozen goal_hold_component via scripts.probe_goal_hold_component run; require all prefix plans/poses and first command match before interpreting. Holdaccepted51sgoal20s, noVLM/monitor, notmissionflight. Model flightcount2/4 unchanged.",
   "server": "Dedicated11435 unloaded/stopped after CPU-only calls; debugger8766 retained; Valley running,shared11434/8765 untouched",
   "saved_frame_calls": 15
 }

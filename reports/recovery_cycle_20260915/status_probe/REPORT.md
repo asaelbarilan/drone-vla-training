@@ -1,3 +1,10 @@
+> **Correction (D-120):** D-118/D-119 used history constructed at every control
+> tick, not the live policy-cycle memory cadence. Their current source RGB and
+> raw responses are exact, but their history is not an exact runtime replay.
+> Event-ordered reconstruction matches1340 poses and68 recorded memory counts.
+> At35.95s the actual latest history is34.95s (1s gap), not27.85s (8.1s).
+> The claimed live-history gap is withdrawn. No model calls were repeated.
+
 # D-119 separate temporal status: no flight supported
 
 Three calls complete, valid schema, no retries/errors. Current-only grounding is

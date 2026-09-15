@@ -56,6 +56,6 @@ The temporal answer can return only CONTINUE or LOST; it cannot locate targets o
 <p>No movement executed. Status expectations are an experiment-entry criterion, not ground-truth
 route feasibility. CPU placement and prompt differ from the earlier joint probe; this is not a
 controlled measure of the architecture effect or flight latency.</p>
-<section class="grid">'''+''.join(cards)+'</section></body></html>'
+<p style="border:2px solid #ffb76b;padding:12px"><b>D-120 correction:</b> History in these calls was constructed at control cadence, not exact live memory cadence. Current RGB and replies are exact. Actual live history at35.95s includes34.95s (1s gap); the earlier8.1s live-gap claim is withdrawn. No model reruns.</p><section class="grid">'''+''.join(cards)+'</section></body></html>'
 Path('reports/debugger/temporal_status.html').write_text(page,encoding='utf-8')
 print(json.dumps(rows,indent=2))

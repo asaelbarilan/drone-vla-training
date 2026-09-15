@@ -469,6 +469,7 @@ withdrawn, and because the pattern of error is itself informative.
 
 | claim | status | what was actually true |
 |---|---|---|
+| D-118/D-119 history is runtime reconstruction; live35.95s history ends27.85s | **withdrawn, D-120** | Probe used dense control-cadence history. Actual event-ordered memory ends34.95s; current RGB/raw replies remain exact |
 | "C1–C6 orbit and never acquire the target" | **withdrawn** | True of seed 3, false of the regime. c2 succeeded on 14 of 20 seeds at the time. Generalised from one rendered video |
 | "C2G's nondeterminism is intermittent GPU noise" | **withdrawn** | Deterministic and structural — a recycled `id()` in the frame store (D-19) |
 | "C1–C6's failure is a search-pattern defect" | **partly withdrawn** | The field-of-view gap is real but does not decide the outcome; occlusion did, and behind that the dwell (D-14) |
@@ -2702,3 +2703,25 @@ rather than replacing it with52s exploratory wall point; ask if common SUPER
 can complete it from saved state. No oracle steering/model call; intermediate
 waypoint completion is not mission success. Read status_probe/REPORT.md.
 15 saved-frame calls total,2/4 flights; dedicated11435 stopped,Valley untouched.
+
+
+## D-120: memory-cadence correction and bounded goal-hold fixture (2026-09-15)
+
+Correction: D-118/D-119 prepared history by updating hybrid memory each control
+tick; live runtime updates it on decision/perception cycles. Current RGB and raw
+responses remain exact,but history is constructed,not exact runtime replay.
+Event-ordered audit matches1340 poses and68 memory item counts. Actual history
+latest times26.95/34.95/52.95 forcurrent33.95/35.95/66.95: gaps7/1/14s. Thus
+the D-119 claim of8.1s live-history gap at35.95 is withdrawn. Preserve raw frozen
+inputs/results; no model reruns. Reports/dashboards prominently correct scope.
+Evidence: reports/recovery_cycle_20260915/memory_cadence/RESULT.json.
+
+Freeze a separate20s execution component at cycle2 time51s, retaining its already
+accepted target-bound intermediate goal. Replay every planner invocation and
+control in recorded event order; require prefix pose,plan points/feasibility and
+first branch command matches. Repeat common planner1Hz/controller20Hz; no VLM,
+monitor or semantic goal replacement. This deliberately renews execution of a
+saved goal beyond semantic freshness as a bounded component,not live architecture.
+Stop at unchanged1m tolerance,collision or20s. No oracle steering. It tests common
+executor capability,not mission success or beneficial commitment policy.
+Fixture frozen in goal_hold_component/FREEZE.json; outcome pending.
