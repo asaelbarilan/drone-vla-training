@@ -1195,6 +1195,11 @@ class OnFlyMonitor:
         self.structured_evidence = bool(params.get("structured_evidence", False))
         self.target_bound_stop = bool(params.get("target_bound_stop", False))
         self.current_grounding = bool(params.get("current_grounding", False))
+        self.semantic_progress = bool(params.get("semantic_progress", False))
+        if self.semantic_progress and not self.current_grounding:
+            raise ValueError("semantic_progress requires current grounding and arrival guards")
+        if self.semantic_progress and self.layout != "history_sheet_plus_latest":
+            raise ValueError("semantic_progress requires history_sheet_plus_latest")
         self.semantic_color_guard = bool(params.get("semantic_color_guard", False))
         if self.semantic_color_guard and not self.current_grounding:
             raise ValueError("semantic_color_guard requires current_grounding")
@@ -1381,9 +1386,10 @@ class OnFlyMonitor:
                 "and latest_target_visible=false. Mission words are a query, not evidence."
             )
         if self.current_grounding:
-            # Identity comes only from the current image. History is maintained
-            # by the executive; geometric arrival is evaluated after grounding.
-            images = [_encode_png(current_rgb)]
+            # Current identity and geometric arrival remain separate from the
+            # optional history-based semantic progress judgment.
+            if not self.semantic_progress:
+                images = [_encode_png(current_rgb)]
             prompt = (
                 "Describe the visible objects and colors briefly in evidence, then locate "
                 f"the destination requested by: {ctx.mission.instruction}. "
@@ -1404,6 +1410,22 @@ class OnFlyMonitor:
                 "required": ["evidence", "visible", "u", "v"],
                 "additionalProperties": False,
             }
+        if self.semantic_progress:
+            prompt += (
+                " Also return status: CONTINUE, STOP, or LOST. Judge progress from the "
+                "chronological HISTORY sheet (first image, if present) and the CURRENT "
+                "full-resolution image (last image). Historical target pixels are not current "
+                "visibility. CONTINUE requires coherent exploration or a plausible continuing "
+                "detour; a briefly occluded target alone is not proof of route failure. LOST "
+                "means the sequence indicates drift, repeated unsuccessful movement, or loss "
+                "of a useful route. Do not assume an invisible destination remains ahead. "
+                "STOP is only for a currently visible, extremely close destination and will "
+                "still be checked against synchronized target depth. Describe current visual "
+                "evidence and the reason for your status briefly."
+            )
+            schema["properties"]["status"] = {
+                "type": "string", "enum": ["CONTINUE", "STOP", "LOST"]}
+            schema["required"] = [*schema["required"], "status"]
         if self.semantic_color_guard:
             schema["properties"]["observed_color"] = {
                 "type": "string",
@@ -1420,7 +1442,9 @@ class OnFlyMonitor:
             InferenceRequest(
                 model_id=self.model_id,
                 role="monitor",
-                prompt_hash="onfly:monitor:current_grounding_v1"
+                prompt_hash="onfly:monitor:semantic_progress_v1"
+                if self.semantic_progress
+                else "onfly:monitor:current_grounding_v1"
                 if self.current_grounding
                 else "onfly:monitor:target_bound_v1"
                 if self.target_bound_stop
@@ -1441,6 +1465,8 @@ class OnFlyMonitor:
             parsed = _extract_json(result.payload)
             if self.current_grounding:
                 required = {"evidence", "visible", "u", "v"}
+                if self.semantic_progress:
+                    required.add("status")
                 if self.semantic_color_guard:
                     required.add("observed_color")
                 if set(parsed) != required:
@@ -1463,7 +1489,8 @@ class OnFlyMonitor:
                     "latest_target_visible": visible,
                     "latest_target_scale": "large" if visible else "absent",
                     # STOP is only a candidate; metric arrival must still pass.
-                    "status": "STOP" if visible else "LOST",
+                    "status": (parsed["status"] if self.semantic_progress
+                               else "STOP" if visible else "LOST"),
                     "target_u": parsed["u"] if visible else None,
                     "target_v": parsed["v"] if visible else None,
                 }
@@ -1575,7 +1602,8 @@ class OnFlyMonitor:
                     evidence = (
                         "latest target reacquired despite loss of the previous-goal reprojection"
                     )
-                elif self._ever_acquired and label is ProgressLabel.CONTINUE and not latest:
+                elif (self._ever_acquired and label is ProgressLabel.CONTINUE and not latest
+                      and not self.semantic_progress):
                     label = ProgressLabel.LOST
                     recovery_reacquired = False
                     evidence = (
@@ -1633,6 +1661,8 @@ class OnFlyMonitor:
             evidence += (
                 f"; identity_source=current_frame_vlm; grounding={grounding_evidence!r}"
                 "; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only"
+                "; progress_source="
+                + ("vlm_history" if self.semantic_progress else "visibility_rule")
             )
         if label is ProgressLabel.STOP:
             self._stop_count += 1

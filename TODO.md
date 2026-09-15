@@ -479,3 +479,10 @@ above. Next offline: visibility-only current_grounding and forced CONTINUE->LOST
 normalization remove semantic progress judgment. Test their causal effect without
 weakening STOP identity/range gates or assuming every occlusion is safe.
 Read cycle2/REPORT.md and STATE.json before further work;two of four flights used.
+
+
+## D-118: semantic monitor gate
+
+Run the six frozen requests in reports/recovery_cycle_20260915/semantic_probe;
+retain failures and inspect exact history/current images. No flight promotion
+from mere schema validity; distinguish current identity from semantic progress.

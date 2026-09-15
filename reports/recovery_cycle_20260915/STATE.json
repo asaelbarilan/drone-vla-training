@@ -26,9 +26,9 @@
       "cancelled_calls": 1
     }
   ],
-  "status": "cycle2_complete_monitor_semantics_next",
+  "status": "semantic_probe_frozen_pending_six_calls",
   "baseline": "c5_clutter_qwen4_20260915_s1061",
-  "next": "OFFLINE FIRST: inspect onfly.py current_grounding mapping visible->STOP/absent->LOST and later CONTINUE+absence normalization. VLM monitor currently only localizes one image, not semantic progress; may call recovery during valid occlusion. Reproduce contract with saved inputs; distinguish temporary occlusion from actual route failure without oracle steering. Preserve strict current-image target identity and metric STOP guard. Do not add more return features or run more flights until a frozen causal check supports a specific change. D-117 return actually works but new approach loses target again. Two of four flight slots used; deadline16:55UTC.",
+  "next": "D-118: run the SIX frozen semantic_probe calls once, no retries; report current identity and accepted monitor status. No new flight until result supports specific hypothesis. Two flight slots used.",
   "server": "Dedicated11435 unloaded/stopped; debugger8766 retained; shared11434/8765 untouched",
   "saved_frame_calls": 6
 }

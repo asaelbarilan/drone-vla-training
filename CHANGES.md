@@ -2751,3 +2751,23 @@ Next offline isolate current_grounding's deterministic absence->LOST mapping and
 CONTINUE+absence normalization. These conflate occlusion with progress failure;
 causal impact needs testing before another flight. Retain strict STOP grounding
 and arrival checks. Two of four flights used; dedicated11435 stopped.
+
+
+## D-118: opt-in semantic progress monitor probe (2026-09-15, provisional)
+
+Code diagnosis: current_grounding discards history, asks only current visibility,
+then maps visible to STOP candidate and absence to LOST. A later normalization
+also converts CONTINUE+absence to LOST. This prevents temporal progress judgment.
+Add semantic_progress=false by default; opted-in monitor receives chronological
+history sheet plus separate current RGB and owns its CONTINUE/LOST judgment.
+Current target identity, depth, distinct confirmations and arrival-memory checks
+remain. Absence+CONTINUE never refreshes last normal recovery anchor.
+This is a NAMED semantics ablation, not a claim of native paper fidelity: the
+existing paper prompt itself associates disappearance with LOST. No promotion.
+Evidence: full unit suite400 passed before additional layout validation; final
+test record accompanies commit. Frozen six-call paired probe at obs680/720/1340
+from D-115:1340 replay poses,3 actual policy RGB matches, actual monitor request
+construction and reconstructed hybrid memory. Independent monitor cases begin
+acquired, with no confirmed arrival memory; not a replay of all monitor hidden
+state. Freeze contains criteria, exact requests, input hashes, depth and poses.
+No cloud, retries or extra flight.

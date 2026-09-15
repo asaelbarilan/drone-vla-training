@@ -26,7 +26,9 @@ red pixels chosen after return,then movement occludes target and LOST recurs53.2
 Timeout90s,closest14.930m,final17.007m,zero collisions. Mixed metrics,not promotion.
 393 unit tests pass;1800 new poses/79 current+1 historical input match. Dashboard
 localhost8766/recovery_cycle2.html at49s shows actual reacquisition.
-NEXT OFFLINE: current_grounding asks only visibility and maps absence to LOST;
+NEXT: D-118 six-call semantic_probe is frozen, pending execution; inspect STATE.json.
+Opt-in semantic_progress is unpromoted; identity/STOP guards remain.
+OFFLINE finding: current_grounding asks only visibility and maps absence to LOST;
 later CONTINUE+absence normalization also forces LOST. Audit temporary occlusion
 versus semantic route failure before more flights/extensions. Preserve current
 identity and metric STOP gates. Do not just disable supervision or hide failures.
