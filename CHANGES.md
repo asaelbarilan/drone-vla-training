@@ -2637,3 +2637,11 @@ No inference yet. Raw selection/freeze preserved in reports/qwen4_validation_202
 D-115 preparation correction: repaired a syntax error introduced while wrapping long
 freeze-description strings. It prevented the runner from starting; zero model requests
 were made. Frozen image files, prompt, criteria and options are unchanged.
+
+D-115 image gate complete:6/6 pass; positive IoUs .7704/.9383/.9767 and3 correct
+absences,all JSON in thinking. Six exactrequest identities andCPU residencies checked.
+Dashboard8766 was stopped; restarted and verified6panels/overlay/rawreply controls.
+New opt-in c5_clutter_qwen4_validated_dev changes only ID/name,policy+monitor+backend
+model,digest,host andresponse channel. All navigation mechanisms andfixed simcharge
+remain identical toD-111.48 existing inference/OnFly tests pass. One90s clutter
+seed1061 flight frozen;GPU server separate from sharedGemma server.

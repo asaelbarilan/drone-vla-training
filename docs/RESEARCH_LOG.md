@@ -2522,3 +2522,11 @@ negative views before flight. Two positive frames share a hover run; these are n
 images, not six independent environments. Ground-truth references only in evaluation.
 Evidence: reports/qwen4_validation_20260915/FREEZE.json and selection.png.
 No flight or runtime change yet; no prompt tuning or retries permitted in this gate.
+
+D-115 image result:6/6 pass,3 positiveIoUs .7704/.9383/.9767 and3 correctabsences.
+One conditionalflight now enabled: c5_clutter_qwen4_validated_dev,seed1061,
+grid_nav_onfly_depth_v2_dev. Resolvedconfig diff verified: only model identities,
+digest,host andthinking responsechannel plusprofile name/ID. Point-based prompts
+retained;this tests transfer from bbox localization to currentnavigation,not a new
+bbox-driven architecture. Fixed simulatedlatency unchanged;actualGPUlatency logged.
+48 adapter/OnFly tests pass. Evidence:FLIGHT_FREEZE.json,BROWSER_CHECKS.json.

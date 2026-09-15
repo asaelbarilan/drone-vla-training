@@ -1,0 +1,17 @@
+# D-115: passing image gate followed by one model-swap clutter flight.
+_base_: c5_clutter_stable_gemma_dev.yaml
+id: c5_clutter_qwen4_validated_dev
+profile_of: c5
+name: "C5 clutter with image-validated Qwen3-VL4B"
+policy:
+  params:
+    model_id: qwen3-vl:4b
+monitor:
+  params:
+    model_id: qwen3-vl:4b
+inference:
+  params:
+    host: http://127.0.0.1:11435
+    model_id: qwen3-vl:4b
+    expected_digest: 1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683
+    response_channel: thinking

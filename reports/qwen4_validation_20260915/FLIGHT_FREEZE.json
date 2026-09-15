@@ -1,0 +1,272 @@
+{
+  "architecture": {
+    "id": "c5_clutter_qwen4_validated_dev",
+    "name": "C5 clutter with image-validated Qwen3-VL4B",
+    "description": "C5 OnFly compatible-backend validation at 0.6 m/s and 0.4 rad/s yaw.",
+    "family": "hybrid_stack",
+    "subfamily": null,
+    "ablation_of": null,
+    "profile_of": "c5",
+    "authority": "waypoint",
+    "action_horizon": null,
+    "chunk_length": 1,
+    "semantic_supervision": "periodic_monitor",
+    "semantic_memory": "compact_keyframe_memory",
+    "memory_consumers": [
+      "monitor"
+    ],
+    "perception": {
+      "name": "identity",
+      "params": {
+        "min_score": 0.0,
+        "drone_radius_m": 0.4,
+        "charge_latency": false
+      }
+    },
+    "memory": {
+      "name": "onfly_hybrid_memory",
+      "params": {
+        "window": 5,
+        "capacity": 6,
+        "min_separation_m": 3.0,
+        "keyframe_budget": 4,
+        "translation_threshold_m": 2.0,
+        "rotation_threshold_rad": 0.3490658504,
+        "dedupe_epsilon": 0.08,
+        "dedupe_distance_m": 3.0
+      }
+    },
+    "policy": {
+      "name": "onfly_decision",
+      "params": {
+        "hop_m": 12.0,
+        "stop_radius_m": 2.0,
+        "stop_confidence": 0.35,
+        "model_id": "qwen3-vl:4b",
+        "coordinate_contract": "qwen_relative_1000",
+        "max_depth_m": 7.0,
+        "sigma_theta": 0.65,
+        "goal_standoff_m": 1.0,
+        "camera_pitch_rad": -0.15,
+        "self_terminate": false,
+        "use_memory": false,
+        "grounded_waypoints": true,
+        "hold_initial_altitude": false
+      }
+    },
+    "verifier": {
+      "name": "onfly_semantic_geometric",
+      "params": {
+        "max_waypoint_distance_m": 10.0,
+        "min_clearance_m": 1.2,
+        "repair": true,
+        "sensing_horizon_m": 25.0
+      }
+    },
+    "planner": {
+      "name": "super_local",
+      "params": {
+        "resolution_m": 0.5,
+        "planning_horizon_m": 16.0,
+        "commit_horizon_m": 2.5,
+        "sensing_horizon_m": 25.0,
+        "temporal_window_s": 12.0,
+        "clearance_margin_m": 1.2,
+        "max_acc_mps2": 0.6
+      }
+    },
+    "shield": null,
+    "monitor": {
+      "name": "onfly_monitor",
+      "params": {
+        "stop_confirmations": 2,
+        "lost_after_s": 8.0,
+        "model_id": "qwen3-vl:4b",
+        "layout": "history_sheet_plus_latest",
+        "structured_evidence": true,
+        "acquisition_confirmations": 2,
+        "stop_max_depth_m": 2.0,
+        "lost_hold_s": 0.25,
+        "lost_reorient_s": 2.0,
+        "lost_yaw_rate_rps": 0.4,
+        "target_bound_stop": true,
+        "target_consistency_m": 1.0,
+        "camera_pitch_rad": -0.15,
+        "current_grounding": true,
+        "semantic_color_guard": false,
+        "arrival_memory_s": 4.0
+      }
+    },
+    "admission": null,
+    "recovery": null,
+    "controller": {
+      "name": "mock_velocity",
+      "params": {
+        "kp": 1.1,
+        "lookahead_m": 3.0,
+        "max_speed_mps": 5.0,
+        "yaw_kp": 1.5,
+        "max_yaw_rate_rps": 0.4,
+        "yaw_hold_radius_m": 0.25
+      }
+    },
+    "inference": {
+      "name": "ollama",
+      "params": {
+        "jitter_frac": 0.0,
+        "model_id": "qwen3-vl:4b",
+        "latency_s": {
+          "perception": 0.02,
+          "policy": 0.35,
+          "monitor": 1.6,
+          "reasoner": 2.4
+        },
+        "tokens_per_call": {
+          "policy": 160,
+          "monitor": 320,
+          "reasoner": 800
+        },
+        "host": "http://127.0.0.1:11435",
+        "expected_digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+        "temperature": 0.0,
+        "num_predict": 192,
+        "num_ctx": 8192,
+        "sampling_seed": 0,
+        "timeout_s": 180.0,
+        "endpoint": "chat",
+        "keep_alive": "30m",
+        "think": false,
+        "response_channel": "thinking",
+        "charge_mode": "fixed",
+        "fixed_latency_s": {
+          "policy": 1.0,
+          "monitor": 1.2
+        }
+      }
+    },
+    "scheduler": {
+      "kind": "async_multi_rate",
+      "control_hz": 20.0,
+      "decision_hz": 2.0,
+      "monitor_hz": 0.5,
+      "reasoner_hz": null,
+      "trigger": null,
+      "cooldown_s": 2.0,
+      "max_calls": null,
+      "trigger_check_hz": 5.0
+    },
+    "staleness": {
+      "max_decision_age_s": 4.0,
+      "reject_stale": true
+    },
+    "feature_cache": {
+      "enabled": false,
+      "capacity": 32
+    },
+    "allow_privileged_observations": false,
+    "unsafe_ablation": false,
+    "tags": [
+      "onfly",
+      "development",
+      "real_model",
+      "gemma4_e2b"
+    ]
+  },
+  "environment": {
+    "id": "grid_nav_onfly_depth_v2_dev",
+    "adapter": {
+      "name": "grid3d",
+      "params": {}
+    },
+    "task_family": "long_horizon_nav",
+    "instruction": "fly to the red tower and stop there",
+    "max_episode_s": 90.0,
+    "params": {
+      "scene": "clutter",
+      "goal_distance_m": 35.0,
+      "n_obstacles": 10,
+      "sensor_range_m": 45.0,
+      "fov_deg": 90.0,
+      "subgoals": 2,
+      "distractors": 3,
+      "detection_noise_m": 0.25,
+      "success": {
+        "goal_radius_m": 2.0,
+        "require_terminal_stop": true,
+        "required_subgoals": 0,
+        "max_flight_time_s": 90.0
+      },
+      "constraints": {
+        "max_speed_mps": 0.6,
+        "min_altitude_m": 0.5,
+        "max_altitude_m": 25.0,
+        "geofence_radius_m": 60.0,
+        "min_obstacle_clearance_m": 0.6,
+        "max_accel_mps2": 0.6
+      },
+      "allowed_skills": [
+        "goto",
+        "move",
+        "approach",
+        "hover",
+        "scan",
+        "back_off",
+        "ascend",
+        "stop"
+      ],
+      "render": true,
+      "render_depth": true,
+      "image_size": 224,
+      "camera_pitch_rad": -0.15,
+      "max_speed_mps": 0.6,
+      "accel_tau_s": 1.0,
+      "depth_renderer": "box_ray_v2"
+    }
+  },
+  "seed": 1061,
+  "run": "c5_clutter_qwen4_20260915_s1061",
+  "config_changes": [
+    [
+      ".id",
+      "c5_clutter_stable_gemma_dev",
+      "c5_clutter_qwen4_validated_dev"
+    ],
+    [
+      ".inference.params.expected_digest",
+      "6fbe8a5f242b4bf980850341db5efac369ad2b0d142fde673d7e0fe2a911c8aa",
+      "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683"
+    ],
+    [
+      ".inference.params.host",
+      "http://localhost:11434",
+      "http://127.0.0.1:11435"
+    ],
+    [
+      ".inference.params.model_id",
+      "gemma4:e2b",
+      "qwen3-vl:4b"
+    ],
+    [
+      ".inference.params.response_channel",
+      "content",
+      "thinking"
+    ],
+    [
+      ".monitor.params.model_id",
+      "gemma4:e2b",
+      "qwen3-vl:4b"
+    ],
+    [
+      ".name",
+      "C5 grounded clutter navigation with stable near-goal heading",
+      "C5 clutter with image-validated Qwen3-VL4B"
+    ],
+    [
+      ".policy.params.model_id",
+      "gemma4:e2b",
+      "qwen3-vl:4b"
+    ]
+  ],
+  "max_flights": 1,
+  "note": "Point-based navigation prompts retained. Same fixed simulated latency as Gemma baseline; actual Qwen latency recorded, not a calibrated deployment benchmark."
+}
