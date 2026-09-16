@@ -1,0 +1,1368 @@
+{
+  "source": "runs\\c5_target_commitment_20260915_s1061",
+  "live": false,
+  "matched": {
+    "memory_update": 90,
+    "monitor": 45,
+    "plan": 89,
+    "verifier": 58,
+    "control": 1800
+  },
+  "cached_requests": 134,
+  "fresh_requests": 0,
+  "requests": [
+    {
+      "index": 1,
+      "role": "policy",
+      "observation_seq": 1,
+      "started_s": 0.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 1.0
+    },
+    {
+      "index": 2,
+      "role": "monitor",
+      "observation_seq": 1,
+      "started_s": 0.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 1.2
+    },
+    {
+      "index": 3,
+      "role": "policy",
+      "observation_seq": 20,
+      "started_s": 1.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 2.0
+    },
+    {
+      "index": 4,
+      "role": "policy",
+      "observation_seq": 40,
+      "started_s": 2.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 3.0
+    },
+    {
+      "index": 5,
+      "role": "monitor",
+      "observation_seq": 40,
+      "started_s": 2.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 3.2
+    },
+    {
+      "index": 6,
+      "role": "policy",
+      "observation_seq": 60,
+      "started_s": 3.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 4.0
+    },
+    {
+      "index": 7,
+      "role": "policy",
+      "observation_seq": 80,
+      "started_s": 4.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 5.0
+    },
+    {
+      "index": 8,
+      "role": "monitor",
+      "observation_seq": 80,
+      "started_s": 4.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 5.2
+    },
+    {
+      "index": 9,
+      "role": "policy",
+      "observation_seq": 100,
+      "started_s": 5.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 6.0
+    },
+    {
+      "index": 10,
+      "role": "policy",
+      "observation_seq": 120,
+      "started_s": 6.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 7.0
+    },
+    {
+      "index": 11,
+      "role": "monitor",
+      "observation_seq": 120,
+      "started_s": 6.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 7.2
+    },
+    {
+      "index": 12,
+      "role": "policy",
+      "observation_seq": 140,
+      "started_s": 7.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 8.0
+    },
+    {
+      "index": 13,
+      "role": "policy",
+      "observation_seq": 160,
+      "started_s": 8.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 9.0
+    },
+    {
+      "index": 14,
+      "role": "monitor",
+      "observation_seq": 160,
+      "started_s": 8.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 9.2
+    },
+    {
+      "index": 15,
+      "role": "policy",
+      "observation_seq": 180,
+      "started_s": 9.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 10.0
+    },
+    {
+      "index": 16,
+      "role": "policy",
+      "observation_seq": 200,
+      "started_s": 10.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 11.0
+    },
+    {
+      "index": 17,
+      "role": "monitor",
+      "observation_seq": 200,
+      "started_s": 10.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 11.2
+    },
+    {
+      "index": 18,
+      "role": "policy",
+      "observation_seq": 220,
+      "started_s": 11.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 12.0
+    },
+    {
+      "index": 19,
+      "role": "policy",
+      "observation_seq": 240,
+      "started_s": 12.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 13.0
+    },
+    {
+      "index": 20,
+      "role": "monitor",
+      "observation_seq": 240,
+      "started_s": 12.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 13.2
+    },
+    {
+      "index": 21,
+      "role": "policy",
+      "observation_seq": 260,
+      "started_s": 13.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 14.0
+    },
+    {
+      "index": 22,
+      "role": "policy",
+      "observation_seq": 280,
+      "started_s": 14.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 15.0
+    },
+    {
+      "index": 23,
+      "role": "monitor",
+      "observation_seq": 280,
+      "started_s": 14.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 15.2
+    },
+    {
+      "index": 24,
+      "role": "policy",
+      "observation_seq": 300,
+      "started_s": 15.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 16.0
+    },
+    {
+      "index": 25,
+      "role": "policy",
+      "observation_seq": 320,
+      "started_s": 16.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 17.0
+    },
+    {
+      "index": 26,
+      "role": "monitor",
+      "observation_seq": 320,
+      "started_s": 16.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 17.2
+    },
+    {
+      "index": 27,
+      "role": "policy",
+      "observation_seq": 340,
+      "started_s": 17.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 18.0
+    },
+    {
+      "index": 28,
+      "role": "policy",
+      "observation_seq": 360,
+      "started_s": 18.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 19.0
+    },
+    {
+      "index": 29,
+      "role": "monitor",
+      "observation_seq": 360,
+      "started_s": 18.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 19.2
+    },
+    {
+      "index": 30,
+      "role": "policy",
+      "observation_seq": 380,
+      "started_s": 19.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 20.0
+    },
+    {
+      "index": 31,
+      "role": "policy",
+      "observation_seq": 400,
+      "started_s": 20.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 21.0
+    },
+    {
+      "index": 32,
+      "role": "monitor",
+      "observation_seq": 400,
+      "started_s": 20.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 21.2
+    },
+    {
+      "index": 33,
+      "role": "policy",
+      "observation_seq": 420,
+      "started_s": 21.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 22.0
+    },
+    {
+      "index": 34,
+      "role": "policy",
+      "observation_seq": 440,
+      "started_s": 22.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 23.0
+    },
+    {
+      "index": 35,
+      "role": "monitor",
+      "observation_seq": 440,
+      "started_s": 22.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 23.2
+    },
+    {
+      "index": 36,
+      "role": "policy",
+      "observation_seq": 460,
+      "started_s": 23.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 24.0
+    },
+    {
+      "index": 37,
+      "role": "policy",
+      "observation_seq": 480,
+      "started_s": 24.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 25.0
+    },
+    {
+      "index": 38,
+      "role": "monitor",
+      "observation_seq": 480,
+      "started_s": 24.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 25.2
+    },
+    {
+      "index": 39,
+      "role": "policy",
+      "observation_seq": 500,
+      "started_s": 25.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 26.0
+    },
+    {
+      "index": 40,
+      "role": "policy",
+      "observation_seq": 520,
+      "started_s": 26.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 27.0
+    },
+    {
+      "index": 41,
+      "role": "monitor",
+      "observation_seq": 520,
+      "started_s": 26.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 27.2
+    },
+    {
+      "index": 42,
+      "role": "policy",
+      "observation_seq": 540,
+      "started_s": 27.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 28.0
+    },
+    {
+      "index": 43,
+      "role": "policy",
+      "observation_seq": 560,
+      "started_s": 28.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 29.0
+    },
+    {
+      "index": 44,
+      "role": "monitor",
+      "observation_seq": 560,
+      "started_s": 28.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 29.2
+    },
+    {
+      "index": 45,
+      "role": "policy",
+      "observation_seq": 580,
+      "started_s": 29.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 30.0
+    },
+    {
+      "index": 46,
+      "role": "policy",
+      "observation_seq": 600,
+      "started_s": 30.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 31.0
+    },
+    {
+      "index": 47,
+      "role": "monitor",
+      "observation_seq": 600,
+      "started_s": 30.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 31.2
+    },
+    {
+      "index": 48,
+      "role": "policy",
+      "observation_seq": 620,
+      "started_s": 31.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 32.0
+    },
+    {
+      "index": 49,
+      "role": "policy",
+      "observation_seq": 640,
+      "started_s": 32.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 33.0
+    },
+    {
+      "index": 50,
+      "role": "monitor",
+      "observation_seq": 640,
+      "started_s": 32.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 33.2
+    },
+    {
+      "index": 51,
+      "role": "policy",
+      "observation_seq": 660,
+      "started_s": 33.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 34.0
+    },
+    {
+      "index": 52,
+      "role": "policy",
+      "observation_seq": 680,
+      "started_s": 34.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 35.0
+    },
+    {
+      "index": 53,
+      "role": "monitor",
+      "observation_seq": 680,
+      "started_s": 34.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 35.2
+    },
+    {
+      "index": 54,
+      "role": "policy",
+      "observation_seq": 700,
+      "started_s": 35.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 36.0
+    },
+    {
+      "index": 55,
+      "role": "policy",
+      "observation_seq": 720,
+      "started_s": 36.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 37.0
+    },
+    {
+      "index": 56,
+      "role": "monitor",
+      "observation_seq": 720,
+      "started_s": 36.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 37.2
+    },
+    {
+      "index": 57,
+      "role": "policy",
+      "observation_seq": 740,
+      "started_s": 37.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 38.0
+    },
+    {
+      "index": 58,
+      "role": "policy",
+      "observation_seq": 760,
+      "started_s": 38.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 39.0
+    },
+    {
+      "index": 59,
+      "role": "monitor",
+      "observation_seq": 760,
+      "started_s": 38.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 39.2
+    },
+    {
+      "index": 60,
+      "role": "policy",
+      "observation_seq": 780,
+      "started_s": 39.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 40.0
+    },
+    {
+      "index": 61,
+      "role": "policy",
+      "observation_seq": 800,
+      "started_s": 40.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 41.0
+    },
+    {
+      "index": 62,
+      "role": "monitor",
+      "observation_seq": 800,
+      "started_s": 40.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 41.2
+    },
+    {
+      "index": 63,
+      "role": "policy",
+      "observation_seq": 820,
+      "started_s": 41.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 42.0
+    },
+    {
+      "index": 64,
+      "role": "policy",
+      "observation_seq": 840,
+      "started_s": 42.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 43.0
+    },
+    {
+      "index": 65,
+      "role": "monitor",
+      "observation_seq": 840,
+      "started_s": 42.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 43.2
+    },
+    {
+      "index": 66,
+      "role": "policy",
+      "observation_seq": 860,
+      "started_s": 43.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 44.0
+    },
+    {
+      "index": 67,
+      "role": "policy",
+      "observation_seq": 880,
+      "started_s": 44.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 45.0
+    },
+    {
+      "index": 68,
+      "role": "monitor",
+      "observation_seq": 880,
+      "started_s": 44.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 45.2
+    },
+    {
+      "index": 69,
+      "role": "policy",
+      "observation_seq": 900,
+      "started_s": 45.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 46.0
+    },
+    {
+      "index": 70,
+      "role": "policy",
+      "observation_seq": 920,
+      "started_s": 46.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 47.0
+    },
+    {
+      "index": 71,
+      "role": "monitor",
+      "observation_seq": 920,
+      "started_s": 46.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 47.2
+    },
+    {
+      "index": 72,
+      "role": "policy",
+      "observation_seq": 940,
+      "started_s": 47.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 48.0
+    },
+    {
+      "index": 73,
+      "role": "policy",
+      "observation_seq": 960,
+      "started_s": 48.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 49.0
+    },
+    {
+      "index": 74,
+      "role": "monitor",
+      "observation_seq": 960,
+      "started_s": 48.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 49.2
+    },
+    {
+      "index": 75,
+      "role": "policy",
+      "observation_seq": 980,
+      "started_s": 49.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 50.0
+    },
+    {
+      "index": 76,
+      "role": "policy",
+      "observation_seq": 1000,
+      "started_s": 50.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 51.0
+    },
+    {
+      "index": 77,
+      "role": "monitor",
+      "observation_seq": 1000,
+      "started_s": 50.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 51.2
+    },
+    {
+      "index": 78,
+      "role": "policy",
+      "observation_seq": 1020,
+      "started_s": 51.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 52.0
+    },
+    {
+      "index": 79,
+      "role": "policy",
+      "observation_seq": 1040,
+      "started_s": 52.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 53.0
+    },
+    {
+      "index": 80,
+      "role": "monitor",
+      "observation_seq": 1040,
+      "started_s": 52.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 53.2
+    },
+    {
+      "index": 81,
+      "role": "policy",
+      "observation_seq": 1060,
+      "started_s": 53.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 54.0
+    },
+    {
+      "index": 82,
+      "role": "policy",
+      "observation_seq": 1080,
+      "started_s": 54.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 55.0
+    },
+    {
+      "index": 83,
+      "role": "monitor",
+      "observation_seq": 1080,
+      "started_s": 54.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 55.2
+    },
+    {
+      "index": 84,
+      "role": "policy",
+      "observation_seq": 1100,
+      "started_s": 55.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 56.0
+    },
+    {
+      "index": 85,
+      "role": "policy",
+      "observation_seq": 1120,
+      "started_s": 56.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 57.0
+    },
+    {
+      "index": 86,
+      "role": "monitor",
+      "observation_seq": 1120,
+      "started_s": 56.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 57.2
+    },
+    {
+      "index": 87,
+      "role": "policy",
+      "observation_seq": 1140,
+      "started_s": 57.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 58.0
+    },
+    {
+      "index": 88,
+      "role": "policy",
+      "observation_seq": 1160,
+      "started_s": 58.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 59.0
+    },
+    {
+      "index": 89,
+      "role": "monitor",
+      "observation_seq": 1160,
+      "started_s": 58.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 59.2
+    },
+    {
+      "index": 90,
+      "role": "policy",
+      "observation_seq": 1180,
+      "started_s": 59.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 60.0
+    },
+    {
+      "index": 91,
+      "role": "policy",
+      "observation_seq": 1200,
+      "started_s": 60.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 61.0
+    },
+    {
+      "index": 92,
+      "role": "monitor",
+      "observation_seq": 1200,
+      "started_s": 60.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 61.2
+    },
+    {
+      "index": 93,
+      "role": "policy",
+      "observation_seq": 1220,
+      "started_s": 61.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 62.0
+    },
+    {
+      "index": 94,
+      "role": "policy",
+      "observation_seq": 1240,
+      "started_s": 62.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 63.0
+    },
+    {
+      "index": 95,
+      "role": "monitor",
+      "observation_seq": 1240,
+      "started_s": 62.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 63.2
+    },
+    {
+      "index": 96,
+      "role": "policy",
+      "observation_seq": 1260,
+      "started_s": 63.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 64.0
+    },
+    {
+      "index": 97,
+      "role": "policy",
+      "observation_seq": 1280,
+      "started_s": 64.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 65.0
+    },
+    {
+      "index": 98,
+      "role": "monitor",
+      "observation_seq": 1280,
+      "started_s": 64.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 65.2
+    },
+    {
+      "index": 99,
+      "role": "policy",
+      "observation_seq": 1300,
+      "started_s": 65.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 66.0
+    },
+    {
+      "index": 100,
+      "role": "policy",
+      "observation_seq": 1320,
+      "started_s": 66.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 67.0
+    },
+    {
+      "index": 101,
+      "role": "monitor",
+      "observation_seq": 1320,
+      "started_s": 66.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 67.2
+    },
+    {
+      "index": 102,
+      "role": "policy",
+      "observation_seq": 1340,
+      "started_s": 67.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 68.0
+    },
+    {
+      "index": 103,
+      "role": "policy",
+      "observation_seq": 1360,
+      "started_s": 68.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 69.0
+    },
+    {
+      "index": 104,
+      "role": "monitor",
+      "observation_seq": 1360,
+      "started_s": 68.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 69.2
+    },
+    {
+      "index": 105,
+      "role": "policy",
+      "observation_seq": 1380,
+      "started_s": 69.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 70.0
+    },
+    {
+      "index": 106,
+      "role": "policy",
+      "observation_seq": 1400,
+      "started_s": 70.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 71.0
+    },
+    {
+      "index": 107,
+      "role": "monitor",
+      "observation_seq": 1400,
+      "started_s": 70.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 71.2
+    },
+    {
+      "index": 108,
+      "role": "policy",
+      "observation_seq": 1420,
+      "started_s": 71.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 72.0
+    },
+    {
+      "index": 109,
+      "role": "policy",
+      "observation_seq": 1440,
+      "started_s": 72.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 73.0
+    },
+    {
+      "index": 110,
+      "role": "monitor",
+      "observation_seq": 1440,
+      "started_s": 72.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 73.2
+    },
+    {
+      "index": 111,
+      "role": "policy",
+      "observation_seq": 1460,
+      "started_s": 73.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 74.0
+    },
+    {
+      "index": 112,
+      "role": "policy",
+      "observation_seq": 1480,
+      "started_s": 74.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 75.0
+    },
+    {
+      "index": 113,
+      "role": "monitor",
+      "observation_seq": 1480,
+      "started_s": 74.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 75.2
+    },
+    {
+      "index": 114,
+      "role": "policy",
+      "observation_seq": 1500,
+      "started_s": 75.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 76.0
+    },
+    {
+      "index": 115,
+      "role": "policy",
+      "observation_seq": 1520,
+      "started_s": 76.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 77.0
+    },
+    {
+      "index": 116,
+      "role": "monitor",
+      "observation_seq": 1520,
+      "started_s": 76.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 77.2
+    },
+    {
+      "index": 117,
+      "role": "policy",
+      "observation_seq": 1540,
+      "started_s": 77.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 78.0
+    },
+    {
+      "index": 118,
+      "role": "policy",
+      "observation_seq": 1560,
+      "started_s": 78.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 79.0
+    },
+    {
+      "index": 119,
+      "role": "monitor",
+      "observation_seq": 1560,
+      "started_s": 78.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 79.2
+    },
+    {
+      "index": 120,
+      "role": "policy",
+      "observation_seq": 1580,
+      "started_s": 79.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 80.0
+    },
+    {
+      "index": 121,
+      "role": "policy",
+      "observation_seq": 1600,
+      "started_s": 80.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 81.0
+    },
+    {
+      "index": 122,
+      "role": "monitor",
+      "observation_seq": 1600,
+      "started_s": 80.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 81.2
+    },
+    {
+      "index": 123,
+      "role": "policy",
+      "observation_seq": 1620,
+      "started_s": 81.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 82.0
+    },
+    {
+      "index": 124,
+      "role": "policy",
+      "observation_seq": 1640,
+      "started_s": 82.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 83.0
+    },
+    {
+      "index": 125,
+      "role": "monitor",
+      "observation_seq": 1640,
+      "started_s": 82.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 83.2
+    },
+    {
+      "index": 126,
+      "role": "policy",
+      "observation_seq": 1660,
+      "started_s": 83.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 84.0
+    },
+    {
+      "index": 127,
+      "role": "policy",
+      "observation_seq": 1680,
+      "started_s": 84.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 85.0
+    },
+    {
+      "index": 128,
+      "role": "monitor",
+      "observation_seq": 1680,
+      "started_s": 84.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 85.2
+    },
+    {
+      "index": 129,
+      "role": "policy",
+      "observation_seq": 1700,
+      "started_s": 85.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 86.0
+    },
+    {
+      "index": 130,
+      "role": "policy",
+      "observation_seq": 1720,
+      "started_s": 86.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 87.0
+    },
+    {
+      "index": 131,
+      "role": "monitor",
+      "observation_seq": 1720,
+      "started_s": 86.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 87.2
+    },
+    {
+      "index": 132,
+      "role": "policy",
+      "observation_seq": 1740,
+      "started_s": 87.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 88.0
+    },
+    {
+      "index": 133,
+      "role": "policy",
+      "observation_seq": 1760,
+      "started_s": 88.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 89.0
+    },
+    {
+      "index": 134,
+      "role": "monitor",
+      "observation_seq": 1760,
+      "started_s": 88.0,
+      "cached": true,
+      "boundary_dummy": false,
+      "original_request_matched": true,
+      "completed_s": 89.2
+    },
+    {
+      "index": 135,
+      "role": "policy",
+      "observation_seq": 1780,
+      "started_s": 89.0,
+      "cached": false,
+      "boundary_dummy": true,
+      "original_request_matched": true
+    }
+  ],
+  "warning": "Prefix inference metrics describe cache playback, not new model compute.",
+  "error": null,
+  "script_sha256": "93ebf391401f677a122f1ce717053c3cc0ae95640a7a622d3d2060a670d485d1",
+  "passed": true
+}

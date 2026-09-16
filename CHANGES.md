@@ -2938,3 +2938,19 @@ Three of maximumfour flights used,392completedflightcalls+3cancellations,15saved
 Dedicated11435 unloaded/stopped; debugger8766 stays. No fullfourth43minuteCPUflight
 beforedeadline. Next exactcheckpointreplay then separatelyfrozen arrival/STOPextension
 in time; do not claim a90sbenchmarksuccess or validatedgeneralplanning.
+
+
+## 2026-09-16 — D-122: exact replay and bounded continuation frozen
+
+User authorized continuation after the completed autonomous batch. New diagnostic
+harness reconstructs unchanged runtime using134 original responses, with135 exact
+request/schema/image/time checks including the cancelled boundary request. All1800
+controls,89 plans,90 memory updates,45 monitor events and58 verifier events match;
+final distance matches4.6466100018947385m exactly. No modelcalls for this dry replay.
+Eight harness tests pass, including changed prompt/image/model/time rejection.
+One CPU-only local continuation is frozen to120s (30s extra), max47 fresh requests.
+The original cancelled89s request is reissued and first becomes available90s;
+subsequent requests use fresh current observations. Original90s failure preserved.
+Only horizon and matching evaluation time limit change; policy/planner/arrival/STOP
+rules unchanged. Cache timing is not model latency; no causal architectureclaim.
+Evidence: reports/continuation_20260916/DRY_REPLAY.json and FREEZE.json.

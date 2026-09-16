@@ -16,6 +16,14 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Current D-122 continuation (2026-09-16)
+
+User explicitly authorized the proposed30s continuation. Read
+reports/continuation_20260916/STATE.json and FREEZE.json. Dry replay passes all1800
+controls and135 requests; eight harness tests pass. One live continuation next,
+CPU-only11435, maximum120s total. Preserve90s failed source and cached-prefix accounting.
+No architecture changes, cloud calls or automation restart. Commit each stage.
+
 ## Autonomous recovery batch complete — D-116 through D-121 (2026-09-15)
 
 Read reports/recovery_cycle_20260915/REPORT.md, cycle3/REPORT.md and STATE.json FIRST.

@@ -1,0 +1,25 @@
+{
+  "decision": "D-122",
+  "source": "c5_target_commitment_20260915_s1061",
+  "run": "c5_commitment_continued_20260916_s1061",
+  "seed": 1061,
+  "cutoff_s": 90,
+  "max_s": 120,
+  "max_fresh_requests": 47,
+  "architecture_changed": false,
+  "changes": [
+    "environment.max_episode_s:90->120",
+    "environment.params.success.max_flight_time_s:90->120"
+  ],
+  "method": "Re-execute unchanged runtime with134 exact cached responses. Validate135 original requests and all prefix controls/plans/memory/monitor/verifier events. Reissue original cancelled89s policy request, first available90s, then new local requests. No manual pose or memory reset.",
+  "criteria": "Original90s timeout remains. Continuation succeeds only under unchanged metric radius and terminalSTOP rule; stop at120s or earlier runtime termination. Record collision, closest/final distance and actual camera. One continuation, no repeats or prompt changes.",
+  "inference": "CPU-only dedicated11435; same Qwen3-VL4B digest, fixed simulation policy1s monitor1.2s. Cachedprefix timing excluded from real inference comparisons.",
+  "dry_replay_matched": {
+    "memory_update": 90,
+    "monitor": 45,
+    "plan": 89,
+    "verifier": 58,
+    "control": 1800
+  },
+  "script_sha256": "93ebf391401f677a122f1ce717053c3cc0ae95640a7a622d3d2060a670d485d1"
+}
