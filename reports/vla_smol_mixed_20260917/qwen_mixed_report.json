@@ -1,0 +1,2521 @@
+{
+  "model": "qwen",
+  "base": "D:\\drone_vla_pilot\\hf_cache\\hub\\models--Qwen--Qwen3-VL-4B-Instruct\\snapshots\\ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "contract": "direct_velocity_heading_frd_v2",
+  "gate_report": "D:\\drone_vla_pilot\\runs\\qwen_frd_overfit_20260916_c\\report.json",
+  "kind": "D136 mixed local expansion",
+  "status": "complete",
+  "fresh_adapter": true,
+  "data_sha256": "0738e416de4a8cc905af67d8b310ab8817a4138ab681a7c473639717e377aef1",
+  "train_ids": [
+    "public_goal_s1401-decision-0000",
+    "public_goal_s1401-decision-0001",
+    "public_goal_s1401-decision-0002",
+    "public_goal_s1401-decision-0003",
+    "public_goal_s1401-decision-0004",
+    "public_goal_s1401-decision-0005",
+    "public_goal_s1401-decision-0006",
+    "public_goal_s1401-decision-0007",
+    "public_goal_s1401-decision-0008",
+    "public_goal_s1401-decision-0009",
+    "public_goal_s1401-decision-0010",
+    "public_goal_s1401-decision-0011",
+    "public_goal_s1401-decision-0012",
+    "public_goal_s1401-decision-0013",
+    "public_goal_s1401-decision-0014",
+    "public_goal_s1401-decision-0015",
+    "public_goal_s1401-decision-0016",
+    "public_goal_s1401-decision-0017",
+    "public_goal_s1401-decision-0018",
+    "public_goal_s1401-decision-0019",
+    "public_goal_s1401-decision-0020",
+    "public_goal_s1401-decision-0021",
+    "public_goal_s1401-decision-0022",
+    "public_goal_s1401-decision-0023",
+    "public_goal_s1401-decision-0024",
+    "public_goal_s1401-decision-0025",
+    "public_goal_s1401-decision-0026",
+    "public_goal_s1401-decision-0027",
+    "public_goal_s1401-decision-0028",
+    "public_goal_s1401-decision-0029",
+    "public_goal_s1401-decision-0030",
+    "public_goal_s1401-decision-0031",
+    "public_goal_s1401-decision-0032",
+    "public_goal_s1402-decision-0000",
+    "public_goal_s1402-decision-0001",
+    "public_goal_s1402-decision-0002",
+    "public_goal_s1402-decision-0003",
+    "public_goal_s1402-decision-0004",
+    "public_goal_s1402-decision-0005",
+    "public_goal_s1402-decision-0006",
+    "public_goal_s1402-decision-0007",
+    "public_goal_s1402-decision-0008",
+    "public_goal_s1402-decision-0009",
+    "public_goal_s1402-decision-0010",
+    "public_goal_s1402-decision-0011",
+    "public_goal_s1402-decision-0012",
+    "public_goal_s1402-decision-0013",
+    "public_goal_s1402-decision-0014",
+    "public_goal_s1402-decision-0015",
+    "public_goal_s1402-decision-0016",
+    "public_goal_s1402-decision-0017",
+    "public_goal_s1402-decision-0018",
+    "public_goal_s1402-decision-0019",
+    "public_goal_s1402-decision-0020",
+    "public_goal_s1402-decision-0021",
+    "public_goal_s1402-decision-0022",
+    "public_goal_s1402-decision-0023",
+    "public_goal_s1402-decision-0024",
+    "public_goal_s1402-decision-0025",
+    "public_goal_s1402-decision-0026",
+    "public_goal_s1402-decision-0027",
+    "public_goal_s1402-decision-0028",
+    "public_goal_s1402-decision-0029",
+    "public_goal_s1402-decision-0030",
+    "public_goal_s1402-decision-0031",
+    "public_goal_s1402-decision-0032",
+    "public_goal_s1403-decision-0000",
+    "public_goal_s1403-decision-0001",
+    "public_goal_s1403-decision-0002",
+    "public_goal_s1403-decision-0003",
+    "public_goal_s1403-decision-0004",
+    "public_goal_s1403-decision-0005",
+    "public_goal_s1403-decision-0006",
+    "public_goal_s1403-decision-0007",
+    "public_goal_s1403-decision-0008",
+    "public_goal_s1403-decision-0009",
+    "public_goal_s1403-decision-0010",
+    "public_goal_s1403-decision-0011",
+    "public_goal_s1403-decision-0012",
+    "public_goal_s1403-decision-0013",
+    "public_goal_s1403-decision-0014",
+    "public_goal_s1403-decision-0015",
+    "public_goal_s1403-decision-0016",
+    "public_goal_s1403-decision-0017",
+    "public_goal_s1403-decision-0018",
+    "public_goal_s1403-decision-0019",
+    "public_goal_s1403-decision-0020",
+    "public_goal_s1403-decision-0021",
+    "public_goal_s1403-decision-0022",
+    "public_goal_s1403-decision-0023",
+    "public_goal_s1403-decision-0024",
+    "public_goal_s1403-decision-0025",
+    "public_goal_s1403-decision-0026",
+    "public_goal_s1403-decision-0027",
+    "public_goal_s1403-decision-0028",
+    "public_goal_s1403-decision-0029",
+    "public_goal_s1403-decision-0030",
+    "public_goal_s1403-decision-0031",
+    "public_goal_s1403-decision-0032",
+    "public_goal_s1404-decision-0000",
+    "public_goal_s1404-decision-0001",
+    "public_goal_s1404-decision-0002",
+    "public_goal_s1404-decision-0003",
+    "public_goal_s1404-decision-0004",
+    "public_goal_s1404-decision-0005",
+    "public_goal_s1404-decision-0006",
+    "public_goal_s1404-decision-0007",
+    "public_goal_s1404-decision-0008",
+    "public_goal_s1404-decision-0009",
+    "public_goal_s1404-decision-0010",
+    "public_goal_s1404-decision-0011",
+    "public_goal_s1404-decision-0012",
+    "public_goal_s1404-decision-0013",
+    "public_goal_s1404-decision-0014",
+    "public_goal_s1404-decision-0015",
+    "public_goal_s1404-decision-0016",
+    "public_goal_s1404-decision-0017",
+    "public_goal_s1404-decision-0018",
+    "public_goal_s1404-decision-0019",
+    "public_goal_s1404-decision-0020",
+    "public_goal_s1404-decision-0021",
+    "public_goal_s1404-decision-0022",
+    "public_goal_s1404-decision-0023",
+    "public_goal_s1404-decision-0024",
+    "public_goal_s1404-decision-0025",
+    "public_goal_s1404-decision-0026",
+    "public_goal_s1404-decision-0027",
+    "public_goal_s1404-decision-0028",
+    "public_goal_s1404-decision-0029",
+    "public_goal_s1404-decision-0030",
+    "public_goal_s1404-decision-0031",
+    "public_goal_s1404-decision-0032",
+    "public_goal_s1404-decision-0033",
+    "public_goal_s1404-decision-0034",
+    "public_goal_s1406-decision-0000",
+    "public_goal_s1406-decision-0001",
+    "public_goal_s1406-decision-0002",
+    "public_goal_s1406-decision-0003",
+    "public_goal_s1406-decision-0004",
+    "public_goal_s1406-decision-0005",
+    "public_goal_s1406-decision-0006",
+    "public_goal_s1406-decision-0007",
+    "public_goal_s1406-decision-0008",
+    "public_goal_s1406-decision-0009",
+    "public_goal_s1406-decision-0010",
+    "public_goal_s1406-decision-0011",
+    "public_goal_s1406-decision-0012",
+    "public_goal_s1406-decision-0013",
+    "public_goal_s1406-decision-0014",
+    "public_goal_s1406-decision-0015",
+    "public_goal_s1406-decision-0016",
+    "public_goal_s1406-decision-0017",
+    "public_goal_s1406-decision-0018",
+    "public_goal_s1406-decision-0019",
+    "public_goal_s1406-decision-0020",
+    "public_goal_s1406-decision-0021",
+    "public_goal_s1406-decision-0022",
+    "public_goal_s1406-decision-0023",
+    "public_goal_s1406-decision-0024",
+    "public_goal_s1406-decision-0025",
+    "public_goal_s1406-decision-0026",
+    "public_goal_s1406-decision-0027",
+    "public_goal_s1406-decision-0028",
+    "public_goal_s1406-decision-0029",
+    "public_goal_s1406-decision-0030",
+    "public_goal_s1406-decision-0031",
+    "public_goal_s1406-decision-0032",
+    "public_goal_s1406-decision-0033",
+    "public_goal_s1406-decision-0034",
+    "public_goal_s1407-decision-0000",
+    "public_goal_s1407-decision-0001",
+    "public_goal_s1407-decision-0002",
+    "public_goal_s1407-decision-0003",
+    "public_goal_s1407-decision-0004",
+    "public_goal_s1407-decision-0005",
+    "public_goal_s1407-decision-0006",
+    "public_goal_s1407-decision-0007",
+    "public_goal_s1407-decision-0008",
+    "public_goal_s1407-decision-0009",
+    "public_goal_s1407-decision-0010",
+    "public_goal_s1407-decision-0011",
+    "public_goal_s1407-decision-0012",
+    "public_goal_s1407-decision-0013",
+    "public_goal_s1407-decision-0014",
+    "public_goal_s1407-decision-0015",
+    "public_goal_s1407-decision-0016",
+    "public_goal_s1407-decision-0017",
+    "public_goal_s1407-decision-0018",
+    "public_goal_s1407-decision-0019",
+    "public_goal_s1407-decision-0020",
+    "public_goal_s1407-decision-0021",
+    "public_goal_s1407-decision-0022",
+    "public_goal_s1407-decision-0023",
+    "public_goal_s1407-decision-0024",
+    "public_goal_s1407-decision-0025",
+    "public_goal_s1407-decision-0026",
+    "public_goal_s1407-decision-0027",
+    "public_goal_s1407-decision-0028",
+    "public_goal_s1407-decision-0029",
+    "public_goal_s1407-decision-0030",
+    "public_goal_s1407-decision-0031",
+    "public_goal_s1407-decision-0032",
+    "public_goal_s1407-decision-0033",
+    "public_goal_s1407-decision-0034",
+    "visible_yaw_s1411_l0_red",
+    "visible_yaw_s1411_l0_blue",
+    "visible_yaw_s1411_l1_red",
+    "visible_yaw_s1411_l1_blue",
+    "visible_yaw_s1411_l2_red",
+    "visible_yaw_s1411_l2_blue",
+    "visible_yaw_s1411_l3_red",
+    "visible_yaw_s1411_l3_blue",
+    "visible_yaw_s1412_l0_red",
+    "visible_yaw_s1412_l0_blue",
+    "visible_yaw_s1412_l1_red",
+    "visible_yaw_s1412_l1_blue",
+    "visible_yaw_s1412_l2_red",
+    "visible_yaw_s1412_l2_blue",
+    "visible_yaw_s1412_l3_red",
+    "visible_yaw_s1412_l3_blue",
+    "visible_yaw_s1413_l0_red",
+    "visible_yaw_s1413_l0_blue",
+    "visible_yaw_s1413_l1_red",
+    "visible_yaw_s1413_l1_blue",
+    "visible_yaw_s1413_l2_red",
+    "visible_yaw_s1413_l2_blue",
+    "visible_yaw_s1413_l3_red",
+    "visible_yaw_s1413_l3_blue",
+    "visible_yaw_s1414_l0_red",
+    "visible_yaw_s1414_l0_blue",
+    "visible_yaw_s1414_l1_red",
+    "visible_yaw_s1414_l1_blue",
+    "visible_yaw_s1414_l2_red",
+    "visible_yaw_s1414_l2_blue",
+    "visible_yaw_s1414_l3_red",
+    "visible_yaw_s1414_l3_blue",
+    "visible_yaw_s1416_l0_red",
+    "visible_yaw_s1416_l0_blue",
+    "visible_yaw_s1416_l1_red",
+    "visible_yaw_s1416_l1_blue",
+    "visible_yaw_s1416_l2_red",
+    "visible_yaw_s1416_l2_blue",
+    "visible_yaw_s1416_l3_red",
+    "visible_yaw_s1416_l3_blue",
+    "visible_yaw_s1417_l0_red",
+    "visible_yaw_s1417_l0_blue",
+    "visible_yaw_s1417_l1_red",
+    "visible_yaw_s1417_l1_blue",
+    "visible_yaw_s1417_l2_red",
+    "visible_yaw_s1417_l2_blue",
+    "visible_yaw_s1417_l3_red",
+    "visible_yaw_s1417_l3_blue"
+  ],
+  "val_ids": [
+    "public_goal_s1400-decision-0000",
+    "public_goal_s1400-decision-0001",
+    "public_goal_s1400-decision-0002",
+    "public_goal_s1400-decision-0003",
+    "public_goal_s1400-decision-0004",
+    "public_goal_s1400-decision-0005",
+    "public_goal_s1400-decision-0006",
+    "public_goal_s1400-decision-0007",
+    "public_goal_s1400-decision-0008",
+    "public_goal_s1400-decision-0009",
+    "public_goal_s1400-decision-0010",
+    "public_goal_s1400-decision-0011",
+    "public_goal_s1400-decision-0012",
+    "public_goal_s1400-decision-0013",
+    "public_goal_s1400-decision-0014",
+    "public_goal_s1400-decision-0015",
+    "public_goal_s1400-decision-0016",
+    "public_goal_s1400-decision-0017",
+    "public_goal_s1400-decision-0018",
+    "public_goal_s1400-decision-0019",
+    "public_goal_s1400-decision-0020",
+    "public_goal_s1400-decision-0021",
+    "public_goal_s1400-decision-0022",
+    "public_goal_s1400-decision-0023",
+    "public_goal_s1400-decision-0024",
+    "public_goal_s1400-decision-0025",
+    "public_goal_s1400-decision-0026",
+    "public_goal_s1400-decision-0027",
+    "public_goal_s1400-decision-0028",
+    "public_goal_s1400-decision-0029",
+    "public_goal_s1400-decision-0030",
+    "public_goal_s1400-decision-0031",
+    "public_goal_s1400-decision-0032",
+    "public_goal_s1400-decision-0033",
+    "public_goal_s1400-decision-0034",
+    "public_goal_s1405-decision-0000",
+    "public_goal_s1405-decision-0001",
+    "public_goal_s1405-decision-0002",
+    "public_goal_s1405-decision-0003",
+    "public_goal_s1405-decision-0004",
+    "public_goal_s1405-decision-0005",
+    "public_goal_s1405-decision-0006",
+    "public_goal_s1405-decision-0007",
+    "public_goal_s1405-decision-0008",
+    "public_goal_s1405-decision-0009",
+    "public_goal_s1405-decision-0010",
+    "public_goal_s1405-decision-0011",
+    "public_goal_s1405-decision-0012",
+    "public_goal_s1405-decision-0013",
+    "public_goal_s1405-decision-0014",
+    "public_goal_s1405-decision-0015",
+    "public_goal_s1405-decision-0016",
+    "public_goal_s1405-decision-0017",
+    "public_goal_s1405-decision-0018",
+    "public_goal_s1405-decision-0019",
+    "public_goal_s1405-decision-0020",
+    "public_goal_s1405-decision-0021",
+    "public_goal_s1405-decision-0022",
+    "public_goal_s1405-decision-0023",
+    "public_goal_s1405-decision-0024",
+    "public_goal_s1405-decision-0025",
+    "public_goal_s1405-decision-0026",
+    "public_goal_s1405-decision-0027",
+    "public_goal_s1405-decision-0028",
+    "public_goal_s1405-decision-0029",
+    "public_goal_s1405-decision-0030",
+    "public_goal_s1405-decision-0031",
+    "public_goal_s1405-decision-0032",
+    "visible_yaw_s1410_l0_red",
+    "visible_yaw_s1410_l0_blue",
+    "visible_yaw_s1410_l1_red",
+    "visible_yaw_s1410_l1_blue",
+    "visible_yaw_s1410_l2_red",
+    "visible_yaw_s1410_l2_blue",
+    "visible_yaw_s1410_l3_red",
+    "visible_yaw_s1410_l3_blue",
+    "visible_yaw_s1415_l0_red",
+    "visible_yaw_s1415_l0_blue",
+    "visible_yaw_s1415_l1_red",
+    "visible_yaw_s1415_l1_blue",
+    "visible_yaw_s1415_l2_red",
+    "visible_yaw_s1415_l2_blue",
+    "visible_yaw_s1415_l3_red",
+    "visible_yaw_s1415_l3_blue"
+  ],
+  "generation_eval_ids": [
+    "visible_yaw_s1410_l0_red",
+    "visible_yaw_s1410_l0_blue",
+    "visible_yaw_s1410_l1_red",
+    "visible_yaw_s1410_l1_blue",
+    "visible_yaw_s1410_l2_red",
+    "visible_yaw_s1410_l2_blue",
+    "visible_yaw_s1410_l3_red",
+    "visible_yaw_s1410_l3_blue",
+    "visible_yaw_s1415_l0_red",
+    "visible_yaw_s1415_l0_blue",
+    "visible_yaw_s1415_l1_red",
+    "visible_yaw_s1415_l1_blue",
+    "visible_yaw_s1415_l2_red",
+    "visible_yaw_s1415_l2_blue",
+    "visible_yaw_s1415_l3_red",
+    "visible_yaw_s1415_l3_blue",
+    "public_goal_s1400-decision-0000",
+    "public_goal_s1400-decision-0007",
+    "public_goal_s1400-decision-0014",
+    "public_goal_s1400-decision-0020",
+    "public_goal_s1400-decision-0027",
+    "public_goal_s1400-decision-0034",
+    "public_goal_s1405-decision-0000",
+    "public_goal_s1405-decision-0006",
+    "public_goal_s1405-decision-0013",
+    "public_goal_s1405-decision-0019",
+    "public_goal_s1405-decision-0026",
+    "public_goal_s1405-decision-0032"
+  ],
+  "input_token_range": [
+    333,
+    496
+  ],
+  "trainable_parameters": 16515072,
+  "before": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6090000000003783,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.235000000000582,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.2340000000003783,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.2340000000003783,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.202999999997701,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.3910000000032596,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.4219999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.2030000000013388,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.4059999999990396,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.437999999998283,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.4060000000026776,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.4219999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.186999999998079,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.375,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.422000000002299,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":0,\"right_bin\":0,\"down_bin\":0,\"yaw_cw_bin\":0.0,\"stop\":false}",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 3.3909999999996217,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0000",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 0,\n  \"right_bin\": 0,\n  \"down_bin\": 0,\n  \"yaw_cw_bin\": 0,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 4.84400000000096,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0007",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.327999999997701,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0014",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.297000000002299,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0020",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.342999999997119,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0027",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 37,
+        "right_bin": 32,
+        "down_bin": 30,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.297000000002299,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0034",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.390999999999622,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0000",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 28,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 0,\n  \"right_bin\": 0,\n  \"down_bin\": 0,\n  \"yaw_cw_bin\": 0,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 0,
+        "right_bin": 0,
+        "down_bin": 0,
+        "yaw_cw_bin": 0,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 4.78099999999904,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0006",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.297000000002299,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0013",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.28099999999904,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0019",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.235000000000582,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.202999999997701,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": "{\n  \"forward_bin\": 32,\n  \"right_bin\": 32,\n  \"down_bin\": 32,\n  \"yaw_cw_bin\": 32,\n  \"stop\": false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 5.264999999999418,
+      "task_group": "coordinate"
+    }
+  ],
+  "validation_loss": [
+    {
+      "step": 0,
+      "mean_answer_ce": 0.47277379124647095
+    },
+    {
+      "step": 200,
+      "mean_answer_ce": 0.10004467894101426
+    },
+    {
+      "step": 400,
+      "mean_answer_ce": 0.11211671172696654
+    }
+  ],
+  "optimization_seconds": [
+    235.5,
+    231.32800000000134
+  ],
+  "after": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.688000000001921,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.686999999998079,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.672000000002299,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.687999999998283,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6560000000026776,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6409999999996217,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.639999999999418,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6719999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.672000000002299,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.9839999999967404,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6570000000028813,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.702999999997701,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.687000000001717,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 3.6719999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 3.6409999999996217,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.687000000001717,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0000",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":29,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 3.7190000000009604,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0007",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":29,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 3.7659999999996217,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0014",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":29,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.764999999999418,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0020",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":29,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7659999999996217,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0027",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 37,
+        "right_bin": 32,
+        "down_bin": 30,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":36,\"right_bin\":32,\"down_bin\":31,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 36,
+        "right_bin": 32,
+        "down_bin": 31,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.75,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0034",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.75,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0000",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 28,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7340000000003783,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0006",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":34,\"down_bin\":32,\"yaw_cw_bin\":35,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 34,
+        "down_bin": 32,
+        "yaw_cw_bin": 35,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7819999999992433,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0013",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7180000000007567,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0019",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":41,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.75,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":36,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 36,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6569999999992433,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7030000000013388,
+      "task_group": "coordinate"
+    }
+  ],
+  "interventions": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6090000000003783,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6089999999967404,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6559999999990396,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.625,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6559999999990396,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.625,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6410000000032596,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.5929999999971187,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.5320000000028813,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.5469999999986612,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.610000000000582,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6409999999996217,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6410000000032596,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.639999999999418,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6090000000003783,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.686999999998079,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.625,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.625,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6409999999996217,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.7030000000013388,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.639999999999418,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6719999999986612,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.672000000002299,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.702999999997701,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6570000000028813,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.610000000000582,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6409999999996217,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6709999999984575,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6559999999990396,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.625,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.686999999998079,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.6570000000028813,
+      "intervention": "blank_instruction"
+    }
+  ],
+  "peak_allocated_bytes": 4545565184,
+  "reloaded_spot_check": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":24,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 24,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.8589999999967404,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":41,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.8910000000032596,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": "{\"forward_bin\":36,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 36,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.937999999998283,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": "{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 3.9530000000013388,
+      "task_group": "coordinate"
+    }
+  ],
+  "reload_spot_identical": true,
+  "before_metrics": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 7.0,
+      "correct_yaw_sign": 1,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 1.2196180555555556,
+      "yaw_mae_rps": 0.21484375
+    },
+    "visual": {
+      "n": 16,
+      "valid": 7,
+      "exact": 0,
+      "mean_bin_error": 49.390625,
+      "correct_yaw_sign": 5,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 7.8125,
+      "yaw_mae_rps": 2.2294921875
+    }
+  },
+  "after_metrics": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 2,
+      "mean_bin_error": 0.6666666666666666,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.06076388888888889,
+      "yaw_mae_rps": 0.0703125
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 2,
+      "mean_bin_error": 0.5,
+      "correct_yaw_sign": 16,
+      "correct_yaw_without_translation_or_stop": 16,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.09375
+    }
+  },
+  "pilot_criteria_passed": false,
+  "updates": 400
+}

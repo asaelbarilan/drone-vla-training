@@ -1,0 +1,382 @@
+{
+  "runs": [
+    {
+      "seed": 1400,
+      "mode": "trained",
+      "checked_original_mosaics_and_prompts": 50,
+      "checked_decoded_controls": 200,
+      "replay": {
+        "run_commit": "01b40a87b75bff720c3569d896aab6ae0f24e232",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 200,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 0,
+        "missing_source_frames": 0,
+        "recorded_calls": 50,
+        "events_sha256": "0ff362ef15fedff742e9ca5399d93a157e0fc5dcd6d8539e60a2229ed168e07c",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      },
+      "result": {
+        "success": false,
+        "termination_reason": "timeout",
+        "sim_duration_s": 10.0,
+        "used_privileged_observations": false,
+        "metrics": {
+          "distance_to_goal_m": 8.540666359359767,
+          "collisions": 0.0
+        },
+        "status": {
+          "t_sim_ns": 10000000000,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 3.0,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 8.540666359359767,
+          "goal_visible": false,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": null,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0.0,
+          "shortest_path_m": 8.540666359359767,
+          "speed_mps": 0.0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 0.35,
+            "lure_dwell_s": 0.0,
+            "landmarks": 4.0,
+            "obstacles": 0.0,
+            "skipped_injections": 0.0,
+            "min_injected_block_clearance_m": -1.0
+          }
+        },
+        "model_calls": 50,
+        "simulation_paused_during_inference": true,
+        "real_time_capable_claim": false,
+        "split": "val",
+        "latencies_s": [
+          2.3910000000032596,
+          2.327999999997701,
+          2.389999999999418,
+          2.375,
+          2.3440000000009604,
+          2.313000000001921,
+          2.3590000000003783,
+          2.25,
+          2.3429999999971187,
+          2.3429999999971187,
+          2.3590000000003783,
+          2.2659999999996217,
+          2.3280000000013388,
+          2.312000000001717,
+          2.375,
+          2.3280000000013388,
+          2.360000000000582,
+          2.360000000000582,
+          2.360000000000582,
+          2.4219999999986612,
+          2.360000000000582,
+          2.327999999997701,
+          2.3440000000009604,
+          2.3440000000009604,
+          2.360000000000582,
+          2.3280000000013388,
+          2.312000000001717,
+          2.327999999997701,
+          2.375,
+          2.3590000000003783,
+          2.3590000000003783,
+          2.3440000000009604,
+          2.327999999997701,
+          2.312999999998283,
+          2.360000000000582,
+          2.3280000000013388,
+          2.3430000000007567,
+          2.312000000001717,
+          2.3440000000009604,
+          2.312999999998283,
+          2.3290000000015425,
+          2.297000000002299,
+          2.327999999997701,
+          2.3439999999973224,
+          2.312999999998283,
+          2.3590000000003783,
+          2.3440000000009604,
+          2.360000000000582,
+          2.2660000000032596,
+          2.25
+        ]
+      }
+    },
+    {
+      "seed": 1405,
+      "mode": "trained",
+      "checked_original_mosaics_and_prompts": 50,
+      "checked_decoded_controls": 200,
+      "replay": {
+        "run_commit": "01b40a87b75bff720c3569d896aab6ae0f24e232",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 200,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 0,
+        "missing_source_frames": 0,
+        "recorded_calls": 50,
+        "events_sha256": "30af775bcef5d5a6938c3b338c110ac51b49d84c55e20e20470e62b442e37c39",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      },
+      "result": {
+        "success": false,
+        "termination_reason": "timeout",
+        "sim_duration_s": 10.0,
+        "used_privileged_observations": false,
+        "metrics": {
+          "distance_to_goal_m": 8.000099675971443,
+          "collisions": 0.0
+        },
+        "status": {
+          "t_sim_ns": 10000000000,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 3.0,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 8.000099675971443,
+          "goal_visible": false,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": null,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0.0,
+          "shortest_path_m": 8.000099675971443,
+          "speed_mps": 0.0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 0.35,
+            "lure_dwell_s": 0.0,
+            "landmarks": 4.0,
+            "obstacles": 0.0,
+            "skipped_injections": 0.0,
+            "min_injected_block_clearance_m": -1.0
+          }
+        },
+        "model_calls": 50,
+        "simulation_paused_during_inference": true,
+        "real_time_capable_claim": false,
+        "split": "val",
+        "latencies_s": [
+          2.389999999999418,
+          2.297000000002299,
+          2.3430000000007567,
+          2.3280000000013388,
+          2.3590000000003783,
+          2.25,
+          2.264999999999418,
+          2.312999999998283,
+          2.327999999997701,
+          2.297000000002299,
+          2.3280000000013388,
+          2.312999999998283,
+          2.313000000001921,
+          2.312000000001717,
+          2.311999999998079,
+          2.2660000000032596,
+          2.2819999999992433,
+          2.187000000001717,
+          2.2180000000007567,
+          2.3280000000013388,
+          2.25,
+          2.25,
+          2.264999999999418,
+          2.312999999998283,
+          2.2810000000026776,
+          2.2659999999996217,
+          2.2959999999984575,
+          2.264999999999418,
+          2.2959999999984575,
+          2.202999999997701,
+          2.2660000000032596,
+          2.264999999999418,
+          2.2969999999986612,
+          2.312999999998283,
+          2.313000000001921,
+          2.2809999999990396,
+          2.3440000000009604,
+          2.3280000000013388,
+          2.313000000001921,
+          2.2969999999986612,
+          2.3589999999967404,
+          2.312999999998283,
+          2.3280000000013388,
+          2.297000000002299,
+          2.2969999999986612,
+          2.3280000000013388,
+          2.2959999999984575,
+          2.327999999997701,
+          2.3440000000009604,
+          2.264999999999418
+        ]
+      }
+    },
+    {
+      "seed": 1400,
+      "mode": "zero_shot",
+      "checked_original_mosaics_and_prompts": 1,
+      "checked_decoded_controls": 1,
+      "replay": {
+        "run_commit": "01b40a87b75bff720c3569d896aab6ae0f24e232",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 1,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 0,
+        "missing_source_frames": 0,
+        "recorded_calls": 1,
+        "events_sha256": "99fdc4cfb732127f0422fce41790685282086b62fda5384d051a37ef1227b3f8",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      },
+      "result": {
+        "success": false,
+        "termination_reason": "invalid_model_output",
+        "sim_duration_s": 0.05,
+        "used_privileged_observations": false,
+        "metrics": {
+          "distance_to_goal_m": 8.540666359359767,
+          "collisions": 0.0
+        },
+        "status": {
+          "t_sim_ns": 50000000,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 3.0,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 8.540666359359767,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": null,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0.0,
+          "shortest_path_m": 8.540666359359767,
+          "speed_mps": 0.0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 0.35,
+            "lure_dwell_s": 0.0,
+            "landmarks": 4.0,
+            "obstacles": 0.0,
+            "skipped_injections": 0.0,
+            "min_injected_block_clearance_m": -1.0
+          }
+        },
+        "model_calls": 1,
+        "simulation_paused_during_inference": true,
+        "real_time_capable_claim": false,
+        "split": "val",
+        "latencies_s": [
+          3.0309999999990396
+        ]
+      }
+    },
+    {
+      "seed": 1405,
+      "mode": "zero_shot",
+      "checked_original_mosaics_and_prompts": 1,
+      "checked_decoded_controls": 1,
+      "replay": {
+        "run_commit": "01b40a87b75bff720c3569d896aab6ae0f24e232",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 1,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 0,
+        "missing_source_frames": 0,
+        "recorded_calls": 1,
+        "events_sha256": "0781df65b9f15f9cb1a6712291ed35c874032fba7808f6169de77823293be443",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes"
+      },
+      "result": {
+        "success": false,
+        "termination_reason": "invalid_model_output",
+        "sim_duration_s": 0.05,
+        "used_privileged_observations": false,
+        "metrics": {
+          "distance_to_goal_m": 8.000099675971443,
+          "collisions": 0.0
+        },
+        "status": {
+          "t_sim_ns": 50000000,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 3.0,
+            "frame": "enu"
+          },
+          "distance_to_goal_m": 8.000099675971443,
+          "goal_visible": true,
+          "subgoals_completed": 0,
+          "subgoals_total": 0,
+          "task_complete": null,
+          "collided": false,
+          "collision_count": 0,
+          "min_obstacle_distance_m": Infinity,
+          "out_of_bounds": false,
+          "constraint_violations": 0,
+          "path_length_m": 0.0,
+          "shortest_path_m": 8.000099675971443,
+          "speed_mps": 0.0,
+          "terminated": false,
+          "termination_reason": null,
+          "extras": {
+            "goal_radius_m": 0.35,
+            "lure_dwell_s": 0.0,
+            "landmarks": 4.0,
+            "obstacles": 0.0,
+            "skipped_injections": 0.0,
+            "min_injected_block_clearance_m": -1.0
+          }
+        },
+        "model_calls": 1,
+        "simulation_paused_during_inference": true,
+        "real_time_capable_claim": false,
+        "split": "val",
+        "latencies_s": [
+          2.452999999997701
+        ]
+      }
+    }
+  ],
+  "matched_conditions": [
+    {
+      "seed": 1400,
+      "initial_prompt_image_and_environment_identical": true
+    },
+    {
+      "seed": 1405,
+      "initial_prompt_image_and_environment_identical": true
+    }
+  ],
+  "no_teacher_control_substitution": true,
+  "inference_latency_not_charged_to_simulation": true
+}

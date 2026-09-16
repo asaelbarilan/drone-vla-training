@@ -3150,3 +3150,14 @@ pilot gate fails. All84validation CE1.4910/0.1489/0.1528 at0/200/400;no
 checkpoint selection. Four reload probes identical. Source/prediction viewer
 passes88exact checks.400executed sampleIDs match frozen schedule;val disjoint.
 Qwen comparison remains running;noexternaldata or paid compute.
+
+## 2026-09-17 - D136: matched local Smol256/Qwen training and visual execution
+
+Used the cached Smol256 image-only model as requested. Fresh adapters completed
+same400 updates on252 existing TRAIN rows;84 VAL rows remain isolated. Qwen
+visual direction16/16 versus Smol8/16;both fail the STOP criterion. Exact-source
+saved-action execution and independent control audits confirm16/16 versus8/16
+bearing improvements. Both models' source images, prompts, raw outputs, decoded
+physical actions and resulting images appear in the prediction debugger;176
+browser assertions pass. Generated training/validation loss plots and recorded
+schedule audits. No external data, AWS, physical flights or baseline changes.

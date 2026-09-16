@@ -3384,3 +3384,33 @@ exposes284motion,31hold,10stop,75visual. Visualleft/right balanced24/24;noexact
 prompt/image overlap acrosssplits. Sparse STOP exposure may contribute but is
 not a demonstrated causal explanation. No optimization change follows these
 validation outcomes. Qwen runs the same frozen protocol next.
+
+D136 control diagnosis:execute saved final visual predictions for0.2s in
+the exact original validation scenes,with no new model calls or tuning. Smol
+16source mosaics match byte-for-byte;64real controller ticks execute its saved
+actions,8/16visible angular errors improve and8worsen. This is consistent with
+constant clockwise predictions on balanced left/right targets. Keep before/
+after images and native commands/poses separate from teacher demonstrations.
+
+D136 Qwen mixed result: same400 IDs and fresh adapter,466.828s optimization,
+4.546GB peak allocation;28/28 valid,4/28 exact. Visual constrained direction
+16/16;both-instruction and both-color-swap pair tests8/8 each. Blank images
+reduce direction accuracy to8/16;blank instructions to0/16. This supports
+image-and-instruction dependence on this narrow fixture, not general grounding.
+Coordinate velocity MAE0.06076m/s and yaw MAE0.07031rad/s. Neither selected
+STOP is recognized, so the preregistered useful-pilot gate FAILS for both models.
+Four reload spots identical. All400 schedule IDs match, all252 TRAIN rows used,
+no validation overlap, finite nonzero gradients. Validation CE0.4728->0.1000
+->0.1121;final400 retained. Native tokenization and BF16/NF4 differ, so this is
+not an isolated parameter-count ablation. Median generation3.688s(Qwen) and
+2.094s(Smol) exceed the0.2s action horizon. No realtime readiness claim.
+Saved Qwen visual actions execute64 ticks across16 exact-source scenes and
+reduce target angular error16/16. Independent frame/control/dynamics audits
+pass for both models. Prediction debugger passes176 exact source/prompt/raw
+response/decoded-action checks including blank controls and resulting images.
+
+D136 Smol coordinate rollout:both zero-shot cases abort on invalid JSON;
+both trained cases time out at10simulated seconds without translation
+(final distances8.5407m and8.0001m).102actual model calls and402controls pass
+exact-image/prompt/control/dynamics replay;8browser source/response checks,
+all4outcomes,playback and responsive layout pass. No teacher action substituted.

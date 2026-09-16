@@ -1,3 +1,15 @@
+## D136 local-data follow-up (2026-09-17)
+
+- Freeze a separate visual-only Smol256 TRAIN overfit test to distinguish
+  multimodal learnability from mixed-task interference.
+- Freeze a balanced STOP/HOLD/motion sampling experiment with fresh adapters;
+  both mixed models missed the two validation STOP probes. Do not select
+  checkpoints or change sampling using protected evaluation seeds.
+- Expand independent local scenes and multi-step visual rollouts after these
+  correctness gates. Current results span only four validation scene groups.
+- Preserve D127 external simulator/real-flight expansion as later work; no
+  external preview currently qualifies as admitted action-training data.
+
 # TODO
 
 Open work, ordered by what it blocks. Every item names the decision it comes

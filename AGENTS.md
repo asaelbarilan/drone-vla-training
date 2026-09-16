@@ -16,6 +16,24 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Active cached Smol256 / mixed local experiment - D136 (2026-09-17)
+
+Use this isolated VLA worktree only; the architecture session is separate.
+Cached image-only SmolVLM-256M passes16/16 tiny memorization/reload gate.
+Fresh Smol256 and Qwen4B adapters then completed identical400-update schedules
+on252 existing TRAIN rows (204coordinate+48visual),84 original VAL rows.
+Both emit28/28 valid outputs but fail the full pilot gate (both tested STOPs
+missed). Smol visual direction8/16, constant clockwise;Qwen16/16 and both
+instruction/color-swap pair scores8/8. Exact-source0.2s execution confirms
+8/16 versus16/16 target-error reductions.176 debugger assertions pass.
+Evidence: reports/vla_smol_mixed_20260917/REPORT.md; raw data/weights on D:.
+Local review: localhost8771/local_mixed_predictions.html. Loss plots accompany
+report. Do not equate lower loss with control success or infer broad transfer.
+Next isolate visual overfit and sparse STOP/HOLD failures on local data before
+external imports. Preserve current validation groups; no tuning on seeds1-40.
+External sim and real-flight data remain required later under D127. No AWS,
+paid resources, physical flights or architecture baseline edits authorized.
+
 ## Active FRD follow-up - D131-D134 (2026-09-16)
 
 Work stays isolated on codex/vla-aws-pilot-20260916. Heading-level

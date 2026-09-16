@@ -1,0 +1,10 @@
+{
+  "executed_schedule_identical": true,
+  "updates": 400,
+  "all252training_rows_seen": true,
+  "train_validation_ids_disjoint": true,
+  "finite_nonzero_gradient_checks": 400,
+  "validation_loss_rows": 84,
+  "generation_probe_rows": 28,
+  "reload_spot_checks": 4
+}

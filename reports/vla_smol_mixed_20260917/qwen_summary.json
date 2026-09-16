@@ -1,0 +1,93 @@
+{
+  "model": "qwen",
+  "before": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 7.0,
+      "correct_yaw_sign": 1,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 1.2196180555555556,
+      "yaw_mae_rps": 0.21484375
+    },
+    "visual": {
+      "n": 16,
+      "valid": 7,
+      "exact": 0,
+      "mean_bin_error": 49.390625,
+      "correct_yaw_sign": 5,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 7.8125,
+      "yaw_mae_rps": 2.2294921875
+    }
+  },
+  "after": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 2,
+      "mean_bin_error": 0.6666666666666666,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.06076388888888889,
+      "yaw_mae_rps": 0.0703125
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 2,
+      "mean_bin_error": 0.5,
+      "correct_yaw_sign": 16,
+      "correct_yaw_without_translation_or_stop": 16,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.09375
+    }
+  },
+  "criteria_passed": false,
+  "both_instructions_correct_pairs": "8/8",
+  "both_color_swaps_correct_pairs": "8/8",
+  "interventions": {
+    "blank_image": {
+      "n": 16,
+      "valid": 16,
+      "exact": 0,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875,
+      "predictions_changed": 8
+    },
+    "blank_instruction": {
+      "n": 16,
+      "valid": 16,
+      "exact": 0,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875,
+      "predictions_changed": 16
+    }
+  },
+  "median_after_latency_s": 3.688000000000102,
+  "optimization_seconds": 466.82800000000134,
+  "peak_allocated_bytes": 4545565184,
+  "reload_spot_identical": true,
+  "validation_loss": [
+    {
+      "step": 0,
+      "mean_answer_ce": 0.47277379124647095
+    },
+    {
+      "step": 200,
+      "mean_answer_ce": 0.10004467894101426
+    },
+    {
+      "step": 400,
+      "mean_answer_ce": 0.11211671172696654
+    }
+  ],
+  "limits": "28 fixed generation examples; all84 validation rows for CE. 2visual+2coordinate validation scene groups; no real-world transfer claim."
+}

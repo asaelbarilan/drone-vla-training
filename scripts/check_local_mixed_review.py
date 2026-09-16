@@ -56,12 +56,30 @@ with sync_playwright() as p:
                     if phase == "blank_instruction"
                     else row["prompt"]
                 )
-                assert page.locator("#prompt").text_content() == expected_prompt, (model, phase, r["decision_id"])
+                assert page.locator("#prompt").text_content() == expected_prompt, (
+                    model,
+                    phase,
+                    r["decision_id"],
+                )
                 if r["valid"]:
                     action = json.loads(page.locator("#physical").inner_text())
                     assert action["yaw_clockwise_rps"] == (r["parsed"]["yaw_cw_bin"] - 32) * 3 / 64
                     assert action["forward_mps"] == (r["parsed"]["forward_bin"] - 32) * 10 / 64
                     assert action["mission_stop"] == r["parsed"]["stop"]
+                execution_file = root / f"{model}_visual_execution.json"
+                if phase == "after" and row["task_group"] == "visual" and execution_file.exists():
+                    execution = json.loads(execution_file.read_text())
+                    segment = next(x for x in execution["segments"] if x["id"] == r["decision_id"])
+                    if segment["outcome"] == "saved_prediction_executed":
+                        shown = base64.b64decode(
+                            page.locator("#afterImage").get_attribute("src").split(",")[1]
+                        )
+                        assert (
+                            shown
+                            == (
+                                Path(execution["output_root"]) / r["decision_id"] / "after.png"
+                            ).read_bytes()
+                        )
                 checks.append(
                     dict(
                         model=model,
