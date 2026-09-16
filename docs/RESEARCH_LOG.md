@@ -3280,3 +3280,23 @@ and4HOLD,reload16/16identical,loss decreased.200additional updates262.625s,
 peak4.617GB;totalFRD400updates. This proves tiny TRAIN memorization only.
 Reports frd_attempt_c.json and frd_attempt_c_losses.json. D133 paired validation
 runner now executing without tuning from its outcomes.
+
+D133 visible-data outcome: collection v3 produced64 segments,48train/16val,
+8scene groups,32unique mosaics. Independent replay verifies320states,192source/
+after frames,256controls and64 paired instruction/image checks. All yaw actions
+reduce visible angular error;zero cross-split exact-image duplicates.6negative/
+contrast tests plus14codec/loss tests pass. This is DATA dependence, not evidence
+that a trained model uses vision. No model trained on these pairs in this phase.
+
+D127 bounded external audit outcome: pinned5complete TRAIN preview sequences
+per source: UAV-Flow294frames and UAV-Flow-Sim237frames,10,007,986imagebytes.
+All531image hashes rechecked;contiguous indices and full native log counts match.
+Start/middle/end images visually inspected. Source card license fields absent;
+calibration, coordinate/time/command semantics and site split independence remain
+unverified. Admit ZERO external episodes to action BC. Viewer assets are not
+original parquet-byte validation. Preserve native7-column real/6-column sim logs;
+do not turn achieved motion into alleged control commands. Source revisions and
+log/image hashes: reports/vla_frd_followup_20260916/external_audit.json.
+New data_expansion.html reviews74entries/659frames (includes local before/after),
+with158exact browser frame/log checks, responsive layout and preview playback.
+Playback5fps is explicitly display cadence, not verified source time.

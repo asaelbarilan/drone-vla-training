@@ -3109,3 +3109,13 @@ AdamW and200 updates (262.625s).16/16exact,16/16valid,allSTOP/HOLD correct,
 reload identical;4.617GB peakPyTorch. TotalFRD400updates across two attempts.
 Preserved13/16failure. Weighted and ordinary-token loss plots distinguish
 objectives;this is memorization, not flight/vision generalization. NoAWS.
+
+## 2026-09-16 — Observable visual pairs and external-source audit (D133/D127)
+
+Collected64local visible-pillar yaw segments with instruction/color swap pairs;
+independent replay passes320states/192frames/256controls and64paired checks.
+20focused tests pass. Retained two failed collection startups;no hidden-target
+label fallback. Added native-source playback with158browser byte/log checks.
+Audited5complete real+5external-simulator preview sequences,531frames/~10MB.
+No external action labels admitted:license/calibration/control/split semantics
+remain unresolved. No model visual-dependence or real-world readiness claimed.

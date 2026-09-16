@@ -1,0 +1,21 @@
+{
+  "contract": "direct_velocity_heading_frd_v2",
+  "samples": 64,
+  "train": 48,
+  "val": 16,
+  "scene_groups": 8,
+  "unique_source_mosaics": 32,
+  "same_image_opposite_instruction_checks": 32,
+  "same_instruction_color_swap_checks": 32,
+  "executed_yaw_segments": 64,
+  "recorded_controls": 256,
+  "visual_error_decreased_segments": 64,
+  "cross_split_image_duplicates": 0,
+  "trained_on": false,
+  "teacher": "explicit visible-pixel synthetic color teacher; never used as model fallback",
+  "limits": [
+    "flat-shaded local simulator only",
+    "yaw primitive only, not navigation/search competency",
+    "no real/external-simulator training data admitted"
+  ]
+}

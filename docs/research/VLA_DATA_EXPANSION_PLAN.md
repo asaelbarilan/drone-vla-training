@@ -141,3 +141,25 @@ Primary preview sources:
 - https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow
 - https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim
 - https://huggingface.co/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1
+
+## 2026-09-16 bounded expansion audit completed (D133/D127)
+
+Local additions:64visible-target yaw segments across8scene groups,48train/16val.
+Each source image has red/blue instructions with opposite yaw;swapping colors
+reverses labels. Full source/control replay passes. These are synthetic visual
+alignment primitives, not semantic navigation/search demonstrations;they have
+not yet been used to train the model. No broad task coverage is claimed.
+
+The five-flight acquisition above is complete for UAV-Flow(294frames) and
+UAV-Flow-Sim(237frames), using10MB of pinned viewer assets. Native logs and
+full images are retained on D:/drone_vla_pilot/external_samples_20260916_a.
+Source cards did not declare a license. Calibration, action-vs-pose semantics,
+units/coordinates/timing and group/site splits remain admission gates. Both
+sources still contribute ZERO action-training episodes. The five-episode
+Exp2VLA video audit remains future work;do not count it as completed.
+
+Evidence: reports/vla_frd_followup_20260916/{visual_audit,external_audit}.json.
+Playback: localhost8771/data_expansion.html. Next data work should resolve
+source contracts and add audited full tasks/recovery/terminal demonstrations,
+not merely multiply these short yaw frames. Reserve external domains and real
+sites for transfer evaluation before selecting development subsets.

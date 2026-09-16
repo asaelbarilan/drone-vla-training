@@ -63,3 +63,8 @@ reports/vla_local_pilot_20260916/*.html
 reports/vla_dataset_review_20260916/teacher_flights.html
 
 reports/vla_dataset_review_20260916/model_flights.html
+
+# Generated FRD follow-up playback; scripts and audit reports are tracked.
+reports/vla_dataset_review_20260916/data_expansion.html
+reports/vla_dataset_review_20260916/frd_comparison.html
+reports/vla_frd_followup_20260916/external_contact.png

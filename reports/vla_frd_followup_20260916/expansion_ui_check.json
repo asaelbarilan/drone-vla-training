@@ -1,0 +1,797 @@
+{
+  "checks": [
+    {
+      "option": 0,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 0,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 1,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 1,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 2,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 2,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 3,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 3,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 4,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 4,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 5,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 5,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 6,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 6,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 7,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 7,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 8,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 8,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 9,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 9,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 10,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 10,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 11,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 11,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 12,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 12,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 13,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 13,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 14,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 14,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 15,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 15,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 16,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 16,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 17,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 17,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 18,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 18,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 19,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 19,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 20,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 20,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 21,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 21,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 22,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 22,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 23,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 23,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 24,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 24,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 25,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 25,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 26,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 26,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 27,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 27,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 28,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 28,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 29,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 29,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 30,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 30,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 31,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 31,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 32,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 32,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 33,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 33,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 34,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 34,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 35,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 35,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 36,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 36,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 37,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 37,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 38,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 38,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 39,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 39,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 40,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 40,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 41,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 41,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 42,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 42,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 43,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 43,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 44,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 44,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 45,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 45,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 46,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 46,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 47,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 47,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 48,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 48,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 49,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 49,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 50,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 50,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 51,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 51,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 52,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 52,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 53,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 53,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 54,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 54,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 55,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 55,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 56,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 56,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 57,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 57,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 58,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 58,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 59,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 59,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 60,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 60,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 61,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 61,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 62,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 62,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 63,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 63,
+      "frame": 1,
+      "source_match": true
+    },
+    {
+      "option": 64,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 64,
+      "frame": 24,
+      "source_match": true
+    },
+    {
+      "option": 64,
+      "frame": 48,
+      "source_match": true
+    },
+    {
+      "option": 65,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 65,
+      "frame": 26,
+      "source_match": true
+    },
+    {
+      "option": 65,
+      "frame": 52,
+      "source_match": true
+    },
+    {
+      "option": 66,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 66,
+      "frame": 21,
+      "source_match": true
+    },
+    {
+      "option": 66,
+      "frame": 41,
+      "source_match": true
+    },
+    {
+      "option": 67,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 67,
+      "frame": 38,
+      "source_match": true
+    },
+    {
+      "option": 67,
+      "frame": 76,
+      "source_match": true
+    },
+    {
+      "option": 68,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 68,
+      "frame": 36,
+      "source_match": true
+    },
+    {
+      "option": 68,
+      "frame": 72,
+      "source_match": true
+    },
+    {
+      "option": 69,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 69,
+      "frame": 25,
+      "source_match": true
+    },
+    {
+      "option": 69,
+      "frame": 49,
+      "source_match": true
+    },
+    {
+      "option": 70,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 70,
+      "frame": 20,
+      "source_match": true
+    },
+    {
+      "option": 70,
+      "frame": 40,
+      "source_match": true
+    },
+    {
+      "option": 71,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 71,
+      "frame": 22,
+      "source_match": true
+    },
+    {
+      "option": 71,
+      "frame": 44,
+      "source_match": true
+    },
+    {
+      "option": 72,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 72,
+      "frame": 29,
+      "source_match": true
+    },
+    {
+      "option": 72,
+      "frame": 58,
+      "source_match": true
+    },
+    {
+      "option": 73,
+      "frame": 0,
+      "source_match": true
+    },
+    {
+      "option": 73,
+      "frame": 21,
+      "source_match": true
+    },
+    {
+      "option": 73,
+      "frame": 41,
+      "source_match": true
+    }
+  ],
+  "js_errors": [],
+  "playback": true,
+  "responsive": true
+}

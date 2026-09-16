@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "rows": 64,
+  "states": 320,
+  "source_and_after_frames": 192,
+  "controls": 256,
+  "paired_checks": 64,
+  "cross_split_duplicate_images": 0,
+  "index_sha256": "11f45ed28821bd28ca1f08d327d95de491dad387ab234cf649bbf1c904a5cf19",
+  "limits": "Teacher-data dependence only; no learned visual dependence demonstrated"
+}
