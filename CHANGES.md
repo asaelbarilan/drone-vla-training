@@ -3026,3 +3026,11 @@ Fresh Edge checks pass 12 source/label/time checks, split filters, playback and
 responsive layout; visual preview inspected. Build/check scripts pass Ruff.
 No trained model, new collection, cloud operation or evaluation-seed use.
 Existing unfinished direct-action contract draft remains separate and unused.
+
+## 2026-09-16 - Required broader VLA training data (D-127)
+
+Added an explicit staged plan for diverse paper tasks, additional photorealistic
+simulation and real-flight recordings, source/action/calibration audits, protected
+group splits and mixed-domain learning curves. User's requirement is mandatory
+beyond the tiny local pilot. Existing corpus coverage is not assigned an invented
+percentage. Updated pilot, TODO and handoff; no source imported or training run.

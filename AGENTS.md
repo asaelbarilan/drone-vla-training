@@ -16,6 +16,15 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Required VLA data expansion - D-127 (2026-09-16)
+
+Read docs/research/VLA_DATA_EXPANSION_PLAN.md. User explicitly requires both
+additional simulation domains and real-flight data; the red-tower corpus is only
+a pipeline fixture. Validate small source samples before bulk import. Freeze
+task/domain/group splits, preserve seeds1-40 and exclude1060-1064 from training.
+Local overfit success cannot complete the broader VLA goal. No new data imported
+or training/cloud job started by this planning update.
+
 ## Local-first VLA data review - D-126 (2026-09-16)
 
 User defers AWS launch: validate locally first. No training has run. The current

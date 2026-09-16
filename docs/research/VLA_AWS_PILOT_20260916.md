@@ -241,6 +241,12 @@ samples/second and the mixed-domain dataset are measured.
 
 ## Data required beyond this pilot
 
+**Required continuation (D-127):** [VLA_DATA_EXPANSION_PLAN.md](VLA_DATA_EXPANSION_PLAN.md).
+The user explicitly requires broader simulation AND real-flight training data.
+The local overfit is only a pipeline check; completing it does not fulfill the
+training goal. Follow source admission, task coverage and transfer gates there.
+
+
 More of the same adjacent frames is not enough. The paper's first authority
 screen needs semantic navigation, unknown-location search and continuous visual
 control; later coverage must include state reasoning, conditional behavior,

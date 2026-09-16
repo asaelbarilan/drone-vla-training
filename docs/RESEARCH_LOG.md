@@ -2965,3 +2965,23 @@ check student observability and terminal semantics, then run a bounded overfit.
 A small randomly initialized policy can check its own pipeline but cannot
 validate Qwen/QLoRA token masking, adapter gradients, memory fit or pretrained
 transfer. Those require a separate test of the actual proposed backbone.
+
+## 2026-09-16 - D-127: require simulation diversity and real-flight data
+
+**Decision.** User explicitly requires substantially broader simulation and real
+flight data for the final VLA. Treat the existing red-tower corpus solely as a
+pipeline fixture. Add docs/research/VLA_DATA_EXPANSION_PLAN.md as a required
+continuation of the pilot, not an optional appendix after local success.
+**Rationale.** One instruction/domain cannot support eight task categories or
+real/simulator transfer. A percentage such as "5%" is not measurable yet.
+Dataset adequacy depends on independent scenes, tasks, commands, visual domains
+and held-out performance rather than frame count or disk consumption.
+**Evidence.** Current manifest and D-126 audit establish one instruction, one
+simulator, 100 episodes and no real/external-simulator recordings. The eight
+regimes are mapped from docs/CAPABILITY_SCENARIOS.md. Candidate source names
+reuse D-123/D-125 inventories; no new availability or compatibility claim.
+**Status.** Plan required; collection/import/training remain undone. Source
+admission requires small complete-episode audits, license/provenance, calibrated
+observations, command-versus-pose semantics and protected source/group splits.
+Full traces and per-domain learning curves precede deployment claims. Sim-only
+overfit cannot fulfill the user goal. Original baselines and splits preserved.

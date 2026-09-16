@@ -10,6 +10,22 @@ becomes a decision with evidence.
 
 ---
 
+## D-127: required VLA data expansion (isolated VLA branch)
+
+See [VLA_DATA_EXPANSION_PLAN.md](docs/research/VLA_DATA_EXPANSION_PLAN.md).
+The current single-instruction synthetic corpus is a pipeline fixture only.
+
+- [ ] Finish the additive action contract and test actual controller execution.
+- [ ] Record a tiny corrected set with raw controls, pose, images and terminal evidence.
+- [ ] Audit small samples from additional simulation and real-flight sources;
+      create a source/task/domain coverage manifest before bulk downloads.
+- [ ] Add diverse training scenes across all eight paper categories.
+- [ ] Admit calibrated real-flight recordings and implement a second simulator adapter.
+- [ ] Train/evaluate progressive mixed-domain datasets with protected group splits.
+- [ ] Report independent simulator and real replay/shadow-control transfer results.
+
+No AWS launch or long training is authorized by this plan update.
+
 ## D-122 next: matched architecture comparison
 
 Exact continuation is complete: arrival94.5s, terminalSTOP97.2s, distance0.9363m,
