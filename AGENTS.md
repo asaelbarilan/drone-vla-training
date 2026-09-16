@@ -26,6 +26,9 @@ Both emit28/28 valid outputs but fail the full pilot gate (both tested STOPs
 missed). Smol visual direction8/16, constant clockwise;Qwen16/16 and both
 instruction/color-swap pair scores8/8. Exact-source0.2s execution confirms
 8/16 versus16/16 target-error reductions.176 debugger assertions pass.
+Both mixed coordinate adapters0/2complete;Qwen approaches then holds outside
+goals,Smol never translates.302calls/1202controls and20flight browser checks
+pass. Preserve prior tiny Qwen1/2success as a regression reference.
 Evidence: reports/vla_smol_mixed_20260917/REPORT.md; raw data/weights on D:.
 Local review: localhost8771/local_mixed_predictions.html. Loss plots accompany
 report. Do not equate lower loss with control success or infer broad transfer.

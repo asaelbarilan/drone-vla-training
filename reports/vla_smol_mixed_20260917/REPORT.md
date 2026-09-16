@@ -32,6 +32,7 @@ exact after400 updates, with identical save/reload. This is memorization only.
 | Tested terminal STOP correct |0/2|0/2|
 | Coordinate velocity MAE (m/s) |0.3342|0.0608|
 | Coordinate yaw MAE (rad/s) |0.1367|0.0703|
+| Trainable adapter parameters |2,442,240|16,515,072|
 | Optimization time (seconds) |140.4|466.8|
 | Peak PyTorch allocation (decimal GB) |1.050|4.546|
 | Median final generation (seconds) |2.094|3.688|
@@ -93,3 +94,35 @@ The4 reload checks in each mixed run are representative spot checks, not a
 claim of all28 predictions reloaded. Tiny Smol used full16/16 reload checks.
 Peak memory measures PyTorch allocation, not total GPU occupancy. Reported
 optimization seconds exclude loading, validation and generation diagnostics.
+
+A failure after this short400-update schedule does not establish that Smol256
+cannot learn drone actions. It establishes that this particular mixed-data,
+language-adapter-only recipe did not learn the required behavior. The400 draws
+cover252 examples only about1.59 times; isolate the failure before scaling.
+
+## Matched offline coordinate flights
+
+| Model / condition | Seed | Outcome | Final goal distance (m) |
+|---|---:|---|---:|
+| smol / trained | 1400 | timeout | 8.5407 |
+| smol / trained | 1405 | timeout | 8.0001 |
+| smol / zero_shot | 1400 | invalid_model_output | 8.5407 |
+| smol / zero_shot | 1405 | invalid_model_output | 8.0001 |
+| qwen / trained | 1400 | timeout | 4.4108 |
+| qwen / trained | 1405 | timeout | 2.0395 |
+| qwen / zero_shot | 1400 | timeout | 8.9290 |
+| qwen / zero_shot | 1405 | timeout | 8.6189 |
+
+No mixed trained flight completed. Smol never translated; Qwen approached then
+held outside the goal (4.4108m and2.0395m). The prior tiny Qwen adapter completed
+one of these two flights; the mixed adapter therefore did not preserve that
+success. Different training examples and fresh initialization prevent attributing
+this specifically to visual-task interference. Keep both checkpoints/results.
+
+All302 model calls and1202 executed controls pass exact source-image/prompt,
+control and dynamics replay audits across8runs.20 browser checks verify source
+images,raw responses,prompts,times and all8outcomes;playback/responsiveness pass.
+Repeated Qwen zero-shot predictions match all100 prior baseline calls exactly.
+
+Flight pages: [Smol](http://127.0.0.1:8771/smol_mixed_flights.html) and
+[Qwen](http://127.0.0.1:8771/qwen_mixed_flights.html).

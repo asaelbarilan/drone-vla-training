@@ -3165,3 +3165,11 @@ schedule audits. No external data, AWS, physical flights or baseline changes.
 D136 review polish:embedded the exact loss plot in an expandable viewer section;
 176 prediction checks and an exact plot-byte browser check pass. Normalized
 Matplotlib SVG trailing whitespace; Ruff and git diff whitespace checks pass.
+
+## 2026-09-17 - D136: finish matched model-flight evaluation
+
+Eight bounded offline flights complete. Both mixed adapters0/2success;Qwen
+approaches then holds4.4108m/2.0395m away,Smol never translates. Prior tiny Qwen
+1/2success is not preserved.302calls/1202controls pass exact replay;20browser
+checks and all8outcomes pass. Repeated Qwen baseline100/100calls unchanged.
+Flight pages and full limitations recorded; no cloud/physical/external-data work.

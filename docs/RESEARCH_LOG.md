@@ -3414,3 +3414,17 @@ both trained cases time out at10simulated seconds without translation
 (final distances8.5407m and8.0001m).102actual model calls and402controls pass
 exact-image/prompt/control/dynamics replay;8browser source/response checks,
 all4outcomes,playback and responsive layout pass. No teacher action substituted.
+
+D136 baseline preservation:repeated Qwen zero-shot evaluation matches all100
+prior source-image hashes,prompts and raw responses byte-for-byte across seeds
+1400/1405. Both time out at8.9290m/8.6189m,exactly as the preserved D134 baseline.
+No earlier dataset,checkpoint or baseline result was replaced.
+
+D136 final coordinate comparison:Qwen mixed0/2complete,ending4.4108m/2.0395m
+from goals after10s;approaches then HOLD. Smol mixed0/2,never translates.
+This does not preserve tiny-adapter D134 success1/2;fresh initialization and
+changed examples confound any causal attribution to task interference.
+All8matched runs(4permodel),302calls/1202controls pass exact replay;20browser
+source-response checks,all8outcomes,playback and responsiveness pass. Both
+useful-pilot gates remain failed. No additional training or external imports.
+Evidence:reports/vla_smol_mixed_20260917/REPORT.md and both flight audit JSONs.

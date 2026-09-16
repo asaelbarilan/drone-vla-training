@@ -1,0 +1,14 @@
+{
+  "prior_run": "D:\\drone_vla_pilot\\runs\\qwen_frd_comparison_20260916_a",
+  "current_run": "D:\\drone_vla_pilot\\runs\\qwen_mixed_flights_20260917_a",
+  "checks": [
+    {
+      "seed": 1400,
+      "identical_base_calls": 50
+    },
+    {
+      "seed": 1405,
+      "identical_base_calls": 50
+    }
+  ]
+}
