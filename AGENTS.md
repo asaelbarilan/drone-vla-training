@@ -16,6 +16,16 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## VLA observable fixture - D-129 (2026-09-16)
+
+Eight teacher flights1400-1407 recorded on D:/drone_vla_pilot/data/
+public_goal_fixture_20260916_v1.272 samples,204train/68val; full replay/source/
+executed-label checks pass. Reports: reports/vla_local_pilot_20260916.
+Teacher debugger is generated teacher_flights.html; explicitly no model calls.
+This coordinate/odometry task does not require vision. Model overfit remains next;
+Qwen4B pinned public base downloading to D:, isolated venv_qwen installed.
+No AWS/paid work. D127 sim/real expansion remains mandatory.
+
 ## VLA local execution contract - D-128 (2026-09-16)
 
 Active user goal: local VLA correctness pilot while user away; no AWS/paid work.

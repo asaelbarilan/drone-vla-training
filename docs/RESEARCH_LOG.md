@@ -3025,3 +3025,39 @@ scripts/audit_direct_vla_execution.py. Local component scene1401 only,
 no modelcalls, training or architecture-performance claims.
 Status: component gate passed; dataset observability/alignment/terminal evidence
 remain open. Contract does not validate real-flight attitude transforms.
+
+## 2026-09-16 - D-129: observable known-coordinate fixture before VLA overfit
+
+**Decision.** Collect eight new local diagnostic episodes on seeds1400-1407,
+validation iff seed%5==0. A small public-coordinate navigation teacher reads
+only the exact goal written in the mission instruction and declared onboard
+position/velocity/yaw. No hidden goal-bearing or map enters student inputs.
+Use a fresh empty grid configuration, seeded public goal, front/down RGB, and
+named source-yaw velocity contract. This fixture intentionally does not require
+vision to solve the task and cannot establish visual or language generalization.
+**Rationale.** An oracle that acts on occluded/private geometry can create labels
+unidentifiable from the student view. A fully observable public-coordinate task
+isolates supervision/decoder/control/terminal plumbing before semantic data.
+Record setup yaw perturbations separately and exclude them from training; they
+supply varied initial headings without changing the simulator or baselines.
+**Frozen gates.** 0.2s action horizon,20Hz actual control, goal error<=0.35m plus
+speed<=0.1m/s for terminal; until settled, zero motion is nonterminal hold.
+Teacher speeds<=1.5m/s, yaw-rate<=1.5rad/s, maximum40s per episode. All original
+commands, decoded/proposed actions, executed controls, source images, state,
+terminal evidence and failed episodes retained. Original paper task thresholds
+are unchanged: this is a separately named diagnostic dataset/fixture.
+**Status.** Implementing collection and integrity checks; not a trained VLA.
+Completing this fixture does not replace mandatory semantic/multi-task,
+photorealistic and real-flight data work in D127.
+
+
+D129 outcome: all eight teacher flights completed;272 samples (204train/68val).
+Audit recomputes272 labels using only student inputs;1194 recorded controls/poses
+replay exactly,1064 training-label/control comparisons and816 original camera
+byte comparisons pass. Each episode includes3 nonterminal holds and1 STOP.
+No identical mosaic hash crosses the split. Eight debugger run/terminal checks,
+source image, playback, responsive layout pass; teacher targets/decoded controls
+are visible and explicitly not model predictions. Data stays on D:, hashes and
+reports tracked.29 focused fixture/contract tests pass. Eligible for a tiny
+correctness overfit only, not general VLA training. Evidence: fixture_audit.json,
+fixture_hashes.json,teacher_ui_check.json under reports/vla_local_pilot_20260916.

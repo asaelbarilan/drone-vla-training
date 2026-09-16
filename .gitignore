@@ -56,3 +56,6 @@ reports/debugger/*.png
 
 # Generated dataset playback embeds original JPEGs; rebuild with scripts/build_vla_dataset_viewer.py.
 reports/vla_dataset_review_20260916/viewer.html
+
+# Generated local VLA flight replay; raw data retained on D drive.
+reports/vla_local_pilot_20260916/*.html

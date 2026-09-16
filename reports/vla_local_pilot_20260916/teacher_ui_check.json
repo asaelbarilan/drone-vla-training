@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "run": 0,
+      "outcome": "Completed",
+      "distance": "0.17 m",
+      "time": "6.85 / 6.85 s"
+    },
+    {
+      "run": 1,
+      "outcome": "Completed",
+      "distance": "0.17 m",
+      "time": "7.45 / 7.45 s"
+    },
+    {
+      "run": 2,
+      "outcome": "Completed",
+      "distance": "0.14 m",
+      "time": "7.45 / 7.45 s"
+    },
+    {
+      "run": 3,
+      "outcome": "Completed",
+      "distance": "0.20 m",
+      "time": "8.45 / 8.45 s"
+    },
+    {
+      "run": 4,
+      "outcome": "Completed",
+      "distance": "0.15 m",
+      "time": "7.35 / 7.35 s"
+    },
+    {
+      "run": 5,
+      "outcome": "Completed",
+      "distance": "0.17 m",
+      "time": "6.95 / 6.95 s"
+    },
+    {
+      "run": 6,
+      "outcome": "Completed",
+      "distance": "0.18 m",
+      "time": "8.35 / 8.35 s"
+    },
+    {
+      "run": 7,
+      "outcome": "Completed",
+      "distance": "0.16 m",
+      "time": "6.85 / 6.85 s"
+    }
+  ],
+  "js_errors": [],
+  "source_image": true,
+  "responsive": true
+}

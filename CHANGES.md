@@ -3044,3 +3044,12 @@ teacher clipping, source-yaw rotation and integral control-tick horizons.
 bound quantization/controller error (maxpositiondrift7.35mm over0.2s).
 Recorded controller speed projections and verified router expiry/hold behavior.
 No trained checkpoint, new training dataset or real-world claim.
+
+## 2026-09-16 - D-129: synchronized observable VLA fixture
+
+Added independent public-coordinate teacher collection and strict replay audit.
+Eight seeds1400-1407,272 samples,204/68 frozen split; full RGB/state/raw teacher/
+decoded action/executed control/terminal traces on D drive. All integrity gates
+pass, including1194 exact physics steps and816 saved image comparisons.
+Debugger shows teacher actions and flights; no trained predictions or semantic
+navigation claims.29 focused tests pass; no baseline or original dataset edits.
