@@ -10,21 +10,20 @@ becomes a decision with evidence.
 
 ---
 
-## D-130: local Qwen pilot failure gates
+## D131-D134: next VLA training and transfer gates
 
-- [ ] Restore train-only overfit correctness before larger training:9/16 exact,
-  0/4 STOP after200 updates; inspect value/STOP token loss and deterministic
-  sample ordering before choosing one bounded correction. Do not tune using
-  the two validation flight outcomes.
-- [ ] Resolve the control cadence: observed autoregressive generation~4.3s
-  versus0.2s action horizon. Freeze any action-head/chunk/controller-interface
-  adaptation before evaluating it; a larger GPU alone is not evidence of fit.
-- [ ] After tiny gate passes, run a separately frozen short training experiment
-  and simulation evaluation. Current rollout is failure diagnosis only.
-- [ ] Complete D127 multi-task, external-simulator and real-flight admission;
-  current local coordinate fixture is not a general-purpose drone dataset.
-- [ ] Before AWS launch AND before paid training, show exact machine, measured
-  throughput, storage retention cost and maximum spend for user approval.
+- [x] Restore train-only overfit correctness:16/16exact,allSTOP/HOLD,reload
+  identical after the two capped FRD attempts (D134). Old failures preserved.
+- [ ] Freeze a short mixed-task training protocol after reviewing the matched
+  offline comparison.64new visual segments are audited but not yet trained on;
+  test learned image/instruction dependence before claiming visual control.
+- [ ] Resolve generation latency (~4s) versus0.2s control horizon. Any typed
+  action head/chunk/controller-interface adaptation needs its own declared
+  contract and matched evaluation;do not silently change paper baselines.
+- [ ] Complete D127 multi-task, external-simulator and real-flight admission.
+  Current coordinate and visible-yaw fixtures cannot establish general autonomy.
+- [ ] Before AWS launch AND paid training, obtain approval for exact machine,
+  measured runtime, storage retention and maximum charge.
 
 ## D-127: required VLA data expansion (isolated VLA branch)
 
@@ -33,8 +32,11 @@ The current single-instruction synthetic corpus is a pipeline fixture only.
 
 - [x] D128: additive contract tested through controller/router/physics.
 - [x] D129: eight synchronized coordinate-fixture flights audited; visual capability not claimed.
-- [ ] Audit small samples from additional simulation and real-flight sources;
-      create a source/task/domain coverage manifest before bulk downloads.
+- [x] D133/D127: audit5complete real and5external-simulator preview sequences;
+      source coverage/provenance in reports/vla_frd_followup_20260916/external_audit.json.
+- [ ] Resolve source data licenses, calibration, action-vs-pose/time conventions
+      and site/group splits before admitting external samples. Exp2VLA video audit
+      remains a separate future source check.
 - [ ] Add diverse training scenes across all eight paper categories.
 - [ ] Admit calibrated real-flight recordings and implement a second simulator adapter.
 - [ ] Train/evaluate progressive mixed-domain datasets with protected group splits.

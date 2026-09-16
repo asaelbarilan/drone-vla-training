@@ -3300,3 +3300,13 @@ log/image hashes: reports/vla_frd_followup_20260916/external_audit.json.
 New data_expansion.html reviews74entries/659frames (includes local before/after),
 with158exact browser frame/log checks, responsive layout and preview playback.
 Playback5fps is explicitly display cadence, not verified source time.
+
+D133 matched-flight outcome:zero-shot0/2complete,trained1/2complete. Seed1400
+zero-shot8.929m vs trained3.630m,bothtimeout;1405zero-shot8.619m timeout vs
+trained0.113m validSTOP at7.05simsec. Only two scenes,not reliability evidence.
+186source-image/prompt and741control checks;exact replay,matched starting
+conditions and two tampering rejections pass.12browserchecks cover all4runs.
+Median generation~4s vs0.2s remains incompatible with assumed realtime cadence.
+77focused regression tests pass. Reports: vla_frd_followup_20260916/REPORT.md.
+The bounded follow-up completed;broader mixed-task training and transfer gates
+remain explicit future work. NoAWS/paid/physical flight or baseline changes.

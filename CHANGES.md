@@ -3119,3 +3119,13 @@ label fallback. Added native-source playback with158browser byte/log checks.
 Audited5complete real+5external-simulator preview sequences,531frames/~10MB.
 No external action labels admitted:license/calibration/control/split semantics
 remain unresolved. No model visual-dependence or real-world readiness claimed.
+
+## 2026-09-16 — Matched FRD flights and debugger (D133)
+
+Frozen two-scene comparison completes:zero-shot0/2,adapter1/2;trained final
+distances3.630m(timeout) and0.113m(validSTOP).186actual model calls,741controls
+pass source and replay audit;image/control mutations rejected.12browser checks
+pass,including successful-outcome display.77focused tests pass. New debugger
+frd_comparison.html preserves older pages. Added per-scene curves,latency limits,
+checkpoint hashes,coverage report and updated handoff. Original fixture bytes
+unchanged;protected seeds excluded. This is not real-world readiness.

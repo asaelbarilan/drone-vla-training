@@ -1,0 +1,30 @@
+{
+  "original_fixture_hashes_unchanged": {
+    "index.jsonl": "82d8ce1bfbd8dde831f7c36e61405260fc1337939192ffd5d2e58454b27e085e",
+    "manifest.json": "fd1b11a6bc4771f16e05e2220527d20bed295cdfbd12dc4436c5587aa22ed943",
+    "train_swift.jsonl": "b457cf04c4e7c55379fed4b964520999a0e86b4d7dcdd5cd7efafad75dd03e6f",
+    "val_swift.jsonl": "619916caf2d8e49ba860b694a1a080be9f594ad5e03c9cdadd27b907fdf9fcb0"
+  },
+  "frd_index_sha256": "409ee16d5dbe14ddfff9592d7aca732891e8d95403f0d8a957641286f02c29fe",
+  "local_seeds": [
+    1400,
+    1401,
+    1402,
+    1403,
+    1404,
+    1405,
+    1406,
+    1407,
+    1410,
+    1411,
+    1412,
+    1413,
+    1414,
+    1415,
+    1416,
+    1417
+  ],
+  "protected_seeds_absent": true,
+  "unit_tests_passed": 77,
+  "architecture_configs_adapters_plugins_core_unchanged_since_D131_start": true
+}

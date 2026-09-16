@@ -1,0 +1,12 @@
+[
+  {
+    "mutation": "image",
+    "rejected": true,
+    "check": "assert image_bytes(mosaic) == original"
+  },
+  {
+    "mutation": "control",
+    "rejected": true,
+    "check": "assert expected.velocity == actual.velocity"
+  }
+]

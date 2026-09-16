@@ -16,17 +16,26 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active FRD follow-up - D-131 (2026-09-16)
+## Active FRD follow-up - D131-D134 (2026-09-16)
 
-User authorized bounded next local phase. New direct_velocity_heading_frd_v2
-uses forward/right/down and clockwise yaw, source-heading-level not tilted body.
-Distinct JSON keys prevent old FLU checkpoint confusion.41 focused tests pass;
-272 converted labels and816 images preserve physical actions/splits exactly.
-New dataset: D:/drone_vla_pilot/data/public_goal_fixture_20260916_frd_v2.
-Reports: reports/vla_frd_followup_20260916. Old FLU corpus/checkpoint preserved.
-Next diagnose train-only action/STOP token errors before freezing bounded retry;
-matched zero-shot comparison and small visual/real/sim source audits follow.
-No AWS/paid resources or other architecture-session changes.
+Work stays isolated on codex/vla-aws-pilot-20260916. Heading-level
+forward/right/down and clockwise yaw use direct_velocity_heading_frd_v2;
+old FLU schema/data/checkpoints remain unchanged. D134 passes tiny TRAIN gate:
+16/16 exact after400 total FRD updates, reload identical,4.617GB peak allocation.
+This establishes memorization only; autoregressive latency remains about4s
+against0.2s action horizon. No realtime/real-world readiness claim.
+
+D133 adds64 audited visible-pillar yaw segments (48train/16val), with image and
+instruction contrast pairs. No model trained on those pairs yet. D127 audited
+5real+5external-simulator complete preview sequences,531frames;ZERO external
+action-training episodes admitted, pending license/calibration/control/splits.
+Source playback: localhost8771/data_expansion.html.77focused tests pass.
+Reports: reports/vla_frd_followup_20260916. Raw datasets/checkpoints on D:.
+Matched offline validation on1400/1405:zero-shot0/2,trained1/2complete.
+186calls/741controls pass exact replay and12browser checks. Review
+localhost8771/frd_comparison.html and REPORT.md before extending training.
+Preserve seeds1-40 and exclude1060-1064 from training. NoAWS/paid resources,
+physical flights, baseline changes or interference with the architecture session.
 
 ## Actual Qwen pilot - D-130 (2026-09-16)
 
