@@ -1,0 +1,10 @@
+[
+  {
+    "tamper": "source_image",
+    "rejected": true
+  },
+  {
+    "tamper": "executed_control",
+    "rejected": true
+  }
+]

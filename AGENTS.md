@@ -22,8 +22,11 @@ Actual Qwen3-VL4B NF4/r8 LoRA completed200 updates locally in269s at4.47GB
 peak PyTorch allocation.16/16 strict JSON,9/16 exact,0/4 STOP: overfit gate FAILS.
 Adapter save/reload identical16/16. Median generation4.34s vs0.2s action horizon.
 Reports in reports/vla_local_pilot_20260916; weights/data isolated on D:.
-Three capped offline model-flight diagnostics pending; simulation explicitly
-pauses during inference. Do not infer real-time/visual/transfer capability.
+Three capped offline model-flight diagnostics complete:all timeout (2.95m,
+1.75m,8.00m).150 exact source images/prompts and600 decoded controls pass replay.
+Simulation explicitly pauses during inference. Review local8771/model_flights.html
+and reports/vla_local_pilot_20260916/REPORT.md.61 focused tests pass.
+Do not infer real-time/visual/transfer capability.
 No longer training or AWS launch without revisiting the failed gate.
 
 ## VLA observable fixture - D-129 (2026-09-16)

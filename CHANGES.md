@@ -3068,3 +3068,14 @@ Inspected small public schema/log previews from UAV-Flow real/sim and Exp2VLA.
 Recorded differing native formats and next five-flight audits; no source treated
 as action-compatible merely because images/pose logs exist. Expansion plan now
 states measured coverage and zero admitted real/external-simulator episodes.
+
+## 2026-09-16 - D-130: model-driven failure replay and pilot report
+
+Completed three capped offline model flights;all timeout at2.95m,1.75m,8.00m.
+Simulation pauses during measured inference; no real-time capability claim.
+Saved exact inputs/prompts/raw predictions and controls. Independent audit
+passes150 original-image/prompt checks and600 prediction-to-control steps;
+modified-image/control negative tests fail as intended. Existing debugger shows
+actual model flights separately from teacher flights;9 browser source/response
+checks and3 terminal outcomes pass.61 unit/regression tests pass. Report and
+next blocked training/data/cadence gates recorded; no AWS or baseline changes.

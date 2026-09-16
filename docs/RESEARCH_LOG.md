@@ -3127,3 +3127,25 @@ flight's images per UAV-Flow source is insufficient. Updated expansion plan
 with current admitted coverage (only eight local coordinate diagnostics) and
 next5-complete-training-flight audits per source. Evidence: external_schema_peek.json,
 external_log_peek.json. Real/sim expansion remains required, not satisfied.
+
+D130 rollout metadata clarification: these model diagnostics begin directly at
+seeded reset, without the teacher collector's initial setup-only yaw rotations.
+This is a reset-start diagnostic of the same scenes, not an identical teacher
+trajectory reproduction. Replay checks concern each model's own saved controls.
+The copied teacher-manifest setup fields are corrected to zero explicitly;
+maximum model rollout is10simsec. No training or model output is altered.
+
+D130 rollout outcome: three10s reset-start diagnostics fail with timeouts.
+Validation1400 final distance2.951898m;validation1405 1.750476m;training-scene
+1401 8.003286m (remains in hold).150 actual model generations,600 controls.
+No further training followed validation. Independent replay verifies all150
+original mosaics/prompts and decoded-to-executed commands for all600ticks;
+exact trajectories and source links pass. Negative copies with modified RGB
+or controls are rejected. Browser9 exact image/prompt/response/time matches,
+three final outcomes,playback/responsive layout pass.61 focused unit/regression
+tests pass; lint/diff checks pass. Model inference latency is explicitly NOT
+charged to simulated time; no real-time or transfer result. Review local8771/
+model_flights.html and reports/vla_local_pilot_20260916/REPORT.md.
+Status: bounded correctness pilot completed with negative learned-policy gates;
+larger training deferred. D127 real/sim expansion and numerical/STOP learning
+and cadence issues remain open in TODO. No AWS/paid resources launched.

@@ -10,13 +10,29 @@ becomes a decision with evidence.
 
 ---
 
+## D-130: local Qwen pilot failure gates
+
+- [ ] Restore train-only overfit correctness before larger training:9/16 exact,
+  0/4 STOP after200 updates; inspect value/STOP token loss and deterministic
+  sample ordering before choosing one bounded correction. Do not tune using
+  the two validation flight outcomes.
+- [ ] Resolve the control cadence: observed autoregressive generation~4.3s
+  versus0.2s action horizon. Freeze any action-head/chunk/controller-interface
+  adaptation before evaluating it; a larger GPU alone is not evidence of fit.
+- [ ] After tiny gate passes, run a separately frozen short training experiment
+  and simulation evaluation. Current rollout is failure diagnosis only.
+- [ ] Complete D127 multi-task, external-simulator and real-flight admission;
+  current local coordinate fixture is not a general-purpose drone dataset.
+- [ ] Before AWS launch AND before paid training, show exact machine, measured
+  throughput, storage retention cost and maximum spend for user approval.
+
 ## D-127: required VLA data expansion (isolated VLA branch)
 
 See [VLA_DATA_EXPANSION_PLAN.md](docs/research/VLA_DATA_EXPANSION_PLAN.md).
 The current single-instruction synthetic corpus is a pipeline fixture only.
 
-- [ ] Finish the additive action contract and test actual controller execution.
-- [ ] Record a tiny corrected set with raw controls, pose, images and terminal evidence.
+- [x] D128: additive contract tested through controller/router/physics.
+- [x] D129: eight synchronized coordinate-fixture flights audited; visual capability not claimed.
 - [ ] Audit small samples from additional simulation and real-flight sources;
       create a source/task/domain coverage manifest before bulk downloads.
 - [ ] Add diverse training scenes across all eight paper categories.
