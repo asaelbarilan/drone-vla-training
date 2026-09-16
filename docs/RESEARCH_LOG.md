@@ -2929,3 +2929,39 @@ or ownership/cost attestation for the exact regional AMI ID.
 **Status.** Documented correction; original pilot-only costs retained with a
 supersession note. No corpus downloaded, AWS resource created, baseline changed
 or training started. Full extracted working-set size remains unknown.
+
+## 2026-09-16 - D-126: inspect original VLA supervision before training
+
+**Decision.** Follow the user's local-first instruction. QLoRA is a provisional
+memory-saving fine-tuning method, not a demonstrated solution for aerial control.
+Do not promote the current synthetic dataset as suitable for cross-simulator or
+real-world deployment. Inspect its actual saved camera sequences before training.
+**Rationale.** The current corpus contains 100 C0 expert episodes, seeds 1200-1299,
+4,765 224x224 front/down RGB mosaics and one instruction. It has no real-flight
+recordings, live sensor stream or imported external-simulator data. The seven-way
+bearing supplied to the student is calculated from simulator goal position in
+DeterministicEnv._coarse_goal_direction; omitting coordinates does not remove
+this privileged prior. A deployable equivalent or an explicitly different
+observation contract is required. Successful oracle trajectories do not certify
+learnable student labels or matched action execution.
+**Evidence.** Re-audited all 4,765 images, annotations and existing 80/20 seed
+split. Created an independent dataset viewer with original prompts/labels,
+timestamps, image hashes and exact embedded JPEG bytes. All embedded images
+are byte-identical to their sources. Browser checks verify 12 selected
+first/middle/final frames across four episodes, labels, hashes and timestamps,
+80/20 split filtering, playback advance and mobile layout; zero JavaScript errors.
+The collector calls Orchestrator without out_dir or debug_capture; the saved
+dataset contains no full pose/control logs. Viewer is sparse recorded camera
+playback, not a live flight, original trajectory debugger or model prediction.
+See reports/vla_dataset_review_20260916/SUMMARY.json, UI_CHECK.json and preview.png.
+**Status.** No training, model calls, new flight, cloud charge or split changes.
+D-124's semantic blockers remain: 35 missing terminal labels and unverified
+execution/terminal observability. External corpora remain candidates, not imported
+training data. The draft direct_vla_contract.py from the preceding turn is
+unvalidated and unused; no corrected dataset or deployed v2 policy exists.
+The viewer uses separate localhost port 8771; the architecture debugger is untouched.
+**Next.** Audit/recollect synchronized controls and pose alongside source images,
+check student observability and terminal semantics, then run a bounded overfit.
+A small randomly initialized policy can check its own pipeline but cannot
+validate Qwen/QLoRA token masking, adapter gradients, memory fit or pretrained
+transfer. Those require a separate test of the actual proposed backbone.

@@ -53,3 +53,6 @@ tmp/gemma_runtime_repair/
 # Generated portable debugger and browser QA images (rebuild from saved logs)
 reports/debugger/*.html
 reports/debugger/*.png
+
+# Generated dataset playback embeds original JPEGs; rebuild with scripts/build_vla_dataset_viewer.py.
+reports/vla_dataset_review_20260916/viewer.html

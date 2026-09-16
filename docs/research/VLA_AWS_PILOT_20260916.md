@@ -5,6 +5,16 @@ unavailable console/SSH access. User requests approval of the exact machine
 before launch and again before training; no spending amount is approved.
 Branch: `codex/vla-aws-pilot-20260916`, forked from `6be9a55`.
 
+## Latest local-first clarification - D-126
+
+User has deferred AWS launch until local pipeline checks justify it. No training
+has started. QLoRA is a provisional memory-saving choice. Current data contain
+no real flight or external-simulator recordings; coarse bearing is computed
+from simulator goal truth. See ../RESEARCH_LOG.md D-126 and
+../../reports/vla_dataset_review_20260916/REPORT.md for exact original-camera
+playback and remaining validity gaps. The old tiny-convnet route can test only
+its own pipeline and is not evidence that Qwen adapters or transfer work.
+
 ## Bounded research protocol
 
 The user requested starting with the existing plan and hardware inventory,

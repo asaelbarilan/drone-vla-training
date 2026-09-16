@@ -3012,3 +3012,17 @@ costs and corrected the old 5 USD proposal's applicability. Verified current
 AWS documentation for the screenshot's PyTorch 2.13/Ubuntu 26.04 image family;
 training dependency compatibility remains untested. Metadata/docs only; no
 infrastructure changes, secrets, training or evaluation seeds used.
+
+## 2026-09-16 - Original VLA dataset playback and provenance clarification (D-126)
+
+Added scripts/build_vla_dataset_viewer.py and a standalone camera/label viewer.
+The generated viewer embeds all 4,765 original JPEGs (byte identity verified),
+supports 100 episodes, split filtering, timestamped playback and exact prompts.
+The saved dataset has no original full pose/control logs; viewer labels identify
+recorded supervision rather than predictions, live feed or reconstructed flight.
+Documented single-instruction/simulator coverage, simulator-derived bearing prior,
+absent real/external-simulator data and provisional QLoRA rationale.
+Fresh Edge checks pass 12 source/label/time checks, split filters, playback and
+responsive layout; visual preview inspected. Build/check scripts pass Ruff.
+No trained model, new collection, cloud operation or evaluation-seed use.
+Existing unfinished direct-action contract draft remains separate and unused.

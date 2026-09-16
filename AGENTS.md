@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Local-first VLA data review - D-126 (2026-09-16)
+
+User defers AWS launch: validate locally first. No training has run. The current
+100-episode corpus has one instruction, one synthetic simulator, no real-flight
+or external-simulator data, and a simulator-truth-derived coarse goal bearing.
+Structural audit still passes; semantic training gate remains closed.
+Original camera/label playback: reports/vla_dataset_review_20260916/REPORT.md,
+localhost8771/viewer.html. All4765 embedded JPEGs match source bytes;12 exact
+browser frame/label/time checks, split filters and playback pass. Collector saved
+no original full pose/control logs; do not call this a live/3D/predicted flight.
+New direct_vla_contract.py is an unvalidated, unused draft from the prior turn.
+Next synchronize raw controls/poses/images and validate terminal observability.
+Tiny surrogate training cannot certify Qwen/QLoRA fit or adapter correctness.
+Architecture-session files/shared services remain untouched.
+
 ## Storage correction - D-125 (2026-09-16)
 
 100 GB was only a tiny-pilot disk, not the full VLA dataset budget. Published

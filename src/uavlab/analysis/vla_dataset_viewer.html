@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VLA dataset · Original camera playback</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui;background:#10161e;color:#e8eef5}*{box-sizing:border-box}
+body{max-width:1240px;margin:auto;padding:24px}h1{font-size:28px;margin:0}h2{font-size:18px;margin:0 0 12px}
+p{margin:8px 0 16px}.muted{color:#a8bacb}.notice{background:#342919;color:#ffdfa5;border:1px solid #725b30;padding:14px;border-radius:10px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.stats span{background:#1c2937;padding:8px 14px;border-radius:8px}
+.layout{display:grid;grid-template-columns:230px 1fr;gap:20px}.card{border:1px solid #344353;border-radius:12px;background:#17212c;padding:16px}
+label{display:block;margin-bottom:8px}select,button{font:inherit;background:#253647;color:inherit;border:1px solid #49627b;border-radius:7px;padding:8px;cursor:pointer}
+select{width:100%;margin-bottom:12px}#episode{height:400px}button:disabled{opacity:.45;cursor:default}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.controls select{width:auto;margin:0}#play{background:#166559}#timeline{width:100%;accent-color:#65d9c4}.flight{display:grid;grid-template-columns:minmax(224px,1fr) minmax(220px,1fr);gap:20px}
+#camera{width:100%;max-width:448px;display:block;border:1px solid #61717b;aspect-ratio:1;object-fit:contain;background:#000}
+.camera-wrap{position:relative}.camera-label{position:absolute;left:6px;background:#000b;padding:0 7px;font-size:12px;border-radius:4px}.front{top:5px}.down{top:51%}
+pre{white-space:pre-wrap;word-break:break-word;background:#0d141c;border-radius:7px;padding:12px;font:13px/1.5 ui-monospace,monospace;margin:8px 0}
+.tag{border-radius:5px;padding:2px 8px;background:#315d51}.warning{background:#694425}dl{margin:12px 0}dt{color:#a8bacb}dd{margin:0 0 9px}details{margin-top:16px}summary{cursor:pointer}
+@media(max-width:800px){.layout,.flight{grid-template-columns:1fr}#episode{height:150px}}
+</style>
+<h1>VLA dataset · Original camera playback</h1>
+<p class="muted">Recorded synthetic expert demonstrations • no trained-model predictions • no live drone feed</p>
+<div class="notice">File validation passes; training validity is unresolved. This viewer plays the exact saved JPEGs at their recorded timestamps.
+Full original trajectories and executed control logs were not saved by the collector. No 3D path is invented.</div>
+<div class="stats" id="stats"></div>
+<div class="layout"><aside class="card"><label for="split">Dataset split</label>
+<select id="split"><option value="all">All episodes</option><option value="train">Training only</option><option value="val">Validation only</option></select>
+<label for="episode">Recorded episode</label><select id="episode" size="15"></select>
+<p class="muted">“No LAND” means the saved sequence lacks a terminal label, even though the collector retained it as successful.</p></aside>
+<main class="card"><h2 id="heading"></h2><p id="episode-status"></p>
+<div class="flight"><div><div class="camera-wrap"><img id="camera" alt="Exact recorded front and downward RGB mosaic">
+<span class="camera-label front">FRONT</span><span class="camera-label down">DOWNWARD</span></div>
+<p class="muted" id="source"></p></div><section><h2>Recorded supervision</h2>
+<p id="instruction"></p><dl><dt>Coarse goal direction (simulator-derived prior)</dt><dd id="hint"></dd>
+<dt>Original assistant target</dt><dd><pre id="target"></pre></dd>
+<dt>Decoded label geometry</dt><dd id="decoded"></dd></dl>
+<p class="muted">These are displacement/yaw labels converted from C0 commands. They are neither measured vehicle motion nor model predictions. LAND is the historical terminal symbol, not evidence of a physical landing.</p></section></div>
+<div class="controls"><button id="first">First</button><button id="previous">Previous</button><button id="play">Play</button><button id="next">Next</button><button id="last">Last</button>
+<label for="speed" style="margin:0">Speed</label><select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select><span id="time"></span></div>
+<label for="timeline">Saved frame</label><input id="timeline" type="range" min="0" value="0" step="1">
+<details><summary>Exact training prompt</summary><pre id="prompt"></pre></details>
+<details><summary>Source identity and integrity</summary><pre id="identity"></pre></details>
+</main></div>
+<script id="dataset" type="application/json">__DATASET_JSON__</script>
+<script>
+"use strict";
+const data=JSON.parse(document.getElementById('dataset').textContent), el=id=>document.getElementById(id);
+let seed=1201, index=0, timer=null, playing=false;
+const rows=()=>data.episodes[String(seed)];
+function pause(){playing=false;clearTimeout(timer);timer=null;el('play').textContent='Play';}
+function render(){
+ const r=rows()[index], meta=data.summaries.find(s=>s.seed===seed);
+ el('heading').textContent='Episode '+seed+' · '+meta.split+' · '+meta.samples+' saved frames';
+ el('episode-status').textContent=meta.land_labels?meta.land_labels+' LAND label(s) saved':'No LAND label saved in this episode';
+ el('episode-status').className='tag'+(meta.land_labels?'':' warning');
+ el('camera').src=r.image_url;el('source').textContent=r.image;
+ el('hint').textContent=r.coarse_goal_direction;el('target').textContent=r.assistant_target;
+ const a=r.target, f=5*a.forward_bin/98, down=-5+10*a.vertical_bin/98, yaw=-1.1+2.2*a.yaw_bin/98;
+ el('decoded').textContent='Forward '+f.toFixed(3)+' m; down '+down.toFixed(3)+' m; clockwise yaw '+yaw.toFixed(3)+' rad; LAND='+a.land+'.';
+ el('time').textContent=(r.t_sim_ns/1e9).toFixed(2)+' s · frame '+(index+1)+'/'+rows().length;
+ el('timeline').max=rows().length-1;el('timeline').value=index;
+ el('prompt').textContent=r.prompt;
+ el('identity').textContent=JSON.stringify({image:r.image,seed:r.seed,split:r.split,tick:r.tick,t_sim_ns:r.t_sim_ns,sha256:r.sha256},null,2);
+ el('previous').disabled=el('first').disabled=index===0;el('next').disabled=el('last').disabled=index===rows().length-1;
+}
+function schedule(){
+ if(!playing)return;if(index>=rows().length-1){pause();return;}
+ const delay=(rows()[index+1].t_sim_ns-rows()[index].t_sim_ns)/1e6/Number(el('speed').value);
+ timer=setTimeout(()=>{index++;render();schedule();},delay);
+}
+function selectEpisode(value){pause();seed=Number(value);index=0;render();}
+function fill(){
+ const visible=data.summaries.filter(s=>el('split').value==='all'||s.split===el('split').value);
+ el('episode').replaceChildren(...visible.map(s=>{const o=document.createElement('option');o.value=s.seed;o.textContent=s.seed+' · '+s.split+' · '+(s.land_labels?'LAND':'no LAND');return o;}));
+ if(!visible.some(s=>s.seed===seed))seed=visible[0].seed;el('episode').value=seed;selectEpisode(seed);
+}
+el('split').onchange=fill;el('episode').onchange=e=>selectEpisode(e.target.value);
+el('timeline').oninput=e=>{pause();index=Number(e.target.value);render();};
+el('first').onclick=()=>{pause();index=0;render();};el('last').onclick=()=>{pause();index=rows().length-1;render();};
+el('previous').onclick=()=>{pause();index=Math.max(0,index-1);render();};el('next').onclick=()=>{pause();index=Math.min(rows().length-1,index+1);render();};
+el('play').onclick=()=>{if(playing){pause();return;}if(index===rows().length-1)index=0;playing=true;el('play').textContent='Pause';render();schedule();};
+el('speed').onchange=()=>{if(playing){clearTimeout(timer);schedule();}};
+const m=data.manifest;
+for(const value of [data.summaries.length+' episodes',m.samples.toLocaleString()+' images',m.train_samples+' train / '+m.validation_samples+' validation','1 instruction · 1 simulator','0 real-flight recordings']){const s=document.createElement('span');s.textContent=value;el('stats').append(s);}
+el('instruction').textContent=m.instruction;fill();
+</script></html>
