@@ -16,6 +16,24 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## VLA AWS pilot preparation - D-123/D-124 (2026-09-16)
+
+This isolated branch recovers the VLA plan and audits local data; it does not
+replace the C5 work below. Read docs/research/VLA_AWS_PILOT_20260916.md.
+Recommend one g6.2xlarge (24 GB L4/32 GiB RAM, Stockholm public Linux compute
+1.03688 USD/hour). Actual AWS host/quota/credits remain unknown. Console tool
+fails during Windows sandbox startup; no SSH/AWS profile is configured. User
+requests exact machine approval before launch and measured-budget approval
+before training. No machine was launched; no training or spend was performed.
+Strict audit/export passes with 4,765 samples and unchanged 80/20 seed split;
+97 focused tests pass. Data is not training-ready: 35/100 episodes have no LAND,
+codec changes teacher hold/speed/yaw, and all data share one task/domain.
+Prompt-drift claim was a Windows-decoding false alarm; UTF-8 prompts match.
+Do not treat the old three-epoch script as the approved pilot. Do not train on
+1-40 or pilot dev evaluation 1060-1064. Original baselines/actions untouched.
+Next: restore AWS access, validate teacher execution and terminal observability,
+then separately approve a bounded overfit/short-run and exact debugger evaluation.
+
 ## Latest: D-122 continuation succeeds (2026-09-16)
 
 Read reports/continuation_20260916/REPORT.md and STATE.json FIRST. Exact cached

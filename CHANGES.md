@@ -2985,3 +2985,17 @@ startup failure. User wants machine approval before launch and again before
 training. Added credential-free host inventory script; local inventory is
 explicitly the laptop, not the AWS instance. Pilot/transfer plan and limitations
 are in docs/research/VLA_AWS_PILOT_20260916.md. Existing baselines and splits intact.
+
+
+## 2026-09-16 - VLA data preflight and portable export (D-124)
+
+Added strict separate qwen_vla_preflight module: image decoding/hashes, 1:1
+annotation coverage, prompt agreement, exact target types, manifest counts,
+seed separation and explicit portable image root. New export refuses overwrite
+and copies only audited dataset files. Preserved all 4,765 original images,
+labels and the 80/20 seed split; no forbidden development/evaluation seeds used.
+Measured missing terminal labels in 35/100 successful episodes and documented
+analytical teacher-codec mismatches. Corrected initial prompt-drift claim:
+Windows-default decoding caused the false alarm; UTF-8 prompts match exactly.
+97 focused unit/contract tests pass; all new Python files pass Ruff. No model
+training, model prediction, simulation flight, cloud job or spend occurred.

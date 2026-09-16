@@ -2885,3 +2885,26 @@ browser kernel fails during Windows sandbox initialization. No credentials read.
 Full gates, cost proposal, data coverage and transfer gaps:
 docs/research/VLA_AWS_PILOT_20260916.md. User approval must cover concrete machine,
 uptime and disk retention, then measured training budget separately.
+
+
+## 2026-09-16 - D-124: strict portable Qwen data preflight, semantic gate still closed
+
+**Decision.** Add a separate CPU-only preflight/export tool. Preserve historical
+collector, inference profiles, actions, evaluation seeds and training files.
+Never equate structural validity with executable teacher supervision.
+**Rationale.** Existing ms-swift absolute Windows paths cannot transfer as-is;
+count-only validation misses duplicate/missing coverage and corrupt images.
+The teacher-to-AeroVLA conversion changes hold, velocity, yaw and duration.
+**Evidence.** Source audit: 4,765 valid RGB images; 3,744 train/1,021 validation,
+80/20 seeds, 65 terminal examples, 35 successful episodes with no terminal label.
+All images hash-identical in portable export; split/label identities unchanged.
+No held-out seeds 1-40 or pilot evaluation seeds 1060-1064 used. 97 focused
+unit/contract tests and Ruff pass. See source_audit.json, portable_audit.json and
+teacher_contract_audit.json under reports/vla_aws_pilot_20260916.
+**Correction.** An initial console comparison reported all prompts different.
+It decoded files with the Windows default instead of UTF-8. The strict UTF-8
+comparison confirms zero prompt differences; no prompt rewrite was performed.
+**Status.** Data structure/export validated; training_ready=false. Analytical
+hold maps to 0.5102 m/s forward, and 2.5 m/s forward maps to 1 m/s; these are
+codec counterexamples, not model predictions or a flight score. Overfit, bounded
+training, actual predicted-flight debugger and transfer evaluation remain open.

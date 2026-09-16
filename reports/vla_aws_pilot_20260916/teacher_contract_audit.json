@@ -1,0 +1,128 @@
+{
+  "kind": "analytical_teacher_codec_counterexamples_not_model_predictions",
+  "native_codec_modified": false,
+  "cases": [
+    {
+      "case": "nonterminal_hold",
+      "teacher_velocity_enu_mps": [
+        0,
+        0,
+        0
+      ],
+      "teacher_yaw_rate_rps": 0,
+      "label_horizon_s": 0.25,
+      "label": {
+        "forward_bin": 1,
+        "vertical_bin": 49,
+        "yaw_bin": 49,
+        "land": false
+      },
+      "decoded_offsets": {
+        "forward_m": 0.0510204081632653,
+        "down_m": 0.0,
+        "yaw_delta_rad": 0.0
+      },
+      "decoded_velocity_enu_mps": [
+        0.510204081632653,
+        0.0,
+        -0.0
+      ],
+      "decoded_yaw_rate_rps": -0.0,
+      "decoded_duration_s": 0.1,
+      "velocity_error_mps": 0.510204081632653,
+      "yaw_rate_error_rps": 0.0
+    },
+    {
+      "case": "forward",
+      "teacher_velocity_enu_mps": [
+        2.5,
+        0,
+        0
+      ],
+      "teacher_yaw_rate_rps": 0,
+      "label_horizon_s": 0.25,
+      "label": {
+        "forward_bin": 12,
+        "vertical_bin": 49,
+        "yaw_bin": 49,
+        "land": false
+      },
+      "decoded_offsets": {
+        "forward_m": 0.6122448979591837,
+        "down_m": 0.0,
+        "yaw_delta_rad": 0.0
+      },
+      "decoded_velocity_enu_mps": [
+        1.0,
+        0.0,
+        -0.0
+      ],
+      "decoded_yaw_rate_rps": -0.0,
+      "decoded_duration_s": 0.6122448979591837,
+      "velocity_error_mps": 1.5,
+      "yaw_rate_error_rps": 0.0
+    },
+    {
+      "case": "lateral_left",
+      "teacher_velocity_enu_mps": [
+        0,
+        2.5,
+        0
+      ],
+      "teacher_yaw_rate_rps": 0,
+      "label_horizon_s": 0.25,
+      "label": {
+        "forward_bin": 12,
+        "vertical_bin": 49,
+        "yaw_bin": 0,
+        "land": false
+      },
+      "decoded_offsets": {
+        "forward_m": 0.6122448979591837,
+        "down_m": 0.0,
+        "yaw_delta_rad": -1.1
+      },
+      "decoded_velocity_enu_mps": [
+        0.2777119110768841,
+        0.545637159221287,
+        -0.0
+      ],
+      "decoded_yaw_rate_rps": 1.1,
+      "decoded_duration_s": 1.0,
+      "velocity_error_mps": 1.9739954455293498,
+      "yaw_rate_error_rps": 1.1
+    },
+    {
+      "case": "yaw_only",
+      "teacher_velocity_enu_mps": [
+        0,
+        0,
+        0
+      ],
+      "teacher_yaw_rate_rps": 0.4,
+      "label_horizon_s": 0.25,
+      "label": {
+        "forward_bin": 0,
+        "vertical_bin": 49,
+        "yaw_bin": 45,
+        "land": false
+      },
+      "decoded_offsets": {
+        "forward_m": 0.0,
+        "down_m": 0.0,
+        "yaw_delta_rad": -0.0897959183673469
+      },
+      "decoded_velocity_enu_mps": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "decoded_yaw_rate_rps": 0.897959183673469,
+      "decoded_duration_s": 0.1,
+      "velocity_error_mps": 0.0,
+      "yaw_rate_error_rps": 0.49795918367346903
+    }
+  ],
+  "conclusion": "Do not equate parseable imitation labels with executable teacher actions.",
+  "gate": "blocked pending teacher execution/terminal-observability audit"
+}

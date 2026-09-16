@@ -34,3 +34,12 @@ meets the old claim elsewhere needs to be able to find out that it was withdrawn
 See [CAPABILITY_SCENARIOS.md](CAPABILITY_SCENARIOS.md) for the eight capability
 regimes and latest external ASP-UAV design reference (nine architecture conditions).
 The original concise design PDF in this folder is an earlier navigation-centric draft.
+
+
+## VLA AWS pilot preparation (2026-09-16)
+
+See [VLA_AWS_PILOT_20260916.md](research/VLA_AWS_PILOT_20260916.md) for recovered
+training plans, latest paper alignment, exact local data audit, current public
+resource/pricing checks, one-GPU proposal and uncompleted training/transfer gates.
+Work is isolated on `codex/vla-aws-pilot-20260916`. No cloud launch or training
+budget is approved; user requests approval before launch and before training.
