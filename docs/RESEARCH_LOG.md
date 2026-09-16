@@ -3156,3 +3156,39 @@ trailing16-step mean, and12 complete passes by example category. Final8 updates
 are a partial pass, excluded only from the complete-pass category panel. Loss
 is assistant-token cross-entropy under teacher forcing, not action/flight error.
 No validation-loss sequence was recorded; do not invent one. PNG/SVG inspected.
+
+## 2026-09-16 - D-131: heading-level FRD contract and controlled local follow-up
+
+User approves next bounded local phase and explicitly prefers the checked drone
+convention. Add direct_velocity_heading_frd_v2: positive forward/right/down,
+positive clockwise yaw rate viewed from above. Source yaw remains ENU radians
+as declared odometry, decoded once into fixed ENU velocity for0.2s. This is a
+heading-level frame, NOT a fully tilted aircraft-body frame. Keep65 bins and
+ranges +/-5m/s, +/-1.5rad/s, neutral32, distinct hold and mission STOP.
+Use different JSON keys forward_bin/right_bin/down_bin/yaw_cw_bin/stop so an
+old FLU checkpoint cannot silently pass as FRD. No legacy contract edits.
+
+Convert the audited272-row fixture into a new version with image hashes,
+raw-command provenance, exact decoded physical-action equivalence, same splits
+and original source logs preserved. First diagnose the old checkpoint's
+per-field/token errors on the SAME16 TRAIN examples only; no validation-guided
+changes. Then freeze one bounded correction before retrying. Each attempt <=200
+updates/20min, same Qwen4B, localGPU, no sweeps/cloud. A passing overfit gate
+is required before broader training. Freeze matched base-versus-trained
+comparison conditions and retain invalid actions/timeouts. New data expansion
+is small and requires identifiable visual/instruction-driven labels, with no
+privileged answer leakage. Audit small external sim/real source samples before
+any bulk acquisition. Existing architecture task/evaluation definitions and
+seeds1-40,1060-1064 are untouched. Evidence: D128-D130 and explicit user request.
+Status: implementation starting.
+
+D131 contract outcome: new FRD schema rejects old FLU JSON and vice versa.
+Explicit cardinal/90-degree-heading tests and4096 randomized exact physical
+command equivalence checks pass;41 focused legacy/new tests pass. New dataset
+D:/drone_vla_pilot/data/public_goal_fixture_20260916_frd_v2 retains272rows,
+204/68 split and all816 image hashes;all272 decoded physical actions equal
+the old labels exactly. Original source index hash verified against committed
+D129 audit before conversion and unchanged afterward. This is a coordinate
+conversion only, not extra data or a capability improvement. See new report
+reports/vla_frd_followup_20260916/conversion.json. Old logs remain explicitly
+FLU provenance. Real-platform/full-attitude conversion still unvalidated.

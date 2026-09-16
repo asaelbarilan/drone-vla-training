@@ -3086,3 +3086,10 @@ Added reproducible PNG/SVG plots of all200 recorded training losses, trailing
 16-update average, and STOP/HOLD/motion means per complete16-example pass.
 Explicitly labels absent validation-loss measurements and failed exact-action
 criteria. No new training, smoothing of source records or extrapolated metrics.
+
+## 2026-09-16 - D-131: versioned heading-level FRD contract
+
+Added separate forward/right/down, clockwise-yaw codec with distinct JSON keys.
+Preserved legacy contracts and checkpoints.41 focused tests pass, including4096
+physical-equivalence cases;new converted dataset keeps272labels,204/68 split,
+816 exact camera hashes and exact decoded actions. Source files unchanged.

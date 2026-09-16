@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Active FRD follow-up - D-131 (2026-09-16)
+
+User authorized bounded next local phase. New direct_velocity_heading_frd_v2
+uses forward/right/down and clockwise yaw, source-heading-level not tilted body.
+Distinct JSON keys prevent old FLU checkpoint confusion.41 focused tests pass;
+272 converted labels and816 images preserve physical actions/splits exactly.
+New dataset: D:/drone_vla_pilot/data/public_goal_fixture_20260916_frd_v2.
+Reports: reports/vla_frd_followup_20260916. Old FLU corpus/checkpoint preserved.
+Next diagnose train-only action/STOP token errors before freezing bounded retry;
+matched zero-shot comparison and small visual/real/sim source audits follow.
+No AWS/paid resources or other architecture-session changes.
+
 ## Actual Qwen pilot - D-130 (2026-09-16)
 
 Actual Qwen3-VL4B NF4/r8 LoRA completed200 updates locally in269s at4.47GB

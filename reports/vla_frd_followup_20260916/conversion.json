@@ -1,0 +1,17 @@
+{
+  "source": "D:\\drone_vla_pilot\\data\\public_goal_fixture_20260916_v1",
+  "source_contract": "direct_velocity_yaw_level_v1",
+  "contract": "direct_velocity_heading_frd_v2",
+  "source_index_sha256": "82d8ce1bfbd8dde831f7c36e61405260fc1337939192ffd5d2e58454b27e085e",
+  "index_sha256": "409ee16d5dbe14ddfff9592d7aca732891e8d95403f0d8a957641286f02c29fe",
+  "samples": 272,
+  "exact_action_equivalence_checks": 272,
+  "unchanged_image_checks": 816,
+  "samples_by_split": {
+    "train": 204,
+    "val": 68
+  },
+  "source_run_logs": "Original dataset/runs: FLU provenance, not FRD execution logs",
+  "seed_split_unchanged": true,
+  "training_gate": "tiny overfit only; not general training data"
+}
