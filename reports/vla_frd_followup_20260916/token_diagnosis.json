@@ -1,0 +1,4240 @@
+{
+  "source": "old FLU adapter c; TRAIN subset only",
+  "teacher_forced_not_generation": true,
+  "summary": {
+    "format": {
+      "tokens": 432,
+      "mean_nll": 7.995621863134386e-06,
+      "top1_correct": 432
+    },
+    "number": {
+      "tokens": 127,
+      "mean_nll": 0.08322111113238487,
+      "top1_correct": 123
+    },
+    "boolean": {
+      "tokens": 16,
+      "mean_nll": 0.3539046014793712,
+      "top1_correct": 12
+    }
+  },
+  "examples": [
+    {
+      "decision_id": "public_goal_s1401-decision-0032",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": true
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 5.340433563105762e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 9.059865078597795e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.9802276912960224e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 7.414542778860778e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.07415783405303955,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.145764938177308e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.602820692729438e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.768360213347478e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0012434140080586076,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.6238969187252223e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.437280717364047e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 1.728519782773219e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 5.245195097813848e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.960446742392378e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.0265558760002023e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.5139465176616795e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "true",
+          "kind": "boolean",
+          "nll": 0.7601094841957092,
+          "top_token": "false",
+          "correct": false
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 8.583032467868179e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1402-decision-0032",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": true
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 3.480850500636734e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 5.245195097813848e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.3841830625315197e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.062299427052494e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.015508177690207958,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.887569048150908e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 9.417489309271332e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0008593680104240775,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.969590397900902e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.748573807475623e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 4.1960789531003684e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 4.887569048150908e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.510157047363464e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 9.536738616588991e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.50339189733495e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.4662635294371285e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "true",
+          "kind": "boolean",
+          "nll": 0.8286318182945251,
+          "top_token": "false",
+          "correct": false
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 8.702239938429557e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1403-decision-0032",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": true
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 3.182837463100441e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.3841830625315197e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 6.246371776796877e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.009029271081089973,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.6491513785440475e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 5.722029527532868e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0005098473629914224,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.528532761265524e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.483612312673358e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 8.761498611420393e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 5.006777428206988e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.960446742392378e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 9.536738616588991e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.50339189733495e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 7.748573807475623e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "true",
+          "kind": "boolean",
+          "nll": 0.7604116201400757,
+          "top_token": "false",
+          "correct": false
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 9.298280929215252e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1404-decision-0034",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": true
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 6.985420623095706e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 8.106198947643861e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.3378546504536644e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 7.712543447269127e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.014135240577161312,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.0265558760002023e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.768360213347478e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.887569048150908e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0005838358192704618,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.0874729418428615e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 3.576278118089249e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.2172682292875834e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 8.106198947643861e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.0265558760002023e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.4424220353248529e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "true",
+          "kind": "boolean",
+          "nll": 0.8286594152450562,
+          "top_token": "false",
+          "correct": false
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 8.22540732769994e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1401-decision-0031",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 4.994744449504651e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 7.271740287251305e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.9802276912960224e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 6.0794889577664435e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.06574394553899765,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.9073468138230965e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.887569048150908e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.001258058357052505,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.1709168979432434e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.390948667307384e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.2172682292875834e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 5.960446742392378e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.960446742392378e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.264974000354414e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.7404405298293568e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.5785521268844604,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 6.6756979322235566e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1402-decision-0031",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 3.313963316031732e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.7418097943154862e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.4676019165781327e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.015269643627107143,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.006777428206988e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 8.34461570775602e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0007720588473603129,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.480850500636734e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.629365427419543e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.52720492426306e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 4.768360213347478e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.6756979322235566e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 8.344646857949556e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.145764938177308e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.156323378381785e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.5787485837936401,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 7.033323527139146e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1403-decision-0031",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 5.531158240046352e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 2.3841830625315197e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.00012396997772157192,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.014518099837005138,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.364403477869928e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 9.536697689327411e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0009436921682208776,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 4.434487345861271e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.006777428206988e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.9073468138230965e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 5.006777428206988e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 6.079655122448457e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.410734163684538e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.264974000354414e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.6355512738227844,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 9.059865078597795e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1404-decision-0033",
+      "target": {
+        "vx_body_bin": 32,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 7.188061863416806e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 8.4638240878121e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.576272320060525e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 8.856858039507642e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.011504970490932465,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.145764938177308e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.291525328881107e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 5.960446742392378e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0008598444401286542,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.135155202471651e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.960446742392378e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.768370445162873e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.8729025871143676e-05,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 8.4638240878121e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 3.3378546504536644e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 2.3841830625315197e-06,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.4305012882687151e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.6356790065765381,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 9.298280929215252e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1401-decision-0000",
+      "target": {
+        "vx_body_bin": 33,
+        "vy_body_bin": 22,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 0,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 0.00010859376925509423,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 4.291525328881107e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 9.298280929215252e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.576272320060525e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.05780326575040817,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.6838598251342773,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 0.00020954797219019383,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.033323527139146e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.000479344860650599,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0009345216676592827,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.490105023549404e-05,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 8.106198947643861e-06,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 1.1205610462639015e-05,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.483612312673358e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.000270091783022508,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.012636826373636723,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 1.2755313036905136e-05,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 9.298280929215252e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "0",
+          "kind": "number",
+          "nll": 0.00020597243565134704,
+          "top_token": "0",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.583032467868179e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0005416594794951379,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 1.1324817933200393e-05,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1401-decision-0026",
+      "target": {
+        "vx_body_bin": 35,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 9.285972191719338e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 3.4570634852570947e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.2874520507466514e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.2186455882765586e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.004098231438547373,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "5",
+          "kind": "number",
+          "nll": 1.7994862794876099,
+          "top_token": "2",
+          "correct": false
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.861018856492592e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.172316494077677e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 8.010543388081715e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0012953233672305942,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 0.00011264643399044871,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.629365427419543e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.145764938177308e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.003213244490325451,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 1.9073468138230965e-06,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 1.4543427823809907e-05,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.271740287251305e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 5.006777428206988e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.02056514099240303,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.038066316395998,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 6.6756979322235566e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1402-decision-0022",
+      "target": {
+        "vx_body_bin": 41,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 33,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 8.380061626667157e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.0847986231965479e-05,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.9550132492440753e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.529942543740617e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.7418097943154862e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.00930402148514986,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": "1",
+          "kind": "number",
+          "nll": 2.770185708999634,
+          "top_token": "2",
+          "correct": false
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 1.4305104514278355e-06,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.794906312279636e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.00013851160474587232,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.02439620904624462,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 5.209310256759636e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.6756979322235566e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.7881233361549675e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 8.344646857949556e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.7636119723320007,
+          "top_token": "3",
+          "correct": false
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 1.0847986231965479e-05,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.510157047363464e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.2259063422679901,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 5.602820692729438e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0019386084750294685,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 1.5258672647178173e-05,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1403-decision-0019",
+      "target": {
+        "vx_body_bin": 42,
+        "vy_body_bin": 32,
+        "vz_body_bin": 32,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 7.152301259338856e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.4305012882687151e-05,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.658331868587993e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 3.933898824470816e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.01525743305683136,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.27195504307746887,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.152531907195225e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.4676019165781327e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.03117489442229271,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 7.497983460780233e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.722029527532868e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.5139465176616795e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.07177119702100754,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 7.033323527139146e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.483612312673358e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.145764938177308e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 7.152555099310121e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.007632853463292122,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 4.410734163684538e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 2.0265558760002023e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 2.3841830625315197e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.011079574935138226,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 1.0251946150674485e-05,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1404-decision-0015",
+      "target": {
+        "vx_body_bin": 41,
+        "vy_body_bin": 32,
+        "vz_body_bin": 34,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 6.508615479106084e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 5.006777428206988e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.3589766240329482e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.0531076592742465e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.4066597032069694e-05,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.011218918487429619,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": "1",
+          "kind": "number",
+          "nll": 1.6971458196640015,
+          "top_token": "2",
+          "correct": false
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.9073468138230965e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 8.22540732769994e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.3470558769768104e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.07538682967424393,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 4.434487345861271e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.867782187531702e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.11448020488023758,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 6.9141146923357155e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.125986263010418e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 5.364403477869928e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.002742341486737132,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0002076410164590925,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 8.583032467868179e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1406-decision-0010",
+      "target": {
+        "vx_body_bin": 41,
+        "vy_body_bin": 33,
+        "vz_body_bin": 34,
+        "yaw_rate_bin": 36,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 0.00010549465514486656,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 3.6954811548639555e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.0609570381348021e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.814689989667386e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.010012166574597359,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": "1",
+          "kind": "number",
+          "nll": 0.4682736098766327,
+          "top_token": "1",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.264974000354414e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 8.583032467868179e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 5.364403477869928e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.13591152429580688,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 4.291525328881107e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 3.290122185717337e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.867782187531702e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 3.2186455882765586e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.0009484559996053576,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 9.65590606938349e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.6756979322235566e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.935142715112306e-05,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "6",
+          "kind": "number",
+          "nll": 0.0008834273321554065,
+          "top_token": "6",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.9073468138230965e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 5.483612312673358e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0025096607860177755,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 7.510157047363464e-06,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1407-decision-0004",
+      "target": {
+        "vx_body_bin": 41,
+        "vy_body_bin": 32,
+        "vz_body_bin": 35,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 0.00012611546844709665,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 4.529942543740617e-06,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.0609570381348021e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 3.3378546504536644e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.005023476667702198,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": "1",
+          "kind": "number",
+          "nll": 0.2135826051235199,
+          "top_token": "1",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 7.152555099310121e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.318072337307967e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": -0.0,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.6491513785440475e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.10595894604921341,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841830625315197e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 0.00010787858627736568,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 7.748573807475623e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.5497195136049413e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 3.576278118089249e-07,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "5",
+          "kind": "number",
+          "nll": 0.0009466695482842624,
+          "top_token": "5",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.4638240878121e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 8.940656698541716e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.198863957251888e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.008052267134189606,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 8.344646857949556e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 1.311301275563892e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0010676642414182425,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 1.2159273865108844e-05,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 9.536738616588991e-07,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "decision_id": "public_goal_s1407-decision-0030",
+      "target": {
+        "vx_body_bin": 34,
+        "vy_body_bin": 32,
+        "vz_body_bin": 33,
+        "yaw_rate_bin": 32,
+        "stop": false
+      },
+      "tokens": [
+        {
+          "token": "{\"",
+          "kind": "format",
+          "nll": 8.296622399939224e-05,
+          "top_token": "{\"",
+          "correct": true
+        },
+        {
+          "token": "vx",
+          "kind": "format",
+          "nll": 1.6569954823353328e-05,
+          "top_token": "vx",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 2.610649426060263e-05,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 4.172316494077677e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.7881377516459906e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.47690242528915405,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "4",
+          "kind": "number",
+          "nll": 0.21383513510227203,
+          "top_token": "4",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "vy",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "vy",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.6689286894688848e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 5.245195097813848e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 4.6491513785440475e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.020695460960268974,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 4.768370445162873e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "v",
+          "kind": "format",
+          "nll": 7.497983460780233e-05,
+          "top_token": "v",
+          "correct": true
+        },
+        {
+          "token": "z",
+          "kind": "format",
+          "nll": 2.3841855067985307e-07,
+          "top_token": "z",
+          "correct": true
+        },
+        {
+          "token": "_body",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "_body",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 1.0251946150674485e-05,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 3.576278118089249e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": -0.0,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 0.0025345126632601023,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "yaw",
+          "kind": "format",
+          "nll": 1.1920922133867862e-06,
+          "top_token": "yaw",
+          "correct": true
+        },
+        {
+          "token": "_rate",
+          "kind": "format",
+          "nll": 7.629365427419543e-06,
+          "top_token": "_rate",
+          "correct": true
+        },
+        {
+          "token": "_bin",
+          "kind": "format",
+          "nll": 6.198863957251888e-06,
+          "top_token": "_bin",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 4.0531076592742465e-06,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "3",
+          "kind": "number",
+          "nll": 2.264974000354414e-06,
+          "top_token": "3",
+          "correct": true
+        },
+        {
+          "token": "2",
+          "kind": "number",
+          "nll": 0.0003921216703020036,
+          "top_token": "2",
+          "correct": true
+        },
+        {
+          "token": ",\"",
+          "kind": "format",
+          "nll": 5.960462772236497e-07,
+          "top_token": ",\"",
+          "correct": true
+        },
+        {
+          "token": "stop",
+          "kind": "format",
+          "nll": 5.364403477869928e-06,
+          "top_token": "stop",
+          "correct": true
+        },
+        {
+          "token": "\":",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "\":",
+          "correct": true
+        },
+        {
+          "token": "false",
+          "kind": "boolean",
+          "nll": 0.0007191693875938654,
+          "top_token": "false",
+          "correct": true
+        },
+        {
+          "token": "}",
+          "kind": "format",
+          "nll": 1.0013530300057027e-05,
+          "top_token": "}",
+          "correct": true
+        },
+        {
+          "token": "<|im_end|>",
+          "kind": "format",
+          "nll": 1.1920928244535389e-07,
+          "top_token": "<|im_end|>",
+          "correct": true
+        },
+        {
+          "token": "\n",
+          "kind": "format",
+          "nll": 1.0728830375228426e-06,
+          "top_token": "\n",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

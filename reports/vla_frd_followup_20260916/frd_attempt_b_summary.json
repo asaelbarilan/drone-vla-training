@@ -1,0 +1,13 @@
+{
+  "updates": 200,
+  "optimization_seconds": 266.875,
+  "peak_allocated_bytes": 4617192960,
+  "valid_count": 16,
+  "exact_count": 13,
+  "hold_stop_exact": true,
+  "reload_identical": true,
+  "passed": false,
+  "zero_shot_exact": 4,
+  "zero_shot_valid": 16,
+  "median_generation_seconds": 3.945499999999811
+}

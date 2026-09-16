@@ -3093,3 +3093,11 @@ Added separate forward/right/down, clockwise-yaw codec with distinct JSON keys.
 Preserved legacy contracts and checkpoints.41 focused tests pass, including4096
 physical-equivalence cases;new converted dataset keeps272labels,204/68 split,
 816 exact camera hashes and exact decoded actions. Source files unchanged.
+
+## 2026-09-16 - D-132: action-value-weighted FRD retry
+
+Training-only diagnosis found near-zero formatting loss hiding value errors.
+Added strict field-span weighting and shuffled frozen16-example subset.
+200updates:13/16exact versus4/16matched zero-shot;STOP/HOLD4/4 each;gate still
+fails on numerical actions. Identical reload16/16;4.617GB peakPyTorch allocation.
+Preserved suffix-preflight failure and raw metrics. No expanded training yet.

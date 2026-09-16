@@ -3192,3 +3192,64 @@ D129 audit before conversion and unchanged afterward. This is a coordinate
 conversion only, not extra data or a capability improvement. See new report
 reports/vla_frd_followup_20260916/conversion.json. Old logs remain explicitly
 FLU provenance. Real-platform/full-attitude conversion still unvalidated.
+
+## 2026-09-16 - D-132: value-balanced loss on a frozen tiny FRD subset
+
+Training-only old-checkpoint diagnosis:432/432 format tokens correct with mean
+NLL0.000008;123/127 numeric tokens correct,NLL0.08322;12/16 boolean tokens
+correct,NLL0.35390. Allfour STOP outputs are wrong. These are teacher-forced
+per-token counts, not independent samples or autoregressive action accuracy.
+Formatting dominates ordinary token averaging. Fixed16-example order also
+ends each pass with a block of motion examples;the200-update endpoint ends
+with four HOLD examples. These motivate a controlled retry, not a proven cause.
+
+Freeze the SAME16 training IDs, converted to FRD. Start from the pinned base
+rather than old FLU weights. KeepNF4/r8/alpha32/lr2e-4/batch1/frozen vision,
+512-token untruncated inputs,70% allocator cap. Change supervised loss to90%
+equal-weight mean of the five action VALUE fields (average tokens within each
+field), plus10% mean remaining answer-format/EOS tokens. Token-span/ID alignment
+must be exact; no loss on prompt/images. Deterministically shuffle each16-sample
+pass with seed132. No new target features, teacher leakage or validation-guided
+selection.200updates/20min maximum, finite gradients and save/reload checks.
+Generate all16 zero-shot outputs before fitting and after/reload for an honest
+matched TRAIN memorization comparison. Overfit gate remains >=15valid,>=14exact,
+all4STOP/all4HOLD exact and identical reload. No longer run if it fails; record
+failure and diagnose instead of escalating data/compute. Wider training only
+follows a passing gate and a separately frozen protocol. Evidence:
+reports/vla_frd_followup_20260916/token_diagnosis.json. Status: implementing.
+
+## 2026-09-16 - D-133: matched FRD zero-shot/adapter diagnostics and visible pairs
+
+Freeze paired model evaluation now, before seeing FRD retry results: same public
+coordinate validation scenes1400/1405, reset-start/no setup rotation,10simsec,
+50calls per scene, identical prompt/processor/FRD decoder/controller. Evaluate
+pinned base and saved FRD adapter separately;allow20min wall per mode. Simulator
+pauses during measured inference, so these are offline diagnostics only. If the
+overfit gate fails, comparison is failure diagnosis, not expanded training or
+architecture evidence. Do not tune on these outcomes. Preserve old FLU results.
+
+For modest DATA expansion independently of training, add64 source-observation/
+action segments from8 new local scene groups1410-1417 (48train/16val,mod5 rule).
+Task is visible red-versus-blue pillar yaw alignment, zero translation;not search,
+full navigation or real-flight competency. Two instructions on each image must
+require opposite yaw;swapping visible colors must reverse the same instruction's
+action. Teacher reads only exact student mosaic pixels, camera horizontal
+calibration and instruction. Its deterministic color segmentation is an explicit
+synthetic-data teacher, NEVER an architecture component or model fallback. This
+does not alter or claim to solve the existing search boundary. Hidden/invisible/
+ambiguous targets are rejected, never supplied by simulator truth. No teacher
+pixel centroid or object coordinates enter student metadata. Log4 actual control
+ticks per0.2s segment and verify visible angular error decreases. Save original
+images/commands/poses and distinct paired/group split provenance. Do not train
+on these pairs until overfit gate passes. Photorealistic/real/task diversity is
+still required. Evidence: D127 user expansion requirement;D129 coordinate task
+cannot test vision/instruction dependence. Status: implementation pending.
+
+D132 outcome:200updates in266.875s,peakPyTorch4.617GB. Matched TRAIN zero-shot
+4/16exact(allHOLD);FRD adapter13/16exact,16/16valid,all4STOP/all4HOLD correct.
+Three numerical actions remain incorrect; frozen>=14 gate FAILED. Reload
+identical16/16. Median reload generation3.9455s remains too slow for0.2s cadence.
+No larger training has begun. Startup attempt a failed before model loading:
+chat template includes EOS plus newline;exact suffix validation was corrected,
+not bypassed. Loss weighting rejects cross-boundary token spans;14 focused
+weight/FRD tests pass. Reports frd_attempt_[ab].json and frd_attempt_b_losses.json.
