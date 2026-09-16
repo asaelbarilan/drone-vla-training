@@ -3061,3 +3061,59 @@ are visible and explicitly not model predictions. Data stays on D:, hashes and
 reports tracked.29 focused fixture/contract tests pass. Eligible for a tiny
 correctness overfit only, not general VLA training. Evidence: fixture_audit.json,
 fixture_hashes.json,teacher_ui_check.json under reports/vla_local_pilot_20260916.
+
+## 2026-09-16 - D-130: bounded actual Qwen4B QLoRA correctness run
+
+Use the audited D129 fixture and pinned Qwen/Qwen3-VL-4B-Instruct revision
+ ebb281ec70b05090aa6165b016eac8ec08e71b17 (Apache-2.0). Isolated D-drive
+venv: torch2.6.0+cu124 (existing),transformers4.57.3,peft0.17.1,
+accelerate1.7.0,bitsandbytes0.48.2. CUDA NF4 roundtrip passes on RTX4060 8GiB.
+No AWQ training or base/global package changes. Anonymous public base download
+8.876GB to D drive completed. No AWS or paid services.
+
+Freeze visual encoder/projector and base; train rank8/alpha32 zero-dropout LoRA
+only language q/k/v/o and gate/up/down projections. NF4 double quantization,
+bfloat16 compute, gradient checkpointing, batch1, AdamW lr2e-4, gradient clip1.
+Keep normalization FP32; frozen embeddings/vision can remain BF16 to fit.
+Use a deterministic16-example train-only subset including motion/hold/STOP,
+assistant-only loss with prefix equality assertion, untruncated <=512 tokens.
+Model processor keeps original224x224 mosaic (64 image tokens). No val-guided
+selection. Max200 updates or20min including optimization; stop on invalid loss,
+nonfinite/zero adapter gradients, CUDA OOM or resource ceiling. Torch allocator
+limited to70% GPU total; other sessions never stopped. First forward/backward
+is a required gate before remaining optimization.
+
+Success requires finite nonzero adapter gradients, loss decrease, strict valid
+JSON on >=15/16 selected samples, >=14/16 exact targets, separate stop/hold
+correctness, then identical greedy outputs after saving/reloading adapter.
+This is memorization plumbing, not policy/vision/generalization success.
+If it fails, retain all predictions and report failure; no long training/sweeps.
+Simulation evaluation must use generated actions, reject malformed output,
+retain failures and measure actual inference latency before real-time claims.
+Status: implementation pending.
+
+D130 evaluation lock: after save/reload, run at most50 generations/10 simulated
+seconds for each frozen validation seed1400,1405 and training-scene diagnostic1401,
+15min total wall budget. Simulation pauses during measured inference: report
+this idealized offline control condition, never call it real-time deployment.
+No validation feedback is used to retrain. Invalid output means hold+abort;
+STOP is successful only if observed public goal error and speed satisfy D129.
+Save raw response, exact input mosaic, prompt, state, action and control logs.
+Retain timeouts/false stops/collisions. If overfit acceptance fails, rollouts are
+failure diagnosis only, not permission for broader/longer training.
+
+D130 training outcome: actual Qwen4B NF4/rank8 training and reload completed.
+200 updates in269.234s;16,515,072 trainable language adapter parameters;peak
+PyTorch allocation4,470,585,344 bytes. Prompt+answer lengths404-502;all16
+assistant masks/prefixes checked. First16 mean token loss0.228933, last16
+0.058143.16/16 strict valid actions,9/16 exact targets,0/4 STOP,4/4 HOLD,
+5/8 motion targets. All16 greedy predictions are identical after checkpoint
+reload. Frozen overfit acceptance FAILED; no broader training is authorized
+by this result. Median reload prediction4.3355s against0.2s action horizon:
+this local autoregressive path is not a demonstrated real-time drone controller.
+Adapter, base and data remain on D:; hashes/losses/predictions tracked.
+Startup attempt a caught target dict/dataclass mismatch before model loading;
+b caught mixed BF16/FP32 vision LayerNorm before optimizer work; both preserved.
+Explicit BF16 autocast fixed execution in c; no dataset/model sweep.
+Evidence: reports/vla_local_pilot_20260916/qwen_summary.json, qwen_attempt_[abc].json,
+qwen_losses.jsonl,tokenization_check.json. Model rollouts remain pending.

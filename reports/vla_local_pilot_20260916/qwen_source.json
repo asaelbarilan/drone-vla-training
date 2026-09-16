@@ -1,0 +1,63 @@
+{
+  "id": "Qwen/Qwen3-VL-4B-Instruct",
+  "sha": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 1519
+    },
+    {
+      "path": "README.md",
+      "bytes": 7133
+    },
+    {
+      "path": "chat_template.json",
+      "bytes": 5502
+    },
+    {
+      "path": "config.json",
+      "bytes": 1505
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 269
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839
+    },
+    {
+      "path": "model-00001-of-00002.safetensors",
+      "bytes": 4967229296
+    },
+    {
+      "path": "model-00002-of-00002.safetensors",
+      "bytes": 3908490048
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 64742
+    },
+    {
+      "path": "preprocessor_config.json",
+      "bytes": 390
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7032403
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 10868
+    },
+    {
+      "path": "video_preprocessor_config.json",
+      "bytes": 385
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833
+    }
+  ],
+  "license": "apache-2.0"
+}

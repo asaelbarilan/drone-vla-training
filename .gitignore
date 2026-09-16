@@ -59,3 +59,5 @@ reports/vla_dataset_review_20260916/viewer.html
 
 # Generated local VLA flight replay; raw data retained on D drive.
 reports/vla_local_pilot_20260916/*.html
+
+reports/vla_dataset_review_20260916/teacher_flights.html

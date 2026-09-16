@@ -3053,3 +3053,11 @@ decoded action/executed control/terminal traces on D drive. All integrity gates
 pass, including1194 exact physics steps and816 saved image comparisons.
 Debugger shows teacher actions and flights; no trained predictions or semantic
 navigation claims.29 focused tests pass; no baseline or original dataset edits.
+
+## 2026-09-16 - D-130: actual local Qwen QLoRA overfit and reload
+
+Implemented bounded assistant-only NF4 LoRA training in an isolated D-drive
+Python environment.200 updates/269s,4.47GB peak PyTorch allocation on local
+RTX4060.16/16 well-formed predictions,9/16 exact,0/4 terminal STOP correct:
+overfit acceptance fails despite loss reduction. Save/reload predictions match
+16/16. Kept both startup failures and all results. No AWS/global package changes.
