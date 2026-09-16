@@ -3079,3 +3079,10 @@ modified-image/control negative tests fail as intended. Existing debugger shows
 actual model flights separately from teacher flights;9 browser source/response
 checks and3 terminal outcomes pass.61 unit/regression tests pass. Report and
 next blocked training/data/cadence gates recorded; no AWS or baseline changes.
+
+## 2026-09-16 - D-130 loss-curve review
+
+Added reproducible PNG/SVG plots of all200 recorded training losses, trailing
+16-update average, and STOP/HOLD/motion means per complete16-example pass.
+Explicitly labels absent validation-loss measurements and failed exact-action
+criteria. No new training, smoothing of source records or extrapolated metrics.

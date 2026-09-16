@@ -40,3 +40,5 @@ Diagnose training-only numeric/STOP token errors and sample ordering, then freez
 The mandatory expansion plan remains docs/research/VLA_DATA_EXPANSION_PLAN.md. Only eight local coordinate episodes are admitted; zero real or external-simulator episodes. Small schema previews identify different raw log widths and missing command/calibration/license evidence. Next source audits are5 complete training flights per candidate before bulk download. Cover all eight paper regimes, multiple scenes/instructions and held-out domains; adjacent frames or disk size do not establish adequacy.
 
 AWS remains off. Before launch and paid training, obtain approval for the exact machine, predicted duration, storage retention and maximum charge. Seeds1-40 and1060-1064 were excluded from training; original data, baselines and other-session services were preserved.
+
+Loss curves: [PNG](loss_curves.png) / [SVG](loss_curves.svg). Rebuild with `python scripts/plot_qwen_pilot_losses.py`. Training only; no recorded validation-loss curve.

@@ -3149,3 +3149,10 @@ model_flights.html and reports/vla_local_pilot_20260916/REPORT.md.
 Status: bounded correctness pilot completed with negative learned-policy gates;
 larger training deferred. D127 real/sim expansion and numerical/STOP learning
 and cadence issues remain open in TODO. No AWS/paid resources launched.
+
+D130 visualization follow-up: user requested loss curves and training explanation.
+scripts/plot_qwen_pilot_losses.py plots all200 logged pre-update example losses,
+trailing16-step mean, and12 complete passes by example category. Final8 updates
+are a partial pass, excluded only from the complete-pass category panel. Loss
+is assistant-token cross-entropy under teacher forcing, not action/flight error.
+No validation-loss sequence was recorded; do not invent one. PNG/SVG inspected.
