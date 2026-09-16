@@ -3101,3 +3101,11 @@ Added strict field-span weighting and shuffled frozen16-example subset.
 200updates:13/16exact versus4/16matched zero-shot;STOP/HOLD4/4 each;gate still
 fails on numerical actions. Identical reload16/16;4.617GB peakPyTorch allocation.
 Preserved suffix-preflight failure and raw metrics. No expanded training yet.
+
+## 2026-09-16 — FRD tiny-overfit gate passes (D134)
+
+Final authorized lower-LR continuation used the same16 TRAIN examples, fresh
+AdamW and200 updates (262.625s).16/16exact,16/16valid,allSTOP/HOLD correct,
+reload identical;4.617GB peakPyTorch. TotalFRD400updates across two attempts.
+Preserved13/16failure. Weighted and ordinary-token loss plots distinguish
+objectives;this is memorization, not flight/vision generalization. NoAWS.

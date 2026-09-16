@@ -145,7 +145,11 @@ def main():
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--steps", type=int, default=200)
+    parser.add_argument("--resume-adapter", type=Path)
+    parser.add_argument("--learning-rate", type=float, default=2e-4)
     args = parser.parse_args()
+    if not 0 < args.learning_rate <= 2e-4:
+        raise ValueError("bounded learning rate required")
     if not 1 <= args.steps <= 200:
         raise ValueError("pilot update limit")
     args.out.mkdir(parents=True, exist_ok=False)
@@ -154,6 +158,9 @@ def main():
         "contract": CONTRACT_ID,
         "loss": "0.9 equal mean of 5 action value fields + 0.1 format/EOS",
         "shuffle_seed": 132,
+        "resume_adapter": str(args.resume_adapter) if args.resume_adapter else None,
+        "learning_rate": args.learning_rate,
+        "before_kind": "resumed checkpoint" if args.resume_adapter else "zero_shot",
         "model": str(MODEL),
         "max_updates": args.steps,
         "max_optimization_seconds": 1200,
@@ -201,17 +208,25 @@ def main():
             in {"q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"}
         ]
         assert targets and all("visual" not in n for n in targets)
-        model = get_peft_model(
-            model,
-            LoraConfig(
-                r=8,
-                lora_alpha=32,
-                lora_dropout=0,
-                target_modules=targets,
-                bias="none",
-                task_type="CAUSAL_LM",
-            ),
-        )
+        if args.resume_adapter:
+            previous = json.loads((args.resume_adapter.parent / "report.json").read_text())
+            assert previous["contract"] == CONTRACT_ID
+            assert previous["selected_ids"] == report["selected_ids"]
+            assert previous["data_sha256"] == report["data_sha256"]
+            report["previous_updates"] = previous["updates"]
+            model = PeftModel.from_pretrained(model, str(args.resume_adapter), is_trainable=True)
+        else:
+            model = get_peft_model(
+                model,
+                LoraConfig(
+                    r=8,
+                    lora_alpha=32,
+                    lora_dropout=0,
+                    target_modules=targets,
+                    bias="none",
+                    task_type="CAUSAL_LM",
+                ),
+            )
         trainable = [(n, p) for n, p in model.named_parameters() if p.requires_grad]
         assert trainable and all("lora_" in n and "language_model" in n for n, _ in trainable)
         report["trainable_parameters"] = sum(p.numel() for _, p in trainable)
@@ -219,12 +234,12 @@ def main():
         report["loaded_allocated_bytes"] = torch.cuda.memory_allocated()
         report["status"] = "loaded"
         dump(args.out / "report.json", report)
-        # One representative pre-training generation, fixed before fitting.
+        # All 16 frozen TRAIN examples, before this bounded optimization attempt.
         report["before"] = predictions(model, processor, chosen, batches)
         dump(args.out / "report.json", report)
         model.train()
         model.config.use_cache = False
-        optimizer = torch.optim.AdamW([p for _, p in trainable], lr=2e-4)
+        optimizer = torch.optim.AdamW([p for _, p in trainable], lr=args.learning_rate)
         losses = []
         start = time.monotonic()
         for step in range(args.steps):

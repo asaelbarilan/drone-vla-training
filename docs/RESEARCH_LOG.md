@@ -3253,3 +3253,30 @@ No larger training has begun. Startup attempt a failed before model loading:
 chat template includes EOS plus newline;exact suffix validation was corrected,
 not bypassed. Loss weighting rejects cross-boundary token spans;14 focused
 weight/FRD tests pass. Reports frd_attempt_[ab].json and frd_attempt_b_losses.json.
+
+## 2026-09-16 - D-134: one final train-only numerical convergence check
+
+D132 failed13/16exact despite correct STOP/HOLD; remaining errors include one-bin
+yaw/down differences and one multi-field numerical action. Weighted loss remained
+variable late in training. Before matched validation flights, permit ONE further
+bounded optimization attempt on the same16IDs from the D132 FRD adapter, with
+lr5e-5 (quarter previous), fresh AdamW state, unchanged loss/shuffle/inputs/rank.
+Maximum200additional updates/20min: totalFRD budget400updates, not an unbounded
+continuation. This tests convergence on TRAIN examples, not a new data/model
+sweep; no validation result has been examined for this retry. Preserve13/16failure.
+Same>=14exact/allSTOP+HOLD/reload gate; if failed again, stop optimization and
+complete only diagnostics/data audits. Broader training remains conditional.
+Status: implementing explicit same-contract resume with provenance checks.
+
+D133 collection setup correction: initial startup lacked required task-family
+metadata; next attempt correctly rejected a pillar beyond the default18m sensor
+range (forward distance alone omitted lateral range). Restrict forward scene
+distance12-15m so both requested pillars are actually visible under unchanged
+sensor/FOV gates. Do not render or label hidden objects. No dataset admitted
+from either failed startup; retained directories distinguish attempts.
+
+D134 outcome: attempt c PASSES the frozen gate:16/16 valid and exact,all4STOP
+and4HOLD,reload16/16identical,loss decreased.200additional updates262.625s,
+peak4.617GB;totalFRD400updates. This proves tiny TRAIN memorization only.
+Reports frd_attempt_c.json and frd_attempt_c_losses.json. D133 paired validation
+runner now executing without tuning from its outcomes.
