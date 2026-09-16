@@ -16,13 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Current D-122 continuation (2026-09-16)
+## Latest: D-122 continuation succeeds (2026-09-16)
 
-User explicitly authorized the proposed30s continuation. Read
-reports/continuation_20260916/STATE.json and FREEZE.json. Dry replay passes all1800
-controls and135 requests; eight harness tests pass. One live continuation next,
-CPU-only11435, maximum120s total. Preserve90s failed source and cached-prefix accounting.
-No architecture changes, cloud calls or automation restart. Commit each stage.
+Read reports/continuation_20260916/REPORT.md and STATE.json FIRST. Exact cached
+prefix verified before one fresh local continuation. No navigation changes.
+Arrival radius entered94.5s; monitorSTOP97.2s; final0.9363m, speed0.05176m/s,
+zero collisions. Task criterion passes; sustained hover is not demonstrated.
+Original90s timeout preserved; successful trajectory has a120s maximum budget.
+All1800 prefix controls/135requests match; final1945poses/97policy+49monitorimages
+match.10UIseeks/2playbacks and terminal/sourcecamera inspected.8harness tests pass.
+13freshattempts=12complete+1cancelled;134cachedprefix responses are not newcalls.
+Next matched target-commitment on/off, same model/hardware/budget/seed schedule;
+no reliability or causal architecture claim yet. D121 stays a named extension.
+Dedicated11435 unloaded/stopped;8766 debugger retained;shared11434/Valley untouched.
+No additional flight scheduled, no automation restart. Commit each change.
 
 ## Autonomous recovery batch complete — D-116 through D-121 (2026-09-15)
 

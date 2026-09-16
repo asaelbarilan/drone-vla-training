@@ -1,0 +1,24 @@
+{
+  "id": "monitor-2694",
+  "t": 97.2,
+  "source_t": 95.95,
+  "payload": {
+    "label": "stop",
+    "target_commitment_deferred_lost": false,
+    "confidence": 1,
+    "stalled_for_s": 0,
+    "evidence": "visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=1.1437111342571562; visual_confirmations=4/2; original_target_t_ns=95950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A large red rectangle (tower) is centered, with blue sky above and green ground below. The red rectangle is the main, un'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+    "recovery_anchor_valid": false,
+    "recovery_reacquired": true,
+    "evidence_observation_seq": 1920,
+    "recovery_anchor_observation_seq": 1920,
+    "recovery_anchor_yaw_rad": 1.3632171592787605,
+    "blocking": false,
+    "_debug_source": {
+      "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_arch_lab\\scripts\\run_recorded_continuation.py",
+      "line": 93,
+      "function": "emit",
+      "snapshot": "debug/sources/93ebf391401f677a122f1ce717053c3cc0ae95640a7a622d3d2060a670d485d1.py"
+    }
+  }
+}

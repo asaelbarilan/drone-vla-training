@@ -1,5 +1,18 @@
 {
-  "status": "preflight_passed",
-  "next": "Launch one continuation; preserve original.8 negative/positive harness tests pass.",
-  "run": "c5_commitment_continued_20260916_s1061"
+  "status": "complete_audited",
+  "next": "Matched on/off target-commitment comparison with same hardware, model, budget and seed schedule; no additional flight launched.",
+  "run": "c5_commitment_continued_20260916_s1061",
+  "server_pid": 17924,
+  "success": true,
+  "termination": "agent_stopped",
+  "termination_s": 97.2,
+  "final_environment_s": 97.25,
+  "final_distance_m": 0.936298608867738,
+  "final_speed_mps": 0.05175780512218782,
+  "collisions": 0,
+  "fresh_attempts": 13,
+  "fresh_completed": 12,
+  "fresh_cancelled": 1,
+  "server": "Dedicated11435 unloaded/stopped;8766 debugger retained;shared11434/Valley untouched.",
+  "completed_at_utc": "2026-09-16T16:28:59.948899+00:00"
 }

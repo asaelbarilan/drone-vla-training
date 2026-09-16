@@ -10,17 +10,15 @@ becomes a decision with evidence.
 
 ---
 
-## D-121 next: checkpoint validation and arrival, then causal comparison
+## D-122 next: matched architecture comparison
 
-Autonomous batch complete (three flights). Read recovery_cycle_20260915/REPORT.md
-and STATE.json. Lastflight reaches4.647m with steady approach but timeouts90s; noSTOP.
-First build an offline cached-request replay that matches all original request
-images/prompts and1800 controls while reconstructing memory/router/planner state.
-Only after that passes, freeze a bounded fresh-inference continuation to distinguish
-arrival/STOP behavior from the90s horizon. Record separately; preserve originalfailure.
-For architecture attribution use matched CPU/GPU placement and repeatedseeds: present
-comparison diverges before firstcommitment. No auto flight or deadline extension.
-Earlier D116–D120 NEXT items below are historical and superseded by this entry.
+Exact continuation is complete: arrival94.5s, terminalSTOP97.2s, distance0.9363m,
+zero collisions, speed0.05176m/s. See reports/continuation_20260916/REPORT.md.
+Original90s timeout remains. Next freeze target_commitment_s=20 versus0 with
+otherwise identical model/CPU placement, task horizon and seed schedule. Repeats
+must establish reliability before promoting the extension. Sustained hover is a
+separate task criterion, not established by terminalSTOP. No flight is scheduled.
+Earlier D116–D121 NEXT items below are historical and superseded by this entry.
 
 ## D-107: remaining tool-choice and ordered-state diagnosis
 

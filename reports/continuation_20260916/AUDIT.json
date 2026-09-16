@@ -1,0 +1,1224 @@
+{
+  "name": "c5_commitment_continued_20260916_s1061",
+  "poses_matched": 1945,
+  "source_images_matched": 97,
+  "historical_return_images_matched": 0,
+  "raw_speed_violations": 503,
+  "max_speed_excess_mps": 2.220446049250313e-16,
+  "effective_kinds": {
+    "exploration": 44,
+    "target": 53
+  },
+  "selected_decisions": [
+    {
+      "call": "call-000001",
+      "decision_id": "483caf106132",
+      "source_t": 0.0,
+      "available_t": 1.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        167.417,
+        111.612
+      ],
+      "waypoint": {
+        "x": 3.9192921487326746,
+        "y": 1.0520009630047686,
+        "z": 2.4643392205444856,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000003",
+      "decision_id": "0650e2966c0d",
+      "source_t": 0.95,
+      "available_t": 2.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        167.417,
+        111.612
+      ],
+      "waypoint": {
+        "x": 3.9192921487326746,
+        "y": 1.0520009630047686,
+        "z": 2.4643392205444856,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000004",
+      "decision_id": "e4c1af0e9b05",
+      "source_t": 1.95,
+      "available_t": 3.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 499,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.388,
+        111.612
+      ],
+      "waypoint": {
+        "x": 5.763675829547986,
+        "y": 2.135374390257189,
+        "z": 2.1240025616206784,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000006",
+      "decision_id": "c68a522c5120",
+      "source_t": 2.95,
+      "available_t": 4.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 950,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        102,
+        141,
+        110
+      ],
+      "pixel": [
+        212.062,
+        100.45
+      ],
+      "waypoint": {
+        "x": 2.275113607250271,
+        "y": -1.1989437955935276,
+        "z": 2.8903880683916254,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000007",
+      "decision_id": "62a606068d9f",
+      "source_t": 3.95,
+      "available_t": 5.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 6.8859626365712225,
+        "y": 1.8536639568421671,
+        "z": 2.045049586933146,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000009",
+      "decision_id": "02c5cf7d7eff",
+      "source_t": 4.95,
+      "available_t": 6.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 900,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        200.901,
+        100.45
+      ],
+      "waypoint": {
+        "x": 3.4871858478784725,
+        "y": -1.6521103807338375,
+        "z": 2.813847089654289,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000010",
+      "decision_id": "0014dccad30f",
+      "source_t": 5.95,
+      "available_t": 7.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 350,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        148,
+        148,
+        152
+      ],
+      "pixel": [
+        78.1281,
+        100.45
+      ],
+      "waypoint": {
+        "x": 6.445897640146674,
+        "y": 2.791753069955507,
+        "z": 2.665334788672415,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000012",
+      "decision_id": "1d1e2a9f0583",
+      "source_t": 6.95,
+      "available_t": 8.0,
+      "reply": {
+        "evidence": "gray structures on green ground with blue sky",
+        "kind": "exploration",
+        "u": 333,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        133,
+        133,
+        139
+      ],
+      "pixel": [
+        74.3333,
+        111.612
+      ],
+      "waypoint": {
+        "x": 4.390980893755731,
+        "y": 0.4109436046192111,
+        "z": 2.6146616664398747,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000013",
+      "decision_id": "b0802b18a826",
+      "source_t": 7.95,
+      "available_t": 9.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 220,
+        "v": 370
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        198,
+        113,
+        113
+      ],
+      "pixel": [
+        49.1091,
+        82.5926
+      ],
+      "waypoint": {
+        "x": 5.571784373783009,
+        "y": 2.5881863192715455,
+        "z": 3.2357396026067033,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000015",
+      "decision_id": "d62c62ccb1c3",
+      "source_t": 8.95,
+      "available_t": 10.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 214,
+        "v": 375
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        198,
+        112,
+        112
+      ],
+      "pixel": [
+        47.7698,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 5.932741631952876,
+        "y": 2.757367855040316,
+        "z": 3.155606070821355,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000016",
+      "decision_id": "e6f019346413",
+      "source_t": 9.95,
+      "available_t": 11.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 432,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        198,
+        111,
+        111
+      ],
+      "pixel": [
+        96.4324,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 7.881396843848444,
+        "y": 4.670046446511068,
+        "z": 3.401070259238841,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000018",
+      "decision_id": "584bdcf31084",
+      "source_t": 10.95,
+      "available_t": 12.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 635,
+        "v": 385
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        198,
+        110,
+        110
+      ],
+      "pixel": [
+        141.747,
+        85.9409
+      ],
+      "waypoint": {
+        "x": 7.781403137639185,
+        "y": 4.779924327263303,
+        "z": 3.2841705531076295,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000019",
+      "decision_id": "240ea76d48d6",
+      "source_t": 11.95,
+      "available_t": 13.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "exploration",
+        "u": 845,
+        "v": 400
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        91,
+        91,
+        96
+      ],
+      "pixel": [
+        188.624,
+        89.2893
+      ],
+      "waypoint": {
+        "x": 6.331803055726429,
+        "y": 3.6017854729019705,
+        "z": 3.0271497719895155,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000021",
+      "decision_id": "975242aead6f",
+      "source_t": 12.95,
+      "available_t": 14.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 750,
+        "v": 450
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        145,
+        145,
+        150
+      ],
+      "pixel": [
+        167.417,
+        100.45
+      ],
+      "waypoint": {
+        "x": 7.723857931254258,
+        "y": 4.302455156289624,
+        "z": 2.730297610129757,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000022",
+      "decision_id": "a5edeb6b7201",
+      "source_t": 13.95,
+      "available_t": 15.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        138,
+        138,
+        143
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 8.253402390617378,
+        "y": 7.202530376715646,
+        "z": 2.029870372095873,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000024",
+      "decision_id": "c34f2d12fdf1",
+      "source_t": 14.95,
+      "available_t": 16.0,
+      "reply": {
+        "evidence": "gray buildings",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        104,
+        112,
+        96
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 9.577706625696948,
+        "y": 6.742477523828679,
+        "z": 2.0526175593450313,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000025",
+      "decision_id": "f842aa542c9e",
+      "source_t": 15.95,
+      "available_t": 17.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        144,
+        144,
+        148
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 10.293758161903321,
+        "y": 6.780617522907484,
+        "z": 2.1024974184477756,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000027",
+      "decision_id": "03515a43d124",
+      "source_t": 16.95,
+      "available_t": 18.0,
+      "reply": {
+        "evidence": "gray buildings and green ground",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        143,
+        143,
+        148
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 10.957033817387856,
+        "y": 6.859010978189426,
+        "z": 2.1631589807538587,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000028",
+      "decision_id": "48d44524f8c6",
+      "source_t": 17.95,
+      "available_t": 19.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        143,
+        143,
+        147
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 11.50424821999793,
+        "y": 7.105804926971109,
+        "z": 2.2289181259148796,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000030",
+      "decision_id": "7970625f1d9c",
+      "source_t": 18.95,
+      "available_t": 20.0,
+      "reply": {
+        "evidence": "gray stone structures",
+        "kind": "exploration",
+        "u": 500,
+        "v": 500
+      },
+      "effective_kind": "exploration",
+      "pixel_rgb": [
+        142,
+        142,
+        147
+      ],
+      "pixel": [
+        111.612,
+        111.612
+      ],
+      "waypoint": {
+        "x": 12.033944260258586,
+        "y": 7.378227918764507,
+        "z": 2.2966696250662526,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000031",
+      "decision_id": "4d1886ec00be",
+      "source_t": 19.95,
+      "available_t": 21.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 412,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        199,
+        99,
+        99
+      ],
+      "pixel": [
+        91.968,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 11.666608146156557,
+        "y": 8.598811467477303,
+        "z": 3.7714223797838153,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000033",
+      "decision_id": "22062254cc30",
+      "source_t": 20.95,
+      "available_t": 22.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 430,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        98,
+        98
+      ],
+      "pixel": [
+        95.986,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 12.211670089053623,
+        "y": 9.094942573984413,
+        "z": 4.078487959314176,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000034",
+      "decision_id": "6711d055a639",
+      "source_t": 21.95,
+      "available_t": 23.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 499,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        97,
+        97
+      ],
+      "pixel": [
+        111.388,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 12.805702567440386,
+        "y": 9.64354147165794,
+        "z": 4.120952452360271,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000036",
+      "decision_id": "2678cc2f15e9",
+      "source_t": 22.95,
+      "available_t": 24.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 515,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        96,
+        96
+      ],
+      "pixel": [
+        114.96,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 13.173188863010935,
+        "y": 10.046032118507334,
+        "z": 3.825175832007474,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000037",
+      "decision_id": "c164bb4edba8",
+      "source_t": 23.95,
+      "available_t": 25.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 321,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        94,
+        94
+      ],
+      "pixel": [
+        71.6547,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 12.791772206742353,
+        "y": 9.567541811243727,
+        "z": 3.682369946810034,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000039",
+      "decision_id": "12de6dd1ec44",
+      "source_t": 24.95,
+      "available_t": 26.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 325,
+        "v": 375
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        93,
+        93
+      ],
+      "pixel": [
+        72.5475,
+        83.7087
+      ],
+      "waypoint": {
+        "x": 13.26827494738793,
+        "y": 9.947108430816387,
+        "z": 3.687625875459002,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000040",
+      "decision_id": "9ee79a008afe",
+      "source_t": 25.95,
+      "available_t": 27.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 250,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        92,
+        92
+      ],
+      "pixel": [
+        55.8058,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.21042772176639,
+        "y": 9.594515178348523,
+        "z": 3.766364146393518,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000042",
+      "decision_id": "b1d564fde699",
+      "source_t": 26.95,
+      "available_t": 28.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 199,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        91,
+        91
+      ],
+      "pixel": [
+        44.4214,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.336677508814939,
+        "y": 9.381062708816367,
+        "z": 3.6696970082384,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000043",
+      "decision_id": "e9383fff8205",
+      "source_t": 27.95,
+      "available_t": 29.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 175,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        200,
+        90,
+        90
+      ],
+      "pixel": [
+        39.0641,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 13.690254640747137,
+        "y": 9.382915662716886,
+        "z": 3.666969865635387,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000045",
+      "decision_id": "6c21941a50bf",
+      "source_t": 28.95,
+      "available_t": 30.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 160,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        201,
+        89,
+        89
+      ],
+      "pixel": [
+        35.7157,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 14.116305903094801,
+        "y": 9.451380899857561,
+        "z": 3.717361823950933,
+        "frame": "enu"
+      }
+    },
+    {
+      "call": "call-000046",
+      "decision_id": "e0bd0faf8dbf",
+      "source_t": 29.95,
+      "available_t": 31.0,
+      "reply": {
+        "evidence": "red tower",
+        "kind": "target",
+        "u": 250,
+        "v": 350
+      },
+      "effective_kind": "target",
+      "pixel_rgb": [
+        201,
+        88,
+        88
+      ],
+      "pixel": [
+        55.8058,
+        78.1281
+      ],
+      "waypoint": {
+        "x": 15.323906342173315,
+        "y": 10.454770710879695,
+        "z": 3.956206514064318,
+        "frame": "enu"
+      }
+    }
+  ],
+  "result": {
+    "episode_id": "c5_commitment_continued_20260916_s1061",
+    "architecture_id": "c5_target_commitment_qwen4_dev",
+    "environment_id": "grid_nav_onfly_depth_v2_dev",
+    "task_family": "long_horizon_nav",
+    "seed": 1061,
+    "success": true,
+    "termination_reason": "agent_stopped",
+    "termination_detail": "monitor: visual monitor classified stop from 1 frames; arrival_source=bounded_confirmed_rgbd_target; target_range_m=1.1437111342571562; visual_confirmations=4/2; original_target_t_ns=95950000000; ttl_s=4.0; fresh_frame=True; arrival_limit_m=2.0; earlier_visible=True; latest_visible=True; latest_scale=large; ever_acquired=True; acquisition_count=2/2; history_continuous=True; identity_source=current_frame_vlm; grounding='A large red rectangle (tower) is centered, with blue sky above and green ground below. The red rectangle is the main, un'; scale_source=metric_candidate_not_visual; consistency_scope=geometry_only; progress_source=visibility_rule",
+    "sim_duration_s": 97.2,
+    "wall_duration_s": 332.71503310000116,
+    "metrics": {
+      "flight_time_s": 97.2,
+      "path_length_m": 50.62850760506133,
+      "distance_to_goal_m": 0.936298608867738,
+      "collisions": 0.0,
+      "collision_rate": 0.0,
+      "min_obstacle_distance_m": 1.5640818677016584,
+      "out_of_bounds": 0.0,
+      "constraint_violations": 503.0,
+      "subgoals_completed": 1.0,
+      "subgoal_completion": 0.5,
+      "reached_goal": 1.0,
+      "time_to_goal_s": 94.5,
+      "path_efficiency": 0.6917153049142709,
+      "semantic_latency_median_s": 6.9e-06,
+      "semantic_latency_p95_s": 20.421364575,
+      "decision_production_latency_median_s": 1.05,
+      "decision_age_median_s": 1.75,
+      "decision_age_p95_s": 13.342499999999994,
+      "decision_age_max_s": 18.0,
+      "stale_action_rate": 0.0,
+      "stale_rejection_rate": 0.0,
+      "control_updates": 1945.0,
+      "actual_control_hz": 20.01028806584362,
+      "configured_control_hz": 20.0,
+      "control_rate_fidelity": 1.000514403292181,
+      "decisions_proposed": 97.0,
+      "decisions_executed": 66.0,
+      "executable_plan_rate": 1.0,
+      "verifier_rejection_rate": 0.0,
+      "verifier_repair_rate": 0.0,
+      "rejected_or_modified_proposal_rate": 0.0,
+      "safety_interventions": 0.0,
+      "safety_intervention_rate": 0.0,
+      "safety_rejections": 0.0,
+      "safety_stops": 0.0,
+      "safety_modification_rate": 0.0,
+      "monitor_assessments": 49.0,
+      "monitor_stop_calls": 1.0,
+      "monitor_lost_calls": 14.0,
+      "monitor_blocked_calls": 0.0,
+      "recovery_triggers": 1.0,
+      "recovery_decisions": 1.0,
+      "agent_stopped": 1.0,
+      "correct_terminal_stop": 1.0,
+      "premature_stop": 0.0,
+      "arrived_without_stopping": 0.0,
+      "recovery_attempted": 1.0,
+      "recovery_success": 1.0,
+      "lure_dwell_s": 0.0,
+      "false_target_commitment": 0.0,
+      "inference_errors": 0.0,
+      "inference_calls_policy": 97.0,
+      "inference_tokens_policy": 3717.0,
+      "inference_latency_s_policy": 214.7547252,
+      "inference_server_setup_s_policy": 6.7183376,
+      "inference_charged_s_policy": 98.0,
+      "inference_mean_latency_s_policy": 2.2139662391752575,
+      "inference_calls_monitor": 49.0,
+      "inference_tokens_monitor": 2662.0,
+      "inference_latency_s_monitor": 18.0651817,
+      "inference_server_setup_s_monitor": 0.0230381,
+      "inference_charged_s_monitor": 58.8,
+      "inference_mean_latency_s_monitor": 0.3686771775510204,
+      "inference_calls_total": 146.0,
+      "inference_tokens_total": 6379.0,
+      "reasoner_calls": 0.0,
+      "onfly_decision_calls": 97.0,
+      "onfly_decision_parse_errors": 0.0,
+      "onfly_monitor_calls": 49.0,
+      "onfly_monitor_parse_errors": 0.0,
+      "feature_cache_hits": 0.0,
+      "feature_cache_misses": 0.0,
+      "feature_cache_stores": 0.0,
+      "feature_cache_evictions": 0.0,
+      "feature_cache_hit_rate": 0.0,
+      "router_proposed": 97.0,
+      "router_executed": 66.0,
+      "router_rejected_stale": 0.0,
+      "router_verifier_rejected": 0.0,
+      "router_fence_recoveries": 0.0,
+      "router_verifier_modified": 0.0,
+      "router_plans_requested": 97.0,
+      "router_plans_infeasible": 0.0,
+      "router_directives": 0.0,
+      "router_chunk_actions_executed": 0.0,
+      "router_chunk_actions_discarded": 0.0,
+      "router_safety_accept": 0.0,
+      "router_safety_modify": 0.0,
+      "router_safety_reject": 0.0,
+      "router_safety_stop": 0.0,
+      "router_commands_issued": 1945.0,
+      "router_stale_commands_executed": 0.0,
+      "router_target_commitment_commands": 599.0,
+      "router_stale_commands_rejected": 0.0,
+      "router_decision_age_ns_total": 6310350000000.0,
+      "router_decision_age_samples": 1864.0,
+      "router_unknown_skill": 0.0,
+      "router_invalid_skill_args": 0.0,
+      "router_mean_decision_age_s": 3.385380901287554,
+      "peak_rss_mb": 0.0,
+      "reasoner_calls_per_minute": 0.0,
+      "tokens_per_minute": 3937.654320987654
+    },
+    "status": {
+      "t_sim_ns": 97250000000,
+      "position": {
+        "x": 25.93843407490188,
+        "y": 22.384445404610474,
+        "z": 3.888982965161586,
+        "frame": "enu"
+      },
+      "distance_to_goal_m": 0.936298608867738,
+      "goal_visible": true,
+      "subgoals_completed": 1,
+      "subgoals_total": 2,
+      "task_complete": null,
+      "collided": false,
+      "collision_count": 0,
+      "min_obstacle_distance_m": 1.5640818677016584,
+      "out_of_bounds": false,
+      "constraint_violations": 503,
+      "path_length_m": 50.62850760506133,
+      "shortest_path_m": 35.02051357538948,
+      "speed_mps": 0.05175780512218782,
+      "terminated": false,
+      "termination_reason": null,
+      "extras": {
+        "goal_radius_m": 2.0,
+        "lure_dwell_s": 0.0,
+        "landmarks": 4.0,
+        "obstacles": 10.0,
+        "skipped_injections": 0.0,
+        "min_injected_block_clearance_m": -1.0
+      }
+    },
+    "config_hash": "4cf6789553eed793",
+    "used_privileged_observations": false,
+    "error": null
+  },
+  "prefix": {
+    "verifier": 58,
+    "control": 1800,
+    "memory_update": 90,
+    "monitor": 45,
+    "plan": 89
+  },
+  "cached_completed": 134,
+  "fresh_calls": {
+    "complete": 12,
+    "cancelled": 1
+  },
+  "fresh_requested": 13,
+  "fresh_completed_latency_s": [
+    32.09398,
+    25.5487326,
+    4.1219581,
+    25.5082916,
+    25.7749231,
+    4.1384014,
+    25.7177823,
+    25.902286,
+    4.6439203,
+    27.0918107,
+    27.1162795,
+    5.1605835
+  ],
+  "closest_m": 0.936298608867738,
+  "final_speed_mps": 0.05175780512218782,
+  "final_frame": {
+    "t": 97.25,
+    "observation_seq": 1946,
+    "position": [
+      25.93843407490188,
+      22.384445404610474,
+      3.888982965161586
+    ],
+    "yaw": 1.4213867276691559,
+    "velocity": [
+      0.023000434402314713,
+      0.04572917125798035,
+      -0.007661155554450848
+    ],
+    "distance": 0.936298608867738,
+    "collided": false,
+    "control": {},
+    "trace_id": null
+  },
+  "samples": [
+    {
+      "t": 90.0,
+      "distance": 4.6466100018947385,
+      "velocity": [
+        0.00568628400044867,
+        0.5964837436867225,
+        1.5064316548420711e-09
+      ],
+      "position": [
+        25.152195887082613,
+        18.705882124058295,
+        4.352685097706507
+      ]
+    },
+    {
+      "t": 92.0,
+      "distance": 3.495140366540664,
+      "velocity": [
+        0.1286808691777075,
+        0.57070526668589,
+        -0.03662729396307231
+      ],
+      "position": [
+        25.206442203024107,
+        19.87796136351776,
+        4.248653333974304
+      ]
+    },
+    {
+      "t": 94.0,
+      "distance": 2.3204452407362535,
+      "velocity": [
+        0.1552056613395694,
+        0.5695239984033058,
+        -0.0915890008254834
+      ],
+      "position": [
+        25.523112988648396,
+        21.01090832745326,
+        4.102662424350346
+      ]
+    },
+    {
+      "t": 96.0,
+      "distance": 1.2067828122608517,
+      "velocity": [
+        0.10934323471228587,
+        0.4392045441831769,
+        -0.06516239879335285
+      ],
+      "position": [
+        25.84983403204181,
+        22.104742129701254,
+        3.931663746475015
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    },
+    {
+      "t": 97.25,
+      "distance": 0.936298608867738,
+      "velocity": [
+        0.023000434402314713,
+        0.04572917125798035,
+        -0.007661155554450848
+      ],
+      "position": [
+        25.93843407490188,
+        22.384445404610474,
+        3.888982965161586
+      ]
+    }
+  ],
+  "note": "Original90s timeout is preserved. Cached prefix is not new inference; success here uses a120s time budget. Terminal declaration does not by itself establish physically settled hover."
+}

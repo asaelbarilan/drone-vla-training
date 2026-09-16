@@ -2954,3 +2954,21 @@ subsequent requests use fresh current observations. Original90s failure preserve
 Only horizon and matching evaluation time limit change; policy/planner/arrival/STOP
 rules unchanged. Cache timing is not model latency; no causal architectureclaim.
 Evidence: reports/continuation_20260916/DRY_REPLAY.json and FREEZE.json.
+
+
+### D-122 outcome: exact continuation completes arrival and terminal STOP
+
+With no navigation changes, source90s trajectory continues into2m radius94.5s and
+monitor STOP97.2s. Final environment97.25s distance0.936299m, speed0.051758m/s,
+zero collisions. Declared arrival+terminalSTOP passes; sustained settled hover is
+not tested. VLM supplies current target identity/point; metric monitor gates STOP.
+Both dry/live prefixes match1800 controls/89plans/90memory/45monitor/58verifier events
+and135 request identities. Full replay1945poses/97policyimages;49monitorimages match.
+10UIseeks/2playbacks+terminaldecision reviewed with actual camera/map/source images.
+13 fresh local attempts:12complete(8policy/4monitor)+1cancelled;134cached replies.
+CPU-only retainedQwen4, freshmedian25.633s, fixedsim1s/1.2s; no real-time claim.
+Original90s timeout unchanged. This is a longer-budget singletrajectory success,
+not causal architecture comparison or reliability evidence. No runtimefix required.
+Evidence: reports/continuation_20260916/REPORT.md and raw/audit artifacts.
+Next matched commitment on/off under identical placement/budget/seeds. Dedicated
+11435 unloaded/stopped, debugger8766 retained, shared11434/Valley untouched.

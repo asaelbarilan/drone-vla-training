@@ -1,0 +1,23 @@
+{
+  "models": [
+    {
+      "name": "qwen3-vl:4b",
+      "model": "qwen3-vl:4b",
+      "size": 4277906963,
+      "digest": "1343d82ebee38e26a4dd6b0180b915eb91550184e67c505dea97509571c8f683",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3vl",
+        "families": [
+          "qwen3vl"
+        ],
+        "parameter_size": "4.4B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-09-16T19:50:38.4405163+03:00",
+      "size_vram": 0,
+      "context_length": 8192
+    }
+  ]
+}
