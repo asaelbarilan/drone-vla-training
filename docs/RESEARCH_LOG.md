@@ -2908,3 +2908,24 @@ comparison confirms zero prompt differences; no prompt rewrite was performed.
 hold maps to 0.5102 m/s forward, and 2.5 m/s forward maps to 1 m/s; these are
 codec counterexamples, not model predictions or a flight score. Overfit, bounded
 training, actual predicted-flight debugger and transfer evaluation remain open.
+
+
+## 2026-09-16 - D-125: correct full-data storage sizing after user feedback
+
+**Decision.** Supersede the interpretation of D-123's 100 GB disk as a full
+training/benchmark budget. Separate a 100 GiB root from a 512 GiB staged pilot
+data volume, with provisional expansion to 2 TiB for broader data use after
+measuring selected archive/cache expansion. No capacity or spend is approved.
+**Rationale.** Published aerial corpora and simulator packages already exceed
+the earlier disk size; video/frame caches and extraction add further storage.
+**Evidence.** Public HF file-tree metadata totals 861.4 GB / 802.3 GiB across
+UAV-Flow, UAV-Flow-Sim, TravelUAV, TravelUAV_env and Exp2VLA MultiObject. Saved
+per-file byte inventory in reports/vla_aws_pilot_20260916/storage_inventory.json.
+At recorded Stockholm gp3 prices, root+512 GiB is 51.16 USD/month, root+2 TiB is
+179.57 USD/month; persistent storage bills while GPU instance is stopped.
+AWS currently documents the screenshot's PyTorch 2.13/Ubuntu 26.04 x86 image
+family. This confirms an available host family, not tested training dependencies
+or ownership/cost attestation for the exact regional AMI ID.
+**Status.** Documented correction; original pilot-only costs retained with a
+supersession note. No corpus downloaded, AWS resource created, baseline changed
+or training started. Full extracted working-set size remains unknown.

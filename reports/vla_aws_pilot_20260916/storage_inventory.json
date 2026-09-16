@@ -1,0 +1,1049 @@
+{
+  "checked": "2026-09-16",
+  "method": "public HF tree metadata; no data downloaded",
+  "datasets": [
+    {
+      "repository": "wangxiangyu0814/UAV-Flow",
+      "file_count": 55,
+      "bytes": 258014757839,
+      "GB_decimal": 258.014757839,
+      "GiB": 240.2949685594067,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2461
+        },
+        {
+          "path": "train-00000-of-00054.parquet",
+          "bytes": 4937191892
+        },
+        {
+          "path": "train-00001-of-00054.parquet",
+          "bytes": 4789830760
+        },
+        {
+          "path": "train-00002-of-00054.parquet",
+          "bytes": 4771043837
+        },
+        {
+          "path": "train-00003-of-00054.parquet",
+          "bytes": 4964586517
+        },
+        {
+          "path": "train-00004-of-00054.parquet",
+          "bytes": 4731588680
+        },
+        {
+          "path": "train-00005-of-00054.parquet",
+          "bytes": 4893132879
+        },
+        {
+          "path": "train-00006-of-00054.parquet",
+          "bytes": 4814514546
+        },
+        {
+          "path": "train-00007-of-00054.parquet",
+          "bytes": 4932833002
+        },
+        {
+          "path": "train-00008-of-00054.parquet",
+          "bytes": 4601283509
+        },
+        {
+          "path": "train-00009-of-00054.parquet",
+          "bytes": 4797195520
+        },
+        {
+          "path": "train-00010-of-00054.parquet",
+          "bytes": 4961369754
+        },
+        {
+          "path": "train-00011-of-00054.parquet",
+          "bytes": 4797869428
+        },
+        {
+          "path": "train-00012-of-00054.parquet",
+          "bytes": 4995401419
+        },
+        {
+          "path": "train-00013-of-00054.parquet",
+          "bytes": 4861049880
+        },
+        {
+          "path": "train-00014-of-00054.parquet",
+          "bytes": 4850623851
+        },
+        {
+          "path": "train-00015-of-00054.parquet",
+          "bytes": 4837855594
+        },
+        {
+          "path": "train-00016-of-00054.parquet",
+          "bytes": 5043779423
+        },
+        {
+          "path": "train-00017-of-00054.parquet",
+          "bytes": 4714782572
+        },
+        {
+          "path": "train-00018-of-00054.parquet",
+          "bytes": 4871666367
+        },
+        {
+          "path": "train-00019-of-00054.parquet",
+          "bytes": 4813910995
+        },
+        {
+          "path": "train-00020-of-00054.parquet",
+          "bytes": 4754014404
+        },
+        {
+          "path": "train-00021-of-00054.parquet",
+          "bytes": 4842723108
+        },
+        {
+          "path": "train-00022-of-00054.parquet",
+          "bytes": 4925565446
+        },
+        {
+          "path": "train-00023-of-00054.parquet",
+          "bytes": 4795751233
+        },
+        {
+          "path": "train-00024-of-00054.parquet",
+          "bytes": 4851411490
+        },
+        {
+          "path": "train-00025-of-00054.parquet",
+          "bytes": 4848024734
+        },
+        {
+          "path": "train-00026-of-00054.parquet",
+          "bytes": 4916519704
+        },
+        {
+          "path": "train-00027-of-00054.parquet",
+          "bytes": 4860231826
+        },
+        {
+          "path": "train-00028-of-00054.parquet",
+          "bytes": 4845415109
+        },
+        {
+          "path": "train-00029-of-00054.parquet",
+          "bytes": 4909349062
+        },
+        {
+          "path": "train-00030-of-00054.parquet",
+          "bytes": 4657001224
+        },
+        {
+          "path": "train-00031-of-00054.parquet",
+          "bytes": 4900512108
+        },
+        {
+          "path": "train-00032-of-00054.parquet",
+          "bytes": 4785429797
+        },
+        {
+          "path": "train-00033-of-00054.parquet",
+          "bytes": 4720556829
+        },
+        {
+          "path": "train-00034-of-00054.parquet",
+          "bytes": 4689561570
+        },
+        {
+          "path": "train-00035-of-00054.parquet",
+          "bytes": 4694337375
+        },
+        {
+          "path": "train-00036-of-00054.parquet",
+          "bytes": 4879962377
+        },
+        {
+          "path": "train-00037-of-00054.parquet",
+          "bytes": 4838695294
+        },
+        {
+          "path": "train-00038-of-00054.parquet",
+          "bytes": 4636214986
+        },
+        {
+          "path": "train-00039-of-00054.parquet",
+          "bytes": 4919291339
+        },
+        {
+          "path": "train-00040-of-00054.parquet",
+          "bytes": 4740556539
+        },
+        {
+          "path": "train-00041-of-00054.parquet",
+          "bytes": 4730789487
+        },
+        {
+          "path": "train-00042-of-00054.parquet",
+          "bytes": 4738957120
+        },
+        {
+          "path": "train-00043-of-00054.parquet",
+          "bytes": 4747450330
+        },
+        {
+          "path": "train-00044-of-00054.parquet",
+          "bytes": 4729520654
+        },
+        {
+          "path": "train-00045-of-00054.parquet",
+          "bytes": 4799839757
+        },
+        {
+          "path": "train-00046-of-00054.parquet",
+          "bytes": 4818562672
+        },
+        {
+          "path": "train-00047-of-00054.parquet",
+          "bytes": 4780981397
+        },
+        {
+          "path": "train-00048-of-00054.parquet",
+          "bytes": 4666729450
+        },
+        {
+          "path": "train-00049-of-00054.parquet",
+          "bytes": 4796410956
+        },
+        {
+          "path": "train-00050-of-00054.parquet",
+          "bytes": 4953632070
+        },
+        {
+          "path": "train-00051-of-00054.parquet",
+          "bytes": 4731401032
+        },
+        {
+          "path": "train-00052-of-00054.parquet",
+          "bytes": 4769798109
+        },
+        {
+          "path": "train-00053-of-00054.parquet",
+          "bytes": 2758046365
+        }
+      ],
+      "source": "https://huggingface.co/api/datasets/wangxiangyu0814/UAV-Flow/tree/main?recursive=true&limit=1000"
+    },
+    {
+      "repository": "wangxiangyu0814/UAV-Flow-Sim",
+      "file_count": 22,
+      "bytes": 35925860784,
+      "GB_decimal": 35.925860784,
+      "GiB": 33.45856516063213,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2461
+        },
+        {
+          "path": "train-00000-of-00021.parquet",
+          "bytes": 1908540439
+        },
+        {
+          "path": "train-00001-of-00021.parquet",
+          "bytes": 1606582064
+        },
+        {
+          "path": "train-00002-of-00021.parquet",
+          "bytes": 2000285765
+        },
+        {
+          "path": "train-00003-of-00021.parquet",
+          "bytes": 1871932877
+        },
+        {
+          "path": "train-00004-of-00021.parquet",
+          "bytes": 1668664567
+        },
+        {
+          "path": "train-00005-of-00021.parquet",
+          "bytes": 1915973046
+        },
+        {
+          "path": "train-00006-of-00021.parquet",
+          "bytes": 1743856167
+        },
+        {
+          "path": "train-00007-of-00021.parquet",
+          "bytes": 1934012930
+        },
+        {
+          "path": "train-00008-of-00021.parquet",
+          "bytes": 1872068501
+        },
+        {
+          "path": "train-00009-of-00021.parquet",
+          "bytes": 1948526051
+        },
+        {
+          "path": "train-00010-of-00021.parquet",
+          "bytes": 1833032500
+        },
+        {
+          "path": "train-00011-of-00021.parquet",
+          "bytes": 1589926865
+        },
+        {
+          "path": "train-00012-of-00021.parquet",
+          "bytes": 1694428153
+        },
+        {
+          "path": "train-00013-of-00021.parquet",
+          "bytes": 1698936865
+        },
+        {
+          "path": "train-00014-of-00021.parquet",
+          "bytes": 1766947760
+        },
+        {
+          "path": "train-00015-of-00021.parquet",
+          "bytes": 1835819496
+        },
+        {
+          "path": "train-00016-of-00021.parquet",
+          "bytes": 1929516486
+        },
+        {
+          "path": "train-00017-of-00021.parquet",
+          "bytes": 1766097617
+        },
+        {
+          "path": "train-00018-of-00021.parquet",
+          "bytes": 1736169297
+        },
+        {
+          "path": "train-00019-of-00021.parquet",
+          "bytes": 1292008198
+        },
+        {
+          "path": "train-00020-of-00021.parquet",
+          "bytes": 312532679
+        }
+      ],
+      "source": "https://huggingface.co/api/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main?recursive=true&limit=1000"
+    },
+    {
+      "repository": "UPB-RAT-VLA/Exp2VLA-MultiObject-v1",
+      "file_count": 8,
+      "bytes": 1052270715,
+      "GB_decimal": 1.052270715,
+      "GiB": 0.9800034714862704,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 2461
+        },
+        {
+          "path": "data/chunk-000/file-000.parquet",
+          "bytes": 24535329
+        },
+        {
+          "path": "meta/episodes/chunk-000/file-000.parquet",
+          "bytes": 4824108
+        },
+        {
+          "path": "meta/info.json",
+          "bytes": 2454
+        },
+        {
+          "path": "meta/stats.json",
+          "bytes": 9810
+        },
+        {
+          "path": "meta/tasks.parquet",
+          "bytes": 2250
+        },
+        {
+          "path": "videos/observation.images.camera1/chunk-000/file-000.mp4",
+          "bytes": 524018785
+        },
+        {
+          "path": "videos/observation.images.camera1/chunk-000/file-001.mp4",
+          "bytes": 498875518
+        }
+      ],
+      "source": "https://huggingface.co/api/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1/tree/main?recursive=true&limit=1000"
+    },
+    {
+      "repository": "wangxiangyu0814/TravelUAV",
+      "file_count": 133,
+      "bytes": 482695739270,
+      "GB_decimal": 482.69573927,
+      "GiB": 449.54543865285814,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 9001
+        },
+        {
+          "path": "BattlefieldKitDesert.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BattlefieldKitDesert.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BattlefieldKitDesert.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BattlefieldKitDesert.zip",
+          "bytes": 853076857
+        },
+        {
+          "path": "BrushifyCountryRoads.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyCountryRoads.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyCountryRoads.zip",
+          "bytes": 1995274017
+        },
+        {
+          "path": "BrushifyForestPack.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyForestPack.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyForestPack.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyForestPack.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyForestPack.zip",
+          "bytes": 1007554749
+        },
+        {
+          "path": "BrushifyUrban.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyUrban.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "BrushifyUrban.zip",
+          "bytes": 3081186183
+        },
+        {
+          "path": "Carla_Town01.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town01.z02",
+          "bytes": 4037017546
+        },
+        {
+          "path": "Carla_Town01.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town01.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town01.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town01.zip",
+          "bytes": 1246050018
+        },
+        {
+          "path": "Carla_Town02.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town02.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town02.zip",
+          "bytes": 2275080213
+        },
+        {
+          "path": "Carla_Town03.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town03.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town03.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town03.zip",
+          "bytes": 2070423708
+        },
+        {
+          "path": "Carla_Town04.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town04.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town04.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town04.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town04.zip",
+          "bytes": 1603195666
+        },
+        {
+          "path": "Carla_Town05.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town05.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town05.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town05.zip",
+          "bytes": 1321376113
+        },
+        {
+          "path": "Carla_Town06.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town06.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town06.zip",
+          "bytes": 2091110655
+        },
+        {
+          "path": "Carla_Town07.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town07.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town07.zip",
+          "bytes": 2114299561
+        },
+        {
+          "path": "Carla_Town10HD.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.z07",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town10HD.zip",
+          "bytes": 1267804759
+        },
+        {
+          "path": "Carla_Town15.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Carla_Town15.zip",
+          "bytes": 3741040743
+        },
+        {
+          "path": "Japanese_Street.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "Japanese_Street.zip",
+          "bytes": 1126890514
+        },
+        {
+          "path": "London_Street.zip",
+          "bytes": 1524384165
+        },
+        {
+          "path": "ModernCityMap.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModernCityMap.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModernCityMap.zip",
+          "bytes": 1773021965
+        },
+        {
+          "path": "ModularPark.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.z07",
+          "bytes": 4037017600
+        },
+        {
+          "path": "ModularPark.zip",
+          "bytes": 674379128
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z07",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z08",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z09",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z10",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z11",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z12",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z13",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z14",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z15",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z16",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z17",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z18",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z19",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z20",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z21",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.z22",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NYCEnvironmentMegapa.zip",
+          "bytes": 1857630797
+        },
+        {
+          "path": "NewYorkCity.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z07",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z08",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z09",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z10",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z11",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z12",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z13",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.z14",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NewYorkCity.zip",
+          "bytes": 1322271008
+        },
+        {
+          "path": "NordicHarbour.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NordicHarbour.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NordicHarbour.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "NordicHarbour.zip",
+          "bytes": 203218395
+        },
+        {
+          "path": "TropicalIsland.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z04",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z05",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z06",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z07",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z08",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z09",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z10",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z11",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z12",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.z13",
+          "bytes": 4037017600
+        },
+        {
+          "path": "TropicalIsland.zip",
+          "bytes": 3826963760
+        },
+        {
+          "path": "WesterTown.z01",
+          "bytes": 4037017600
+        },
+        {
+          "path": "WesterTown.z02",
+          "bytes": 4037017600
+        },
+        {
+          "path": "WesterTown.z03",
+          "bytes": 4037017600
+        },
+        {
+          "path": "WesterTown.zip",
+          "bytes": 1647561349
+        }
+      ],
+      "source": "https://huggingface.co/api/datasets/wangxiangyu0814/TravelUAV/tree/main?recursive=true&limit=1000"
+    },
+    {
+      "repository": "wangxiangyu0814/TravelUAV_env",
+      "file_count": 27,
+      "bytes": 83732236876,
+      "GB_decimal": 83.732236876,
+      "GiB": 77.98172242566943,
+      "files": [
+        {
+          "path": ".gitattributes",
+          "bytes": 3358
+        },
+        {
+          "path": "BattlefieldKitDesert.z01",
+          "bytes": 4026531840
+        },
+        {
+          "path": "BattlefieldKitDesert.zip",
+          "bytes": 320430366
+        },
+        {
+          "path": "BrushifyCountryRoads.zip",
+          "bytes": 2536558848
+        },
+        {
+          "path": "BrushifyForestPack.zip",
+          "bytes": 2992366057
+        },
+        {
+          "path": "BrushifyUrban.zip",
+          "bytes": 1530641125
+        },
+        {
+          "path": "Japanese_Street.zip",
+          "bytes": 1716172018
+        },
+        {
+          "path": "London_Street.zip",
+          "bytes": 2521336609
+        },
+        {
+          "path": "NordicHarbour.zip",
+          "bytes": 3008367412
+        },
+        {
+          "path": "WesterTown.zip",
+          "bytes": 1804736075
+        },
+        {
+          "path": "carla_town_envs.z01",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z02",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z03",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z04",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z05",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z06",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z07",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z08",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z09",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z10",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.z11",
+          "bytes": 4026531840
+        },
+        {
+          "path": "carla_town_envs.zip",
+          "bytes": 337540433
+        },
+        {
+          "path": "closeloop_envs.z01",
+          "bytes": 4026531840
+        },
+        {
+          "path": "closeloop_envs.z02",
+          "bytes": 4026531840
+        },
+        {
+          "path": "closeloop_envs.z03",
+          "bytes": 4026531840
+        },
+        {
+          "path": "closeloop_envs.z04",
+          "bytes": 4026531840
+        },
+        {
+          "path": "closeloop_envs.zip",
+          "bytes": 2539575135
+        }
+      ],
+      "source": "https://huggingface.co/api/datasets/wangxiangyu0814/TravelUAV_env/tree/main?recursive=true&limit=1000"
+    }
+  ],
+  "scope": "Published files only, not unpacked/cached/training working-set size; no downloads or provisioning",
+  "combined_bytes": 861420865484,
+  "combined_GiB": 802.2606982700527,
+  "sizing": {
+    "root_GiB": 100,
+    "pilot_data_GiB": 512,
+    "provisional_full_data_GiB": 2048,
+    "gp3_USD_per_GiB_month": 0.0836,
+    "pilot_combined_storage_USD_month": 51.163199999999996,
+    "full_combined_storage_USD_month": 179.57279999999997,
+    "approved": false,
+    "expanded_bytes": "unknown until selected archive metadata/extraction sampled"
+  }
+}

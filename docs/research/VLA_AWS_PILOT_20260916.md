@@ -160,6 +160,10 @@ On-Demand in eu-north-1 (saved SKUs and source in `public_aws_prices.json`):
 | **g6.2xlarge** | **24 GB** | **32 GiB** | **1.03688** |
 | g5.2xlarge | 24 GB | 32 GiB | 1.28549 |
 
+**D-125 correction:** the following 100 GB / 5 USD figures describe the old
+tiny-pilot proposal only. They are not a full-dataset storage budget. Use the
+measured storage plan below for subsequent launch decisions.
+
 100 GB gp3 at baseline performance: 0.0836 USD/GB-month = 8.36 USD/month
 while provisioned, even when the instance is stopped. A two-hour compute window
 is 2.07376 USD; one day of 100 GB storage is approximately 0.279 USD using a
@@ -282,3 +286,81 @@ relocation, corruption, duplicate coverage, forbidden seeds, strict target types
 and explicit prompt refresh are tested. No tiny overfit, trained-policy simulation,
 AWS launch, paid call or cloud spend was performed by this task.
 
+
+
+## D-125 correction: separate root disk from dataset working storage
+
+The user correctly challenged 100 GB as a complete training/benchmark disk.
+It was a tiny-pilot estimate and failed to budget external corpora, extracted
+simulators, preprocessing/cache duplication, checkpoints and disk headroom.
+No volume had been provisioned. This section supersedes the earlier disk sizing
+for the broader project; it does not authorize spending or bulk downloads.
+
+Read-only public Hugging Face file-tree inventory on 2026-09-16 (all pages
+followed; individual paths/byte sizes saved in `storage_inventory.json`):
+
+| Published repository | Download bytes, decimal GB | GiB |
+|---|---:|---:|
+| wangxiangyu0814/UAV-Flow | 258.015 | 240.295 |
+| wangxiangyu0814/UAV-Flow-Sim | 35.926 | 33.459 |
+| wangxiangyu0814/TravelUAV | 482.696 | 449.545 |
+| wangxiangyu0814/TravelUAV_env | 83.732 | 77.982 |
+| UPB-RAT-VLA/Exp2VLA-MultiObject-v1 | 1.052 | 0.980 |
+
+Total about 861.4 GB / 802.3 GiB in published files. This sums repository files,
+not a deduplicated required dataset subset. Archive expansion, selected maps,
+caches, intermediate frames and checkpoints are additional, as applicable;
+unpacked size is not yet measured. These are storage candidates, not approval
+to combine their data or assume they share action formats/licenses.
+
+Revised staging proposal:
+
+- Root: 100 GiB gp3, or the selected AMI's higher minimum if required.
+- Initial working data volume: 512 GiB gp3 for selected pilot shards/maps.
+  This is explicitly insufficient for all of the listed repositories at once.
+- Provisional full-data target: separate 2,048 GiB (2 TiB) gp3. Confirm the
+  selected archive expansion/caches before committing to this as sufficient.
+  Compute required space as root software separately, then source bytes kept
+  locally + extracted files + materialized training/cache bytes + retained
+  checkpoints + at least 20% free working headroom; do not double-count when
+  source and extracted representations are the same files.
+- Increase the EBS volume before larger downloads, then extend its filesystem;
+  AWS supports size increases, not in-place shrinking. Therefore staged sizing
+  follows the user's request to proceed gradually.
+- g6.2xlarge also has a nominal 450 GB local NVMe instance store. Use it only
+  for reproducible temporary caches: it is erased on stop/termination and is
+  not the persistent dataset/checkpoint store. Its capacity was omitted from
+  the earlier proposal; it does not remove the persistent-storage requirement.
+
+At the already verified Stockholm baseline gp3 rate (0.0836 USD/GiB-month):
+
+| Root + data | Storage/month | Approx. storage/day (30-day month) |
+|---|---:|---:|
+| 100 + 512 GiB | 51.16 USD | 1.71 USD |
+| 100 + 2,048 GiB | 179.57 USD | 5.99 USD |
+
+Storage is charged while provisioned, including stopped-instance periods.
+Two hours of g6.2xlarge compute plus a full day of the larger storage is about
+8.06 USD before other charges, so the earlier proposed 5 USD allocation cannot
+be carried over unchanged. Agree retention and total cap before provisioning.
+No EBS/S3 resources or billing settings changed in this correction.
+
+AMI screenshot: x86_64, Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.13
+(Ubuntu 26.04), quick-start catalog, G6 listed as supported. AWS's current
+release documentation confirms this image family exists. It can serve as the
+GPU host; do not claim ms-swift/PEFT/bitsandbytes or older native benchmark
+stacks are validated against its preinstalled Python/PyTorch. Use a separately
+pinned environment/container and pass the import/CUDA/one-batch gate first.
+Exact regional AMI owner/fees remain a prelaunch check; family documentation
+alone is not an account-level AMI attestation.
+
+Sources:
+- https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow/tree/main
+- https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main
+- https://huggingface.co/datasets/wangxiangyu0814/TravelUAV/tree/main
+- https://huggingface.co/datasets/wangxiangyu0814/TravelUAV_env/tree/main
+- https://huggingface.co/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1/tree/main
+- https://docs.aws.amazon.com/dlami/latest/devguide/aws-deep-learning-x86-gpu-pytorch-2.13-ubuntu-26-04.html
+- https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html
+- https://aws.amazon.com/ec2/instance-types/g6/
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-lifetime.html

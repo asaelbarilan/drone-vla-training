@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Storage correction - D-125 (2026-09-16)
+
+100 GB was only a tiny-pilot disk, not the full VLA dataset budget. Published
+files across five candidate corpora/simulator repositories total 861.4 GB before
+extraction/caches. See storage_inventory.json and the appended D-125 plan.
+Propose 100 GiB root plus staged 512 GiB data; provisional 2 TiB data for broader
+use after measuring expansion. Root+2 TiB costs about179.57 USD/month while
+provisioned; old5USD proposal does not cover a day plus GPU at that size.
+No new spend or machine approved. Screenshot's PyTorch2.13/Ubuntu26.04 image
+family exists in officialAWS docs; isolated training environment still untested.
+
 ## VLA AWS pilot preparation - D-123/D-124 (2026-09-16)
 
 This isolated branch recovers the VLA plan and audits local data; it does not

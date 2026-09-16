@@ -2999,3 +2999,16 @@ analytical teacher-codec mismatches. Corrected initial prompt-drift claim:
 Windows-default decoding caused the false alarm; UTF-8 prompts match exactly.
 97 focused unit/contract tests pass; all new Python files pass Ruff. No model
 training, model prediction, simulation flight, cloud job or spend occurred.
+
+
+## 2026-09-16 - Correct VLA storage sizing (D-125)
+
+User challenged the 100 GB recommendation. Measured published repository file
+sizes without downloads: approximately 861.4 GB across five relevant corpora/
+simulator repositories, before extraction/caches. Revised plan separates root
+and data disks: 512 GiB staged pilot data, provisional 2 TiB broader working set
+subject to expansion measurement and cost approval. Recorded recurring storage
+costs and corrected the old 5 USD proposal's applicability. Verified current
+AWS documentation for the screenshot's PyTorch 2.13/Ubuntu 26.04 image family;
+training dependency compatibility remains untested. Metadata/docs only; no
+infrastructure changes, secrets, training or evaluation seeds used.
