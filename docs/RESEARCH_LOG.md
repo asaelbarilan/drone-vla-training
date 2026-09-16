@@ -2863,3 +2863,25 @@ not causal architecture comparison or reliability evidence. No runtimefix requir
 Evidence: reports/continuation_20260916/REPORT.md and raw/audit artifacts.
 Next matched commitment on/off under identical placement/budget/seeds. Dedicated
 11435 unloaded/stopped, debugger8766 retained, shared11434/Valley untouched.
+
+
+## 2026-09-16 - D-123: recover VLA plan and bound the AWS pilot
+
+**Decision.** Preserve the Qwen3-VL 4B SFT-first plan as a provisional pilot,
+not a claim of eight-regime or real-world readiness. Recommend one g6.2xlarge
+(24 GB L4, 32 GiB RAM), subject to host inventory and user approval before
+launch and again before training. No spending allocation is approved.
+**Rationale.** Latest ASP-UAV design uses C8 as the shielded direct-action base,
+with one executor across C8/C10/C12. The older bearing-dependent reactive
+collector covers one navigation instruction and has action/terminal gaps.
+**Evidence.** Read both latest external design PDFs, existing plan/locks/survey;
+inherited ledger validates 31 works/27 primary. Current official resource
+revisions and Stockholm public price SKUs saved in
+reports/vla_aws_pilot_20260916. g6.2xlarge Linux On-Demand 1.03688 USD/hour;
+100 GB gp3 8.36 USD/month. These are prices, not account availability/credits.
+Remote inventory remains unknown: no configured SSH/AWS profile found and
+browser kernel fails during Windows sandbox initialization. No credentials read.
+**Status.** Inventory/research complete locally; cloud and training not run.
+Full gates, cost proposal, data coverage and transfer gaps:
+docs/research/VLA_AWS_PILOT_20260916.md. User approval must cover concrete machine,
+uptime and disk retention, then measured training budget separately.

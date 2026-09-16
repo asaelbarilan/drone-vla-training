@@ -1,0 +1,73 @@
+{
+  "source": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonEC2/current/eu-north-1/index.csv",
+  "region": "eu-north-1",
+  "retrieved": "2026-09-16",
+  "entries": [
+    {
+      "SKU": "4NMR9MQQ73NSGKX4",
+      "Instance Type": "g6.2xlarge",
+      "PricePerUnit": "1.0368800000",
+      "Currency": "USD",
+      "Unit": "Hrs",
+      "vCPU": "8",
+      "Memory": "32 GiB",
+      "GPU": "1",
+      "GPU Memory": "24 GB",
+      "Operating System": "Linux",
+      "TermType": "OnDemand",
+      "Tenancy": "Shared",
+      "EffectiveDate": "2026-09-01",
+      "Location": "EU (Stockholm)",
+      "PurchaseOption": "",
+      "PriceDescription": "$1.03688 per On Demand Linux g6.2xlarge Instance Hour"
+    },
+    {
+      "SKU": "F3PTPNKGCC6PTABD",
+      "Instance Type": "g6.xlarge",
+      "PricePerUnit": "0.8536000000",
+      "Currency": "USD",
+      "Unit": "Hrs",
+      "vCPU": "4",
+      "Memory": "16 GiB",
+      "GPU": "1",
+      "GPU Memory": "24 GB",
+      "Operating System": "Linux",
+      "TermType": "OnDemand",
+      "Tenancy": "Shared",
+      "EffectiveDate": "2026-09-01",
+      "Location": "EU (Stockholm)",
+      "PurchaseOption": "",
+      "PriceDescription": "$0.8536 per On Demand Linux g6.xlarge Instance Hour"
+    },
+    {
+      "SKU": "MYYYY95VXDEFXRNC",
+      "Instance Type": "g5.2xlarge",
+      "PricePerUnit": "1.2854900000",
+      "Currency": "USD",
+      "Unit": "Hrs",
+      "vCPU": "8",
+      "Memory": "32 GiB",
+      "GPU": "1",
+      "GPU Memory": "24 GB",
+      "Operating System": "Linux",
+      "TermType": "OnDemand",
+      "Tenancy": "Shared",
+      "EffectiveDate": "2026-09-01",
+      "Location": "EU (Stockholm)",
+      "PurchaseOption": "",
+      "PriceDescription": "$1.28549 per On Demand Linux g5.2xlarge Instance Hour"
+    }
+  ],
+  "gp3_storage": [
+    {
+      "SKU": "H33YTQG3Y9XKNSF3",
+      "PriceDescription": "$0.0836 per GB-month of General Purpose (gp3) provisioned storage - EU (Stockholm)",
+      "EffectiveDate": "2026-09-01",
+      "Unit": "GB-Mo",
+      "PricePerUnit": "0.0836000000",
+      "Currency": "USD",
+      "Location": "EU (Stockholm)",
+      "Volume API Name": "gp3"
+    }
+  ]
+}

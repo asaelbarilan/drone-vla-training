@@ -2972,3 +2972,16 @@ not causal architecture comparison or reliability evidence. No runtimefix requir
 Evidence: reports/continuation_20260916/REPORT.md and raw/audit artifacts.
 Next matched commitment on/off under identical placement/budget/seeds. Dedicated
 11435 unloaded/stopped, debugger8766 retained, shared11434/Valley untouched.
+
+
+## 2026-09-16 - VLA/AWS plan recovery and resource inventory (D-123)
+
+Created isolated worktree/branch codex/vla-aws-pilot-20260916 from 6be9a55.
+Recovered old Qwen SFT/DAgger plan and read current nine-condition/eight-regime
+paper design. Saved public model/dataset revisions and Stockholm pricing.
+Recommend one 24 GB GPU; no GPU instance, credentials or cloud resources used.
+AWS inventory is blocked by missing SSH/SSM connection and browser sandbox
+startup failure. User wants machine approval before launch and again before
+training. Added credential-free host inventory script; local inventory is
+explicitly the laptop, not the AWS instance. Pilot/transfer plan and limitations
+are in docs/research/VLA_AWS_PILOT_20260916.md. Existing baselines and splits intact.

@@ -1,0 +1,38 @@
+{
+  "captured_utc": "2026-09-16T16:57:06.991915+00:00",
+  "os": "Windows",
+  "os_release": "11",
+  "architecture": "AMD64",
+  "cpu_count": 24,
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "transformers": "4.44.2",
+    "accelerate": "1.4.0",
+    "peft": null,
+    "bitsandbytes": null,
+    "ms-swift": null,
+    "flash-attn": null,
+    "qwen-vl-utils": null
+  },
+  "storage": {
+    "path": "C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_vla_aws_pilot_20260916",
+    "total_bytes": 1022975012864,
+    "used_bytes": 1007066402816,
+    "free_bytes": 15908610048
+  },
+  "gpu": {
+    "available": true,
+    "exit_code": 0,
+    "stdout": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 7433 MiB, 93 %, 610.88",
+    "stderr": ""
+  },
+  "cuda_toolkit": {
+    "available": false
+  },
+  "instance_type": null,
+  "region": null,
+  "hourly_rate_usd": null,
+  "billing_note": "Confirm instance type, region, purchase option and price separately."
+}
