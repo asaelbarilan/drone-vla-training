@@ -3139,3 +3139,14 @@ weights. Native template/prefix/value mask preflight passes;first200updates
 identical reload. BF16+LoRA peak1.061GB;preserve failure. Froze252localTRAIN/
 84VAL mixed-data protocol and reproduced identical index/schedule bytes.
 No external data added. Expanded Smol training now running;Qwen follows.
+
+## 2026-09-17 — Smol256 mixed local result (D136)
+
+400fresh-adapter updates on252training rows complete in140.359s;1.050GB
+peakPyTorch. All28validation probes return validJSON,4/28exact. Visual outputs
+are constant clockwise yaw42:8/16directions,0/8instruction pairs,0/8color-swap
+pairs;blank images change0/16outputs. Both terminal probes remainHOLD. Useful
+pilot gate fails. All84validation CE1.4910/0.1489/0.1528 at0/200/400;no
+checkpoint selection. Four reload probes identical. Source/prediction viewer
+passes88exact checks.400executed sampleIDs match frozen schedule;val disjoint.
+Qwen comparison remains running;noexternaldata or paid compute.

@@ -1,0 +1,13 @@
+{
+  "training_script_sha256": "17eb8511152a9a67843daf40fe927016c11f8558f77faa1bb9f89aae9d757290",
+  "model_sources": {
+    "smol256": "https://huggingface.co/HuggingFaceTB/SmolVLM-256M-Instruct",
+    "qwen": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct"
+  },
+  "differences": {
+    "smol256": "BF16 frozen base, language-only r8 LoRA,512pixel single-global-image native processor; image-only cached model",
+    "qwen": "NF4 frozen base, language-only r8 LoRA,native Qwen image processor"
+  },
+  "unchanged": "Same source224RGB mosaic,FRD prompt semantics,252TRAIN rows,400sample IDs,optimizer schedule and28generation probes. Native chat templates/tokenization differ.",
+  "model_selection": "User-specified cached256M;no model-size sweep. Aborted500M download was not trained."
+}

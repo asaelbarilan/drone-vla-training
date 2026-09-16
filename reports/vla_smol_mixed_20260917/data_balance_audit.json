@@ -1,0 +1,29 @@
+{
+  "class_counts": {
+    "train": {
+      "coordinate_motion": 180,
+      "hold": 18,
+      "stop": 6,
+      "visual_yaw": 48
+    },
+    "val": {
+      "coordinate_motion": 60,
+      "hold": 6,
+      "stop": 2,
+      "visual_yaw": 16
+    }
+  },
+  "schedule_exposures": {
+    "hold": 31,
+    "coordinate_motion": 284,
+    "visual_yaw": 75,
+    "stop": 10
+  },
+  "unique_train_rows_seen": 252,
+  "cross_split_exact_mosaic_hashes": 0,
+  "cross_split_exact_prompt_image_inputs": 0,
+  "visual_left_right_train": {
+    "counterclockwise": 24,
+    "clockwise": 24
+  }
+}

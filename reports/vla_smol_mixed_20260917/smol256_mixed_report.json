@@ -1,0 +1,2395 @@
+{
+  "model": "smol256",
+  "base": "C:\\Users\\Asael\\.cache\\huggingface\\hub\\models--HuggingFaceTB--SmolVLM-256M-Instruct\\snapshots\\7e3e67edbbed1bf9888184d9df282b700a323964",
+  "contract": "direct_velocity_heading_frd_v2",
+  "gate_report": "D:\\drone_vla_pilot\\runs\\smol256_overfit_20260917_b\\report.json",
+  "kind": "D136 mixed local expansion",
+  "status": "complete",
+  "fresh_adapter": true,
+  "data_sha256": "0738e416de4a8cc905af67d8b310ab8817a4138ab681a7c473639717e377aef1",
+  "train_ids": [
+    "public_goal_s1401-decision-0000",
+    "public_goal_s1401-decision-0001",
+    "public_goal_s1401-decision-0002",
+    "public_goal_s1401-decision-0003",
+    "public_goal_s1401-decision-0004",
+    "public_goal_s1401-decision-0005",
+    "public_goal_s1401-decision-0006",
+    "public_goal_s1401-decision-0007",
+    "public_goal_s1401-decision-0008",
+    "public_goal_s1401-decision-0009",
+    "public_goal_s1401-decision-0010",
+    "public_goal_s1401-decision-0011",
+    "public_goal_s1401-decision-0012",
+    "public_goal_s1401-decision-0013",
+    "public_goal_s1401-decision-0014",
+    "public_goal_s1401-decision-0015",
+    "public_goal_s1401-decision-0016",
+    "public_goal_s1401-decision-0017",
+    "public_goal_s1401-decision-0018",
+    "public_goal_s1401-decision-0019",
+    "public_goal_s1401-decision-0020",
+    "public_goal_s1401-decision-0021",
+    "public_goal_s1401-decision-0022",
+    "public_goal_s1401-decision-0023",
+    "public_goal_s1401-decision-0024",
+    "public_goal_s1401-decision-0025",
+    "public_goal_s1401-decision-0026",
+    "public_goal_s1401-decision-0027",
+    "public_goal_s1401-decision-0028",
+    "public_goal_s1401-decision-0029",
+    "public_goal_s1401-decision-0030",
+    "public_goal_s1401-decision-0031",
+    "public_goal_s1401-decision-0032",
+    "public_goal_s1402-decision-0000",
+    "public_goal_s1402-decision-0001",
+    "public_goal_s1402-decision-0002",
+    "public_goal_s1402-decision-0003",
+    "public_goal_s1402-decision-0004",
+    "public_goal_s1402-decision-0005",
+    "public_goal_s1402-decision-0006",
+    "public_goal_s1402-decision-0007",
+    "public_goal_s1402-decision-0008",
+    "public_goal_s1402-decision-0009",
+    "public_goal_s1402-decision-0010",
+    "public_goal_s1402-decision-0011",
+    "public_goal_s1402-decision-0012",
+    "public_goal_s1402-decision-0013",
+    "public_goal_s1402-decision-0014",
+    "public_goal_s1402-decision-0015",
+    "public_goal_s1402-decision-0016",
+    "public_goal_s1402-decision-0017",
+    "public_goal_s1402-decision-0018",
+    "public_goal_s1402-decision-0019",
+    "public_goal_s1402-decision-0020",
+    "public_goal_s1402-decision-0021",
+    "public_goal_s1402-decision-0022",
+    "public_goal_s1402-decision-0023",
+    "public_goal_s1402-decision-0024",
+    "public_goal_s1402-decision-0025",
+    "public_goal_s1402-decision-0026",
+    "public_goal_s1402-decision-0027",
+    "public_goal_s1402-decision-0028",
+    "public_goal_s1402-decision-0029",
+    "public_goal_s1402-decision-0030",
+    "public_goal_s1402-decision-0031",
+    "public_goal_s1402-decision-0032",
+    "public_goal_s1403-decision-0000",
+    "public_goal_s1403-decision-0001",
+    "public_goal_s1403-decision-0002",
+    "public_goal_s1403-decision-0003",
+    "public_goal_s1403-decision-0004",
+    "public_goal_s1403-decision-0005",
+    "public_goal_s1403-decision-0006",
+    "public_goal_s1403-decision-0007",
+    "public_goal_s1403-decision-0008",
+    "public_goal_s1403-decision-0009",
+    "public_goal_s1403-decision-0010",
+    "public_goal_s1403-decision-0011",
+    "public_goal_s1403-decision-0012",
+    "public_goal_s1403-decision-0013",
+    "public_goal_s1403-decision-0014",
+    "public_goal_s1403-decision-0015",
+    "public_goal_s1403-decision-0016",
+    "public_goal_s1403-decision-0017",
+    "public_goal_s1403-decision-0018",
+    "public_goal_s1403-decision-0019",
+    "public_goal_s1403-decision-0020",
+    "public_goal_s1403-decision-0021",
+    "public_goal_s1403-decision-0022",
+    "public_goal_s1403-decision-0023",
+    "public_goal_s1403-decision-0024",
+    "public_goal_s1403-decision-0025",
+    "public_goal_s1403-decision-0026",
+    "public_goal_s1403-decision-0027",
+    "public_goal_s1403-decision-0028",
+    "public_goal_s1403-decision-0029",
+    "public_goal_s1403-decision-0030",
+    "public_goal_s1403-decision-0031",
+    "public_goal_s1403-decision-0032",
+    "public_goal_s1404-decision-0000",
+    "public_goal_s1404-decision-0001",
+    "public_goal_s1404-decision-0002",
+    "public_goal_s1404-decision-0003",
+    "public_goal_s1404-decision-0004",
+    "public_goal_s1404-decision-0005",
+    "public_goal_s1404-decision-0006",
+    "public_goal_s1404-decision-0007",
+    "public_goal_s1404-decision-0008",
+    "public_goal_s1404-decision-0009",
+    "public_goal_s1404-decision-0010",
+    "public_goal_s1404-decision-0011",
+    "public_goal_s1404-decision-0012",
+    "public_goal_s1404-decision-0013",
+    "public_goal_s1404-decision-0014",
+    "public_goal_s1404-decision-0015",
+    "public_goal_s1404-decision-0016",
+    "public_goal_s1404-decision-0017",
+    "public_goal_s1404-decision-0018",
+    "public_goal_s1404-decision-0019",
+    "public_goal_s1404-decision-0020",
+    "public_goal_s1404-decision-0021",
+    "public_goal_s1404-decision-0022",
+    "public_goal_s1404-decision-0023",
+    "public_goal_s1404-decision-0024",
+    "public_goal_s1404-decision-0025",
+    "public_goal_s1404-decision-0026",
+    "public_goal_s1404-decision-0027",
+    "public_goal_s1404-decision-0028",
+    "public_goal_s1404-decision-0029",
+    "public_goal_s1404-decision-0030",
+    "public_goal_s1404-decision-0031",
+    "public_goal_s1404-decision-0032",
+    "public_goal_s1404-decision-0033",
+    "public_goal_s1404-decision-0034",
+    "public_goal_s1406-decision-0000",
+    "public_goal_s1406-decision-0001",
+    "public_goal_s1406-decision-0002",
+    "public_goal_s1406-decision-0003",
+    "public_goal_s1406-decision-0004",
+    "public_goal_s1406-decision-0005",
+    "public_goal_s1406-decision-0006",
+    "public_goal_s1406-decision-0007",
+    "public_goal_s1406-decision-0008",
+    "public_goal_s1406-decision-0009",
+    "public_goal_s1406-decision-0010",
+    "public_goal_s1406-decision-0011",
+    "public_goal_s1406-decision-0012",
+    "public_goal_s1406-decision-0013",
+    "public_goal_s1406-decision-0014",
+    "public_goal_s1406-decision-0015",
+    "public_goal_s1406-decision-0016",
+    "public_goal_s1406-decision-0017",
+    "public_goal_s1406-decision-0018",
+    "public_goal_s1406-decision-0019",
+    "public_goal_s1406-decision-0020",
+    "public_goal_s1406-decision-0021",
+    "public_goal_s1406-decision-0022",
+    "public_goal_s1406-decision-0023",
+    "public_goal_s1406-decision-0024",
+    "public_goal_s1406-decision-0025",
+    "public_goal_s1406-decision-0026",
+    "public_goal_s1406-decision-0027",
+    "public_goal_s1406-decision-0028",
+    "public_goal_s1406-decision-0029",
+    "public_goal_s1406-decision-0030",
+    "public_goal_s1406-decision-0031",
+    "public_goal_s1406-decision-0032",
+    "public_goal_s1406-decision-0033",
+    "public_goal_s1406-decision-0034",
+    "public_goal_s1407-decision-0000",
+    "public_goal_s1407-decision-0001",
+    "public_goal_s1407-decision-0002",
+    "public_goal_s1407-decision-0003",
+    "public_goal_s1407-decision-0004",
+    "public_goal_s1407-decision-0005",
+    "public_goal_s1407-decision-0006",
+    "public_goal_s1407-decision-0007",
+    "public_goal_s1407-decision-0008",
+    "public_goal_s1407-decision-0009",
+    "public_goal_s1407-decision-0010",
+    "public_goal_s1407-decision-0011",
+    "public_goal_s1407-decision-0012",
+    "public_goal_s1407-decision-0013",
+    "public_goal_s1407-decision-0014",
+    "public_goal_s1407-decision-0015",
+    "public_goal_s1407-decision-0016",
+    "public_goal_s1407-decision-0017",
+    "public_goal_s1407-decision-0018",
+    "public_goal_s1407-decision-0019",
+    "public_goal_s1407-decision-0020",
+    "public_goal_s1407-decision-0021",
+    "public_goal_s1407-decision-0022",
+    "public_goal_s1407-decision-0023",
+    "public_goal_s1407-decision-0024",
+    "public_goal_s1407-decision-0025",
+    "public_goal_s1407-decision-0026",
+    "public_goal_s1407-decision-0027",
+    "public_goal_s1407-decision-0028",
+    "public_goal_s1407-decision-0029",
+    "public_goal_s1407-decision-0030",
+    "public_goal_s1407-decision-0031",
+    "public_goal_s1407-decision-0032",
+    "public_goal_s1407-decision-0033",
+    "public_goal_s1407-decision-0034",
+    "visible_yaw_s1411_l0_red",
+    "visible_yaw_s1411_l0_blue",
+    "visible_yaw_s1411_l1_red",
+    "visible_yaw_s1411_l1_blue",
+    "visible_yaw_s1411_l2_red",
+    "visible_yaw_s1411_l2_blue",
+    "visible_yaw_s1411_l3_red",
+    "visible_yaw_s1411_l3_blue",
+    "visible_yaw_s1412_l0_red",
+    "visible_yaw_s1412_l0_blue",
+    "visible_yaw_s1412_l1_red",
+    "visible_yaw_s1412_l1_blue",
+    "visible_yaw_s1412_l2_red",
+    "visible_yaw_s1412_l2_blue",
+    "visible_yaw_s1412_l3_red",
+    "visible_yaw_s1412_l3_blue",
+    "visible_yaw_s1413_l0_red",
+    "visible_yaw_s1413_l0_blue",
+    "visible_yaw_s1413_l1_red",
+    "visible_yaw_s1413_l1_blue",
+    "visible_yaw_s1413_l2_red",
+    "visible_yaw_s1413_l2_blue",
+    "visible_yaw_s1413_l3_red",
+    "visible_yaw_s1413_l3_blue",
+    "visible_yaw_s1414_l0_red",
+    "visible_yaw_s1414_l0_blue",
+    "visible_yaw_s1414_l1_red",
+    "visible_yaw_s1414_l1_blue",
+    "visible_yaw_s1414_l2_red",
+    "visible_yaw_s1414_l2_blue",
+    "visible_yaw_s1414_l3_red",
+    "visible_yaw_s1414_l3_blue",
+    "visible_yaw_s1416_l0_red",
+    "visible_yaw_s1416_l0_blue",
+    "visible_yaw_s1416_l1_red",
+    "visible_yaw_s1416_l1_blue",
+    "visible_yaw_s1416_l2_red",
+    "visible_yaw_s1416_l2_blue",
+    "visible_yaw_s1416_l3_red",
+    "visible_yaw_s1416_l3_blue",
+    "visible_yaw_s1417_l0_red",
+    "visible_yaw_s1417_l0_blue",
+    "visible_yaw_s1417_l1_red",
+    "visible_yaw_s1417_l1_blue",
+    "visible_yaw_s1417_l2_red",
+    "visible_yaw_s1417_l2_blue",
+    "visible_yaw_s1417_l3_red",
+    "visible_yaw_s1417_l3_blue"
+  ],
+  "val_ids": [
+    "public_goal_s1400-decision-0000",
+    "public_goal_s1400-decision-0001",
+    "public_goal_s1400-decision-0002",
+    "public_goal_s1400-decision-0003",
+    "public_goal_s1400-decision-0004",
+    "public_goal_s1400-decision-0005",
+    "public_goal_s1400-decision-0006",
+    "public_goal_s1400-decision-0007",
+    "public_goal_s1400-decision-0008",
+    "public_goal_s1400-decision-0009",
+    "public_goal_s1400-decision-0010",
+    "public_goal_s1400-decision-0011",
+    "public_goal_s1400-decision-0012",
+    "public_goal_s1400-decision-0013",
+    "public_goal_s1400-decision-0014",
+    "public_goal_s1400-decision-0015",
+    "public_goal_s1400-decision-0016",
+    "public_goal_s1400-decision-0017",
+    "public_goal_s1400-decision-0018",
+    "public_goal_s1400-decision-0019",
+    "public_goal_s1400-decision-0020",
+    "public_goal_s1400-decision-0021",
+    "public_goal_s1400-decision-0022",
+    "public_goal_s1400-decision-0023",
+    "public_goal_s1400-decision-0024",
+    "public_goal_s1400-decision-0025",
+    "public_goal_s1400-decision-0026",
+    "public_goal_s1400-decision-0027",
+    "public_goal_s1400-decision-0028",
+    "public_goal_s1400-decision-0029",
+    "public_goal_s1400-decision-0030",
+    "public_goal_s1400-decision-0031",
+    "public_goal_s1400-decision-0032",
+    "public_goal_s1400-decision-0033",
+    "public_goal_s1400-decision-0034",
+    "public_goal_s1405-decision-0000",
+    "public_goal_s1405-decision-0001",
+    "public_goal_s1405-decision-0002",
+    "public_goal_s1405-decision-0003",
+    "public_goal_s1405-decision-0004",
+    "public_goal_s1405-decision-0005",
+    "public_goal_s1405-decision-0006",
+    "public_goal_s1405-decision-0007",
+    "public_goal_s1405-decision-0008",
+    "public_goal_s1405-decision-0009",
+    "public_goal_s1405-decision-0010",
+    "public_goal_s1405-decision-0011",
+    "public_goal_s1405-decision-0012",
+    "public_goal_s1405-decision-0013",
+    "public_goal_s1405-decision-0014",
+    "public_goal_s1405-decision-0015",
+    "public_goal_s1405-decision-0016",
+    "public_goal_s1405-decision-0017",
+    "public_goal_s1405-decision-0018",
+    "public_goal_s1405-decision-0019",
+    "public_goal_s1405-decision-0020",
+    "public_goal_s1405-decision-0021",
+    "public_goal_s1405-decision-0022",
+    "public_goal_s1405-decision-0023",
+    "public_goal_s1405-decision-0024",
+    "public_goal_s1405-decision-0025",
+    "public_goal_s1405-decision-0026",
+    "public_goal_s1405-decision-0027",
+    "public_goal_s1405-decision-0028",
+    "public_goal_s1405-decision-0029",
+    "public_goal_s1405-decision-0030",
+    "public_goal_s1405-decision-0031",
+    "public_goal_s1405-decision-0032",
+    "visible_yaw_s1410_l0_red",
+    "visible_yaw_s1410_l0_blue",
+    "visible_yaw_s1410_l1_red",
+    "visible_yaw_s1410_l1_blue",
+    "visible_yaw_s1410_l2_red",
+    "visible_yaw_s1410_l2_blue",
+    "visible_yaw_s1410_l3_red",
+    "visible_yaw_s1410_l3_blue",
+    "visible_yaw_s1415_l0_red",
+    "visible_yaw_s1415_l0_blue",
+    "visible_yaw_s1415_l1_red",
+    "visible_yaw_s1415_l1_blue",
+    "visible_yaw_s1415_l2_red",
+    "visible_yaw_s1415_l2_blue",
+    "visible_yaw_s1415_l3_red",
+    "visible_yaw_s1415_l3_blue"
+  ],
+  "generation_eval_ids": [
+    "visible_yaw_s1410_l0_red",
+    "visible_yaw_s1410_l0_blue",
+    "visible_yaw_s1410_l1_red",
+    "visible_yaw_s1410_l1_blue",
+    "visible_yaw_s1410_l2_red",
+    "visible_yaw_s1410_l2_blue",
+    "visible_yaw_s1410_l3_red",
+    "visible_yaw_s1410_l3_blue",
+    "visible_yaw_s1415_l0_red",
+    "visible_yaw_s1415_l0_blue",
+    "visible_yaw_s1415_l1_red",
+    "visible_yaw_s1415_l1_blue",
+    "visible_yaw_s1415_l2_red",
+    "visible_yaw_s1415_l2_blue",
+    "visible_yaw_s1415_l3_red",
+    "visible_yaw_s1415_l3_blue",
+    "public_goal_s1400-decision-0000",
+    "public_goal_s1400-decision-0007",
+    "public_goal_s1400-decision-0014",
+    "public_goal_s1400-decision-0020",
+    "public_goal_s1400-decision-0027",
+    "public_goal_s1400-decision-0034",
+    "public_goal_s1405-decision-0000",
+    "public_goal_s1405-decision-0006",
+    "public_goal_s1405-decision-0013",
+    "public_goal_s1405-decision-0019",
+    "public_goal_s1405-decision-0026",
+    "public_goal_s1405-decision-0032"
+  ],
+  "input_token_range": [
+    371,
+    535
+  ],
+  "trainable_parameters": 2442240,
+  "before": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.9220000000022992,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4219999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43800000000192085,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43699999999807915,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43800000000192085,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43699999999807915,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4220000000022992,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4529999999977008,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4220000000022992,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4379999999982829,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4370000000017171,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4379999999982829,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4370000000017171,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.4219999999986612,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43699999999807915,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " The mission is not physical landing.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 0.43800000000192085,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0000",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [0.0,0.0,3.0],\n    \"velocity_enu_mps\": [0.0,0.0,0.0],\n    \"yaw_enu_rad\":-0.8847873707404719,\n    \"yaw",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.234000000000378,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0007",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [0.9834419283543337,0.8789024035003472,3.5175023810324872,0.4624920632",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.312999999998283,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0014",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [2.2270345037283925,0.8906359836016093,4.226146969811601,0.60034343396",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.34400000000096,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0020",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [3.2959417514543388, -4.026077134016495, 4.88669245823427],\n    \"velocity_enu_mps\": [0.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.2959999999984575,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0027",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 37,
+        "right_bin": 32,
+        "down_bin": 30,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [4.499825263732355, -5.496651630262755, 5.990481877875136],\n    \"velocity_enu_mps\": [0.",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.360000000000582,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0034",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": " {\n    \"position_enu_m\": [4.973654098237861, -6.075445668476131, 5.990481877875136, 0.0493216645",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.312000000001717,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0000",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 28,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [0.0,0.0,3.0],\n    \"velocity_enu_mps\": [0.0,0.0,0.0],\n    \"yaw_enu_rad\":-1.3722218094370824,\n    \"yaw",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.34400000000096,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0006",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [0.7483087266217239,0.8413111793940826,3.0],\n    \"velocity_enu_mps\":[0.84131117939408",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.296999999998661,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0013",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [1.8957589981893406, -2.9937061394357016, 3.0],\n    \"velocity_enu_mps\": [0.832376223917",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.28099999999904,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0019",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [2.906281327029448,0.8472283449593246,3.0],\n    \"velocity_enu_mps\":[0.847228344959324",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.313000000001921,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\n    \"position_enu_m\": [3.9560557459946293, -6.180869148326898, 3.0],\n    \"velocity_enu_mps\": [0.4935936144043",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.296999999998661,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": " The mission is not physical landing. The mission is a drone landing on a public ENU coordinate [4.341103875935656, -6.719733412743129, 2.9600647339011408]. The mission is",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.312000000001717,
+      "task_group": "coordinate"
+    }
+  ],
+  "validation_loss": [
+    {
+      "step": 0,
+      "mean_answer_ce": 1.4910148921467008
+    },
+    {
+      "step": 200,
+      "mean_answer_ce": 0.14885459254894937
+    },
+    {
+      "step": 400,
+      "mean_answer_ce": 0.15279576905249131
+    }
+  ],
+  "optimization_seconds": [
+    70.60900000000038,
+    69.75
+  ],
+  "after": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0780000000013388,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.077999999997701,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.063000000001921,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1409999999996217,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0780000000013388,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.125,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.0929999999971187,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.063000000001921,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.061999999998079,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.110000000000582,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0780000000013388,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.061999999998079,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0790000000015425,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0459999999984575,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.110000000000582,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0000",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0007",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 29,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":41,\"right_bin\":32,\"down_bin\":31,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 31,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.125,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0014",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0020",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 28,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0027",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 37,
+        "right_bin": 32,
+        "down_bin": 30,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1409999999996217,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1400-decision-0034",
+      "seed": 1400,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.077999999997701,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0000",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 41,
+        "right_bin": 28,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.125,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0006",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":41,\"right_bin\":32,\"down_bin\":31,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 31,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0780000000013388,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0013",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":41,\"right_bin\":32,\"down_bin\":31,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 41,
+        "right_bin": 32,
+        "down_bin": 31,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1409999999996217,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0019",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 42,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "task_group": "coordinate"
+    }
+  ],
+  "interventions": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0929999999971187,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.1089999999967404,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.1089999999967404,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.077999999997701,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.062000000001717,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0780000000013388,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.110000000000582,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.125,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.125,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.125,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.014999999999418,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0469999999986612,
+      "intervention": "blank_image"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0309999999990396,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.077999999997701,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0790000000015425,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.0790000000015425,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 20,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32,",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.2810000000026776,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32,",
+      "parsed": null,
+      "valid": false,
+      "exact": false,
+      "latency_s": 4.406999999999243,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 44,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.0940000000009604,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.1090000000003783,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 41,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.063000000001921,
+      "intervention": "blank_instruction"
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "seed": 1415,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 23,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.110000000000582,
+      "intervention": "blank_instruction"
+    }
+  ],
+  "peak_allocated_bytes": 1050353152,
+  "reloaded_spot_check": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 19,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.311999999998079,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "seed": 1410,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":42,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 42,
+        "stop": false
+      },
+      "valid": true,
+      "exact": true,
+      "latency_s": 2.3290000000015425,
+      "task_group": "visual"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0026",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 35,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 31,
+        "stop": false
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.3280000000013388,
+      "task_group": "coordinate"
+    },
+    {
+      "decision_id": "public_goal_s1405-decision-0032",
+      "seed": 1405,
+      "target": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": true
+      },
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "exact": false,
+      "latency_s": 2.327999999997701,
+      "task_group": "coordinate"
+    }
+  ],
+  "reload_spot_identical": true,
+  "before_metrics": {
+    "coordinate": {
+      "n": 12,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    },
+    "visual": {
+      "n": 16,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    }
+  },
+  "after_metrics": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 2.3333333333333335,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.33420138888888884,
+      "yaw_mae_rps": 0.13671875
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.6875,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.50390625
+    }
+  },
+  "pilot_criteria_passed": false,
+  "updates": 400
+}

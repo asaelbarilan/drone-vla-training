@@ -3371,3 +3371,16 @@ requires zero translation and stop=false,matching the instruction. Report plain
 yaw sign separately. Report velocity MAE(m/s) and yaw-rate MAE(rad/s),with
 invalid outputs charged full-range errors,beside normalized bin MAE. No mixed
 training or mixed validation predictions have run at this clarification.
+
+D136 Smol mixed result:400updates140.359s,1.050GB peakallocation,28/28valid
+but4/28exact on frozen generation probes;coordinate0/12exact,visual4/16exact
+and8/16correct constrained yaw directions. All16visual outputs yaw42;blanking
+images changes0/16outputs. Both instruction/color-swap pair scores0/8. Neither
+selected validation STOP is recognized. Frozen useful-pilot gate FAILS.
+All84validation CE1.4910->0.1489->0.1528;final checkpoint remains frozen400,
+not selected using the lower200step loss. Reload4representatives identical.
+Data balance audit:train180coordinate motion,18hold,6stop,48visual;400schedule
+exposes284motion,31hold,10stop,75visual. Visualleft/right balanced24/24;noexact
+prompt/image overlap acrosssplits. Sparse STOP exposure may contribute but is
+not a demonstrated causal explanation. No optimization change follows these
+validation outcomes. Qwen runs the same frozen protocol next.
