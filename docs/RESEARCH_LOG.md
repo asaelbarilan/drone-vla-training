@@ -3117,3 +3117,13 @@ b caught mixed BF16/FP32 vision LayerNorm before optimizer work; both preserved.
 Explicit BF16 autocast fixed execution in c; no dataset/model sweep.
 Evidence: reports/vla_local_pilot_20260916/qwen_summary.json, qwen_attempt_[abc].json,
 qwen_losses.jsonl,tokenization_check.json. Model rollouts remain pending.
+
+D127 source-preview follow-up (2026-09-16): inspected public HF schema previews
+for UAV-Flow, UAV-Flow-Sim and Exp2VLA-MultiObject-v1; no source was admitted
+or bulk-downloaded. Real/sim preview logs differ (7 vs6 raw components); raw and
+preprocessed logs/instructions exist, but command semantics, units/calibration,
+complete-flight integrity and data licenses remain unverified. One partial
+flight's images per UAV-Flow source is insufficient. Updated expansion plan
+with current admitted coverage (only eight local coordinate diagnostics) and
+next5-complete-training-flight audits per source. Evidence: external_schema_peek.json,
+external_log_peek.json. Real/sim expansion remains required, not satisfied.

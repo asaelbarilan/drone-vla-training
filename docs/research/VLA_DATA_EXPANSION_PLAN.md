@@ -105,3 +105,39 @@ Real-video availability alone does not supply the action labels needed for BC.
 
 No external source has been added by this planning change. No trained checkpoint
 or transfer capability is claimed.
+
+## 2026-09-16 measured coverage and next source audit
+
+D129 adds eight local public-coordinate episodes (six train/two validation),
+272 observations, approximately60 simulated seconds. These are pipeline-only:
+vision is not required by the task. Semantic navigation/search/state reasoning/
+conditional/multi-stage/recovery/continuous tracking still have zero admitted
+new demonstrations. External-simulator and real-flight admitted episodes: zero.
+Do not count schema previews or downloaded model weights as training coverage.
+
+Small HF preview inspections are saved in
+reports/vla_local_pilot_20260916/external_schema_peek.json and external_log_peek.json.
+UAV-Flow preview exposes15 frames from one flight and a49-entry trajectory log;
+UAV-Flow-Sim exposes23 frames from one flight and a50-entry trajectory log.
+Both provide instructions and raw/preprocessed pose-like logs; the real first
+raw entry has7 components including a timestamp, while the sim entry has6.
+That difference blocks assuming a shared action/time decoder. No commanded
+velocity channel, calibration, stop semantics or full split/license audit has
+been established by these previews. Exp2VLA preview has6-component action/state,
+timestamp/episode/task indices; this alone does not establish the axis/scaling
+mapping or synchronized camera-video extraction. These are not admitted data.
+
+Next bounded acquisition: pin source revisions and inspect5 complete TRAIN
+flights each from UAV-Flow and UAV-Flow-Sim, fetching selected rows/one smallest
+shard only if required; inspect5 Exp2VLA episodes with their source videos and
+metadata. Keep each source's native schema and original splits. Resolve data
+license, coordinates/units/cadence, camera extrinsics and command-versus-motion
+labels before implementing conversions. If UAV-Flow provides only achieved
+poses, mark it waypoint/representation supervision, not direct velocity-command
+BC. Never synthesize a downward camera. Storage allocation follows actual
+selected compressed/extracted bytes plus caches, not a fixed blanket download.
+
+Primary preview sources:
+- https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow
+- https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim
+- https://huggingface.co/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1

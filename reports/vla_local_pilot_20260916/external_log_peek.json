@@ -1,0 +1,103 @@
+[
+  {
+    "dataset": "wangxiangyu0814/UAV-Flow",
+    "episode_ids_in_preview": [
+      "2025-04-15_07-23-51"
+    ],
+    "preview_rows": 15,
+    "truncated_cells": [],
+    "log_keys": [
+      "raw_logs",
+      "preprocessed_logs",
+      "instruction",
+      "instruction_unified"
+    ],
+    "log_structure": {
+      "raw_logs": {
+        "type": "list",
+        "length": 49,
+        "first_entry": [
+          3348609.6157470234,
+          215486.42359702586,
+          2.0000000399999998,
+          -0.45390995178385835,
+          124.35390995178386,
+          -3.993009469622442,
+          1744673032.5815272
+        ]
+      },
+      "preprocessed_logs": {
+        "type": "list",
+        "length": 49,
+        "first_entry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "instruction": {
+        "type": "str",
+        "length": 44,
+        "first_entry": "Make way to the road sign from the left side"
+      },
+      "instruction_unified": {
+        "type": "str",
+        "length": 42,
+        "first_entry": "Go toward the road sign from the left side"
+      }
+    }
+  },
+  {
+    "dataset": "wangxiangyu0814/UAV-Flow-Sim",
+    "episode_ids_in_preview": [
+      "2025-03-14_14-46-22"
+    ],
+    "preview_rows": 23,
+    "truncated_cells": [],
+    "log_keys": [
+      "raw_logs",
+      "preprocessed_logs",
+      "instruction",
+      "instruction_unified"
+    ],
+    "log_structure": {
+      "raw_logs": {
+        "type": "list",
+        "length": 50,
+        "first_entry": [
+          -358.933,
+          -267.793,
+          300.0,
+          -0.16,
+          -179.743,
+          0.51
+        ]
+      },
+      "preprocessed_logs": {
+        "type": "list",
+        "length": 50,
+        "first_entry": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "instruction": {
+        "type": "str",
+        "length": 34,
+        "first_entry": "Move to the tree on the front side"
+      },
+      "instruction_unified": {
+        "type": "str",
+        "length": 34,
+        "first_entry": "Move to the tree on the front side"
+      }
+    }
+  }
+]

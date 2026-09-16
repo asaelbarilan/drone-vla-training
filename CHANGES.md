@@ -3061,3 +3061,10 @@ Python environment.200 updates/269s,4.47GB peak PyTorch allocation on local
 RTX4060.16/16 well-formed predictions,9/16 exact,0/4 terminal STOP correct:
 overfit acceptance fails despite loss reduction. Save/reload predictions match
 16/16. Kept both startup failures and all results. No AWS/global package changes.
+
+## 2026-09-16 - D-127 follow-up: concrete wider-data admission gaps
+
+Inspected small public schema/log previews from UAV-Flow real/sim and Exp2VLA.
+Recorded differing native formats and next five-flight audits; no source treated
+as action-compatible merely because images/pose logs exist. Expansion plan now
+states measured coverage and zero admitted real/external-simulator episodes.
