@@ -3310,3 +3310,64 @@ Median generation~4s vs0.2s remains incompatible with assumed realtime cadence.
 77focused regression tests pass. Reports: vla_frd_followup_20260916/REPORT.md.
 The bounded follow-up completed;broader mixed-task training and transfer gates
 remain explicit future work. NoAWS/paid/physical flight or baseline changes.
+
+## 2026-09-17 - D-135: requested SmolVLM local matched pilot
+
+User requests training SmolVLM to compare results. Select one lightweight
+variant, HuggingFaceTB/SmolVLM2-500M-Video-Instruct, pinned revision
+7b375e1b73b11138ff12fe22c8f2822d8fe03467 (Apache2.0 model card). Image/text
+capability is not aerial action pretraining. Use the identical16TRAIN IDs,
+FRD contract,224mosaic,rank8 language-only LoRA,alpha32,weighted action loss,
+shuffle132 and learning rates2e-4 then5e-5. At most two200update/20min attempts,
+second conditional on train-only gate; no broader training or model sweep.
+Same>=14exact/15valid/allSTOP+HOLD/loss decrease/reload gate. Frozen validation
+1400/1405,reset-start,10simsec/50calls and20min per mode;offline inference paused.
+Even if overfit fails, retain capped flights as failure diagnosis, not expansion.
+Measure zero-shot/trained actions,latency,memory and exact replay. BF16 frozen
+base fits this small model;this differs from Qwen NF4 and must be disclosed,
+not called an isolated parameter-count ablation. Native tokenizer/processor
+and visual tokens may differ;untruncated input cap1024,80output tokens,record
+actual sizes. Keep dataset and architecture baselines unchanged. NoAWS/paid
+resources,physical flights or held-out seeds1-40/1060-1064. Existing venv only.
+Evidence: https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct
+and completed D131-D134 protocol. Status: implementation/preflight.
+
+## 2026-09-17 - D-136: use cached256M and expand current local data first
+
+User corrects D135:256M already installed;expand current local experiment
+before external data. D135500M selection is superseded;download attempt ended
+with Windows symlink error before any training, no retry/no500M sweep.
+Use cached HuggingFaceTB/SmolVLM-256M-Instruct revision
+7e3e67edbbed1bf9888184d9df282b700a323964, complete513MB weights. Image-only
+checkpoint matches current single-mosaic input;cached SmolVLM2 video variant
+is not evaluated. BF16+language LoRA/r8;native template,512pixel global image,
+no crop splitting. Same16TRAIN-overfit gate and bounded200+conditional200
+protocol first;Qwen already passed. After a passing gate,freeze mixed local
+training on204coordinate+48visual TRAIN examples (252),keeping68coordinate+
+16visual validation separate. No external acquisition or admission this turn.
+Evaluate held-out local actions and instruction/image contrasts as well as
+flights;report model-specific preprocessing/precision differences. Wider local
+protocol will be frozen before training, not selected from validation results.
+
+D136 mixed experiment frozen before any mixed validation prediction:252TRAIN
+(204coordinate+48visual),84VAL(68coordinate+16visual),12train/4val scene groups.
+Same400-ID shuffle132 schedule for eligible models, fresh adapters from each
+base (do not continue memorized adapters),rank8/alpha32 language-only LoRA,
+weighted loss,200updates2e-4 then freshAdamW200updates5e-5;20min/block maximum.
+Only models passing tiny gate proceed. Teacher-forced validation loss over all
+84 at0/200/400;generation on frozen28(16visual+6equally-spaced per coordinate
+val flight),before/after. No tuning/early checkpoint selection using validation.
+Final visual image-blank/instruction-blank controls test learned dependence;
+paired layouts test color/instruction sensitivity. Report exactness,validity,
+yaw sign and physical action error. A useful pilot requires>=27/28valid,
+>=12/16visual yaw signs,correct two selected terminalSTOPs and>=20% lower
+coordinate action MAE versus base (invalid outputs charged maximal bin error).
+Allcriteria frozen now;failure remains useful evidence. Same offline coordinate
+flight protocol follows final checkpoint without tuning. Noexternaldata.
+Manifest and exact schedule:reports/vla_smol_mixed_20260917/mixed_manifest.json.
+
+D136 pre-training scoring clarification:visual direction credit additionally
+requires zero translation and stop=false,matching the instruction. Report plain
+yaw sign separately. Report velocity MAE(m/s) and yaw-rate MAE(rad/s),with
+invalid outputs charged full-range errors,beside normalized bin MAE. No mixed
+training or mixed validation predictions have run at this clarification.

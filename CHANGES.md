@@ -3129,3 +3129,13 @@ pass,including successful-outcome display.77focused tests pass. New debugger
 frd_comparison.html preserves older pages. Added per-scene curves,latency limits,
 checkpoint hashes,coverage report and updated handoff. Original fixture bytes
 unchanged;protected seeds excluded. This is not real-world readiness.
+
+## 2026-09-17 — Cached SmolVLM256 correctness and local expansion (D135/D136)
+
+User corrected initial500M choice;its download failed with a Windows symlink
+error and no500Mtraining occurred. Located complete cached image-only256M
+weights. Native template/prefix/value mask preflight passes;first200updates
+6/16exact,11valid;second lower-LR200 reaches16/16exact/allSTOP+HOLD with
+identical reload. BF16+LoRA peak1.061GB;preserve failure. Froze252localTRAIN/
+84VAL mixed-data protocol and reproduced identical index/schedule bytes.
+No external data added. Expanded Smol training now running;Qwen follows.
