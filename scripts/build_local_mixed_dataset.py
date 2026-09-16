@@ -75,7 +75,9 @@ def build(out):
         contract="direct_velocity_heading_frd_v2",
         external_rows=0,
         index_sha256=hashlib.sha256((out / "index.jsonl").read_bytes()).hexdigest(),
-        limits="Mixed local diagnostic only; no real/external-domain transfer or broad task coverage",
+        limits=(
+            "Mixed local diagnostic only; no real/external-domain transfer or broad task coverage"
+        ),
     )
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2))
     return manifest
