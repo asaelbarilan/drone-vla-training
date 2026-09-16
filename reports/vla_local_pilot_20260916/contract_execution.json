@@ -1,0 +1,33 @@
+{
+  "contract": "direct_velocity_yaw_level_v1",
+  "kind": "component_audit_not_model_or_architecture_evaluation",
+  "scene_seed": 1401,
+  "random_commands": 4096,
+  "velocity_error_mps": {
+    "mean": 0.0727525344769763,
+    "p95": 0.10712022107754517,
+    "max": 0.13068093249344098
+  },
+  "yaw_rate_error_rps": {
+    "mean": 0.011842843342592887,
+    "max": 0.02342005018403226
+  },
+  "controller_speed_projections": 545,
+  "physics_cases": 128,
+  "physics_steps_per_case": 4,
+  "max_position_drift_m": 0.00735012166737011,
+  "max_yaw_drift_rad": 0.004667758715978465,
+  "action_expiry_checks": 128,
+  "hold_stop_separation": true,
+  "horizon_s": 0.2,
+  "duration_start": "router acceptance time",
+  "velocity_orientation": "source-observation yaw, fixed ENU during horizon",
+  "training_ready": false,
+  "remaining": [
+    "student observability",
+    "recorded dataset alignment",
+    "terminal evidence",
+    "trained inference",
+    "cross-domain transfer"
+  ]
+}

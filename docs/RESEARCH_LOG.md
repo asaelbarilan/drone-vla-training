@@ -2985,3 +2985,43 @@ admission requires small complete-episode audits, license/provenance, calibrated
 observations, command-versus-pose semantics and protected source/group splits.
 Full traces and per-domain learning curves precede deployment claims. Sim-only
 overfit cannot fulfill the user goal. Original baselines and splits preserved.
+
+## 2026-09-16 - D-128: additive velocity contract for local correctness pilot
+
+**Decision.** Freeze a named diagnostic contract direct_velocity_yaw_level_v1:
+65 symmetric bins per velocity/yaw-rate component, velocity limits +/-5 m/s,
+yaw-rate +/-1.5 rad/s, exact zero at bin32, separate mission-stop boolean.
+Translation axes are forward/left/up in a level frame defined by the source
+observation's ENU yaw. This is not full roll/pitch body FLU. Decode once using
+that source yaw and hold the resulting ENU setpoint for a configured duration
+of at least one 0.05s control tick; no implicit re-rotation while yaw changes.
+**Rationale.** Preserve hover and independent lateral/yaw motion without native
+AeroVLA displacement conversion. Reject malformed/nonfinite/out-of-vocabulary
+teacher values rather than silently clipping them. Controller speed projection
+and vehicle acceleration lag remain explicit downstream behavior, not codec
+errors. Stop denotes mission termination, not a physical landing command.
+**Evidence.** Existing ControlCommand/KinematicAction, frame transforms,
+MockVelocityController.from_action and DeterministicEnv.step read. They apply
+a 5m/s vector speed clamp, yaw cap and first-order acceleration lag. The draft
+previously lacked finite input checks, silently clipped labels and accepted
+durations below the controller's 0.05s floor. No native configuration changes.
+**Status.** Provisional implementation/test underway. Validate distributional
+quantization error and actual controller/physics behavior before data collection.
+Do not infer that this contract supplies observable labels or real-world transfer.
+
+### D-128 execution gate outcome
+
+52 focused unit/regression tests pass. All4096 random within-limit commands
+have post-controller velocity error<=0.130681m/s (mean0.072753,p950.107120)
+and yaw-rate error<=0.023421rad/s.545 quantized vectors need the existing
+controller's speed projection; this is reported, not hidden by label clipping.
+128 matched0.2s physics cases have maxpositiondrift0.00735013m and
+maxyawdrift0.00466776rad; all128 router expiry checks pass. Hold does not request
+STOP; explicit mission STOP does. Tests reject nonfinite/malformed/duplicate
+outputs, unsupported labels, frame mismatch, moving terminal labels and
+sub-tick/fractional-tick horizons. Source yaw defines fixed ENU orientation.
+Evidence: reports/vla_local_pilot_20260916/contract_execution.json and
+scripts/audit_direct_vla_execution.py. Local component scene1401 only,
+no modelcalls, training or architecture-performance claims.
+Status: component gate passed; dataset observability/alignment/terminal evidence
+remain open. Contract does not validate real-flight attitude transforms.

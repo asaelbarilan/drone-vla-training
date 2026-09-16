@@ -16,6 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## VLA local execution contract - D-128 (2026-09-16)
+
+Active user goal: local VLA correctness pilot while user away; no AWS/paid work.
+New additive direct_velocity_yaw_level_v1 passes52 focused tests,4096 command
+samples and128 matched controller/router/physics segments. Maxpositiondrift
+7.35mm/0.2s; explicit hold/STOP and expiry pass. See
+reports/vla_local_pilot_20260916/contract_execution.json. The prior draft is now
+validated at the component level, superseding D126's draft-only status.
+Next collect synchronized raw controls, poses and images with observable
+terminal criteria; model training and inference remain undone. Source yaw fixes
+a level forward/left/up frame, not full roll/pitch aircraft-body coordinates.
+Continue D127 broader sim/real data plan. Do not touch the architecture session.
+
 ## Required VLA data expansion - D-127 (2026-09-16)
 
 Read docs/research/VLA_DATA_EXPANSION_PLAN.md. User explicitly requires both

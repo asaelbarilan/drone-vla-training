@@ -3034,3 +3034,13 @@ simulation and real-flight recordings, source/action/calibration audits, protect
 group splits and mixed-domain learning curves. User's requirement is mandatory
 beyond the tiny local pilot. Existing corpus coverage is not assigned an invented
 percentage. Updated pilot, TODO and handoff; no source imported or training run.
+
+## 2026-09-16 - Additive VLA velocity-contract execution gate (D-128)
+
+Validated direct_velocity_yaw_level_v1 without editing native AeroVLA or paper
+profiles. Exact zero/explicit STOP, strict finite/frame/range checks, no silent
+teacher clipping, source-yaw rotation and integral control-tick horizons.
+52 focused tests pass;4096 command samples and128 matched physics segments
+bound quantization/controller error (maxpositiondrift7.35mm over0.2s).
+Recorded controller speed projections and verified router expiry/hold behavior.
+No trained checkpoint, new training dataset or real-world claim.
