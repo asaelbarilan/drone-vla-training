@@ -43,9 +43,10 @@ for0.2 simulated seconds reduces target bearing error in8/16 Smol scenes and
 16/16 Qwen scenes. These are single-action diagnostics, not full visual flights.
 Independent audits check source pixels, commands, dynamics and resulting images.
 
-Training and validation losses are in [mixed_loss_curves.png](mixed_loss_curves.png).
-Loss falls without guaranteeing useful actions: syntax dominates ordinary
-answer-token CE, STOP is sparse, and model tokenizers differ. Weighted training
+Training and validation losses are in [mixed_loss_curves.png](mixed_loss_curves.png)
+and in the expandable loss section of the prediction viewer.
+Loss falls without guaranteeing useful actions: ordinary answer-token CE
+includes many syntax tokens, STOP is sparse, and model tokenizers differ. Weighted training
 loss emphasizes the action values. Do not rank models by absolute CE alone.
 
 ## Review and limitations

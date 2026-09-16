@@ -3161,3 +3161,7 @@ bearing improvements. Both models' source images, prompts, raw outputs, decoded
 physical actions and resulting images appear in the prediction debugger;176
 browser assertions pass. Generated training/validation loss plots and recorded
 schedule audits. No external data, AWS, physical flights or baseline changes.
+
+D136 review polish:embedded the exact loss plot in an expandable viewer section;
+176 prediction checks and an exact plot-byte browser check pass. Normalized
+Matplotlib SVG trailing whitespace; Ruff and git diff whitespace checks pass.

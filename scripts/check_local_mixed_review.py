@@ -26,7 +26,7 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={"width": 1400, "height": 1050})
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.goto("http://127.0.0.1:8771/local_mixed_predictions.html")
-    page.locator("summary").click()
+    page.get_by_text("Exact model text prompt", exact=True).click()
     assert page.locator("#model option").count() == len(models)
     assert page.locator("#sample option").count() == 28
     for model in models:

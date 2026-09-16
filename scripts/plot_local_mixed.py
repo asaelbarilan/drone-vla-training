@@ -46,9 +46,12 @@ for index, model in enumerate(("smol256", "qwen")):
     )
     ax.grid(alpha=0.2)
 fig.suptitle(
-    "Same252TRAIN examples and400-update schedule | 84VAL examples\n"
+    "Same 252 TRAIN examples and 400-update schedule | 84 VAL examples\n"
     "Native tokenizers and BF16/NF4 differ; loss values are not a model-ranking score.",
     fontsize=12,
 )
 fig.savefig(a.reports / "mixed_loss_curves.png", dpi=150)
 fig.savefig(a.reports / "mixed_loss_curves.svg")
+
+svg = a.reports / "mixed_loss_curves.svg"
+svg.write_text("\n".join(line.rstrip() for line in svg.read_text().splitlines()) + "\n")
