@@ -101,6 +101,12 @@ with sync_playwright() as p:
         base64.b64decode(page.locator("#lossPlot").get_attribute("src").split(",", 1)[1])
         == (root / "duration_loss_curves.png").read_bytes()
     )
+    page.locator("#taskSection summary").click()
+    assert page.locator("#taskPlot").is_visible()
+    assert (
+        base64.b64decode(page.locator("#taskPlot").get_attribute("src").split(",", 1)[1])
+        == (root / "duration_task_losses.png").read_bytes()
+    )
     assert not errors
     browser.close()
 (root / "prediction_ui_check.json").write_text(

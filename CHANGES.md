@@ -3189,3 +3189,12 @@ D137500M correctness gate completes:16/16 exact at400total tiny updates,
 allSTOP/HOLD and all16reloads identical;1.628GB peak. First200attempt retained
 (9/16exact). Added exact prediction/plot browser checks and schedule summaries.
 256M duration job started from preserved400adapter;no changes to data balance.
+
+## 2026-09-17 - D137: complete256M duration arm and expose comparable losses
+
+Continuation to1200passes exact800-ID schedule audit,28resume predictions and
+4reloadspots. Weighted TRAIN0.496->0.334,VAL0.518->0.732:overfitting under this
+recipe. CoordinatevelocityMAE improves0.334->0.221m/s,butvisualdirections8/16,
+pairs0/8,STOP0/2.88browser checks and16visual execution audits pass. New viewer
+contains full/focused loss histories and task breakdowns;prior viewer unchanged.
+500M mixed arm is running. No validation-selected checkpoint or new data.

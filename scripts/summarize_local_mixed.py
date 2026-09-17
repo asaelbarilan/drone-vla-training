@@ -8,8 +8,8 @@ from pathlib import Path
 from run_local_mixed_vla import metrics
 
 
-def summarize(report):
-    assert report["status"] == "complete" and report["updates"] == 400
+def summarize(report, expected_updates=400):
+    assert report["status"] == "complete" and report["updates"] == expected_updates
     after = report["after"]
     visual = [r for r in after if r["task_group"] == "visual"]
     by_id = {r["decision_id"]: r for r in visual}

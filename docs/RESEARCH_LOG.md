@@ -3466,3 +3466,19 @@ D137500M gate: first200updates97.656s produce16valid/9exact,HOLD failures;
 reload16identical. Planned200more at5e-5 takes103.593s and passes16/16exact,
 allSTOP/HOLD,full16reloadidentical. Peak1.628GB. Fresh mixed500adapter remains
 separate from this memorization adapter. No additional tiny retries required.
+
+D137 resume and loss audit:256step400 regenerates all28 prior outputs identically.
+Same-definition eval-mode weighted mean TRAIN0.495731/VAL0.518003;ordinaryCE
+TRAIN0.145630/VAL0.152796. Small starting gap does not support a strong overfit
+claim. Original online loss mixed task difficulties: last200updates averages
+HOLD0.224,visual0.325,motion0.676,STOP1.011. This explains some jaggedness;
+no loss samples were removed or smoothed in stored raw logs.
+
+D137256M complete:800additional updates335.407s,1.051GBpeak. All28resume and
+4finalreload outputs identical. TRAINweighted0.495731->0.3342 while VALweighted
+0.518003->0.7316;ordinaryCE TRAIN0.145630->0.0955/VAL0.152796->0.2091. This
+supports overfitting under this recipe,not an across-the-board metric decline:
+coordinatevelocityMAE0.3342->0.2214m/s. Visualdirection8/16unchanged,pairs0/8,
+STOP0/2,exact0/28,valid28/28. Blank images change16outputs without correct
+paired behavior.64executed visualticks reducebearing8/16;independent auditpasses.
+500M fresh mixed comparison remains running on the frozen schedule.

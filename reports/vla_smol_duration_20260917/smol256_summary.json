@@ -1,0 +1,131 @@
+{
+  "model": "smol256",
+  "before": {
+    "coordinate": {
+      "n": 12,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    },
+    "visual": {
+      "n": 16,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    }
+  },
+  "after": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 1.7083333333333333,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.22135416666666666,
+      "yaw_mae_rps": 0.12109375
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 0,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875
+    }
+  },
+  "criteria_passed": false,
+  "both_instructions_correct_pairs": "0/8",
+  "both_color_swaps_correct_pairs": "0/8",
+  "interventions": {
+    "blank_image": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.6875,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.50390625,
+      "predictions_changed": 16
+    },
+    "blank_instruction": {
+      "n": 16,
+      "valid": 16,
+      "exact": 1,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875,
+      "predictions_changed": 2
+    }
+  },
+  "median_after_latency_s": 2.359500000005937,
+  "optimization_seconds": 335.40699999999197,
+  "peak_allocated_bytes": 1051173376,
+  "reload_spot_identical": true,
+  "validation_loss": [
+    {
+      "step": 400,
+      "mean_answer_ce": 0.15279576905249131
+    },
+    {
+      "step": 600,
+      "mean_answer_ce": 0.17638423661923125
+    },
+    {
+      "step": 800,
+      "mean_answer_ce": 0.21638818341307342
+    },
+    {
+      "step": 1000,
+      "mean_answer_ce": 0.19610437308992482
+    },
+    {
+      "step": 1200,
+      "mean_answer_ce": 0.20908001542002672
+    }
+  ],
+  "limits": "28 fixed generation examples; all84 validation rows for CE. 2visual+2coordinate validation scene groups; no real-world transfer claim.",
+  "at400": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 2.3333333333333335,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.33420138888888884,
+      "yaw_mae_rps": 0.13671875
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.6875,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.50390625
+    }
+  },
+  "schedule_audit": {
+    "updates_executed": 800,
+    "start_step": 400,
+    "schedule_identical": true,
+    "disjoint_splits": true
+  },
+  "stop_exact_at400": 0,
+  "stop_exact_at1200": 0
+}

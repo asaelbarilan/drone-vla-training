@@ -38,7 +38,7 @@ for model in ("smol256", "smol500"):
         )
         for x in r["comparable_losses"]
     ]
-    out = summarize(r)
+    out = summarize(r, expected_updates=1200)
     out["at400"] = metrics(r["generation_checkpoints"]["400"])
     out["schedule_audit"] = dict(
         updates_executed=len(ls),
