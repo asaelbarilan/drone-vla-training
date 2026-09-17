@@ -1,0 +1,100 @@
+{
+  "model": "smol500",
+  "updates": 400,
+  "elapsed_seconds": 2048.077999999994,
+  "reload_matches": true,
+  "metrics": {
+    "local": {
+      "n": 28,
+      "exact": 2,
+      "valid": 26,
+      "false_stop": 0,
+      "group_accuracy": {
+        "motion": 0.1,
+        "stop": 0.5,
+        "visual": 0.0
+      }
+    },
+    "openfly": {
+      "n": 72,
+      "exact": 16,
+      "valid": 72,
+      "false_stop": 5,
+      "group_accuracy": {
+        "0": 0.25,
+        "1": 0.3333333333333333,
+        "2": 0.08333333333333333,
+        "3": 0.5,
+        "4": 0.0,
+        "5": 0.16666666666666666
+      },
+      "macro_recall": 0.2222222222222222,
+      "always_forward_exact": 12
+    }
+  },
+  "comparable_losses": [
+    {
+      "step": 0,
+      "values": {
+        "local:train": 1.1764430304368336,
+        "openfly:train": 2.791485528151194,
+        "local:val": 1.406016000679561,
+        "openfly:val": 2.756894783841239
+      }
+    },
+    {
+      "step": 100,
+      "values": {
+        "local:train": 0.2918234607204795,
+        "openfly:train": 1.1367542644341786,
+        "local:val": 0.4432885785187994,
+        "openfly:val": 1.9126732034815683
+      }
+    },
+    {
+      "step": 200,
+      "values": {
+        "local:train": 0.22306315360280374,
+        "openfly:train": 1.1766787479735084,
+        "local:val": 0.3828782237334443,
+        "openfly:val": 2.46648007300165
+      }
+    },
+    {
+      "step": 300,
+      "values": {
+        "local:train": 0.20954489544965327,
+        "openfly:train": 0.8350132933507363,
+        "local:val": 0.36057159091745106,
+        "openfly:val": 2.3571545117431216
+      }
+    },
+    {
+      "step": 400,
+      "values": {
+        "local:train": 0.19206838344689459,
+        "openfly:train": 0.7024514676433884,
+        "local:val": 0.35635796721492496,
+        "openfly:val": 2.261749361331264
+      }
+    }
+  ],
+  "flights": [
+    {
+      "seed": 1400,
+      "success": false,
+      "termination": "timeout",
+      "distance_m": 6.452894179374667,
+      "model_calls": 50
+    },
+    {
+      "seed": 1405,
+      "success": false,
+      "termination": "timeout",
+      "distance_m": 0.6703794487013841,
+      "model_calls": 50
+    }
+  ],
+  "browser_checks": 6,
+  "adapter_sha256": "e0cff233ccb88413999dfaba1c07ccab1fbb2f079e762c4f5b2648cbffbeb26b"
+}
