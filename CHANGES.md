@@ -3198,3 +3198,7 @@ recipe. CoordinatevelocityMAE improves0.334->0.221m/s,butvisualdirections8/16,
 pairs0/8,STOP0/2.88browser checks and16visual execution audits pass. New viewer
 contains full/focused loss histories and task breakdowns;prior viewer unchanged.
 500M mixed arm is running. No validation-selected checkpoint or new data.
+
+D137 saved-action debugger:handle a valid model STOP as stationary diagnostic
+hold rather than dereferencing a missing kinematic action. A labelled synthetic
+STOP regression passes;excluded from model metrics. No training or router change.

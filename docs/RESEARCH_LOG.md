@@ -3482,3 +3482,10 @@ coordinatevelocityMAE0.3342->0.2214m/s. Visualdirection8/16unchanged,pairs0/8,
 STOP0/2,exact0/28,valid28/28. Blank images change16outputs without correct
 paired behavior.64executed visualticks reducebearing8/16;independent auditpasses.
 500M fresh mixed comparison remains running on the frozen schedule.
+
+D137 diagnostic repair:review found saved-action executor would dereference
+None for a valid STOP (mission directive). It now records mission_stop and
+holds stationary for the0.2s diagnostic window,without teacher substitution.
+A separately labelled synthetic STOP regression passes independent control/
+image/dynamics audit;it is NOT counted as model performance evidence. Training,
+model predictions and real mission router are unchanged.

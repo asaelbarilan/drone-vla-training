@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "visible_yaw_s1410_l0_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l0_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l1_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l1_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l2_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l2_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l3_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1410_l3_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l0_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l0_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l1_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l1_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l2_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l2_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l3_red",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    },
+    {
+      "id": "visible_yaw_s1415_l3_blue",
+      "frd_controls_match": true,
+      "yaw_dynamics_match": true,
+      "after_image_and_bearing_match": true
+    }
+  ],
+  "source_rows": 16,
+  "synthetic_regression_only": true,
+  "not_model_performance_evidence": true,
+  "input": "D:/drone_vla_pilot/runs/d137_stop_executor_regression/synthetic_input.json",
+  "purpose": "One visual output replaced by a valid STOP to verify stationary post-termination diagnostic handling"
+}

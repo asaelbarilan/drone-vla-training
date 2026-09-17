@@ -87,11 +87,18 @@ async def run(args):
             continue
         target = parse_target(prediction["raw"])
         action = action_from_target(target, obs.yaw_rad, duration_s=0.2)
+        record["mission_stop"] = target.stop
         controller = MockVelocityController()
         controller.reset(mission, r["seed"])
         for _tick in range(4):
             obs = await env.observe()
-            command = controller.from_action(action, context(mission, obs, identity), identity)
+            ctx = context(mission, obs, identity)
+            # A valid model STOP is a mission directive, not a kinematic action.
+            command = (
+                controller.hold(ctx)
+                if target.stop
+                else controller.from_action(action, ctx, identity)
+            )
             record["controls"].append(
                 dict(state=student_state(obs), command=command.model_dump(mode="json"))
             )
