@@ -3283,3 +3283,12 @@ Prepared and audited22official TRAIN routes (258train/171dev), native action-ID
 training interface and recorded-flight viewer. Started local Smol500 gated
 memorization/pilot, separate from FRD baselines. Protocol and source data audit
 are frozen;429browser source rows verified. No AWS spend. Outcomes pending.
+
+
+D142 normalization follow-up: a CPU-only re-decode reproduces all saved original
+actions to1e-12. Holding generated tokens fixed and using released-evaluator
+vlnv1 changes coarse category accuracy12/51 ->29/51 and mixed32 ->0; macro
+recall .1346 ->.3269; turn accuracy remains0/12. The alternate normalization
+zeros unsupported dimensions, so this is decoder sensitivity, not new inference
+or proof of corrected native benchmark performance. Original table retained.
+Evidence: normalization_audit.json and scripts/audit_openfly_normalization.py.

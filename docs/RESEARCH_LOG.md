@@ -3702,3 +3702,12 @@ Old FRD models, local validation, seeds1-40/protected1060-1064 untouched.
 Reject converting displacement/turn labels into arbitrary0.2svelocities.
 Evidence: reports/vla_openfly_train_20260917/{PROTOCOL.md,selection.json,data_audit.json,viewer_audit.json};
 429source rows and22playback routes browser-verified. Training outcomes pending.
+
+
+D142 normalization follow-up: a CPU-only re-decode reproduces all saved original
+actions to1e-12. Holding generated tokens fixed and using released-evaluator
+vlnv1 changes coarse category accuracy12/51 ->29/51 and mixed32 ->0; macro
+recall .1346 ->.3269; turn accuracy remains0/12. The alternate normalization
+zeros unsupported dimensions, so this is decoder sensitivity, not new inference
+or proof of corrected native benchmark performance. Original table retained.
+Evidence: normalization_audit.json and scripts/audit_openfly_normalization.py.
