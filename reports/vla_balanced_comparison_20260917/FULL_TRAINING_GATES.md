@@ -36,3 +36,11 @@ Passing the current narrow pilot would not by itself justify real deployment.
 
 Source: docs/research/VLA_DATA_EXPANSION_PLAN.md (D127),
 docs/CAPABILITY_SCENARIOS.md (D103), D138 data audit, D139 frozen protocol.
+
+Measured coverage clarification: the expanded TRAIN set has951 unique mosaics
+and24 instruction strings, but only TWO visual instruction templates (red/blue
+pillar) plus22 public-coordinate goals. Visual labels are balanced152clockwise/
+152counterclockwise.558coordinate examples already include nonzero vertical
+commands, at observed altitudes about2.06-5.87m;vertical motion is not absent,
+but it is only goal-following behavior in simple scenes. These counts motivate
+new behaviors/instruction families, not simply collecting more adjacent frames.
