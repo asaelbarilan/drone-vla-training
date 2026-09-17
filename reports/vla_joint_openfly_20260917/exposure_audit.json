@@ -1,0 +1,20 @@
+{
+  "exposures": {
+    "local": 1600,
+    "openfly": 1600
+  },
+  "unique_rows": {
+    "openfly": 592,
+    "local": 790
+  },
+  "native_class_exposures": {
+    "2": 267,
+    "0": 267,
+    "3": 267,
+    "1": 267,
+    "5": 266,
+    "4": 266
+  },
+  "native_training_routes_exposed": 88,
+  "note": "Repeated rare classes do not count as new data. Short bounded pilot does not traverse all available rows."
+}

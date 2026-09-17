@@ -3351,3 +3351,10 @@ local1156/300 and all protected splits. Added dual-contract source-balanced
 loss/prediction/flight review. All three two-update training/reload gates passed.
 Full-run results pending; no AWS or deployment claim. Evidence: D144 protocol
 and reports/vla_joint_openfly_20260917/data_audit.json.
+
+D144 execution: all three smoke/reload gates pass (peak allocated GPU memory
+0.862/1.388/4.839 GiB). Sequential queue launched; Smol256 baseline evaluation
+first, then fresh400updates and audited local flights, followed by500 andQwen.
+Live dashboard browser checks pass:100held-out cases (28local/72native), three
+models, three causal native images, responsive layout and no JavaScript errors.
+Full results pending; see joint_openfly.html and queue_status.json.
