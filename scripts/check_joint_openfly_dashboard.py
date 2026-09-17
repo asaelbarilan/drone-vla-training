@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,7 +32,8 @@ def main():
         page.on("pageerror", lambda e: errors.append(str(e)))
         page.goto("http://127.0.0.1:8771/joint_openfly.html")
         page.wait_for_function(
-            "document.querySelectorAll('#case option').length === 100 && document.querySelectorAll('#outputs details pre').length >= 2"
+            "document.querySelectorAll('#case option').length === 100 && "
+            "document.querySelectorAll('#outputs details pre').length >= 2"
         )
         for i, case in enumerate(cases):
             page.select_option("#case", str(i))
@@ -40,7 +42,8 @@ def main():
             assert provenance["image_sha256"] == case["image_sha256"]
             assert provenance["prompt"] == case["prompt"]
             page.wait_for_function(
-                "Array.from(document.querySelectorAll('#images img')).every(i => i.complete && i.naturalWidth > 0)"
+                "Array.from(document.querySelectorAll('#images img'))"
+                ".every(i => i.complete && i.naturalWidth > 0)"
             )
             assert page.locator("#images img").count() == len(case["previews"])
             shown = page.locator("#outputs details pre").all_text_contents()
