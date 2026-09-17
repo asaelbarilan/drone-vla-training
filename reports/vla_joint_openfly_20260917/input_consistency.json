@@ -1,0 +1,9 @@
+{
+  "rows": 5200,
+  "unique_prompt_image_inputs": 5200,
+  "identical_input_conflicting_target_groups": 0,
+  "identical_input_cross_split_groups": 0,
+  "conflicts": [],
+  "leaks": [],
+  "limitations": "Exact input/hash consistency only; does not establish that every route decision is observable from a three-frame history."
+}
