@@ -16,6 +16,7 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("--out", type=Path, required=True)
 parser.add_argument("--limit", type=int, default=2)
+parser.add_argument("--eval-data", type=Path)
 parser.add_argument("--prompt-style", choices=("model_card", "training"), default="model_card")
 args = parser.parse_args()
 args.out.mkdir(parents=True, exist_ok=True)
@@ -80,6 +81,9 @@ rows = [
     for r in rows
     if r["split"] == "val" and r["task_group"] == "visual" and r["seed"] in (1410, 1415)
 ][: args.limit]
+if args.eval_data:
+    rows = [json.loads(line) for line in args.eval_data.read_text().splitlines()]
+    rows = [dict(r, decision_id=r["id"]) for r in rows]
 outputs = []
 original_generate = model.generate
 last_tokens = []
@@ -93,14 +97,23 @@ def capture_generate(*a, **kw):
 
 model.generate = capture_generate
 for r in rows:
-    image_path = Path(r["data_root"]) / r["images"]["front"]
-    image = Image.open(image_path).convert("RGB")
+    if args.eval_data:
+        import hashlib
+
+        image_paths = [Path(x) for x in r["images"]]
+        assert [hashlib.sha256(p.read_bytes()).hexdigest() for p in image_paths] == r[
+            "image_sha256"
+        ]
+    else:
+        image_paths = [Path(r["data_root"]) / r["images"]["front"]] * 3
+    image_path = image_paths[-1]
+    images = [Image.open(p).convert("RGB") for p in image_paths]
     prompt = r["instruction"]
     if args.prompt_style == "training":
         builder = LLaMa2ChatPromptBuilder("prismatic")
         builder.add_turn("human", f"What action should the robot take to {prompt.lower()}?")
         prompt = builder.get_prompt()
-    inputs = processor(prompt, [image, image, image]).to("cuda:0", dtype=torch.bfloat16)
+    inputs = processor(prompt, images).to("cuda:0", dtype=torch.bfloat16)
     # Official predict_action appends 29871 but leaves attention_mask unchanged.
     # Append both here so unpadded prompt and mask stay aligned.
     if inputs["input_ids"][0, -1].item() != 29871:
@@ -121,7 +134,10 @@ for r in rows:
             instruction=r["instruction"],
             prompt=prompt,
             image=str(image_path),
-            initial_history="three copies of initial front image",
+            initial_history="two preceding annotation frames plus current, left padded at start"
+            if args.eval_data
+            else "three copies of initial front image",
+            images=[str(p) for p in image_paths],
             raw_action=action.tolist(),
             action_token_ids=list(last_tokens),
             tokens_in_action_range=all(

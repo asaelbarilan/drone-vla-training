@@ -294,14 +294,18 @@ async def main(args):
     global MODEL_TAG, cuda
     MODEL_TAG = args.model + "_" + args.label
     api = importlib.import_module(
-        "run_smol_frd_overfit" if args.model == "smol256" else "run_qwen_frd_overfit"
+        "run_smol_frd_overfit" if args.model in ("smol256", "smol500") else "run_qwen_frd_overfit"
     )
+    if args.model == "smol500":
+        api.MODEL = Path(
+            "D:/drone_vla_pilot/models/SmolVLM-500M-Instruct/a7da5b986cb59b408707209984f360a5f4ad7e47"
+        )
     cuda = api.cuda
     args.out.mkdir(parents=True, exist_ok=False)
     torch.cuda.set_per_process_memory_fraction(0.70)
     processor = (
         api.load_processor()
-        if args.model == "smol256"
+        if args.model in ("smol256", "smol500")
         else api.AutoProcessor.from_pretrained(str(api.MODEL), local_files_only=True)
     )
     model = api.load_base().eval()
@@ -349,7 +353,7 @@ async def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", choices=["smol256", "qwen"], required=True)
+    parser.add_argument("--model", choices=["smol256", "smol500", "qwen"], required=True)
     parser.add_argument("--label", choices=["tiny", "mixed"], required=True)
     parser.add_argument(
         "--modes", nargs="+", choices=["zero_shot", "trained"], default=["zero_shot", "trained"]

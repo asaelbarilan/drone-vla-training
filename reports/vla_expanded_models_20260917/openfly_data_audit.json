@@ -1,0 +1,33 @@
+{
+  "rows": 51,
+  "episodes": 14,
+  "split_counts": {
+    "seen": 41,
+    "unseen": 10
+  },
+  "target_counts": {
+    "forward": 26,
+    "left_turn": 7,
+    "stop": 13,
+    "right_turn": 5
+  },
+  "sha256": "a4d6d72bcc9dd1234708308a337eb7661b0c58d94bfe7c8cc19cec5dea0358c3",
+  "source_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+  "pose_yaw_and_coarse_action_agree": true,
+  "pose_tolerance": 1e-09,
+  "training_rows_admitted": 0,
+  "excluded": [
+    {
+      "trajectory": "env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516",
+      "index": 0,
+      "action": -1,
+      "reason": "outside official evaluator 0..9 action dictionary"
+    },
+    {
+      "trajectory": "env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516",
+      "index": 23,
+      "action": -2,
+      "reason": "outside official evaluator 0..9 action dictionary"
+    }
+  ]
+}

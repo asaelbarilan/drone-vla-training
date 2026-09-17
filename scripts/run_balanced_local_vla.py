@@ -3,13 +3,13 @@
 import argparse
 import gc
 import hashlib
+import importlib
 import json
 import time
 from pathlib import Path
 
-import run_smol_frd_overfit as api
 import torch
-from peft import LoraConfig, PeftModel, get_peft_model
+from peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training
 from PIL import Image
 from run_smol_duration import action_loss, full_split_losses
 
@@ -18,6 +18,13 @@ from uavlab.training.mixed_batches import backward_mixed_batch, balanced_schedul
 
 
 def main(args):
+    api = importlib.import_module(
+        "run_qwen_frd_overfit" if args.model == "qwen" else "run_smol_frd_overfit"
+    )
+    if args.model == "smol500":
+        api.MODEL = Path(
+            "D:/drone_vla_pilot/models/SmolVLM-500M-Instruct/a7da5b986cb59b408707209984f360a5f4ad7e47"
+        )
     args.out.mkdir(parents=True, exist_ok=False)
     report = dict(
         status="running",
@@ -28,7 +35,7 @@ def main(args):
         smoke_only=args.updates == 2,
         base=str(api.MODEL),
     )
-    deadline = time.monotonic() + 2700
+    deadline = time.monotonic() + args.max_wall_seconds
     started = time.monotonic()
 
     def save():
@@ -69,11 +76,15 @@ def main(args):
         report.update(
             generation_eval_ids=eval_ids,
             extra_eval_ids=extra_ids,
-            model="smol256",
-            max_wall_seconds=2700,
+            model=args.model,
+            max_wall_seconds=args.max_wall_seconds,
         )
         selected = sorted(selected_ids) if args.updates == 2 else list(by_id)
-        processor = api.load_processor()
+        processor = (
+            api.AutoProcessor.from_pretrained(str(api.MODEL), local_files_only=True)
+            if args.model == "qwen"
+            else api.load_processor()
+        )
         batches = {}
         for identity in selected:
             row = by_id[identity]
@@ -97,13 +108,27 @@ def main(args):
         torch.manual_seed(132)
         torch.cuda.set_per_process_memory_fraction(0.70)
         model = api.load_base()
-        model.requires_grad_(False)
-        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
-        model.enable_input_require_grads()
+        if args.model == "qwen":
+            model = prepare_model_for_kbit_training(
+                model,
+                use_gradient_checkpointing=True,
+                gradient_checkpointing_kwargs={"use_reentrant": False},
+            )
+            for n, param in model.named_parameters():
+                if param.dtype == torch.float32 and "norm" not in n and not param.requires_grad:
+                    param.data = param.data.to(torch.bfloat16)
+            prefix = "language_model.layers."
+        else:
+            model.requires_grad_(False)
+            model.gradient_checkpointing_enable(
+                gradient_checkpointing_kwargs={"use_reentrant": False}
+            )
+            model.enable_input_require_grads()
+            prefix = "text_model.layers."
         targets = [
             n
             for n, _ in model.named_modules()
-            if "text_model.layers." in n
+            if prefix in n
             and n.rsplit(".", 1)[-1]
             in {"q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"}
         ]
@@ -121,9 +146,7 @@ def main(args):
         )
         params = [p for n, p in model.named_parameters() if p.requires_grad]
         assert all(
-            "lora_" in n and "text_model.layers." in n
-            for n, p in model.named_parameters()
-            if p.requires_grad
+            "lora_" in n and prefix in n for n, p in model.named_parameters() if p.requires_grad
         )
         digest = hashlib.sha256()
         for name, param in model.named_parameters():
@@ -136,7 +159,7 @@ def main(args):
             results = []
             for identity in identities:
                 if time.monotonic() >= deadline:
-                    raise RuntimeError("45min wall budget")
+                    raise RuntimeError("configured wall budget")
                 row = by_id[identity]
                 result = api.predictions(model, processor, [row], [batches[identity]])[0]
                 result["task_group"] = row["task_group"]
@@ -151,7 +174,7 @@ def main(args):
         optimizer = torch.optim.AdamW(params, lr=2e-4)
         for step, identities in enumerate(schedule):
             if time.monotonic() > deadline:
-                raise RuntimeError("45min wall limit")
+                raise RuntimeError("configured wall limit")
             if step == 200:
                 optimizer = torch.optim.AdamW(params, lr=5e-5)
             model.train()
@@ -205,7 +228,7 @@ def main(args):
                     if row["task_group"] != "visual":
                         continue
                     if time.monotonic() >= deadline:
-                        raise RuntimeError("45min wall budget")
+                        raise RuntimeError("configured wall budget")
                     prompt_text = (
                         student_prompt("Perform the requested task.", row["state"])
                         if kind == "blank_instruction"
@@ -264,6 +287,8 @@ def main(args):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
+    p.add_argument("--model", choices=["smol256", "smol500", "qwen"], default="smol256")
+    p.add_argument("--max-wall-seconds", type=int, default=2700)
     p.add_argument("--data", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--condition", choices=["existing_control", "expanded"], required=True)

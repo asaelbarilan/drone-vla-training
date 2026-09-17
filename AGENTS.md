@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Active D141 - expanded Smol500/Qwen and official OpenFly evaluation
+
+User authorizes4-bit OpenFly only plus expandedSmol500/Qwen training. Bothsmokes
+pass. SequentialGPU queue running:smol500_expanded_20260917_a then
+qwen_expanded_20260917_a underD:/drone_vla_pilot/runs;do not launch anotherGPU
+job concurrently.400updates each;maxwall5400/10800s. See frozen protocol at
+reports/vla_expanded_models_20260917/PROTOCOL.md.51officialseen/unseen images
+prepared D:/drone_vla_pilot/data/openfly_eval_20260917/eval.jsonl;no inference yet.
+Next finishtraining/reload/gates,then4-bitOpenFly+3localadaptertransfer evaluation,
+plots/debugger and matchedlocalflights. Preservebaselines/splits.NoAWSspending.
+
 ## OpenFly local probe and dashboard fixes - D140 (2026-09-17)
 
 User requested OpenFly download/comparison. Verified15.086GB snapshot on D:;

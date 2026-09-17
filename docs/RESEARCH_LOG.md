@@ -3637,3 +3637,23 @@ Model-card16STOP;training-template16right (8/16correct).Peak5.858GBallocated,
 median0.7185s. Native8vector is not FRDvelocity;fullflightadapter pending explicit
 normalization/amplitude audit. No fullflight/nativebenchmark claim.16exactUI
 checks pass. Report:reports/vla_openfly_20260917/REPORT.md.
+
+
+## D141 - Expanded Smol500/Qwen and official OpenFly evaluation (2026-09-17)
+
+User explicitly requests retaining4-bit OpenFly,evaluation on official OpenFly
+validation data,andSmol500/Qwen training on expanded local data. This supersedes
+the prior immediate-next diagnosis-only ordering;baselines andsplits preserved.
+Frozen protocol:reports/vla_expanded_models_20260917/PROTOCOL.md. Both2update
+smoke tests pass finite nonzero gradients on identical balanced examples.
+Smol500400update job running;Qwen400 queued sequentially on localGPU. Fresh
+LoRA,matchingD139schedule/seed/loss,SmolBF16/QwenNF4. NoAWS/physicalflight.
+
+Officialseen/unseen release audited atrevisiona12316d56a4e35a32ad626fb725ed7089937a1c4:
+14deterministic trajectories,51selected decisions (41seen/10unseen). Frozen
+selection bypathSHA before modeloutputs;two negativeIDs excluded explicitly.
+Parquet sourceimages/pose/yaw/coarseactions verified;no training rows admitted.
+Evaluation coarseforward/leftturn/rightturn/STOP,not flight success or exact
+action amplitude. OpenFlyhistoricalfront vs localadapterscurrentfront/missing
+odometry/downcamera is explicit transfer limitation,not fabricated observations.
+Allscores pending.3metric regressiontests pass. Officiallabels kept offtrain.

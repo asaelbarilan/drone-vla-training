@@ -3249,3 +3249,10 @@ OpenFly checkpoint on D:; isolated inference compatibility probe underway.
 D140 complete:localOpenFly4-bit inference verified and initial16-casecomparison
 published with both official prompt formats.8/16direction withtrainingtemplate;
 0/16withmodelcardprompt. Native flight interface still requires audit.
+
+
+## 2026-09-17 - D141 expanded model jobs and OpenFly evaluation data
+
+Generalized balanced runner toSmol500/Qwen;bothsmokes pass. Sequentiallocal
+400update runs started. Prepared51officialheld-outOpenFlyframes with source
+checks and explicit exclusions;fixed transfer/scoring protocol before inference.
