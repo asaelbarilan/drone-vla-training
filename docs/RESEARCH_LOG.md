@@ -3526,3 +3526,19 @@ and optimizer steps, not old batch1 step counts. Current stage: collection,
 independent replay audit, sampler/gradient validation; no long training.
 Evidence: D137 reports. No new data or model result yet. More local seeds do
 not add real-world or external-simulator domains; D127 remains required.
+
+D138 collection audit correction before admission: v1 omitted a required manifest
+sample count; v2 raw images contained cross-split duplicates. Both attempts remain
+on disk and are excluded from training. v3 excludes only NEW rows whose exact
+image conflicts with an original opposite split, then reserves new validation
+images before new training. Record every excluded ID/reason; preserve all old
+rows. Also decouple setup rotation from seed%5 so new validation covers rotated
+headings. These are data-quality decisions before any training result.
+
+D138 complete data/pipeline stage:TRAIN1156/60groups,VAL300/16groups with
+original84VAL exact. v3 visibility rejection led to bounded per-seed geometry
+resampling;15 rejected proposals recorded,14 duplicate-conflicting rows excluded.
+20 coordinate flights/3636 replay controls and320 visualsegments/1280controls
+audited. Two real Smol256 optimizer updates each mixfourtasks;finite gradients,
+900276736GPUbytes peak.53 unit tests and debugger source checks pass. No full
+training or new learned-flight claim. See reports/vla_local_expanded_20260917_v4/REPORT.md.

@@ -1,0 +1,65 @@
+{
+  "status": "complete",
+  "updates": 2,
+  "microbatch_size": 1,
+  "effective_batch_size": 4,
+  "condition": "expanded",
+  "smoke_only": true,
+  "base": "C:\\Users\\Asael\\.cache\\huggingface\\hub\\models--HuggingFaceTB--SmolVLM-256M-Instruct\\snapshots\\7e3e67edbbed1bf9888184d9df282b700a323964",
+  "data_sha256": "7318727a1c23868e32ed8e5db9fadb07155c0e2421a85a66a8af01551641c064",
+  "training_schedule": [
+    [
+      "public_goal_s1463-decision-0031",
+      "visible_yaw_s1508_l1_blue",
+      "public_goal_s1403-decision-0032",
+      "public_goal_s1456-decision-0020"
+    ],
+    [
+      "public_goal_s1401-decision-0032",
+      "visible_yaw_s1523_l1_blue",
+      "public_goal_s1457-decision-0052",
+      "public_goal_s1406-decision-0032"
+    ]
+  ],
+  "losses": [
+    {
+      "step": 1,
+      "sample_exposures": 4,
+      "sample_ids": [
+        "public_goal_s1463-decision-0031",
+        "visible_yaw_s1508_l1_blue",
+        "public_goal_s1403-decision-0032",
+        "public_goal_s1456-decision-0020"
+      ],
+      "task_classes": [
+        "hold",
+        "visual",
+        "stop",
+        "motion"
+      ],
+      "loss": 2.04773873090744,
+      "gradient_norm": 6.599732398986816
+    },
+    {
+      "step": 2,
+      "sample_exposures": 8,
+      "sample_ids": [
+        "public_goal_s1401-decision-0032",
+        "visible_yaw_s1523_l1_blue",
+        "public_goal_s1457-decision-0052",
+        "public_goal_s1406-decision-0032"
+      ],
+      "task_classes": [
+        "stop",
+        "visual",
+        "motion",
+        "hold"
+      ],
+      "loss": 1.6580632328987122,
+      "gradient_norm": 5.665604591369629
+    }
+  ],
+  "peak_allocated_bytes": 900276736,
+  "sample_exposures": 8,
+  "learned_behavior_claim": false
+}

@@ -3212,3 +3212,12 @@ All schedules/reloads checked;32actual savedvisual segments/128controls pass
 independent audit,176browser checks and3exact plot-image checks pass. No new
 closed-loop flights,AWS,externaldata orprotectedseeds. Separate viewer preserves
 priorpages;full evidence andnextlocaldiagnostics recorded inD137 report.
+
+
+## 2026-09-17 - D138 local data expansion and balanced batches
+Added60 new source scene groups;admitted TRAIN252->1156 and VAL84->300 while
+preserving every original row. Independent source/control audits reject14
+conflicting images and15 unobservable geometry proposals. Added four-task
+effective batching and actual two-update Smol256 GPU smoke test.53 unit tests
+pass;data/teacher-flight debugger verified. No full new model experiment yet.
+Evidence:reports/vla_local_expanded_20260917_v4/REPORT.md.

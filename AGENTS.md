@@ -16,6 +16,19 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Expanded local data and mixed batches ready - D138 (2026-09-17)
+
+Latest user requests expansion and mixing within every batch. Completed additive
+local dataset at D:/drone_vla_pilot/data/local_expanded_20260917_v4:1156TRAIN,
+300VAL,all original84VAL untouched. Four-task effective batches use microbatch1
+and accumulation4;two real Smol256 updates pass,53 tests pass. No full new model
+experiment yet. Read reports/vla_local_expanded_20260917_v4/REPORT.md.
+Viewer localhost8771/expanded_data.html includes exact targets and20 teacher
+flight replays. Next freeze matched balanced-existing/expanded short comparison;
+original/new validation separate. This supersedes the narrower immediate-next
+instruction below in accordance with the user's expansion request. No new domains,
+AWS or physical flights. Do not admit failed v1/v2/v3 data attempts.
+
 ## Smol capacity/duration follow-up complete - D137 (2026-09-17)
 
 Both image-only256M/500M pass16/16 tiny memorization and reload. Same local252

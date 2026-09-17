@@ -567,3 +567,12 @@ Component restores target view during detour but does not reach intermediategoal
 within20s. Design explicit stored-source lease, fresh-target supersession, expiry
 and LOSTyaw arbitration. Unit-test before one separately named model flight.
 Do not combine with return-to-view or call nativeOnFly; see goal_hold_component/REPORT.md.
+
+
+### D138 - Next matched local training comparison
+Data and mixed-batch pipeline ready;compare balanced original versus balanced
+expanded data on cached Smol256 with matched exposure/update budgets. Freeze
+protocol first;retain original and new validation cohorts separately,check paired
+visual dependence,premature STOP/HOLD and actual flight behavior. Do not treat
+two-update GPU smoke as an overfit/generalization gate. Extend to500 only after
+this isolates batch-balance versus data effects. D127 real/external data remains open.

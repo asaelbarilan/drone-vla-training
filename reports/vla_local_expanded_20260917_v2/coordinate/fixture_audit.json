@@ -1,0 +1,434 @@
+{
+  "kind": "public-coordinate teacher fixture; no trained model; no visual competency claim",
+  "dataset": "D:\\drone_vla_pilot\\data\\local_expanded_20260917_v2\\coordinate_source_flu",
+  "seeds": [
+    1450,
+    1451,
+    1452,
+    1453,
+    1454,
+    1455,
+    1456,
+    1457,
+    1458,
+    1459,
+    1460,
+    1461,
+    1462,
+    1463,
+    1464,
+    1465,
+    1466,
+    1467,
+    1468,
+    1469
+  ],
+  "samples": 813,
+  "teacher_labels_recomputed_from_public_inputs": 813,
+  "exact_replayed_controls_and_poses": 3632,
+  "labels_to_executed_control_checks": 3192,
+  "exact_original_image_checks": 2439,
+  "hold_samples": {
+    "1450": 3,
+    "1451": 3,
+    "1452": 3,
+    "1453": 3,
+    "1454": 3,
+    "1455": 3,
+    "1456": 3,
+    "1457": 3,
+    "1458": 3,
+    "1459": 3,
+    "1460": 3,
+    "1461": 3,
+    "1462": 3,
+    "1463": 3,
+    "1464": 3,
+    "1465": 3,
+    "1466": 3,
+    "1467": 3,
+    "1468": 3,
+    "1469": 3
+  },
+  "terminal_samples": {
+    "1450": 1,
+    "1451": 1,
+    "1452": 1,
+    "1453": 1,
+    "1454": 1,
+    "1455": 1,
+    "1456": 1,
+    "1457": 1,
+    "1458": 1,
+    "1459": 1,
+    "1460": 1,
+    "1461": 1,
+    "1462": 1,
+    "1463": 1,
+    "1464": 1,
+    "1465": 1,
+    "1466": 1,
+    "1467": 1,
+    "1468": 1,
+    "1469": 1
+  },
+  "identical_mosaic_hashes_across_splits": 5,
+  "samples_by_split": {
+    "val": 161,
+    "train": 652
+  },
+  "model_predictions": 0,
+  "training_runs": 0,
+  "no_held_out_or_pilot_eval_seeds": true,
+  "source_image_and_control_alignment_passed": true,
+  "overfit_fixture_eligible": true,
+  "general_vla_training_ready": false,
+  "limits": [
+    "public-coordinate task solvable from odometry alone",
+    "no semantic/visual/language generalization evidence",
+    "simulator-only, no real or external-simulator data"
+  ],
+  "horizon_s": 0.2,
+  "per_episode": [
+    {
+      "name": "public_goal_s1450",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 77,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 20,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "f4e2d98604332da0b5d49678126f351f82d3575a5ee13001439c77068b49cfa7",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 60
+      }
+    },
+    {
+      "name": "public_goal_s1451",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 157,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 35,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "9481a6f617d62f37ebe8f4270dc978a28edc845e79fce6a697f70f312629e94d",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 105
+      }
+    },
+    {
+      "name": "public_goal_s1452",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 213,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 49,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "0fccf7c5f8777accb088c64de5a023b0c27c1b1148425c7ff1b660c93ad04179",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 147
+      }
+    },
+    {
+      "name": "public_goal_s1453",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 273,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 59,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "ef096bcb4a296921d836f0e69d96baeda3c3045bdb534780816d0e0d99acf10b",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 177
+      }
+    },
+    {
+      "name": "public_goal_s1454",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 111,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 21,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "58e7d3a765f05dafdfeab1de1995152603776cd0a2d3c9c44f9b1f47a50403ba",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 63
+      }
+    },
+    {
+      "name": "public_goal_s1455",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 129,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 33,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "0fd8115f4fd87c5d541f0eac6fe9e1584cddb9825dd484f4c9f3aa23882a282d",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 99
+      }
+    },
+    {
+      "name": "public_goal_s1456",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 213,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 49,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "32e96eca3912b4f994975a5db11e3a8e53c5725358e46614fdf2084d95e61609",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 147
+      }
+    },
+    {
+      "name": "public_goal_s1457",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 253,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 59,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "e1cf47f11d6a7bc197bef4ea82773b0e49a7bf438a86ba3774f2893a3fe56877",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 177
+      }
+    },
+    {
+      "name": "public_goal_s1458",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 121,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 21,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "b5bea70835f74d9ac54b9f4ad8a5e645bf09d9a04009a682b85656727e23334c",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 63
+      }
+    },
+    {
+      "name": "public_goal_s1459",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 163,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 34,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "4d53fed8723572cfa4fc56615ff1bdb094c4e20a9a5a90a39a420ba9f378d759",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 102
+      }
+    },
+    {
+      "name": "public_goal_s1460",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 181,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 46,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "b6aedd79ee805d8b00024299086cd218e7a42348dfd46f474e341bacecac7e10",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 138
+      }
+    },
+    {
+      "name": "public_goal_s1461",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 253,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 59,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "f3d9e5921665a94c10af749d886b8d7cda1f4a46131258da2635e9fb14f0d214",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 177
+      }
+    },
+    {
+      "name": "public_goal_s1462",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 97,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 20,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "69d0508f21b8908572c20d21a95114c1e0d66bb2bd6a7355e92579a7636160e5",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 60
+      }
+    },
+    {
+      "name": "public_goal_s1463",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 177,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 35,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "10751fb706f5f4e2eb1f71f5ff3de6cc9870b6b8ceea82a83bc417196eeb170b",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 105
+      }
+    },
+    {
+      "name": "public_goal_s1464",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 211,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 46,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "705bfe03d8d9f29f59a806397c79204e29d7896a58b4fc2d1a71bfc05950602f",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 138
+      }
+    },
+    {
+      "name": "public_goal_s1465",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 245,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 62,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "942e72943c9cec3d06978cab693cf137dd72d3e6ce5a850ff3939169b287375a",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 186
+      }
+    },
+    {
+      "name": "public_goal_s1466",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 101,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 21,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "149c07d57a04349b9f8c772d7f4c64933b99bee7fce57b0787147d1dab8b0270",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 63
+      }
+    },
+    {
+      "name": "public_goal_s1467",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 157,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 35,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "836054625bd049d8689d4b72e60ad518aade858f5ec0cc5564e82a7b1921210e",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 105
+      }
+    },
+    {
+      "name": "public_goal_s1468",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 221,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 46,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "ecd90980957255e6d39956704eb0db6e9d2b0e0b3b1dd1396f9300f16ce5b997",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 138
+      }
+    },
+    {
+      "name": "public_goal_s1469",
+      "success": true,
+      "replay": {
+        "run_commit": "640940f1fafb77c4bca9dcad5b9ee18e8e256a62",
+        "run_dirty": true,
+        "max_position_error_m": 0.0,
+        "checked_positions": 279,
+        "final_distance_error_m": 0.0,
+        "source_reference_checks": 63,
+        "missing_source_frames": 0,
+        "recorded_calls": 0,
+        "events_sha256": "81fe6aaf237451b8186244e899fe45a732db94b076ecba732777d900c9d93afd",
+        "image_status": "Replay-rendered with current simulator; reference digests are pose IDs, not pixel hashes",
+        "original_camera_byte_checks": 189
+      }
+    }
+  ]
+}
