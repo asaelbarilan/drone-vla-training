@@ -23,6 +23,19 @@ def main():
         hashlib.sha256((data / "index.jsonl").read_bytes()).hexdigest() == manifest["index_sha256"]
     )
     by = {r["id"]: r for r in map(json.loads, (data / "index.jsonl").read_text().splitlines())}
+    preserved = json.loads((REPORT / "preserved_baselines.json").read_text())
+    for filename, sha256 in preserved["hashes"].items():
+        assert hashlib.sha256(Path(filename).read_bytes()).hexdigest() == sha256, filename
+    local_index = Path("D:/drone_vla_pilot/data/local_expanded_20260917_v4/index.jsonl")
+    assert hashlib.sha256(local_index.read_bytes()).hexdigest() == manifest["local_source_sha256"]
+    old_selection = json.loads(
+        Path("reports/vla_openfly_train_20260917/selection.json").read_text()
+    )
+    assignment = {r["trajectory"]: r["split"] for r in by.values() if r["source"] == "openfly"}
+    for old in old_selection["episodes"]:
+        assert assignment[old["episode"]["image_path"]] == (
+            "val" if old["split"] == "dev" else "train"
+        )
     frozen = json.loads((REPORT / "data_audit.json").read_text())
     assert manifest == frozen, "frozen admission audit changed"
     native_train = [r for r in by.values() if r["source"] == "openfly" and r["split"] == "train"]

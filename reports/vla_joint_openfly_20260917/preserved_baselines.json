@@ -1,0 +1,14 @@
+{
+  "hashes": {
+    "D:\\drone_vla_pilot\\data\\local_expanded_20260917_v4\\index.jsonl": "7318727a1c23868e32ed8e5db9fadb07155c0e2421a85a66a8af01551641c064",
+    "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\eval.jsonl": "a4d6d72bcc9dd1234708308a337eb7661b0c58d94bfe7c8cc19cec5dea0358c3",
+    "reports\\vla_openfly_train_20260917\\selection.json": "4c1317808d94dc57ba2951f22bdc1be8c53bd1624795e47b0496082af9699ab9",
+    "reports\\vla_balanced_comparison_20260917\\REPORT.md": "8bf11b9dd1abb00b0a53681ba8987eae2aad7bf7cc2bf0060c39bd62ecf02812",
+    "reports\\vla_expanded_models_20260917\\REPORT.md": "50fa107c2ffe935a485d4cc79255abd2ac52dd5d6c237b790829251681637cf2",
+    "D:\\drone_vla_pilot\\runs\\smol256_balanced_expanded_20260917_a\\adapter_s400\\adapter_model.safetensors": "5fc2663556426d43f9f93dc5a7aea8cc20ae2ab2b09bb33b282406907b24985e",
+    "D:\\drone_vla_pilot\\runs\\smol500_expanded_20260917_a\\adapter_s400\\adapter_model.safetensors": "2e1a87dfbeb40a2b83530cb6cfa6363fedfbfbc566cc0b452c6ff094fbbe117d",
+    "D:\\drone_vla_pilot\\runs\\qwen_expanded_20260917_a\\adapter_s400\\adapter_model.safetensors": "ebb6e125236667678f4d3b02f4b5697a3a11b61f70c5b81bdf59f10b3878a7fd"
+  },
+  "baseline_revision": "52244f3",
+  "no_src_config_or_test_changes": true
+}
