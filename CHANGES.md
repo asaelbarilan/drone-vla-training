@@ -3370,3 +3370,10 @@ and clockwise yaw rad/s, with explicit HOLD versus mission STOP. OpenFly keeps
 3m/30degree primitive units. Browser scale/sign/extrema checks pass. Raw answers
 remain available. Additional exact-input audit finds0label contradictions and
 0cross-split identical-input groups across5200examples. Training remains active.
+
+D144 recovery: a Windows sharing violation during dashboard replacement killed
+the queue child after16Smol256 flight calls. Completed400-update adapter and
+100held-out predictions are intact. Preserved partial flight/logs; added retrying
+atomic writes, nonfatal publication errors, exclusive queue lock and explicit
+reuse of verified completed runs. Simulated-lock/child-survival tests pass.
+Resuming evaluation, then the unchanged500/Qwen training schedule.

@@ -27,6 +27,12 @@ Two explicit action contracts: OpenFly atomic 3m/30deg decisions and local FRD
 velocity JSON. Never invent OpenFly velocity targets. 400 fresh updates/model,
 effective batch8 with4examples/source. Queue runs sequentially and stops on error.
 Live page: localhost8771/joint_openfly.html. Final adapters/runs stay on D:.
+Recovery: first queue stopped on a Windows dashboard-file sharing violation
+(after Smol256 completed400updates). Read recovery.json/recovery_test.json.
+Partial flight is preserved under D:/drone_vla_pilot/runs/
+smol256_joint_flights_20260917_a_interrupted. Resumed queue reuses the completed
+adapter, retries status writes and does not cancel jobs on publication errors.
+Current coordinator PID is in reports/vla_joint_openfly_20260917/queue_owner.json.
 Next inspect queue results, verify losses/predictions/six local flights, record
 results and commit. Do not restart finished runs or alter old splits/baselines.
 

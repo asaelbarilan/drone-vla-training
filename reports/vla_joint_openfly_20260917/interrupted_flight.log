@@ -1,0 +1,17 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+{"seed": 1400, "tick": 0, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 3.0, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 4, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.514999999999418, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 8, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5160000000032596, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 12, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5930000000080327, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 16, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5310000000026776, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 20, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.485000000000582, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 24, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5310000000026776, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 28, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.514999999999418, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 32, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.4689999999973224, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 36, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 40, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.4839999999967404, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 44, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5929999999934807, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 48, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 52, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 56, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.547000000005937, "goal_error_m": 8.540666359359767, "stop": false}
+{"seed": 1400, "tick": 60, "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}", "latency_s": 2.5780000000086147, "goal_error_m": 8.540666359359767, "stop": false}

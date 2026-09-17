@@ -1,0 +1,4 @@
+{
+  "atomic_replace_retried": 3,
+  "publication_error_did_not_kill_child": true
+}

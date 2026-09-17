@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "C:\Users\Asael\PycharmProjects\drone_architectures_paper\uav_vla_aws_pilot_20260916\scripts\run_joint_openfly_queue.py", line 309, in <module>
+    let data={}, cases=[];const $=id=>document.getElementById(id), esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        ^^^^^^
+  File "C:\Users\Asael\PycharmProjects\drone_architectures_paper\uav_vla_aws_pilot_20260916\scripts\run_joint_openfly_queue.py", line 221, in main
+    state,
+^^^^^^^^^^
+  File "C:\Users\Asael\PycharmProjects\drone_architectures_paper\uav_vla_aws_pilot_20260916\scripts\run_joint_openfly_queue.py", line 163, in command
+    with logfile.open("w", encoding="utf-8") as out:
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Asael\PycharmProjects\drone_architectures_paper\uav_vla_aws_pilot_20260916\scripts\run_joint_openfly_queue.py", line 100, in snapshot
+    }
+^^^^^^
+  File "C:\Users\Asael\PycharmProjects\drone_architectures_paper\uav_vla_aws_pilot_20260916\scripts\run_joint_openfly_queue.py", line 32, in write
+    return None
+^^^^^^^^^^^^^^^^
+  File "C:\Users\Asael\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_vla_aws_pilot_20260916\\reports\\vla_dataset_review_20260916\\joint_openfly_status.tmp' -> 'C:\\Users\\Asael\\PycharmProjects\\drone_architectures_paper\\uav_vla_aws_pilot_20260916\\reports\\vla_dataset_review_20260916\\joint_openfly_status.json'

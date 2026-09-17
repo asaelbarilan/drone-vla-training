@@ -3777,3 +3777,9 @@ data_audit.json; all three two-update mixed-source finite-gradient/reload tests
 passed. SmolBF16, QwenNF4; no AWS. Frozen evaluation panel and six actual local
 flights planned. Native closed-loop OpenFly performance remains unmeasured.
 Status: preparation and smoke gates complete; full training/evaluation pending.
+
+D144 operational correction: dashboard file locks must not terminate GPU work.
+Recovered from a WinError5 publication failure; preserved the interrupted flight
+and completed Smol256 checkpoint. No training-policy/hyperparameter changes;
+explicit resume only accepts completed400-update/hash-matching runs. Evidence:
+reports/vla_joint_openfly_20260917/recovery.json and recovery_test.json.

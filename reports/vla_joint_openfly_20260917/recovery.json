@@ -1,0 +1,8 @@
+{
+  "reason": "Windows file-reader sharing violation in live dashboard snapshot; queue cancelled its child",
+  "completed_adapter_sha256": "5f5d9f2565fa075c7525dffdf8fd308ab9b938e6381bedc09ad892a2f04a89fe",
+  "preserved_partial_flight": "D:/drone_vla_pilot/runs/smol256_joint_flights_20260917_a_interrupted",
+  "completed_training_reused": true,
+  "training_settings_unchanged": true,
+  "recovery_tests": "recovery_test.json"
+}

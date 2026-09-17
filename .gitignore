@@ -105,3 +105,8 @@ reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 /reports/vla_dataset_review_20260916/joint_openfly_status.json
 /reports/vla_dataset_review_20260916/joint_openfly_cases.json
 /reports/vla_dataset_review_20260916/*_joint_flights.html
+
+# Transient D144 coordinator lock and atomic-write scratch.
+/reports/vla_joint_openfly_20260917/queue.lock
+/reports/vla_joint_openfly_20260917/*.tmp
+/reports/vla_dataset_review_20260916/joint_openfly_status*.tmp

@@ -1,10 +1,12 @@
 # ruff: noqa: E501
 """D144 sequential GPU queue with live review and audited local flight playback."""
 
+import argparse
 import base64
 import io
 import json
 import math
+import msvcrt
 import os
 import subprocess
 import sys
@@ -38,9 +40,16 @@ def finite_json(value):
 
 
 def write(path, value):
-    tmp = path.with_suffix(".tmp")
+    tmp = path.with_suffix(f".{os.getpid()}.tmp")
     tmp.write_text(json.dumps(finite_json(value), allow_nan=False), encoding="utf-8")
-    tmp.replace(path)
+    for attempt in range(20):
+        try:
+            tmp.replace(path)
+            break
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(min(0.05 * (attempt + 1), 0.5))
 
 
 def folder(model):
@@ -171,7 +180,14 @@ def command(arguments, logfile, state, timeout):
         )
         try:
             while child.poll() is None:
-                snapshot(state)
+                try:
+                    snapshot(state)
+                    state.pop("publication_warning", None)
+                except (OSError, json.JSONDecodeError) as exc:
+                    # A viewer lock or a partially written flight summary must
+                    # never cancel a healthy, expensive GPU child process.
+                    state["publication_warning"] = repr(exc)
+                    print("Nonfatal status publication error: " + repr(exc), flush=True)
                 if time.monotonic() - started > timeout:
                     subprocess.run(
                         ["taskkill", "/PID", str(child.pid), "/T", "/F"],
@@ -191,7 +207,7 @@ def command(arguments, logfile, state, timeout):
             raise RuntimeError(f"Child exited {child.returncode}; see {logfile}")
 
 
-def main():
+def main(resume=False):
     os.chdir(ROOT)
     gallery()
     state = dict(status="preflight", active=None, completed=[])
@@ -201,26 +217,35 @@ def main():
             assert smoke and smoke["status"] == "complete" and smoke["reload_matches"], (
                 model + " smoke gate"
             )
+        frozen = read(BASE / "data/joint_openfly_local_20260917_v1/manifest.json")
         for model in MODELS:
-            assert not folder(model).exists(), "Do not overwrite or silently resume an existing run"
+            if folder(model).exists():
+                prior = read(folder(model) / "report.json")
+                assert resume and prior, "Existing run requires explicit --resume"
+                assert prior["status"] == "complete" and prior["updates"] == 400
+                assert prior["reload_matches"] and len(prior["after"]) == 100
+                assert prior["data_sha256"] == frozen["index_sha256"]
+                assert prior["training_schedule"] == frozen["schedules"]
+                assert (folder(model) / "adapter_s400/adapter_model.safetensors").is_file()
         for model in MODELS:
             state.update(status="training", active=model)
             limit = 10800 if model == "qwen" else 5400
-            command(
-                [
-                    PYTHON,
-                    "scripts/train_joint_openfly.py",
-                    "--model",
-                    model,
-                    "--out",
-                    folder(model),
-                    "--max-wall-seconds",
-                    limit,
-                ],
-                RUNS / f"{model}_joint_20260917_a.log",
-                state,
-                limit + 180,
-            )
+            if not folder(model).exists():
+                command(
+                    [
+                        PYTHON,
+                        "scripts/train_joint_openfly.py",
+                        "--model",
+                        model,
+                        "--out",
+                        folder(model),
+                        "--max-wall-seconds",
+                        limit,
+                    ],
+                    RUNS / f"{model}_joint_20260917_a.log",
+                    state,
+                    limit + 180,
+                )
             result = read(folder(model) / "report.json")
             assert (
                 result["status"] == "complete"
@@ -229,27 +254,33 @@ def main():
             )
             state.update(status="simulation_evaluation")
             flights = RUNS / f"{model}_joint_flights_20260917_a"
-            command(
-                [
-                    PYTHON,
-                    "scripts/evaluate_local_vla_pair.py",
-                    "--model",
-                    model,
-                    "--label",
-                    "mixed",
-                    "--modes",
-                    "trained",
-                    "--data",
-                    BASE / "data/public_goal_fixture_20260916_v1",
-                    "--adapter",
-                    folder(model) / "adapter_s400",
-                    "--out",
-                    flights,
-                ],
-                RUNS / f"{model}_joint_flights_20260917_a.log",
-                state,
-                1500,
-            )
+            flight_result = read(flights / "summary.json")
+            if flights.exists():
+                assert resume and flight_result and len(flight_result["results"]) == 2, (
+                    "Incomplete flight directory: preserve it separately before restarting evaluation"
+                )
+            if not flights.exists():
+                command(
+                    [
+                        PYTHON,
+                        "scripts/evaluate_local_vla_pair.py",
+                        "--model",
+                        model,
+                        "--label",
+                        "mixed",
+                        "--modes",
+                        "trained",
+                        "--data",
+                        BASE / "data/public_goal_fixture_20260916_v1",
+                        "--adapter",
+                        folder(model) / "adapter_s400",
+                        "--out",
+                        flights,
+                    ],
+                    RUNS / f"{model}_joint_flights_20260917_a.log",
+                    state,
+                    1500,
+                )
             command(
                 [
                     PYTHON,
@@ -317,4 +348,14 @@ $('model').onchange=render;$('case').onchange=showCase;fetch('joint_openfly_case
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--resume", action="store_true")
+    args = parser.parse_args()
+    with (REPORT / "queue.lock").open("a+b") as lock:
+        if lock.tell() == 0:
+            lock.write(b"0")
+            lock.flush()
+        lock.seek(0)
+        msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
+        write(REPORT / "queue_owner.json", dict(pid=os.getpid(), started=time.time()))
+        main(resume=args.resume)

@@ -23,9 +23,16 @@ DATA = Path("D:/drone_vla_pilot/data/joint_openfly_local_20260917_v1")
 
 
 def write_json(path, value):
-    temporary = path.with_suffix(".tmp")
+    temporary = path.with_suffix(f".{os.getpid()}.tmp")
     temporary.write_text(json.dumps(value, indent=2), encoding="utf-8")
-    temporary.replace(path)
+    for attempt in range(20):
+        try:
+            temporary.replace(path)
+            break
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(min(0.05 * (attempt + 1), 0.5))
 
 
 def encode_native(processor, row, qwen):
