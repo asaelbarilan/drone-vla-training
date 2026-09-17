@@ -1,0 +1,18 @@
+{
+  "existing_control": {
+    "optimizer_steps": 400,
+    "exposures": 1600,
+    "unique_examples": 252,
+    "minimum_repeats": 2,
+    "maximum_repeats": 67,
+    "exposed_scene_groups": 12
+  },
+  "expanded": {
+    "optimizer_steps": 400,
+    "exposures": 1600,
+    "unique_examples": 790,
+    "minimum_repeats": 1,
+    "maximum_repeats": 19,
+    "exposed_scene_groups": 60
+  }
+}
