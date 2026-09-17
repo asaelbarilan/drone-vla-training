@@ -137,7 +137,9 @@ def predictions(model, processor, rows, batches):
 
 
 def main():
+    global MODEL
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--model-path", type=Path)
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--steps", type=int, default=200)
@@ -145,13 +147,15 @@ def main():
     parser.add_argument("--resume-adapter", type=Path)
     parser.add_argument("--learning-rate", type=float, default=2e-4)
     args = parser.parse_args()
+    if args.model_path:
+        MODEL = args.model_path
     if not 0 < args.learning_rate <= 2e-4:
         raise ValueError("bounded learning rate required")
     if not 1 <= args.steps <= 200:
         raise ValueError("pilot update limit")
     args.out.mkdir(parents=True, exist_ok=False)
     report = {
-        "kind": "D136 SmolVLM-256M BF16/LoRA tiny memorization; no generalization claim",
+        "kind": "SmolVLM BF16/LoRA tiny memorization; no generalization claim",
         "contract": CONTRACT_ID,
         "loss": "0.9 equal mean of 5 action value fields + 0.1 format/EOS",
         "shuffle_seed": 132,
@@ -200,6 +204,7 @@ def main():
         assert targets and all("visual" not in n for n in targets)
         if args.resume_adapter:
             previous = json.loads((args.resume_adapter.parent / "report.json").read_text())
+            assert previous["model"] == str(MODEL)
             assert previous["contract"] == CONTRACT_ID
             assert previous["selected_ids"] == report["selected_ids"]
             assert previous["data_sha256"] == report["data_sha256"]

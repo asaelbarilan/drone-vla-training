@@ -3428,3 +3428,36 @@ All8matched runs(4permodel),302calls/1202controls pass exact replay;20browser
 source-response checks,all8outcomes,playback and responsiveness pass. Both
 useful-pilot gates remain failed. No additional training or external imports.
 Evidence:reports/vla_smol_mixed_20260917/REPORT.md and both flight audit JSONs.
+
+## D137 - Smol capacity versus training duration (2026-09-17)
+
+Status: frozen local diagnostic protocol; user requests500M and more updates.
+Rationale: D136400 updates expose252 examples only1.59times. Three validation
+CE points with a small final rise cannot establish systematic overfitting.
+Online weighted single-sample loss is not comparable with ordinary VAL CE.
+Evidence: D136 reports; official image-model card
+https://huggingface.co/HuggingFaceTB/SmolVLM-500M-Instruct
+500M revision a7da5b986cb59b408707209984f360a5f4ad7e47,Apache2.0,
+Idefics3 image-text model; no pretrained drone-control capability implied.
+
+Freeze two capacities256M/500M,400/1200totalupdates on unchanged252TRAIN and
+84VAL. Retain exact D136 first400 sample IDs;continue sameRandom132 complete
+shuffle passes to1200. No balancing/newdata/vision-unfreezing changes in this
+experiment, so duration and model choice remain interpretable. BF16, native
+processor512/no splitting,language-only r8alpha32 adapter. First200lr2e-4,
+then5e-5;freshAdamW every200 including400 continuation boundary.256 resumes
+its preserved400adapter;500starts fresh after same tinyTRAIN gate (200 at2e-4,
+one conditional200 at5e-5,stop mixed training if gate fails). Gate14/16exact,
+allSTOP/HOLD exact,>=15valid,decreasingloss,identical16reload. No broad sweep.
+
+At each200 checkpoint measure eval-mode full252TRAIN/84VAL weighted action
+loss and ordinary answer CE with identical definitions;break down visual,
+coordinate motion,HOLD,STOP. Log online single-sample loss separately. Preserve
+400/1200 checkpoints and fixed28 generation probes;final image/instruction
+blank controls and4reloadspots. Use D136 useful-pilot criteria unchanged;
+compare physical action error,visual contrast pairs and STOP,not loss alone.
+No checkpoint chosen from validation. These are development validation scenes,
+not untouched test estimates. Seeds1-40 and1060-1064 remain excluded.
+Runtime cap45minutes per mixed job,20minutes per optimization block;GPU70%.
+Run one GPU model at a time;local only,no AWS spending or physical flights.
+500Mdownload on D:,no credentials. Preserve all prior baselines and artifacts.

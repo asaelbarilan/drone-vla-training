@@ -3173,3 +3173,14 @@ approaches then holds4.4108m/2.0395m away,Smol never translates. Prior tiny Qwen
 1/2success is not preserved.302calls/1202controls pass exact replay;20browser
 checks and all8outcomes pass. Repeated Qwen baseline100/100calls unchanged.
 Flight pages and full limitations recorded; no cloud/physical/external-data work.
+
+## 2026-09-17 - D137: freeze Smol size/duration comparison
+
+User requests500M and longer training. Downloaded/pinned image-only500M on D:;
+added model-path override to existing tiny gate without changing256 defaults.
+Prepared matched400/1200 comparison,continuing preserved256step400 adapter,
+unchanged data/splits/sampling/LoRA. Full-split eval-mode weighted action loss
+and ordinary CE now measured on both TRAIN and VAL,with task breakdowns.
+Masked shifted weighted-loss and original-schedule preservation tests pass;
+336-row256CPU preflight and source/model hashes recorded. New viewer/plots
+are separate from prior results. No mixed duration job has started yet.
