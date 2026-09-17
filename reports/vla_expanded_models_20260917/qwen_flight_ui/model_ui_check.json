@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "run": "qwen_mixed_frd_trained_s1400",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "qwen_mixed_frd_trained_s1400",
+      "call_index": 25,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "qwen_mixed_frd_trained_s1400",
+      "call_index": 49,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "qwen_mixed_frd_trained_s1405",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "qwen_mixed_frd_trained_s1405",
+      "call_index": 25,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "qwen_mixed_frd_trained_s1405",
+      "call_index": 49,
+      "response_image_prompt_time_match": true
+    }
+  ],
+  "js_errors": [],
+  "playback": true,
+  "responsive": true
+}

@@ -1,0 +1,565 @@
+{
+  "status": "complete",
+  "model": "smol500",
+  "base": "D:\\drone_vla_pilot\\models\\SmolVLM-500M-Instruct\\a7da5b986cb59b408707209984f360a5f4ad7e47",
+  "adapter": "D:\\drone_vla_pilot\\runs\\smol500_expanded_20260917_a\\adapter_s400",
+  "adapter_sha256": "2e1a87dfbeb40a2b83530cb6cfa6363fedfbfbc566cc0b452c6ff094fbbe117d",
+  "data_sha256": "a4d6d72bcc9dd1234708308a337eb7661b0c58d94bfe7c8cc19cec5dea0358c3",
+  "outputs": [
+    {
+      "id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png",
+      "image_sha256": "8f3a79e7bdc9fe4b4b7fd5b4dfb9f77d1dfd51b0ba45def83c3b6762ee2e041b",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.7960000000020955
+    },
+    {
+      "id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:2",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191043_6.png",
+      "image_sha256": "6bb0a35339ae4058c545ba18411848a7f822e5e21c9c65ae4ff450ca7bdd3ce9",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.437000000005355
+    },
+    {
+      "id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:6",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191049_18.png",
+      "image_sha256": "16d6f31aacb7243f8f96781d28f57f9cc0e2d7ee2b54f889e18f30b7d2cabc4b",
+      "raw": " return {32:32,32:32,32:32,32:32,32:32};stop=false.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.5309999999881256
+    },
+    {
+      "id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:12",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191053_30.png",
+      "image_sha256": "bfce9f057f35b9e0c3c3714146a4b96ed029046d078d90e288f0b036873956a3",
+      "raw": " return {32:32,32:32,32:32,32:32,32:32};\n```\n\nThe image shows a cityscape with several buildings. The largest building in the image is a light gray building with a large bottle on top. The other buildings are of various sizes and shapes, and they are all made of",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.4210000000020955
+    },
+    {
+      "id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png",
+      "image_sha256": "dd0b683b2ef70c4dca83e42a6186a72bfecc66a49839ae4b09865b38077dc431",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.297000000005937
+    },
+    {
+      "id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:2",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235828_8.png",
+      "image_sha256": "1e87bfb5c54f466db2cc40087717cacc4b43a75a33a5ef86246e5537befd77c8",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.35899999999674
+    },
+    {
+      "id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:3",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235829_11.png",
+      "image_sha256": "a8a23f53be65fdb7540dd92a0e1239dc079ab3bc45b57c1f08df2f5fcb99256e",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.360000000000582
+    },
+    {
+      "id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:6",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235831_16.png",
+      "image_sha256": "4c6199d8d8a4ed00d511dff9799cb8becaf8d257f049a4732f57190bb1222045",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32\",\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.405999999988126
+    },
+    {
+      "id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png",
+      "image_sha256": "cbaab02a6017ddc2344c5ce03853e963e13c8d7cb3680b77eb6d66b7f8cfc7f8",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.2960000000020955
+    },
+    {
+      "id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:2",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173447_6.png",
+      "image_sha256": "92dc6d33dc3053f8374fdc6fe0c0b73130ac47127af04c9d806dd01a1d4f6277",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"mission_termination\":false\",\"all32\":{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.389999999999418
+    },
+    {
+      "id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:6",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173450_14.png",
+      "image_sha256": "3df74719c832818650ef0201cc205987c4f5d43d03c82780126b7c4070831de7",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"mission_termination\":false\",\"all32\":{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.35899999999674
+    },
+    {
+      "id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:12",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173456_26.png",
+      "image_sha256": "eef9ecbee95321d58f748f4ee9809bbde17818d2d9dc94ebe841afc4dc24184e",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"mission_termination\":false\",\"all32\":{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.422000000005937
+    },
+    {
+      "id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224131_2.png",
+      "image_sha256": "c34f144080c080c7e415ae2cefac5673af8928a556020cf1fd23d9e3f54c0621",
+      "raw": " return {'forward_bin':32,'right_bin':32,'down_bin':32,'yaw_cw_bin':32,'stop':false};",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.688000000009197
+    },
+    {
+      "id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:8",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224141_24.png",
+      "image_sha256": "a4af5fa3c35f2ee9574a667b734c2e08640eb8c8fce4c5b05da0acdca7cbe808",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 3.4219999999913853
+    },
+    {
+      "id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:11",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224145_33.png",
+      "image_sha256": "902678ac759602419397b0faae73a6c059704970ed1d36e9191a6af8fb4181ac",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 3.264999999999418
+    },
+    {
+      "id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:21",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224154_54.png",
+      "image_sha256": "f729871d0a9471377bec911ab2b655f1b8d2e7728b13b9804aaf361d0e49871a",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels\"}]}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 4.437000000005355
+    },
+    {
+      "id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163143_2.png",
+      "image_sha256": "488233aab418078b743be0aedd5d0718b29eac71859f66ee85944b971cec3060",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.3600000000005821
+    },
+    {
+      "id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:7",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163153_23.png",
+      "image_sha256": "38d748a06dae54ce188b61fe78b0602ee1edb68d39b7bd4767572d9015384a7c",
+      "raw": " 32\nforward_bin:41\nright_bin:32\ndown_bin:31\nyaw_cw_bin:32\nstop:false\nmission_termination:all32",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 3.187999999994645
+    },
+    {
+      "id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:11",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163158_33.png",
+      "image_sha256": "eaa89d28cfcfd977bf82f0e3b3f1929556e6d19f98d659fce8f3c5f4243503dc",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.2189999999973224
+    },
+    {
+      "id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:14",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163201_39.png",
+      "image_sha256": "1e4158e0abeee79b8f5286095d15eb3bdc30f9379c39fd0c4b7b5f35920c4e59",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.35899999999674037
+    },
+    {
+      "id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034007_2.png",
+      "image_sha256": "a2f9b767c74b5bb3680aeaf92ebd524a0af0b67ee11bf3be877c64d01fc01b94",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.26600000000326
+    },
+    {
+      "id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:3",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034010_8.png",
+      "image_sha256": "4fe34d6d4d5a3b5bdf71013ed3ccce96041cee61cc753d336a6f27fcbba1217b",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.25
+    },
+    {
+      "id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:5",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034012_12.png",
+      "image_sha256": "bf29c11eb20eaffafc1b6bebf28e59d96f0941af5ec0aa3e02b617c7360e1743",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32\",\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.25
+    },
+    {
+      "id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+      "image_sha256": "618e423a69bd4aab8bd04d8fe4356eeda2c6ad2e067e4672d52fa9c5306ef6dc",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false,\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_c",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.264999999999418
+    },
+    {
+      "id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:1",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041225_5.png",
+      "image_sha256": "e3a6130b0e0cf054c2b594250a5d63f91f503098573f26a026d05de8c62c342f",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false,\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_c",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.264999999999418
+    },
+    {
+      "id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:2",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041226_8.png",
+      "image_sha256": "d6ae49bc845605eaeda2968b8334c334cbee07dab24fe5eede54fbe3ecf129f2",
+      "raw": " {{\"forward_bin\",32},{\"right_bin\",32},{\"down_bin\",32},{\"yaw_cw_bin\",32},{\"stop\",false}}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.875
+    },
+    {
+      "id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:4",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041228_12.png",
+      "image_sha256": "bf1b883ff0de2d92100d90efb4d3c400cf074dada6e42b0831fd040828671635",
+      "raw": " {{\"forward_bin\",32},{\"right_bin\",32},{\"down_bin\",32},{\"yaw_cw_bin\",32},{\"stop\",false}\n}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.9839999999967404
+    },
+    {
+      "id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024930_2.png",
+      "image_sha256": "79cc2ef4c4fbe22b11167898a21f4cab4ac4874047140ca780c2acffd1f813a0",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.2819999999919673
+    },
+    {
+      "id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:8",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_24.png",
+      "image_sha256": "ab563bbcc0d8b9bd6d6039f4914e2cf17d8e165d24e362bce9d2b0b074e7c8b5",
+      "raw": " A red brick building with a white roof and a few trees in front of it is in the center of the image.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 1.7030000000086147
+    },
+    {
+      "id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:9",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_25.png",
+      "image_sha256": "779a4d1e1c99a783895706d0349597f6f2d539d9a658687d666f3bba3a07d958",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false}}{{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false}}{{\"forward_",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.328000000008615
+    },
+    {
+      "id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:18",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024945_46.png",
+      "image_sha256": "6337f18f7054e5c4214a7cf5b95e66c230a9211016ed24e157d348670443c5e4",
+      "raw": " A top-down view of a city shows a red-leaved tree-lined courtyard in the center, a gray fountain or pool with a circular structure surrounded by trees, and a large light gray building with a curved roof.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 3.1559999999881256
+    },
+    {
+      "id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085633_2.png",
+      "image_sha256": "54bde89208340b18c397c3f1b04b48a586876447c1e316b6a359510a1089a2ce",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false\n}",
+      "parsed": {
+        "forward_bin": 32,
+        "right_bin": 32,
+        "down_bin": 32,
+        "yaw_cw_bin": 32,
+        "stop": false
+      },
+      "valid": true,
+      "latency_s": 3.25
+    },
+    {
+      "id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:12",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085645_36.png",
+      "image_sha256": "8249678d09744c051a169e183d6d18b2bdd08fd65acbc1460a769d21be61bf8c",
+      "raw": " forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.4689999999973224
+    },
+    {
+      "id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:16",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085648_43.png",
+      "image_sha256": "81ca4b2af54be0a76ff9b50292e5643edc23d12b424731468602524baabe9d6f",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.3600000000005821
+    },
+    {
+      "id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:32",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085700_80.png",
+      "image_sha256": "10583a693475d28d6258312df2082aeb639c8ebf2c55443dd42254ca1b1a7696",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false,\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_c",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.327999999994063
+    },
+    {
+      "id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132222_2.png",
+      "image_sha256": "1e9c03d553d6ab51acbcbe4881b9f5255746348709b859ba2b405f7615737a9c",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.375
+    },
+    {
+      "id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:8",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132230_26.png",
+      "image_sha256": "0eebc95d1f7d630a857c7142d95da00213b278915206276d321c42b05b5bd822",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.34399999999732245
+    },
+    {
+      "id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:12",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132233_35.png",
+      "image_sha256": "34d42ed6c7d67f7a205c984937c6bee4aba462c54b4e78f798ef60170d71a08a",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.35899999999674037
+    },
+    {
+      "id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:15",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132235_40.png",
+      "image_sha256": "e679fdd27d972d3a5638cb851f38b0a6d9ba6b13e8da31c0fd5912710559dee3",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.34399999999732245
+    },
+    {
+      "id": "seen:env_ue_bigcity/astar_data/high_average/2025-1-4_20-18-6_2145854098:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . It is medium in size compared to the surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+      "image_sha256": "86737c497f83515fdde30e549b14c0a0ba7532f877fc72ffc123f94560728782",
+      "raw": " {{\"forward_bin\",32},{\"right_bin\",32},{\"down_bin\",32},{\"yaw_cw_bin\",32},{\"stop\",false}}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.8439999999973224
+    },
+    {
+      "id": "seen:env_ue_bigcity/astar_data/high_average/2025-1-4_20-18-6_2145854098:1",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . It is medium in size compared to the surrounding buildings .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201816.png",
+      "image_sha256": "92c389f68276764bf3942aa25e853df0020681ee72d74445d861aeab9d7d64a5",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.296999999991385
+    },
+    {
+      "id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png",
+      "image_sha256": "ed22ab3584ef1c1b9c8ce4501a766d09963a376e2bb0c9b1b1965308282765d7",
+      "raw": " {\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false\",\"forward_bin\":32,\"",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.264999999999418
+    },
+    {
+      "id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:2",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_8.png",
+      "image_sha256": "ef79dca74b336aa559736f3d1b9eb3d863d21b7683296cbd6d585d38234e7c51",
+      "raw": " unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable; unanswerable;",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.26600000000326
+    },
+    {
+      "id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:3",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_11.png",
+      "image_sha256": "56bba8f1cce1dabe995531b94812bc9ac4ca4c7c361747310989b302fee59055",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.375
+    },
+    {
+      "id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:5",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_13.png",
+      "image_sha256": "b4c6982e18f87b8db5b61cbb02e7c064dc6e4827265ad3a4cfa07aa71f3c01c2",
+      "raw": " current front RGB only; no downward camera is available. use only the instruction and image. Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 3.202999999994063
+    },
+    {
+      "id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:0",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052347_2.png",
+      "image_sha256": "2d8a9efba5e0e0ba8eabc026ff8fbdf7b1c29c63069e1219dafa34031600d11b",
+      "raw": " {{\"forward_bin\":32,\"right_bin\":32,\"down_bin\":32,\"yaw_cw_bin\":32,\"stop\":false}}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 2.5939999999973224
+    },
+    {
+      "id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:6",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052353_20.png",
+      "image_sha256": "1e9b061aec170bc7c1baeef0a380110ea4962f7e7a2df699933c89e28530b6f4",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.312000000005355
+    },
+    {
+      "id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:9",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052355_26.png",
+      "image_sha256": "2a4e2085e2a615fff1857de5c9aa368c881b6f2b85e70958261a6ad7ab3ade7c",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.25
+    },
+    {
+      "id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:11",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052356_28.png",
+      "image_sha256": "6e193c371f25881b92009e7e83e104150dd05809fba90a77696b361e50bb0315",
+      "raw": " {{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"},{\"forward_bin:32,right_bin:32,down_bin:32,yaw_cw_bin:32,stop:false\"}}",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.172000000005937
+    },
+    {
+      "id": "unseen:env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516:11",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . Finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122810.png",
+      "image_sha256": "a8107acfb5cd728fa48a98b4cd6752ab52fc516291a3e3d9eeebcefe5dfcaa6e",
+      "raw": " {\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_cw_bin\":32,\n    \"stop\":false,\n    \"forward_bin\":32,\n    \"right_bin\":32,\n    \"down_bin\":32,\n    \"yaw_c",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 5.312999999994645
+    },
+    {
+      "id": "unseen:env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516:12",
+      "prompt": "Direct drone control. Image: current front RGB only; no downward camera is available. Use only the instruction and image. Climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . Finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .\nOdometry: unavailable; do not assume zero position or velocity.\nReturn JSON keys forward_bin,right_bin,down_bin,yaw_cw_bin,stop. Velocity axes are forward/right/down in the level frame defined by this observation yaw. Bins 0..64 map to -5..5 m/s on each velocity axis and -1.5..1.5 rad/s yaw (positive clockwise viewed from above). Bin32 is exactly zero. The decoded ENU setpoint lasts 0.2 seconds. Nonterminal hold is all32 with stop=false. Mission termination is all32 with stop=true; it is not physical landing.",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122817.png",
+      "image_sha256": "7342888de8e3f089e3390ef367b17555d72ae6e28a07298a511a8545937a8ca1",
+      "raw": " 32.",
+      "parsed": null,
+      "valid": false,
+      "latency_s": 0.3600000000005821
+    }
+  ],
+  "missing_inputs": [
+    "downward_camera",
+    "velocity",
+    "verified_ENU_odometry"
+  ],
+  "observation_protocol": "current front image only; no invented state or future frames",
+  "wall_seconds": 183.31200000000536,
+  "peak_allocated_bytes": 1109192704,
+  "closed_loop_flights": false
+}

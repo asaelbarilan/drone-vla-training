@@ -1,0 +1,2263 @@
+{
+  "status": "inference_complete",
+  "quantization": "NF4 language linear layers; BF16 vision/projector",
+  "norm_key": "vln_norm",
+  "prompt_style": "training",
+  "outputs": [
+    {
+      "decision_id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:0",
+      "instruction": "Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . again , slightly turn left , then proceed straight to it .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 1.4220000000059372
+    },
+    {
+      "decision_id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:2",
+      "instruction": "Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . again , slightly turn left , then proceed straight to it .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191043_6.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191042_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191043_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191043_6.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:6",
+      "instruction": "Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . again , slightly turn left , then proceed straight to it .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191049_18.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191046_12.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191047_15.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191049_18.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6870000000053551
+    },
+    {
+      "decision_id": "seen:env_airsim_16/astar_data/medium_average/2025-1-9_19-10-38_2002992734:12",
+      "instruction": "Proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . Again , slightly turn left , then proceed straight to it .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward the large light gray building with an antenna on top , then slightly turn left and head straight to the large brown and beige building featuring a large bottle on top . again , slightly turn left , then proceed straight to it .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191053_30.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191053_28.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191053_29.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_16\\astar_data\\medium_average\\2025-1-9_19-10-38_2002992734\\20250109_191053_30.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6710000000020955
+    },
+    {
+      "decision_id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:0",
+      "instruction": "Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:2",
+      "instruction": "Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235828_8.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235825_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235827_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235828_8.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7340000000112923
+    },
+    {
+      "decision_id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:3",
+      "instruction": "Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235829_11.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235827_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235828_8.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235829_11.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "seen:env_airsim_18/astar_data/low_short/2025-1-8_23-58-22_1145975358:6",
+      "instruction": "Walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to walk straight to a medium - sized , two - story commercial or industrial - style building with white color , featuring uniform rectangular windows with a grid pattern and a slightly weathered surface texture .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235831_16.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235830_14.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235831_15.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_18\\astar_data\\low_short\\2025-1-8_23-58-22_1145975358\\20250108_235831_16.png"
+      ],
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6399999999994179
+    },
+    {
+      "decision_id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:0",
+      "instruction": "Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . next , slightly turn right and proceed forward . then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7350000000005821
+    },
+    {
+      "decision_id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:2",
+      "instruction": "Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . next , slightly turn right and proceed forward . then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173447_6.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173445_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173446_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173447_6.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        1.6764705882352944,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31914,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:6",
+      "instruction": "Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . next , slightly turn right and proceed forward . then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173450_14.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173448_8.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173449_11.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173450_14.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        14.970588235294118,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.75
+    },
+    {
+      "decision_id": "seen:env_airsim_23/astar_data/low_short/2025-1-2_17-34-42_1065103348:12",
+      "instruction": "Begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . Next , slightly turn right and proceed forward . Then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . Finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the modern building characterized by its large size , gray color , and rectangular windows . next , slightly turn right and proceed forward . then , slightly turn left and continue directly ahead to the next landmark , a large , gray cylindrical building with horizontal grooves . finally , slightly turn left and go directly ahead to reach the modern architectural structure described as a large , grey , horizontally extended box - like building .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173456_26.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173454_23.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173455_25.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_23\\astar_data\\low_short\\2025-1-2_17-34-42_1065103348\\20250102_173456_26.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        1.6764705882352944,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31914,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.75
+    },
+    {
+      "decision_id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:0",
+      "instruction": "Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . slightly turn left slightly and head toward it . then , slightly turn right and move straight toward it . finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224131_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224131_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224131_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224131_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:8",
+      "instruction": "Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . slightly turn left slightly and head toward it . then , slightly turn right and move straight toward it . finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224141_24.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224139_20.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224140_23.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224141_24.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7350000000005821
+    },
+    {
+      "decision_id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:11",
+      "instruction": "Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . slightly turn left slightly and head toward it . then , slightly turn right and move straight toward it . finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224145_33.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224142_27.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224144_30.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224145_33.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_airsim_26/astar_data/low_average/2024-12-31_22-41-27_116087764:21",
+      "instruction": "Proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . Slightly turn left slightly and head toward it . Then , slightly turn right and move straight toward it . Finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed forward toward the building with red and beige colors , featuring brick exteriors and rectangular windows , which is large in size . slightly turn left slightly and head toward it . then , slightly turn right and move straight toward it . finally , slightly turn right and walk straight to the modern high - rise building with light beige coloration , showcasing a tall rectangular grid pattern of windows with alternating black and beige panels .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224154_54.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224153_51.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224154_53.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_26\\astar_data\\low_average\\2024-12-31_22-41-27_116087764\\20241231_224154_54.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7350000000005821
+    },
+    {
+      "decision_id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:0",
+      "instruction": "Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163143_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163143_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163143_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163143_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.75
+    },
+    {
+      "decision_id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:7",
+      "instruction": "Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163153_23.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163150_17.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163152_20.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163153_23.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:11",
+      "instruction": "Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163158_33.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163156_29.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163157_32.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163158_33.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_airsim_gz/astar_data/low_long/2025-1-2_16-31-40_1861853489:14",
+      "instruction": "Advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to advance forward to a modern building characterized by a gray - and - beige color palette , a grid - like pattern of windows and vertical columns , and a tall and wide structure ; slightly turn left and move ahead to another modern high - rise building , which features a light - brown exterior with blue - tinted windows , a rectangular grid of repetitive illuminated glass windows , and a tall , multi - story design similar in height to surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163201_39.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163159_36.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163200_38.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_gz\\astar_data\\low_long\\2025-1-2_16-31-40_1861853489\\20250102_163201_39.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7340000000112923
+    },
+    {
+      "decision_id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:0",
+      "instruction": "Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . then , slightly turn left and head straight towards a white building with a unique l - shaped rooftop .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034007_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034007_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034007_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034007_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6870000000053551
+    },
+    {
+      "decision_id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:3",
+      "instruction": "Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . then , slightly turn left and head straight towards a white building with a unique l - shaped rooftop .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034010_8.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034009_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034010_7.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034010_8.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "seen:env_airsim_sh/astar_data/high_short/2025-1-11_3-40-4_2017117507:5",
+      "instruction": "Continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . Then , slightly turn left and head straight towards a white building with a unique L - shaped rooftop .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to continue proceeding straight towards a light grey or white modern high - rise apartment building featuring large windows and a flat roof . then , slightly turn left and head straight towards a white building with a unique l - shaped rooftop .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034012_12.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034010_8.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034012_11.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_airsim_sh\\astar_data\\high_short\\2025-1-11_3-40-4_2017117507\\20250111_034012_12.png"
+      ],
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:0",
+      "instruction": "Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed directly to the large grey building , which is rectangular with an open courtyard in the center .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6880000000091968
+    },
+    {
+      "decision_id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:1",
+      "instruction": "Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed directly to the large grey building , which is rectangular with an open courtyard in the center .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041225_5.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041225_5.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:2",
+      "instruction": "Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed directly to the large grey building , which is rectangular with an open courtyard in the center .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041226_8.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041224_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041225_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041226_8.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "seen:env_gs_ecust/astar_data/short/2025-1-10_4-12-20_2049488897:4",
+      "instruction": "Proceed directly to the large grey building , which is rectangular with an open courtyard in the center .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed directly to the large grey building , which is rectangular with an open courtyard in the center .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041228_12.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041226_8.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041227_11.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_ecust\\astar_data\\short\\2025-1-10_4-12-20_2049488897\\20250110_041228_12.png"
+      ],
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6560000000026776
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:0",
+      "instruction": "Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . then , make a right turn towards a gray medium - sized building with a curved roof . move ahead to find a gray fountain or pool with a circular structure surrounded by trees . finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024930_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024930_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024930_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024930_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7180000000080327
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:8",
+      "instruction": "Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . then , make a right turn towards a gray medium - sized building with a curved roof . move ahead to find a gray fountain or pool with a circular structure surrounded by trees . finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_24.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024936_20.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024937_22.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_24.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7179999999934807
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:9",
+      "instruction": "Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . then , make a right turn towards a gray medium - sized building with a curved roof . move ahead to find a gray fountain or pool with a circular structure surrounded by trees . finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_25.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024937_22.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_24.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024938_25.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu01/astar_data/long/2025-1-14_2-49-27_1662981776:18",
+      "instruction": "Proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . Then , make a right turn towards a gray medium - sized building with a curved roof . Move ahead to find a gray fountain or pool with a circular structure surrounded by trees . Finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight to the red and gray medium - sized building characterized by a rectangular shape and a courtyard . then , make a right turn towards a gray medium - sized building with a curved roof . move ahead to find a gray fountain or pool with a circular structure surrounded by trees . finally , slightly turn left and continue straight to reach a large light gray building featuring a rectangular shape with a flat roof encircled by dense trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024945_46.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024944_42.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024945_45.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu01\\astar_data\\long\\2025-1-14_2-49-27_1662981776\\20250114_024945_46.png"
+      ],
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7180000000080327
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:0",
+      "instruction": "Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the large , gray u - shaped building with a flat roof and multiple levels . slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . then , go left to the medium - sized gray u - shaped building . move ahead to the large gray l - shaped structure with large windows and a flat roof . finally , slightly turn left and proceed straight to the medium - sized gray u - shaped building with a central courtyard surrounded by trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085633_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085633_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085633_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085633_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7190000000118744
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:12",
+      "instruction": "Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the large , gray u - shaped building with a flat roof and multiple levels . slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . then , go left to the medium - sized gray u - shaped building . move ahead to the large gray l - shaped structure with large windows and a flat roof . finally , slightly turn left and proceed straight to the medium - sized gray u - shaped building with a central courtyard surrounded by trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085645_36.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085644_32.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085645_35.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085645_36.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7350000000005821
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:16",
+      "instruction": "Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the large , gray u - shaped building with a flat roof and multiple levels . slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . then , go left to the medium - sized gray u - shaped building . move ahead to the large gray l - shaped structure with large windows and a flat roof . finally , slightly turn left and proceed straight to the medium - sized gray u - shaped building with a central courtyard surrounded by trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085648_43.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085647_41.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085648_42.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085648_43.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_gs_nwpu02/astar_data/long/2025-1-17_8-56-30_296596980:32",
+      "instruction": "Begin by walking straight towards the large , gray U - shaped building with a flat roof and multiple levels . Slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . Then , go left to the medium - sized gray U - shaped building . Move ahead to the large gray L - shaped structure with large windows and a flat roof . Finally , slightly turn left and proceed straight to the medium - sized gray U - shaped building with a central courtyard surrounded by trees .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to begin by walking straight towards the large , gray u - shaped building with a flat roof and multiple levels . slightly turn right and proceed straight to the large , grey rectangular building that features a central courtyard . then , go left to the medium - sized gray u - shaped building . move ahead to the large gray l - shaped structure with large windows and a flat roof . finally , slightly turn left and proceed straight to the medium - sized gray u - shaped building with a central courtyard surrounded by trees .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085700_80.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085659_77.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085700_79.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_nwpu02\\astar_data\\long\\2025-1-17_8-56-30_296596980\\20250117_085700_80.png"
+      ],
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:0",
+      "instruction": "Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . then slightly turn right slightly and head toward it . this one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132222_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132222_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132222_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132222_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:8",
+      "instruction": "Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . then slightly turn right slightly and head toward it . this one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132230_26.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132228_20.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132229_23.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132230_26.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7350000000005821
+    },
+    {
+      "decision_id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:12",
+      "instruction": "Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . then slightly turn right slightly and head toward it . this one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132233_35.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132232_32.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132233_34.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132233_35.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "seen:env_gs_sjtu01/astar_data/long/2025-1-6_13-22-19_1277849958:15",
+      "instruction": "Proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . Then slightly turn right slightly and head toward it . This one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed straight toward a landmark characterized by a black color , distorted and unclear details with sharp streaks of light , and a large size , appearing as an abstract or corrupted image . then slightly turn right slightly and head toward it . this one is medium in size relative to the distorted foreground , predominantly occupying the center - bottom area , and resembles a building or structure that is heavily obscured and distorted in its imagery .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132235_40.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132234_38.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132235_39.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu01\\astar_data\\long\\2025-1-6_13-22-19_1277849958\\20250106_132235_40.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "seen:env_ue_bigcity/astar_data/high_average/2025-1-4_20-18-6_2145854098:0",
+      "instruction": "Proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . It is medium in size compared to the surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . it is medium in size compared to the surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6559999999881256
+    },
+    {
+      "decision_id": "seen:env_ue_bigcity/astar_data/high_average/2025-1-4_20-18-6_2145854098:1",
+      "instruction": "Proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . It is medium in size compared to the surrounding buildings .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed towards the brown building , which features a roof with a water tower and exhibits mixed architectural styles . it is medium in size compared to the surrounding buildings .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201816.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201814.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_bigcity\\astar_data\\high_average\\2025-1-4_20-18-6_2145854098\\20250104_201816.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:0",
+      "instruction": "Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed to the brown building characterized by a large rooftop sign that reads \" templar hotel , \" which is of medium size and is a hotel .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:2",
+      "instruction": "Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed to the brown building characterized by a large rooftop sign that reads \" templar hotel , \" which is of medium size and is a hotel .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_8.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_8.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6570000000065193
+    },
+    {
+      "decision_id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:3",
+      "instruction": "Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed to the brown building characterized by a large rooftop sign that reads \" templar hotel , \" which is of medium size and is a hotel .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_11.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_5.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_8.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_11.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "unseen:env_game_gtav/low_average/2025-1-16_14-23-20_1569229320:5",
+      "instruction": "Proceed to the brown building characterized by a large rooftop sign that reads \" Templar Hotel , \" which is of medium size and is a hotel .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed to the brown building characterized by a large rooftop sign that reads \" templar hotel , \" which is of medium size and is a hotel .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_13.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_11.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_12.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_game_gtav\\low_average\\2025-1-16_14-23-20_1569229320\\image_13.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6879999999946449
+    },
+    {
+      "decision_id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:0",
+      "instruction": "Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052347_2.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052347_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052347_2.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052347_2.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:6",
+      "instruction": "Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052353_20.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052351_14.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052352_17.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052353_20.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:9",
+      "instruction": "Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052355_26.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052354_23.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052355_25.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052355_26.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "unseen:env_gs_sjtu02/astar_data/short/2025-1-3_5-23-44_363304213:11",
+      "instruction": "Proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to proceed ahead towards the light beige apartment buildings with roof structures , which are large in size , then slightly turn left and go directly forward to the light gray tall rectangular building with a dark roof , which is medium in size .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052356_28.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052355_26.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052356_27.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_gs_sjtu02\\astar_data\\short\\2025-1-3_5-23-44_363304213\\20250103_052356_28.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31872,
+        31872,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516:11",
+      "instruction": "Climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . Finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122810.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122806.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122808.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122810.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "unseen:env_ue_smallcity/astar_data/low_average_updown/2025-1-15_12-27-18_2004187516:12",
+      "instruction": "Climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . Finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to climb to the tall skyscrapers in the urban skyline , head straight , then slightly turn left and advance forward . finally , fall towards the area with fire escapes and decorative window details , characterized by its beige color and medium size , within the residential zone .? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122817.png",
+      "initial_history": "two preceding annotation frames plus current, left padded at start",
+      "images": [
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122808.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122810.png",
+        "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\frames\\env_ue_smallcity\\astar_data\\low_average_updown\\2025-1-15_12-27-18_2004187516\\20250115_122817.png"
+      ],
+      "raw_action": [
+        0.0019607843137254832,
+        4.990196078431373,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31872,
+        31872
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6870000000053551
+    }
+  ],
+  "loading": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "peak_allocated_bytes": 5955773440,
+  "elapsed_s": 57.203000000008615,
+  "flight_comparison_complete": false,
+  "evaluation_data": "D:\\drone_vla_pilot\\data\\openfly_eval_20260917\\eval.jsonl",
+  "evaluation_data_sha256": "a4d6d72bcc9dd1234708308a337eb7661b0c58d94bfe7c8cc19cec5dea0358c3"
+}

@@ -1,0 +1,684 @@
+{
+  "local": {
+    "smol256": {
+      "status": "complete",
+      "updates": 400,
+      "metrics": {
+        "condition": "expanded",
+        "original": {
+          "coordinate": {
+            "n": 12,
+            "valid": 11,
+            "exact": 1,
+            "mean_bin_error": 6.875,
+            "correct_yaw_sign": 0,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 1.0894097222222223,
+            "yaw_mae_rps": 0.30859375,
+            "invalid_count": 1,
+            "valid_only_velocity_mae_mps": 0.2793560606060606,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 16,
+            "valid": 16,
+            "exact": 2,
+            "mean_bin_error": 2.78125,
+            "correct_yaw_sign": 8,
+            "correct_yaw_without_translation_or_stop": 8,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.521484375,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "new": {
+          "coordinate": {
+            "n": 36,
+            "valid": 36,
+            "exact": 14,
+            "mean_bin_error": 0.9583333333333334,
+            "correct_yaw_sign": 0,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 0.0853587962962963,
+            "yaw_mae_rps": 0.10286458333333333,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0853587962962963,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 64,
+            "valid": 64,
+            "exact": 2,
+            "mean_bin_error": 2.93359375,
+            "correct_yaw_sign": 32,
+            "correct_yaw_without_translation_or_stop": 32,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.550048828125,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "pairs": {
+          "original": {
+            "instruction_correct": 0,
+            "instruction_total": 8,
+            "color_swap_correct": 0,
+            "color_swap_total": 8
+          },
+          "new": {
+            "instruction_correct": 1,
+            "instruction_total": 32,
+            "color_swap_correct": 1,
+            "color_swap_total": 32
+          }
+        },
+        "boundaries": {
+          "stop": {
+            "n": 6,
+            "valid": 5,
+            "exact": 5,
+            "predicted_stop": 5
+          },
+          "hold": {
+            "n": 18,
+            "valid": 18,
+            "exact": 11,
+            "predicted_stop": 7
+          },
+          "motion": {
+            "n": 30,
+            "valid": 30,
+            "exact": 2,
+            "predicted_stop": 1
+          },
+          "visual": {
+            "n": 80,
+            "valid": 80,
+            "exact": 4,
+            "predicted_stop": 0
+          }
+        },
+        "interventions": {
+          "blank_image": {
+            "constrained_correct": 8,
+            "raw_changed": 13,
+            "parsed_action_changed": 13,
+            "validity_changed": 0
+          },
+          "blank_instruction": {
+            "constrained_correct": 8,
+            "raw_changed": 5,
+            "parsed_action_changed": 5,
+            "validity_changed": 0
+          }
+        },
+        "old_pilot_gate": false,
+        "combined_pilot_gate": false,
+        "wall_seconds": 1613.547000000006,
+        "peak_allocated_bytes": 904322048,
+        "unique_training_exposures": 790,
+        "schedules_checked": true,
+        "reload_spot_identical": true
+      }
+    },
+    "smol500": {
+      "status": "complete",
+      "updates": 400,
+      "metrics": {
+        "condition": "expanded",
+        "original": {
+          "coordinate": {
+            "n": 12,
+            "valid": 12,
+            "exact": 3,
+            "mean_bin_error": 0.6458333333333334,
+            "correct_yaw_sign": 0,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 0.06944444444444443,
+            "yaw_mae_rps": 0.05859375,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.06944444444444443,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 16,
+            "valid": 16,
+            "exact": 3,
+            "mean_bin_error": 2.375,
+            "correct_yaw_sign": 9,
+            "correct_yaw_without_translation_or_stop": 9,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.4453125,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "new": {
+          "coordinate": {
+            "n": 36,
+            "valid": 36,
+            "exact": 15,
+            "mean_bin_error": 1.0277777777777777,
+            "correct_yaw_sign": 0,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 0.0998263888888889,
+            "yaw_mae_rps": 0.10286458333333333,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0998263888888889,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 64,
+            "valid": 64,
+            "exact": 6,
+            "mean_bin_error": 2.71875,
+            "correct_yaw_sign": 34,
+            "correct_yaw_without_translation_or_stop": 34,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.509765625,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "pairs": {
+          "original": {
+            "instruction_correct": 2,
+            "instruction_total": 8,
+            "color_swap_correct": 3,
+            "color_swap_total": 8
+          },
+          "new": {
+            "instruction_correct": 4,
+            "instruction_total": 32,
+            "color_swap_correct": 4,
+            "color_swap_total": 32
+          }
+        },
+        "boundaries": {
+          "stop": {
+            "n": 6,
+            "valid": 6,
+            "exact": 6,
+            "predicted_stop": 6
+          },
+          "hold": {
+            "n": 18,
+            "valid": 18,
+            "exact": 12,
+            "predicted_stop": 6
+          },
+          "motion": {
+            "n": 30,
+            "valid": 30,
+            "exact": 3,
+            "predicted_stop": 0
+          },
+          "visual": {
+            "n": 80,
+            "valid": 80,
+            "exact": 9,
+            "predicted_stop": 0
+          }
+        },
+        "interventions": {
+          "blank_image": {
+            "constrained_correct": 8,
+            "raw_changed": 10,
+            "parsed_action_changed": 10,
+            "validity_changed": 0
+          },
+          "blank_instruction": {
+            "constrained_correct": 8,
+            "raw_changed": 12,
+            "parsed_action_changed": 12,
+            "validity_changed": 0
+          }
+        },
+        "old_pilot_gate": false,
+        "combined_pilot_gate": false,
+        "wall_seconds": 1704.8280000000086,
+        "peak_allocated_bytes": 1470831104,
+        "unique_training_exposures": 790,
+        "schedules_checked": true,
+        "reload_spot_identical": true
+      }
+    },
+    "qwen": {
+      "status": "complete",
+      "updates": 400,
+      "metrics": {
+        "condition": "expanded",
+        "original": {
+          "coordinate": {
+            "n": 12,
+            "valid": 12,
+            "exact": 2,
+            "mean_bin_error": 0.7291666666666666,
+            "correct_yaw_sign": 1,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 0.1388888888888889,
+            "yaw_mae_rps": 0.01171875,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.1388888888888889,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 16,
+            "valid": 16,
+            "exact": 14,
+            "mean_bin_error": 0.03125,
+            "correct_yaw_sign": 16,
+            "correct_yaw_without_translation_or_stop": 16,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.005859375,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "new": {
+          "coordinate": {
+            "n": 36,
+            "valid": 36,
+            "exact": 18,
+            "mean_bin_error": 1.1666666666666667,
+            "correct_yaw_sign": 0,
+            "correct_yaw_without_translation_or_stop": 0,
+            "velocity_mae_mps": 0.12876157407407407,
+            "yaw_mae_rps": 0.10286458333333333,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.12876157407407407,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          },
+          "visual": {
+            "n": 64,
+            "valid": 64,
+            "exact": 44,
+            "mean_bin_error": 0.078125,
+            "correct_yaw_sign": 64,
+            "correct_yaw_without_translation_or_stop": 64,
+            "velocity_mae_mps": 0.0,
+            "yaw_mae_rps": 0.0146484375,
+            "invalid_count": 0,
+            "valid_only_velocity_mae_mps": 0.0,
+            "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+          }
+        },
+        "pairs": {
+          "original": {
+            "instruction_correct": 8,
+            "instruction_total": 8,
+            "color_swap_correct": 8,
+            "color_swap_total": 8
+          },
+          "new": {
+            "instruction_correct": 32,
+            "instruction_total": 32,
+            "color_swap_correct": 32,
+            "color_swap_total": 32
+          }
+        },
+        "boundaries": {
+          "stop": {
+            "n": 6,
+            "valid": 6,
+            "exact": 6,
+            "predicted_stop": 6
+          },
+          "hold": {
+            "n": 18,
+            "valid": 18,
+            "exact": 17,
+            "predicted_stop": 1
+          },
+          "motion": {
+            "n": 30,
+            "valid": 30,
+            "exact": 3,
+            "predicted_stop": 0
+          },
+          "visual": {
+            "n": 80,
+            "valid": 80,
+            "exact": 58,
+            "predicted_stop": 0
+          }
+        },
+        "interventions": {
+          "blank_image": {
+            "constrained_correct": 8,
+            "raw_changed": 16,
+            "parsed_action_changed": 16,
+            "validity_changed": 0
+          },
+          "blank_instruction": {
+            "constrained_correct": 0,
+            "raw_changed": 16,
+            "parsed_action_changed": 16,
+            "validity_changed": 0
+          }
+        },
+        "old_pilot_gate": true,
+        "combined_pilot_gate": true,
+        "wall_seconds": 4154.313000000009,
+        "peak_allocated_bytes": 4470585344,
+        "unique_training_exposures": 790,
+        "schedules_checked": true,
+        "reload_spot_identical": true
+      }
+    }
+  },
+  "official_transfer": {
+    "smol256": {
+      "all": {
+        "n": 51,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 38,
+        "invalid": 51,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 26,
+        "confusion": {
+          "forward -> invalid": 26,
+          "left_turn -> invalid": 7,
+          "stop -> invalid": 13,
+          "right_turn -> invalid": 5
+        }
+      },
+      "seen": {
+        "n": 41,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 30,
+        "invalid": 41,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 20,
+        "confusion": {
+          "forward -> invalid": 20,
+          "left_turn -> invalid": 5,
+          "stop -> invalid": 11,
+          "right_turn -> invalid": 5
+        }
+      },
+      "unseen": {
+        "n": 10,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "stop": 0.0,
+          "left_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 8,
+        "invalid": 10,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 6,
+        "confusion": {
+          "forward -> invalid": 6,
+          "stop -> invalid": 2,
+          "left_turn -> invalid": 2
+        }
+      }
+    },
+    "smol500": {
+      "all": {
+        "n": 51,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 38,
+        "invalid": 45,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 26,
+        "confusion": {
+          "forward -> invalid": 22,
+          "left_turn -> invalid": 5,
+          "stop -> invalid": 13,
+          "forward -> hold": 4,
+          "right_turn -> invalid": 5,
+          "left_turn -> hold": 2
+        }
+      },
+      "seen": {
+        "n": 41,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 30,
+        "invalid": 35,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 20,
+        "confusion": {
+          "forward -> invalid": 16,
+          "left_turn -> invalid": 3,
+          "stop -> invalid": 11,
+          "forward -> hold": 4,
+          "right_turn -> invalid": 5,
+          "left_turn -> hold": 2
+        }
+      },
+      "unseen": {
+        "n": 10,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "stop": 0.0,
+          "left_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 8,
+        "invalid": 10,
+        "mixed": 0,
+        "majority_class": "forward",
+        "majority_correct": 6,
+        "confusion": {
+          "forward -> invalid": 6,
+          "stop -> invalid": 2,
+          "left_turn -> invalid": 2
+        }
+      }
+    },
+    "qwen": {
+      "all": {
+        "n": 51,
+        "correct": 1,
+        "macro_recall": 0.009615384615384616,
+        "per_class_recall": {
+          "forward": 0.038461538461538464,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 38,
+        "invalid": 0,
+        "mixed": 45,
+        "majority_class": "forward",
+        "majority_correct": 26,
+        "confusion": {
+          "forward -> mixed": 24,
+          "left_turn -> mixed": 6,
+          "stop -> mixed": 10,
+          "forward -> forward": 1,
+          "right_turn -> mixed": 5,
+          "stop -> forward": 1,
+          "left_turn -> hold": 1,
+          "stop -> backward": 2,
+          "forward -> backward": 1
+        }
+      },
+      "seen": {
+        "n": 41,
+        "correct": 1,
+        "macro_recall": 0.0125,
+        "per_class_recall": {
+          "forward": 0.05,
+          "left_turn": 0.0,
+          "stop": 0.0,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 30,
+        "invalid": 0,
+        "mixed": 35,
+        "majority_class": "forward",
+        "majority_correct": 20,
+        "confusion": {
+          "forward -> mixed": 18,
+          "left_turn -> mixed": 4,
+          "stop -> mixed": 8,
+          "forward -> forward": 1,
+          "right_turn -> mixed": 5,
+          "stop -> forward": 1,
+          "left_turn -> hold": 1,
+          "stop -> backward": 2,
+          "forward -> backward": 1
+        }
+      },
+      "unseen": {
+        "n": 10,
+        "correct": 0,
+        "macro_recall": 0.0,
+        "per_class_recall": {
+          "forward": 0.0,
+          "stop": 0.0,
+          "left_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 8,
+        "invalid": 0,
+        "mixed": 10,
+        "majority_class": "forward",
+        "majority_correct": 6,
+        "confusion": {
+          "forward -> mixed": 6,
+          "stop -> mixed": 2,
+          "left_turn -> mixed": 2
+        }
+      }
+    },
+    "openfly": {
+      "all": {
+        "n": 51,
+        "correct": 12,
+        "macro_recall": 0.13461538461538464,
+        "per_class_recall": {
+          "forward": 0.38461538461538464,
+          "left_turn": 0.0,
+          "stop": 0.15384615384615385,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 38,
+        "invalid": 0,
+        "mixed": 32,
+        "majority_class": "forward",
+        "majority_correct": 26,
+        "confusion": {
+          "forward -> forward": 10,
+          "left_turn -> forward": 3,
+          "stop -> forward": 2,
+          "stop -> stop": 2,
+          "right_turn -> forward": 1,
+          "forward -> left_turn": 1,
+          "forward -> mixed": 15,
+          "left_turn -> mixed": 4,
+          "stop -> mixed": 9,
+          "right_turn -> mixed": 4
+        }
+      },
+      "seen": {
+        "n": 41,
+        "correct": 8,
+        "macro_recall": 0.12045454545454545,
+        "per_class_recall": {
+          "forward": 0.3,
+          "left_turn": 0.0,
+          "stop": 0.18181818181818182,
+          "right_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 30,
+        "invalid": 0,
+        "mixed": 27,
+        "majority_class": "forward",
+        "majority_correct": 20,
+        "confusion": {
+          "forward -> forward": 6,
+          "left_turn -> forward": 2,
+          "stop -> forward": 2,
+          "stop -> stop": 2,
+          "right_turn -> forward": 1,
+          "forward -> left_turn": 1,
+          "forward -> mixed": 13,
+          "left_turn -> mixed": 3,
+          "stop -> mixed": 7,
+          "right_turn -> mixed": 4
+        }
+      },
+      "unseen": {
+        "n": 10,
+        "correct": 4,
+        "macro_recall": 0.2222222222222222,
+        "per_class_recall": {
+          "forward": 0.6666666666666666,
+          "stop": 0.0,
+          "left_turn": 0.0
+        },
+        "false_stop": 0,
+        "nonterminal": 8,
+        "invalid": 0,
+        "mixed": 5,
+        "majority_class": "forward",
+        "majority_correct": 6,
+        "confusion": {
+          "forward -> forward": 4,
+          "stop -> mixed": 2,
+          "forward -> mixed": 2,
+          "left_turn -> mixed": 1,
+          "left_turn -> forward": 1
+        }
+      }
+    }
+  },
+  "evaluation_data_sha256": "a4d6d72bcc9dd1234708308a337eb7661b0c58d94bfe7c8cc19cec5dea0358c3",
+  "limits": "51-frame offline development diagnostic, not official full benchmark or flight success. Different model input/history interfaces; no external fine-tuning."
+}

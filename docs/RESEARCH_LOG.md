@@ -3663,3 +3663,9 @@ both complete reload-verified training jobs and no matching trainer process,then
 runs OpenFly NF4 +3localadapters on51official frames and2localflights each for
 Smol500/Qwen. Public progresspage expanded_models.html refreshes on disk;all
 pending scores explicitly pending.51sourcecase UI checks andmobilelayout pass.
+
+
+D141 final execution complete: both expanded-data training jobs, all four official
+OpenFly offline evaluations and audited Smol500/Qwen local flights finished.
+Results and limits: reports/vla_expanded_models_20260917/REPORT.md.
+No external training rows, AWS spending or native OpenFly flight-success claim.

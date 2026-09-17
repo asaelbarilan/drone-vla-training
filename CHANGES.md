@@ -3259,3 +3259,9 @@ checks and explicit exclusions;fixed transfer/scoring protocol before inference.
 
 D141:added combined progress/loss/official-source viewer and sequential
 posttraining evaluation coordinator;no premature comparison scores displayed.
+
+
+D141 final execution complete: both expanded-data training jobs, all four official
+OpenFly offline evaluations and audited Smol500/Qwen local flights finished.
+Results and limits: reports/vla_expanded_models_20260917/REPORT.md.
+No external training rows, AWS spending or native OpenFly flight-success claim.
