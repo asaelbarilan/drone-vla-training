@@ -87,3 +87,7 @@ reports/vla_dataset_review_20260916/balanced_control_flights.html
 reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 
 /reports/vla_dataset_review_20260916/openfly_comparison.html
+
+/reports/vla_dataset_review_20260916/expanded_models.html
+/reports/vla_dataset_review_20260916/smol500_expanded_flights.html
+/reports/vla_dataset_review_20260916/qwen_expanded_flights.html

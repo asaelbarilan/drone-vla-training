@@ -19,7 +19,7 @@ with sync_playwright() as p:
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.goto(args.url, wait_until="load")
     options = page.locator("#run option").all_text_contents()
-    assert len(options) == 4
+    assert len(options) == len(list(args.runs.glob("*_frd_*_s*")))
     for folder in sorted(args.runs.glob("*_frd_*_s*")):
         index = next(
             i
@@ -82,4 +82,7 @@ with sync_playwright() as p:
         {"checks": checks, "js_errors": errors, "playback": True, "responsive": True}, indent=2
     )
 )
-print(f"PASS {len(checks)} exact response/image/prompt/source-time checks; four outcomes; playback")
+print(
+    f"PASS {len(checks)} exact response/image/prompt/source-time checks; "
+    "all recorded outcomes; playback"
+)

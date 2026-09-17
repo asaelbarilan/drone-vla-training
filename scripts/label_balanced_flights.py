@@ -8,13 +8,13 @@ ROOT = Path("D:/drone_vla_pilot/runs")
 OUT = Path("reports/vla_dataset_review_20260916")
 
 
-def label_page(source, destination, condition):
+def label_page(source, destination, condition, model_label="Smol256"):
     text = source.read_text(encoding="utf-8")
     match = re.search(r"const DATA = (.*);\n", text)
     data = json.loads(match.group(1))
     for run in data["runs"]:
         mode = "trained" if "_trained_" in run["name"] else "zero-shot"
-        run["display_name"] = f"{condition} | Smol256 | {mode} | seed {run['seed']}"
+        run["display_name"] = f"{condition} | {model_label} | {mode} | seed {run['seed']}"
         counts = dict(motion=0, hold=0, stop=0, invalid=0)
         for decision in run["decisions"]:
             parsed = (decision.get("recording") or {}).get("parsed")
@@ -47,9 +47,11 @@ def label_page(source, destination, condition):
     )
     text = text.replace(
         "<title>Flight debugger · UAV Lab</title>",
-        f"<title>{condition} data | Smol256 flights</title>",
+        f"<title>{condition} data | {model_label} flights</title>",
     )
-    text = text.replace("<h1>Flight debugger</h1>", f"<h1>{condition} data · Smol256 flights</h1>")
+    text = text.replace(
+        "<h1>Flight debugger</h1>", f"<h1>{condition} data · {model_label} flights</h1>"
+    )
     text = text.replace(
         '<div class="stats">',
         '<div class="card pad" id="executionSummary" style="margin-bottom:14px"></div>'

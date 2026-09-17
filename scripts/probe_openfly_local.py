@@ -8,6 +8,7 @@ for key in ("HF_HOME", "TORCH_HOME"):
 os.environ["USE_TF"] = "0"
 os.environ["HF_HUB_OFFLINE"] = "1"
 import argparse
+import hashlib
 import json
 import sys
 import time
@@ -98,8 +99,6 @@ def capture_generate(*a, **kw):
 model.generate = capture_generate
 for r in rows:
     if args.eval_data:
-        import hashlib
-
         image_paths = [Path(x) for x in r["images"]]
         assert [hashlib.sha256(p.read_bytes()).hexdigest() for p in image_paths] == r[
             "image_sha256"
@@ -158,5 +157,9 @@ report = dict(
     peak_allocated_bytes=torch.cuda.max_memory_allocated(),
     elapsed_s=time.monotonic() - start,
     flight_comparison_complete=False,
+    evaluation_data=str(args.eval_data) if args.eval_data else None,
+    evaluation_data_sha256=hashlib.sha256(args.eval_data.read_bytes()).hexdigest()
+    if args.eval_data
+    else None,
 )
 (args.out / "probe.json").write_text(json.dumps(report, indent=2), encoding="utf-8")

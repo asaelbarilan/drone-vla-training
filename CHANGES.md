@@ -3256,3 +3256,6 @@ published with both official prompt formats.8/16direction withtrainingtemplate;
 Generalized balanced runner toSmol500/Qwen;bothsmokes pass. Sequentiallocal
 400update runs started. Prepared51officialheld-outOpenFlyframes with source
 checks and explicit exclusions;fixed transfer/scoring protocol before inference.
+
+D141:added combined progress/loss/official-source viewer and sequential
+posttraining evaluation coordinator;no premature comparison scores displayed.

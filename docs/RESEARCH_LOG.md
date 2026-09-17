@@ -3657,3 +3657,9 @@ Evaluation coarseforward/leftturn/rightturn/STOP,not flight success or exact
 action amplitude. OpenFlyhistoricalfront vs localadapterscurrentfront/missing
 odometry/downcamera is explicit transfer limitation,not fabricated observations.
 Allscores pending.3metric regressiontests pass. Officiallabels kept offtrain.
+
+D141 continuation:bounded sequential evaluation coordinator prepared; waits for
+both complete reload-verified training jobs and no matching trainer process,then
+runs OpenFly NF4 +3localadapters on51official frames and2localflights each for
+Smol500/Qwen. Public progresspage expanded_models.html refreshes on disk;all
+pending scores explicitly pending.51sourcecase UI checks andmobilelayout pass.
