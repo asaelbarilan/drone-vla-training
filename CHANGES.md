@@ -3317,3 +3317,11 @@ No moretraining launched. No comparison of171exact-IDdev against51coarseofficial
 examples as if matched. Widerdata andnativeinference/temporalalignment remain
 required before fulltraining orflightclaims;noAWSspending. Evidence:training_report,
 training_audit,losses,loss_curves,REPORT.md underreports/vla_openfly_train_20260917.
+
+
+D142 playback follow-up: user requested a few OpenFly clips. Created three
+H.264 videos from all consecutive cached TRAIN frames: AirSim16 (63frames),
+GS-ECUST (38), UE-bigcity (60). Fixed4fps inspection playback, explicitly not
+physical timing, model rollouts or real drone footage. No generated/interpolated
+frames. Source hashes and video metadata in clips_manifest.json; all three
+videos browser-verified to decode and advance. Viewer:localhost8771/openfly_clips.html.

@@ -95,3 +95,7 @@ reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 # D142 generated source image playback and live training snapshot.
 /reports/vla_dataset_review_20260916/openfly_training.html
 /reports/vla_dataset_review_20260916/openfly_training_status.json
+
+# Rebuildable source-recording clips, D142 review.
+/reports/vla_dataset_review_20260916/openfly_clips.html
+/reports/vla_dataset_review_20260916/openfly_clips/
