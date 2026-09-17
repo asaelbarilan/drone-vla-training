@@ -1,0 +1,139 @@
+{
+  "model": "smol500",
+  "before": {
+    "coordinate": {
+      "n": 12,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    },
+    "visual": {
+      "n": 16,
+      "valid": 0,
+      "exact": 0,
+      "mean_bin_error": 64.0,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 10.0,
+      "yaw_mae_rps": 3.0
+    }
+  },
+  "after": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 1.3958333333333333,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.16493055555555555,
+      "yaw_mae_rps": 0.11328125
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875
+    }
+  },
+  "criteria_passed": false,
+  "both_instructions_correct_pairs": "0/8",
+  "both_color_swaps_correct_pairs": "0/8",
+  "interventions": {
+    "blank_image": {
+      "n": 16,
+      "valid": 16,
+      "exact": 2,
+      "mean_bin_error": 2.65625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.498046875,
+      "predictions_changed": 4
+    },
+    "blank_instruction": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.625,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.4921875,
+      "predictions_changed": 0
+    }
+  },
+  "median_after_latency_s": 2.3280000000086147,
+  "optimization_seconds": 492.7960000000021,
+  "peak_allocated_bytes": 1609205248,
+  "reload_spot_identical": true,
+  "validation_loss": [
+    {
+      "step": 0,
+      "mean_answer_ce": 1.0887185214530855
+    },
+    {
+      "step": 200,
+      "mean_answer_ce": 0.14316505450932754
+    },
+    {
+      "step": 400,
+      "mean_answer_ce": 0.13039856914076067
+    },
+    {
+      "step": 600,
+      "mean_answer_ce": 0.12457002557459332
+    },
+    {
+      "step": 800,
+      "mean_answer_ce": 0.13604386916960634
+    },
+    {
+      "step": 1000,
+      "mean_answer_ce": 0.1424449509275811
+    },
+    {
+      "step": 1200,
+      "mean_answer_ce": 0.156377589063985
+    }
+  ],
+  "limits": "28 fixed generation examples; all84 validation rows for CE. 2visual+2coordinate validation scene groups; no real-world transfer claim.",
+  "at400": {
+    "coordinate": {
+      "n": 12,
+      "valid": 12,
+      "exact": 0,
+      "mean_bin_error": 1.375,
+      "correct_yaw_sign": 0,
+      "correct_yaw_without_translation_or_stop": 0,
+      "velocity_mae_mps": 0.22135416666666666,
+      "yaw_mae_rps": 0.05859375
+    },
+    "visual": {
+      "n": 16,
+      "valid": 16,
+      "exact": 4,
+      "mean_bin_error": 2.6875,
+      "correct_yaw_sign": 8,
+      "correct_yaw_without_translation_or_stop": 8,
+      "velocity_mae_mps": 0.0,
+      "yaw_mae_rps": 0.50390625
+    }
+  },
+  "schedule_audit": {
+    "updates_executed": 1200,
+    "start_step": 0,
+    "schedule_identical": true,
+    "disjoint_splits": true
+  },
+  "stop_exact_at400": 0,
+  "stop_exact_at1200": 0
+}

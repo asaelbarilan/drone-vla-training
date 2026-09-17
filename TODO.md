@@ -1,3 +1,12 @@
+## D137 follow-up after size/duration comparison
+
+- Freeze a small TRAIN-only visual contrast-pair overfit test before further
+  mixed training; both256M and500M failed these pairs after1200updates.
+- Separately test STOP/HOLD/motion/visual balancing on current data. Preserve
+  original splits and baselines;do not select checkpoints on protected seeds.
+- Use identical eval-mode loss definitions for TRAIN/VAL and retain raw online
+  losses plus generated-action metrics;loss alone did not predict useful control.
+
 ## D136 local-data follow-up (2026-09-17)
 
 - Freeze a separate visual-only Smol256 TRAIN overfit test to distinguish

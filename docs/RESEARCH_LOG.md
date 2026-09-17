@@ -3489,3 +3489,16 @@ holds stationary for the0.2s diagnostic window,without teacher substitution.
 A separately labelled synthetic STOP regression passes independent control/
 image/dynamics audit;it is NOT counted as model performance evidence. Training,
 model predictions and real mission router are unchanged.
+
+D137 complete500M:1200updates492.796s,1.609GBpeak. TRAINweighted400->1200
+0.4997->0.2910,VAL0.4572->0.5474;no validation-selected checkpoint.400and1200
+both28valid/4exact,8/16visualdirection,0/2STOP;finalinstructionpairs0/8 and
+color-swappairs0/8. Blankinstruction changes0/16;blankimage4/16. Coordinate
+velocityMAE0.2214->0.1649m/s,yawMAE0.0586->0.1133rad/s. Four final reload
+spots identical;full1200schedule exact andTRAINonly. Savedvisual64ticks improve
+bearing8/16 with independentaudit. Both capacities fail useful-pilot criteria.
+Combined176browser assertions plus exact full/focused/task plotbytes pass.
+Evidence:reports/vla_smol_duration_20260917/REPORT.md. Both jobs exitedcleanly.
+Conclude moreupdates and500M alone didnot solve this recipe's visual/STOP
+failures;nextisolatevisual-only learning andclassbalance onexistinglocaldata.
+No general model-capacity impossibility orreal-world readiness claim.

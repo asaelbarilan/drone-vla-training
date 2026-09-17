@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Smol capacity/duration follow-up complete - D137 (2026-09-17)
+
+Both image-only256M/500M pass16/16 tiny memorization and reload. Same local252
+TRAIN/84VAL,400versus1200updates,unchangeddata/sampling/LoRA.256 resumes its
+preserved400adapter;500fresh. Comparable eval-mode losses reveal overfitting:
+TRAIN falls while finalVAL rises forboth. Both still8/16visualdirection,0/8
+instruction/color-swappairs and0/2STOP. Some coordinateerrors improve;do not
+conclude everymetric worsens orparametercount alone iscausal. Both gatesfail.
+Schedules and4finalreloadspots checked;32savedvisual segments/128controls and
+176browser assertions pass. No newclosed-loop flightclaim. All jobs finished.
+Read reports/vla_smol_duration_20260917/REPORT.md andlocalhost8771/smol_duration.html.
+Next freeze visual-only TRAIN overfit,then separate class-balance test. Keep
+externaldata expansionD127 forlater. Preserve originals,architecture session,
+validationgroups andprotectedseeds1-40/1060-1064. NoAWS/physicalflightwork.
+
 ## Active cached Smol256 / mixed local experiment - D136 (2026-09-17)
 
 Use this isolated VLA worktree only; the architecture session is separate.

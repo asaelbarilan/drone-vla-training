@@ -3202,3 +3202,13 @@ contains full/focused loss histories and task breakdowns;prior viewer unchanged.
 D137 saved-action debugger:handle a valid model STOP as stationary diagnostic
 hold rather than dereferencing a missing kinematic action. A labelled synthetic
 STOP regression passes;excluded from model metrics. No training or router change.
+
+## 2026-09-17 - D137: finish500M and capacity-duration comparison
+
+Both sizes400->1200stay8/16visualdirection and0/2STOP;both finalpairtests0/8.
+500M has lower validationloss than256M,butits validationloss also worsens from
+400to1200 whileTRAINimproves. Coordinateerrors show mixed improvement.
+All schedules/reloads checked;32actual savedvisual segments/128controls pass
+independent audit,176browser checks and3exact plot-image checks pass. No new
+closed-loop flights,AWS,externaldata orprotectedseeds. Separate viewer preserves
+priorpages;full evidence andnextlocaldiagnostics recorded inD137 report.
