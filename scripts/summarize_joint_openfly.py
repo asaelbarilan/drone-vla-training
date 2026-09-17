@@ -23,8 +23,34 @@ def main():
         hashlib.sha256((data / "index.jsonl").read_bytes()).hexdigest() == manifest["index_sha256"]
     )
     by = {r["id"]: r for r in map(json.loads, (data / "index.jsonl").read_text().splitlines())}
+    frozen = json.loads((REPORT / "data_audit.json").read_text())
+    assert manifest == frozen, "frozen admission audit changed"
+    native_train = [r for r in by.values() if r["source"] == "openfly" and r["split"] == "train"]
+    native_val = [r for r in by.values() if r["source"] == "openfly" and r["split"] == "val"]
+    train_routes = {r["trajectory"] for r in native_train}
+    val_routes = {r["trajectory"] for r in native_val}
+    assert len(train_routes) == 88 and len(val_routes) == 22 and not train_routes & val_routes
+    official = Path("D:/drone_vla_pilot/data/openfly_eval_20260917/Annotation")
+    official_routes = {
+        e["image_path"]
+        for split in ("seen", "unseen")
+        for e in json.loads((official / (split + ".json")).read_text())
+    }
+    assert len(official_routes) == 3000
+    assert not (train_routes | val_routes) & official_routes
+    assert not {h for r in native_train for h in r["image_sha256"]} & {
+        h for r in native_val for h in r["image_sha256"]
+    }
+    for row in by.values():
+        if row["source"] == "local":
+            assert row["seed"] not in set(range(1, 41)) | set(range(1060, 1065))
+        else:
+            assert row["action_id"] in range(6)
+            assert row["action_id"] == 0 or row["next_pose_verified"]
     queue = json.loads((REPORT / "queue_status.json").read_text())
-    assert queue["status"] == "complete" and queue["completed"] == list(MODELS)
+    assert queue["status"] == "complete" and queue["completed"] == list(MODELS), (
+        "Queue has not completed"
+    )
     summary = {}
     fig, axes = plt.subplots(3, 2, figsize=(12, 12), constrained_layout=True)
     colors = {"local": "#1678b4", "openfly": "#d47712"}
