@@ -3783,3 +3783,10 @@ Recovered from a WinError5 publication failure; preserved the interrupted flight
 and completed Smol256 checkpoint. No training-policy/hyperparameter changes;
 explicit resume only accepts completed400-update/hash-matching runs. Evidence:
 reports/vla_joint_openfly_20260917/recovery.json and recovery_test.json.
+
+D144 interim evidence - Smol256: native18/72 exact vs12/72always-forward,
+macro.25,9falseSTOP/60nonterminal; all72outputs parse. Local28/28parse but
+only2exact; visualdirection8/16. Both actual local flights issueHOLD throughout
+and time out, so formatting/loss improvements do not establish flight control.
+Source/model/control/replay/browser audits pass; see smol256_results.json and
+smol256_flight_audit.json. Other models remain pending.

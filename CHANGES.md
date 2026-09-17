@@ -3377,3 +3377,10 @@ the queue child after16Smol256 flight calls. Completed400-update adapter and
 atomic writes, nonfatal publication errors, exclusive queue lock and explicit
 reuse of verified completed runs. Simulated-lock/child-survival tests pass.
 Resuming evaluation, then the unchanged500/Qwen training schedule.
+
+D144 Smol256 complete:400updates, exact adapter reload,100held-out outputs.
+Native18/72 (25%macro; always-forward12/72),72/72valid,9/60falseSTOP. Local
+2/28exact,28/28valid, visualdirection8/16. Both10sflights timeout atinitial
+distance8.541/8.000m: all100actual predictions are HOLD.400controls and both
+replays/browser playback audited. Completed adapter SHA unchanged through
+recovery. Smol500 baseline evaluation has started; Qwen remains queued.
