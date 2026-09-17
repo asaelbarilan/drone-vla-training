@@ -1,0 +1,177 @@
+{
+  "raw_consecutive_transitions": 911,
+  "raw_consecutive_motion": {
+    "go up": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": 3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 21
+      }
+    ],
+    "turn right": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": -30.0,
+        "count": 37
+      },
+      {
+        "xy_distance": 0.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 1
+      }
+    ],
+    "go straight": [
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 797
+      }
+    ],
+    "turn left": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 30.0,
+        "count": 34
+      }
+    ],
+    "go down": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": -3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 21
+      }
+    ]
+  },
+  "raw_anomalies": [
+    {
+      "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_2-9-0_2058657199",
+      "split": "train",
+      "image": "20250114_020911_25",
+      "action": "turn right",
+      "observed": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "compressed_annotation_motion": {
+    "4": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": 3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 17
+      },
+      {
+        "xy_distance": 6.0,
+        "z_delta": 3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 4
+      }
+    ],
+    "3": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": -30.0,
+        "count": 16
+      },
+      {
+        "xy_distance": 6.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": -30.0,
+        "count": 16
+      },
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": -30.0,
+        "count": 5
+      },
+      {
+        "xy_distance": 6.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 1
+      }
+    ],
+    "9": [
+      {
+        "xy_distance": 9.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 179
+      },
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 48
+      },
+      {
+        "xy_distance": 6.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 14
+      }
+    ],
+    "1": [
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 0.0,
+        "count": 30
+      }
+    ],
+    "8": [
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": -0.0,
+        "count": 22
+      }
+    ],
+    "2": [
+      {
+        "xy_distance": 6.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 30.0,
+        "count": 20
+      },
+      {
+        "xy_distance": 0.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 30.0,
+        "count": 11
+      },
+      {
+        "xy_distance": 3.0,
+        "z_delta": 0.0,
+        "yaw_delta_deg": 30.0,
+        "count": 3
+      }
+    ],
+    "5": [
+      {
+        "xy_distance": 0.0,
+        "z_delta": -3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 20
+      },
+      {
+        "xy_distance": 6.0,
+        "z_delta": -3.0,
+        "yaw_delta_deg": 0.0,
+        "count": 1
+      }
+    ]
+  },
+  "conclusion": "Raw frames largely align with their next atomic action. Compressed annotation images do not define uniform primitive endpoints: e.g. all22 action8 next-image gaps are3 source units although the released primitive dictionary says forward6. Turns can include subsequent translation before the next selected image. Do not derive velocity/duration targets or roll out native IDs from these gaps. The frozen native-ID pilot imitates released labels only, not verified continuous control. One raw turn has no measured yaw change; preserve and flag it, no retrospective split changes."
+}

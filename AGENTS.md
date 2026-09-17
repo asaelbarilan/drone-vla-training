@@ -16,20 +16,23 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active D142 - official OpenFly TRAIN native-action diagnostic
+## D142 complete - native OpenFly pipeline passes, generalization fails
 
-D141 expanded Smol500/Qwen training and four local flights are complete; all
-four flights fail completion. See reports/vla_expanded_models_20260917/REPORT.md.
-User now authorizes training on some OpenFly data. Native Smol500 pilot running
-locally at D:/drone_vla_pilot/runs/smol500_openfly_native_20260917_a; do not launch
-another GPU job concurrently. Read reports/vla_openfly_train_20260917/PROTOCOL.md.
-22 official TRAIN trajectories:258train/171dev, disjoint from all3000official
-seen/unseen trajectory IDs. New native action-ID contract; old FRD unchanged.
-80-update8-example memorization gate >=7/8 exact, then fresh160-update pilot;
-otherwise stop. One-hour optimization cap. Live viewer localhost8771/openfly_training.html.
-Need finish/reload, record outcomes and commit evidence. No AWS or physical flights.
-OpenFly score12/51 is a strict offline diagnostic with unresolved normalization
-and history-protocol mismatch, not published benchmark flight success.
+No training/GPU job remains active. Read reports/vla_openfly_train_20260917/REPORT.md
+and localhost8771/openfly_training.html (recorded source flights, not model rollouts).
+Smol500BF16/r8 native-ID pilot:8/8memorization;fresh160updates =>18/171dev exact,
+macro.149 vsmajority113/171/macro.167;blankimages11/171(allSTOP),26falseSTOPs.
+Both adapters saved onD:/drone_vla_pilot/runs/smol500_openfly_native_20260917_a;
+fourreloadspots match;960exposures source/split/class-mixture audited. No AWS.
+D141 expandedSmol500/Qwen400updates andfourlocalflights also complete;allflightsfail.
+OpenFly old12/51coarse score becomes29/51 when SAME tokens re-decoded with released
+vlnv1normalization;turns0/12. Post-hoc sensitivity, not newnativebenchmark result.
+OfficialTRAIN22routes/258train/171dev isolated fromall3000officialevaltrajectories.
+Rawmotion910/911consistent;onezero-yawturnflagged. Compressedannotation gaps are
+not nativeaction durations. Do not convert tovelocities or claimphysicalcontrol.
+Next reconcile atomic-vs-macroalignment, preserve these frozen splits/results,
+then broaden train/devcoverage (includingverticaldev andrealflightdomains).
+No fulltraining/sweep warranted yet;oldFRDbaselines andprotectedseeds unchanged.
 
 ## OpenFly local probe and dashboard fixes - D140 (2026-09-17)
 

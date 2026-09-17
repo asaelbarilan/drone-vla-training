@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "four_distinct_actions_per_effective_batch": true,
+  "no_dev_or_official_eval_exposures": true,
+  "updates": {
+    "overfit": 80,
+    "pilot": 160
+  },
+  "exposures": 960,
+  "adapter_sha256": {
+    "overfit\\adapter\\adapter_model.safetensors": "7e15499041dea96b478a1f6055d41c4b6e01937809150763249c63c77c2aa00c",
+    "pilot\\adapter\\adapter_model.safetensors": "6a5cc0d2339beab0b875e1faa69930f34ebfb8231ca8c9742d79d55ed412d279"
+  }
+}

@@ -3292,3 +3292,28 @@ recall .1346 ->.3269; turn accuracy remains0/12. The alternate normalization
 zeros unsupported dimensions, so this is decoder sensitivity, not new inference
 or proof of corrected native benchmark performance. Original table retained.
 Evidence: normalization_audit.json and scripts/audit_openfly_normalization.py.
+
+
+D142 motion audit:910/911 consecutive raw parquet transitions match expected
+atomic motion (forward3, yawleft+30deg/right-30deg, up+3/down-3 in source axes).
+One train turn-right frame has zero yaw change; retained and flagged, not
+retrospectively removed. Compressed annotation intervals include subsequent
+movement and do not uniformly match macro magnitudes:22/22 ID8 intervals show
+3sourceunits although released dictionary is forward6. Pilot learns released
+IDs as a categorical imitation diagnostic, not verified continuous control.
+Before control training, reconcile atomic/macro sequence alignment and exclude
+or correct source anomalies under a new versioned protocol, preserving splits.
+Evidence: motion_alignment_audit.json and audit_openfly_motion_alignment.py.
+
+
+D142 completion: Smol5008/8overfit, then fresh160update native-IDpilot completes
+in858.718s total;peak allocated1.401GiB. Train/dev eval-modeCE5.778/5.767 ->
+0.488/0.521, but dev exact18/171, macro.1493, below majority113/171/macro.1667.
+All171outputs become valid; base171/171invalid makes improvement over base
+primarily a formatting result. Blank-image dev11/171 (allSTOP), macro.1667.
+26falseSTOP/160nonterminal. Fourreloadspots exact;all960exposures TRAIN only
+and everyeffectivebatchfourdistinctactions. Pipelinepasses;learninggateFAILS.
+No moretraining launched. No comparison of171exact-IDdev against51coarseofficial
+examples as if matched. Widerdata andnativeinference/temporalalignment remain
+required before fulltraining orflightclaims;noAWSspending. Evidence:training_report,
+training_audit,losses,loss_curves,REPORT.md underreports/vla_openfly_train_20260917.

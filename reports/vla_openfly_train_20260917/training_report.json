@@ -1,0 +1,3861 @@
+{
+  "status": "complete",
+  "model": "D:\\drone_vla_pilot\\models\\SmolVLM-500M-Instruct\\a7da5b986cb59b408707209984f360a5f4ad7e47",
+  "contract": "openfly_native_action_id_v1",
+  "quantization": "BF16 Smol500; language-only LoRA r8",
+  "max_seconds": 3600,
+  "aws_spend": 0,
+  "official_evaluation_used": false,
+  "limitations": "Offline next-action imitation only; new native-ID interface, not the FRD baseline. Causal history of three front frames at <=256px. No physical or simulator execution implied.",
+  "data_sha256": "01c50e6a38184a80f7b9722d0ae935499497662a7a1933073b5cf176558cca4d",
+  "overfit_ids": [
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:28",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:7",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:11",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:1",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:0",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:27",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:10",
+    "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:4"
+  ],
+  "train_rows": 258,
+  "dev_rows": 171,
+  "overfit_loss_before": 5.38209456205368,
+  "overfit_before": [
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:28",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:7",
+      "target": 1,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:11",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:1",
+      "target": 3,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:0",
+      "target": 4,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:27",
+      "target": 5,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:10",
+      "target": 8,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:4",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    }
+  ],
+  "updates": 160,
+  "overfit_loss_after": 0.00027963499451288953,
+  "overfit_after": [
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:28",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:7",
+      "target": 1,
+      "raw": "1",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:11",
+      "target": 2,
+      "raw": "2",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:1",
+      "target": 3,
+      "raw": "3",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:0",
+      "target": 4,
+      "raw": "4",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:27",
+      "target": 5,
+      "raw": "5",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:10",
+      "target": 8,
+      "raw": "8",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/medium_long/2025-01-19_06-55-26_522826:4",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    }
+  ],
+  "overfit_pass": true,
+  "pilot_eval_loss_before": {
+    "train": 5.777731535046599,
+    "dev": 5.766919808081019
+  },
+  "dev_before": [
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:1",
+      "target": 2,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:2",
+      "target": 2,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:3",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:4",
+      "target": 9,
+      "raw": "The image is a 3D-",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:5",
+      "target": 9,
+      "raw": "Mission stop.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:6",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:7",
+      "target": 1,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:8",
+      "target": 3,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:9",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:10",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:11",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:12",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:13",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:14",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:0",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:1",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:2",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:3",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:4",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:5",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:6",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:7",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:8",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:9",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:10",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:11",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:12",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:13",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:14",
+      "target": 3,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:15",
+      "target": 1,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:16",
+      "target": 3,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:17",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:18",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:19",
+      "target": 1,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:20",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:0",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:1",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:2",
+      "target": 3,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:3",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:4",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:5",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:7",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:8",
+      "target": 1,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:9",
+      "target": 2,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:10",
+      "target": 2,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:11",
+      "target": 8,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:12",
+      "target": 3,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:13",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:14",
+      "target": 8,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:15",
+      "target": 0,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:0",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:1",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:2",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:3",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:4",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:5",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:6",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:7",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:8",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:9",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:10",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:11",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:12",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:13",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:14",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:15",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:16",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:17",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:18",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:0",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:1",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:2",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:3",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:4",
+      "target": 8,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:5",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:6",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:8",
+      "target": 0,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:0",
+      "target": 9,
+      "raw": "3.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:1",
+      "target": 9,
+      "raw": "3.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:2",
+      "target": 1,
+      "raw": "3.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:3",
+      "target": 3,
+      "raw": "3m.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:4",
+      "target": 9,
+      "raw": "3m.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:5",
+      "target": 9,
+      "raw": "Proceed straight to the green building with",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:6",
+      "target": 2,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:8",
+      "target": 9,
+      "raw": "1.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:9",
+      "target": 9,
+      "raw": "1.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:10",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:11",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:12",
+      "target": 2,
+      "raw": "1.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:13",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:15",
+      "target": 9,
+      "raw": "Proceed straight to the green building with",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:16",
+      "target": 9,
+      "raw": "Proceed straight to the green building with",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:17",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:18",
+      "target": 1,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:19",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:0",
+      "target": 9,
+      "raw": "The image is an aerial view taken from",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:1",
+      "target": 9,
+      "raw": "The image is an aerial view of a",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:2",
+      "target": 9,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:3",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:4",
+      "target": 9,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:5",
+      "target": 1,
+      "raw": "The image is a drone aerial view of",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:6",
+      "target": 3,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:7",
+      "target": 3,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:8",
+      "target": 8,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:9",
+      "target": 0,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:0",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:1",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:2",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:3",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:4",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:5",
+      "target": 8,
+      "raw": "Images are newest to oldest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:6",
+      "target": 3,
+      "raw": "Images are newest to oldest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:7",
+      "target": 3,
+      "raw": "Images are newest to oldest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:8",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:9",
+      "target": 2,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:10",
+      "target": 1,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:11",
+      "target": 3,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:12",
+      "target": 3,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:13",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:14",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:15",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:16",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:17",
+      "target": 9,
+      "raw": "The tennis court in the center of the",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:18",
+      "target": 2,
+      "raw": "Images are oldest to newest: 2",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:20",
+      "target": 1,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:21",
+      "target": 0,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:0",
+      "target": 9,
+      "raw": "Proceed forward to the large gray rectangular",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:1",
+      "target": 9,
+      "raw": "Proceed forward to the large gray rectangular",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:2",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:3",
+      "target": 1,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:4",
+      "target": 3,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:5",
+      "target": 9,
+      "raw": "The image is a high-angle aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:6",
+      "target": 9,
+      "raw": "The image is an aerial view of a",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:7",
+      "target": 1,
+      "raw": "The image is an aerial view of the",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:8",
+      "target": 0,
+      "raw": "The image is an aerial view of a",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:0",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:1",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:2",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:3",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:4",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:5",
+      "target": 9,
+      "raw": "The image is a top-down aerial",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:6",
+      "target": 9,
+      "raw": "Mission stop.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:7",
+      "target": 9,
+      "raw": "Mission stop.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:8",
+      "target": 1,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:9",
+      "target": 3,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:10",
+      "target": 3,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:11",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:12",
+      "target": 2,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:13",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:14",
+      "target": 9,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:15",
+      "target": 0,
+      "raw": "Images are oldest to newest: two past",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:0",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:1",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:2",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:3",
+      "target": 9,
+      "raw": "9.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:4",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:5",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:6",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:7",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:8",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:9",
+      "target": 9,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:10",
+      "target": 3,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:11",
+      "target": 8,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:12",
+      "target": 0,
+      "raw": "0.",
+      "valid": false,
+      "exact": false
+    }
+  ],
+  "pilot_eval_loss_after": {
+    "train": 0.4883325110521716,
+    "dev": 0.5207680650273262
+  },
+  "dev_after": [
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:1",
+      "target": 2,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:2",
+      "target": 2,
+      "raw": "2",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:3",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:4",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:5",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:6",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:7",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:8",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:9",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:10",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:11",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:12",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:13",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:14",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:0",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:2",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:3",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:4",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:10",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:12",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:13",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:14",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:15",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:16",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:17",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:18",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:19",
+      "target": 1,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:20",
+      "target": 0,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:0",
+      "target": 9,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:1",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:2",
+      "target": 3,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:3",
+      "target": 9,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:4",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:5",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:7",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:8",
+      "target": 1,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:9",
+      "target": 2,
+      "raw": "4",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:10",
+      "target": 2,
+      "raw": "9",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:11",
+      "target": 8,
+      "raw": "9",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:12",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:14",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:15",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:0",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:1",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:2",
+      "target": 2,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:3",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:4",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:5",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:6",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:7",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:8",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:9",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:10",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:11",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:12",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:13",
+      "target": 2,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:14",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:15",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:16",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:17",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:18",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "target": 0,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:0",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:1",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:2",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:3",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:4",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:5",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:8",
+      "target": 0,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:0",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:1",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:2",
+      "target": 1,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:3",
+      "target": 3,
+      "raw": "3",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:4",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:5",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:6",
+      "target": 2,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "target": 9,
+      "raw": "3",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:8",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:9",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:10",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:11",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:12",
+      "target": 2,
+      "raw": "9",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:13",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:15",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:16",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:17",
+      "target": 9,
+      "raw": "9",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:18",
+      "target": 1,
+      "raw": "9",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:19",
+      "target": 0,
+      "raw": "9",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:0",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:1",
+      "target": 9,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:2",
+      "target": 9,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:3",
+      "target": 9,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:4",
+      "target": 9,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:5",
+      "target": 1,
+      "raw": "1",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:6",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:7",
+      "target": 3,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:8",
+      "target": 8,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:9",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:1",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:2",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:3",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:4",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:5",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:6",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:7",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:8",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:9",
+      "target": 2,
+      "raw": "2",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:10",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:11",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:12",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:13",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:14",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:15",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:16",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:17",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:18",
+      "target": 2,
+      "raw": "2",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:20",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:21",
+      "target": 0,
+      "raw": "1",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:0",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:1",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:2",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:3",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:4",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:5",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:6",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:7",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:8",
+      "target": 0,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:0",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:1",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:2",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:3",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:4",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:5",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:6",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:7",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:8",
+      "target": 1,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:9",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:10",
+      "target": 3,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:11",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:12",
+      "target": 2,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:13",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:14",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:15",
+      "target": 0,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:0",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:1",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:2",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:3",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:4",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:5",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:6",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:7",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:8",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:9",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:10",
+      "target": 3,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:11",
+      "target": 8,
+      "raw": "8",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:12",
+      "target": 0,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    }
+  ],
+  "dev_blank_images": [
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:1",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:2",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:7",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:8",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:10",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:12",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:14",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:10",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:12",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:14",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:15",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:16",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:17",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:18",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:19",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:20",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:2",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:8",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:9",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:10",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:11",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:12",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:14",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:15",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:2",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:10",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:12",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:13",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:14",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:15",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:16",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:17",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:18",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:4",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:5",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:8",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:2",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:3",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:6",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:10",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:12",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:15",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:16",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:17",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:18",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:19",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:5",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:6",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:7",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:8",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:9",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:5",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:6",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:7",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:9",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:10",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:11",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:12",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:14",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:15",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:16",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:17",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:18",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:20",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:21",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:3",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:4",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:7",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:8",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:8",
+      "target": 1,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:9",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:10",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:11",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:12",
+      "target": 2,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:13",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:14",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:15",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:0",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:1",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:2",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:3",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:4",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:5",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:6",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:7",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:8",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:9",
+      "target": 9,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:10",
+      "target": 3,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:11",
+      "target": 8,
+      "raw": "0",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:12",
+      "target": 0,
+      "raw": "0",
+      "valid": true,
+      "exact": true
+    }
+  ],
+  "reload_spots": [
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0",
+      "target": 9,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:1",
+      "target": 2,
+      "raw": "8",
+      "valid": true,
+      "exact": false
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:2",
+      "target": 2,
+      "raw": "2",
+      "valid": true,
+      "exact": true
+    },
+    {
+      "id": "env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:3",
+      "target": 9,
+      "raw": "2",
+      "valid": true,
+      "exact": false
+    }
+  ],
+  "metrics": {
+    "overfit_before": {
+      "n": 8,
+      "exact": 0,
+      "invalid": 8,
+      "macro_recall": 0.0,
+      "per_class_recall": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0,
+        "5": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "majority_correct": 1
+    },
+    "overfit_after": {
+      "n": 8,
+      "exact": 8,
+      "invalid": 0,
+      "macro_recall": 1.0,
+      "per_class_recall": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "5": 1.0,
+        "8": 1.0,
+        "9": 1.0
+      },
+      "majority_correct": 1
+    },
+    "dev_before": {
+      "n": 171,
+      "exact": 0,
+      "invalid": 171,
+      "macro_recall": 0.0,
+      "per_class_recall": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "majority_correct": 113
+    },
+    "dev_after": {
+      "n": 171,
+      "exact": 18,
+      "invalid": 0,
+      "macro_recall": 0.14927375353260308,
+      "per_class_recall": {
+        "0": 0.2727272727272727,
+        "1": 0.08333333333333333,
+        "2": 0.23076923076923078,
+        "3": 0.0625,
+        "8": 0.16666666666666666,
+        "9": 0.07964601769911504
+      },
+      "majority_correct": 113
+    },
+    "dev_blank_images": {
+      "n": 171,
+      "exact": 11,
+      "invalid": 0,
+      "macro_recall": 0.16666666666666666,
+      "per_class_recall": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "8": 0.0,
+        "9": 0.0
+      },
+      "majority_correct": 113
+    }
+  },
+  "elapsed_s": 858.718000000008,
+  "peak_allocated_bytes": 1504774144
+}
