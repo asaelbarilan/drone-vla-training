@@ -3364,3 +3364,9 @@ re-parsing, exact schedule checks, six-flight source/control/replay verification
 and static loss-plot/report generation. Fixed live review handling of infinite
 obstacle distances from simulator summaries while preserving raw answer strings;
 browser regression test passes. Training remains active; no results claimed yet.
+
+D144 viewer now decodes local target/predicted bins into forward/right/down m/s
+and clockwise yaw rad/s, with explicit HOLD versus mission STOP. OpenFly keeps
+3m/30degree primitive units. Browser scale/sign/extrema checks pass. Raw answers
+remain available. Additional exact-input audit finds0label contradictions and
+0cross-split identical-input groups across5200examples. Training remains active.

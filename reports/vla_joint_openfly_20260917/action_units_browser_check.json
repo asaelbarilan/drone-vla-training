@@ -1,0 +1,8 @@
+{
+  "velocity_extrema": true,
+  "yaw_extrema": true,
+  "hold_stop_distinct": true,
+  "native_primitive_units_preserved": true,
+  "actual_target_decoded": true,
+  "js_errors": []
+}
