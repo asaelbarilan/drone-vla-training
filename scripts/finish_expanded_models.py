@@ -129,6 +129,8 @@ for model in ("smol500", "qwen"):
         python="python",
     )
 run("build_expanded_models_review.py")
+run("check_expanded_models_review.py", python="python")
+run("write_expanded_models_report.py")
 (REPORTS / "pipeline_complete.json").write_text(
     json.dumps(
         dict(status="complete", wall_seconds=time.monotonic() - start, aws_spend=0), indent=2
