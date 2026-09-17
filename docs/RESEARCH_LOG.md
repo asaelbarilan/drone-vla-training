@@ -3744,3 +3744,17 @@ GS-ECUST (38), UE-bigcity (60). Fixed4fps inspection playback, explicitly not
 physical timing, model rollouts or real drone footage. No generated/interpolated
 frames. Source hashes and video metadata in clips_manifest.json; all three
 videos browser-verified to decode and advance. Viewer:localhost8771/openfly_clips.html.
+
+
+## D143 - OpenFly representation rationale and CognitiveDrone admission research
+
+User requested these two sources specifically. OpenFly explicitly motivates discrete
+VLN actions and3/6/9m forward granularities to reduce imbalance; no evidence found
+that the released eight-entry encoding beats4Dvelocity control. CognitiveDrone
+official public release is linked and invites training, but explicit license is
+missing and only30of128named train shards are present. Community conversion has
+1766episodes and7Daction container; mapping to paper4Dcontrol is unverified.
+Add as candidate for symbol/reasoning/recognition tasks, pending small-shard
+action/timing/coverage audit, split isolation and license clarification. No
+training or model/baseline changes. Evidence and pinned inventories:
+docs/research/openfly_cognitive_action_audit_20260917/REPORT.md.
