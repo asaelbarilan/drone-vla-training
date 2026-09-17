@@ -3572,3 +3572,8 @@ each,simulation paused during inference and actual latencies reported. Keep
 zero-shot reference; no changes to architecture baselines or heldout1-40.
 Execute original visual saved actions and independently audit controls/images.
 Evidence before run:D138 data audits,53tests,two-update accumulation smoke.
+
+D139 interim control:400updates complete,originalVAL weighted0.4171/newVAL0.4835.
+Original28generations27valid,visual8/16,STOP0/2;newvisual32/64. All134probes
+saved;interventions/reload and expanded comparison still pending. These are
+interim control observations,not a completed comparison or flight result.

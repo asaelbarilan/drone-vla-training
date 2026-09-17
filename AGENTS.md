@@ -16,6 +16,21 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## Active matched local training goal - D139 (2026-09-17)
+
+User authorized goal and execution. Protocol:reports/vla_balanced_comparison_20260917/PROTOCOL.md.
+Cached Smol256, fresh matched LoRA,400updates/1600exposures per condition,
+45min/model, sequential GPU processes, no AWS. Control run:
+D:/drone_vla_pilot/runs/smol256_balanced_control_20260917_a.
+Expanded run queued after control process exits successfully:
+D:/drone_vla_pilot/runs/smol256_balanced_expanded_20260917_a.
+Read report.json and sibling .log; do not duplicate jobs. Control has completed
+optimization and saved134final probes,interventions/reload still pending at this
+handoff. Original28 probes:27valid,8/16visual,0/2STOP;newvisual32/64. No final
+comparison or flight outcome yet. Next execute scripts/evaluate_balanced_comparison.py
+only after both reports complete/reload checked,then browser QA and final report.
+Maintain the active goal through simulation evidence and coherent commits.
+
 ## Expanded local data and mixed batches ready - D138 (2026-09-17)
 
 Latest user requests expansion and mixing within every batch. Completed additive

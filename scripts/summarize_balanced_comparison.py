@@ -10,6 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from run_smol_duration import metrics
 
+from uavlab.training.direct_vla_frd import parse_target, target_json
 from uavlab.training.mixed_batches import balanced_schedule, task_class
 
 
@@ -30,6 +31,17 @@ def summarize(report, rows):
     assert [r["decision_id"] for r in report["after"]] == report["generation_eval_ids"]
     assert [r["decision_id"] for r in report["before"]] == report["generation_eval_ids"]
     assert [r["decision_id"] for r in report["extra_after"]] == report["extra_eval_ids"]
+    for result in (
+        report["before"] + report["after"] + report["extra_after"] + report["interventions"]
+    ):
+        assert result["target"] == by_id[result["decision_id"]]["target"]
+        try:
+            recovered = json.loads(target_json(parse_target(result["raw"])))
+        except (ValueError, TypeError):
+            recovered = None
+        assert result["valid"] == (recovered is not None)
+        assert result["parsed"] == recovered
+        assert result["exact"] == (recovered == result["target"])
     original = metrics(report["after"])
     extra = report["extra_after"]
     new = [r for r in extra if r["seed"] >= 1450]
@@ -163,9 +175,20 @@ def main(args):
                     ]
                 else:
                     ys = [p[1][field] for p in pts]
-                ax.plot([p[0] for p in pts], ys, marker="o", label=name)
+                ax.plot(
+                    [p[0] for p in pts],
+                    ys,
+                    marker="o",
+                    label="Original data" if name == "existing_control" else "Expanded data",
+                )
             ax.set(
-                title=f"{cohort} VAL: {field}",
+                title=("Original scenes" if cohort == "original" else "New scenes")
+                + " | "
+                + {
+                    "weighted_action_loss": "Per-example action loss",
+                    "answer_ce": "Answer-token loss",
+                    "task_balanced_weighted_loss": "Equal-task action loss",
+                }[field],
                 xlabel="Optimizer updates (4 examples each)",
                 ylabel="Loss",
             )
@@ -184,10 +207,11 @@ def main(args):
                     [p[0] for p in pts],
                     [p[1]["weighted_action_loss"] for p in pts],
                     marker="o",
-                    label=name,
+                    label="Original data" if name == "existing_control" else "Expanded data",
                 )
             ax.set(
-                title=f"{cohort} VAL {group} (n={pts[0][1]['n']})",
+                title=("Original" if cohort == "original" else "New")
+                + f" VAL {group.upper()} (n={pts[0][1]['n']})",
                 xlabel="Updates",
                 ylabel="Weighted loss",
             )
@@ -210,7 +234,12 @@ def main(args):
             ]
         else:
             ys = [p[1]["weighted_action_loss"] for p in pts]
-        ax.plot([p[0] for p in pts], ys, marker="o", label=name)
+        ax.plot(
+            [p[0] for p in pts],
+            ys,
+            marker="o",
+            label="Original data" if name == "existing_control" else "Expanded data",
+        )
     ax.set(
         title="Eval-mode loss on each condition's own TRAIN set (different populations)",
         xlabel="Optimizer updates",
