@@ -3265,3 +3265,13 @@ D141 final execution complete: both expanded-data training jobs, all four offici
 OpenFly offline evaluations and audited Smol500/Qwen local flights finished.
 Results and limits: reports/vla_expanded_models_20260917/REPORT.md.
 No external training rows, AWS spending or native OpenFly flight-success claim.
+
+
+## 2026-09-17 - D141 evaluation recovery and transparent failure counts
+
+Fixed the flight audit to accept explicit trained-only modes while preserving
+the default four-run paired check. Resumed completed artifacts without repeating
+GPU inference. Both expanded runs and their four local flights are now audited
+and finalized in reports/vla_expanded_models_20260917/REPORT.md (abd4ed0).
+The dashboard now separates invalid outputs and mixed commands; unchanged scores.
+Two existing native-action scoring tests and 204 browser source/output checks pass.

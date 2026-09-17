@@ -31,7 +31,7 @@ from uavlab.training.direct_vla_frd import (
 )
 
 
-async def audit(root):
+async def audit(root, modes=("zero_shot", "trained")):
     summaries = []
     prefixes = {p.name.split("_frd_")[0] for p in root.glob("*_frd_*_s*")}
     assert len(prefixes) == 1
@@ -118,11 +118,11 @@ async def audit(root):
             }
         )
     assert {(r["seed"], r["mode"]) for r in summaries} == {
-        (s, m) for s in (1400, 1405) for m in ("zero_shot", "trained")
+        (s, m) for s in (1400, 1405) for m in modes
     }
-    assert len(summaries) == 4
+    assert len(summaries) == 2 * len(modes)
     matched = []
-    for seed in (1400, 1405):
+    for seed in (1400, 1405) if len(modes) == 2 else ():
         folders = [root / f"{prefix}_frd_{mode}_s{seed}" for mode in ("zero_shot", "trained")]
         manifests = [json.loads((f / "manifest.json").read_text()) for f in folders]
         first = [json.loads((f / "debug/calls/0000.json").read_text()) for f in folders]
@@ -144,8 +144,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument(
+        "--modes", nargs="+", choices=["zero_shot", "trained"], default=["zero_shot", "trained"]
+    )
     args = parser.parse_args()
-    report = asyncio.run(audit(args.runs))
+    report = asyncio.run(audit(args.runs, tuple(args.modes)))
     args.out.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(
         json.dumps(

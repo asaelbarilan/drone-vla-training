@@ -32,6 +32,22 @@ env = dict(
 
 
 def run(script, *args, python=PY):
+    # Resume only completed artifacts; never overwrite or repeat an existing GPU run.
+    if "--out" in args:
+        output = Path(args[args.index("--out") + 1])
+        marker = {
+            "probe_openfly_local.py": "probe.json",
+            "evaluate_openfly_transfer.py": "report.json",
+            "evaluate_local_vla_pair.py": "summary.json",
+        }.get(script)
+        if marker and (output / marker).exists():
+            print(
+                json.dumps(
+                    dict(event="reuse_completed", script=script, artifact=str(output / marker))
+                ),
+                flush=True,
+            )
+            return
     print(json.dumps(dict(event="start", script=script, args=[str(a) for a in args])), flush=True)
     subprocess.run(
         [str(python), str(ROOT / "scripts" / script), *map(str, args)],
@@ -108,7 +124,13 @@ for model in ("smol500", "qwen"):
         folder,
     )
     run(
-        "audit_local_vla_pair.py", "--runs", folder, "--out", REPORTS / f"{model}_flight_audit.json"
+        "audit_local_vla_pair.py",
+        "--runs",
+        folder,
+        "--modes",
+        "trained",
+        "--out",
+        REPORTS / f"{model}_flight_audit.json",
     )
     shutil.copyfile(folder / "summary.json", REPORTS / f"{model}_flight_summary.json")
     from label_balanced_flights import label_page
