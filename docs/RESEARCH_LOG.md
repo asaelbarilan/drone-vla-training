@@ -3577,3 +3577,11 @@ D139 interim control:400updates complete,originalVAL weighted0.4171/newVAL0.4835
 Original28generations27valid,visual8/16,STOP0/2;newvisual32/64. All134probes
 saved;interventions/reload and expanded comparison still pending. These are
 interim control observations,not a completed comparison or flight result.
+
+D139 control complete in1692.375s with903255552allocated GPUbytes peak;four
+reload spots identical. Exact400balanced schedules and saved raw predictions
+independently checked. Original/new visual8/16 and32/64;instruction and color-
+swap pairs0/8 and0/32. Across all134probes:STOP0/6,HOLD14/18 withonefalse STOP.
+Blankimage changes16outputs,blankinstruction6,without improved paired behavior.
+Expanded run now active. User clarified model scope:current comparison only
+Smol256;priorSmol500/Qwen results remain preserved,not rerun by this goal.

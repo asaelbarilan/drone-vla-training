@@ -106,6 +106,29 @@ def summarize(report, rows):
         and original["coordinate"]["mean_bin_error"] <= 0.8 * before["coordinate"]["mean_bin_error"]
     )
     new_metrics = metrics(new)
+    for measured, predictions in ((original, report["after"]), (new_metrics, new)):
+        for group, values in measured.items():
+            valid = [r for r in predictions if r["task_group"] == group and r["valid"]]
+            values["invalid_count"] = values["n"] - len(valid)
+            values["valid_only_velocity_mae_mps"] = (
+                sum(
+                    sum(
+                        abs(r["parsed"][k] - r["target"][k])
+                        for k in ("forward_bin", "right_bin", "down_bin")
+                    )
+                    / 3
+                    * 10
+                    / 64
+                    for r in valid
+                )
+                / len(valid)
+                if valid
+                else None
+            )
+            values["invalid_penalty_note"] = (
+                "Overall MAE uses max-range penalties for invalid output"
+            )
+
     return dict(
         condition=report["condition"],
         original=original,

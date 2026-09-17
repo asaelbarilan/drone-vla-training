@@ -3221,3 +3221,11 @@ conflicting images and15 unobservable geometry proposals. Added four-task
 effective batching and actual two-update Smol256 GPU smoke test.53 unit tests
 pass;data/teacher-flight debugger verified. No full new model experiment yet.
 Evidence:reports/vla_local_expanded_20260917_v4/REPORT.md.
+
+
+## 2026-09-17 - D139 matched local comparison started
+Frozen same400updates/1600exposures on balanced original versus expanded data.
+Control complete/reload verified;expanded condition running sequentially.
+Control fails visual/STOP gates despite lower losses. Separate original/new
+validation and equal-task loss plots,raw-output scorer audit and debugger
+comparison prepared. No cloud spend or architecture baseline changes.
