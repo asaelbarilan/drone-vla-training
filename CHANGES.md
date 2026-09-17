@@ -3184,3 +3184,8 @@ and ordinary CE now measured on both TRAIN and VAL,with task breakdowns.
 Masked shifted weighted-loss and original-schedule preservation tests pass;
 336-row256CPU preflight and source/model hashes recorded. New viewer/plots
 are separate from prior results. No mixed duration job has started yet.
+
+D137500M correctness gate completes:16/16 exact at400total tiny updates,
+allSTOP/HOLD and all16reloads identical;1.628GB peak. First200attempt retained
+(9/16exact). Added exact prediction/plot browser checks and schedule summaries.
+256M duration job started from preserved400adapter;no changes to data balance.

@@ -3461,3 +3461,8 @@ not untouched test estimates. Seeds1-40 and1060-1064 remain excluded.
 Runtime cap45minutes per mixed job,20minutes per optimization block;GPU70%.
 Run one GPU model at a time;local only,no AWS spending or physical flights.
 500Mdownload on D:,no credentials. Preserve all prior baselines and artifacts.
+
+D137500M gate: first200updates97.656s produce16valid/9exact,HOLD failures;
+reload16identical. Planned200more at5e-5 takes103.593s and passes16/16exact,
+allSTOP/HOLD,full16reloadidentical. Peak1.628GB. Fresh mixed500adapter remains
+separate from this memorization adapter. No additional tiny retries required.
