@@ -3790,3 +3790,6 @@ only2exact; visualdirection8/16. Both actual local flights issueHOLD throughout
 and time out, so formatting/loss improvements do not establish flight control.
 Source/model/control/replay/browser audits pass; see smol256_results.json and
 smol256_flight_audit.json. Other models remain pending.
+
+
+D144 follow-up: Qwen CPU-only long-input preflight checked the twenty longest prompt-token OpenFly sequences among the 664 scheduled/evaluation native rows. Actual multimodal encoding and exact assistant-prefix masking passed; maximum checked length was 495 tokens against the frozen 2048 limit. This is a bounded input check, not an exhaustive VRAM test. Evidence: reports/vla_joint_openfly_20260917/qwen_long_input_preflight.json. No optimization settings changed.

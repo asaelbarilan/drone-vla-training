@@ -1,0 +1,129 @@
+{
+  "cpu_only": true,
+  "scheduled_native_rows": 664,
+  "selection": "twenty longest prompt token sequences; not an exhaustive VRAM stress test",
+  "max_checked_tokens": 495,
+  "frozen_limit": 2048,
+  "results": [
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:42",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:24",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:27",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:61",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:14",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:1",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:41",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:28",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:32",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:25",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:52",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:48",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:26",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:47",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624:39",
+      "prompt_text_tokens": 268,
+      "multimodal_tokens": 495,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/long/2025-1-17_5-35-39_695748720:60",
+      "prompt_text_tokens": 251,
+      "multimodal_tokens": 478,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/long/2025-1-17_5-35-39_695748720:36",
+      "prompt_text_tokens": 251,
+      "multimodal_tokens": 478,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/long/2025-1-17_5-35-39_695748720:32",
+      "prompt_text_tokens": 251,
+      "multimodal_tokens": 478,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/long/2025-1-17_5-35-39_695748720:35",
+      "prompt_text_tokens": 251,
+      "multimodal_tokens": 478,
+      "prefix_mask_checked": true
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/long/2025-1-17_5-35-39_695748720:69",
+      "prompt_text_tokens": 251,
+      "multimodal_tokens": 478,
+      "prefix_mask_checked": true
+    }
+  ]
+}

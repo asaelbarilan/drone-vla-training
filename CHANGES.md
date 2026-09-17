@@ -3384,3 +3384,6 @@ Native18/72 (25%macro; always-forward12/72),72/72valid,9/60falseSTOP. Local
 distance8.541/8.000m: all100actual predictions are HOLD.400controls and both
 replays/browser playback audited. Completed adapter SHA unchanged through
 recovery. Smol500 baseline evaluation has started; Qwen remains queued.
+
+
+D144 follow-up: Qwen CPU-only long-input preflight checked the twenty longest prompt-token OpenFly sequences among the 664 scheduled/evaluation native rows. Actual multimodal encoding and exact assistant-prefix masking passed; maximum checked length was 495 tokens against the frozen 2048 limit. This is a bounded input check, not an exhaustive VRAM test. Evidence: reports/vla_joint_openfly_20260917/qwen_long_input_preflight.json. No optimization settings changed.
