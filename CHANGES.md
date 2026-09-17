@@ -3238,3 +3238,14 @@ loss/task plots,134probes/condition,visualafter-images and8flightreplays at
 localhost8771/balanced_comparison.html. Rawsource/replay/reload/browser audits
 pass. Goal comparisoncomplete;fulltraining/deploymentgates remain unmet.
 No AWS spending. See reports/vla_balanced_comparison_20260917/REPORT.md.
+
+
+## 2026-09-17 - D140 condition labels and OpenFly checkpoint
+
+Fixed Original/Expanded flight labels and added execution/action counts; checked
+source playback and stationary timeline. Downloaded and SHA-verified published
+OpenFly checkpoint on D:; isolated inference compatibility probe underway.
+
+D140 complete:localOpenFly4-bit inference verified and initial16-casecomparison
+published with both official prompt formats.8/16direction withtrainingtemplate;
+0/16withmodelcardprompt. Native flight interface still requires audit.

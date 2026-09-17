@@ -1,0 +1,641 @@
+{
+  "status": "inference_complete",
+  "quantization": "NF4 language linear layers; BF16 vision/projector",
+  "norm_key": "vln_norm",
+  "prompt_style": "training",
+  "outputs": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout0\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 1.3130000000091968
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout0\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout1\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7970000000059372
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout1\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7039999999979045
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout2\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7029999999940628
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout2\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7030000000086147
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout3\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7039999999979045
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout3\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7029999999940628
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout0\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7190000000118744
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout0\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7029999999940628
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout1\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout1\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7970000000059372
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout2\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout2\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7179999999934807
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the red pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout3\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.75
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "prompt": "[INST] <<SYS>\nYou are a helpful language and vision assistant. You are able to understand the visual content that the user provides, and assist the user with a variety of tasks using natural language.\n<</SYS>>\n\nWhat action should the robot take to turn in place to center the blue pillar in the front camera. do not translate; keep the mission active.? [/INST]",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout3\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.0019607843137254832,
+        0.009803921568627416,
+        0.02941176470588225,
+        14.970588235294118,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31999,
+        31999,
+        31999,
+        31744,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7190000000118744
+    }
+  ],
+  "loading": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "peak_allocated_bytes": 5858114560,
+  "elapsed_s": 22.484000000011292,
+  "flight_comparison_complete": false
+}

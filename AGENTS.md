@@ -16,6 +16,18 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## OpenFly local probe and dashboard fixes - D140 (2026-09-17)
+
+User requested OpenFly download/comparison. Verified15.086GB snapshot on D:;
+NF4 loads on RTX4060 with5.858GB peak allocated.32actual predictions on16old
+visual VAL cases:official training template alwaysright8/16,modelcard alwaysSTOP.
+Read reports/vla_openfly_20260917/REPORT.md and localhost8771/openfly_comparison.html.
+All jobs finished. No OpenFly fullflight/nativebenchmark result claimed. Next
+explicitly reconcile native primitive amplitude/normalization then compare flights;
+never map unknown vector toSTOP. Separate venv_openfly preserves old environments.
+Original/Expanded flight names and actualexecution counters fixed,sourceIDs intact.
+No AWS/baseline/split changes. C5 is OnFly-inspired,not OpenFly checkpoint.
+
 ## Matched balanced comparison complete - D139 (2026-09-17)
 
 Smol256 only,two fresh matched400-update/1600-exposure runs;all jobs/evaluations

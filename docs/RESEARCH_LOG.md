@@ -3596,3 +3596,44 @@ controlfalseSTOP1.9358/1.3908m;expandedHOLDtimeout8.5407m/immediatefalseSTOP
 some offline metrics but is insufficient for scaling this recipe. Need targeted
 visual and termination/3D diagnostics,then D127 task/domain/real data and timing
 gates. Full evidence:reports/vla_balanced_comparison_20260917/REPORT.md.
+
+
+## D140 - OpenFly checkpoint and explicit data-condition viewers (2026-09-17)
+
+User requested released OpenFly weights, local comparison, and correction of
+ambiguous D139 run labels. C5 is an OnFly-inspired progress/keyframe-memory
+architecture; it is not the OpenFly checkpoint. Preserve architecture baselines.
+
+Viewers now label Original/Expanded in page titles and every run option,
+retain original run/event IDs, namespace notes by page, and show actual counts
+of model calls, control intervals and motion/HOLD/STOP/invalid outputs. Expanded
+seed1400 is an executed 50-HOLD,200-control-interval,10s failure;1405 is immediate
+false STOP. Zero-shot invalid outputs are explicitly failed attempts. Comparison
+is matched initial scenes, timing limits and outcomes, not successful-flight-only.
+Both exact-source browser checks pass (8 original,6 expanded); additional
+condition/count/stationary-clock assertions pass.
+
+OpenFly snapshot21dcce235f1f2d40fc23c76998051abc5434cc99 downloaded to
+D:/drone_vla_pilot/models/openfly-agent-7b (15,086,411,278 bytes). All sizes and LFS
+SHA256 checks pass. Official source pinned c075075497a7122bad82f5b76b9be926ad5a81b3.
+Separate venv_openfly pins transformers4.48.1/tokenizers0.21.1/timm0.9.16 and
+bitsandbytes0.48.2/accelerate1.7.0; existing training environments unchanged.
+NF4 inference compatibility probe underway; no flight comparison claimed.
+
+Teacher completion is explicitly distance<=0.35m AND speed<=0.1m/s. Within the
+radius while still moving, teacher requests zero velocity without terminal STOP.
+Expanded TRAIN includes64HOLD/22STOP,with one of each per effective batch. Thus
+teacher targets include both; balanced oversampling is an experimental recipe,
+not evidence that the model learned the correct conditions.
+
+Evidence: reports/vla_openfly_20260917/download_manifest.json,
+dashboard_labels_check.json; scripts/label_balanced_flights.py;
+src/uavlab/training/direct_vla_fixture.py public_teacher.
+
+
+D140 completion:OpenFly NF4 loads with zero checkpoint key discrepancies.32
+actual predictions over16fixed visual cases/two official prompt conventions.
+Model-card16STOP;training-template16right (8/16correct).Peak5.858GBallocated,
+median0.7185s. Native8vector is not FRDvelocity;fullflightadapter pending explicit
+normalization/amplitude audit. No fullflight/nativebenchmark claim.16exactUI
+checks pass. Report:reports/vla_openfly_20260917/REPORT.md.

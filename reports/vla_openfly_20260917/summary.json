@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "model_card": {
+      "correct_directions": 0,
+      "n": 16,
+      "stops": 16,
+      "valid_action_tokens": 16,
+      "median_latency_s": 0.6880000000019209,
+      "peak_allocated_bytes": 5817946112
+    },
+    "training": {
+      "correct_directions": 8,
+      "n": 16,
+      "stops": 0,
+      "valid_action_tokens": 16,
+      "median_latency_s": 0.7184999999954016,
+      "peak_allocated_bytes": 5858114560
+    }
+  },
+  "limits": "Development transfer diagnostic only; no OpenFly flight execution, no native benchmark reproduction. Front image vs Smol dual-view mosaic; 4-bit pretrained OpenFly vs locally fine-tuned BF16 Smol; do not rank overall model quality.",
+  "action_units": "Native 8-vector, not vx/vy/vz/yaw. Left/right semantic direction only; official evaluation code maps turn token15 to30deg and differs from encoded units. Full execution adapter pending."
+}

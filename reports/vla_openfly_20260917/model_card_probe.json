@@ -1,0 +1,626 @@
+{
+  "status": "inference_complete",
+  "quantization": "NF4 language linear layers; BF16 vision/projector",
+  "norm_key": "vln_norm",
+  "outputs": [
+    {
+      "decision_id": "visible_yaw_s1410_l0_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout0\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 1.2030000000086147
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l0_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout0\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout1\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7029999999940628
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l1_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout1\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout2\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6869999999908032
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l2_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout2\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7030000000086147
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout3\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6880000000091968
+    },
+    {
+      "decision_id": "visible_yaw_s1410_l3_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1410\\layout3\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7039999999979045
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout0\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.75
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l0_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout0\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7339999999967404
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout1\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6719999999913853
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l1_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout1\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout2\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6559999999881256
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l2_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout2\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6720000000059372
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_red",
+      "instruction": "Turn in place to center the red pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout3\\red\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.6879999999946449
+    },
+    {
+      "decision_id": "visible_yaw_s1415_l3_blue",
+      "instruction": "Turn in place to center the blue pillar in the front camera. Do not translate; keep the mission active.",
+      "image": "D:\\drone_vla_pilot\\data\\visible_yaw_pairs_20260916_v3\\s1415\\layout3\\blue\\front.png",
+      "initial_history": "three copies of initial front image",
+      "raw_action": [
+        0.9980392156862745,
+        0.009803921568627416,
+        0.02941176470588225,
+        0.02941176470588225,
+        0.0039215686274509665,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "action_token_ids": [
+        31744,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999,
+        31999
+      ],
+      "tokens_in_action_range": true,
+      "rounded_action": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "latency_s": 0.7189999999973224
+    }
+  ],
+  "loading": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "peak_allocated_bytes": 5817946112,
+  "elapsed_s": 21.75,
+  "flight_comparison_complete": false,
+  "action_token_audit": "Official ActionTokenizer uses digitize indices1..256 inclusive; token31744 is the legitimate upper endpoint.",
+  "prompt_style": "model_card"
+}

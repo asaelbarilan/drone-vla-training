@@ -1,0 +1,10 @@
+[
+  {
+    "condition": "Original",
+    "summary": "Recorded execution: 37 model calls; 145 control intervals; 7.25 simulated seconds. Predictions: 35 motion, 1 HOLD, 1 STOP, 0 invalid. HOLD means zero commanded motion while the episode continues. STOP ends the episode. A stationary replay can be a model failure; watch the clock and inspect predictions."
+  },
+  {
+    "condition": "Expanded",
+    "summary": "Recorded execution: 50 model calls; 200 control intervals; 10.00 simulated seconds. Predictions: 0 motion, 50 HOLD, 0 STOP, 0 invalid. HOLD means zero commanded motion while the episode continues. STOP ends the episode. A stationary replay can be a model failure; watch the clock and inspect predictions."
+  }
+]
