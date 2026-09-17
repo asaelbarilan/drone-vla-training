@@ -3339,3 +3339,15 @@ Add as candidate for symbol/reasoning/recognition tasks, pending small-shard
 action/timing/coverage audit, split isolation and license clarification. No
 training or model/baseline changes. Evidence and pinned inventories:
 docs/research/openfly_cognitive_action_audit_20260917/REPORT.md.
+
+
+## 2026-09-17 - D144 joint OpenFly/local training prepared
+
+User requested all three local models: SmolVLM256M, SmolVLM500M, Qwen3-VL4B.
+Added deterministic 110-route OpenFly expansion with raw consecutive-pose action
+validation; 2929 TRAIN/815 dev, eight inconsistent targets quarantined. Preserved
+local1156/300 and all protected splits. Added dual-contract source-balanced
+8-sample trainer, fresh400-update protocol, bounded sequential queue and live
+loss/prediction/flight review. All three two-update training/reload gates passed.
+Full-run results pending; no AWS or deployment claim. Evidence: D144 protocol
+and reports/vla_joint_openfly_20260917/data_audit.json.

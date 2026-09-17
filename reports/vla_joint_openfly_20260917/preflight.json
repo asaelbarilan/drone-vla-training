@@ -1,0 +1,33 @@
+{
+  "rows": 5200,
+  "updates_checked": 400,
+  "effective_batch": 8,
+  "source_exposures": {
+    "local": 1600,
+    "openfly": 1600
+  },
+  "evaluation_count": 100,
+  "native_classes": 6,
+  "protected_seeds_absent": true,
+  "train_evaluation_overlap": 0,
+  "smokes": {
+    "smol256": {
+      "updates": 2,
+      "peak_allocated_gib": 0.861931324005127,
+      "elapsed_seconds": 18.718999999997322,
+      "reload_matches": true
+    },
+    "smol500": {
+      "updates": 2,
+      "peak_allocated_gib": 1.3880958557128906,
+      "elapsed_seconds": 27.562000000005355,
+      "reload_matches": true
+    },
+    "qwen": {
+      "updates": 2,
+      "peak_allocated_gib": 4.839047431945801,
+      "elapsed_seconds": 48.34299999999348,
+      "reload_matches": true
+    }
+  }
+}

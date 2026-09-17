@@ -99,3 +99,9 @@ reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 # Rebuildable source-recording clips, D142 review.
 /reports/vla_dataset_review_20260916/openfly_clips.html
 /reports/vla_dataset_review_20260916/openfly_clips/
+
+# D144 generated mixed-source review and playback.
+/reports/vla_dataset_review_20260916/joint_openfly.html
+/reports/vla_dataset_review_20260916/joint_openfly_status.json
+/reports/vla_dataset_review_20260916/joint_openfly_cases.json
+/reports/vla_dataset_review_20260916/*_joint_flights.html

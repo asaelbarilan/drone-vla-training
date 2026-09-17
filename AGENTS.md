@@ -16,6 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D144 active - joint OpenFly + local, all three models
+
+User explicitly requested a goal and local Smol256/Smol500/Qwen training.
+Read reports/vla_joint_openfly_20260917/PROTOCOL.md and queue_status.json.
+All three two-update mixed-source smoke/reload tests passed. No AWS spending.
+New data: 110 official TRAIN routes, 2929 OpenFly train/815 dev decisions,
+plus unchanged 1156 local train/300 val. Eight inconsistent motion labels excluded.
+Two explicit action contracts: OpenFly atomic 3m/30deg decisions and local FRD
+velocity JSON. Never invent OpenFly velocity targets. 400 fresh updates/model,
+effective batch8 with4examples/source. Queue runs sequentially and stops on error.
+Live page: localhost8771/joint_openfly.html. Final adapters/runs stay on D:.
+Next inspect queue results, verify losses/predictions/six local flights, record
+results and commit. Do not restart finished runs or alter old splits/baselines.
+
 ## D142 complete - native OpenFly pipeline passes, generalization fails
 
 No training/GPU job remains active. Read reports/vla_openfly_train_20260917/REPORT.md

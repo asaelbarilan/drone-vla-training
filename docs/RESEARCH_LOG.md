@@ -3758,3 +3758,22 @@ Add as candidate for symbol/reasoning/recognition tasks, pending small-shard
 action/timing/coverage audit, split isolation and license clarification. No
 training or model/baseline changes. Evidence and pinned inventories:
 docs/research/openfly_cognitive_action_audit_20260917/REPORT.md.
+
+
+## D144 - Joint OpenFly/local three-model pilot (2026-09-17, active)
+
+Decision: user authorizes local Smol256, Smol500 and Qwen training on OpenFly
+plus existing data. Expand official TRAIN to88train/22dev routes, preserving
+old assignments and all official evaluation trajectory exclusion. Admit raw
+atomic action labels only when consecutive-pose movement agrees; exclude8
+inconsistent targets. 2929nativeTRAIN+1156localTRAIN;815nativeDEV+300localVAL.
+Rationale: compressed annotation gaps are not action duration. Native3m/30deg
+primitives stay distinct from local FRD velocity targets under explicit prompts;
+no guessed physical velocities. Mix4local classes+4native samples per update,
+cycle6native classes, fresh language LoRA/r8,400updates/model, sequentialGPU.
+No claim that dataset size is enough for real-world deployment.
+Evidence: reports/vla_joint_openfly_20260917/PROTOCOL.md, selection.json,
+data_audit.json; all three two-update mixed-source finite-gradient/reload tests
+passed. SmolBF16, QwenNF4; no AWS. Frozen evaluation panel and six actual local
+flights planned. Native closed-loop OpenFly performance remains unmeasured.
+Status: preparation and smoke gates complete; full training/evaluation pending.
