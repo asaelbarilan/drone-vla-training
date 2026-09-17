@@ -16,16 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active D141 - expanded Smol500/Qwen and official OpenFly evaluation
+## Active D142 - official OpenFly TRAIN native-action diagnostic
 
-User authorizes4-bit OpenFly only plus expandedSmol500/Qwen training. Bothsmokes
-pass. SequentialGPU queue running:smol500_expanded_20260917_a then
-qwen_expanded_20260917_a underD:/drone_vla_pilot/runs;do not launch anotherGPU
-job concurrently.400updates each;maxwall5400/10800s. See frozen protocol at
-reports/vla_expanded_models_20260917/PROTOCOL.md.51officialseen/unseen images
-prepared D:/drone_vla_pilot/data/openfly_eval_20260917/eval.jsonl;no inference yet.
-Next finishtraining/reload/gates,then4-bitOpenFly+3localadaptertransfer evaluation,
-plots/debugger and matchedlocalflights. Preservebaselines/splits.NoAWSspending.
+D141 expanded Smol500/Qwen training and four local flights are complete; all
+four flights fail completion. See reports/vla_expanded_models_20260917/REPORT.md.
+User now authorizes training on some OpenFly data. Native Smol500 pilot running
+locally at D:/drone_vla_pilot/runs/smol500_openfly_native_20260917_a; do not launch
+another GPU job concurrently. Read reports/vla_openfly_train_20260917/PROTOCOL.md.
+22 official TRAIN trajectories:258train/171dev, disjoint from all3000official
+seen/unseen trajectory IDs. New native action-ID contract; old FRD unchanged.
+80-update8-example memorization gate >=7/8 exact, then fresh160-update pilot;
+otherwise stop. One-hour optimization cap. Live viewer localhost8771/openfly_training.html.
+Need finish/reload, record outcomes and commit evidence. No AWS or physical flights.
+OpenFly score12/51 is a strict offline diagnostic with unresolved normalization
+and history-protocol mismatch, not published benchmark flight success.
 
 ## OpenFly local probe and dashboard fixes - D140 (2026-09-17)
 

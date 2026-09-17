@@ -3275,3 +3275,11 @@ GPU inference. Both expanded runs and their four local flights are now audited
 and finalized in reports/vla_expanded_models_20260917/REPORT.md (abd4ed0).
 The dashboard now separates invalid outputs and mixed commands; unchanged scores.
 Two existing native-action scoring tests and 204 browser source/output checks pass.
+
+
+## 2026-09-17 - D142 native OpenFly data and bounded pilot
+
+Prepared and audited22official TRAIN routes (258train/171dev), native action-ID
+training interface and recorded-flight viewer. Started local Smol500 gated
+memorization/pilot, separate from FRD baselines. Protocol and source data audit
+are frozen;429browser source rows verified. No AWS spend. Outcomes pending.

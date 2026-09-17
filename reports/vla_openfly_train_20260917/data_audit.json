@@ -1,0 +1,36 @@
+{
+  "status": "ready",
+  "revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+  "index_sha256": "01c50e6a38184a80f7b9722d0ae935499497662a7a1933073b5cf176558cca4d",
+  "rows": {
+    "train": 258,
+    "dev": 171
+  },
+  "actions": {
+    "train": {
+      "4": 21,
+      "3": 22,
+      "9": 128,
+      "1": 18,
+      "8": 16,
+      "2": 21,
+      "5": 21,
+      "0": 11
+    },
+    "dev": {
+      "9": 113,
+      "2": 13,
+      "1": 12,
+      "3": 16,
+      "0": 11,
+      "8": 6
+    }
+  },
+  "trajectory_overlap": 0,
+  "image_overlap": 0,
+  "official_eval_selected_image_overlap": 0,
+  "full_official_eval_image_overlap": "Not fully checked: only downloaded official diagnostic image hashes available; all official trajectory identities excluded.",
+  "history": "Only previous two and current annotation frames; repeat first at start. No pose or future labels supplied to model.",
+  "contract": "openfly_native_action_id_v1: exact released IDs; no conversion to velocity or physical execution. IDs 6/7 absent in manifest; negative labels excluded as unresolved.",
+  "parquet_bytes": 615934301
+}

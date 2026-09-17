@@ -91,3 +91,7 @@ reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 /reports/vla_dataset_review_20260916/expanded_models.html
 /reports/vla_dataset_review_20260916/smol500_expanded_flights.html
 /reports/vla_dataset_review_20260916/qwen_expanded_flights.html
+
+# D142 generated source image playback and live training snapshot.
+/reports/vla_dataset_review_20260916/openfly_training.html
+/reports/vla_dataset_review_20260916/openfly_training_status.json

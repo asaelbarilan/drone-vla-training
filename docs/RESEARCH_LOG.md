@@ -3669,3 +3669,36 @@ D141 final execution complete: both expanded-data training jobs, all four offici
 OpenFly offline evaluations and audited Smol500/Qwen local flights finished.
 Results and limits: reports/vla_expanded_models_20260917/REPORT.md.
 No external training rows, AWS spending or native OpenFly flight-success claim.
+
+
+## D142 - Official OpenFly TRAIN pilot and transfer diagnosis (2026-09-17)
+
+Status: active, local optimization. User asks to train on some OpenFly data and
+explain low native-model results. Rationale: distinguish interface compatibility,
+format failures and imitation ability before scaling. The existing51-frame metric
+counts mixed commands as failures: OpenFly32/51mixed; Qwen45/51mixed; Smol25651/51
+invalid; Smol50045/51invalid plus6HOLD. It is not published flight success.
+Checkpoint normalization vln_norm q99 forward5 differs from vlnv1 forward9;
+released eval.py uses vlnv1, our frozen probe used model-card vln_norm. Released
+training image sampling differs and contains early negative image indices; we
+retain causal history and do not introduce future frames to imitate that code.
+No claim that these differences fully explain low scores; no retrospective metric
+replacement or defaulting unknown vectors to STOP.
+
+Official TRAIN manifest100226trajectories; all3000official evaluation trajectories
+excluded by identity. Native IDs-1/-2 unresolved: entire affected routes excluded.
+Selected22 complete trajectories across11environments,258TRAIN/171dev decisions,
+615934301parquet bytes. Source pose/yaw/action and image hashes checked; train/dev
+image-disjoint. Official image duplicate check limited to downloaded diagnostic
+frames; full official trajectory identity isolation holds. Dev lacks vertical
+actions; neither native lateral ID6/7 appears in fullmanifest. Not enough data
+for deployment or real-world robustness; larger simulation and real-flight
+coverage remain required by D127.
+
+Fresh Smol500BF16/r8 native digit-action policy, three causal RGBframes <=256px,
+no fabricated odometry.80updates on8TRAINexamples; >=7/8exact required before a
+fresh160update pilot, four mixed action classes/effective batch, one-hour cap.
+Old FRD models, local validation, seeds1-40/protected1060-1064 untouched.
+Reject converting displacement/turn labels into arbitrary0.2svelocities.
+Evidence: reports/vla_openfly_train_20260917/{PROTOCOL.md,selection.json,data_audit.json,viewer_audit.json};
+429source rows and22playback routes browser-verified. Training outcomes pending.
