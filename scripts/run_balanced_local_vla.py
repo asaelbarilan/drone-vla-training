@@ -1,6 +1,7 @@
 """D138 bounded Smol256 mixed-effective-batch runner; two updates are smoke only."""
 
 import argparse
+import gc
 import hashlib
 import json
 import time
@@ -8,9 +9,11 @@ from pathlib import Path
 
 import run_smol_frd_overfit as api
 import torch
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, PeftModel, get_peft_model
+from PIL import Image
 from run_smol_duration import action_loss, full_split_losses
 
+from uavlab.training.direct_vla_frd import student_prompt
 from uavlab.training.mixed_batches import backward_mixed_batch, balanced_schedule, task_class
 
 
@@ -25,7 +28,8 @@ def main(args):
         smoke_only=args.updates == 2,
         base=str(api.MODEL),
     )
-    deadline = time.monotonic() + 1800
+    deadline = time.monotonic() + 2700
+    started = time.monotonic()
 
     def save():
         (args.out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
@@ -45,6 +49,29 @@ def main(args):
         assert schedule == balanced_schedule(condition_rows, 400)[: args.updates]
         selected_ids = set(k for batch in schedule for k in batch)
         eval_ids = manifest["generation_eval_ids"]
+        extra_ids = [
+            r["decision_id"]
+            for r in rows
+            if r["split"] == "val" and r["seed"] >= 1450 and r["task_group"] == "visual"
+        ]
+        for seed in (1450, 1455, 1460, 1465):
+            candidates = [r for r in rows if r["seed"] == seed]
+            extra_ids += [
+                candidates[round(i * (len(candidates) - 1) / 5)]["decision_id"] for i in range(6)
+            ]
+        extra_ids += [
+            r["decision_id"]
+            for r in rows
+            if r["split"] == "val" and task_class(r) in ("hold", "stop")
+        ]
+        extra_ids = list(dict.fromkeys(k for k in extra_ids if k not in eval_ids))
+        assert all(by_id[k]["split"] == "val" for k in eval_ids + extra_ids)
+        report.update(
+            generation_eval_ids=eval_ids,
+            extra_eval_ids=extra_ids,
+            model="smol256",
+            max_wall_seconds=2700,
+        )
         selected = sorted(selected_ids) if args.updates == 2 else list(by_id)
         processor = api.load_processor()
         batches = {}
@@ -98,13 +125,33 @@ def main(args):
             for n, p in model.named_parameters()
             if p.requires_grad
         )
+        digest = hashlib.sha256()
+        for name, param in model.named_parameters():
+            if param.requires_grad:
+                digest.update(name.encode())
+                digest.update(param.detach().cpu().contiguous().view(torch.uint8).numpy().tobytes())
+        report["initial_adapter_sha256"] = digest.hexdigest()
+
+        def generate(identities):
+            results = []
+            for identity in identities:
+                if time.monotonic() >= deadline:
+                    raise RuntimeError("45min wall budget")
+                row = by_id[identity]
+                result = api.predictions(model, processor, [row], [batches[identity]])[0]
+                result["task_group"] = row["task_group"]
+                results.append(result)
+            return results
+
         report.update(data_sha256=manifest["index_sha256"], training_schedule=schedule, losses=[])
         if args.updates != 2:
             report["initial_losses"] = split_losses()
+            report["before"] = generate(eval_ids)
+            save()
         optimizer = torch.optim.AdamW(params, lr=2e-4)
         for step, identities in enumerate(schedule):
             if time.monotonic() > deadline:
-                raise RuntimeError("30min wall limit")
+                raise RuntimeError("45min wall limit")
             if step == 200:
                 optimizer = torch.optim.AdamW(params, lr=5e-5)
             model.train()
@@ -148,15 +195,65 @@ def main(args):
                 model.save_pretrained(args.out / f"adapter_s{step + 1}")
                 save()
         if args.updates != 2:
-            chosen = [by_id[k] for k in eval_ids]
-            report["after"] = api.predictions(
-                model, processor, chosen, [batches[k] for k in eval_ids]
+            report["after"] = generate(eval_ids)
+            report["extra_after"] = generate(extra_ids)
+            save()
+            perturb = []
+            for kind in ("blank_image", "blank_instruction"):
+                for identity in eval_ids:
+                    row = by_id[identity]
+                    if row["task_group"] != "visual":
+                        continue
+                    if time.monotonic() >= deadline:
+                        raise RuntimeError("45min wall budget")
+                    prompt_text = (
+                        student_prompt("Perform the requested task.", row["state"])
+                        if kind == "blank_instruction"
+                        else row["prompt"]
+                    )
+                    image = (
+                        Image.new("RGB", (224, 224), (127, 127, 127))
+                        if kind == "blank_image"
+                        else Image.open(Path(row["data_root"]) / row["images"]["mosaic"]).convert(
+                            "RGB"
+                        )
+                    )
+                    messages = [
+                        dict(
+                            role="user",
+                            content=[
+                                dict(type="image", image=image),
+                                dict(type="text", text=prompt_text),
+                            ],
+                        )
+                    ]
+                    text = processor.apply_chat_template(
+                        messages, tokenize=False, add_generation_prompt=True
+                    )
+                    prompt = processor(text=[text], images=[image], return_tensors="pt")
+                    result = api.predictions(model, processor, [row], [(prompt, None)])[0]
+                    result.update(intervention=kind, task_group="visual")
+                    perturb.append(result)
+            report["interventions"] = perturb
+            del model, params, optimizer
+            gc.collect()
+            torch.cuda.empty_cache()
+            model = PeftModel.from_pretrained(
+                api.load_base(), str(args.out / "adapter_s400"), is_trainable=False
             )
+            spots = eval_ids[:2] + eval_ids[-2:]
+            report["reloaded_spot_check"] = generate(spots)
+            original = {r["decision_id"]: r["raw"] for r in report["after"]}
+            report["reload_spot_identical"] = all(
+                r["raw"] == original[r["decision_id"]] for r in report["reloaded_spot_check"]
+            )
+            assert report["reload_spot_identical"]
         report.update(
             status="complete",
             peak_allocated_bytes=torch.cuda.max_memory_allocated(),
             sample_exposures=4 * args.updates,
             learned_behavior_claim=False,
+            wall_seconds=time.monotonic() - started,
         )
     except Exception as exc:
         report.update(status="failed", error=f"{type(exc).__name__}: {exc}")
