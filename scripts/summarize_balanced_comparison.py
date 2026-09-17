@@ -144,13 +144,26 @@ def main(args):
     (args.out / "summary.json").write_text(json.dumps(summary, indent=2))
     for name, report in reports.items():
         (args.out / f"{name}_report.json").write_text(json.dumps(report, indent=2))
-    fig, axes = plt.subplots(2, 2, figsize=(12, 8), layout="constrained")
+    fig, axes = plt.subplots(3, 2, figsize=(12, 11), layout="constrained")
     for col, cohort in enumerate(("original", "new_scenes")):
-        for row, field in enumerate(("weighted_action_loss", "answer_ce")):
+        for row, field in enumerate(
+            ("weighted_action_loss", "answer_ce", "task_balanced_weighted_loss")
+        ):
             ax = axes[row, col]
             for name, report in reports.items():
                 pts = loss_points(report, cohort, "val")
-                ax.plot([p[0] for p in pts], [p[1][field] for p in pts], marker="o", label=name)
+                if field == "task_balanced_weighted_loss":
+                    groups = [
+                        loss_points(report, cohort, "val", group)
+                        for group in ("visual", "motion", "hold", "stop")
+                    ]
+                    ys = [
+                        sum(group[i][1]["weighted_action_loss"] for group in groups) / 4
+                        for i in range(len(pts))
+                    ]
+                else:
+                    ys = [p[1][field] for p in pts]
+                ax.plot([p[0] for p in pts], ys, marker="o", label=name)
             ax.set(
                 title=f"{cohort} VAL: {field}",
                 xlabel="Optimizer updates (4 examples each)",
