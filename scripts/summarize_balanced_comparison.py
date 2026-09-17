@@ -27,6 +27,9 @@ def summarize(report, rows):
         assert set(entry["task_classes"]) == {"motion", "visual", "hold", "stop"}
         assert entry["gradient_norm"] > 0
         assert all(by_id[k]["split"] == "train" for k in entry["sample_ids"])
+    assert [r["decision_id"] for r in report["after"]] == report["generation_eval_ids"]
+    assert [r["decision_id"] for r in report["before"]] == report["generation_eval_ids"]
+    assert [r["decision_id"] for r in report["extra_after"]] == report["extra_eval_ids"]
     original = metrics(report["after"])
     extra = report["extra_after"]
     new = [r for r in extra if r["seed"] >= 1450]
@@ -82,6 +85,7 @@ def summarize(report, rows):
             raw_changed=sum(r["raw"] != reference[r["decision_id"]]["raw"] for r in items),
         )
     terminal = [r for r in report["after"] if r["target"]["stop"]]
+    assert len(terminal) == 2
     before = metrics(report["before"])
     old_gate = (
         sum(r["valid"] for r in report["after"]) >= 27
@@ -129,6 +133,8 @@ def main(args):
         for name, path in (("existing_control", args.control), ("expanded", args.expanded))
     }
     a, b = reports.values()
+    manifest = json.loads((args.data / "manifest.json").read_text())
+    assert a["generation_eval_ids"] == manifest["generation_eval_ids"]
     assert a["initial_adapter_sha256"] == b["initial_adapter_sha256"]
     assert a["data_sha256"] == b["data_sha256"]
     assert a["generation_eval_ids"] == b["generation_eval_ids"]
