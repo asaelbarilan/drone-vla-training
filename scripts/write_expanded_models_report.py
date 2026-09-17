@@ -2,6 +2,7 @@
 """Write D141 final report only after complete inference and audited local flights."""
 
 import json
+import subprocess
 from pathlib import Path
 
 root = Path("reports/vla_expanded_models_20260917")
@@ -74,12 +75,34 @@ print("Finalreport written")
 # Append a completion finding only after the final source/prediction UI audit.
 assert (root / "ui_check.json").exists()
 marker = b"D141 final execution complete:"
-record = (b"\n\nD141 final execution complete: both expanded-data training jobs, all four official\n"
-          b"OpenFly offline evaluations and audited Smol500/Qwen local flights finished.\n"
-          b"Results and limits: reports/vla_expanded_models_20260917/REPORT.md.\n"
-          b"No external training rows, AWS spending or native OpenFly flight-success claim.\n")
+record = (
+    b"\n\nD141 final execution complete: both expanded-data training jobs, all four official\n"
+    b"OpenFly offline evaluations and audited Smol500/Qwen local flights finished.\n"
+    b"Results and limits: reports/vla_expanded_models_20260917/REPORT.md.\n"
+    b"No external training rows, AWS spending or native OpenFly flight-success claim.\n"
+)
 for filename in ("docs/RESEARCH_LOG.md", "CHANGES.md"):
     path = Path(filename)
     if marker not in path.read_bytes():
         with path.open("ab") as file:
             file.write(record)
+
+# Commit only the task-owned completed evidence and its completion findings.
+paths = [str(root), "docs/RESEARCH_LOG.md", "CHANGES.md"]
+subprocess.run(["git", "add", *paths], check=True)
+changed = subprocess.run(["git", "diff", "--cached", "--quiet", "--", *paths])
+if changed.returncode == 1:
+    subprocess.run(
+        [
+            "git",
+            "commit",
+            "--only",
+            "-m",
+            "Record expanded Smol500 Qwen and official OpenFly evaluation results",
+            "--",
+            *paths,
+        ],
+        check=True,
+    )
+elif changed.returncode != 0:
+    raise RuntimeError("Could not verify completed evidence staging")
