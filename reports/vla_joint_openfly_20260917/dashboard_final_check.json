@@ -1,0 +1,13 @@
+{
+  "final": true,
+  "completed_models": [
+    "smol256",
+    "smol500",
+    "qwen"
+  ],
+  "cases_with_images_and_provenance_checked": 100,
+  "raw_predictions_checked": 300,
+  "loss_series_and_flight_links": true,
+  "mobile_no_overflow": true,
+  "js_errors": []
+}

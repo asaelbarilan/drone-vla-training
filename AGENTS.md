@@ -16,25 +16,35 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## D144 active - joint OpenFly + local, all three models
+## D144 complete - joint OpenFly/local three-model pilot
 
-User explicitly requested a goal and local Smol256/Smol500/Qwen training.
-Read reports/vla_joint_openfly_20260917/PROTOCOL.md and queue_status.json.
-All three two-update mixed-source smoke/reload tests passed. No AWS spending.
-New data: 110 official TRAIN routes, 2929 OpenFly train/815 dev decisions,
-plus unchanged 1156 local train/300 val. Eight inconsistent motion labels excluded.
-Two explicit action contracts: OpenFly atomic 3m/30deg decisions and local FRD
-velocity JSON. Never invent OpenFly velocity targets. 400 fresh updates/model,
-effective batch8 with4examples/source. Queue runs sequentially and stops on error.
-Live page: localhost8771/joint_openfly.html. Final adapters/runs stay on D:.
-Recovery: first queue stopped on a Windows dashboard-file sharing violation
-(after Smol256 completed400updates). Read recovery.json/recovery_test.json.
-Partial flight is preserved under D:/drone_vla_pilot/runs/
-smol256_joint_flights_20260917_a_interrupted. Resumed queue reuses the completed
-adapter, retries status writes and does not cancel jobs on publication errors.
-Current coordinator PID is in reports/vla_joint_openfly_20260917/queue_owner.json.
-Next inspect queue results, verify losses/predictions/six local flights, record
-results and commit. Do not restart finished runs or alter old splits/baselines.
+All three local runs completed 400 updates, four reload checks, 100 held-out
+predictions and two audited local flights per model. No training job remains active.
+Read reports/vla_joint_openfly_20260917/REPORT.md, completion_audit.json and
+dashboard_final_check.json; live review: localhost8771/joint_openfly.html.
+Smol256/Smol500/Qwen native exact results: 18/72, 16/72, 17/72; always-forward
+reference: 12/72. Qwen base: 16/72. All six flights failed: Smol256 held until
+timeout, Smol500 moved but timed out, Qwen stopped early at 2.097/0.432 m.
+Native validation worsens after the measured 100-update checkpoint for all models.
+Do not infer longer training or real-world readiness from falling training loss.
+
+Data: 110 official TRAIN routes (88 train/22 dev), 2929/815 native decisions,
+plus unchanged 1156/300 local examples. Eight inconsistent motion labels excluded.
+Protected seeds and all 3000 official evaluation route IDs excluded. Keep distinct
+contracts: OpenFly 3 m/30-degree actions and local FRD velocity JSON. Never invent
+velocity labels from OpenFly primitives. Actual unique exposure: 592 native and
+790 local examples per model. This is not a full benchmark result.
+
+Final audits verify 1200 updates, 600 raw predictions, 12 reload spots and six
+flights; browser checks all 100 cases and 300 final answers. Baseline fingerprints
+are unchanged. Adapters remain in D:/drone_vla_pilot/runs/ under
+{smol256,smol500,qwen}_joint_20260917_a. No AWS spending.
+The Windows dashboard-lock interruption/recovery is preserved in recovery.json;
+the completed Smol256 adapter was reused, not retrained.
+
+Next isolate visual/history and mission-phase learning on training-only data,
+then freeze a follow-up with broader unique route coverage. Keep baselines,
+validation splits and protected seeds 1-40/1060-1064 untouched. No new run queued.
 
 ## D142 complete - native OpenFly pipeline passes, generalization fails
 
