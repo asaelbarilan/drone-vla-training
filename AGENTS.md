@@ -16,20 +16,23 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## Active matched local training goal - D139 (2026-09-17)
+## Matched balanced comparison complete - D139 (2026-09-17)
 
-User authorized goal and execution. Protocol:reports/vla_balanced_comparison_20260917/PROTOCOL.md.
-Cached Smol256, fresh matched LoRA,400updates/1600exposures per condition,
-45min/model, sequential GPU processes, no AWS. Control run:
-D:/drone_vla_pilot/runs/smol256_balanced_control_20260917_a.
-Expanded run queued after control process exits successfully:
-D:/drone_vla_pilot/runs/smol256_balanced_expanded_20260917_a.
-Read report.json and sibling .log; do not duplicate jobs. Control has completed
-optimization and saved134final probes,interventions/reload still pending at this
-handoff. Original28 probes:27valid,8/16visual,0/2STOP;newvisual32/64. No final
-comparison or flight outcome yet. Next execute scripts/evaluate_balanced_comparison.py
-only after both reports complete/reload checked,then browser QA and final report.
-Maintain the active goal through simulation evidence and coherent commits.
+Smol256 only,two fresh matched400-update/1600-exposure runs;all jobs/evaluations
+finished. Read reports/vla_balanced_comparison_20260917/REPORT.md and
+localhost8771/balanced_comparison.html. Expanded data improves newVAL loss
+0.4835->0.4012 and STOP0/6->5/6,but false STOP1->8/128 and visual directions
+stay8/16old,32/64new. Both adapters0/2flights:control premature STOP near1.94/
+1.39m;expanded holds atstart8.54m orSTOPs immediately8.00m. Both pilot gatesfail.
+Exact matched initialization/baseline,raw-output/schedule/reload audits pass;
+121flight calls/463controls plus128visual controls replay audited;388prediction
+browser checks and14flight source-time checks pass. Loss plots verified.
+Next isolate visual-only learning and HOLD/STOP/3D completion contrasts before
+scaling;D127 external/real/task coverage and real-time controller gates remain.
+Do not repeat finished runs or infer500/Qwen were trained in D139. Existing
+architecture baselines,validation/protected seeds and earlier evidence preserved.
+No AWS spending or physical flight. Latest goal has completed its comparison,
+not achieved a deployment-ready VLA.
 
 ## Expanded local data and mixed batches ready - D138 (2026-09-17)
 

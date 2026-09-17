@@ -3585,3 +3585,14 @@ swap pairs0/8 and0/32. Across all134probes:STOP0/6,HOLD14/18 withonefalse STOP.
 Blankimage changes16outputs,blankinstruction6,without improved paired behavior.
 Expanded run now active. User clarified model scope:current comparison only
 Smol256;priorSmol500/Qwen results remain preserved,not rerun by this goal.
+
+D139 complete:expanded26.89min,0.904GBpeak,four exact reloads. Same initial
+adapter,28zero-shot outputs and losses across conditions. NewVALloss0.4835->
+0.4012,STOP0/6->5/6,but falseSTOP1->8/128;visual8/16old,32/64new unchanged.
+Newpairedinstruction/color-swaps1/32vs0/32;original0/8both. Both0/2flights:
+controlfalseSTOP1.9358/1.3908m;expandedHOLDtimeout8.5407m/immediatefalseSTOP
+8.0001m.121flight calls/463controls and128visualcontrols independentlyaudited;
+388prediction UIchecks+14flight sourcechecks pass. Bothgatesfail;moredatahelps
+some offline metrics but is insufficient for scaling this recipe. Need targeted
+visual and termination/3D diagnostics,then D127 task/domain/real data and timing
+gates. Full evidence:reports/vla_balanced_comparison_20260917/REPORT.md.

@@ -1,0 +1,242 @@
+{
+  "existing_control": {
+    "condition": "existing_control",
+    "original": {
+      "coordinate": {
+        "n": 12,
+        "valid": 11,
+        "exact": 0,
+        "mean_bin_error": 6.833333333333333,
+        "correct_yaw_sign": 0,
+        "correct_yaw_without_translation_or_stop": 0,
+        "velocity_mae_mps": 1.0243055555555556,
+        "yaw_mae_rps": 0.359375,
+        "invalid_count": 1,
+        "valid_only_velocity_mae_mps": 0.20833333333333331,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      },
+      "visual": {
+        "n": 16,
+        "valid": 16,
+        "exact": 2,
+        "mean_bin_error": 3.0625,
+        "correct_yaw_sign": 8,
+        "correct_yaw_without_translation_or_stop": 8,
+        "velocity_mae_mps": 0.0,
+        "yaw_mae_rps": 0.57421875,
+        "invalid_count": 0,
+        "valid_only_velocity_mae_mps": 0.0,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      }
+    },
+    "new": {
+      "coordinate": {
+        "n": 36,
+        "valid": 34,
+        "exact": 10,
+        "mean_bin_error": 4.631944444444445,
+        "correct_yaw_sign": 0,
+        "correct_yaw_without_translation_or_stop": 0,
+        "velocity_mae_mps": 0.6611689814814814,
+        "yaw_mae_rps": 0.2734375,
+        "invalid_count": 2,
+        "valid_only_velocity_mae_mps": 0.11182598039215687,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      },
+      "visual": {
+        "n": 64,
+        "valid": 64,
+        "exact": 2,
+        "mean_bin_error": 3.0703125,
+        "correct_yaw_sign": 32,
+        "correct_yaw_without_translation_or_stop": 32,
+        "velocity_mae_mps": 0.0,
+        "yaw_mae_rps": 0.57568359375,
+        "invalid_count": 0,
+        "valid_only_velocity_mae_mps": 0.0,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      }
+    },
+    "pairs": {
+      "original": {
+        "instruction_correct": 0,
+        "instruction_total": 8,
+        "color_swap_correct": 0,
+        "color_swap_total": 8
+      },
+      "new": {
+        "instruction_correct": 0,
+        "instruction_total": 32,
+        "color_swap_correct": 0,
+        "color_swap_total": 32
+      }
+    },
+    "boundaries": {
+      "stop": {
+        "n": 6,
+        "valid": 4,
+        "exact": 0,
+        "predicted_stop": 0
+      },
+      "hold": {
+        "n": 18,
+        "valid": 16,
+        "exact": 14,
+        "predicted_stop": 1
+      },
+      "motion": {
+        "n": 30,
+        "valid": 30,
+        "exact": 0,
+        "predicted_stop": 0
+      },
+      "visual": {
+        "n": 80,
+        "valid": 80,
+        "exact": 4,
+        "predicted_stop": 0
+      }
+    },
+    "interventions": {
+      "blank_image": {
+        "constrained_correct": 8,
+        "raw_changed": 16,
+        "parsed_action_changed": 16,
+        "validity_changed": 0
+      },
+      "blank_instruction": {
+        "constrained_correct": 8,
+        "raw_changed": 6,
+        "parsed_action_changed": 6,
+        "validity_changed": 0
+      }
+    },
+    "old_pilot_gate": false,
+    "combined_pilot_gate": false,
+    "wall_seconds": 1692.375,
+    "peak_allocated_bytes": 903255552,
+    "unique_training_exposures": 252,
+    "schedules_checked": true,
+    "reload_spot_identical": true
+  },
+  "expanded": {
+    "condition": "expanded",
+    "original": {
+      "coordinate": {
+        "n": 12,
+        "valid": 11,
+        "exact": 1,
+        "mean_bin_error": 6.875,
+        "correct_yaw_sign": 0,
+        "correct_yaw_without_translation_or_stop": 0,
+        "velocity_mae_mps": 1.0894097222222223,
+        "yaw_mae_rps": 0.30859375,
+        "invalid_count": 1,
+        "valid_only_velocity_mae_mps": 0.2793560606060606,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      },
+      "visual": {
+        "n": 16,
+        "valid": 16,
+        "exact": 2,
+        "mean_bin_error": 2.78125,
+        "correct_yaw_sign": 8,
+        "correct_yaw_without_translation_or_stop": 8,
+        "velocity_mae_mps": 0.0,
+        "yaw_mae_rps": 0.521484375,
+        "invalid_count": 0,
+        "valid_only_velocity_mae_mps": 0.0,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      }
+    },
+    "new": {
+      "coordinate": {
+        "n": 36,
+        "valid": 36,
+        "exact": 14,
+        "mean_bin_error": 0.9583333333333334,
+        "correct_yaw_sign": 0,
+        "correct_yaw_without_translation_or_stop": 0,
+        "velocity_mae_mps": 0.0853587962962963,
+        "yaw_mae_rps": 0.10286458333333333,
+        "invalid_count": 0,
+        "valid_only_velocity_mae_mps": 0.0853587962962963,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      },
+      "visual": {
+        "n": 64,
+        "valid": 64,
+        "exact": 2,
+        "mean_bin_error": 2.93359375,
+        "correct_yaw_sign": 32,
+        "correct_yaw_without_translation_or_stop": 32,
+        "velocity_mae_mps": 0.0,
+        "yaw_mae_rps": 0.550048828125,
+        "invalid_count": 0,
+        "valid_only_velocity_mae_mps": 0.0,
+        "invalid_penalty_note": "Overall MAE uses max-range penalties for invalid output"
+      }
+    },
+    "pairs": {
+      "original": {
+        "instruction_correct": 0,
+        "instruction_total": 8,
+        "color_swap_correct": 0,
+        "color_swap_total": 8
+      },
+      "new": {
+        "instruction_correct": 1,
+        "instruction_total": 32,
+        "color_swap_correct": 1,
+        "color_swap_total": 32
+      }
+    },
+    "boundaries": {
+      "stop": {
+        "n": 6,
+        "valid": 5,
+        "exact": 5,
+        "predicted_stop": 5
+      },
+      "hold": {
+        "n": 18,
+        "valid": 18,
+        "exact": 11,
+        "predicted_stop": 7
+      },
+      "motion": {
+        "n": 30,
+        "valid": 30,
+        "exact": 2,
+        "predicted_stop": 1
+      },
+      "visual": {
+        "n": 80,
+        "valid": 80,
+        "exact": 4,
+        "predicted_stop": 0
+      }
+    },
+    "interventions": {
+      "blank_image": {
+        "constrained_correct": 8,
+        "raw_changed": 13,
+        "parsed_action_changed": 13,
+        "validity_changed": 0
+      },
+      "blank_instruction": {
+        "constrained_correct": 8,
+        "raw_changed": 5,
+        "parsed_action_changed": 5,
+        "validity_changed": 0
+      }
+    },
+    "old_pilot_gate": false,
+    "combined_pilot_gate": false,
+    "wall_seconds": 1613.547000000006,
+    "peak_allocated_bytes": 904322048,
+    "unique_training_exposures": 790,
+    "schedules_checked": true,
+    "reload_spot_identical": true
+  }
+}

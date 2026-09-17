@@ -569,10 +569,10 @@ and LOSTyaw arbitration. Unit-test before one separately named model flight.
 Do not combine with return-to-view or call nativeOnFly; see goal_hold_component/REPORT.md.
 
 
-### D138 - Next matched local training comparison
-Data and mixed-batch pipeline ready;compare balanced original versus balanced
-expanded data on cached Smol256 with matched exposure/update budgets. Freeze
-protocol first;retain original and new validation cohorts separately,check paired
-visual dependence,premature STOP/HOLD and actual flight behavior. Do not treat
-two-update GPU smoke as an overfit/generalization gate. Extend to500 only after
-this isolates batch-balance versus data effects. D127 real/external data remains open.
+### D138 - Matched comparison completed by D139
+Completed:see reports/vla_balanced_comparison_20260917/REPORT.md. Both models
+here are Smol256 data conditions;neither passes. Next D139 diagnostics:visual-only
+TRAIN memorization/paired grounding,HOLD versus STOP boundary examples and3D
+goal completion. Then determine whether a matched500/Qwen extension or an
+input/output/representation change is warranted. Full training gates and D127
+external/real action-data coverage remain open.

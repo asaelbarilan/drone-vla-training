@@ -1,0 +1,47 @@
+{
+  "checks": [
+    {
+      "run": "smol256_mixed_frd_trained_s1400",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_trained_s1400",
+      "call_index": 18,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_trained_s1400",
+      "call_index": 36,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_trained_s1405",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_trained_s1405",
+      "call_index": 14,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_trained_s1405",
+      "call_index": 28,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_zero_shot_s1400",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    },
+    {
+      "run": "smol256_mixed_frd_zero_shot_s1405",
+      "call_index": 0,
+      "response_image_prompt_time_match": true
+    }
+  ],
+  "js_errors": [],
+  "playback": true,
+  "responsive": true
+}

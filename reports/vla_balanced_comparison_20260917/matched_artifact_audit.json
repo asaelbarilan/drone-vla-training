@@ -1,0 +1,28 @@
+{
+  "flights": [
+    {
+      "seed": 1400,
+      "initial_prompt_image_environment_identical": true
+    },
+    {
+      "seed": 1405,
+      "initial_prompt_image_environment_identical": true
+    }
+  ],
+  "artifacts": {
+    "existing_control": {
+      "report_sha256": "fe26b6f4cc19f77212a202a5a3cdad033b3cca933d2b2539752d9fccd70cc8aa",
+      "adapter_s400_sha256": "d332b149c11e1d896ea785b79dfe44ed90b97134b2dae4d0698b13ba5b1e7b3c",
+      "median_validation_generation_seconds": 2.3434999999954016,
+      "min_validation_generation_seconds": 0.7039999999979045,
+      "max_validation_generation_seconds": 4.672000000005937
+    },
+    "expanded": {
+      "report_sha256": "b331bfad2a7ccc68bcae7787b8d1505ace327950423f384e024843e3aab947fd",
+      "adapter_s400_sha256": "5fc2663556426d43f9f93dc5a7aea8cc20ae2ab2b09bb33b282406907b24985e",
+      "median_validation_generation_seconds": 2.327999999994063,
+      "min_validation_generation_seconds": 2.2660000000032596,
+      "max_validation_generation_seconds": 3.2339999999967404
+    }
+  }
+}

@@ -1,0 +1,2334 @@
+{
+  "checks": [
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0007",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0014",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0020",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0034",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0006",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0013",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0026",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0007",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0014",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0020",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0034",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0006",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0013",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0026",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0004",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0008",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0011",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0015",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0003",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0009",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0015",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0021",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0033",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0009",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0018",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0036",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0045",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0008",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0040",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0051",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0062",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0033",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0029",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0016",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0017",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0018",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0042",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0043",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0044",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0059",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0060",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0061",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "existing_control",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0007",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0014",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0020",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1400-decision-0034",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0006",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0013",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0026",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "before",
+      "id": "public_goal_s1405-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0007",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0014",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0020",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0034",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0006",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0013",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0026",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1500_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1505_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1510_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1515_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1520_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1525_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1530_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "visible_yaw_s1535_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0004",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0008",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0011",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0015",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0003",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0009",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0015",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0021",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0033",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0000",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0009",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0018",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0027",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0036",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0045",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0008",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0019",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0040",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0051",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0062",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1400-decision-0033",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0029",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1405-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0016",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0017",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1450-decision-0018",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0030",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0031",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1455-decision-0032",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0042",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0043",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1460-decision-0044",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0059",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0060",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "after",
+      "id": "public_goal_s1465-decision-0061",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_image",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1410_l3_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l0_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l0_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l1_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l1_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l2_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l2_blue",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l3_red",
+      "exact_source_and_response": true
+    },
+    {
+      "model": "expanded",
+      "phase": "blank_instruction",
+      "id": "visible_yaw_s1415_l3_blue",
+      "exact_source_and_response": true
+    }
+  ],
+  "js_errors": [],
+  "responsive": true
+}

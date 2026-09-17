@@ -3229,3 +3229,12 @@ Control complete/reload verified;expanded condition running sequentially.
 Control fails visual/STOP gates despite lower losses. Separate original/new
 validation and equal-task loss plots,raw-output scorer audit and debugger
 comparison prepared. No cloud spend or architecture baseline changes.
+
+
+## 2026-09-17 - D139 comparison and simulation evaluation complete
+Two matched Smol256 runs complete;expanded data improves loss/STOPrecall but
+not pairedvision,and adds premature stops. Both fail2/2flights. Published
+loss/task plots,134probes/condition,visualafter-images and8flightreplays at
+localhost8771/balanced_comparison.html. Rawsource/replay/reload/browser audits
+pass. Goal comparisoncomplete;fulltraining/deploymentgates remain unmet.
+No AWS spending. See reports/vla_balanced_comparison_20260917/REPORT.md.

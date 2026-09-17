@@ -95,6 +95,13 @@ def summarize(report, rows):
         perturb[kind] = dict(
             constrained_correct=sum(correct(r) for r in items),
             raw_changed=sum(r["raw"] != reference[r["decision_id"]]["raw"] for r in items),
+            parsed_action_changed=sum(
+                r["valid"]
+                and reference[r["decision_id"]]["valid"]
+                and r["parsed"] != reference[r["decision_id"]]["parsed"]
+                for r in items
+            ),
+            validity_changed=sum(r["valid"] != reference[r["decision_id"]]["valid"] for r in items),
         )
     terminal = [r for r in report["after"] if r["target"]["stop"]]
     assert len(terminal) == 2
