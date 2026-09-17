@@ -24,14 +24,21 @@ def png(image):
     return b.getvalue()
 
 
-async def audit(root):
+async def audit(root, expected_seeds=range(1410, 1418)):
+    from uavlab.training.splits import check_collection_range
+
+    expected_seeds = set(expected_seeds)
+    for seed in expected_seeds:
+        check_collection_range(seed, 1)
+        assert seed not in range(1060, 1065)
     rows = [json.loads(s) for s in (root / "index.jsonl").read_text().splitlines()]
-    assert len(rows) == 64
+    assert len(rows) == 8 * len(expected_seeds)
+    assert {r["seed"] for r in rows} == expected_seeds
     states = frames = controls = 0
     images = {}
     for r in rows:
         seed = r["seed"]
-        assert 1410 <= seed <= 1417
+        assert seed in expected_seeds
         assert r["contract"] == CONTRACT_ID
         assert r["split"] == ("val" if seed % 5 == 0 else "train")
         assert r["prompt"] == student_prompt(r["instruction"], r["state"])

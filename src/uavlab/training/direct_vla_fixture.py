@@ -134,13 +134,19 @@ def context(mission, obs, name):
     )
 
 
-async def record(root: Path, seed: int, setup_ticks: int, setup_yaw_rate: float):
+async def record(
+    root: Path,
+    seed: int,
+    setup_ticks: int,
+    setup_yaw_rate: float,
+    goal_distance_m: float = 8.0,
+):
     check_collection_range(seed, 1)
     if seed in PILOT_EVALUATION_SEEDS:
         raise ValueError("pilot evaluation seed may not enter collection")
     params = {
         "scene": "empty",
-        "goal_distance_m": 8.0,
+        "goal_distance_m": goal_distance_m,
         "n_obstacles": 0,
         "distractors": 3,
         "render": True,

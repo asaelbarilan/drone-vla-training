@@ -76,3 +76,8 @@ reports/vla_dataset_review_20260916/smol_mixed_flights.html
 reports/vla_dataset_review_20260916/qwen_mixed_flights.html
 
 reports/vla_dataset_review_20260916/smol_duration.html
+
+# Reproducible D138 debugger pages; data/reports are separately audited.
+reports/vla_dataset_review_20260916/expanded_data.html
+reports/vla_dataset_review_20260916/expanded_teacher_flights.html
+reports/vla_local_expanded_20260917*/**/*.html

@@ -71,21 +71,101 @@ def teacher(mosaic, instruction, intrinsics, t_ns, yaw):
     }
 
 
-async def collect(root):
+async def choose_visible_geometry(seed, heading, rng, distance_range, bearing_range):
+    """Reject missing/occluded/clipped targets before writing a paired scene."""
+    for attempt in range(100):
+        geometry = (
+            float(rng.uniform(*distance_range)),
+            float(rng.uniform(*bearing_range)),
+            float(rng.uniform(*bearing_range)),
+        )
+        distance, left, right = geometry
+        mission = MissionSpec(
+            mission_id="visibility-preflight",
+            instruction="visibility audit",
+            task_family=TaskFamily.SEMANTIC_GOAL_NAV,
+        )
+        env = DeterministicEnv(
+            scene="empty",
+            n_obstacles=0,
+            distractors=0,
+            render=True,
+            render_down=True,
+            render_depth=False,
+            image_size=224,
+            allow_privileged=False,
+            coarse_goal_direction=False,
+        )
+        await env.reset(mission, seed)
+        env.vehicle.yaw = heading
+        start = env.vehicle.position.copy()
+        forward = np.array([math.cos(heading), math.sin(heading), 0])
+        right_axis = np.array([math.sin(heading), -math.cos(heading), 0])
+        valid = True
+        for labels in (("red", "blue"), ("blue", "red")):
+            env.landmarks = [
+                Landmark(
+                    position=start + forward * distance + right_axis * (math.tan(a) * distance),
+                    label=f"visible_pillar_{i}",
+                    color=COLORS[c],
+                )
+                for i, (c, a) in enumerate(zip(labels, [-left, right], strict=True))
+            ]
+            env._last_hits = ()
+            obs = await env.observe()
+            mosaic = make_dual_view_mosaic(
+                global_store().get(obs.rgb.uri), global_store().get(obs.rgb_down.uri), 224
+            )
+            try:
+                for c in COLORS:
+                    visible_bearing(mosaic, c, obs.intrinsics.cx, obs.intrinsics.fx)
+            except ValueError:
+                valid = False
+        await env.close()
+        if valid:
+            return geometry, attempt
+    raise ValueError("no valid observable paired geometry after 100 proposals")
+
+
+async def collect(
+    root,
+    seeds=range(1410, 1418),
+    distance_range=(12, 15),
+    bearing_range=(0.2, 0.45),
+    visibility_preflight=False,
+):
+    from uavlab.training.splits import check_collection_range
+
+    seeds = tuple(seeds)
+    if not seeds or len(set(seeds)) != len(seeds):
+        raise ValueError("nonempty unique seeds required")
+    for seed in seeds:
+        check_collection_range(seed, 1)
+        if seed in range(1060, 1065):
+            raise ValueError("protected development seed")
     root.mkdir(parents=True, exist_ok=False)
     rows = []
     segment_checks = 0
-    for seed in range(1410, 1418):
+    rejected_geometries = 0
+    for seed in seeds:
         rng = np.random.default_rng(seed)
         heading = float(rng.uniform(-math.pi, math.pi))
         geometries = [
             (
-                float(rng.uniform(12, 15)),
-                float(rng.uniform(0.2, 0.45)),
-                float(rng.uniform(0.2, 0.45)),
+                float(rng.uniform(*distance_range)),
+                float(rng.uniform(*bearing_range)),
+                float(rng.uniform(*bearing_range)),
             )
             for _ in range(2)
         ]
+        if visibility_preflight:
+            geometries = []
+            for _ in range(2):
+                geometry, rejected = await choose_visible_geometry(
+                    seed, heading, rng, distance_range, bearing_range
+                )
+                geometries.append(geometry)
+                rejected_geometries += rejected
         for layout in range(4):
             distance, left, right = geometries[layout // 2]
             for requested in COLORS:
@@ -206,7 +286,7 @@ async def collect(root):
                 segment_checks += 1
                 await env.close()
     paired = 0
-    for seed in range(1410, 1418):
+    for seed in seeds:
         for layout in range(4):
             red, blue = [
                 next(
@@ -237,7 +317,11 @@ async def collect(root):
         "samples": len(rows),
         "train": sum(r["split"] == "train" for r in rows),
         "val": sum(r["split"] == "val" for r in rows),
-        "scene_groups": 8,
+        "scene_groups": len(seeds),
+        "rejected_geometry_proposals": rejected_geometries,
+        "seeds": list(seeds),
+        "distance_range": distance_range,
+        "bearing_range": bearing_range,
         "unique_source_mosaics": len(by_hash),
         "same_image_opposite_instruction_checks": paired,
         "same_instruction_color_swap_checks": paired,
