@@ -3502,3 +3502,27 @@ Evidence:reports/vla_smol_duration_20260917/REPORT.md. Both jobs exitedcleanly.
 Conclude moreupdates and500M alone didnot solve this recipe's visual/STOP
 failures;nextisolatevisual-only learning andclassbalance onexistinglocaldata.
 No general model-capacity impossibility orreal-world readiness claim.
+
+
+## D138 - Additive local data expansion and explicit mixed effective batches (2026-09-17)
+
+Status: provisional; implementation and data audits next.
+Rationale: user requests expansion and mixing within each batch after D137.
+Longer optimization alone did not resolve visual instruction dependence or STOP.
+Collect 20 new coordinate scenes (1450-1469), distances 4/8/12/16m and
+setup heading rotations, plus 40 paired visual scenes (1500-1539), target
+distances 10-18m and bearings 0.15-0.50rad. Keep seed%5 validation grouping,
+all old 84 validation rows and 28 evaluation IDs unchanged. No seeds1-40 or
+1060-1064; do not modify old corpora. New validation is separate development
+validation, never a replacement for old validation or paper held-out scoring.
+Each optimizer update accumulates four equal-weight examples: visual, motion,
+HOLD, STOP; shuffle without replacement within each class until exhausted.
+Microbatch1/accumulation4 is an effective mixed batch, not four simultaneous
+GPU samples. Log all identities and exposure counts; optimizer step only after
+all four backward passes, clip once. Oversampling changes the training prior.
+Keep a balanced-existing-data control for a later matched expanded-data trial
+so dataset size and batch balance are not conflated. Compare sample exposures
+and optimizer steps, not old batch1 step counts. Current stage: collection,
+independent replay audit, sampler/gradient validation; no long training.
+Evidence: D137 reports. No new data or model result yet. More local seeds do
+not add real-world or external-simulator domains; D127 remains required.
