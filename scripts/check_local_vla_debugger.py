@@ -21,7 +21,15 @@ with sync_playwright() as p:
     options = page.locator("#run option").all_text_contents()
     assert len(options) == 4
     for folder in sorted(args.runs.glob("*_frd_*_s*")):
-        index = next(i for i, label in enumerate(options) if label.startswith(folder.name))
+        index = next(
+            i
+            for i, label in enumerate(options)
+            if folder.name in label
+            or (
+                f"seed {folder.name.rsplit('_s', 1)[1]}" in label
+                and ("| trained |" if "_trained_" in folder.name else "| zero-shot |") in label
+            )
+        )
         page.locator("#run").select_option(index=index)
         assert not page.locator("#error").is_visible()
         records = [

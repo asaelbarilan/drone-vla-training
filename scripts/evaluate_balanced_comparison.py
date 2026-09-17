@@ -8,6 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from label_balanced_flights import label_page
+
 BASE = Path("D:/drone_vla_pilot")
 REPORTS = Path("reports/vla_balanced_comparison_20260917")
 VIEWER = Path("reports/vla_dataset_review_20260916")
@@ -83,7 +85,11 @@ def main():
             if name == "existing_control"
             else "balanced_expanded_flights.html"
         )
-        shutil.copyfile(flights / "model_flights.html", VIEWER / page)
+        label_page(
+            flights / "model_flights.html",
+            VIEWER / page,
+            "Original" if name == "existing_control" else "Expanded",
+        )
         print(json.dumps(dict(condition=name, status="flights_audited", page=page)), flush=True)
     run(
         "summarize_balanced_comparison.py",
