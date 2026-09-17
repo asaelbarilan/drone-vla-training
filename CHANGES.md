@@ -3358,3 +3358,9 @@ first, then fresh400updates and audited local flights, followed by500 andQwen.
 Live dashboard browser checks pass:100held-out cases (28local/72native), three
 models, three causal native images, responsive layout and no JavaScript errors.
 Full results pending; see joint_openfly.html and queue_status.json.
+
+D144 follow-through: added independent all-model completion audit, raw prediction
+re-parsing, exact schedule checks, six-flight source/control/replay verification,
+and static loss-plot/report generation. Fixed live review handling of infinite
+obstacle distances from simulator summaries while preserving raw answer strings;
+browser regression test passes. Training remains active; no results claimed yet.

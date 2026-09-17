@@ -4,6 +4,7 @@
 import base64
 import io
 import json
+import math
 import os
 import subprocess
 import sys
@@ -26,9 +27,19 @@ def read(path):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
 
+def finite_json(value):
+    if isinstance(value, float) and not math.isfinite(value):
+        return None
+    if isinstance(value, dict):
+        return {k: finite_json(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [finite_json(v) for v in value]
+    return value
+
+
 def write(path, value):
     tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(value), encoding="utf-8")
+    tmp.write_text(json.dumps(finite_json(value), allow_nan=False), encoding="utf-8")
     tmp.replace(path)
 
 
@@ -300,7 +311,7 @@ function plot(series){let points=series.flatMap(s=>s.p);if(!points.length)return
 function render(){const m=data.models?.[$('model').value]||{};$('status').textContent=`${data.state?.status||'waiting'} · ${data.state?.active||'no active job'}${data.state?.error?' · '+data.state.error:''}`;$('time').textContent=data.updated?'Snapshot: '+new Date(data.updated*1000).toLocaleString()+' · refreshes every 10 seconds':'';$('models').innerHTML=Object.entries(data.models||{}).map(([n,r])=>`<p><b>${esc(n)}</b>: ${esc(r.status)} · ${r.updates}/400 updates ${r.error?' · '+esc(r.error):''}</p>`).join('');let colors={local:'#7bc4ff',openfly:'#ffb469'};$('trainplot').innerHTML=plot(Object.entries(colors).map(([s,color])=>({color,p:(m.losses||[]).map((r,i,a)=>[r.step,a.slice(Math.max(0,i-19),i+1).reduce((v,x)=>v+x.domain_losses[s],0)/Math.min(i+1,20)])})));$('valplot').innerHTML=plot(Object.entries(colors).flatMap(([s,color])=>['val','train'].map(split=>({color,dash:split==='train',p:(m.comparable_losses||[]).map(r=>[r.step,r.values[s+':'+split]])}))));let metric='<h3>Frozen held-out predictions</h3><table><tr><th>Phase/source</th><th>Exact</th><th>Valid</th><th>False STOP</th><th>Macro recall</th></tr>';for(let [phase,sources] of Object.entries(m.metrics||{}))for(let [source,r] of Object.entries(sources))metric+=`<tr><td>${phase} / ${source}</td><td>${r.exact}/${r.n}</td><td>${r.valid}/${r.n}</td><td>${r.false_stop}</td><td>${r.macro_recall===undefined?'—':(r.macro_recall*100).toFixed(1)+'%'}</td></tr>`;$('metrics').innerHTML=metric+'</table><p class="muted">Native panel: 12/action, 72 total. Always-forward gives 12/72 exact and 16.7% macro recall. Exact local JSON match is stricter than successful flight. Invalid output remains a failure.</p>';$('flights').innerHTML=m.flight_ready?`<p><a href="${$('model').value}_joint_flights.html">Open ${$('model').value} actual local simulation flights</a></p>`:'<p class="muted">Actual model flights will appear after this model finishes training and evaluation.</p>';showCase();}
 function action(x,source){if(x===null)return 'INVALID';return source==='openfly'?['STOP','forward 3m','left turn 30°','right turn 30°','up 3m','down 3m'][x]:JSON.stringify(x);}
 function showCase(){let c=cases[$('case').value||0];if(!c)return;$('images').innerHTML=c.previews.map((p,i)=>`<img src="${p}" alt="Source observation ${i+1}">`).join('');$('target').textContent='Recorded target: '+(typeof c.target==='string'?c.target:JSON.stringify(c.target));let rows='';for(let [n,r] of Object.entries(data.models||{})){let p=r.after?.find(x=>x.id===c.id),b=r.before?.find(x=>x.id===c.id);rows+=`<p><b>${n}</b> · base: ${b?esc(action(b.parsed,c.source)):'pending'} · trained: <span class="${p?.exact?'ok':'bad'}">${p?esc(action(p.parsed,c.source)):'pending'}</span>${p?'<details><summary>Actual raw answer</summary><pre>'+esc(p.raw)+'</pre></details>':''}</p>`;}$('outputs').innerHTML=rows;$('provenance').textContent=JSON.stringify({id:c.id,prompt:c.prompt,image_sha256:c.image_sha256},null,2);}
-async function refresh(){try{data=await (await fetch('joint_openfly_status.json?t='+Date.now())).json();render();}catch(e){$('status').textContent='Waiting for training status: '+e.message;}}
+async function refresh(){try{let text=await (await fetch('joint_openfly_status.json?t='+Date.now())).text();data=JSON.parse(text.replace(/("(?:\\.|[^"\\])*")|(-?Infinity|NaN)/g,(match,quoted)=>quoted??'null'));render();}catch(e){$('status').textContent='Waiting for training status: '+e.message;}}
 $('model').onchange=render;$('case').onchange=showCase;fetch('joint_openfly_cases.json').then(r=>r.json()).then(c=>{cases=c;$('case').innerHTML=c.map((x,i)=>`<option value="${i}">${esc(x.source+' · '+x.group+' · '+x.id.slice(-90))}</option>`).join('');showCase();});refresh();setInterval(refresh,10000);
 </script></html>"""
 
