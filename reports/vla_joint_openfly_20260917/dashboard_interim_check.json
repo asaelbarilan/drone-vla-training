@@ -1,0 +1,12 @@
+{
+  "final": false,
+  "completed_models": [
+    "smol256",
+    "smol500"
+  ],
+  "cases_with_images_and_provenance_checked": 100,
+  "raw_predictions_checked": 200,
+  "loss_series_and_flight_links": true,
+  "mobile_no_overflow": true,
+  "js_errors": []
+}
