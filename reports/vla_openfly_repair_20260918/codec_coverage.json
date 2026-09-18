@@ -1,0 +1,21 @@
+{
+  "vlnv1": {
+    "rejected": "vlnv1 cannot round-trip required action IDs [4, 5]"
+  },
+  "vln_norm": {
+    "rejected": "vln_norm cannot round-trip required action IDs [5, 8, 9]"
+  },
+  "vlnv11": {
+    "norm_key": "vlnv11",
+    "roundtrip_actions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9
+    ]
+  }
+}

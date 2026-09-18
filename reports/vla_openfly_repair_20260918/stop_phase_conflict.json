@@ -1,0 +1,12 @@
+{
+  "phase_routes": 9728,
+  "recorded_stop_over_20m_from_last_position": 8160,
+  "min_distance": 3.0,
+  "max_distance": 90.0,
+  "all_position_dimensions": {
+    "3": 1584802,
+    "4": 23717
+  },
+  "phase_contracts_validated": 9728,
+  "all_episode_schemas_validated": 100226
+}

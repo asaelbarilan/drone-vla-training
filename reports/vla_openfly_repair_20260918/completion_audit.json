@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "regression_tests": 9,
+  "ruff": "pass",
+  "browser": {
+    "status": "pass",
+    "cases": 72,
+    "raw_outputs": 288,
+    "model_rows": 4,
+    "source_images_per_case": 3,
+    "mobile_overflow": false,
+    "page_errors": []
+  },
+  "precision": {
+    "n": 6,
+    "same_decoded_actions": 6,
+    "same_token_vectors": 6,
+    "cases": [
+      {
+        "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+        "target": 0,
+        "bf16": 9,
+        "nf4": 9,
+        "same_decoded_action": true,
+        "same_tokens": true
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+        "target": 1,
+        "bf16": null,
+        "nf4": null,
+        "same_decoded_action": true,
+        "same_tokens": true
+      },
+      {
+        "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+        "target": 2,
+        "bf16": null,
+        "nf4": null,
+        "same_decoded_action": true,
+        "same_tokens": true
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+        "target": 3,
+        "bf16": 9,
+        "nf4": 9,
+        "same_decoded_action": true,
+        "same_tokens": true
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+        "target": 4,
+        "bf16": 9,
+        "nf4": 9,
+        "same_decoded_action": true,
+        "same_tokens": true
+      },
+      {
+        "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+        "target": 5,
+        "bf16": 1,
+        "nf4": 1,
+        "same_decoded_action": true,
+        "same_tokens": true
+      }
+    ],
+    "elapsed_s": 217.8130000000001,
+    "limits": "Six preregistered cases only; not full-panel precision equivalence. BF16 does not rescue these cases."
+  },
+  "preservation": {
+    "official_eval_routes": 3000,
+    "official_overlap": 0,
+    "causal_rows": 1639,
+    "train_routes": 88,
+    "val_routes": 22,
+    "new_training": false,
+    "protected_seed_use": false
+  },
+  "gpu_jobs_active": false,
+  "aws_spend_usd": 0,
+  "training_performed": false
+}

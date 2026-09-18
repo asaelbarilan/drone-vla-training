@@ -1,0 +1,91 @@
+{
+  "routes": 9728,
+  "counts": {
+    "stop_before_trailing_phase": 9728,
+    "only_minus2_after_stop": 9728
+  },
+  "position_dimensions": {
+    "3": 98916,
+    "4": 1310
+  },
+  "examples": [
+    {
+      "trajectory": "env_airsim_sh/astar_data/low_average_updown/2025-1-14_13-14-7_1946710049",
+      "actions": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        8,
+        0,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2
+      ],
+      "instruction": "Begin at the residential building with a light brown color , which is medium - sized compared to surrounding structures . It features a rectangular shape with symmetrical windows . Then , proceed directly ahead to reach a large , gray skyscraper characterized by modern architecture . Next , make a slight stop and descend to the red - brick apartment building , which has rows of windows and doors outlined by white frames and is of medium size ."
+    },
+    {
+      "trajectory": "env_airsim_sh/astar_data/medium_average_updown/2025-1-14_8-50-6_1395405989",
+      "actions": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        8,
+        2,
+        9,
+        9,
+        9,
+        8,
+        0,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2,
+        -2
+      ],
+      "instruction": "Elevate towards the modern skyscraper with a large , curved glass facade in blue . Then , proceed directly ahead to it . Slightly turn left and continue straight towards the blue building characterized by its large size and grid - like pattern of windows . Finally , lightly halt and drop by the tall , modern office building with a curved reflective glass facade , also in blue ."
+    }
+  ]
+}

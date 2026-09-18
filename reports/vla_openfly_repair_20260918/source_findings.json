@@ -1,0 +1,43 @@
+{
+  "scope": "OpenFly-specific repair, not a broad literature survey",
+  "date": "2026-09-18",
+  "sources": [
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/issues/20",
+      "kind": "maintainer discussion",
+      "finding": "Maintainer acknowledged a historical pose-collection bug and later said the Hugging Face data was fixed. Our eight local anomalies are independently measured; this thread does not establish they are the same bug."
+    },
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/issues/34",
+      "kind": "maintainer discussion",
+      "finding": "Users reported inability to ascend. Contributor discussed rarity of vertical data and showed examples; no unambiguous checkpoint normalization mapping was supplied in the fetched discussion."
+    },
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/issues/92",
+      "kind": "unresolved user report",
+      "finding": "A user independently questions why compressed forward9 begins at frame2. Our start/end audit reproduces the alignment discrepancy; the report alone was not treated as proof."
+    },
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/issues/83",
+      "kind": "maintainer discussion",
+      "finding": "Contributor says they did not test quantization. This does not establish that our NF4 inference is wrong."
+    },
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/issues/13",
+      "kind": "collaborator discussion",
+      "finding": "Collaborator describes keyframe training and stepwise history before keyframe detection; says released weights trained six epochs."
+    },
+    {
+      "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly-rlds/tree/main",
+      "kind": "official dataset metadata",
+      "finding": "Released RLDS metadata includes multiple vlnv datasets and separate statistics. Downloaded lightweight metadata only; no bulk shards or unverified mapping inferred."
+    },
+    {
+      "url": "https://arxiv.org/html/2502.18041v6",
+      "kind": "official paper",
+      "finding": "Closed-loop success uses goal-distance threshold20m; distinguish from strict next-action agreement."
+    }
+  ],
+  "local_source_commit": "c075075497a7122bad82f5b76b9be926ad5a81b3",
+  "checkpoint_config_sha256": "4f6663aa04d1625ac1b693075a259e7cea94607947dcd88451bfee8b10e339c3"
+}

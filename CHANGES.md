@@ -3410,3 +3410,18 @@ Status: investigated; D145 scores preserved, model-ranking interpretation withdr
 Rationale: establish checkpoint normalization/history and native macro-action evaluation before further training or model ranking. Source example builder has future-history hazards, but its actual checkpoint use is unknown. Quantization contribution and instruction semantics remain unresolved. No AWS, training, split or protected-seed changes.
 
 Evidence: reports/vla_openfly_forensics_20260918/REPORT.md, results.json, label_audit.json, source_evidence.json and browser_audit.json; scripts/audit_openfly_forensics.py, investigate_openfly_prompt.py and summarize_openfly_forensics.py. Dashboard: localhost8771/openfly_forensics.html.
+
+
+## D147 - Repair OpenFly decoder coverage and data/evaluation contracts (2026-09-18)
+
+Status: bounded repair and matched rerun complete; released-checkpoint calibration remains provisional. Added strict codec coverage/length/codebook checks and explicit annotation phase/XYZ-yaw parsing. vlnv11 can represent every evaluated primitive; original vlnv1/vln_norm fail coverage. Nine regression tests pass.
+
+Data: audited all110 pilot routes/3,752 frames.3,634 moving transitions pass; eight remain quarantined (six identical image pairs, one nearly identical, one changing image with static yaw). All1,106 compressed forward blocks reference their last raw frame;284 cannot describe future motion from that index. Built separate1,639-row motion-verified macro manifest, same88 train/22 dev routes. Twelve preregistered alignment pairs improve OpenFly direction7/12 to11/12 and exact macro6/12 to9/12.
+
+Broader audit: all100,226 TRAIN schemas validate after explicit handling.9,728 routes contain initial-climb(-1) and post-STOP-descent(-2) phases; pilot excluded them.8,160 recorded STOPs are over20m from the final position, exposing a mission/landing goal-contract discrepancy if last position is used.23,717 positions include redundant yaw, matching the separate yaw field. No full-image audit of all100K routes is claimed.
+
+Fresh matched72 corrected-frame direction counts: OpenFly20, Smol25620, Smol50021, Qwen24. OpenFly valid48/72; others72/72. These remain weak results, not flight success. Six-case BF16 CPU-offload reference matches NF4 token vectors/actions6/6 in218s. All three adapter reloads reproduce24/24 old predictions. Gray controls do not establish reliable visual grounding.
+
+Validation: nine tests, ruff, exact input/source audits, preserved original dataset hash, no overlap with all3,000 official evaluation route IDs, all72 debugger cases/288 raw outputs and desktop/mobile checks. No training, AWS, baseline/split edits or protected seeds. All GPU jobs finished.
+
+Evidence: reports/vla_openfly_repair_20260918/REPORT.md, summary.json, full_data_audit.json, aligned_macro_audit.json, all_annotation_audit.json, stop_phase_conflict.json, precision_audit.json and browser_audit.json. UI: localhost8771/openfly_repair.html. Next: use explicit phase/action contracts for data expansion; establish original checkpoint calibration and shared closed-loop semantics before interpreting model ranking.

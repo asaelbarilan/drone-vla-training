@@ -1,0 +1,871 @@
+{
+  "model": "smol256",
+  "status": "complete",
+  "elapsed_s": 26.71899999999914,
+  "outputs": [
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "38952a96fce5ba2b2b6e73845e21d090d5d7dad2ddc8b8d5674ddd36ac1f05ca",
+        "d5bce769c40fc7fa117bd38ed7a2f159dbb09ec48070cb1b7fac2d9cde81de95",
+        "6d0b84b87d1a45d3eaf76051f252376a13f4aeb3e37abb36fd56311447f5e88d"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed towards the large blue building with horizontal light strips , slightly turning left to go directly ahead to the modern high - rise building with horizontal light bands .",
+      "image_sha256": [
+        "502bc781ebc15c896b0ffd21fbb602e0c00be4fb8c88218c8fc65af28b701508",
+        "1a6ede5c0caf6292213a46b7fe8855079af094b682a83c231f338697cd947058",
+        "0fef1d224c033488581a61d8c673d4208a5bc806d8c6534871a5d0b70507d5f4"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "74047f0dfebe32bf196037ea326c37a4ca55645624af467a4aaec18c23643b91",
+        "98af9cafa52c65d9cf090d6e67048cac3e195556f17f8df0a897962ced035e89",
+        "6433249ba73f82d5c885cc2651d8da2aaf22a5eb30da50bad757285aac2d6f1c"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Start by walking straight to a large building characterized by blue and gray colors and modern architecture with curved balconies . Then , slightly turn right and advance forward towards it . Next , turn to the left towards it . Go directly ahead to it . Finally , slightly turn right and proceed straight to it .",
+      "image_sha256": [
+        "76d4d8a1c2eaf335fdb08ef1373bb644695591936c367de5cef13b7f31aad9bc",
+        "7b9dac90955a00a5ef96c3ea51493812e37c78846207e51a5a25c2f42b9d0d8c",
+        "ea5bb5b9b9cb07607efe54fefc4226bc55d327bae469cea15ec2a9a6892280b9"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue going straight towards a large , white skyscraper characterized by its tall rectangular structure with numerous windows . Then , slightly turn left and walk straight to reach a medium - sized , red and white historical building distinguished by its arched windows and dormers . Again , slightly turn left and continue straight until you arrive at a medium - sized , light gray modern office building featuring window stripes .",
+      "image_sha256": [
+        "9f6d728a83929f94bab11ef1baa971d08f4128a8b8e48751a5e244e393f9766a",
+        "662e5a0eb7ec9fe5ee75976bda33bfc9fd2adc5a6246fd8b2cc3efc1398ed33c",
+        "32bfbfdc87517ab73d9ee1abb537d46e7aec71d0861d4b089d8170f57555083b"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight toward a landmark characterized by a ** brown color with a circular white feature ** in an ** open grassy area** that features a ** distinct white circular pathway **. This location is ** large ** , covering a significant portion of the visible space , and appears as a ** square or open field **. Then , make a right turn and head toward a ** red and white multi - story building ** distinguished by ** rectangular windows ** and a ** flat roof ** , which is ** large ** and designated as a ** building **. Continue straight to it .",
+      "image_sha256": [
+        "c0e80e909585ab08c89bf9d7c1081b9d3064932bba44a7a80cd477f9de85ff5c",
+        "a2426baf4496f85e5b04362ab0a69848edab279cfbafc8e3c3590ea874750f78",
+        "12910390aa3faacef23ebfb2c45fb26cdd9d62d95a41c01d11bb9d82510ce814"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards the gray building featuring a flat roof , surrounded by trees and smaller buildings , which is medium in size . Shift right slightly to it . Keep going straight to it . Slightly turn left and continue straight , veering right towards the red and green sports complex with medium - sized basketball courts . Go directly ahead to it . Slightly turn left and proceed directly ahead to the large , organized sports courts complex in green and red .",
+      "image_sha256": [
+        "5057ed600a1712fe60a4452982867ab14ab900239c83ff4323df36bdf5d1b036",
+        "020d55a3a2d2176e9b108fa6bda9da26193279c7fbec1689b6b8363fcfc47110",
+        "88631da3f01f78ae25b12439d75710f259f9f88b2229d02a655f067345fe02e8"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "b9309f196f0ac6a7b96816ae4f759d5e521d3cd23fa591b15cacd2ccfee82b5f",
+        "65f089612b067e5d1b29d2d4540d2c4d29c1d501b2b7c874070a1c99eb394727",
+        "bdc9451a09fcb90f1a10faa5ca7c29ac440efe55f102953ff8ecdf36bd822806"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed forward to the white , medium - sized , multi - story residential building distinguished by its red roofs . Then , slightly turn left and head straight towards an area characterized by its brown and green hues , featuring an open circular layout with pathways and greenery , accompanied by multiple trees and bushes . This location is also medium - sized and is categorized as a square .",
+      "image_sha256": [
+        "bdce1f9c692f22ffeefff1102e8b4d401239f5ea42318171d5584d2ff4fb7e14",
+        "f1ee3ecb76d6e97d40fe350e613794adce6674c72aebd13c0c67313d5e2864a5",
+        "fd54eefb42421e9c656f7dcd6bc217710b394714cdb311d8d412faa98b53e197"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight to the green building with a glass facade , then slightly turn right and move forward to the large , white and light gray building that is tall with reflective windows . Next , slightly turn left and proceed straight to the beige and blue cluster of tall apartment buildings with glass and brick facades , then slightly turn left again and continue straight to the light brown structure with dark glass panels , vertical columns , and numerous square windows , which is a tall , multi - story high - rise serving as a residential or commercial skyscraper .",
+      "image_sha256": [
+        "750ee40b200b45ea306c3a8a6cf0dcac3ccb4fe8097668eaaab537365f29aacf",
+        "4e45e9f3001c654ff58a8a340510b2c4c9b538cd86a746199f3b100dfcc57ddc",
+        "874699dcf82a802f4ad77f5968db999551b8b99933978d4670ef9eec52e66c27"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "75f918fb02f8c5b1285d36fbb9ba77225fbf2485f3f2aa997bb676612b3767ac",
+        "65d31f740c604197717c37dd9bd4346635ada5063988b8a790885f1984064f9b",
+        "951e19346d756fcd35dd6aec2f50339d5a944cc3ec8493dfa708561071d956f6"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Walk straight , then make a right turn and proceed straight . Slightly turn left and move forward to reach a medium - sized building with a white exterior and a red roof , located centrally among other buildings .",
+      "image_sha256": [
+        "239a367b7e88ee041b311f5b11507f2ac56c58ebe9eb39cb3d6c2252e2fe098a",
+        "25b41ae84842f98694def0ee1b1d34e6fc4b82ecba24be7450564d4b506bbcc2",
+        "75de2eb91ae61b0f46409f4a51b1e0fe6fa60c6a8f18e7342f0ea96e2fc2fae6"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Start by walking straight to a large building characterized by blue and gray colors and modern architecture with curved balconies . Then , slightly turn right and advance forward towards it . Next , turn to the left towards it . Go directly ahead to it . Finally , slightly turn right and proceed straight to it .",
+      "image_sha256": [
+        "8a4686e2b1b384772463c478efbec7f8523d79a7b42e464c6cc8a5de9d3732e1",
+        "df3660a74473a36480cf71bf9764202de4d0768d8a71daf635c4908ec4564715",
+        "da8720595ca055ed93d68c0516822dfb6c7f6d458162267aec73577aa5baca74"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards the gray building featuring a flat roof , surrounded by trees and smaller buildings , which is medium in size . Shift right slightly to it . Keep going straight to it . Slightly turn left and continue straight , veering right towards the red and green sports complex with medium - sized basketball courts . Go directly ahead to it . Slightly turn left and proceed directly ahead to the large , organized sports courts complex in green and red .",
+      "image_sha256": [
+        "7a921de72f52fef9a40536baf3d47aa91446e08560faacae6d30f314a6210261",
+        "356ab16f648196591100e73e3d97096a8a1b61d4d8408337dc99a1fdb27cf0b0",
+        "c17aa66748805cac5fe8690774f592307c12eadc81d20678518bbf67c5669520"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "a2303a379a85f2201758d1ea9fafb915a608bb90bbc8e98c20b7de2087aacad9",
+        "030dfb8b4a84e0f5c3d97db4492049bf617d83986b3831608abd1a0fc478bbd2",
+        "ccbaff3259f5a76db560be5d3db6278c51b8b287bc93ac4e44181e60afb837f1"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "e4800b5ab828d78be0863e0f42afee6992af13577107f3559cfe2bbe057af908",
+        "0cd28e67a0e6095f0bf462c15ba8a1ae3e9db8b7adce5131ff7dd3acfab9b00f",
+        "f320736cf4050c52d8956f0c7ba94616034b9a1bd3b568977bac18ae0d58b5b4"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "c8f4fb6786a9002f2d1d3d6dc6aac7e4ef4e68e04f9db72c426be36e6c07cb70"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to the gray building featuring a flat roof with rooftop access and furniture ; slightly turn right and proceed directly ahead to the large gray and beige historical building with tall columns and intricate architectural details . Ascend to it, then slightly turn right and move forward to yet another gray building adorned with ornate rooftop decorations . Next , slightly go up and advance forward to the gray building with a roof equipped with antennas ; slightly turn left and advance forward to the dark building with white outlines and a grid - like window pattern . Finally , go downwards to a medium - sized gray and black building with a curved front and rectangular windows .",
+      "image_sha256": [
+        "b46c01b30c0b1513127b58c75ea04cee0977162886bd31d5f7ed618def304bff",
+        "64a6339c15e1b83425654666150119ccbccec270aaf104db665d399f62c0cc18",
+        "79763700b15f189e2f81f4e4b09b758c349f0075d9d4ee0ded6df8167f42d775"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "raw": " 4",
+      "action_id": 4,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "861346a130dd4bc951841d60ffebc979e9915411fde282817463d3018400694e",
+        "ea83d72b9fc6f3a719d61026d6d1792ae1f589b84adf783444166588258d9b91",
+        "e80f0b4bd19fbce2d8640192f9e3c43edc4a0ee9d8866c0cadb1bd14dfd33ed3"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "f2faf6896d7d2eb174f1e415dcff7c7b8cfde48edd79415384b495d297619761",
+        "75f918fb02f8c5b1285d36fbb9ba77225fbf2485f3f2aa997bb676612b3767ac",
+        "65d31f740c604197717c37dd9bd4346635ada5063988b8a790885f1984064f9b"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "ca04ef810ea86a05b9ae63cc8707bed4870b4633a15650f27cbc3d3c47c266f3",
+        "b91771be56f239d2b1cce673a20236cbcaf8d25171297d616aed4fb3b332e7bb",
+        "e4800b5ab828d78be0863e0f42afee6992af13577107f3559cfe2bbe057af908"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "2e676da54709e6ef618cd44c848ff728f559c95fc26b0eab6926cf9954320cbe",
+        "e5ab7efe6b7098b9505ce9d4d5405187cb36a8d1f7b8151a74ed371c979816cb",
+        "9a2c0636a203dad9fc7126a7dfdc3f69e4956fee5472393bb7598cbb029896e0"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "9a2c0636a203dad9fc7126a7dfdc3f69e4956fee5472393bb7598cbb029896e0",
+        "77c87c94bfdc2219bb3c7dd2c172400151f2c1b17f6e59c40f524cfb37c985d4",
+        "edccfc7d0db5903f711b354138695600015cceba407ca9c2a63be21713a381e0"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0:annotation_frame",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "f6d62f73ebacbaebfd951edccfe7a6aaff14dd53272c985af108bd73bcecb118",
+        "885f457af438db5eb2b771e87a9d882733c0da123983e8d514871e9cf5e319d6",
+        "4863f4049a8dd76f2fcf58e049a3d7271fe331a2894b77c5b964b3debcf410b5"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:0:verified_start",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "f6d62f73ebacbaebfd951edccfe7a6aaff14dd53272c985af108bd73bcecb118",
+        "f6d62f73ebacbaebfd951edccfe7a6aaff14dd53272c985af108bd73bcecb118",
+        "f6d62f73ebacbaebfd951edccfe7a6aaff14dd53272c985af108bd73bcecb118"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:6:annotation_frame",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "52c610fcd9b61d0ba4f61bee4ec726f9db972f2731b9340ee46caeaf77c170df",
+        "457bc3511276bf267cf356397ba09259b3eac1c9d8696f0c6cef3659206e118a",
+        "614eaa3fa385666779a8ddc0ae76fe395db7fa1c378a524d565dcf1da641e42a"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:6:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "bb4ba2452c5bb7504e985976102ed2829d1a5fe1409207ed254b0ed7715b570a",
+        "6a791b32d18cef3f42385b00780b1416078bef7184add30c8951ede7d1955a5f",
+        "52c610fcd9b61d0ba4f61bee4ec726f9db972f2731b9340ee46caeaf77c170df"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:13:annotation_frame",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "3855d86ae851802e22e9a2eda4d53139dbbe06432062148c551465eadc1ebb4f",
+        "74047f0dfebe32bf196037ea326c37a4ca55645624af467a4aaec18c23643b91",
+        "98af9cafa52c65d9cf090d6e67048cac3e195556f17f8df0a897962ced035e89"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:13:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "7cf5f938c9a068ee406c262c9d456250a68be2c7fb31683ec54846e77c3d4abb",
+        "7572c0f098327f1cab248f0674067957f5419d42c51375dea1e008a706754738",
+        "3855d86ae851802e22e9a2eda4d53139dbbe06432062148c551465eadc1ebb4f"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:1:annotation_frame",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "9138210fbc5e73148f3a5ba9409a495d3042c4c377f03948111f6ad4ee0e9fbf",
+        "2f5c274f5cb9d9268a466660cc07c74492f1f70d7e3c211f3876b6267f25a0ef",
+        "c8fbc01e81913e688c9ef7d08247ac699a57f3454be5de2414a2b59e9ce9ddc7"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:1:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "9d4f5b0474e778c0793ef3c82d2e6e10f04d7b9887680400b64d774cd5697c3b",
+        "9d2284deea34615c135cb28d0310f9b6d4e090ff7422b4ab1f82d6d25ce47e61",
+        "9138210fbc5e73148f3a5ba9409a495d3042c4c377f03948111f6ad4ee0e9fbf"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:6:annotation_frame",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "2be8c3bad6bdaafcfcfd0effb98225110a03e671701660ae8a912f182356bcd5",
+        "b62fb6d27f1b5c8da713acacac177ba749df3c8eb0489f97951080a10d16e219",
+        "6b107b8f1b28a434ae733e638744dd901bba1d1045b9fb4a539e97ebe18869a6"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:6:verified_start",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "5cc9ee88f9f988e3058b71e1fdbd9617bd33489bc665335c4b301036b2a14e2b",
+        "87c44d83795ded9024c97ce8a1e89825db0e083defb2aefbf7057187af0aabee",
+        "2be8c3bad6bdaafcfcfd0effb98225110a03e671701660ae8a912f182356bcd5"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:9:annotation_frame",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "50b34153b2d34e9e5e6086d009ff550d6e4c3787af9b8a250b6f07fab4d3a0c5",
+        "f2faf6896d7d2eb174f1e415dcff7c7b8cfde48edd79415384b495d297619761",
+        "75f918fb02f8c5b1285d36fbb9ba77225fbf2485f3f2aa997bb676612b3767ac"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:9:verified_start",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "1ddd4834dd6c44ea6e99d9bd6accb9af9d802adfb356bab85936d54c443e6ca4",
+        "50b34153b2d34e9e5e6086d009ff550d6e4c3787af9b8a250b6f07fab4d3a0c5",
+        "f2faf6896d7d2eb174f1e415dcff7c7b8cfde48edd79415384b495d297619761"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:11:annotation_frame",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "7975247b54bdd347b9c553381adda9f216b91fe9c280a65b6163a07e026bb33c",
+        "633456d81a934a033038110c8013439842b73def2a8f70c33efba18b02fac9e1",
+        "cfa2369742c2d0591c16ff69281afabfd79ab394c2bdedeb8a1e512685401a3b"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:11:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "88692eac74a1232eb24d1d40389a9d0de21734e00781ef2e07bf586b9dfe099d",
+        "ed67cac58ffe4e45529036d571c4c76fc3231e07a35882b4104d3cabb714f504",
+        "7975247b54bdd347b9c553381adda9f216b91fe9c280a65b6163a07e026bb33c"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:13:annotation_frame",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "fcba8d77d8a190d781b4cec2a35c04a7ab97ab3d409ec0c0e790b7a351b3ccf4",
+        "b7afb75f94849199b31cec9e33bf83c0e66be3218a17b678298df6a40cc9e9b4",
+        "04bdb81627b40f6f8b20c553eec500bcf39549ebb6ee9d5d365c5e5295905f03"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:13:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "cfa2369742c2d0591c16ff69281afabfd79ab394c2bdedeb8a1e512685401a3b",
+        "ab3a16ae2e0b1128fcc0a3d8559d929b54a9bd4467a1c9a6e4373b6ca21334b7",
+        "fcba8d77d8a190d781b4cec2a35c04a7ab97ab3d409ec0c0e790b7a351b3ccf4"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:18:annotation_frame",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "6d793e6b3f566ea61f61bddc63ac472bfe47cda9e88c60cd2beee48fc13fc0f7",
+        "1c50d526502faa4a1ee62ad09d5e1e5de1e22579a1a8ddbcd368674ea1be0370",
+        "38952a96fce5ba2b2b6e73845e21d090d5d7dad2ddc8b8d5674ddd36ac1f05ca"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:18:verified_start",
+      "raw": " 1",
+      "action_id": 1,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "ffaa9305a87ca51239bb8d46e0318380a901d33357e87bb34d89d42e83fc340a",
+        "68a022d8b065a421ab7684a6e4818c4336ebb80988b9320f31b4f6969a2ffdcb",
+        "6d793e6b3f566ea61f61bddc63ac472bfe47cda9e88c60cd2beee48fc13fc0f7"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:0:annotation_frame",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "b8bbbb03f6258e973699e3e8bcb87edbce53a593c0a7b7d824537ad3da4d67bb",
+        "b8bbbb03f6258e973699e3e8bcb87edbce53a593c0a7b7d824537ad3da4d67bb",
+        "19457a3c099db8a74849587c430c434adcba0ce2095f3c505226967bbbcf220a"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:0:verified_start",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "b8bbbb03f6258e973699e3e8bcb87edbce53a593c0a7b7d824537ad3da4d67bb",
+        "b8bbbb03f6258e973699e3e8bcb87edbce53a593c0a7b7d824537ad3da4d67bb",
+        "b8bbbb03f6258e973699e3e8bcb87edbce53a593c0a7b7d824537ad3da4d67bb"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:7:annotation_frame",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "b9d2f4833a0f798770705db1154990b9014a331167e024eb82c6ba65811a0092",
+        "fab26b2f2672b0a3d08d11b74cb2fe04726b9f44bc12d16ba3129360d4d8e6d2",
+        "ead242fed02e0cc25c4d468ff37238cf837932c8c1b39ab764e4132ca8bfd374"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:7:verified_start",
+      "raw": " 3",
+      "action_id": 3,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "125e7fb0c8ca91c4cc9589f522ffc7faec2a6b2cd227258a197596282e3ad499",
+        "4c32f31ca3db4b23afd55f24c38405b833355a212b73040743ec3c89f880dd47",
+        "b9d2f4833a0f798770705db1154990b9014a331167e024eb82c6ba65811a0092"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:15:annotation_frame",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "4b54fc3e6c148f97fb07cb7a1479ab2413ec6f878a7b2e34da5de7369b80805c",
+        "f0fb04d1bfb22a166a7f177b99d9370a843cf4e3728549a24e1a371ef15de1ff",
+        "6f0ba73d12b746bc8bfe84a2aee281c3087e5a2b7ddb4e465466c4e983ce1fd2"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "macro:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:15:verified_start",
+      "raw": " 2",
+      "action_id": 2,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Head straight towards a large dark building characterized by a triangular roof structure , then slightly ascend towards a towering skyscraper that is large in size and grey in color with a spire . From there , slightly turn right and walk towards a brown building facade featuring large , arched windows . Finally , fall towards it .",
+      "image_sha256": [
+        "90a18e80e7813f27c0e355cc44c136d2406a4942c561bfe47a673a6fdaa416c7",
+        "29955ae03b494f523421252d71b93ee11697feb1516b4048f6cfe929c6a8c3d6",
+        "4b54fc3e6c148f97fb07cb7a1479ab2413ec6f878a7b2e34da5de7369b80805c"
+      ],
+      "image_control": "original"
+    },
+    {
+      "id": "gray:openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "38952a96fce5ba2b2b6e73845e21d090d5d7dad2ddc8b8d5674ddd36ac1f05ca",
+        "d5bce769c40fc7fa117bd38ed7a2f159dbb09ec48070cb1b7fac2d9cde81de95",
+        "6d0b84b87d1a45d3eaf76051f252376a13f4aeb3e37abb36fd56311447f5e88d"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed towards the large blue building with horizontal light strips , slightly turning left to go directly ahead to the modern high - rise building with horizontal light bands .",
+      "image_sha256": [
+        "502bc781ebc15c896b0ffd21fbb602e0c00be4fb8c88218c8fc65af28b701508",
+        "1a6ede5c0caf6292213a46b7fe8855079af094b682a83c231f338697cd947058",
+        "0fef1d224c033488581a61d8c673d4208a5bc806d8c6534871a5d0b70507d5f4"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by walking straight towards the tall , rectangular , gray building with multiple windows . Then , veer left slightly to face it . Next , head towards a light gray , medium - sized , rectangular building of medium height . Finally , slightly turn right and continue straight towards the large , gray building with multiple windows once more .",
+      "image_sha256": [
+        "74047f0dfebe32bf196037ea326c37a4ca55645624af467a4aaec18c23643b91",
+        "98af9cafa52c65d9cf090d6e67048cac3e195556f17f8df0a897962ced035e89",
+        "6433249ba73f82d5c885cc2651d8da2aaf22a5eb30da50bad757285aac2d6f1c"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Start by walking straight to a large building characterized by blue and gray colors and modern architecture with curved balconies . Then , slightly turn right and advance forward towards it . Next , turn to the left towards it . Go directly ahead to it . Finally , slightly turn right and proceed straight to it .",
+      "image_sha256": [
+        "76d4d8a1c2eaf335fdb08ef1373bb644695591936c367de5cef13b7f31aad9bc",
+        "7b9dac90955a00a5ef96c3ea51493812e37c78846207e51a5a25c2f42b9d0d8c",
+        "ea5bb5b9b9cb07607efe54fefc4226bc55d327bae469cea15ec2a9a6892280b9"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue going straight towards a large , white skyscraper characterized by its tall rectangular structure with numerous windows . Then , slightly turn left and walk straight to reach a medium - sized , red and white historical building distinguished by its arched windows and dormers . Again , slightly turn left and continue straight until you arrive at a medium - sized , light gray modern office building featuring window stripes .",
+      "image_sha256": [
+        "9f6d728a83929f94bab11ef1baa971d08f4128a8b8e48751a5e244e393f9766a",
+        "662e5a0eb7ec9fe5ee75976bda33bfc9fd2adc5a6246fd8b2cc3efc1398ed33c",
+        "32bfbfdc87517ab73d9ee1abb537d46e7aec71d0861d4b089d8170f57555083b"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight toward a landmark characterized by a ** brown color with a circular white feature ** in an ** open grassy area** that features a ** distinct white circular pathway **. This location is ** large ** , covering a significant portion of the visible space , and appears as a ** square or open field **. Then , make a right turn and head toward a ** red and white multi - story building ** distinguished by ** rectangular windows ** and a ** flat roof ** , which is ** large ** and designated as a ** building **. Continue straight to it .",
+      "image_sha256": [
+        "c0e80e909585ab08c89bf9d7c1081b9d3064932bba44a7a80cd477f9de85ff5c",
+        "a2426baf4496f85e5b04362ab0a69848edab279cfbafc8e3c3590ea874750f78",
+        "12910390aa3faacef23ebfb2c45fb26cdd9d62d95a41c01d11bb9d82510ce814"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards the gray building featuring a flat roof , surrounded by trees and smaller buildings , which is medium in size . Shift right slightly to it . Keep going straight to it . Slightly turn left and continue straight , veering right towards the red and green sports complex with medium - sized basketball courts . Go directly ahead to it . Slightly turn left and proceed directly ahead to the large , organized sports courts complex in green and red .",
+      "image_sha256": [
+        "5057ed600a1712fe60a4452982867ab14ab900239c83ff4323df36bdf5d1b036",
+        "020d55a3a2d2176e9b108fa6bda9da26193279c7fbec1689b6b8363fcfc47110",
+        "88631da3f01f78ae25b12439d75710f259f9f88b2229d02a655f067345fe02e8"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "b9309f196f0ac6a7b96816ae4f759d5e521d3cd23fa591b15cacd2ccfee82b5f",
+        "65f089612b067e5d1b29d2d4540d2c4d29c1d501b2b7c874070a1c99eb394727",
+        "bdc9451a09fcb90f1a10faa5ca7c29ac440efe55f102953ff8ecdf36bd822806"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed forward to the white , medium - sized , multi - story residential building distinguished by its red roofs . Then , slightly turn left and head straight towards an area characterized by its brown and green hues , featuring an open circular layout with pathways and greenery , accompanied by multiple trees and bushes . This location is also medium - sized and is categorized as a square .",
+      "image_sha256": [
+        "bdce1f9c692f22ffeefff1102e8b4d401239f5ea42318171d5584d2ff4fb7e14",
+        "f1ee3ecb76d6e97d40fe350e613794adce6674c72aebd13c0c67313d5e2864a5",
+        "fd54eefb42421e9c656f7dcd6bc217710b394714cdb311d8d412faa98b53e197"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight to the green building with a glass facade , then slightly turn right and move forward to the large , white and light gray building that is tall with reflective windows . Next , slightly turn left and proceed straight to the beige and blue cluster of tall apartment buildings with glass and brick facades , then slightly turn left again and continue straight to the light brown structure with dark glass panels , vertical columns , and numerous square windows , which is a tall , multi - story high - rise serving as a residential or commercial skyscraper .",
+      "image_sha256": [
+        "750ee40b200b45ea306c3a8a6cf0dcac3ccb4fe8097668eaaab537365f29aacf",
+        "4e45e9f3001c654ff58a8a340510b2c4c9b538cd86a746199f3b100dfcc57ddc",
+        "874699dcf82a802f4ad77f5968db999551b8b99933978d4670ef9eec52e66c27"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "75f918fb02f8c5b1285d36fbb9ba77225fbf2485f3f2aa997bb676612b3767ac",
+        "65d31f740c604197717c37dd9bd4346635ada5063988b8a790885f1984064f9b",
+        "951e19346d756fcd35dd6aec2f50339d5a944cc3ec8493dfa708561071d956f6"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "raw": " 0",
+      "action_id": 0,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Walk straight , then make a right turn and proceed straight . Slightly turn left and move forward to reach a medium - sized building with a white exterior and a red roof , located centrally among other buildings .",
+      "image_sha256": [
+        "239a367b7e88ee041b311f5b11507f2ac56c58ebe9eb39cb3d6c2252e2fe098a",
+        "25b41ae84842f98694def0ee1b1d34e6fc4b82ecba24be7450564d4b506bbcc2",
+        "75de2eb91ae61b0f46409f4a51b1e0fe6fa60c6a8f18e7342f0ea96e2fc2fae6"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Start by walking straight to a large building characterized by blue and gray colors and modern architecture with curved balconies . Then , slightly turn right and advance forward towards it . Next , turn to the left towards it . Go directly ahead to it . Finally , slightly turn right and proceed straight to it .",
+      "image_sha256": [
+        "8a4686e2b1b384772463c478efbec7f8523d79a7b42e464c6cc8a5de9d3732e1",
+        "df3660a74473a36480cf71bf9764202de4d0768d8a71daf635c4908ec4564715",
+        "da8720595ca055ed93d68c0516822dfb6c7f6d458162267aec73577aa5baca74"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards the gray building featuring a flat roof , surrounded by trees and smaller buildings , which is medium in size . Shift right slightly to it . Keep going straight to it . Slightly turn left and continue straight , veering right towards the red and green sports complex with medium - sized basketball courts . Go directly ahead to it . Slightly turn left and proceed directly ahead to the large , organized sports courts complex in green and red .",
+      "image_sha256": [
+        "7a921de72f52fef9a40536baf3d47aa91446e08560faacae6d30f314a6210261",
+        "356ab16f648196591100e73e3d97096a8a1b61d4d8408337dc99a1fdb27cf0b0",
+        "c17aa66748805cac5fe8690774f592307c12eadc81d20678518bbf67c5669520"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Proceed straight towards a tall and narrow dark grey or black building with many small windows , then slightly turn left and advance forward to a large dark brown building with a flat roof . Next , slightly turn right and go straight , slightly turning to the right again before moving forward towards a dark gray building with a brick facade and large windows , which is tall and narrow .",
+      "image_sha256": [
+        "a2303a379a85f2201758d1ea9fafb915a608bb90bbc8e98c20b7de2087aacad9",
+        "030dfb8b4a84e0f5c3d97db4492049bf617d83986b3831608abd1a0fc478bbd2",
+        "ccbaff3259f5a76db560be5d3db6278c51b8b287bc93ac4e44181e60afb837f1"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "e4800b5ab828d78be0863e0f42afee6992af13577107f3559cfe2bbe057af908",
+        "0cd28e67a0e6095f0bf462c15ba8a1ae3e9db8b7adce5131ff7dd3acfab9b00f",
+        "f320736cf4050c52d8956f0c7ba94616034b9a1bd3b568977bac18ae0d58b5b4"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "c8f4fb6786a9002f2d1d3d6dc6aac7e4ef4e68e04f9db72c426be36e6c07cb70"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to the gray building featuring a flat roof with rooftop access and furniture ; slightly turn right and proceed directly ahead to the large gray and beige historical building with tall columns and intricate architectural details . Ascend to it, then slightly turn right and move forward to yet another gray building adorned with ornate rooftop decorations . Next , slightly go up and advance forward to the gray building with a roof equipped with antennas ; slightly turn left and advance forward to the dark building with white outlines and a grid - like window pattern . Finally , go downwards to a medium - sized gray and black building with a curved front and rectangular windows .",
+      "image_sha256": [
+        "b46c01b30c0b1513127b58c75ea04cee0977162886bd31d5f7ed618def304bff",
+        "64a6339c15e1b83425654666150119ccbccec270aaf104db665d399f62c0cc18",
+        "79763700b15f189e2f81f4e4b09b758c349f0075d9d4ee0ded6df8167f42d775"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "861346a130dd4bc951841d60ffebc979e9915411fde282817463d3018400694e",
+        "ea83d72b9fc6f3a719d61026d6d1792ae1f589b84adf783444166588258d9b91",
+        "e80f0b4bd19fbce2d8640192f9e3c43edc4a0ee9d8866c0cadb1bd14dfd33ed3"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d",
+        "a6cb3a66cc8886afdd4dcca90990e97e3ddacb2a71a35010bb27f2aec03eea4d"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Continue forward towards a large gray building , characterized by its rectangular structure with rooftop units , then gently ascend to another similar building distinguished by a large antenna . After that , turn right slightly to reach it . Proceed straight to it, slightly descend , and make a slight left turn . Finally , continue straight to a medium - sized gray historic building adorned with arched windows .",
+      "image_sha256": [
+        "f2faf6896d7d2eb174f1e415dcff7c7b8cfde48edd79415384b495d297619761",
+        "75f918fb02f8c5b1285d36fbb9ba77225fbf2485f3f2aa997bb676612b3767ac",
+        "65d31f740c604197717c37dd9bd4346635ada5063988b8a790885f1984064f9b"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Begin by rising towards a white and red television tower characterized by its thin spire and spherical midsection , known for its tall stature . Then , walk straight and slightly turn left to move ahead to a red and metallic tower that features a sphere with a needle - like structure and is considerably large . Descend to approach it . Slightly turn right and move forward to reach a gray office building distinguished by windows with vertical lines , of medium size .",
+      "image_sha256": [
+        "ca04ef810ea86a05b9ae63cc8707bed4870b4633a15650f27cbc3d3c47c266f3",
+        "b91771be56f239d2b1cce673a20236cbcaf8d25171297d616aed4fb3b332e7bb",
+        "e4800b5ab828d78be0863e0f42afee6992af13577107f3559cfe2bbe057af908"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "2e676da54709e6ef618cd44c848ff728f559c95fc26b0eab6926cf9954320cbe",
+        "e5ab7efe6b7098b9505ce9d4d5405187cb36a8d1f7b8151a74ed371c979816cb",
+        "9a2c0636a203dad9fc7126a7dfdc3f69e4956fee5472393bb7598cbb029896e0"
+      ],
+      "image_control": "gray"
+    },
+    {
+      "id": "gray:openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "raw": " 5",
+      "action_id": 5,
+      "prompt": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided. Route: Move forward to a dark - colored building with large rectangular windows , slightly turn left , then proceed to a white and red communications tower characterized by its distinctive lights . Ascend to dark urban structures with illuminated tall buildings , continue to dark tall narrow buildings with lit features , and further descend to a dark structure exhibiting a rectangular shape with windows . Move straight towards a large block - like building , and finally , arrive at a white medium - sized modern commercial building with a grid - like illuminated facade .",
+      "image_sha256": [
+        "9a2c0636a203dad9fc7126a7dfdc3f69e4956fee5472393bb7598cbb029896e0",
+        "77c87c94bfdc2219bb3c7dd2c172400151f2c1b17f6e59c40f524cfb37c985d4",
+        "edccfc7d0db5903f711b354138695600015cceba407ca9c2a63be21713a381e0"
+      ],
+      "image_control": "gray"
+    }
+  ]
+}

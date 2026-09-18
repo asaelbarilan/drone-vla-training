@@ -1,0 +1,33 @@
+{
+  "routes": 100226,
+  "action_counts": {
+    "9": 858125,
+    "2": 97207,
+    "8": 91044,
+    "0": 100226,
+    "1": 88272,
+    "3": 98163,
+    "-1": 115575,
+    "-2": 115820,
+    "4": 22488,
+    "5": 21599
+  },
+  "unsupported_action_routes": 9728,
+  "unsupported_examples": [
+    "env_airsim_sh/astar_data/low_average_updown/2025-1-14_13-14-7_1946710049",
+    "env_airsim_sh/astar_data/medium_average_updown/2025-1-14_8-50-6_1395405989",
+    "env_airsim_sh/astar_data/medium_average_updown/2025-1-14_8-14-28_199411898",
+    "env_airsim_sh/astar_data/low_average_updown/2025-1-14_0-9-9_1967513926",
+    "env_airsim_sh/astar_data/low_long_updown/2025-1-14_9-51-21_1856669179",
+    "env_airsim_18/astar_data/low_long_updown/2025-1-14_1-37-14_492067917",
+    "env_airsim_18/astar_data/low_long_updown/2025-1-14_6-15-10_1269400346",
+    "env_airsim_18/astar_data/medium_average_updown/2025-1-14_16-56-54_773319847",
+    "env_airsim_18/astar_data/low_average_updown/2025-1-14_0-19-41_861021530",
+    "env_airsim_18/astar_data/low_short_updown/2025-1-14_13-32-34_995706887"
+  ],
+  "action_image_length_mismatch_routes": 0,
+  "mismatch_examples": [],
+  "empty_instructions": 0,
+  "duplicate_route_ids": 0,
+  "scope": "All pinned TRAIN annotations; full-image/pose audit limited to110 pilot routes"
+}

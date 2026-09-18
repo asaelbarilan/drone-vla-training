@@ -1,0 +1,2189 @@
+{
+  "status": "complete",
+  "same72_repaired": {
+    "n": 72,
+    "direction_correct": 16,
+    "valid": 46,
+    "per_action": [
+      {
+        "action": "STOP",
+        "correct": 1,
+        "n": 12
+      },
+      {
+        "action": "forward 3 m",
+        "correct": 4,
+        "n": 12
+      },
+      {
+        "action": "left turn",
+        "correct": 2,
+        "n": 12
+      },
+      {
+        "action": "right turn",
+        "correct": 0,
+        "n": 12
+      },
+      {
+        "action": "up 3 m",
+        "correct": 5,
+        "n": 12
+      },
+      {
+        "action": "down 3 m",
+        "correct": 4,
+        "n": 12
+      }
+    ],
+    "confusion": [
+      [
+        1,
+        4,
+        0,
+        1,
+        1,
+        1,
+        4
+      ],
+      [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        8
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        0,
+        1,
+        7
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      [
+        0,
+        4,
+        0,
+        2,
+        5,
+        0,
+        1
+      ],
+      [
+        2,
+        5,
+        0,
+        0,
+        1,
+        4,
+        0
+      ]
+    ],
+    "confusion_columns": [
+      "STOP",
+      "forward",
+      "left turn",
+      "right turn",
+      "up",
+      "down",
+      "invalid"
+    ]
+  },
+  "aligned_scores": {
+    "openfly_vla": {
+      "n": 72,
+      "direction_correct": 20,
+      "valid": 48,
+      "per_action": [
+        {
+          "action": "STOP",
+          "correct": 1,
+          "n": 12
+        },
+        {
+          "action": "forward 3 m",
+          "correct": 7,
+          "n": 12
+        },
+        {
+          "action": "left turn",
+          "correct": 2,
+          "n": 12
+        },
+        {
+          "action": "right turn",
+          "correct": 0,
+          "n": 12
+        },
+        {
+          "action": "up 3 m",
+          "correct": 6,
+          "n": 12
+        },
+        {
+          "action": "down 3 m",
+          "correct": 4,
+          "n": 12
+        }
+      ],
+      "confusion": [
+        [
+          1,
+          1,
+          0,
+          0,
+          2,
+          1,
+          7
+        ],
+        [
+          0,
+          7,
+          0,
+          1,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          4,
+          2,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          3,
+          0,
+          2,
+          6,
+          0,
+          1
+        ],
+        [
+          2,
+          4,
+          0,
+          0,
+          2,
+          4,
+          0
+        ]
+      ],
+      "confusion_columns": [
+        "STOP",
+        "forward",
+        "left turn",
+        "right turn",
+        "up",
+        "down",
+        "invalid"
+      ]
+    },
+    "smol256": {
+      "n": 72,
+      "direction_correct": 20,
+      "valid": 72,
+      "per_action": [
+        {
+          "action": "STOP",
+          "correct": 4,
+          "n": 12
+        },
+        {
+          "action": "forward 3 m",
+          "correct": 7,
+          "n": 12
+        },
+        {
+          "action": "left turn",
+          "correct": 2,
+          "n": 12
+        },
+        {
+          "action": "right turn",
+          "correct": 3,
+          "n": 12
+        },
+        {
+          "action": "up 3 m",
+          "correct": 4,
+          "n": 12
+        },
+        {
+          "action": "down 3 m",
+          "correct": 0,
+          "n": 12
+        }
+      ],
+      "confusion": [
+        [
+          4,
+          4,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          3,
+          2,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          4,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          4,
+          0,
+          1,
+          4,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          6,
+          0,
+          0,
+          0
+        ]
+      ],
+      "confusion_columns": [
+        "STOP",
+        "forward",
+        "left turn",
+        "right turn",
+        "up",
+        "down",
+        "invalid"
+      ]
+    },
+    "smol500": {
+      "n": 72,
+      "direction_correct": 21,
+      "valid": 72,
+      "per_action": [
+        {
+          "action": "STOP",
+          "correct": 6,
+          "n": 12
+        },
+        {
+          "action": "forward 3 m",
+          "correct": 6,
+          "n": 12
+        },
+        {
+          "action": "left turn",
+          "correct": 1,
+          "n": 12
+        },
+        {
+          "action": "right turn",
+          "correct": 6,
+          "n": 12
+        },
+        {
+          "action": "up 3 m",
+          "correct": 0,
+          "n": 12
+        },
+        {
+          "action": "down 3 m",
+          "correct": 2,
+          "n": 12
+        }
+      ],
+      "confusion": [
+        [
+          6,
+          3,
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          6,
+          4,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          4,
+          1,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          2,
+          5,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          3,
+          3,
+          4,
+          0,
+          2,
+          0
+        ]
+      ],
+      "confusion_columns": [
+        "STOP",
+        "forward",
+        "left turn",
+        "right turn",
+        "up",
+        "down",
+        "invalid"
+      ]
+    },
+    "qwen": {
+      "n": 72,
+      "direction_correct": 24,
+      "valid": 72,
+      "per_action": [
+        {
+          "action": "STOP",
+          "correct": 2,
+          "n": 12
+        },
+        {
+          "action": "forward 3 m",
+          "correct": 3,
+          "n": 12
+        },
+        {
+          "action": "left turn",
+          "correct": 5,
+          "n": 12
+        },
+        {
+          "action": "right turn",
+          "correct": 11,
+          "n": 12
+        },
+        {
+          "action": "up 3 m",
+          "correct": 2,
+          "n": 12
+        },
+        {
+          "action": "down 3 m",
+          "correct": 1,
+          "n": 12
+        }
+      ],
+      "confusion": [
+        [
+          2,
+          0,
+          3,
+          5,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          5,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          2,
+          4,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          6,
+          3,
+          1,
+          1,
+          0
+        ]
+      ],
+      "confusion_columns": [
+        "STOP",
+        "forward",
+        "left turn",
+        "right turn",
+        "up",
+        "down",
+        "invalid"
+      ]
+    }
+  },
+  "openfly_aligned_exact_macro": 20,
+  "controls": {
+    "openfly_vla": {
+      "original": {
+        "n": 24,
+        "direction_correct": 6,
+        "valid": 16,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 2,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 2,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            0,
+            2,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "gray": {
+        "n": 24,
+        "direction_correct": 3,
+        "valid": 10,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 3,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            3,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "changed_actions": 14,
+      "macro_annotation": {
+        "n": 12,
+        "direction_correct": 7,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 7,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            1,
+            2,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "macro_start": {
+        "n": 12,
+        "direction_correct": 11,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 11,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "reproduced_originals": null
+    },
+    "smol256": {
+      "original": {
+        "n": 24,
+        "direction_correct": 6,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 2,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 2,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            2,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "gray": {
+        "n": 24,
+        "direction_correct": 5,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 4,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "changed_actions": 22,
+      "macro_annotation": {
+        "n": 12,
+        "direction_correct": 5,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 5,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            5,
+            1,
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "macro_start": {
+        "n": 12,
+        "direction_correct": 6,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 6,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            3,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "reproduced_originals": 24
+    },
+    "smol500": {
+      "original": {
+        "n": 24,
+        "direction_correct": 4,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 2,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 1,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            0,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "gray": {
+        "n": 24,
+        "direction_correct": 5,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 4,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "changed_actions": 19,
+      "macro_annotation": {
+        "n": 12,
+        "direction_correct": 1,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 1,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "macro_start": {
+        "n": 12,
+        "direction_correct": 2,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            3,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "reproduced_originals": 24
+    },
+    "qwen": {
+      "original": {
+        "n": 24,
+        "direction_correct": 7,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 3,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "gray": {
+        "n": 24,
+        "direction_correct": 7,
+        "valid": 24,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "left turn",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "right turn",
+            "correct": 1,
+            "n": 4
+          },
+          {
+            "action": "up 3 m",
+            "correct": 3,
+            "n": 4
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 4
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "changed_actions": 17,
+      "macro_annotation": {
+        "n": 12,
+        "direction_correct": 2,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            3,
+            5,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "macro_start": {
+        "n": 12,
+        "direction_correct": 5,
+        "valid": 12,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 5,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 0
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 0
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            2,
+            3,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "confusion_columns": [
+          "STOP",
+          "forward",
+          "left turn",
+          "right turn",
+          "up",
+          "down",
+          "invalid"
+        ]
+      },
+      "reproduced_originals": 24
+    }
+  },
+  "counts": {
+    "routes": 110,
+    "raw_frames": 3752,
+    "raw_action_4": 37,
+    "raw_motion_pass": 3634,
+    "raw_action_3": 121,
+    "raw_action_1": 3316,
+    "raw_action_2": 131,
+    "raw_action_5": 37,
+    "raw_action_0": 110,
+    "terminal_stop": 110,
+    "annotation_action_4": 37,
+    "annotation_action_3": 121,
+    "annotation_action_9": 999,
+    "annotation_action_1": 105,
+    "annotation_action_8": 107,
+    "annotation_action_2": 131,
+    "annotation_action_5": 37,
+    "annotation_action_0": 110
+  },
+  "macro_backward_only": 284,
+  "preserved_data_sha256": "b5627a67cda731baa1e8207853059128e770eb70c0a82dbd3695316de5f168bc",
+  "calibration": "Explicit vlnv11 adapter passes action coverage; original checkpoint calibration mapping remains unverified"
+}

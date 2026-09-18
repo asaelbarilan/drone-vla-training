@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "cases": 72,
+  "raw_outputs": 288,
+  "model_rows": 4,
+  "source_images_per_case": 3,
+  "mobile_overflow": false,
+  "page_errors": []
+}

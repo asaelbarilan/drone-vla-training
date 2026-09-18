@@ -1,0 +1,58 @@
+[
+  {
+    "trajectory": "env_gs_ecust/astar_data/long/2025-1-8_23-54-2_1144278050",
+    "frame": 29,
+    "action": 2,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  },
+  {
+    "trajectory": "env_gs_ecust/astar_data/long/2025-1-11_7-33-18_510770136",
+    "frame": 6,
+    "action": 2,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  },
+  {
+    "trajectory": "env_gs_ecust/astar_data/long/2025-1-10_23-22-59_1600206898",
+    "frame": 25,
+    "action": 2,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  },
+  {
+    "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_2-9-0_2058657199",
+    "frame": 24,
+    "action": 3,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  },
+  {
+    "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_8-27-47_1372668364",
+    "frame": 26,
+    "action": 3,
+    "pixel_mae": 54.500292227398205,
+    "pixel_identical": false
+  },
+  {
+    "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624",
+    "frame": 29,
+    "action": 2,
+    "pixel_mae": 0.004025405452035887,
+    "pixel_identical": false
+  },
+  {
+    "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197",
+    "frame": 27,
+    "action": 3,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  },
+  {
+    "trajectory": "env_gs_nwpu02/astar_data/long/2025-1-16_14-12-58_1967513926",
+    "frame": 15,
+    "action": 3,
+    "pixel_mae": 0.0,
+    "pixel_identical": true
+  }
+]

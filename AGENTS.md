@@ -16,6 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D147 repairs and rerun complete
+
+Read reports/vla_openfly_repair_20260918/REPORT.md and openfly_repair.html.
+Strict decoder now rejects unsupported action sets; explicit vlnv11 adapter
+covers vertical actions, but the checkpoint's historical calibration is unverified.
+Corrected macro start frames; separate1639-row verified manifest keeps88/22 routes.
+All100226 TRAIN schemas audited:9728 routes use climb/descent phase tags, with
+STOP before descent;8160 recorded STOPs differ from final position by over20m.
+Do not treat mission STOP and later descent endpoint as the same navigation goal.
+Fresh matched72 direction counts: OpenFly20, Smol25620, Smol50021, Qwen24.
+Six unquantized BF16 checks match NF4 token-for-token; nine regression tests and
+72-case/288-output debugger checks pass. All GPU jobs ended, no training/AWS.
+Old data, baselines, splits and held-out seeds remain unchanged.
+
 ## D146 investigation - D145 ranking is not validated
 
 Read reports/vla_openfly_forensics_20260918/REPORT.md and openfly_forensics.html.

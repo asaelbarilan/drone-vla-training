@@ -1,0 +1,58 @@
+{
+  "rows": 1639,
+  "partitions_checked": 1647,
+  "rejected": [
+    {
+      "trajectory": "env_gs_ecust/astar_data/long/2025-1-8_23-54-2_1144278050",
+      "annotation_index": 14,
+      "action_id": 2,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_ecust/astar_data/long/2025-1-11_7-33-18_510770136",
+      "annotation_index": 5,
+      "action_id": 2,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_ecust/astar_data/long/2025-1-10_23-22-59_1600206898",
+      "annotation_index": 12,
+      "action_id": 2,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_2-9-0_2058657199",
+      "annotation_index": 13,
+      "action_id": 3,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_8-27-47_1372668364",
+      "annotation_index": 12,
+      "action_id": 3,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-13_13-26-48_1600028624",
+      "annotation_index": 13,
+      "action_id": 2,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197",
+      "annotation_index": 13,
+      "action_id": 3,
+      "reason": "endpoint motion mismatch"
+    },
+    {
+      "trajectory": "env_gs_nwpu02/astar_data/long/2025-1-16_14-12-58_1967513926",
+      "annotation_index": 7,
+      "action_id": 3,
+      "reason": "endpoint motion mismatch"
+    }
+  ],
+  "train_routes": 88,
+  "dev_routes": 22,
+  "manifest_sha256": "859e133ac366140ad2a12ade75e09d9fc2d12d6ed3136c5786ddc1d13d769dba",
+  "status": "separate verified macro manifest; existing atomic training data unchanged"
+}

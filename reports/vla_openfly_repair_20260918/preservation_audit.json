@@ -1,0 +1,9 @@
+{
+  "official_eval_routes": 3000,
+  "official_overlap": 0,
+  "causal_rows": 1639,
+  "train_routes": 88,
+  "val_routes": 22,
+  "new_training": false,
+  "protected_seed_use": false
+}
