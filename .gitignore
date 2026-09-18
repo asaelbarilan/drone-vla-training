@@ -110,3 +110,5 @@ reports/vla_dataset_review_20260916/balanced_expanded_flights.html
 /reports/vla_joint_openfly_20260917/queue.lock
 /reports/vla_joint_openfly_20260917/*.tmp
 /reports/vla_dataset_review_20260916/joint_openfly_status*.tmp
+/reports/vla_dataset_review_20260916/openfly_same_panel.html
+/reports/vla_dataset_review_20260916/openfly_same_panel.json

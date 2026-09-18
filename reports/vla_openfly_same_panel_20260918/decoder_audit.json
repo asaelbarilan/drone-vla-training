@@ -1,0 +1,9 @@
+{
+  "same_tokens_redecoded": 72,
+  "norm_key": "vlnv1",
+  "vectors_and_rounding_match": true,
+  "source_hashes": {
+    "D:\\drone_vla_pilot\\models\\openfly-agent-7b\\config.json": "4f6663aa04d1625ac1b693075a259e7cea94607947dcd88451bfee8b10e339c3",
+    "D:\\drone_vla_pilot\\models\\OpenFly-Platform\\train\\eval.py": "eb4e4a58dd7e9635d60b72757c0e6a160189423e34cc9b47b5751fd16bc91463"
+  }
+}

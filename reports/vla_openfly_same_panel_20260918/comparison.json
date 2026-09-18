@@ -1,0 +1,129 @@
+{
+  "model_label": "openfly_vla",
+  "dataset_label": "openfly_vla data",
+  "scores": {
+    "smol256": {
+      "n": 72,
+      "direction_correct": 18,
+      "exact_primitive": 18,
+      "valid_codebook": 72,
+      "false_stop": 9,
+      "macro_recall": 0.25,
+      "predicted_actions": {
+        "right turn 30 degrees": 21,
+        "STOP": 13,
+        "forward 3m": 26,
+        "left turn 30 degrees": 7,
+        "up 3m": 4,
+        "down 3m": 1
+      }
+    },
+    "smol500": {
+      "n": 72,
+      "direction_correct": 16,
+      "exact_primitive": 16,
+      "valid_codebook": 72,
+      "false_stop": 5,
+      "macro_recall": 0.2222222222222222,
+      "predicted_actions": {
+        "right turn 30 degrees": 31,
+        "STOP": 8,
+        "down 3m": 7,
+        "forward 3m": 18,
+        "left turn 30 degrees": 8
+      }
+    },
+    "qwen": {
+      "n": 72,
+      "direction_correct": 17,
+      "exact_primitive": 17,
+      "valid_codebook": 72,
+      "false_stop": 8,
+      "macro_recall": 0.23611111111111113,
+      "predicted_actions": {
+        "left turn 30 degrees": 17,
+        "STOP": 9,
+        "right turn 30 degrees": 26,
+        "forward 3m": 14,
+        "down 3m": 1,
+        "up 3m": 5
+      }
+    },
+    "openfly_vla": {
+      "n": 72,
+      "direction_correct": 18,
+      "exact_primitive": 8,
+      "valid_codebook": 59,
+      "false_stop": 2,
+      "macro_recall": 0.25,
+      "predicted_actions": {
+        "forward 9m": 39,
+        "STOP": 5,
+        "right turn 30 degrees": 7,
+        "INVALID": 13,
+        "left turn 30 degrees": 5,
+        "forward 3m": 3
+      }
+    }
+  },
+  "size": {
+    "annotation_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+    "splits": {
+      "train": {
+        "routes": 100226,
+        "annotated_decisions": 1608519,
+        "environment_ids": [
+          "env_airsim_16",
+          "env_airsim_18",
+          "env_airsim_23",
+          "env_airsim_26",
+          "env_airsim_gz",
+          "env_airsim_sh",
+          "env_gs_ecust",
+          "env_gs_nwpu01",
+          "env_gs_nwpu02",
+          "env_gs_sjtu01",
+          "env_ue_bigcity"
+        ],
+        "sha256": "1a4c5a5ed1561ea5b3b79b6c25da7648ce4085b7d8489d62022a9bd1244100df"
+      },
+      "seen": {
+        "routes": 1800,
+        "annotated_decisions": 28769,
+        "environment_ids": [
+          "env_airsim_16",
+          "env_airsim_18",
+          "env_airsim_23",
+          "env_airsim_26",
+          "env_airsim_gz",
+          "env_airsim_sh",
+          "env_gs_ecust",
+          "env_gs_nwpu01",
+          "env_gs_nwpu02",
+          "env_gs_sjtu01",
+          "env_ue_bigcity"
+        ],
+        "sha256": "c768d457dd91e638e95e1d7382e3e26c60ca7b9ff099ac8d7a909e9b9697d2cb"
+      },
+      "unseen": {
+        "routes": 1200,
+        "annotated_decisions": 18067,
+        "environment_ids": [
+          "env_game_gtav",
+          "env_gs_sjtu02",
+          "env_ue_smallcity"
+        ],
+        "sha256": "1e5f26dbd6b887175712e4559d18c3c8f03d2970411dd31e263080353f133268"
+      }
+    },
+    "total_routes": 103226,
+    "total_annotated_decisions": 1655355,
+    "repository_size_display": "2.97 TB",
+    "repository_size_source": "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly",
+    "checked_date": "2026-09-18",
+    "limits": "Annotation decisions can aggregate primitive steps. Repository file size is not a deduplicated training download requirement; raw-frame total not established."
+  },
+  "protocol": "Same 72cases/route instructions/three causal images; model-specific formatting and preprocessing. Released vlnv1/raw instruction; NF4. Direction agreement credits forward6/9m; exact primitive does not. Unknown vectors never become STOP.",
+  "training_overlap_warning": "These routes are held out from our adapters but belong to official TRAIN, so openfly_vla may have seen them. Not an equal-unseen test or an official benchmark.",
+  "local_comparison": "Local velocity-JSON exact scores are not defined for the native OpenFly vector; no velocity conversion or openfly_vla flights claimed."
+}

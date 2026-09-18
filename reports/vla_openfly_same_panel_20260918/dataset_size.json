@@ -1,0 +1,57 @@
+{
+  "annotation_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+  "splits": {
+    "train": {
+      "routes": 100226,
+      "annotated_decisions": 1608519,
+      "environment_ids": [
+        "env_airsim_16",
+        "env_airsim_18",
+        "env_airsim_23",
+        "env_airsim_26",
+        "env_airsim_gz",
+        "env_airsim_sh",
+        "env_gs_ecust",
+        "env_gs_nwpu01",
+        "env_gs_nwpu02",
+        "env_gs_sjtu01",
+        "env_ue_bigcity"
+      ],
+      "sha256": "1a4c5a5ed1561ea5b3b79b6c25da7648ce4085b7d8489d62022a9bd1244100df"
+    },
+    "seen": {
+      "routes": 1800,
+      "annotated_decisions": 28769,
+      "environment_ids": [
+        "env_airsim_16",
+        "env_airsim_18",
+        "env_airsim_23",
+        "env_airsim_26",
+        "env_airsim_gz",
+        "env_airsim_sh",
+        "env_gs_ecust",
+        "env_gs_nwpu01",
+        "env_gs_nwpu02",
+        "env_gs_sjtu01",
+        "env_ue_bigcity"
+      ],
+      "sha256": "c768d457dd91e638e95e1d7382e3e26c60ca7b9ff099ac8d7a909e9b9697d2cb"
+    },
+    "unseen": {
+      "routes": 1200,
+      "annotated_decisions": 18067,
+      "environment_ids": [
+        "env_game_gtav",
+        "env_gs_sjtu02",
+        "env_ue_smallcity"
+      ],
+      "sha256": "1e5f26dbd6b887175712e4559d18c3c8f03d2970411dd31e263080353f133268"
+    }
+  },
+  "total_routes": 103226,
+  "total_annotated_decisions": 1655355,
+  "repository_size_display": "2.97 TB",
+  "repository_size_source": "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly",
+  "checked_date": "2026-09-18",
+  "limits": "Annotation decisions can aggregate primitive steps. Repository file size is not a deduplicated training download requirement; raw-frame total not established."
+}

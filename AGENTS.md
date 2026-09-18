@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D145 complete - released openfly_vla comparison
+
+Read reports/vla_openfly_same_panel_20260918/REPORT.md and
+localhost8771/openfly_same_panel.html. Same 72 D144 native cases, released NF4
+model with vlnv1/raw-instruction protocol: 18/72 direction agreement, 8/72 exact
+primitive; 39 forward9m outputs and 13 invalid codebook vectors. Do not silently
+convert unknown vectors to STOP. These official TRAIN routes are held out from
+our adapters but potentially seen by the released model. No equal-unseen or
+published-benchmark claim. No new training or flights, AWS or split changes.
+Use openfly_vla for the model and openfly_vla data for the dataset in the UI.
+
 ## D144 complete - joint OpenFly/local three-model pilot
 
 All three local runs completed 400 updates, four reload checks, 100 held-out

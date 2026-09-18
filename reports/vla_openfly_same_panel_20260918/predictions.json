@@ -1,0 +1,2890 @@
+{
+  "smol256": [
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:43",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:47",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 0,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:50",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:46",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:33",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:23",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:35",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 0,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:44",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:16",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:16",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:29",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:29",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 1,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:17",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 1,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:9",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:45",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:23",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:41",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:39",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:22",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:36",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:6",
+      "action_id": 4,
+      "raw": " 4",
+      "target": 2,
+      "direction_id": 4,
+      "exact": false,
+      "direction_correct": false,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:17",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 3,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:16",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:18",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 3,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:26",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:10",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:27",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:16",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:25",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "action_id": 4,
+      "raw": " 4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:29",
+      "action_id": 4,
+      "raw": " 4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:13",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:2",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:9",
+      "action_id": 4,
+      "raw": " 4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:2",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 4,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:14",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:9",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 4,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:11",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 4,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:22",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:48",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:27",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:29",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:51",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 5,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:47",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:34",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:31",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    }
+  ],
+  "smol500": [
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 0,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:43",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:47",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:50",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:46",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:33",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:23",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:35",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:44",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:16",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:16",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:29",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:29",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:17",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:9",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:45",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 2,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:23",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:41",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:39",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:22",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:36",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:6",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 2,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:17",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:16",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 3,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:18",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:26",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:10",
+      "action_id": 0,
+      "raw": " 0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:27",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:16",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:25",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 4,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:29",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 4,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:13",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 4,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:2",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:9",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:2",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:14",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:9",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 4,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:11",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 5,
+      "direction_id": 5,
+      "exact": true,
+      "direction_correct": true,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:22",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:48",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:27",
+      "action_id": 1,
+      "raw": " 1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:29",
+      "action_id": 2,
+      "raw": " 2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:51",
+      "action_id": 5,
+      "raw": " 5",
+      "target": 5,
+      "direction_id": 5,
+      "exact": true,
+      "direction_correct": true,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:47",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:34",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:31",
+      "action_id": 3,
+      "raw": " 3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    }
+  ],
+  "qwen": [
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "action_id": 2,
+      "raw": "2",
+      "target": 0,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "action_id": 0,
+      "raw": "0",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "action_id": 2,
+      "raw": "2",
+      "target": 0,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:43",
+      "action_id": 1,
+      "raw": "1",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:47",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:50",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:46",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:33",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:23",
+      "action_id": 3,
+      "raw": "3",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:35",
+      "action_id": 2,
+      "raw": "2",
+      "target": 0,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:44",
+      "action_id": 5,
+      "raw": "5",
+      "target": 0,
+      "direction_id": 5,
+      "exact": false,
+      "direction_correct": false,
+      "label": "down 3m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "action_id": 2,
+      "raw": "2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "action_id": 0,
+      "raw": "0",
+      "target": 1,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "action_id": 3,
+      "raw": "3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "action_id": 1,
+      "raw": "1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:16",
+      "action_id": 2,
+      "raw": "2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:16",
+      "action_id": 3,
+      "raw": "3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:29",
+      "action_id": 2,
+      "raw": "2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:29",
+      "action_id": 1,
+      "raw": "1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "action_id": 2,
+      "raw": "2",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:17",
+      "action_id": 3,
+      "raw": "3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:9",
+      "action_id": 1,
+      "raw": "1",
+      "target": 1,
+      "direction_id": 1,
+      "exact": true,
+      "direction_correct": true,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:45",
+      "action_id": 3,
+      "raw": "3",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "action_id": 2,
+      "raw": "2",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "action_id": 1,
+      "raw": "1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "action_id": 4,
+      "raw": "4",
+      "target": 2,
+      "direction_id": 4,
+      "exact": false,
+      "direction_correct": false,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "action_id": 0,
+      "raw": "0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:23",
+      "action_id": 1,
+      "raw": "1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:41",
+      "action_id": 0,
+      "raw": "0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:39",
+      "action_id": 3,
+      "raw": "3",
+      "target": 2,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:22",
+      "action_id": 0,
+      "raw": "0",
+      "target": 2,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "action_id": 2,
+      "raw": "2",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:36",
+      "action_id": 2,
+      "raw": "2",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:6",
+      "action_id": 1,
+      "raw": "1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:17",
+      "action_id": 1,
+      "raw": "1",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "action_id": 1,
+      "raw": "1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "action_id": 1,
+      "raw": "1",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:16",
+      "action_id": 0,
+      "raw": "0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:18",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:26",
+      "action_id": 0,
+      "raw": "0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:10",
+      "action_id": 0,
+      "raw": "0",
+      "target": 3,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:27",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:16",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:25",
+      "action_id": 3,
+      "raw": "3",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "action_id": 3,
+      "raw": "3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "action_id": 4,
+      "raw": "4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "action_id": 1,
+      "raw": "1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "action_id": 3,
+      "raw": "3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:29",
+      "action_id": 3,
+      "raw": "3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:13",
+      "action_id": 1,
+      "raw": "1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:2",
+      "action_id": 3,
+      "raw": "3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:9",
+      "action_id": 4,
+      "raw": "4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:2",
+      "action_id": 3,
+      "raw": "3",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:14",
+      "action_id": 1,
+      "raw": "1",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:9",
+      "action_id": 4,
+      "raw": "4",
+      "target": 4,
+      "direction_id": 4,
+      "exact": true,
+      "direction_correct": true,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:11",
+      "action_id": 2,
+      "raw": "2",
+      "target": 4,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "action_id": 4,
+      "raw": "4",
+      "target": 5,
+      "direction_id": 4,
+      "exact": false,
+      "direction_correct": false,
+      "label": "up 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "action_id": 1,
+      "raw": "1",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:22",
+      "action_id": 3,
+      "raw": "3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:48",
+      "action_id": 3,
+      "raw": "3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:27",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:29",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:51",
+      "action_id": 0,
+      "raw": "0",
+      "target": 5,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:47",
+      "action_id": 3,
+      "raw": "3",
+      "target": 5,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:34",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:31",
+      "action_id": 2,
+      "raw": "2",
+      "target": 5,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    }
+  ],
+  "openfly_vla": [
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+      "action_id": 0,
+      "raw": "{\"tokens\": [31744, 31999, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [1, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+      "action_id": 0,
+      "raw": "{\"tokens\": [31744, 31999, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [1, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:43",
+      "action_id": 0,
+      "raw": "{\"tokens\": [31744, 31999, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [1, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 0,
+      "exact": true,
+      "direction_correct": true,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:47",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:50",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:46",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:33",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:23",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:35",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:44",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 0,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:16",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:16",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:29",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:29",
+      "action_id": 2,
+      "raw": "{\"tokens\": [31999, 31999, 31744, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 15, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:17",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:9",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:45",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 1,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": true,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+      "action_id": 2,
+      "raw": "{\"tokens\": [31999, 31999, 31744, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 15, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+      "action_id": 1,
+      "raw": "{\"tokens\": [31999, 31914, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 3, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:23",
+      "action_id": 2,
+      "raw": "{\"tokens\": [31999, 31999, 31744, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 15, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:41",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:39",
+      "action_id": 1,
+      "raw": "{\"tokens\": [31999, 31914, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 3, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:22",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:36",
+      "action_id": 2,
+      "raw": "{\"tokens\": [31999, 31999, 31744, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 15, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 2,
+      "exact": true,
+      "direction_correct": true,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:6",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:17",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 2,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+      "action_id": 2,
+      "raw": "{\"tokens\": [31999, 31999, 31744, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 14.970588235294118, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 15, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 2,
+      "exact": false,
+      "direction_correct": false,
+      "label": "left turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:16",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:18",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:26",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:10",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:27",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:16",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:25",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 3,
+      "direction_id": 3,
+      "exact": true,
+      "direction_correct": true,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:29",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:13",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:2",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:9",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:2",
+      "action_id": 3,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31744, 31872, 31872, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 14.970588235294118, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 15, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 3,
+      "exact": false,
+      "direction_correct": false,
+      "label": "right turn 30 degrees"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:14",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:9",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:11",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 4,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+      "action_id": 1,
+      "raw": "{\"tokens\": [31999, 31914, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 3.01764705882353, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 3, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 3m"
+    },
+    {
+      "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:22",
+      "action_id": 0,
+      "raw": "{\"tokens\": [31744, 31999, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [1, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:48",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:27",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:29",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:51",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31744, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:47",
+      "action_id": 9,
+      "raw": "{\"tokens\": [31999, 31744, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.0019607843137254832, 8.98235294117647, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 9, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 1,
+      "exact": false,
+      "direction_correct": false,
+      "label": "forward 9m"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:34",
+      "action_id": null,
+      "raw": "{\"tokens\": [31999, 31999, 31999, 31999, 31999, 31744, 31872, 31872], \"vector\": [0.0019607843137254832, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [0, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": null,
+      "exact": false,
+      "direction_correct": false,
+      "label": "INVALID"
+    },
+    {
+      "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:31",
+      "action_id": 0,
+      "raw": "{\"tokens\": [31744, 31999, 31999, 31999, 31999, 31999, 31872, 31872], \"vector\": [0.9980392156862745, 0.01764705882352935, 0.02941176470588225, 0.02941176470588225, 0.0, 0.0, 0.0, 0.0], \"rounded\": [1, 0, 0, 0, 0, 0, 0, 0]}",
+      "target": 5,
+      "direction_id": 0,
+      "exact": false,
+      "direction_correct": false,
+      "label": "STOP"
+    }
+  ]
+}
