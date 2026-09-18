@@ -16,6 +16,15 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D146 investigation - D145 ranking is not validated
+
+Read reports/vla_openfly_forensics_20260918/REPORT.md and openfly_forensics.html.
+vlnv1 forces up/down outputs to zero:24/72 targets unreachable. Labels and
+source frames passed independent checks. Prompt/history pooling diagnostics
+failed to rescue the score. Verify checkpoint normalization/history mapping
+and native macro-action evaluation before further training or model ranking.
+Historical scores remain intact; no baseline/split changes or AWS spending.
+
 ## D145 complete - released openfly_vla comparison
 
 Read reports/vla_openfly_same_panel_20260918/REPORT.md and

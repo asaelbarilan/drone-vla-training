@@ -1,0 +1,1606 @@
+{
+  "status": "complete",
+  "results": {
+    "baseline:vlnv1": {
+      "direction": 18,
+      "exact": 8,
+      "valid": 59,
+      "n": 72,
+      "action_counts": {
+        "9": 39,
+        "0": 5,
+        "3": 7,
+        "None": 13,
+        "2": 5,
+        "1": 3
+      },
+      "predictions": [
+        9,
+        0,
+        9,
+        0,
+        0,
+        9,
+        3,
+        9,
+        9,
+        9,
+        null,
+        null,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        1,
+        9,
+        2,
+        9,
+        1,
+        9,
+        9,
+        2,
+        null,
+        9,
+        9,
+        2,
+        9,
+        9,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        9,
+        3,
+        null,
+        null,
+        3,
+        null,
+        9,
+        9,
+        3,
+        9,
+        null,
+        null,
+        1,
+        9,
+        null,
+        null,
+        0,
+        9,
+        9,
+        null,
+        null,
+        9,
+        null,
+        0
+      ]
+    },
+    "baseline:vln_norm": {
+      "direction": 8,
+      "exact": 8,
+      "valid": 15,
+      "n": 72,
+      "action_counts": {
+        "None": 57,
+        "0": 3,
+        "3": 3,
+        "4": 7,
+        "2": 2
+      },
+      "predictions": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        3,
+        null,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3,
+        4,
+        4,
+        3,
+        4,
+        null,
+        null,
+        null,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        0
+      ]
+    },
+    "baseline:vlnv11": {
+      "direction": 16,
+      "exact": 12,
+      "valid": 46,
+      "n": 72,
+      "action_counts": {
+        "9": 22,
+        "None": 26,
+        "0": 3,
+        "3": 3,
+        "5": 6,
+        "4": 7,
+        "1": 3,
+        "2": 2
+      },
+      "predictions": [
+        9,
+        null,
+        9,
+        0,
+        null,
+        null,
+        3,
+        9,
+        null,
+        9,
+        5,
+        4,
+        null,
+        null,
+        null,
+        9,
+        9,
+        9,
+        null,
+        null,
+        null,
+        null,
+        null,
+        9,
+        null,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        null,
+        2,
+        5,
+        null,
+        9,
+        null,
+        9,
+        9,
+        null,
+        null,
+        9,
+        null,
+        null,
+        9,
+        9,
+        null,
+        9,
+        3,
+        4,
+        4,
+        3,
+        4,
+        9,
+        9,
+        null,
+        9,
+        4,
+        4,
+        1,
+        9,
+        5,
+        5,
+        0,
+        9,
+        9,
+        5,
+        4,
+        9,
+        5,
+        0
+      ]
+    },
+    "training_prompt:vlnv1": {
+      "direction": 17,
+      "exact": 7,
+      "valid": 59,
+      "n": 72,
+      "action_counts": {
+        "9": 40,
+        "0": 3,
+        "2": 6,
+        "3": 7,
+        "None": 13,
+        "1": 3
+      },
+      "predictions": [
+        9,
+        0,
+        9,
+        2,
+        0,
+        9,
+        3,
+        9,
+        9,
+        9,
+        null,
+        null,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        1,
+        9,
+        2,
+        9,
+        1,
+        3,
+        9,
+        2,
+        null,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        3,
+        9,
+        2,
+        null,
+        null,
+        3,
+        null,
+        9,
+        9,
+        3,
+        9,
+        null,
+        null,
+        1,
+        9,
+        9,
+        null,
+        0,
+        9,
+        9,
+        null,
+        null,
+        9,
+        null,
+        null
+      ]
+    },
+    "training_prompt:vln_norm": {
+      "direction": 7,
+      "exact": 7,
+      "valid": 16,
+      "n": 72,
+      "action_counts": {
+        "None": 56,
+        "2": 4,
+        "3": 3,
+        "4": 8,
+        "0": 1
+      },
+      "predictions": [
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        3,
+        null,
+        null,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        4,
+        4,
+        3,
+        4,
+        null,
+        null,
+        3,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        null
+      ]
+    },
+    "training_prompt:vlnv11": {
+      "direction": 15,
+      "exact": 11,
+      "valid": 47,
+      "n": 72,
+      "action_counts": {
+        "9": 23,
+        "None": 25,
+        "2": 4,
+        "3": 3,
+        "4": 8,
+        "1": 3,
+        "5": 5,
+        "0": 1
+      },
+      "predictions": [
+        9,
+        null,
+        9,
+        2,
+        null,
+        null,
+        3,
+        9,
+        null,
+        9,
+        4,
+        4,
+        null,
+        null,
+        null,
+        9,
+        9,
+        9,
+        null,
+        null,
+        null,
+        null,
+        null,
+        9,
+        null,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        null,
+        2,
+        5,
+        null,
+        9,
+        null,
+        9,
+        9,
+        null,
+        null,
+        9,
+        null,
+        null,
+        9,
+        9,
+        null,
+        9,
+        2,
+        4,
+        4,
+        3,
+        4,
+        9,
+        9,
+        3,
+        9,
+        4,
+        4,
+        1,
+        9,
+        9,
+        5,
+        0,
+        9,
+        9,
+        5,
+        4,
+        9,
+        5,
+        5
+      ]
+    },
+    "training_history_pooling:vlnv1": {
+      "direction": 18,
+      "exact": 8,
+      "valid": 60,
+      "n": 72,
+      "action_counts": {
+        "9": 39,
+        "0": 5,
+        "3": 9,
+        "None": 12,
+        "2": 4,
+        "1": 3
+      },
+      "predictions": [
+        9,
+        0,
+        9,
+        0,
+        0,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        null,
+        9,
+        3,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        9,
+        9,
+        9,
+        9,
+        9,
+        2,
+        1,
+        9,
+        2,
+        9,
+        1,
+        3,
+        9,
+        9,
+        null,
+        9,
+        9,
+        2,
+        3,
+        0,
+        9,
+        0,
+        9,
+        9,
+        3,
+        9,
+        9,
+        3,
+        9,
+        3,
+        null,
+        null,
+        3,
+        null,
+        9,
+        9,
+        3,
+        9,
+        null,
+        null,
+        1,
+        9,
+        9,
+        null,
+        9,
+        9,
+        9,
+        null,
+        null,
+        9,
+        null,
+        null
+      ]
+    },
+    "training_history_pooling:vln_norm": {
+      "direction": 8,
+      "exact": 8,
+      "valid": 15,
+      "n": 72,
+      "action_counts": {
+        "None": 57,
+        "0": 2,
+        "3": 5,
+        "4": 7,
+        "2": 1
+      },
+      "predictions": [
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        3,
+        null,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3,
+        4,
+        4,
+        3,
+        4,
+        null,
+        null,
+        3,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4,
+        null,
+        null,
+        null
+      ]
+    },
+    "training_history_pooling:vlnv11": {
+      "direction": 16,
+      "exact": 12,
+      "valid": 47,
+      "n": 72,
+      "action_counts": {
+        "9": 24,
+        "None": 25,
+        "0": 2,
+        "3": 5,
+        "4": 7,
+        "1": 3,
+        "2": 1,
+        "5": 5
+      },
+      "predictions": [
+        9,
+        null,
+        9,
+        0,
+        null,
+        null,
+        3,
+        9,
+        null,
+        9,
+        9,
+        4,
+        null,
+        null,
+        null,
+        9,
+        9,
+        9,
+        null,
+        null,
+        null,
+        null,
+        null,
+        9,
+        null,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        null,
+        9,
+        5,
+        null,
+        9,
+        null,
+        3,
+        0,
+        null,
+        null,
+        9,
+        null,
+        null,
+        9,
+        9,
+        null,
+        9,
+        3,
+        4,
+        4,
+        3,
+        4,
+        9,
+        9,
+        3,
+        9,
+        4,
+        4,
+        1,
+        9,
+        9,
+        5,
+        9,
+        9,
+        9,
+        5,
+        4,
+        9,
+        5,
+        5
+      ]
+    }
+  },
+  "horizontal_only_legacy": {
+    "smol256": {
+      "n": 48,
+      "correct": 15
+    },
+    "smol500": {
+      "n": 48,
+      "correct": 14
+    },
+    "qwen": {
+      "n": 48,
+      "correct": 14
+    },
+    "openfly_vla": {
+      "n": 48,
+      "correct": 18
+    }
+  },
+  "warning": "Normalization sensitivity is diagnostic, not a corrected leaderboard. No source-verified environment-to-key mapping was found. All vertical outputs under vlnv1 are identically zero.",
+  "labels": {
+    "n": 72,
+    "trajectories": 21,
+    "image_identity_pass": 72,
+    "next_motion_pass": 60,
+    "terminal_annotation_pass": 12,
+    "present_in_compressed_annotations": 64,
+    "annotation_direction_agreement": 64,
+    "cases": [
+      {
+        "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:50",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:21",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:34",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:33",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:43",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:47",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:50",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:46",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:33",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:23",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:35",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:44",
+        "target": 0,
+        "motion_error": null,
+        "annotation_ids": [
+          0
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:19",
+        "target": 1,
+        "motion_error": 1.8369701987210297e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:14",
+        "target": 1,
+        "motion_error": 3.6739403974420594e-16,
+        "annotation_ids": [
+          9
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:19",
+        "target": 1,
+        "motion_error": 2.220446049250313e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 3,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:24",
+        "target": 1,
+        "motion_error": 2.220446049250313e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:16",
+        "target": 1,
+        "motion_error": 1.8369701987210297e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:16",
+        "target": 1,
+        "motion_error": 2.220446049250313e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/medium_long/2025-1-9_12-12-9_1141616124:29",
+        "target": 1,
+        "motion_error": 1.8369701987210297e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:29",
+        "target": 1,
+        "motion_error": 4.973799150320701e-14,
+        "annotation_ids": [
+          9
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 2
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643:7",
+        "target": 1,
+        "motion_error": 1.8369701987210297e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/low_average/2025-1-3_22-21-30_12260289:17",
+        "target": 1,
+        "motion_error": 4.973799150320701e-14,
+        "annotation_ids": [
+          9
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:9",
+        "target": 1,
+        "motion_error": 3.6739403974420594e-16,
+        "annotation_ids": [],
+        "annotation_direction_match": false,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:45",
+        "target": 1,
+        "motion_error": 2.8310687127941492e-14,
+        "annotation_ids": [
+          1
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 3,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-4_8-40-52_741957620:27",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:30",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:24",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:30",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:23",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 2
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:41",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:39",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:22",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:14",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:36",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:6",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_ecust/astar_data/short/2025-1-10_8-54-28_650868717:17",
+        "target": 2,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          2
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:6",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_0-51-21_364228444:25",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 3,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/high_long/2025-1-9_20-54-5_1748806355:42",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:44",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-1-6_15-14-0_446340713:7",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_ecust/astar_data/short/2025-1-9_16-42-57_1850952926:16",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 3
+      },
+      {
+        "id": "openfly:env_airsim_16/astar_data/high_average/2025-1-9_23-14-9_1122551742:18",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422:26",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 3,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_nwpu02/astar_data/short/2025-1-16_6-3-30_516816850:10",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/low_average/2025-1-2_17-45-55_1469834481:27",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:16",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_gs_nwpu01/astar_data/long/2025-1-14_7-28-49_1434322197:25",
+        "target": 3,
+        "motion_error": 7.105427357601002e-15,
+        "annotation_ids": [
+          3
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 3,
+        "next_raw_action": 3
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:1",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:10",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 3
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:11",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 4
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:0",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 4
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:29",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:13",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 4
+      },
+      {
+        "id": "openfly:env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012:2",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:9",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 4
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:2",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:14",
+        "target": 4,
+        "motion_error": 3.552713678800501e-15,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 4,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:9",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 4
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:11",
+        "target": 4,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          4
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 1
+      },
+      {
+        "id": "openfly:env_airsim_16/astar_data/medium_average/2025-01-19_03-43-15_158464:23",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 2
+      },
+      {
+        "id": "openfly:env_airsim_sh/astar_data/medium_long/2025-01-19_10-25-20_138826:42",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:28",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:30",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_26/astar_data/low_short/2025-01-19_00-33-33_595839:22",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:48",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:27",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:29",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_23/astar_data/high_long/2025-01-19_01-34-49_292865:51",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_ue_bigcity/astar_data/high_long/2025-01-19_11-24-20_544469:47",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 5
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:34",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 1,
+        "next_raw_action": 0
+      },
+      {
+        "id": "openfly:env_airsim_gz/astar_data/low_short/2025-01-19_11-41-20_700222:31",
+        "target": 5,
+        "motion_error": 0.0,
+        "annotation_ids": [
+          5
+        ],
+        "annotation_direction_match": true,
+        "previous_raw_action": 5,
+        "next_raw_action": 1
+      }
+    ]
+  }
+}
