@@ -1,0 +1,28 @@
+{
+  "scope": "focused OpenFly reproduction audit, not a broad architecture survey",
+  "date": "2026-09-19",
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2502.18041v6",
+      "role": "reported benchmark protocol and results"
+    },
+    {
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform/tree/c075075497a7122bad82f5b76b9be926ad5a81b3",
+      "role": "training/inference/normalization implementation"
+    },
+    {
+      "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly-rlds",
+      "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+      "role": "two actual packed training episodes and source statistics"
+    },
+    {
+      "url": "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly",
+      "revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+      "role": "current raw Parquet version comparison"
+    },
+    {
+      "url": "https://huggingface.co/IPEC-COMMUNITY/openfly-agent-7b",
+      "role": "unchanged released checkpoint"
+    }
+  ]
+}

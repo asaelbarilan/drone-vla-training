@@ -1,0 +1,771 @@
+{
+  "subset": "vlnv1",
+  "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+  "shard": "vlnv1/1.0.0/vlnv1-train.tfrecord-00000-of-00256",
+  "first_record_bytes": 4254453,
+  "record_sha256": "94f3974828cf5a01e34e29c7193e90b107eea4464b1c55fc99f310d5f2f61739",
+  "crc_verified": true,
+  "fields": {
+    "steps/history": [
+      " ",
+      "move forward",
+      "move forward then turn right",
+      "move forward then turn right then move forward",
+      "move forward then turn right then move forward then turn left",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward",
+      "move forward then turn right then move forward then turn left then move forward"
+    ],
+    "steps/is_last": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "episode_metadata/has_image_3": [
+      1
+    ],
+    "steps/observation/image_2": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0000.png",
+        "sha256": "fbf0891d69c631f7f1dd6e9c4a9f4be026e252c8e9635e0726da7bce2f5c436c",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0001.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0002.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0003.png",
+        "sha256": "c7c055706e1f373dc9b8f71a4c8dbdcaee948b52a31bec014c8a2cb3b4dd0f22",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0004.png",
+        "sha256": "84e6565fe61d86e965e15cb082f0c826c81705b3fef6ba743b45b7b2b9e495f4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0005.png",
+        "sha256": "0359bf1dd8a712989ce83985fadee68ada3b4599e121301171dd3e96721fddce",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0006.png",
+        "sha256": "8fd26ccdf39333ebd1c976ad747b05684712798f1960a861f03e5803c5af4ea1",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0007.png",
+        "sha256": "03c1d06e24d991fd2051eac35cb41a1a2e8ea8ec5ce5feae87e486b683be60cf",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0008.png",
+        "sha256": "2ccdfd8e8acd6e800a4f3aaab9337cc1bbaf76b657bf2cb585aeabe14a7e7f76",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0009.png",
+        "sha256": "812d491d2f16bbd7eb93bd31c34aec56691c2a482312347803de04fa665dc197",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0010.png",
+        "sha256": "747fc924db0415b4290c23aced3879774f3c7b5cfabe003cb179ee32a37d5111",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0011.png",
+        "sha256": "529c657a9d0c5694b5f3c3ee31b0cab2b5345bb45d279efacd586abdbabe2776",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0012.png",
+        "sha256": "bcbd353f0f775777a650153e78a82bd31e76336472fad95fe3f86838718cc315",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0013.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_2\\0014.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "episode_metadata/file_path": [
+      "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_gs_nwpu02/astar_data/short/2025-1-15_12-28-33_1369133069"
+    ],
+    "episode_metadata/has_image_2": [
+      1
+    ],
+    "steps/observation/image_1": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0000.png",
+        "sha256": "fbf0891d69c631f7f1dd6e9c4a9f4be026e252c8e9635e0726da7bce2f5c436c",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0001.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0002.png",
+        "sha256": "c7c055706e1f373dc9b8f71a4c8dbdcaee948b52a31bec014c8a2cb3b4dd0f22",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0003.png",
+        "sha256": "84e6565fe61d86e965e15cb082f0c826c81705b3fef6ba743b45b7b2b9e495f4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0004.png",
+        "sha256": "0359bf1dd8a712989ce83985fadee68ada3b4599e121301171dd3e96721fddce",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0005.png",
+        "sha256": "8fd26ccdf39333ebd1c976ad747b05684712798f1960a861f03e5803c5af4ea1",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0006.png",
+        "sha256": "03c1d06e24d991fd2051eac35cb41a1a2e8ea8ec5ce5feae87e486b683be60cf",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0007.png",
+        "sha256": "2ccdfd8e8acd6e800a4f3aaab9337cc1bbaf76b657bf2cb585aeabe14a7e7f76",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0008.png",
+        "sha256": "812d491d2f16bbd7eb93bd31c34aec56691c2a482312347803de04fa665dc197",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0009.png",
+        "sha256": "747fc924db0415b4290c23aced3879774f3c7b5cfabe003cb179ee32a37d5111",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0010.png",
+        "sha256": "529c657a9d0c5694b5f3c3ee31b0cab2b5345bb45d279efacd586abdbabe2776",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0011.png",
+        "sha256": "bcbd353f0f775777a650153e78a82bd31e76336472fad95fe3f86838718cc315",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0012.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0013.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_1\\0014.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "steps/observation/image_3": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0000.png",
+        "sha256": "fbf0891d69c631f7f1dd6e9c4a9f4be026e252c8e9635e0726da7bce2f5c436c",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0001.png",
+        "sha256": "8b7a1c30c63da8748ea4500e08b8f6a29443fe6d4413e62de7fbe1626ee925b6",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0002.png",
+        "sha256": "fbf0891d69c631f7f1dd6e9c4a9f4be026e252c8e9635e0726da7bce2f5c436c",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0003.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0004.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0005.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0006.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0007.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0008.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0009.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0010.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0011.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0012.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0013.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv1\\steps_observation_image_3\\0014.png",
+        "sha256": "e2cb75a27e700984cb80c725933dac351bf7cb1cdfa03b6a65a79bbc2efa6289",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "episode_metadata/episode_id": [
+      830
+    ],
+    "steps/action": [
+      0.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "steps/is_first": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "episode_metadata/has_language": [
+      1
+    ],
+    "steps/language_instruction": [
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style ."
+    ],
+    "steps/discount": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "steps/is_terminal": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "episode_metadata/has_image_0": [
+      0
+    ],
+    "episode_metadata/has_image_1": [
+      1
+    ],
+    "steps/reward": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "statistics": [
+    {
+      "path": "vlnv1/1.0.0/dataset_statistics_4f1e459ab510458da01b40925f44cf7ce272be7f9195af8547d58c18881c7e2a.json",
+      "data": {
+        "action": {
+          "mean": [
+            0.2253817915916443,
+            5.1745076179504395,
+            0.9185980558395386,
+            0.9476646780967712,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.41779613494873047,
+            4.213843822479248,
+            3.5981786251068115,
+            3.6481363773345947,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "proprio": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "num_transitions": 65023,
+        "num_trajectories": 4885
+      }
+    }
+  ]
+}

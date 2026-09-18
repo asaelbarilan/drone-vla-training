@@ -1,7 +1,8 @@
 """Strict OpenFly token codec with explicit action-coverage checks.
 
-The published vlnv11 statistics cover vertical primitives; using them is an
-explicit adapter choice, not proof of the checkpoint's historical calibration.
+Action coverage does not establish calibration. Constant dimensions are encoded
+differently across the horizontal and vertical training subsets. Match source
+statistics when available; do not apply one profile across all domains.
 """
 
 import numpy as np
@@ -33,6 +34,18 @@ class OpenFlyCodec:
         self.bins = np.linspace(-1, 1, config["n_action_bins"])
         self.centers = (self.bins[:-1] + self.bins[1:]) / 2
         self.vocab = config["text_config"]["vocab_size"] - config["pad_to_multiple_of"]
+
+    def require_source_statistics(self, source_action_statistics):
+        """Fail if the selected decoder differs from its documented source subset."""
+        for key in ("q01", "q99", "min", "max"):
+            if key not in source_action_statistics or not np.array_equal(
+                self.stats[key], source_action_statistics[key]
+            ):
+                raise ValueError(f"{self.key} does not match source action statistics: {key}")
+        source_mask = source_action_statistics.get("mask", [True] * 8)
+        if not np.array_equal(self.mask, source_mask):
+            raise ValueError(f"{self.key} does not match source action statistics: mask")
+        return {"norm_key": self.key, "source_statistics_verified": True}
 
     def encode(self, action_id):
         action = CODEBOOK[action_id]

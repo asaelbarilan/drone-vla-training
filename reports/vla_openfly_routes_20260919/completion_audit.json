@@ -1,0 +1,30 @@
+{
+  "status": "inference_and_data_audit_pass",
+  "openfly_calls": 274,
+  "qwen_calls": 43,
+  "all_input_hashes_verified": true,
+  "dataset_index_unchanged": true,
+  "frozen_inputs_unchanged": true,
+  "causal_route_histories": true,
+  "rlds_original_future_steps": 4,
+  "official_eval_overlap": false,
+  "checkpoint_loading_complete": true,
+  "no_training": true,
+  "no_cloud_spend": true,
+  "exact_profile_provenance_for": "two packed records only; three raw-route profile assignments remain provisional",
+  "browser": {
+    "routes": 5,
+    "frames_checked": 139,
+    "displayed_predictions_checked": 360,
+    "errors": [],
+    "playback": true,
+    "deeplink": true,
+    "mobile": true
+  },
+  "regression_tests_passed": 13,
+  "gpu_jobs_finished": true,
+  "visual_review": [
+    "packed campus step1 future images/right-turn error",
+    "full AirSim route and one-step arrows"
+  ]
+}

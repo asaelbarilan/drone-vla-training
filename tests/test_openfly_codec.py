@@ -35,6 +35,21 @@ class TestOpenFlyCodec(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, r"\[4, 5\]"):
             codec.require_coverage([0, 1, 2, 3, 4, 5])
 
+    def test_vertical_coverage_does_not_validate_horizontal_tokens(self):
+        horizontal = OpenFlyCodec(config([1, 9, 15, 15, 0, 0, 0, 0]), "test")
+        vertical = OpenFlyCodec(config([1, 9, 15, 15, 2, 2, 0, 0]), "test")
+        tokens = horizontal.encode(9)
+        self.assertEqual(horizontal.decode(tokens)["action_id"], 9)
+        wrong = vertical.decode(tokens)
+        self.assertIsNone(wrong["action_id"])
+        self.assertEqual(wrong["rounded"][4:6], [1, 1])
+        vertical.require_coverage([0, 1, 2, 3, 4, 5, 8, 9])
+        with self.assertRaisesRegex(ValueError, "source action statistics"):
+            vertical.require_source_statistics(horizontal.stats)
+        self.assertTrue(
+            horizontal.require_source_statistics(horizontal.stats)["source_statistics_verified"]
+        )
+
     def test_zero_vector_does_not_become_stop(self):
         codec = OpenFlyCodec(config([1, 9, 15, 15, 2, 2, 0, 0]), "test")
         self.assertIsNone(codec.decode([31999] * 8)["action_id"])

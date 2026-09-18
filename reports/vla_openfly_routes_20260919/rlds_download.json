@@ -1,0 +1,18 @@
+[
+  {
+    "subset": "vlnv1",
+    "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+    "shard": "vlnv1/1.0.0/vlnv1-train.tfrecord-00000-of-00256",
+    "first_record_bytes": 4254453,
+    "record_sha256": "94f3974828cf5a01e34e29c7193e90b107eea4464b1c55fc99f310d5f2f61739",
+    "crc_verified": true
+  },
+  {
+    "subset": "vlnv11",
+    "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+    "shard": "vlnv11/1.0.0/vlnv11-train.tfrecord-00000-of-00001",
+    "first_record_bytes": 4979597,
+    "record_sha256": "b48895f89ce27b5731d38bdcaddb93ce204a1f2a2082e2f2e71e543c1121e5be",
+    "crc_verified": true
+  }
+]

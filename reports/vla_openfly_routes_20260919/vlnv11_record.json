@@ -1,0 +1,1058 @@
+{
+  "subset": "vlnv11",
+  "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+  "shard": "vlnv11/1.0.0/vlnv11-train.tfrecord-00000-of-00001",
+  "first_record_bytes": 4979597,
+  "record_sha256": "b48895f89ce27b5731d38bdcaddb93ce204a1f2a2082e2f2e71e543c1121e5be",
+  "crc_verified": true,
+  "fields": {
+    "steps/history": [
+      " ",
+      "go up",
+      "go up",
+      "go up",
+      "go up",
+      "go up then move forward",
+      "go up then move forward",
+      "go up then move forward",
+      "go up then move forward",
+      "go up then move forward",
+      "go up then move forward",
+      "go up then move forward then turn right",
+      "go up then move forward then turn right then move forward",
+      "go up then move forward then turn right then move forward then stop",
+      "go up then move forward then turn right then move forward then stop then go down",
+      "go up then move forward then turn right then move forward then stop then go down",
+      "go up then move forward then turn right then move forward then stop then go down",
+      "go up then move forward then turn right then move forward then stop then go down",
+      "go up then move forward then turn right then move forward then stop then go down"
+    ],
+    "steps/is_last": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "episode_metadata/has_image_3": [
+      1
+    ],
+    "steps/observation/image_2": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0000.png",
+        "sha256": "d78c69b4ef80ce66bb735ef7bc61a98987c0db17bbfb420842c6b4eab654895e",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0001.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0002.png",
+        "sha256": "63ecc82f2f47d90d34e4b8db132c3550119ce909859be2462ea65304836faa0f",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0003.png",
+        "sha256": "cef16bc83e334c900a3f77b2cb5784602b58f726fa299f3e7ab92be77077f9ff",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0004.png",
+        "sha256": "fc69bbc9211ee747626773343c29cad13336ecc2e4ddd70aefa159c402625db3",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0005.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0006.png",
+        "sha256": "ce2412e15f39dbce94e1bc3f3e11fb7e1ce9d8d8e3f87e8f905f523388979299",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0007.png",
+        "sha256": "21bd894ce2255f95a80cca947cd7c2a9bfc59ce91db50fa85ad34657b46ab945",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0008.png",
+        "sha256": "f346360129670c4491b01daed4bcb14cdaa2a49f28811f106e38c4131f8bdd96",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0009.png",
+        "sha256": "5d1ee8c27e9c27728ac845e9327b0a2af4e9c1d60446d8a6a2a6fbbf582b5f77",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0010.png",
+        "sha256": "a44a6aafc72eebb212bbc7e89618e97078ac6e366cb6ee11b928558444d3ebcd",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0011.png",
+        "sha256": "a1fcb4b9761032b1d167e455d5eeea35889f69a507c6dbbc44e930e368d21308",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0012.png",
+        "sha256": "c44e5c2a1bd353d7cd2864fbeb3b9676a04a55be8c00ab726d3eb0efeee64299",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0013.png",
+        "sha256": "e57b80ba8e59f14c3fa8427ef17eeb935f8e85c5f4226456a626ee311f51e5e4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0014.png",
+        "sha256": "dbdb2107925a0c307bdd6083eaabf6b7477c22940d59966bb4a9cf653bec2100",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0015.png",
+        "sha256": "e4b55c27c6f6a5e141e6ab3fcc7d0a7699a28b4d51279f2d4de0254b88fb4de4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0016.png",
+        "sha256": "f752f480ea07d3b01795dcf2a04f5fc9ecc2b0bca49585ce4c6e80863b69d4b7",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0017.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_2\\0018.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "episode_metadata/file_path": [
+      "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_sh/astar_data/low_short_updown/2025-1-14_7-5-58_813465002"
+    ],
+    "episode_metadata/has_image_2": [
+      1
+    ],
+    "steps/observation/image_3": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0000.png",
+        "sha256": "d78c69b4ef80ce66bb735ef7bc61a98987c0db17bbfb420842c6b4eab654895e",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0001.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0002.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0003.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0004.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0005.png",
+        "sha256": "fc69bbc9211ee747626773343c29cad13336ecc2e4ddd70aefa159c402625db3",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0006.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0007.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0008.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0009.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0010.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0011.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0012.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0013.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0014.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0015.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0016.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0017.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_3\\0018.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "steps/observation/image_1": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0000.png",
+        "sha256": "d78c69b4ef80ce66bb735ef7bc61a98987c0db17bbfb420842c6b4eab654895e",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0001.png",
+        "sha256": "63ecc82f2f47d90d34e4b8db132c3550119ce909859be2462ea65304836faa0f",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0002.png",
+        "sha256": "cef16bc83e334c900a3f77b2cb5784602b58f726fa299f3e7ab92be77077f9ff",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0003.png",
+        "sha256": "fc69bbc9211ee747626773343c29cad13336ecc2e4ddd70aefa159c402625db3",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0004.png",
+        "sha256": "770b841236dab3b9dabce15884838ba93e45e31887d8793d18326b107c998a07",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0005.png",
+        "sha256": "ce2412e15f39dbce94e1bc3f3e11fb7e1ce9d8d8e3f87e8f905f523388979299",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0006.png",
+        "sha256": "21bd894ce2255f95a80cca947cd7c2a9bfc59ce91db50fa85ad34657b46ab945",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0007.png",
+        "sha256": "f346360129670c4491b01daed4bcb14cdaa2a49f28811f106e38c4131f8bdd96",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0008.png",
+        "sha256": "5d1ee8c27e9c27728ac845e9327b0a2af4e9c1d60446d8a6a2a6fbbf582b5f77",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0009.png",
+        "sha256": "a44a6aafc72eebb212bbc7e89618e97078ac6e366cb6ee11b928558444d3ebcd",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0010.png",
+        "sha256": "a1fcb4b9761032b1d167e455d5eeea35889f69a507c6dbbc44e930e368d21308",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0011.png",
+        "sha256": "c44e5c2a1bd353d7cd2864fbeb3b9676a04a55be8c00ab726d3eb0efeee64299",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0012.png",
+        "sha256": "e57b80ba8e59f14c3fa8427ef17eeb935f8e85c5f4226456a626ee311f51e5e4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0013.png",
+        "sha256": "dbdb2107925a0c307bdd6083eaabf6b7477c22940d59966bb4a9cf653bec2100",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0014.png",
+        "sha256": "e4b55c27c6f6a5e141e6ab3fcc7d0a7699a28b4d51279f2d4de0254b88fb4de4",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0015.png",
+        "sha256": "f752f480ea07d3b01795dcf2a04f5fc9ecc2b0bca49585ce4c6e80863b69d4b7",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0016.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0017.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_diagnostic_20260919\\vlnv11\\steps_observation_image_1\\0018.png",
+        "sha256": "359ded64c93dc1700ee5caa1a52d51f68ff15dca80197ded2ba45a83ee78c985",
+        "size": [
+          224,
+          224
+        ]
+      }
+    ],
+    "steps/language_instruction": [
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows.",
+      "The sequence of actions unfolds as follows: First, elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass. Next, move forward to a large multi-story residential building adorned with green windows and modern architecture, featuring a white and orange-brown color palette. After that, slightly turn right and walk straight to a medium-sized residential apartment building nearby, distinguished by its white and green appearance, multiple windows with green frames, and a white structure. Finally, slightly stop and move down towards another medium-height residential apartment building, notable for its grid-like window structure in a modern design and white exterior with green-tinted glass windows."
+    ],
+    "steps/discount": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "episode_metadata/has_language": [
+      1
+    ],
+    "steps/is_first": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "steps/action": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      9.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      15.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "episode_metadata/episode_id": [
+      1028
+    ],
+    "steps/reward": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "episode_metadata/has_image_0": [
+      0
+    ],
+    "episode_metadata/has_image_1": [
+      1
+    ],
+    "steps/is_terminal": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+    ]
+  },
+  "statistics": [
+    {
+      "path": "vlnv11/1.0.0/dataset_statistics_004638ebd16074d6f2524efc380963631d6314b8137758b91bfe80ece721fef5.json",
+      "data": {
+        "action": {
+          "mean": [
+            0.1320979744195938,
+            2.986074924468994,
+            0.4720905125141144,
+            0.48465046286582947,
+            0.4271841049194336,
+            0.4271841049194336,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.3386739492416382,
+            4.089788436889648,
+            2.620157480239868,
+            2.654144525527954,
+            0.8196805715560913,
+            0.8196805119514465,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            2.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            2.0,
+            2.0,
+            0.0,
+            0.0
+          ]
+        },
+        "proprio": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "num_transitions": 109873,
+        "num_trajectories": 4838
+      }
+    },
+    {
+      "path": "vlnv11/1.0.0/dataset_statistics_f1854a3b97341fbc6d498fb9978d6e0493b069ae427ca66ceb0f639c548db58a.json",
+      "data": {
+        "action": {
+          "mean": [
+            0.1320979744195938,
+            2.986074924468994,
+            0.4720905125141144,
+            0.48465046286582947,
+            0.4271841049194336,
+            0.4271841049194336,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.3386739492416382,
+            4.089788436889648,
+            2.620157480239868,
+            2.654144525527954,
+            0.8196805715560913,
+            0.8196805119514465,
+            0.0,
+            0.0
+          ],
+          "max": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            2.0,
+            2.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            1.0,
+            9.0,
+            15.0,
+            15.0,
+            2.0,
+            2.0,
+            0.0,
+            0.0
+          ]
+        },
+        "proprio": {
+          "mean": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "std": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q01": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "q99": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "num_transitions": 109873,
+        "num_trajectories": 4838
+      }
+    }
+  ]
+}

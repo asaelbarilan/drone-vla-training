@@ -3831,3 +3831,16 @@ Fresh matched72 corrected-frame direction counts: OpenFly20, Smol25620, Smol5002
 Validation: nine tests, ruff, exact input/source audits, preserved original dataset hash, no overlap with all3,000 official evaluation route IDs, all72 debugger cases/288 raw outputs and desktop/mobile checks. No training, AWS, baseline/split edits or protected seeds. All GPU jobs finished.
 
 Evidence: reports/vla_openfly_repair_20260918/REPORT.md, summary.json, full_data_audit.json, aligned_macro_audit.json, all_annotation_audit.json, stop_phase_conflict.json, precision_audit.json and browser_audit.json. UI: localhost8771/openfly_repair.html. Next: use explicit phase/action contracts for data expansion; establish original checkpoint calibration and shared closed-loop semantics before interpreting model ranking.
+
+
+## D148 - Source-matched calibration and complete-route diagnosis (2026-09-19)
+
+Rationale: user challenged weak released-model results and requested paper comparison plus visual routes. Downloaded two bounded original RLDS TRAIN records, verified CRC32C and source/checkpoint statistics, and evaluated native stored inputs. D147 action-coverage repair does not validate a universal decoder: constant horizontal vertical dimensions encode normalized zero; applying vlnv11 yields spurious up=1/down=1. Same campus tokens: source-matched vlnv1 gives12/15 directions,15/15 valid; vlnv11 gives0/15 valid. Added source-statistics guard and regression. Do not silently project invalid vectors or choose calibration by score.
+
+Native packed altitude record:7/19 directions with released raw prompt,10/19 with training prompt/pooling; all valid. Actual future history is hash-confirmed in4/34 steps, but causal replacement changes zero generated tokens. Packed records differ from current annotations in6m-versus3m labels, phase encoding, duplicated STOPs and one instruction. Both versions preserved. Three frozen full dev routes105rawframes/43macrodecisions;274OpenFly and43unchanged Qwen predictions completed. Qwen10/43; horizontal versus vertical decoding radically changes OpenFly validity. Exact profile assignments for those raw routes remain unverified. Paper flight SR is not next-action agreement.
+
+Status: bounded diagnosis and visual debugger complete; no claim of paper reproduction, real-world readiness or universal model ranking. No training, cloud spend, protected-seed use, baseline/split modifications. Next gate is provenance-backed calibration per dataset subset followed by source-faithful closed-loop evaluation.
+
+Evidence: reports/vla_openfly_routes_20260919/REPORT.md, source records, rlds_audit.json, packed_vs_current_raw.json, calibration_sensitivity.json, summary.json, completion_audit.json and browser_audit.json. UI: localhost8771/openfly_routes.html.
+
+Superseded/corrected claim: D147 decoder coverage was insufficient to establish cross-subset calibration; its global-profile comparison remains historical and must not rank capability. D148 proves the concrete failure using original training records; not all remaining policy errors are explained.

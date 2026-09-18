@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "airsim_horizontal": "env_airsim_gz/astar_data/low_short/2025-1-2_0-44-46_47830643",
+    "airsim_vertical": "env_airsim_18/astar_data/medium_long/2025-01-19_05-48-44_701012",
+    "gs_horizontal": "env_gs_sjtu01/astar_data/short/2025-1-3_18-8-17_231602422"
+  },
+  "raw_frames": 105,
+  "decisions": 43,
+  "inference_calls": 172,
+  "inputs_sha256": "e643794f3629df26a2ffc2c8a28c32fd44f4f4cf41c45b49cb60599193d313f6",
+  "training_index_sha256": "b5627a67cda731baa1e8207853059128e770eb70c0a82dbd3695316de5f168bc"
+}

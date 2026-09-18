@@ -1,0 +1,2191 @@
+{
+  "route_controls": {
+    "native_resize": {
+      "n": 43,
+      "valid": 18,
+      "direction": 12,
+      "exact": 10,
+      "always_forward": 33,
+      "predicted_counts": {
+        "None": 25,
+        "9": 11,
+        "3": 3,
+        "1": 1,
+        "4": 3
+      },
+      "target_counts": {
+        "1": 33,
+        "2": 2,
+        "0": 3,
+        "4": 1,
+        "3": 3,
+        "5": 1
+      }
+    },
+    "prior_adjacent": {
+      "n": 43,
+      "valid": 18,
+      "direction": 11,
+      "exact": 10,
+      "always_forward": 33,
+      "predicted_counts": {
+        "None": 25,
+        "9": 13,
+        "3": 2,
+        "4": 3
+      },
+      "target_counts": {
+        "1": 33,
+        "2": 2,
+        "0": 3,
+        "4": 1,
+        "3": 3,
+        "5": 1
+      }
+    },
+    "training_interface": {
+      "n": 43,
+      "valid": 18,
+      "direction": 12,
+      "exact": 11,
+      "always_forward": 33,
+      "predicted_counts": {
+        "None": 25,
+        "1": 1,
+        "9": 11,
+        "3": 3,
+        "4": 3
+      },
+      "target_counts": {
+        "1": 33,
+        "2": 2,
+        "0": 3,
+        "4": 1,
+        "3": 3,
+        "5": 1
+      }
+    },
+    "transition_history": {
+      "n": 43,
+      "valid": 18,
+      "direction": 11,
+      "exact": 10,
+      "always_forward": 33,
+      "predicted_counts": {
+        "None": 25,
+        "9": 11,
+        "3": 5,
+        "4": 2
+      },
+      "target_counts": {
+        "1": 33,
+        "2": 2,
+        "0": 3,
+        "4": 1,
+        "3": 3,
+        "5": 1
+      }
+    }
+  },
+  "routes": {
+    "airsim_horizontal": {
+      "native_resize": {
+        "n": 9,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 7,
+        "predicted_counts": {
+          "None": 9
+        },
+        "target_counts": {
+          "1": 7,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "prior_adjacent": {
+        "n": 9,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 7,
+        "predicted_counts": {
+          "None": 9
+        },
+        "target_counts": {
+          "1": 7,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "training_interface": {
+        "n": 9,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 7,
+        "predicted_counts": {
+          "None": 9
+        },
+        "target_counts": {
+          "1": 7,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "transition_history": {
+        "n": 9,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 7,
+        "predicted_counts": {
+          "None": 9
+        },
+        "target_counts": {
+          "1": 7,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "qwen": {
+        "n": 9,
+        "valid": 9,
+        "direction": 2,
+        "always_forward": 7
+      }
+    },
+    "airsim_vertical": {
+      "native_resize": {
+        "n": 18,
+        "valid": 18,
+        "direction": 12,
+        "exact": 10,
+        "always_forward": 14,
+        "predicted_counts": {
+          "9": 11,
+          "3": 3,
+          "1": 1,
+          "4": 3
+        },
+        "target_counts": {
+          "1": 14,
+          "4": 1,
+          "3": 1,
+          "5": 1,
+          "0": 1
+        }
+      },
+      "prior_adjacent": {
+        "n": 18,
+        "valid": 18,
+        "direction": 11,
+        "exact": 10,
+        "always_forward": 14,
+        "predicted_counts": {
+          "9": 13,
+          "3": 2,
+          "4": 3
+        },
+        "target_counts": {
+          "1": 14,
+          "4": 1,
+          "3": 1,
+          "5": 1,
+          "0": 1
+        }
+      },
+      "training_interface": {
+        "n": 18,
+        "valid": 18,
+        "direction": 12,
+        "exact": 11,
+        "always_forward": 14,
+        "predicted_counts": {
+          "1": 1,
+          "9": 11,
+          "3": 3,
+          "4": 3
+        },
+        "target_counts": {
+          "1": 14,
+          "4": 1,
+          "3": 1,
+          "5": 1,
+          "0": 1
+        }
+      },
+      "transition_history": {
+        "n": 18,
+        "valid": 18,
+        "direction": 11,
+        "exact": 10,
+        "always_forward": 14,
+        "predicted_counts": {
+          "9": 11,
+          "3": 5,
+          "4": 2
+        },
+        "target_counts": {
+          "1": 14,
+          "4": 1,
+          "3": 1,
+          "5": 1,
+          "0": 1
+        }
+      },
+      "qwen": {
+        "n": 18,
+        "valid": 18,
+        "direction": 7,
+        "always_forward": 14
+      }
+    },
+    "gs_horizontal": {
+      "native_resize": {
+        "n": 16,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 12,
+        "predicted_counts": {
+          "None": 16
+        },
+        "target_counts": {
+          "1": 12,
+          "3": 2,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "prior_adjacent": {
+        "n": 16,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 12,
+        "predicted_counts": {
+          "None": 16
+        },
+        "target_counts": {
+          "1": 12,
+          "3": 2,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "training_interface": {
+        "n": 16,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 12,
+        "predicted_counts": {
+          "None": 16
+        },
+        "target_counts": {
+          "1": 12,
+          "3": 2,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "transition_history": {
+        "n": 16,
+        "valid": 0,
+        "direction": 0,
+        "exact": 0,
+        "always_forward": 12,
+        "predicted_counts": {
+          "None": 16
+        },
+        "target_counts": {
+          "1": 12,
+          "3": 2,
+          "2": 1,
+          "0": 1
+        }
+      },
+      "qwen": {
+        "n": 16,
+        "valid": 16,
+        "direction": 1,
+        "always_forward": 12
+      }
+    }
+  },
+  "rlds": {
+    "vlnv1": {
+      "all_steps": {
+        "rlds_causal_training": {
+          "n": 15,
+          "valid": 15,
+          "direction": 12,
+          "exact": 10,
+          "always_forward": 10,
+          "predicted_counts": {
+            "9": 8,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "1": 10,
+            "3": 1,
+            "2": 1,
+            "0": 3
+          }
+        },
+        "rlds_stored_raw": {
+          "n": 15,
+          "valid": 15,
+          "direction": 12,
+          "exact": 10,
+          "always_forward": 10,
+          "predicted_counts": {
+            "9": 8,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "1": 10,
+            "3": 1,
+            "2": 1,
+            "0": 3
+          }
+        },
+        "rlds_stored_training": {
+          "n": 15,
+          "valid": 15,
+          "direction": 12,
+          "exact": 10,
+          "always_forward": 10,
+          "predicted_counts": {
+            "9": 8,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "1": 10,
+            "3": 1,
+            "2": 1,
+            "0": 3
+          }
+        }
+      },
+      "pipeline_kept": {
+        "rlds_causal_training": {
+          "n": 14,
+          "valid": 14,
+          "direction": 11,
+          "exact": 10,
+          "always_forward": 9,
+          "predicted_counts": {
+            "9": 7,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "3": 1,
+            "1": 9,
+            "2": 1,
+            "0": 3
+          }
+        },
+        "rlds_stored_raw": {
+          "n": 14,
+          "valid": 14,
+          "direction": 11,
+          "exact": 10,
+          "always_forward": 9,
+          "predicted_counts": {
+            "9": 7,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "3": 1,
+            "1": 9,
+            "2": 1,
+            "0": 3
+          }
+        },
+        "rlds_stored_training": {
+          "n": 14,
+          "valid": 14,
+          "direction": 11,
+          "exact": 10,
+          "always_forward": 9,
+          "predicted_counts": {
+            "9": 7,
+            "2": 2,
+            "1": 1,
+            "0": 4
+          },
+          "target_counts": {
+            "3": 1,
+            "1": 9,
+            "2": 1,
+            "0": 3
+          }
+        }
+      }
+    },
+    "vlnv11": {
+      "all_steps": {
+        "rlds_causal_training": {
+          "n": 19,
+          "valid": 19,
+          "direction": 10,
+          "exact": 9,
+          "always_forward": 7,
+          "predicted_counts": {
+            "9": 11,
+            "3": 1,
+            "5": 3,
+            "0": 4
+          },
+          "target_counts": {
+            "4": 4,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        },
+        "rlds_stored_raw": {
+          "n": 19,
+          "valid": 19,
+          "direction": 7,
+          "exact": 6,
+          "always_forward": 7,
+          "predicted_counts": {
+            "4": 7,
+            "9": 10,
+            "3": 1,
+            "5": 1
+          },
+          "target_counts": {
+            "4": 4,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        },
+        "rlds_stored_training": {
+          "n": 19,
+          "valid": 19,
+          "direction": 10,
+          "exact": 9,
+          "always_forward": 7,
+          "predicted_counts": {
+            "9": 11,
+            "3": 1,
+            "5": 3,
+            "0": 4
+          },
+          "target_counts": {
+            "4": 4,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        }
+      },
+      "pipeline_kept": {
+        "rlds_causal_training": {
+          "n": 18,
+          "valid": 18,
+          "direction": 10,
+          "exact": 9,
+          "always_forward": 7,
+          "predicted_counts": {
+            "9": 10,
+            "3": 1,
+            "5": 3,
+            "0": 4
+          },
+          "target_counts": {
+            "4": 3,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        },
+        "rlds_stored_raw": {
+          "n": 18,
+          "valid": 18,
+          "direction": 6,
+          "exact": 5,
+          "always_forward": 7,
+          "predicted_counts": {
+            "9": 10,
+            "3": 1,
+            "5": 1,
+            "4": 6
+          },
+          "target_counts": {
+            "4": 3,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        },
+        "rlds_stored_training": {
+          "n": 18,
+          "valid": 18,
+          "direction": 10,
+          "exact": 9,
+          "always_forward": 7,
+          "predicted_counts": {
+            "9": 10,
+            "3": 1,
+            "5": 3,
+            "0": 4
+          },
+          "target_counts": {
+            "4": 3,
+            "1": 7,
+            "3": 1,
+            "0": 3,
+            "5": 4
+          }
+        }
+      }
+    }
+  },
+  "elapsed_s": 591.2969999999987,
+  "calibration": {
+    "groups": {
+      "airsim_horizontal": {
+        "vlnv1": {
+          "n": 9,
+          "valid": 9,
+          "direction": 7,
+          "exact": 6
+        },
+        "vlnv11": {
+          "n": 9,
+          "valid": 0,
+          "direction": 0,
+          "exact": 0
+        }
+      },
+      "airsim_vertical": {
+        "vlnv1": {
+          "n": 18,
+          "valid": 15,
+          "direction": 11,
+          "exact": 10
+        },
+        "vlnv11": {
+          "n": 18,
+          "valid": 18,
+          "direction": 11,
+          "exact": 10
+        }
+      },
+      "gs_horizontal": {
+        "vlnv1": {
+          "n": 16,
+          "valid": 16,
+          "direction": 11,
+          "exact": 10
+        },
+        "vlnv11": {
+          "n": 16,
+          "valid": 0,
+          "direction": 0,
+          "exact": 0
+        }
+      },
+      "vlnv1": {
+        "vlnv1": {
+          "n": 15,
+          "valid": 15,
+          "direction": 12,
+          "exact": 10
+        },
+        "vlnv11": {
+          "n": 15,
+          "valid": 0,
+          "direction": 0,
+          "exact": 0
+        }
+      },
+      "vlnv11": {
+        "vlnv1": {
+          "n": 19,
+          "valid": 11,
+          "direction": 6,
+          "exact": 5
+        },
+        "vlnv11": {
+          "n": 19,
+          "valid": 19,
+          "direction": 7,
+          "exact": 6
+        }
+      }
+    },
+    "examples": [
+      {
+        "id": "rlds_stored_raw:vlnv1:0",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:1",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:2",
+        "tokens": [
+          31999,
+          31999,
+          31744,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 2
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            0,
+            15,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:3",
+        "tokens": [
+          31999,
+          31999,
+          31744,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            0,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 2
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            0.01764705882352935,
+            14.970588235294118,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            0,
+            15,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:4",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:5",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:6",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:7",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:8",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:9",
+        "tokens": [
+          31999,
+          31744,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 9
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            8.98235294117647,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            9,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:10",
+        "tokens": [
+          31999,
+          31914,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 1
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.0019607843137254832,
+            3.01764705882353,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:11",
+        "tokens": [
+          31744,
+          31999,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 0
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:12",
+        "tokens": [
+          31744,
+          31999,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 0
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:13",
+        "tokens": [
+          31744,
+          31999,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 0
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      },
+      {
+        "id": "rlds_stored_raw:vlnv1:14",
+        "tokens": [
+          31744,
+          31999,
+          31999,
+          31999,
+          31872,
+          31872,
+          31872,
+          31872
+        ],
+        "source_matched": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "action_id": 0
+        },
+        "wrong_vertical_profile": {
+          "vector": [
+            0.9980392156862745,
+            0.01764705882352935,
+            0.02941176470588225,
+            0.02941176470588225,
+            1.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "rounded": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "action_id": null
+        }
+      }
+    ],
+    "note": "Same saved tokens; no inference or score-based selection. Exact source subset is known only for packed records. Route profiles remain unproven."
+  },
+  "rlds_future_history": [
+    {
+      "subset": "vlnv1",
+      "trajectory": "env_gs_nwpu02/astar_data/short/2025-1-15_12-28-33_1369133069",
+      "steps": [
+        {
+          "index": 0,
+          "action_id": 1,
+          "history_indices": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "action_id": 3,
+          "history_indices": [
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "action_id": 1,
+          "history_indices": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "action_id": 2,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "index": 5,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              4
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "index": 6,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "index": 7,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "index": 8,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "index": 9,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ]
+          ]
+        },
+        {
+          "index": 10,
+          "action_id": 9,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ]
+        },
+        {
+          "index": 11,
+          "action_id": 1,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ]
+        },
+        {
+          "index": 12,
+          "action_id": 0,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              11
+            ],
+            [
+              12,
+              13,
+              14
+            ]
+          ]
+        },
+        {
+          "index": 13,
+          "action_id": 0,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              12,
+              13,
+              14
+            ]
+          ]
+        },
+        {
+          "index": 14,
+          "action_id": 0,
+          "history_indices": [
+            [
+              1
+            ],
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              12,
+              13,
+              14
+            ]
+          ]
+        }
+      ],
+      "future_history": [
+        {
+          "step": 1,
+          "slots": [
+            0,
+            1
+          ],
+          "current_matches": [
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              12,
+              13,
+              14
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "unknown_history": [],
+      "source_stats_equal": [
+        true
+      ],
+      "train_annotation_found": true,
+      "current_instruction_equal": true,
+      "current_annotation_instruction": "Start by heading right towards a large gray building with a modern , angular design and a metallic appearance . Next , walk straight to it . Then , slightly turn left and proceed straight toward a medium - sized gray courtyard surrounded by buildings , with greenery in the center , highlighted by an octagonal open layout and a modern architectural style .",
+      "official_eval_route_overlap": false,
+      "duplicate_current_images": 2
+    },
+    {
+      "subset": "vlnv11",
+      "trajectory": "env_airsim_sh/astar_data/low_short_updown/2025-1-14_7-5-58_813465002",
+      "steps": [
+        {
+          "index": 0,
+          "action_id": 4,
+          "history_indices": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        {
+          "index": 1,
+          "action_id": 4,
+          "history_indices": [
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "action_id": 4,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "action_id": 4,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "action_id": 9,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "index": 5,
+          "action_id": 9,
+          "history_indices": [
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              5
+            ]
+          ]
+        },
+        {
+          "index": 6,
+          "action_id": 9,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "index": 7,
+          "action_id": 9,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              6
+            ],
+            [
+              7
+            ]
+          ]
+        },
+        {
+          "index": 8,
+          "action_id": 9,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              7
+            ],
+            [
+              8
+            ]
+          ]
+        },
+        {
+          "index": 9,
+          "action_id": 1,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ]
+          ]
+        },
+        {
+          "index": 10,
+          "action_id": 3,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ]
+          ]
+        },
+        {
+          "index": 11,
+          "action_id": 1,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              10
+            ],
+            [
+              11
+            ]
+          ]
+        },
+        {
+          "index": 12,
+          "action_id": 0,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              11
+            ],
+            [
+              12
+            ]
+          ]
+        },
+        {
+          "index": 13,
+          "action_id": 5,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              12
+            ],
+            [
+              13
+            ]
+          ]
+        },
+        {
+          "index": 14,
+          "action_id": 5,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              13
+            ],
+            [
+              14
+            ]
+          ]
+        },
+        {
+          "index": 15,
+          "action_id": 5,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              14
+            ],
+            [
+              15
+            ]
+          ]
+        },
+        {
+          "index": 16,
+          "action_id": 5,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              15
+            ],
+            [
+              16,
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "index": 17,
+          "action_id": 0,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              16,
+              17,
+              18
+            ]
+          ]
+        },
+        {
+          "index": 18,
+          "action_id": 0,
+          "history_indices": [
+            [
+              4
+            ],
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              16,
+              17,
+              18
+            ]
+          ]
+        }
+      ],
+      "future_history": [
+        {
+          "step": 1,
+          "slots": [
+            0,
+            1
+          ],
+          "current_matches": [
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              16,
+              17,
+              18
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "step": 2,
+          "slots": [
+            0
+          ],
+          "current_matches": [
+            [
+              4
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "step": 3,
+          "slots": [
+            0
+          ],
+          "current_matches": [
+            [
+              4
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        }
+      ],
+      "unknown_history": [],
+      "source_stats_equal": [
+        true,
+        true
+      ],
+      "train_annotation_found": true,
+      "current_instruction_equal": false,
+      "current_annotation_instruction": "The sequence of actions unfolds as follows : First , elevate towards a tall skyscraper characterized by its silver and bronze hues paired with reflective glass . Next , move forward to a large multi - story residential building adorned with green windows and modern architecture , featuring a white and orange - brown color palette . After that , slightly turn right and walk straight to it . Finally , slightly stop and move down towards it .",
+      "official_eval_route_overlap": false,
+      "duplicate_current_images": 2
+    }
+  ],
+  "paper": {
+    "seen_sr": 33.2,
+    "unseen_sr": 10.7,
+    "seen_osr": 63.5,
+    "unseen_osr": 48.9,
+    "history_sr": 12.7,
+    "full_sr": 33.2,
+    "goal_radius_m": 20
+  }
+}

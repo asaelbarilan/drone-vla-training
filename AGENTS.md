@@ -16,6 +16,24 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D148 complete-route / original training-record investigation
+
+Read reports/vla_openfly_routes_20260919/REPORT.md and openfly_routes.html.
+D147's global vlnv11 decoder is NOT validated: exact original vlnv1 campus tokens
+score12/15 directions /15 valid with source statistics, but0 valid with vlnv11.
+Constant horizontal up/down dimensions become spurious1/1 under vertical stats.
+Added source-statistics guard and regression; preserve old results as historical.
+Two actual packed TRAIN records have verified source profiles: campus12/15,
+altitude7/19 raw-interface or10/19 training-interface direction; all outputs valid.
+Actual future-image history confirmed in4/34 steps; removing it changes no tokens
+on these two samples. Packed/current versions differ in6m/3m labels, STOP repeats,
+phase tags and instruction. No automatic relabeling or future leakage adopted.
+Three full dev routes105rawframes/43decisions,274OpenFly calls and43Qwen calls
+complete. Qwen10/43. Both raw-route decoder views remain explicitly provisional;
+no source-faithful closed-loop OpenFly benchmark has been reproduced.
+Next trace exact raw-route to RLDS-subset normalization, then bounded real-renderer
+closed-loop evaluation. No training/GPU jobs active, AWS spend or split changes.
+
 ## D147 repairs and rerun complete
 
 Read reports/vla_openfly_repair_20260918/REPORT.md and openfly_repair.html.

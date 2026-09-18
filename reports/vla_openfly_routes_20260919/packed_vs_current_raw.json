@@ -1,0 +1,704 @@
+[
+  {
+    "subset": "vlnv1",
+    "current_raw_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+    "raw_bytes": 13380414,
+    "raw_sha256": "32b4943a18b1c7cb3157aac6653b793b31f656e39d785b9f71b01954844fc2ab",
+    "trajectory": "env_gs_nwpu02/astar_data/short/2025-1-15_12-28-33_1369133069",
+    "packed_action_vectors": [
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "current_annotation_actions": [
+      1,
+      3,
+      8,
+      2,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      1,
+      0
+    ],
+    "current_annotation_image_ids": [
+      "20250115_122836_0",
+      "20250115_122836_1",
+      "20250115_122837_3",
+      "20250115_122837_4",
+      "20250115_122838_7",
+      "20250115_122839_10",
+      "20250115_122840_13",
+      "20250115_122841_16",
+      "20250115_122842_19",
+      "20250115_122843_22",
+      "20250115_122844_25",
+      "20250115_122844_26",
+      "20250115_122845_27"
+    ],
+    "image_matches": [
+      {
+        "packed_step": 0,
+        "nearest_raw_frame": 0,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.251919908588435,
+        "raw_image_id": "20250115_122836_0",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 1,
+        "nearest_raw_frame": 1,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.2108976403061225,
+        "raw_image_id": "20250115_122836_1",
+        "raw_action_type": "turn right"
+      },
+      {
+        "packed_step": 2,
+        "nearest_raw_frame": 3,
+        "resize": "NEAREST",
+        "pixel_mae_255": 1.899500425170068,
+        "raw_image_id": "20250115_122837_3",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 3,
+        "nearest_raw_frame": 4,
+        "resize": "NEAREST",
+        "pixel_mae_255": 1.9085685055272108,
+        "raw_image_id": "20250115_122837_4",
+        "raw_action_type": "turn left"
+      },
+      {
+        "packed_step": 4,
+        "nearest_raw_frame": 7,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.167271205357143,
+        "raw_image_id": "20250115_122838_7",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 5,
+        "nearest_raw_frame": 10,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.1666998830782314,
+        "raw_image_id": "20250115_122839_10",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 6,
+        "nearest_raw_frame": 13,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.145228794642857,
+        "raw_image_id": "20250115_122840_13",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 7,
+        "nearest_raw_frame": 16,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.206333705357143,
+        "raw_image_id": "20250115_122841_16",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 8,
+        "nearest_raw_frame": 19,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.2645820046768708,
+        "raw_image_id": "20250115_122842_19",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 9,
+        "nearest_raw_frame": 22,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.2386997767857144,
+        "raw_image_id": "20250115_122843_22",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 10,
+        "nearest_raw_frame": 25,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.330377072704082,
+        "raw_image_id": "20250115_122844_25",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 11,
+        "nearest_raw_frame": 26,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.388492506377551,
+        "raw_image_id": "20250115_122844_26",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 12,
+        "nearest_raw_frame": 27,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.4084622130102042,
+        "raw_image_id": "20250115_122845_27",
+        "raw_action_type": "stop"
+      },
+      {
+        "packed_step": 13,
+        "nearest_raw_frame": 27,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.4084622130102042,
+        "raw_image_id": "20250115_122845_27",
+        "raw_action_type": "stop"
+      },
+      {
+        "packed_step": 14,
+        "nearest_raw_frame": 27,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.4084622130102042,
+        "raw_image_id": "20250115_122845_27",
+        "raw_action_type": "stop"
+      }
+    ]
+  },
+  {
+    "subset": "vlnv11",
+    "current_raw_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+    "raw_bytes": 18965038,
+    "raw_sha256": "bdabe70bbe9cd4ab305775b2a5d8d72be0aafd5d234110813d575ef720b5473d",
+    "trajectory": "env_airsim_sh/astar_data/low_short_updown/2025-1-14_7-5-58_813465002",
+    "packed_action_vectors": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "current_annotation_actions": [
+      -1,
+      -1,
+      -1,
+      -1,
+      9,
+      9,
+      9,
+      9,
+      9,
+      8,
+      3,
+      8,
+      0,
+      -2,
+      -2,
+      -2,
+      -2
+    ],
+    "current_annotation_image_ids": [
+      "20250114_070558_0",
+      "20250114_070601_1",
+      "20250114_070601_2",
+      "20250114_070602_3",
+      "20250114_070603_6",
+      "20250114_070605_9",
+      "20250114_070606_12",
+      "20250114_070608_15",
+      "20250114_070609_18",
+      "20250114_070610_20",
+      "20250114_070611_21",
+      "20250114_070612_23",
+      "20250114_070612_24",
+      "20250114_070613_25",
+      "20250114_070613_26",
+      "20250114_070613_27",
+      "20250114_070614_28"
+    ],
+    "image_matches": [
+      {
+        "packed_step": 0,
+        "nearest_raw_frame": 0,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.1567947491496597,
+        "raw_image_id": "20250114_070558_0",
+        "raw_action_type": "up"
+      },
+      {
+        "packed_step": 1,
+        "nearest_raw_frame": 1,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.2354379251700682,
+        "raw_image_id": "20250114_070601_1",
+        "raw_action_type": "up"
+      },
+      {
+        "packed_step": 2,
+        "nearest_raw_frame": 2,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.2969215029761907,
+        "raw_image_id": "20250114_070601_2",
+        "raw_action_type": "up"
+      },
+      {
+        "packed_step": 3,
+        "nearest_raw_frame": 3,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.28000106292517,
+        "raw_image_id": "20250114_070602_3",
+        "raw_action_type": "up"
+      },
+      {
+        "packed_step": 4,
+        "nearest_raw_frame": 6,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.542610012755102,
+        "raw_image_id": "20250114_070603_6",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 5,
+        "nearest_raw_frame": 9,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.3159080038265305,
+        "raw_image_id": "20250114_070605_9",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 6,
+        "nearest_raw_frame": 12,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.1499588116496597,
+        "raw_image_id": "20250114_070606_12",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 7,
+        "nearest_raw_frame": 15,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.85964737457483,
+        "raw_image_id": "20250114_070608_15",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 8,
+        "nearest_raw_frame": 18,
+        "resize": "NEAREST",
+        "pixel_mae_255": 3.0359202274659864,
+        "raw_image_id": "20250114_070609_18",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 9,
+        "nearest_raw_frame": 20,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.712624893707483,
+        "raw_image_id": "20250114_070610_20",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 10,
+        "nearest_raw_frame": 21,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.6568213222789114,
+        "raw_image_id": "20250114_070611_21",
+        "raw_action_type": "turn right"
+      },
+      {
+        "packed_step": 11,
+        "nearest_raw_frame": 23,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.389030612244898,
+        "raw_image_id": "20250114_070612_23",
+        "raw_action_type": "go straight"
+      },
+      {
+        "packed_step": 12,
+        "nearest_raw_frame": 24,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.327792835884354,
+        "raw_image_id": "20250114_070612_24",
+        "raw_action_type": "donw"
+      },
+      {
+        "packed_step": 13,
+        "nearest_raw_frame": 25,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.502139136904762,
+        "raw_image_id": "20250114_070613_25",
+        "raw_action_type": "down"
+      },
+      {
+        "packed_step": 14,
+        "nearest_raw_frame": 26,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.526274181547619,
+        "raw_image_id": "20250114_070613_26",
+        "raw_action_type": "down"
+      },
+      {
+        "packed_step": 15,
+        "nearest_raw_frame": 27,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.5391488626700682,
+        "raw_image_id": "20250114_070613_27",
+        "raw_action_type": "down"
+      },
+      {
+        "packed_step": 16,
+        "nearest_raw_frame": 28,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.5453869047619047,
+        "raw_image_id": "20250114_070614_28",
+        "raw_action_type": "stop"
+      },
+      {
+        "packed_step": 17,
+        "nearest_raw_frame": 28,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.5453869047619047,
+        "raw_image_id": "20250114_070614_28",
+        "raw_action_type": "stop"
+      },
+      {
+        "packed_step": 18,
+        "nearest_raw_frame": 28,
+        "resize": "NEAREST",
+        "pixel_mae_255": 2.5453869047619047,
+        "raw_image_id": "20250114_070614_28",
+        "raw_action_type": "stop"
+      }
+    ]
+  }
+]
