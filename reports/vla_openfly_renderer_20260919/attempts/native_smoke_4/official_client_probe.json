@@ -1,0 +1,42 @@
+{
+  "client": "official airsim 1.8.1",
+  "events": [
+    {
+      "call": "ping",
+      "seconds": 0.004052400588989258,
+      "result": "True"
+    },
+    {
+      "call": "enableApiControl",
+      "seconds": 0.0009992122650146484,
+      "result": "None"
+    },
+    {
+      "call": "armDisarm",
+      "seconds": 0.0009999275207519531,
+      "result": "True"
+    },
+    {
+      "call": "moveByVelocityBodyFrameAsync",
+      "seconds": 0.0,
+      "result": "<msgpackrpc.future.Future object at 0x00000209A6B0AF30>"
+    },
+    {
+      "call": "simSetVehiclePose",
+      "seconds": 0.023656845092773438,
+      "result": "None"
+    },
+    {
+      "call": "simGetVehiclePose",
+      "seconds": 0.0010020732879638672,
+      "result": "<Pose> {   'orientation': <Quaternionr> {   'w_val': 0.9990482330322266,\n    'x_val': 0.0,\n    'y_val': -0.0,\n    'z_val': -0.04361940920352936},\n    'position': <Vector3r> {   'x_val': 0.0,\n    'y_val': 0.0,\n    'z_val': -0.14649587869644165}}"
+    },
+    {
+      "call": "simGetImages",
+      "seconds": 15.966003656387329,
+      "error": "TimeoutError('Request timed out')"
+    }
+  ],
+  "completed": false,
+  "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\n  File \"<stdin>\", line 10, in call\n  File \"<stdin>\", line 22, in <lambda>\n  File \"D:\\drone_vla_pilot/simulators/openfly/python_client\\airsim\\client.py\", line 309, in simGetImages\n    responses_raw = self.client.call('simGetImages', requests, vehicle_name, external)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Asael\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\msgpackrpc\\session.py\", line 41, in call\n    return self.send_request(method, args).get()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Asael\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\msgpackrpc\\future.py\", line 43, in get\n    raise self._error\nmsgpackrpc.error.TimeoutError: Request timed out\n"
+}

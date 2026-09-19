@@ -1,0 +1,289 @@
+{
+  "renderer_gate_passed": false,
+  "model_used": false,
+  "events": [
+    {
+      "method": "ping",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "enableApiControl",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simPause",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simSetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.01599999999598367
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    },
+    {
+      "method": "simGetVehiclePose",
+      "elapsed_s": 0.0
+    }
+  ],
+  "requested_source_pose": [
+    1901.6478438329495,
+    -97.4708642670652,
+    4.008504278406168,
+    1.0471975511965979
+  ],
+  "observed_rpc_pose": {
+    "position": {
+      "x_val": 0.0,
+      "y_val": 0.0,
+      "z_val": -0.14649587869644165
+    },
+    "orientation": {
+      "w_val": 0.9990482330322266,
+      "x_val": 0.0,
+      "y_val": -0.0,
+      "z_val": -0.04361940920352936
+    }
+  },
+  "position_error_m": 1904.1481051757382,
+  "error_type": "RuntimeError",
+  "error": "Renderer returned stale/unexecuted pose; no flight result",
+  "elapsed_s": 15.093999999997322
+}

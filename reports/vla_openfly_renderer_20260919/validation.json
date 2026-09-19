@@ -1,0 +1,24 @@
+{
+  "compile": true,
+  "help_commands": [
+    {
+      "script": "scripts/launch_openfly_renderer_probe.py",
+      "exit_code": 0
+    },
+    {
+      "script": "scripts/probe_native_openfly_renderer.py",
+      "exit_code": 0
+    },
+    {
+      "script": "scripts/probe_official_openfly_renderer.py",
+      "exit_code": 0
+    }
+  ],
+  "PYTHONPATH": "src",
+  "viewer_status_and_source_route": true,
+  "mobile_no_overflow": true,
+  "page_errors": [],
+  "browser": "isolated headless Chromium; no user profile",
+  "regression_note": "D150 33 tests unchanged; not redundantly rerun",
+  "recorded_pose_label_distinct_from_renderer": true
+}

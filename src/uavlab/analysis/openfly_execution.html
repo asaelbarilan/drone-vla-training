@@ -6,11 +6,11 @@
 </style></head><body><main>
 <h1>Does the expert action sequence reproduce the route?</h1>
 <p>Compare recorded positions with positions calculated from the expert labels. <b>This is recorded-data reconstruction, not a model-controlled or newly rendered flight.</b></p>
-<div class="banner">The three frozen development routes pass after frame alignment. Simulator access has been granted. Renderer setup is in progress; no model-controlled flight is shown here.</div>
+<div class="banner">Official simulator access and download are verified. The local renderer gate failed: pose updates remain at spawn and camera requests time out. These are recorded-data reconstructions; no new model-controlled flight is shown here.</div>
 <p><a href="openfly_routes.html">Model predictions on recorded routes</a> · <a href="drone_vla_research.html">Drone VLA paper library</a></p>
 <div class="controls"><label>Route <select id="route"></select></label><label>Action/frame version <select id="variant"></select></label></div>
 <p id="routeId" class="muted"></p>
-<div class="stats"><div class="stat">Largest position mismatch<strong id="positionError"></strong></div><div class="stat">Largest heading mismatch<strong id="yawError"></strong></div><div class="stat">Execution gate<strong id="gate"></strong></div></div>
+<div class="stats"><div class="stat">Largest position mismatch<strong id="positionError"></strong></div><div class="stat">Largest heading mismatch<strong id="yawError"></strong></div><div class="stat">Recorded-pose check<strong id="gate"></strong></div></div>
 <p id="explanation"></p>
 <div class="controls"><button id="play">Play recorded steps</button><button id="previous">Previous</button><button id="next">Next</button><input id="step" aria-label="Decision step" type="range" min="0" value="0"><span id="counter"></span></div>
 <div class="grid"><section class="panel"><h2>Recorded camera observation</h2><img id="frame" alt="Recorded source frame at the selected decision"><p id="frameLabel" class="muted"></p><p id="action"></p><p id="stepError"></p></section>

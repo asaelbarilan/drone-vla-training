@@ -1,0 +1,35 @@
+{
+  "pid": 22436,
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--cd",
+    "/mnt/d/drone_vla_pilot/simulators/openfly/env_airsim_18/LinuxNoEditor",
+    "--",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180s",
+    "/mnt/d/drone_vla_pilot/simulators/openfly/env_airsim_18/LinuxNoEditor/AirVLN/Binaries/Linux/AirVLN-Linux-Shipping",
+    "AirVLN",
+    "-RenderOffscreen",
+    "-vulkan",
+    "-nosound",
+    "-unattended",
+    "-nosplash",
+    "-ResX=640",
+    "-ResY=360",
+    "-stdout",
+    "-FullStdOutLogOutput"
+  ],
+  "run": "D:\\drone_vla_pilot\\simulators\\openfly\\runtime\\native_smoke_2",
+  "deadline_seconds": 180,
+  "started_unix": 1789823429.1232653,
+  "settings_changes": [
+    "Dedicated localhost RPC port41489",
+    "NoDisplay viewport",
+    "Unused lidars disabled; camera geometry/resolution unchanged"
+  ],
+  "config_note": "Official binary ignored CLI settings; scoped adjacent settings backup preserved, override applied only to new scene extraction"
+}

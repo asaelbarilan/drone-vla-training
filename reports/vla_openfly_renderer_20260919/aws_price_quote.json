@@ -1,0 +1,23 @@
+{
+  "retrieved_utc": "2026-09-19T13:29:04.509911+00:00",
+  "url": "https://b0.p.awsstatic.com/pricing/2.0/meteredUnitMaps/ec2/USD/current/ec2-ondemand-without-sec-sel/US%20East%20(N.%20Virginia)/Linux/index.json",
+  "matching_records": [
+    {
+      "rateCode": "XCA3J9EEM739PU6M.JRTCKXETXF.6YS6EN2CT7",
+      "price": "0.9776000000",
+      "Location": "US East (N. Virginia)",
+      "Instance Family": "GPU instance",
+      "vCPU": "8",
+      "Instance Type": "g6.2xlarge",
+      "Memory": "32 GiB",
+      "Storage": "1 x 450 GB NVMe SSD",
+      "Network Performance": "Up to 10 Gigabit",
+      "plc:OperatingSystem": "Linux",
+      "plc:InstanceFamily": "Accelerated Computing",
+      "Operating System": "Linux",
+      "Pre Installed S/W": "NA",
+      "License Model": "No License required"
+    }
+  ],
+  "cloud_action": "none"
+}

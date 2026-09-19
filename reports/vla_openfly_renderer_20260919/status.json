@@ -1,0 +1,70 @@
+{
+  "timestamp_utc": "2026-09-19T13:29:56.303909+00:00",
+  "hf_access": "verified successful",
+  "scene_sha256": "292c751e50f79f3cb4113a53e7e73d409a7bb0a97bf19a44672a8348ac7863b8",
+  "scene_bytes": 285821005,
+  "scene_extracted": true,
+  "renderer_gate_passed": false,
+  "actual_captures": 0,
+  "model_inference_calls": 0,
+  "new_training_updates": 0,
+  "aws_resources_started": 0,
+  "rpc_port_41489_closed": true,
+  "official_settings_restored_sha256": "b4a0afb9c31a2c2344041c6acd6155c3a04e34142eb4b5deffe736f674e1ef0f",
+  "attempts": [
+    {
+      "attempt": "native_smoke_1",
+      "files": [
+        "process.json",
+        "settings.json",
+        "stdout.log"
+      ]
+    },
+    {
+      "attempt": "native_smoke_2",
+      "files": [
+        "process.json",
+        "stdout.log"
+      ]
+    },
+    {
+      "attempt": "native_smoke_3",
+      "files": [
+        "probe.json",
+        "process.json",
+        "settings.json",
+        "stdout.log"
+      ]
+    },
+    {
+      "attempt": "native_smoke_4",
+      "files": [
+        "official_client_probe.json",
+        "process.json",
+        "settings.json",
+        "stdout.log"
+      ]
+    },
+    {
+      "attempt": "native_smoke_5",
+      "files": [
+        "probe.json",
+        "process.json",
+        "settings.json",
+        "stdout.log"
+      ]
+    },
+    {
+      "attempt": "native_smoke_6",
+      "files": [
+        "official_client_probe.json",
+        "process.json",
+        "settings.json",
+        "stdout.log"
+      ]
+    }
+  ],
+  "graphics": "WSL2 Vulkan reports llvmpipe CPU; CUDA sees RTX 4060 Laptop",
+  "remaining": "Resolve native rendering, then expert-route image calibration and paired model navigation",
+  "root_cause": "unresolved; no native Linux hardware-renderer control yet"
+}

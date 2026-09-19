@@ -1,0 +1,40 @@
+{
+  "pid": 7224,
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-22.04",
+    "--cd",
+    "/mnt/d/drone_vla_pilot/simulators/openfly/env_airsim_18/LinuxNoEditor",
+    "--",
+    "xvfb-run",
+    "-a",
+    "-s",
+    "-screen 0 640x480x24 -nolisten tcp",
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180s",
+    "/mnt/d/drone_vla_pilot/simulators/openfly/env_airsim_18/LinuxNoEditor/AirVLN/Binaries/Linux/AirVLN-Linux-Shipping",
+    "AirVLN",
+    "-vulkan",
+    "-nosound",
+    "-unattended",
+    "-nosplash",
+    "-ResX=640",
+    "-ResY=360",
+    "-stdout",
+    "-FullStdOutLogOutput",
+    "-windowed"
+  ],
+  "run": "D:\\drone_vla_pilot\\simulators\\openfly\\runtime\\native_smoke_3",
+  "deadline_seconds": 180,
+  "started_unix": 1789823697.7307146,
+  "settings_changes": [
+    "Dedicated localhost RPC port41489",
+    "NoDisplay viewport",
+    "Unused lidars disabled; camera geometry/resolution unchanged"
+  ],
+  "config_note": "Official binary ignored CLI settings; scoped adjacent settings backup preserved, override applied only to new scene extraction",
+  "mode": "Virtual-display Vulkan, unchanged full camera resolution; no NoDisplay"
+}

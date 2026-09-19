@@ -16,7 +16,20 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
-## D150 execution/source audit complete; native renderer setup in progress
+## D151 native renderer gate failed locally; HF access is resolved
+
+Read reports/vla_openfly_renderer_20260919/REPORT.md and status.json. Official
+scene is verified/extracted; six bounded WSL renderer probes produced no usable
+images. Official SDK/arming/clock controls still report spawn pose and image
+request timeout. Vulkan is CPU llvmpipe, but the root cause is unresolved; do not
+call this a model failure. All owned renderers ended; original settings restored.
+No new inference/training or AWS resources. Viewer banner states actual blocker.
+Next: same scene/pose on native Linux NVIDIA graphics; machine/cost approval
+pending. Proposed one g6.2xlarge Virginia, 2 hours, expected $2-3, proposed $5 cap;
+verify account/AMI/connection and cleanup controls before any launch. This is a
+single-scene diagnostic, not full training. Baselines/splits/weights unchanged.
+
+## D150 execution/source audit complete; renderer outcome in D151
 
 Read reports/vla_openfly_execution_20260919/REPORT.md. Three frozen dev routes
 reconstruct exactly with corrected macro starts; old annotation frames drift up

@@ -3466,3 +3466,18 @@ Six-route recorded reconstruction debugger added at localhost8771/openfly_execut
 scene access and authenticated download is now allowed. Native renderer test is
 next, not yet a flight claim. No AWS, protected seed, baseline or split changes.
 Evidence: reports/vla_openfly_execution_20260919/REPORT.md and associated JSONs.
+
+
+## 2026-09-19 - D151: official OpenFly scene downloaded; native renderer gate fails locally
+
+HF grant now works; verified scene installed. Six bounded WSL probes covered
+offscreen, virtual display, official SDK/source initialization, requested OpenGL
+and alternate clock. Pose stays at spawn (1904.148 m mismatch), camera request
+times out; no new model inference/training or valid flight ranking. Vulkan is
+software llvmpipe, but exact root cause remains unresolved. Owned processes ended,
+original scene settings restored, logs retained. Added launch/probe scripts and
+updated viewer status. Ruff/compile/help and targeted browser check pass.
+Concrete 2-hour one-L4 Virginia proposal: $0.9776/h official Linux compute,
+about $2-3 total expected, $5 proposed cap; approval/connection/AMI preflight pending.
+No AWS spend, architecture/split/index/weight changes. See
+reports/vla_openfly_renderer_20260919/REPORT.md and status.json.

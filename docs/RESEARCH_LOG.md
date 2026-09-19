@@ -3893,3 +3893,28 @@ flight success yet. No new training, cloud spend, weight/baseline/index/split ed
 Validation:33focused tests,452recorded-viewer checks, playback/deep-links/mobile;
 see reports/vla_openfly_execution_20260919/REPORT.md. Next gate is source-matched
 expert rendering, camera agreement and bounded paired model-controlled navigation.
+
+
+## D151 - Gate native OpenFly rendering before any new model ranking (2026-09-19)
+
+Status: local renderer failed; native Linux hardware control pending approval.
+Rationale: accepted RPC commands are not evidence of executed poses or rendered
+observations. User-granted HF access is now verified and the official env18 scene
+is checksum-verified/extracted. Six bounded probes produce no camera image; the
+official AirSim SDK with source-style arming/initialization and an alternate clock
+still returns spawn pose (1904.148 m position error, 55 degrees orientation error)
+and image timeout. A requested OpenGL fallback still loaded Vulkan/llvmpipe, so
+it is not an independently verified backend. Local Vulkan reports CPU rendering;
+root cause is not proven. Do not turn renderer failure into model failure.
+Decision: preserve all model weights/splits; stop more training and ranking until
+expert poses render and image conventions are checked. Propose one native Linux
+L4 control (g6.2xlarge Virginia, <=2 hours, ~$2-3 expected/$5 proposed limit), with
+explicit approval, verified account/AMI/prices and resource cleanup before launch.
+100 GiB is temporary single-scene storage, not a full-data sizing revision.
+Evidence: reports/vla_openfly_renderer_20260919/REPORT.md, attempts/, status.json,
+aws_price_quote.json. All owned processes ended; scene settings restored. New
+scripts pass Ruff/compile/help; isolated viewer status check passes. D150 data/action
+regressions remain unchanged. No new model calls, training updates or cloud spend.
+Rejected: fake closed-loop replay from recorded images, treating ping as renderer
+success, silently assuming WSL CUDA implies Vulkan, or relabeling outputs to raise
+agreement. D150 source reconstruction remains evidence only for data/pose mapping.
