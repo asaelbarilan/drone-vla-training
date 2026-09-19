@@ -3436,3 +3436,14 @@ Native packed altitude record:7/19 directions with released raw prompt,10/19 wit
 Added recorded-route debugger with exact image triplets, raw tokens, two explicit decoder views, action timelines and one-step pose arrows. Camera is recorded, not model-controlled. Source-profile guard and causal-history tests added; existing baselines, data/splits and all saved adapters preserved. Evidence and final verification: reports/vla_openfly_routes_20260919.
 
 D148 final validation:13 tests,317 actual model outputs,139 debugger frames/360 displayed entries, deep links/playback/mobile and visual review pass. All GPU jobs ended. No baseline, adapter or dataset edits.
+
+
+## 2026-09-19 - D149: drone-only VLA results and reproduction audit
+
+User corrected the review scope to drone VLAs. Inspected15 aerial learned-action architecture papers,3 supporting aerial benchmarks and1 assisted-navigation boundary case; screened31 candidates. Saved primary-source versions/hashes, result/action/protocol matrix, official resource metadata, exclusions and a bounded reproduction plan. No manipulation-only architecture is counted.
+
+Corrected the current OpenFly literature reference: v7 reports34.3% seen/22.6% unseen flight SR, versus historical v6 citations33.2%/10.7%. Published real-flight SR remains26.09%. Public model repository last update2025-08-29 precedes v7 dated2026-03-01; exact checkpoint-paper correspondence remains unverified. Neither paper result has been reproduced here. Historical D146-D148 records preserved.
+
+Findings: action agreement cannot rank flight capability; action contracts range from primitives/velocity to waypoints and body rates. Some strong scores include planner/sensor assistance or narrow tasks. Source quality/denominator issues and missing releases are explicit. Next: source calibration and expert playback, then source-faithful closed-loop development flights before further training.
+
+Evidence: docs/research/vla_results_audit_20260919/REPORT.md, evidence.json, candidates.json, RESOURCES.md, resource_checks.json and source_manifest.json. Review page: localhost8771/drone_vla_research.html. No GPU inference/training, AWS spend, baseline/weight/split changes or protected-seed use.

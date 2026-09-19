@@ -1,0 +1,250 @@
+[
+  {
+    "id": "openfly",
+    "title": "Openfly: A comprehensive platform for aerial vision-language navigation",
+    "url": "https://arxiv.org/abs/2502.18041v7",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "cognitive",
+    "title": "CognitiveDrone: A VLA Model and Evaluation Benchmark for Real-Time Cognitive Task Solving and Reasoning in UAVs",
+    "url": "https://arxiv.org/abs/2503.01378v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "racevla",
+    "title": "RaceVLA: VLA-based Racing Drone Navigation with Human-like Behaviour",
+    "url": "https://arxiv.org/abs/2503.02572v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "autofly",
+    "title": "AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild",
+    "url": "https://arxiv.org/abs/2602.09657v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "aerialvla",
+    "title": "AerialVLA: A Vision-Language-Action Model for UAV Navigation via Minimalist End-to-End Control",
+    "url": "https://arxiv.org/abs/2603.14363v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "spatialfly",
+    "title": "SpatialFly: Implicit 3D Prior-Guided Visual Reparameterization for Continuous UAV Vision-and-Language Navigation",
+    "url": "https://arxiv.org/abs/2603.21046v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "longfly",
+    "title": "LongFly: Long-Horizon UAV Vision-and-Language Navigation with Spatiotemporal Context Integration",
+    "url": "https://arxiv.org/abs/2512.22010v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "flight",
+    "title": "Think Like a Pilot: Fine-Grained Long-Horizon UAV Navigation",
+    "url": "https://arxiv.org/abs/2606.06836v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "worldvln",
+    "title": "WorldVLN: Autoregressive World Action Model for Aerial Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2605.15964v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "imagineuav",
+    "title": "ImagineUAV: Aerial Vision-Language Navigation via World-Action Modeling and Kinodynamic Planning",
+    "url": "https://arxiv.org/abs/2606.01205v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "exp2vla",
+    "title": "Exp2VLA: Enabling Vision-Language-Action for Drone Navigation from Expert Demonstrations",
+    "url": "https://arxiv.org/abs/2607.03146v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "fsdvln",
+    "title": "FSD-VLN: Fast-Slow Dual-System Modeling for Aerial Long-Horizon Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2607.08359v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "uavtrack",
+    "title": "UAV-Track VLA: Embodied Aerial Tracking via Vision-Language-Action Models",
+    "url": "https://arxiv.org/abs/2604.02241v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "litevla",
+    "title": "LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception",
+    "url": "https://arxiv.org/abs/2605.00884v2",
+    "screening": "excluded_from_main_review",
+    "inspection": "methods_results",
+    "reason": "Methods/results inspected as reporting-quality check; unclear denominators/splits and partial closed-loop evidence. Not used for quantitative synthesis."
+  },
+  {
+    "id": "aerialvla_dialogue",
+    "title": "AerialVLA (Chen et al.; AAAI2026)",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38878/42840",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "related_solution"
+  },
+  {
+    "id": "uavflow",
+    "title": "UAV-Flow Colosseo: A Real-World Benchmark for Flying-on-a-Word UAV Imitation Learning",
+    "url": "https://arxiv.org/abs/2505.15725v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "dataset_benchmark"
+  },
+  {
+    "id": "indooruav",
+    "title": "IndoorUAV: Benchmarking Vision-Language UAV Navigation in Continuous Indoor Environments",
+    "url": "https://arxiv.org/abs/2512.19024v1",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "dataset_benchmark"
+  },
+  {
+    "id": "aerialvln",
+    "title": "AerialVLN: Vision-and-Language Navigation for UAVs",
+    "url": "https://arxiv.org/abs/2308.06735v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Foundational benchmark and recurrent VLN; not a modern pretrained VLA architecture in main count."
+  },
+  {
+    "id": "onfly",
+    "title": "OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency",
+    "url": "https://arxiv.org/abs/2603.10682v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Training-free VLM plus verifier/planner; separate architecture family, not a learned aerial action policy."
+  },
+  {
+    "id": "vlfly",
+    "title": "Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding",
+    "url": "https://arxiv.org/abs/2506.10756v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Goal retrieval and goal-conditioned controller; relevant alternative, screened out after15 direct policies."
+  },
+  {
+    "id": "gradnav",
+    "title": "GRaD-Nav++: Vision-Language Model Enabled Visual Drone Navigation with Gaussian Radiance Fields and Differentiable Dynamics",
+    "url": "https://arxiv.org/abs/2506.14009v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "seepointfly",
+    "title": "See, Point, Fly: A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation",
+    "url": "https://arxiv.org/abs/2509.22653v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Training-free VLM spatial pointing; exclude from learned-policy count."
+  },
+  {
+    "id": "fly0",
+    "title": "Fly0: Persistent Metric Anchoring for Zero-Shot Aerial Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2602.15875v2",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Training-free geometric anchoring and planning; exclude from learned-policy count."
+  },
+  {
+    "id": "traveluav",
+    "title": "Towards Realistic UAV Vision-Language Navigation: Platform, Benchmark, and Methodology",
+    "url": "https://arxiv.org/abs/2410.07087v2",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Foundational OpenUAV/TravelUAV benchmark and assisted navigation; scope covered by retained descendants."
+  },
+  {
+    "id": "cosflytrack",
+    "title": "CosFly-Track: A Large-Scale Multi-Modal Dataset for UAV Visual Tracking via Multi-Constraint Trajectory Optimization",
+    "url": "https://arxiv.org/abs/2605.17776v2",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Tracking dataset and adaptation study; outside selected three supporting benchmarks."
+  },
+  {
+    "id": "uavvla",
+    "title": "UAV-VLA: Vision-Language-Action System for Large Scale Aerial Mission Generation",
+    "url": "https://arxiv.org/abs/2501.05014v2",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Satellite-image mission planning; not egocentric flight action learning."
+  },
+  {
+    "id": "semanticdecision",
+    "title": "From Semantic Grounding to Decision Optimization: A Unified Framework for Long-Horizon UAV Vision-Language Navigation",
+    "url": "https://arxiv.org/abs/2608.09564v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Related aerial VLN architecture; screened after target15 reached, no quantitative result adopted."
+  },
+  {
+    "id": "vlaan",
+    "title": "VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments",
+    "url": "https://arxiv.org/abs/2512.15258v2",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "direct_solution"
+  },
+  {
+    "id": "huge",
+    "title": "HUGE-Bench: A Benchmark for High-Level UAV Vision-Language-Action Tasks",
+    "url": "https://arxiv.org/abs/2603.19822v4",
+    "screening": "retained",
+    "inspection": "methods_results",
+    "reason": "dataset_benchmark"
+  },
+  {
+    "id": "singer",
+    "title": "SINGER: An Onboard Generalist Vision-Language Navigation Policy for Drones",
+    "url": "https://arxiv.org/abs/2509.18610v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Relevant compact onboard language-conditioned policy; screened after target15 reached, no quantitative result adopted."
+  },
+  {
+    "id": "airvla",
+    "title": "AIR-VLA+: Decoupling Movement and Manipulation via Cascaded Dual-Action Decoders with Asymmetric MoE for Aerial Robots",
+    "url": "https://arxiv.org/abs/2606.12859v1",
+    "screening": "excluded_from_main_review",
+    "inspection": "title_abstract",
+    "reason": "Aerial manipulation dual-action model; relevant different task category, outside present navigation/tracking comparison."
+  }
+]

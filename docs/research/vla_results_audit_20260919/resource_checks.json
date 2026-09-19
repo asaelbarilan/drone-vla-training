@@ -1,0 +1,764 @@
+{
+  "checked": "2026-09-19",
+  "scope": "Metadata and README checks, no model execution or data downloads; missing license is unresolved, not permission.",
+  "resources": [
+    {
+      "kind": "project",
+      "id": "openfly",
+      "url": "https://shailab-ipec.github.io/openfly/",
+      "status": 200,
+      "resource_links": []
+    },
+    {
+      "kind": "project",
+      "id": "cognitive",
+      "url": "https://cognitivedrone.github.io/",
+      "status": 200,
+      "resource_links": [
+        "https://huggingface.com/datasets/ArtemLykov/cognitiveDrone_dataset",
+        "https://github.com/SerValera/docker_CognitiveDrone_DataCollector.git"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "racevla",
+      "url": "https://racevla.github.io/",
+      "status": 200,
+      "resource_links": [
+        "https://huggingface.co/SerValera2/RaceVLA_models",
+        "https://huggingface.co/datasets/SerValera2/RaceVLA_dataset",
+        "https://github.com/SerValera/RaceVLA"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "autofly",
+      "url": "https://xiaolousun.github.io/AutoFly",
+      "status": 200,
+      "resource_links": [
+        "https://github.com/xiaolousun/AutoFly-VLA",
+        "https://huggingface.co/xlsun/AutoFly",
+        "https://github.com/eliahuhorwitz/Academic-project-page-template"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "flight",
+      "url": "https://buaa-colalab.github.io/FLIGHT/",
+      "status": 200,
+      "resource_links": [
+        "https://github.com/buaa-colalab/FLIGHT",
+        "https://huggingface.co/datasets/jujujulien/FLIGHT"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "worldvln",
+      "url": "https://embodiedcity.github.io/WorldVLN/",
+      "status": 200,
+      "resource_links": [
+        "https://github.com/EmbodiedCity/WorldVLN.code"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "uavtrack",
+      "url": "https://flying-intelligence.github.io/",
+      "status": 200,
+      "resource_links": []
+    },
+    {
+      "kind": "project",
+      "id": "gradnav",
+      "url": "https://qianzhong-chen.github.io/gradnavpp.github.io/",
+      "status": 200,
+      "resource_links": [
+        "https://github.com/Qianzhong-Chen/grad_nav.git"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "uavflow",
+      "url": "https://prince687028.github.io/UAV-Flow",
+      "status": 200,
+      "resource_links": [
+        "https://github.com/buaa-colalab/UAV-Flow",
+        "https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow"
+      ]
+    },
+    {
+      "kind": "project",
+      "id": "huge",
+      "url": "https://jingyu198.github.io/HUGE_Bench/",
+      "status": 200,
+      "resource_links": []
+    },
+    {
+      "kind": "repository",
+      "id": "shailab-ipec/OpenFly",
+      "url": "https://github.com/shailab-ipec/OpenFly",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2025-06-13T03:18:56Z",
+      "readme_resource_links": [
+        "https://github.com/SHAILAB-IPEC/OpenFly-Platform"
+      ],
+      "readme_download_mentions": [
+        "## Website License",
+        "<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/4.0/88x31.png\" /></a><br />This work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International License</a>."
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "SHAILAB-IPEC/OpenFly-Platform",
+      "url": "https://github.com/SHAILAB-IPEC/OpenFly-Platform",
+      "status": 200,
+      "license": "MIT",
+      "branch": "main",
+      "pushed_at": "2026-01-13T12:09:53Z",
+      "readme_resource_links": [
+        "https://github.com/SHAILAB-IPEC/OpenFly-Platform.git",
+        "https://github.com/kvablack/dlimp",
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/ue",
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/airsim",
+        "https://github.com/graphdeco-inria/hierarchical-3d-gaussians?tab=readme-ov-file#compiling-the-real-time-viewer",
+        "https://github.com/graphdeco-inria/hierarchical-3d-gaussians",
+        "https://github.com/David0tt/DeepGTAV",
+        "https://github.com/SHAILAB-IPEC/OpenFly-Platform/blob/main/train/eval_gtav.py",
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/pcd_map",
+        "https://github.com/city-super/MatrixCity",
+        "https://github.com/city-super/MatrixCity/blob/main/scripts/rgbd2pc.py",
+        "https://github.com/XXXXX.git",
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly/tree/main",
+        "https://huggingface.co/openvla/openvla-7b-prismatic",
+        "https://huggingface.co/IPEC-COMMUNITY/openfly-agent-7b",
+        "https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly/tree/main/Annotation",
+        "https://huggingface.co/IPEC-COMMUNITY/spatialvla-4b-224-sft-fractal"
+      ],
+      "readme_download_mentions": [
+        "OpenFly is an innovative platform designed to advance research in outdoor aerial Vision-Language Navigation (VLN) by providing a highly automated toolchain for data collection and a large-scale benchmark dataset. It includes 100k diverse flight trajectories, high-quality visual data generated using cutting-edge rendering techniques, and OpenFly-Agent, a keyframe-aware VLN model, all of which will be open-sourced to support the community.",
+        "8. [License](#license)",
+        "    * Download files from Huggingface [link](https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/ue)  and unzip, or For custom UE scenes, configure them through UnrealCV plugin integration by following the [doc](http://docs.unrealcv.org/en/master/tutorials/getting_started.html)",
+        "    * Download files from Huggingface [link](https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/airsim)  and unzip",
+        "        cmake . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_IBR_HIERARCHYVIEWER=ON -DBUILD_IBR_ULR=OFF -DBUILD_IBR_DATASET_TOOLS=OFF -DBUILD_IBR_GAUSSIANVIEWER=OFF ",
+        "    * Download files from Huggingface [link](https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen/tree/main/pcd_map) and unzip,or generate point cloud data by following the toolchain configuration.",
+        "    * We utilized the dataset provided by [this project](https://github.com/city-super/MatrixCity), using depth maps and pose information, and synthesized point clouds according to [this code](https://github.com/city-super/MatrixCity/blob/main/scripts/rgbd2pc.py).",
+        "    * We directly utilized the sparse point cloud synthesized by colmap, with the file path at <3dgs_dataset>/camera_calibration/aligned/sparse/0/points3D.ply.",
+        "    Our OpenFly dataset has been converted to parquet format. If you want to use this code, you need to convert parquet back to uncompressed format. So we recommend that you use this code to generate your own trajectory instructions.",
+        "    You need to prepare: 1. OpenAI's API  2. Traj in the same format as the OpenFly dataset (a series of images and a jsonl file that records actions)",
+        "The dataset we use for finetuning openfly-agent is available at [here](https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly/tree/main).",
+        "For your custom datasets, make sure that you pre-build all the required [TensorFlow Datasets](https://www.tensorflow.org/datasets) (TFDS) datasets.",
+        "2. Now you can run [`train/datasets_builder/vln/vln_dataset_builder.py`](./train/dataset_builder/vln/vln_dataset_builder.py) which is used to transfer the generated data format to rlds format.",
+        "   cd train/datasets/vln",
+        "4. For custom dataset, you need to change the data mixture after transferring the data format in [`train/datasets/dataset.py`](./train/datasets/dataset.py) to specify the names of datasets.",
+        "#### Download Pretrained Weights",
+        "We released our pretrained weights of Openfly-Agent which is trained by full fine-tuning [OpenVLA model checkpoint](https://huggingface.co/openvla/openvla-7b-prismatic). Now you can download the weights and directly finetuning your data.",
+        "2. **history_frames** :refers to the number of frame as history information, which should be corresponded to your custom dataset setting.",
+        "3. **model_name_or_path** :path to the pretrained VLM weights",
+        "We use the `eval_test.json` file as a demonstration to configure the environments that need to be evaluated. You can customize an evaluation configuration file based on the json files available at https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly/tree/main/Annotation"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "SerValera/docker_CognitiveDrone_DataCollector",
+      "url": "https://github.com/SerValera/docker_CognitiveDrone_DataCollector",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2025-05-19T10:36:46Z",
+      "readme_resource_links": [],
+      "readme_download_mentions": [
+        "This paper introduces CognitiveDrone, a novel Vision-Language-Action (VLA) model tailored for complex Unmanned Aerial Vehicles (UAVs) tasks that demand advanced cognitive abilities. Trained on a dataset comprising over 8,000 simulated flight trajectories across three key categories-Human Recognition, Symbol Understanding, and Reasoning-the model generates real-time 4D action commands based on first-person visual inputs and textual instructions. To further enhance performance in intricate scenarios, we propose CognitiveDrone-R1, which integrates an additional Vision-Language Model (VLM) reasoning module to simplify task directives prior to high-frequency control. Experimental evaluations using our open-source benchmark, CognitiveDroneBench, reveal that while a racing-oriented model (RaceVLA) achieves an overall success rate of 31.3%, the base CognitiveDrone model reaches 59.6%, and CognitiveDrone-R1 attains a success rate of 77.2%. These results demonstrate improvements of up to 30% in critical cognitive tasks, underscoring the effectiveness of incorporating advanced reasoning capabilities into UAV control systems. Our contributions include the development of a state-of-the-art VLA model for UAV control and the introduction of the first dedicated benchmark for assessing cognitive tasks in drone operations. The complete repository is available at https://cognitivedrone.github.io/ ",
+        "## CognitiveDrone Dataset Docker Collector"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "SerValera/RaceVLA",
+      "url": "https://github.com/SerValera/RaceVLA",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2025-04-08T11:36:32Z",
+      "readme_resource_links": [
+        "https://huggingface.co/SerValera/RaceVLA_models]",
+        "https://huggingface.co/datasets/SerValera/RaceVLA_dataset]",
+        "https://github.com/rpng/open_vins",
+        "https://github.com/IntelRealSense/realsense-ros",
+        "https://github.com/rpng/open_vins](https://github.com/rpng/open_vins",
+        "https://github.com/IntelRealSense/realsense-ros](https://github.com/IntelRealSense/realsense-ros",
+        "https://github.com/ArduPilot/ardupilot_ros](https://github.com/ArduPilot/ardupilot_ros"
+      ],
+      "readme_download_mentions": [
+        "- Dataset: [https://huggingface.co/datasets/SerValera/RaceVLA_dataset]"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "xiaolousun/AutoFly-VLA",
+      "url": "https://github.com/xiaolousun/AutoFly-VLA",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2026-09-08T07:36:10Z",
+      "readme_resource_links": [
+        "https://github.com/DepthAnything/Depth-Anything-V2",
+        "https://github.com/TRI-ML/prismatic-vlms",
+        "https://github.com/openvla/openvla",
+        "https://github.com/microsoft/AirSim",
+        "https://github.com/NVIDIA/TensorRT"
+      ],
+      "readme_download_mentions": [
+        "[![ModelScope Dataset](https://img.shields.io/badge/ModelScope-Dataset-624aff)](https://www.modelscope.cn/datasets/jacksun001/autofly_dataset_tfds)",
+        "- **[2026.09.08]** \ud83d\ude80 Our dataset is now open-sourced on ModelScope: [`jacksun001/autofly_dataset_tfds`](https://www.modelscope.cn/datasets/jacksun001/autofly_dataset_tfds)! The training, testing, and deployment code are being actively prepared and will be released soon. Stay tuned!",
+        "| `train` | Dataset preprocessing, pseudo-depth generation, depth-vision-language alignment, VLA fine-tuning, and training configs. |",
+        "## Dataset",
+        "AutoFly is trained on a multimodal autonomous navigation dataset designed for UAV decision-making rather than step-by-step route instruction following.",
+        "Dataset statistics reported in the paper:",
+        "The dataset is now available on ModelScope: [`jacksun001/autofly_dataset_tfds`](https://www.modelscope.cn/datasets/jacksun001/autofly_dataset_tfds). Detailed data loading instructions, file format, and preprocessing scripts will be added during **Step 2**.",
+        "- The vision-language navigation and embodied AI community for foundational datasets, benchmarks, and evaluation protocols."
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "XuPeng23/AeroVLA",
+      "url": "https://github.com/XuPeng23/AeroVLA",
+      "status": 200,
+      "license": "Apache-2.0",
+      "branch": "main",
+      "pushed_at": "2026-09-16T08:45:33Z",
+      "readme_resource_links": [
+        "https://github.com/XuPeng23/AeroVLA.git",
+        "https://github.com/prince687028/TravelUAV/tree/main",
+        "https://huggingface.co/XuPeng23/AerialVLA"
+      ],
+      "readme_download_mentions": [
+        "  - **[2026-07]** \ud83d\udd25 **Training code and training dataset are officially released!** You can now train your own AeroVLA models.",
+        "  - **[2026-04]** AerialVLA evaluation code and pre-trained LoRA weights are officially released!",
+        "AeroVLA uses the Unreal Engine-based AirSim simulator and the dataset provided by the TravelUAV benchmark. You do not need to install AirSim separately; simply download the compiled environment binaries.",
+        "1.  Follow the [TravelUAV Official Documentation](https://github.com/prince687028/TravelUAV/tree/main) to download the dataset (`dataset_raw`) and the simulation environments (`envs`).",
+        "> python tools/generate_merged_json.py --root_dir ./dataset_raw",
+        "## \ud83d\udce5 Checkpoints",
+        "1.  **Base Model:** AeroVLA is built upon `openvla-7b`. You can download the base weights from Hugging Face and place them in the `./openvla-7b` directory.",
+        "2.  **AeroVLA LoRA Weights:** Download our pre-trained LoRA weights from our **[Hugging Face Repository](https://huggingface.co/XuPeng23/AerialVLA)** and place them in `./checkpoints/aerial_vla/`.",
+        "3.  **Training Dataset**: Download aerovla_train_dataset.json from the same Hugging Face repository and place it in the ./data/ directory for training.",
+        "\u251c\u2500\u2500 checkpoints/",
+        "\u2502   \u251c\u2500\u2500 uav_dataset/",
+        "\u2502   \u2514\u2500\u2500 aerovla_train_dataset.json   ",
+        "\u251c\u2500\u2500 dataset_raw/",
+        "\u2502   \u251c\u2500\u2500 aerovla_dataset.py",
+        "**1. Prepare the Dataset:**",
+        "Ensure you have downloaded aerovla_train_dataset.json from our Hugging Face repository and placed it inside the data/ directory.",
+        "- [x] Release inference code and pre-trained weights.",
+        "## \ud83d\udcc4 License",
+        "This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for more details."
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "buaa-colalab/FLIGHT",
+      "url": "https://github.com/buaa-colalab/FLIGHT",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2026-06-08T15:58:51Z",
+      "readme_resource_links": [
+        "https://huggingface.co/datasets/jujujulien/FLIGHT"
+      ],
+      "readme_download_mentions": [
+        "- **Dataset:** https://huggingface.co/datasets/jujujulien/FLIGHT"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "EmbodiedCity/WorldVLN.code",
+      "url": "https://github.com/EmbodiedCity/WorldVLN.code",
+      "status": 200,
+      "license": "CC-BY-4.0",
+      "branch": "main",
+      "pushed_at": "2026-06-02T16:39:15Z",
+      "readme_resource_links": [
+        "https://huggingface.co/EmbodiedCity/WorldVLN",
+        "https://github.com/buaa-colalab/UAV-Flow",
+        "https://github.com/FoundationVision/InfinityStar",
+        "https://github.com/aofrancani/TSformer-VO"
+      ],
+      "readme_download_mentions": [
+        "[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Model%20weights-yellow.svg)](https://huggingface.co/EmbodiedCity/WorldVLN)",
+        "### Model Weights",
+        "Official WorldVLN weights are available on Hugging Face:",
+        "- [WorldVLN weights](https://huggingface.co/EmbodiedCity/WorldVLN)",
+        "Download the weights to your preferred checkpoint directory and configure the relevant training or inference scripts to point to them.",
+        "- IndoorUAV simulation environment download guide: [Indoor_UAV](https://modelscope.cn/datasets/valyentine/Indoor_UAV)",
+        "- `INFINITY_CKPT`: main InfinityStar / WorldVLN checkpoint used by the service",
+        "- `STAGE2_LATENT2ACTION_CKPT`: Stage-2 latent-to-action checkpoint for action prediction",
+        "- **`infer/client.py`** (simulation / dataset example): sends `1, step, step, ...` frames under a stable `session_id`, and writes per-segment `*_actions.json` / `*_poses.json`.",
+        "CHECKPOINTS_DIR=/path/to/checkpointsinf \\",
+        "ACTIONHEAD_CKPT=/path/to/actionhead/checkpoint_last.pth \\",
+        "CHECKPOINTS_DIR=/path/to/checkpointsinf \\",
+        "ACTIONHEAD_CKPT=/path/to/actionhead/checkpoint_last.pth \\",
+        "CHECKPOINTS_DIR=/path/to/checkpointsinf \\",
+        "- Train consumes replay metadata and runs optimization to produce updated checkpoints and logs.",
+        "## License",
+        "This project is released under the **CC BY 4.0** license. See `LICENSE`."
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "chenjinyubuaa/AerialVLA",
+      "url": "https://github.com/chenjinyubuaa/AerialVLA",
+      "status": 200,
+      "license": "Apache-2.0",
+      "branch": "main",
+      "pushed_at": "2026-05-26T05:10:08Z",
+      "readme_resource_links": [
+        "https://github.com/chenjinyubuaa/AerialVLA"
+      ],
+      "readme_download_mentions": [
+        "Download the AVDN dataset and organize as follows:",
+        "## Model Weights",
+        "Download the pre-trained weights:",
+        "# GeoChat stage-1 LoRA checkpoint",
+        "# Place at: ./checkpoints/llava-onevision-qwen2-7b-ov-max1-lora-geochat-stage2",
+        "./checkpoints/",
+        "| `--stage1_path` | `./checkpoints/llava-onevision-qwen2-7b-ov-max1-lora-geochat-stage2` | Stage-1 weights |",
+        "- **Stage 1 (GeoChat)**: General geospatial understanding pre-training. Weights loaded from `./checkpoints/` before Stage 2.",
+        "    --model-path-stage1 ./checkpoints/llava-onevision-qwen2-7b-ov-max1-lora-geochat-stage2 \\",
+        "- **SPL** (Success weighted by Path Length): Path efficiency"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "buaa-colalab/UAV-Flow",
+      "url": "https://github.com/buaa-colalab/UAV-Flow",
+      "status": 200,
+      "license": "Apache-2.0",
+      "branch": "main",
+      "pushed_at": "2026-05-11T02:47:35Z",
+      "readme_resource_links": [
+        "https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow/tree/main\"",
+        "https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main\"",
+        "https://huggingface.co/wangxiangyu0814/OpenVLA-UAV/tree/main\"",
+        "https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow/tree/main",
+        "https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main",
+        "https://huggingface.co/openvla/openvla-7b",
+        "https://huggingface.co/wangxiangyu0814/OpenVLA-UAV/tree/main",
+        "https://github.com/openvla/openvla",
+        "https://github.com/UnrealZoo/unrealzoo-gym"
+      ],
+      "readme_download_mentions": [
+        "        <a href=\"https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow/tree/main\" target=\"_blank\">",
+        "        <img src=\"https://img.shields.io/badge/Dataset-UAV--Flow-orange\">",
+        "        <a href=\"https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main\" target=\"_blank\">",
+        "        <img src=\"https://img.shields.io/badge/Dataset-UAV--Flow--Sim-orange\">",
+        "        <img src=\"https://img.shields.io/badge/Checkpoint-OpenVLA--UAV-blue\">",
+        "* **OpenVLA-UAV baseline.** The repository includes OpenVLA-based finetuning code, a Flask inference server, and a released OpenVLA-UAV checkpoint.",
+        "Download the datasets:",
+        "* [UAV-Flow](https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow/tree/main): real-world trajectories.",
+        "* [UAV-Flow-Sim](https://huggingface.co/datasets/wangxiangyu0814/UAV-Flow-Sim/tree/main): simulation trajectories.",
+        "If you need to convert parquet files into the folder format used by the training code, update the local paths in `dataset_tools/prepare_data.py`, then run:",
+        "cd dataset_tools",
+        "For finetuning, download the pretrained [OpenVLA checkpoint](https://huggingface.co/openvla/openvla-7b).",
+        "For evaluation, download the released [OpenVLA-UAV checkpoint](https://huggingface.co/wangxiangyu0814/OpenVLA-UAV/tree/main), then set `model_path` in `OpenVLA-UAV/vla-scripts/openvla_act.py`:",
+        "Open `OpenVLA-UAV/vla-scripts/finetune_uav.sh` and update all local paths, including the pretrained model path, dataset path, run directory, adapter directory, and Weights & Biases settings.",
+        "[Collection_WinNoEditor_0424_25.zip](https://modelscope.cn/datasets/UnrealZoo/UnrealZoo-UE4/file/view/master/Collection_WinNoEditor_0424_25.zip?id=77779&status=2)",
+        "## \ud83d\udcc4 License",
+        "This project is licensed under the Apache-2.0 License. See [LICENSE](./LICENSE) for more information."
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "valyentinee/IndoorUAV-Agent",
+      "url": "https://github.com/valyentinee/IndoorUAV-Agent",
+      "status": 200,
+      "license": null,
+      "branch": "main",
+      "pushed_at": "2026-08-11T08:59:14Z",
+      "readme_resource_links": [
+        "https://github.com/facebookresearch/habitat-sim/tree/main",
+        "https://github.com/Physical-Intelligence/openpi/tree/05-31-implement_training_on_droid",
+        "https://github.com/Physical-Intelligence/openpi/tree/05-31-implement_training_on_droid?tab=readme-ov-file#fine-tuning-base-models-on-your-own-data",
+        "https://github.com/valyentinee/IndoorUAV-Agent/tree/main/config/pi0",
+        "https://github.com/valyentinee/IndoorUAV-Agent/blob/main/openpi/README.md",
+        "https://github.com/valyentinee/IndoorUAV-Agent/blob/main/config/pi0/config.py",
+        "https://github.com/kpertsch/rlds_dataset_builder",
+        "https://github.com/valyentinee/IndoorUAV-Agent/tree/main/openpi#fine-tuning-base-models-on-your-own-data",
+        "https://github.com/Physical-Intelligence/openpi"
+      ],
+      "readme_download_mentions": [
+        "[[Paper](https://arxiv.org/abs/2512.19024)] [[Dataset](https://www.modelscope.cn/datasets/valyentine/Indoor_UAV)]",
+        "| IndoorUAV-Agent | [checkpoint](https://modelscope.cn/models/valyentine/IndoorUAV-Agent) |",
+        "This model is obtained by fine-tuning the pi0 model for 30k steps using the VLA part (15k episodes, the full VLA training data is about 25k) of the IndoorUAV dataset. The meta information of the training data can be found in the ```training_data.zip```, which contains the ```norm_stats.json```.",
+        "1. **Download the dataset** from [ModelScope](https://modelscope.cn/datasets/valyentine/Indoor_UAV).",
+        "   - In [vla_controller.py](online_eval/vla_eval/vla_controller.py) and [vln_controller.py](online_eval/vla_eval/vln_controller.py), set `INDOOR_UAV_BASE` to your dataset path.",
+        "   - In [model_runner.py]((online_eval/vla_eval/model_runner.py)), update `checkpoint_dir` to the path of the downloaded model.",
+        "   - In [utils.py]((online_eval/vla_eval/utils.py)), set the scene path to point to your `scene_datasets` folder.",
+        "      To save disk space by downloading part of the dataset, you can test on a subset of episodes by modifying:",
+        "Convert your data to RLDS format using [rlds_dataset_builder](https://github.com/kpertsch/rlds_dataset_builder)."
+      ]
+    },
+    {
+      "kind": "model",
+      "id": "IPEC-COMMUNITY/openfly-agent-7b",
+      "url": "https://huggingface.co/api/models/IPEC-COMMUNITY/openfly-agent-7b",
+      "status": 200,
+      "sha": "21dcce235f1f2d40fc23c76998051abc5434cc99",
+      "license": "mit",
+      "gated": false,
+      "last_modified": "2025-08-29T15:05:33.000Z",
+      "file_count": 15,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "added_tokens.json",
+        "config.json",
+        "dataset_statistics.json",
+        "generation_config.json",
+        "model-00001-of-00003.safetensors",
+        "model-00002-of-00003.safetensors",
+        "model-00003-of-00003.safetensors",
+        "model.safetensors.index.json",
+        "preprocessor_config.json",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer.model",
+        "tokenizer_config.json"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "IPEC-COMMUNITY/OpenFly",
+      "url": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/OpenFly",
+      "status": 200,
+      "sha": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+      "license": "apache-2.0",
+      "gated": false,
+      "last_modified": "2025-11-17T02:00:30.000Z",
+      "file_count": 0,
+      "file_sample": []
+    },
+    {
+      "kind": "dataset",
+      "id": "IPEC-COMMUNITY/OpenFly-rlds",
+      "url": "https://huggingface.co/api/datasets/IPEC-COMMUNITY/OpenFly-rlds",
+      "status": 200,
+      "sha": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+      "license": "apache-2.0",
+      "gated": false,
+      "last_modified": "2025-04-22T06:06:20.000Z",
+      "file_count": 3145,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "vlnv1/1.0.0/dataset_info.json",
+        "vlnv1/1.0.0/dataset_statistics_4f1e459ab510458da01b40925f44cf7ce272be7f9195af8547d58c18881c7e2a.json",
+        "vlnv1/1.0.0/features.json",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00000-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00001-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00002-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00003-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00004-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00005-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00006-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00007-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00008-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00009-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00010-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00011-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00012-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00013-of-00256",
+        "vlnv1/1.0.0/vlnv1-train.tfrecord-00014-of-00256"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "ArtemLykov/cognitiveDrone_dataset",
+      "url": "https://huggingface.co/api/datasets/ArtemLykov/cognitiveDrone_dataset",
+      "status": 200,
+      "sha": "fb9f7876d931e736497bd70e9dac291d34d6de3b",
+      "license": null,
+      "gated": false,
+      "last_modified": "2025-03-03T11:56:08.000Z",
+      "file_count": 251,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_12_28.747449/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_12_38.809689/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_12_48.663748/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_12_58.461121/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_07.932752/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_17.806088/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_27.449254/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_37.339373/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_46.992211/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_13_56.633950/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_06.504258/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_16.213578/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_25.771367/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_35.666217/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_45.511320/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_14_55.410023/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_15_05.462632/setup.json",
+        "data/benchmark/validation/Human Recognition/celebrities/2025-02-28 12_15_15.325739/setup.json"
+      ]
+    },
+    {
+      "kind": "model",
+      "id": "SerValera2/RaceVLA_models",
+      "url": "https://huggingface.co/api/models/SerValera2/RaceVLA_models",
+      "status": 200,
+      "sha": "d14f98f99c045cb51fa598b3086470d30222437a",
+      "license": null,
+      "gated": false,
+      "last_modified": "2025-03-28T17:48:43.000Z",
+      "file_count": 64,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/config.json",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/generation_config.json",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/model-00001-of-00004.safetensors",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/model-00002-of-00004.safetensors",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/model-00003-of-00004.safetensors",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/model-00004-of-00004.safetensors",
+        "drone3_cycle/finetuned_model/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/model.safetensors.index.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/added_tokens.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/dataset_statistics.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/preprocessor_config.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/special_tokens_map.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/tokenizer.json",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/tokenizer.model",
+        "drone3_cycle/runs/openvla-7b+drone_set3+b16+lr-0.0005+lora-r32+dropout-0.0/tokenizer_config.json",
+        "drone4_one_gate/openvla-7b+drone_set4+b16+lr-0.0005+lora-r32+dropout-0.0/added_tokens.json",
+        "drone4_one_gate/openvla-7b+drone_set4+b16+lr-0.0005+lora-r32+dropout-0.0/config.json",
+        "drone4_one_gate/openvla-7b+drone_set4+b16+lr-0.0005+lora-r32+dropout-0.0/dataset_statistics copy.json",
+        "drone4_one_gate/openvla-7b+drone_set4+b16+lr-0.0005+lora-r32+dropout-0.0/dataset_statistics.json"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "SerValera2/RaceVLA_dataset",
+      "url": "https://huggingface.co/api/datasets/SerValera2/RaceVLA_dataset",
+      "status": 200,
+      "sha": "5b16ae648b9745f531c899a682c56343c85a495a",
+      "license": null,
+      "gated": false,
+      "last_modified": "2025-04-08T11:35:58.000Z",
+      "file_count": 14,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "dataset.jpg",
+        "dataset_info.json",
+        "drone_set3-train.tfrecord-00000-of-00008",
+        "drone_set3-train.tfrecord-00001-of-00008",
+        "drone_set3-train.tfrecord-00002-of-00008",
+        "drone_set3-train.tfrecord-00003-of-00008",
+        "drone_set3-train.tfrecord-00004-of-00008",
+        "drone_set3-train.tfrecord-00005-of-00008",
+        "drone_set3-train.tfrecord-00006-of-00008",
+        "drone_set3-train.tfrecord-00007-of-00008",
+        "features.json",
+        "two_gates.zip"
+      ]
+    },
+    {
+      "kind": "model",
+      "id": "xlsun/AutoFly",
+      "url": "https://huggingface.co/api/models/xlsun/AutoFly",
+      "status": 401,
+      "sha": null,
+      "license": null,
+      "gated": null,
+      "last_modified": null,
+      "file_count": 0,
+      "file_sample": []
+    },
+    {
+      "kind": "model",
+      "id": "XuPeng23/AerialVLA",
+      "url": "https://huggingface.co/api/models/XuPeng23/AerialVLA",
+      "status": 200,
+      "sha": "196f2f3253b69df6e90ac10b6ae041c7b3a9569e",
+      "license": "apache-2.0",
+      "gated": false,
+      "last_modified": "2026-07-11T18:46:34.000Z",
+      "file_count": 5,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "aero_vla/adapter_config.json",
+        "aero_vla/adapter_model.safetensors",
+        "aerovla_train_dataset.json"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "jujujulien/FLIGHT",
+      "url": "https://huggingface.co/api/datasets/jujujulien/FLIGHT",
+      "status": 200,
+      "sha": "6c41ae458c6fb3fed9e63226637e06800054839c",
+      "license": null,
+      "gated": false,
+      "last_modified": "2026-06-10T14:22:29.000Z",
+      "file_count": 21636,
+      "file_sample": [
+        ".gitattributes",
+        "fgvln_annotations/2025-11-27_18-22-26_streaming.json",
+        "fgvln_annotations/2025-11-27_18-24-14_streaming.json",
+        "fgvln_annotations/2025-11-27_18-27-34_streaming.json",
+        "fgvln_annotations/2025-11-27_18-30-26_streaming.json",
+        "fgvln_annotations/2025-11-27_18-35-49_streaming.json",
+        "fgvln_annotations/2025-11-27_18-45-31_streaming.json",
+        "fgvln_annotations/2025-11-27_18-55-24_streaming.json",
+        "fgvln_annotations/2025-11-27_19-00-41_streaming.json",
+        "fgvln_annotations/2025-11-27_19-03-48_streaming.json",
+        "fgvln_annotations/2025-11-27_19-08-11_streaming.json",
+        "fgvln_annotations/2025-11-27_19-10-08_streaming.json",
+        "fgvln_annotations/2025-11-27_19-11-40_streaming.json",
+        "fgvln_annotations/2025-11-27_19-15-42_streaming.json",
+        "fgvln_annotations/2025-11-27_19-23-55_streaming.json",
+        "fgvln_annotations/2025-11-27_19-25-41_streaming.json",
+        "fgvln_annotations/2025-11-27_19-32-21_streaming.json",
+        "fgvln_annotations/2025-11-27_19-34-58_streaming.json",
+        "fgvln_annotations/2025-11-27_19-43-29_streaming.json",
+        "fgvln_annotations/2025-11-27_19-54-54_streaming.json"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "UPB-RAT-VLA/Exp2VLA-MultiObject-v1",
+      "url": "https://huggingface.co/api/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1",
+      "status": 200,
+      "sha": "d4636fc9367bd51c9e796b36f9b2d6ad3f12c400",
+      "license": null,
+      "gated": false,
+      "last_modified": "2026-03-14T01:00:40.000Z",
+      "file_count": 8,
+      "file_sample": [
+        ".gitattributes",
+        "data/chunk-000/file-000.parquet",
+        "meta/episodes/chunk-000/file-000.parquet",
+        "meta/info.json",
+        "meta/stats.json",
+        "meta/tasks.parquet",
+        "videos/observation.images.camera1/chunk-000/file-000.mp4",
+        "videos/observation.images.camera1/chunk-000/file-001.mp4"
+      ]
+    },
+    {
+      "kind": "dataset",
+      "id": "wangxiangyu0814/UAV-Flow",
+      "url": "https://huggingface.co/api/datasets/wangxiangyu0814/UAV-Flow",
+      "status": 200,
+      "sha": "262d4cfa1ae05d578204583414c085c88ef2cfe7",
+      "license": null,
+      "gated": false,
+      "last_modified": "2025-05-14T21:20:56.000Z",
+      "file_count": 55,
+      "file_sample": [
+        ".gitattributes",
+        "train-00000-of-00054.parquet",
+        "train-00001-of-00054.parquet",
+        "train-00002-of-00054.parquet",
+        "train-00003-of-00054.parquet",
+        "train-00004-of-00054.parquet",
+        "train-00005-of-00054.parquet",
+        "train-00006-of-00054.parquet",
+        "train-00007-of-00054.parquet",
+        "train-00008-of-00054.parquet",
+        "train-00009-of-00054.parquet",
+        "train-00010-of-00054.parquet",
+        "train-00011-of-00054.parquet",
+        "train-00012-of-00054.parquet",
+        "train-00013-of-00054.parquet",
+        "train-00014-of-00054.parquet",
+        "train-00015-of-00054.parquet",
+        "train-00016-of-00054.parquet",
+        "train-00017-of-00054.parquet",
+        "train-00018-of-00054.parquet"
+      ]
+    },
+    {
+      "kind": "repository",
+      "id": "Qianzhong-Chen/grad_nav",
+      "url": "https://github.com/Qianzhong-Chen/grad_nav",
+      "status": 200,
+      "license": "NOASSERTION",
+      "branch": "main",
+      "pushed_at": "2026-07-07T05:28:01Z",
+      "readme_resource_links": [
+        "https://github.com/Qianzhong-Chen/grad_nav.git",
+        "https://github.com/nerfstudio-project/nerfstudio",
+        "https://drive.google.com/drive/folders/1XEoJU3PVTMx782MMfSFNm5D0zTawKrbJ?usp=sharing"
+      ],
+      "readme_download_mentions": [
+        "  python examples/train_gradnav.py --cfg examples/cfg/gradnav/drone_long_traj.yaml --checkpoint examples/logs/DroneLongTraj/gradnav/<map_name>/<time_stamp>/best_policy.pt --play --render",
+        "  python examples/train_gradnav.py --cfg examples/cfg/gradnav/drone_multi_gate.yaml --checkpoint examples/logs/DroneMultiGate/gradnav/<map_name>/<time_stamp>/best_policy.pt --play --render",
+        "  python examples/train_gradnav_vla_moe.py --cfg examples/cfg/gradnav_vla_moe/drone_long_task.yaml --checkpoint examples/logs/DroneVLALongTaskEnv/gradnav_MoE/<map_name>/<time_stamp>/final_policy.pt --play --render",
+        "  python auto_test_vla_long_task_moe.py --checkpoint examples/logs/DroneVLALongTaskEnv/gradnav_MoE/<map_name>/<time_stamp>/final_policy.pt --play --render",
+        "  python examples/train_gradnav_vla_moe.py --cfg examples/cfg/gradnav_vla_moe/drone_multi_map.yaml --checkpoint examples/logs/DroneVLAMultiMapEnv/gradnav_MoE/<map_name>/<time_stamp>/final_policy.pt --play --render",
+        "  python auto_test_vla_multi_map_moe.py --checkpoint examples/logs/DroneVLAMultiMapEnv/gradnav_MoE/<map_name>/<time_stamp>/final_policy.pt --play --render",
+        "  python examples/train_ppo.py --cfg examples/cfg/ppo/drone_ppo.yaml --checkpoint examples/logs/DronePPO/ppo/<map_name>/<time_stamp>/best_policy.pt --play --render",
+        "  python examples/train_bptt.py --cfg examples/cfg/bptt/drone_long_traj.yaml --checkpoint examples/logs/DroneLongTraj/bptt/<map_name>/<time_stamp>/best_policy.pt --play --render"
+      ]
+    },
+    {
+      "kind": "model",
+      "id": "EmbodiedCity/WorldVLN",
+      "url": "https://huggingface.co/api/models/EmbodiedCity/WorldVLN",
+      "status": 200,
+      "sha": "7a75b36a6aa6ab248da6d1c734e8794b44a3a316",
+      "license": null,
+      "gated": false,
+      "file_count": 11,
+      "file_sample": [
+        ".gitattributes",
+        "README.md",
+        "WorldVLN_action_decoder.pt",
+        "WorldVLN_backbone/.gitattributes",
+        "WorldVLN_backbone/README.md",
+        "WorldVLN_backbone/backbone/model-00001-of-00004.safetensors",
+        "WorldVLN_backbone/backbone/model-00002-of-00004.safetensors",
+        "WorldVLN_backbone/backbone/model-00003-of-00004.safetensors",
+        "WorldVLN_backbone/backbone/model-00004-of-00004.safetensors",
+        "WorldVLN_backbone/backbone/model.safetensors.index.json",
+        "WorldVLN_backbone/vae/model.safetensors"
+      ],
+      "last_modified": "2026-05-18T05:07:48.000Z"
+    },
+    {
+      "kind": "model",
+      "id": "wangxiangyu0814/OpenVLA-UAV",
+      "url": "https://huggingface.co/api/models/wangxiangyu0814/OpenVLA-UAV",
+      "status": 200,
+      "sha": "e2d994d3aa563a86923ae17564f8abda7ca8c476",
+      "license": null,
+      "gated": false,
+      "file_count": 18,
+      "file_sample": [
+        ".gitattributes",
+        "added_tokens.json",
+        "config.json",
+        "configuration_prismatic.py",
+        "generation_config.json",
+        "model-00001-of-00004.safetensors",
+        "model-00002-of-00004.safetensors",
+        "model-00003-of-00004.safetensors",
+        "model-00004-of-00004.safetensors",
+        "model.safetensors.index.json",
+        "modeling_prismatic.py",
+        "preprocessor_config.json",
+        "processing_prismatic.py",
+        "processor_config.json",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer.model",
+        "tokenizer_config.json"
+      ],
+      "last_modified": "2025-09-26T08:17:42.000Z"
+    }
+  ]
+}

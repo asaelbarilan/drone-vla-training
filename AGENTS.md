@@ -16,6 +16,17 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D149 drone-only literature audit complete
+
+Read docs/research/vla_results_audit_20260919/REPORT.md. Fifteen aerial learned
+action architecture papers, three aerial benchmarks and one dialogue boundary case;
+31 screened candidates. No manipulation-only model in the architecture count.
+Current OpenFly v7 SR is34.3% seen/22.6% unseen; old D146-D148 citations use v6.
+HF model last update2025-08-29 predates v7; checkpoint-paper mapping unresolved.
+Do not rank flight capability from our action agreement. Next gate remains exact
+source calibration, expert playback and paired source-faithful closed-loop tests.
+User review page: localhost8771/drone_vla_research.html. No new model runs or spend.
+
 ## D148 complete-route / original training-record investigation
 
 Read reports/vla_openfly_routes_20260919/REPORT.md and openfly_routes.html.

@@ -1,0 +1,691 @@
+[
+  {
+    "id": "openfly",
+    "url": "https://arxiv.org/pdf/2502.18041",
+    "version": "2502.18041v7",
+    "pages": 21,
+    "sha256": "0c1ab59f3027ff8f74d5857036efa749217dfc502f4c3feed6e8964d67e33571",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "Openfly: A comprehensive platform for aerial vision-language navigation",
+      "author": "Yunpeng Gao; Chenhui Li; Zhongrui You; Junli Liu; Zhen Li; Pengan Chen; Qizhi Chen; Zhonghan Tang; Liansheng Wang; Penghui Yang; Yiwen Tang; Yuhang Tang; Shuai Liang; Songyi Zhu; Ziqin Xiong; Yifei Su; Xinyi Ye; Jianan Li; Yan Ding; Dong Wang; Xuelong Li; Zhigang Wang; Bin Zhao",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:57610bf)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "cognitive",
+    "url": "https://arxiv.org/pdf/2503.01378",
+    "version": "2503.01378v1",
+    "pages": 6,
+    "sha256": "3b654190fd03f5bd1a79cb2c0d52f24939d1c51f36831754f68cece9f8d7c9b4",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20250304030236Z",
+      "modDate": "D:20250304030236Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://cognitivedrone.github.io",
+      "https://github.com/Stanford-ILIAD/openvla-mini",
+      "https://racevla.github.io"
+    ]
+  },
+  {
+    "id": "racevla",
+    "url": "https://arxiv.org/pdf/2503.02572",
+    "version": "2503.02572v1",
+    "pages": 6,
+    "sha256": "ca0306fb8adeaf972e55b051f0f70eb3ca006929483713188ac94d13296ea458",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "Overleaf Example",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20250305015457Z",
+      "modDate": "D:20250305015457Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/Stanford-ILIAD/openvla-mini"
+    ]
+  },
+  {
+    "id": "autofly",
+    "url": "https://arxiv.org/pdf/2602.09657",
+    "version": "2602.09657v1",
+    "pages": 24,
+    "sha256": "82ca664b7f04e4a00ef455386ebf5d6ffddf277559c6266ba4dfd26db204e33d",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild",
+      "author": "Xiaolou Sun; Wufei Si; Wenhui Ni; Yuntian Li; Dongming Wu; Fei Xie; Runwei Guan; He-Yang Xu; Henghui Ding; Yuan Wu; Yutao Yue; Yongming Huang; Hui Xiong",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:57610bf)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://xiaolousun.github.io/AutoFly"
+    ]
+  },
+  {
+    "id": "aerialvla",
+    "url": "https://arxiv.org/pdf/2603.14363",
+    "version": "2603.14363v1",
+    "pages": 18,
+    "sha256": "0a8ea168f437d86af8894d10f35facc35ed1d5808dd2a4a6c90d14ece9a50738",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "AerialVLA: A Vision-Language-Action Model for UAV Navigation via Minimalist End-to-End Control",
+      "author": "Peng Xu; Zhengnan Deng; Jiayan Deng; Zonghua Gu; Shaohua Wan",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/XuPeng23/AerialVLA"
+    ]
+  },
+  {
+    "id": "spatialfly",
+    "url": "https://arxiv.org/pdf/2603.21046",
+    "version": "2603.21046v2",
+    "pages": 9,
+    "sha256": "71fb7a50764d51166977bf759330b3feb7079211cbb0310215bc3268d6cbc35e",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "SpatialFly: Implicit 3D Prior-Guided Visual Reparameterization for Continuous UAV Vision-and-Language Navigation",
+      "author": "Wen Jiang; Kangyao Huang; Li Wang; Wang Xu; Wei Fan; Jinyuan Liu; Shaoyu Liu; Hanfang Liang; Hongwei Duan; Bin Xu; Xiangyang Ji; Huaping Liu",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "longfly",
+    "url": "https://arxiv.org/pdf/2512.22010",
+    "version": "2512.22010v1",
+    "pages": 12,
+    "sha256": "da076bd01adf83d9debaea36c0f2ae05a1c8bc46acaaccf86e2d39a42450032f",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "LongFly: Long-Horizon UAV Vision-and-Language Navigation with Spatiotemporal Context Integration",
+      "author": "Wen Jiang; Li Wang; Kangyao Huang; Wei Fan; Jinyuan Liu; Shaoyu Liu; Hongwei Duan; Bin Xu; Xiangyang Ji",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:57610bf)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "flight",
+    "url": "https://arxiv.org/pdf/2606.06836",
+    "version": "2606.06836v1",
+    "pages": 20,
+    "sha256": "33fd1857f1fead3e5d00d478093053c0c036940dc67bfff90e0fd4024b286ab0",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "Think Like a Pilot: Fine-Grained Long-Horizon UAV Navigation",
+      "author": "Xiangyi Zheng; Xiangyu Wang; Qinan Liao; Zimu Tang; Yue Liao; Dongyue Lyu; Guodong Wang; Junjie Liu; Si Liu",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://buaa-colalab.github.io/FLIGHT/",
+      "https://github.com/buaa-colalab/FLIGHT",
+      "https://huggingface.co/datasets/jujujulien/FLIGHT"
+    ]
+  },
+  {
+    "id": "worldvln",
+    "url": "https://arxiv.org/pdf/2605.15964",
+    "version": "2605.15964v1",
+    "pages": 23,
+    "sha256": "8147db2629c1d686bb6ea56af71eb89ce993a6f86e5c528e9b56df742d922ccc",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "WorldVLN: Autoregressive World Action Model for Aerial Vision-Language Navigation",
+      "author": "Baining Zhao; Jiacheng Xu; Weicheng Feng; Xin Zhang; Zhaolu Wang; Haoyang Wang; Shilong Ji; Ziyou Wang; Jianjie Fang; Zhiheng Zheng; Weichen Zhang; Yu Shang; Wei Wu; Chen Gao; Xinlei Chen; Yong Li",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://embodiedcity.github.io/WorldVLN/"
+    ]
+  },
+  {
+    "id": "imagineuav",
+    "url": "https://arxiv.org/pdf/2606.01205",
+    "version": "2606.01205v2",
+    "pages": 8,
+    "sha256": "a24b011e4adbfb7bf3a4711a0064bebfe72485e4b46977f26863487aa106eb6e",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "ImagineUAV: Aerial Vision-Language Navigation via World-Action Modeling and Kinodynamic Planning",
+      "author": "Xuchen Liu; Jiawei Huang; Shihao Xia; Bingxi Liu; Jinqiang Cui; Jiankun Yang",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://qgduan.github.io/Spikive-Astro/"
+    ]
+  },
+  {
+    "id": "exp2vla",
+    "url": "https://arxiv.org/pdf/2607.03146",
+    "version": "2607.03146v1",
+    "pages": 7,
+    "sha256": "47e7f76e874611ea6b689585be496d3335c9a57cde2a65d6add1e480e53dc1f7",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "Exp2VLA: Enabling Vision-Language-Action for Drone Navigation from Expert Demonstrations",
+      "author": "Van Huyen Dang; Kabilesh Rajendran; Erdi Sayar; Erdal Kayacan",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/Denys88/rl_games",
+      "https://huggingface.co/datasets/UPB-RAT-VLA/Exp2VLA-MultiObject-v1",
+      "https://huggingface.co/datasets/UPB-RAT-VLA/Exp2VLA-SingleCube-v1",
+      "https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2FUPB-RAT-VLA%2FExp2VLA-MultiObject-v1%2Fepisode_0",
+      "https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2FUPB-RAT-VLA%2FExp2VLA-SingleCube-v1%2Fepisode_0"
+    ]
+  },
+  {
+    "id": "fsdvln",
+    "url": "https://arxiv.org/pdf/2607.08359",
+    "version": "2607.08359v1",
+    "pages": 18,
+    "sha256": "a9017f4b555464dee3a1ace89e81a2a0e05369c86bac17f97b1ef3a9f843fd07",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "FSD-VLN: Fast-Slow Dual-System Modeling for Aerial Long-Horizon Vision-Language Navigation",
+      "author": "Xueke Zhu; Qingyan Meng; Liutao Yu; Wei Zhang; Zhengyu Ma; Huihui Zhou; Yonghong Tian",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "uavtrack",
+    "url": "https://arxiv.org/pdf/2604.02241",
+    "version": "2604.02241v2",
+    "pages": 22,
+    "sha256": "f523c1cbfa3d46b52b7ed0f9608c80ecf4e86eca26d00967948a22f624e76564",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "UAV-Track VLA: Embodied Aerial Tracking via Vision-Language-Action Models",
+      "author": "Qiyao Zhang; Shuhua Zheng; Jianli Sun; Chengxiang Li; Xianke Wu; Zihan Song; Zhiyong Cui; Yisheng Lv; Yonglin Tian",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://flying-intelligence.github.io/"
+    ]
+  },
+  {
+    "id": "litevla",
+    "url": "https://arxiv.org/pdf/2605.00884",
+    "version": "2605.00884v2",
+    "pages": 8,
+    "sha256": "4bed1d4c490a55c5388f7db359df34c26403e19967c83db96260ae308679693d",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "LiteVLA-H: Dual-Rate Vision-Language-Action Inference for Onboard Aerial Guidance and Semantic Perception",
+      "author": "Justin williams; Kishor Datta Gupta; Roy George; Mrinmoy Sarkar",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "aerialvla_dialogue",
+    "url": "https://ojs.aaai.org/index.php/AAAI/article/download/38878/42840",
+    "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
+    "alternate_access": "Publisher PDF successfully inspected with web tool; local HTTP download failed. https://ojs.aaai.org/index.php/AAAI/article/download/38878/42840"
+  },
+  {
+    "id": "uavflow",
+    "url": "https://arxiv.org/pdf/2505.15725",
+    "version": "2505.15725v2",
+    "pages": 15,
+    "sha256": "49ffcf29ee4f31a57a5a194a6498e15173a454e423eba2dcaa8b9e80767b3f24",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "UAV-Flow Colosseo: A Real-World Benchmark for Flying-on-a-Word UAV Imitation Learning",
+      "author": "Xiangyu Wang; Donglin Yang; Yue Liao; Wenhao Zheng; wenjun wu; Bin Dai; Hongsheng Li; Si Liu",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://prince687028.github.io/UAV-Flow"
+    ]
+  },
+  {
+    "id": "indooruav",
+    "url": "https://arxiv.org/pdf/2512.19024",
+    "version": "2512.19024v1",
+    "pages": 15,
+    "sha256": "3876c6ddfe65721b7b6078977e2efb33fca0a3c9ead70b84b50ef3cdce22b7f1",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "IndoorUAV: Benchmarking Vision-Language UAV Navigation in Continuous Indoor Environments",
+      "author": "Xu Liu; Yu Liu; Hanshuo Qiu; Yang Qirong; Zhouhui Lian",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:57610bf)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "aerialvln",
+    "url": "https://arxiv.org/pdf/2308.06735",
+    "version": "2308.06735v1",
+    "pages": 11,
+    "sha256": "90643d4103252ca1860934ef549a874e161f554c2e83d358988f2c7bc410333b",
+    "metadata": {
+      "format": "PDF 1.6",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20230815004155Z",
+      "modDate": "D:20230815004155Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/AirVLN/AirVLN"
+    ]
+  },
+  {
+    "id": "onfly",
+    "url": "https://arxiv.org/pdf/2603.10682",
+    "version": "2603.10682v1",
+    "pages": 9,
+    "sha256": "d7da5ecaa10939dbf723d8f3b68fa30f60af6259c4c70e648683bf529334b275",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "OnFly: Onboard Zero-Shot Aerial Vision-Language Navigation toward Safety and Efficiency",
+      "author": "Guiyong Zheng; Yueting Ban; Mingjie Zhang; Juepeng Zheng; Boyu Zhou",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/NVIDIA/TensorRT",
+      "https://github.com/Robotics-STAR-Lab/OnFly"
+    ]
+  },
+  {
+    "id": "vlfly",
+    "url": "https://arxiv.org/pdf/2506.10756",
+    "version": "2506.10756v1",
+    "pages": 10,
+    "sha256": "c330384accd2c4fc48f94e59782b3d1ed057bc3ee17ce644b235192855a346cb",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "Grounded Vision-Language Navigation for UAVs with Open-Vocabulary Goal Understanding",
+      "author": "Yuhang Zhang; Haosheng Yu; Jiaping Xiao; Mir Feroskhan",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://zzzzzyh111.github.io/VLFly/"
+    ]
+  },
+  {
+    "id": "gradnav",
+    "url": "https://arxiv.org/pdf/2506.14009",
+    "version": "2506.14009v2",
+    "pages": 8,
+    "sha256": "46161e3ef6f41b91cccfa89093db57a4780e6fe7bbb967f0497cfa5f6ddaa2ba",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "GRaD-Nav++: Vision-Language Model Enabled Visual Drone Navigation with Gaussian Radiance Fields and Differentiable Dynamics",
+      "author": "Qianzhong Chen; Naixiang Gao; Suning Huang; JunEn Low; Timothy Chen; Jiankai Sun; Mac Schwager",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://qianzhong-chen.github.io/gradnavpp.github.io/"
+    ]
+  },
+  {
+    "id": "seepointfly",
+    "url": "https://arxiv.org/pdf/2509.22653",
+    "version": "2509.22653v1",
+    "pages": 16,
+    "sha256": "f28050aa1bf4f2252409b91579f444b485e61f01e14e8ab7c71bb5518962d163",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "See, Point, Fly: A Learning-Free VLM Framework for Universal Unmanned Aerial Navigation",
+      "author": "Chih Yao Hu; Yang-Sen Lin; Yuna Lee; Chih-Hai Su; Jie-Ying Lee; Shr-Ruei Tsai; Chin-Yang Lin; Kuan-Wen Chen; Tsung-Wei Ke; Yu-Lun Liu",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/damiafuentes/DJITelloPy",
+      "https://github.com/ultralytics/ultralytics"
+    ]
+  },
+  {
+    "id": "fly0",
+    "url": "https://arxiv.org/pdf/2602.15875",
+    "version": "2602.15875v2",
+    "pages": 19,
+    "sha256": "cb4e65f048802523102af841397acd3e07dca25a5827f86b71df7ed709488df1",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "Fly0: Persistent Metric Anchoring for Zero-Shot Aerial Vision-Language Navigation",
+      "author": "Zhenxing Xu; Yihong Lu; Weidong Bao; Zhengqiu Zhu; Jingxuan Zhou; Zhichuang Wang; Ji Wang; Lihua Liu; Wei He",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "traveluav",
+    "url": "https://arxiv.org/pdf/2410.07087",
+    "version": "2410.07087v2",
+    "pages": 16,
+    "sha256": "0b0565dc4ab1ddccb4c0a5a30b925ad09022da365f4fe6e8ae604efea364a90e",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20241011003100Z",
+      "modDate": "D:20241011003100Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://prince687028.github.io/OpenUAV"
+    ]
+  },
+  {
+    "id": "cosflytrack",
+    "url": "https://arxiv.org/pdf/2605.17776",
+    "version": "2605.17776v2",
+    "pages": 16,
+    "sha256": "36bc62e6d17ab731320709ba5a8f11cb0892694de220a20ca163dcf52ba67b16",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "CosFly-Track: A Large-Scale Multi-Modal Dataset for UAV Visual Tracking via Multi-Constraint Trajectory Optimization",
+      "author": "Xiangyue Wang; Hanxuan Chen; Songsheng Cheng; Ruilong Ren; Jie Zheng; Shuai Yuan; Tianle Zeng; Hanzhong Guo; Kangli Wang; Ji Pei",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://huggingface.co/AutelRobotics/CosFly-Track",
+      "https://huggingface.co/datasets/AutelRobotics/CosFly"
+    ]
+  },
+  {
+    "id": "uavvla",
+    "url": "https://arxiv.org/pdf/2501.05014",
+    "version": "2501.05014v2",
+    "pages": 5,
+    "sha256": "7caae910802086c0bfdd14b069fd8d2cd6536723ac3d0bb980f97e803be741bd",
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "creator": "LaTeX with hyperref",
+      "producer": "pdfTeX-1.40.25",
+      "creationDate": "D:20250514003135Z",
+      "modDate": "D:20250514003135Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/sautenich/uav_vla",
+      "https://huggingface.co/cyan2k/molmo-7B-D-bnb-4bit"
+    ]
+  },
+  {
+    "id": "semanticdecision",
+    "url": "https://arxiv.org/pdf/2608.09564",
+    "version": "2608.09564v1",
+    "pages": 10,
+    "sha256": "ba4395b0d78663d6d244fab681c3cf3b94377f3bcfca15d3ed5a473a78b201b1",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "From Semantic Grounding to Decision Optimization: A Unified Framework for Long-Horizon UAV Vision-Language Navigation",
+      "author": "Zeyuan Ma; Jiaxin Chen; Di Huang",
+      "subject": "-  Computing methodologies  ->  Computer vision.Artificial intelligence.Natural language processing.",
+      "keywords": "Vision-Language Navigation, Unmanned Aerial Vehicles, Reinforcement Learning",
+      "creator": "arXiv GenPDF (tex2pdf:8def8d8)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "D:20260811021843+00'00'",
+      "modDate": "D:20260811021843+00'00'",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/mksasx/S2D-UAV-VLN"
+    ]
+  },
+  {
+    "id": "vlaan",
+    "url": "https://arxiv.org/pdf/2512.15258",
+    "version": "2512.15258v2",
+    "pages": 16,
+    "sha256": "1b57bf773d886a46b6f6d1ffd3164bef0d24100c535f9cdcfb5b2be83069fff2",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments",
+      "author": "Yuze Wu; Mo Zhu; Xingxing Li; Yuheng Du; Yuxin Fan; Wenjun Li; Zhichao Han; Xin Zhou; Fei Gao",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:57610bf)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "huge",
+    "url": "https://arxiv.org/pdf/2603.19822",
+    "version": "2603.19822v4",
+    "pages": 25,
+    "sha256": "fa3c8ea41001d8e94689f2a7e6e043fbe8a6960640c79cc9c43577fe61733750",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "HUGE-Bench: A Benchmark for High-Level UAV Vision-Language-Action Tasks",
+      "author": "Jingyu Guo; Ziye Chen; Ziwen Li; Zhengqing Gao; Jiaxin Huang; Hanlue Zhang; Fengming Huang; Yu Yao; Tongliang Liu; Mingming Gong",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": [
+      "https://github.com/isaac-sim/IsaacSim",
+      "https://jingyu198.github.io/HUGE_Bench"
+    ]
+  },
+  {
+    "id": "singer",
+    "url": "https://arxiv.org/pdf/2509.18610",
+    "version": "2509.18610v1",
+    "pages": 9,
+    "sha256": "60be14a38b919afc4c7c5c9a10402de3e6606c3f21146c26f88fcb6c530b7221",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "SINGER: An Onboard Generalist Vision-Language Navigation Policy for Drones",
+      "author": "Maximilian Adang; JunEn Low; Ola Shorinwa; Mac Schwager",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  },
+  {
+    "id": "airvla",
+    "url": "https://arxiv.org/pdf/2606.12859",
+    "version": "2606.12859v1",
+    "pages": 13,
+    "sha256": "2f92b8301988e0d6844dead2b6e45defe7086610f68d5742607d4f7821576868",
+    "metadata": {
+      "format": "PDF 1.7",
+      "title": "AIR-VLA+: Decoupling Movement and Manipulation via Cascaded Dual-Action Decoders with Asymmetric MoE for Aerial Robots",
+      "author": "Jianli Sun; Bin Tian; Qiyao Zhang; Zijian Liu; Yutong Wang; Zhiyong Cui; Bai Li; Yisheng Lv; Yonglin Tian",
+      "subject": "",
+      "keywords": "",
+      "creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+      "producer": "pikepdf 8.15.1",
+      "creationDate": "",
+      "modDate": "",
+      "trapped": "",
+      "encryption": null
+    },
+    "links": []
+  }
+]

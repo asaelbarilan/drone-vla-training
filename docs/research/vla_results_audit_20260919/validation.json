@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-19",
+  "evidence_rows": 19,
+  "architecture_rows": 15,
+  "candidate_rows": 31,
+  "structural_evidence_validator": "pass --minimum 15",
+  "python_syntax": "pass",
+  "json_parse": "pass",
+  "report_primary_links": "pass",
+  "local_review_http_status": 200,
+  "html_table_rows": 15,
+  "details_blocks": 15,
+  "linked_local_debugger_pages": "HTTP200",
+  "viewer_note": "Existing viewer was stopped; restarted localhost-only HTTP server on port8771.",
+  "model_execution": false,
+  "cloud_spend": false,
+  "legacy_logs": "Staged Git blobs preserve exact HEAD byte prefix; worktree CRLF normalization accounted for."
+}

@@ -3844,3 +3844,20 @@ Status: bounded diagnosis and visual debugger complete; no claim of paper reprod
 Evidence: reports/vla_openfly_routes_20260919/REPORT.md, source records, rlds_audit.json, packed_vs_current_raw.json, calibration_sensitivity.json, summary.json, completion_audit.json and browser_audit.json. UI: localhost8771/openfly_routes.html.
 
 Superseded/corrected claim: D147 decoder coverage was insufficient to establish cross-subset calibration; its global-profile comparison remains historical and must not rank capability. D148 proves the concrete failure using original training records; not all remaining policy errors are explained.
+
+
+## D149 - Drone-specific VLA evidence and evaluation interpretation (2026-09-19)
+
+Rationale: user requested10-15 drone VLA architecture papers to challenge the apparent weak OpenFly result. General manipulation VLA scores would be irrelevant. Review15 learned aerial action architectures plus3 aerial benchmarks and1 dialogue boundary case;31 candidates screened. Primary methods/results and official resource metadata inspected. Author-reported scores are not our reproductions or a cross-paper leaderboard.
+
+Decision: retain the D148 finding that our global normalization was wrong; do not infer that Qwen is a better flight policy from single-action agreement. Establish source-faithful OpenFly checkpoint/input/normalization/timing and expert route playback before paired closed-loop evaluation or more training. Different control interfaces, history, hints, planner assistance, task horizons and success thresholds must be explicit architecture factors. Match the existing paper's task categories; preserve all baselines and splits.
+
+Current literature correction: OpenFly v7 Table2 gives34.3% seen/22.6% unseen SR; D146-D148 used v6's33.2%/10.7%. Current model repository metadata is last modified2025-08-29, earlier than v7's2026-03-01; a checkpoint-paper mapping is unresolved, not an established mismatch. IndoorUAV's VLA heading threshold is pi/4 (45degrees). Reporting caveats for Exp2VLA, GRaD-Nav++ and VLA-AN are documented.
+
+Rejected inference: pretraining on a dataset guarantees near-perfect next-action agreement or flight completion. Rejected action: broad training/model sweeps before the reference interface works. Scope boundary: training-free VLM/planner methods and assisted aerial-view dialogue are not counted among the15 learned aerial policies.
+
+Status: literature/release audit complete with explicit reproducibility gaps; no model execution or cloud spend. Structural ledger validation does not certify scientific claims. No protected seeds1-40/1060-1064, baseline, dataset, checkpoint or split modifications.
+
+Evidence: docs/research/vla_results_audit_20260919/REPORT.md and companion ledgers/source/resource records; reports/vla_dataset_review_20260916/drone_vla_research.html.
+
+Superseded/corrected claim: D146-D148's33.2%/10.7% is the historical v6 paper result, not the latest paper estimate. Use v7 for current literature reporting; preserve the old experiment records. No published OpenFly benchmark has been reproduced by this pilot.
