@@ -1,0 +1,8 @@
+{
+  "displayed_steps_checked": 452,
+  "errors": [],
+  "playback_and_buttons": true,
+  "deep_link_unknown_label": true,
+  "mobile_no_horizontal_overflow": true,
+  "browser": "isolated headless Chromium; no user profile"
+}

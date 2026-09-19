@@ -1,0 +1,12 @@
+{
+  "type": "file",
+  "oid": "f764551cadf9c76c654f0e4dd7fe120ed6cf1cf0",
+  "size": 285821005,
+  "lfs": {
+    "oid": "292c751e50f79f3cb4113a53e7e73d409a7bb0a97bf19a44672a8348ac7863b8",
+    "size": 285821005,
+    "pointerSize": 134
+  },
+  "xetHash": "5a1e643feac067be531cd4b4770affebf219510b8a3f73ec489b473848121228",
+  "path": "airsim/env_airsim_18.zip"
+}

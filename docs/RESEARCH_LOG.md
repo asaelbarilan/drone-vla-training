@@ -3861,3 +3861,35 @@ Status: literature/release audit complete with explicit reproducibility gaps; no
 Evidence: docs/research/vla_results_audit_20260919/REPORT.md and companion ledgers/source/resource records; reports/vla_dataset_review_20260916/drone_vla_research.html.
 
 Superseded/corrected claim: D146-D148's33.2%/10.7% is the historical v6 paper result, not the latest paper estimate. Use v7 for current literature reporting; preserve the old experiment records. No published OpenFly benchmark has been reproduced by this pilot.
+
+
+## D150 - Verify native execution and source profiles before renderer comparison (2026-09-19)
+
+Status: kinematic/data audit complete; renderer setup in progress, no new policy results.
+Decision: keep token normalization, native primitive execution, observation timing
+and success criteria explicit. Use the newly frozen original vlnv20/env18 TRAIN
+record as a source-matched reproduction control; keep all existing routes/splits.
+Rationale: a codebook component is not a physical control unit. The released pose
+function uses3source-unit translation and30-degree turns, while vector values can
+be2/5/15. Existing decoder and evaluator shortcuts can invalidate model rankings.
+Evidence:40source transition parity cases; all3frozen dev expert reconstructions
+pass below1e-6units after frame alignment. Old annotations differ by up to6units.
+A raw Shanghai donw/0 label blocks strict playback; its downward interpretation
+is diagnostic only. All20source profiles match checkpoint statistics, but vlnv8
+has vertical max2 and q99zero, preventing UP/DOWN round-trip. Sparse metadata
+samples are not an exhaustive route-subset map.87,157released packed TRAIN records
+and460.44GBreported differ from100,226current raw TRAIN annotations.
+New source control:40packed/75raw steps, full record CRC, verified vlnv20 statistics,
+no overlap with110adapter-pilot or3000official eval routes. Raw reconstruction
+passes;2stored future-history slots and6m packed/current alignment difference remain.
+Public evaluator uses pose teleportation with ignore-collision, endpoint-only
+success even after timeout/error, and an unbounded straight-line/path-length SPL
+ratio. Preserve legacy semantics separately; do not claim the released checkpoint
+or our strict diagnostic reproduces current paper metrics.
+User granted HF scene access after initial403. Local8GBGPU/WSL inventory completed;
+small standard Ubuntu graphics dependencies installed, software Vulkan available.
+Simulator archive download/verification underway; no actual renderer or model
+flight success yet. No new training, cloud spend, weight/baseline/index/split edits.
+Validation:33focused tests,452recorded-viewer checks, playback/deep-links/mobile;
+see reports/vla_openfly_execution_20260919/REPORT.md. Next gate is source-matched
+expert rendering, camera agreement and bounded paired model-controlled navigation.

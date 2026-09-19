@@ -1,0 +1,143 @@
+{
+  "zip_sha256": "292c751e50f79f3cb4113a53e7e73d409a7bb0a97bf19a44672a8348ac7863b8",
+  "expected_sha256": "292c751e50f79f3cb4113a53e7e73d409a7bb0a97bf19a44672a8348ac7863b8",
+  "compressed_bytes": 285821005,
+  "expanded_bytes": 377676858,
+  "entries": [
+    {
+      "name": "env_airsim_18/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/nohup.out",
+      "size": 630,
+      "mode": "0o100600"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/start.sh",
+      "size": 278,
+      "mode": "0o100775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Manifest_NonUFSFiles_Linux.txt",
+      "size": 875,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Binaries/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Binaries/Linux/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Binaries/Linux/AirVLN-Linux-Shipping",
+      "size": 103629960,
+      "mode": "0o100775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Binaries/Linux/settings.json",
+      "size": 3329,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Content/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Content/Paks/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/AirVLN/Content/Paks/AirVLN-LinuxNoEditor.pak",
+      "size": 259531082,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/",
+      "size": 0,
+      "mode": "0o40775"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libApexCommon.so",
+      "size": 524824,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libApexFramework.so",
+      "size": 1165072,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libApexShared.so",
+      "size": 1044960,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libAPEX_Clothing.so",
+      "size": 1358048,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libAPEX_Legacy.so",
+      "size": 9721816,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libNvParameterized.so",
+      "size": 430792,
+      "mode": "0o100664"
+    },
+    {
+      "name": "env_airsim_18/LinuxNoEditor/Engine/Binaries/ThirdParty/PhysX3/Linux/x86_64-unknown-linux-gnu/libRenderDebug.so",
+      "size": 265192,
+      "mode": "0o100664"
+    }
+  ],
+  "revision": "b051daff7afe74bcf695f8b72922b13386bc75ea",
+  "archive": "D:\\drone_vla_pilot\\simulators\\openfly\\env_airsim_18.zip",
+  "extracted": true,
+  "extracted_root": "D:\\drone_vla_pilot\\simulators\\openfly\\env_airsim_18",
+  "zip_crc_verified": true
+}

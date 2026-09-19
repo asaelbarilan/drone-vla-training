@@ -1,0 +1,11 @@
+{
+  "route": "env_airsim_18/astar_data/medium_long/2025-01-19_04-40-57_927964",
+  "subset": "vlnv20",
+  "rlds_revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+  "raw_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+  "shard": "vlnv20/1.0.0/vlnv20-train.tfrecord-00000-of-00512",
+  "selection_rule": "First record of first vlnv20 shard, matching smallest env18 scene",
+  "our_adapter_train_or_dev_overlap": false,
+  "official_eval_overlap": false,
+  "model_outputs_inspected_before_selection": false
+}

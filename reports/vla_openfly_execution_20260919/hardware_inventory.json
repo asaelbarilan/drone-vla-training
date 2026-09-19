@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-09-19T12:53:00.4117386Z",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 34, 0",
+  "disks": [
+    {
+      "DeviceID": "C:",
+      "Size": 1022975012864,
+      "FreeSpace": 28417212416
+    },
+    {
+      "DeviceID": "D:",
+      "Size": 1023286439936,
+      "FreeSpace": 955713347584
+    }
+  ],
+  "scene_assets_installed": false,
+  "model_jobs_started": 0,
+  "cloud_resources_started": 0,
+  "hf_dataset_access": "Denied: account not authorized for OpenFly_DataGen",
+  "wsl_verified": "Ubuntu-22.04, WSL2, WSLg, GPU visible; actual simulator rendering untested",
+  "missing_graphics_checks": [
+    "vulkaninfo",
+    "glxinfo"
+  ],
+  "simulator_python_client_installed": false
+}

@@ -1,0 +1,1134 @@
+{
+  "subsets": [
+    {
+      "subset": "vlnv1",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv2",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv3",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv4",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv5",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv6",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv7",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv8",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [
+        4,
+        5
+      ],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv9",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv10",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv11",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv12",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv13",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv14",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv15",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv16",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv17",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv18",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv19",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "subset": "vlnv20",
+      "source_statistics_match": true,
+      "metadata_route_in_train": true,
+      "metadata_route_in_official_eval": false,
+      "reported_max_support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        4,
+        5
+      ],
+      "roundtrip_failures": [],
+      "norm_q01": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "norm_q99": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ],
+      "minimum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum": [
+        1.0,
+        9.0,
+        15.0,
+        15.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "packed_train_episodes": 87157,
+  "reported_dataset_bytes": 460440792255,
+  "metadata_range_bytes": 360448,
+  "matched_full_record_identities": 2,
+  "sampled_routes_are_official_train": true,
+  "official_eval_overlap": false,
+  "raw_development_route_assignment": "unresolved; environment-only samples are insufficient"
+}

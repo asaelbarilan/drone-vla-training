@@ -1,0 +1,11 @@
+{
+  "dataset": "IPEC-COMMUNITY/OpenFly_DataGen",
+  "file": "airsim/env_airsim_18.zip",
+  "authenticated": true,
+  "status_code": 403,
+  "downloaded": true,
+  "access_error": "Access to dataset IPEC-COMMUNITY/OpenFly_DataGen is restricted and you are not in the authorized list. Visit https://huggingface.co/datasets/IPEC-COMMUNITY/OpenFly_DataGen to ask for access.",
+  "post_user_access_reply_status": 206,
+  "current_status_code": 206,
+  "user_granted_access": true
+}

@@ -3447,3 +3447,22 @@ Corrected the current OpenFly literature reference: v7 reports34.3% seen/22.6% u
 Findings: action agreement cannot rank flight capability; action contracts range from primitives/velocity to waypoints and body rates. Some strong scores include planner/sensor assistance or narrow tasks. Source quality/denominator issues and missing releases are explicit. Next: source calibration and expert playback, then source-faithful closed-loop development flights before further training.
 
 Evidence: docs/research/vla_results_audit_20260919/REPORT.md, evidence.json, candidates.json, RESOURCES.md, resource_checks.json and source_manifest.json. Review page: localhost8771/drone_vla_research.html. No GPU inference/training, AWS spend, baseline/weight/split changes or protected-seed use.
+
+
+## 2026-09-19 - D150: native OpenFly execution and source calibration audit
+
+Implemented a strict codebook-ID-to-pose adapter, AirSim axis conversion and
+explicit-termination navigation metrics. Forty upstream transition parity cases
+pass. All three frozen dev routes reconstruct correctly after macro start-frame
+alignment; original annotation observations deviate by up to6source units. Flagged
+Shanghai's unknown donw/0 label without admitting a relabel into training.
+Completed20subset/3185entry RLDS inventory and bounded first-record metadata audit;
+87,157packed TRAIN episodes,460.44GBreported. Verified vlnv8 quantile clipping makes
+UP/DOWN unrecoverable. Prepared original vlnv20/env18 control (40packed steps,
+75raw frames), outside our110pilot routes and official eval, with CRC/source-stat
+proof and exact raw reconstruction. No new model inference or training.
+Six-route recorded reconstruction debugger added at localhost8771/openfly_execution.html;
+33tests and452browser checks pass. WSL graphics runtime prepared; user granted HF
+scene access and authenticated download is now allowed. Native renderer test is
+next, not yet a flight claim. No AWS, protected seed, baseline or split changes.
+Evidence: reports/vla_openfly_execution_20260919/REPORT.md and associated JSONs.

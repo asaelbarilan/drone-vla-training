@@ -1,0 +1,1987 @@
+{
+  "revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+  "subset_count": 20,
+  "rows": [
+    {
+      "subset": "vlnv4",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv4.vlnv4_dataset_builder",
+        "name": "vlnv4",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "15620891397",
+            "shardLengths": [
+              "3487"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv4/1.0.0/dataset_statistics_e4270e50b34feac767704c8f3f4454d32d83af750b9a96a839a3441d197ed4a9.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.21730369329452515,
+                5.460573196411133,
+                0.7920647859573364,
+                0.7954922914505005,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.4124792218208313,
+                4.174692153930664,
+                3.3543832302093506,
+                3.3606884479522705,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 48140,
+            "num_trajectories": 3487
+          }
+        }
+      ],
+      "sampled_shard": "vlnv4/1.0.0/vlnv4-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 5219466,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_gs_ecust/astar_data/long/2025-1-11_8-20-36_1560307071",
+        "episode_metadata/episode_id": 830
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 16384,
+      "range_requests": 4,
+      "matching_checkpoint_keys": [
+        "vlnv1",
+        "vlnv10",
+        "vlnv12",
+        "vlnv17",
+        "vlnv2",
+        "vlnv3",
+        "vlnv4",
+        "vlnv5",
+        "vlnv6",
+        "vlnv9"
+      ]
+    },
+    {
+      "subset": "vlnv6",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv6.vlnv6_dataset_builder",
+        "name": "vlnv6",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "15411378616",
+            "shardLengths": [
+              "4415"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv6/1.0.0/dataset_statistics_89a63c2546ffcb8a971aa8f414f701fc9c2559e8a4e4ac796b887382135e9005.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.27272728085517883,
+                4.985874652862549,
+                0.7110058665275574,
+                0.6958715319633484,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.445293128490448,
+                4.227468490600586,
+                3.1868653297424316,
+                3.153855562210083,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 48565,
+            "num_trajectories": 4415
+          }
+        }
+      ],
+      "sampled_shard": "vlnv6/1.0.0/vlnv6-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 1232981,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_ue_bigcity/astar_data/low_long/2025-1-7_3-34-3_163892983",
+        "episode_metadata/episode_id": 1913
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 16384,
+      "range_requests": 4,
+      "matching_checkpoint_keys": [
+        "vlnv1",
+        "vlnv10",
+        "vlnv12",
+        "vlnv17",
+        "vlnv2",
+        "vlnv3",
+        "vlnv4",
+        "vlnv5",
+        "vlnv6",
+        "vlnv9"
+      ]
+    },
+    {
+      "subset": "vlnv7",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv7.vlnv7_dataset_builder",
+        "name": "vlnv7",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "29356722136",
+            "shardLengths": [
+              "4429"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv7/1.0.0/dataset_statistics_cd5abff2587ba9a2f4e5e1237e686c8d38836f5ebe568d3ce93dd97092be7e10.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.13914692401885986,
+                2.5450785160064697,
+                0.3430761694908142,
+                0.33286556601524353,
+                0.49354374408721924,
+                0.49354374408721924,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3462366461753845,
+                3.9206013679504395,
+                2.2435383796691895,
+                2.2108144760131836,
+                0.8619494438171387,
+                0.8619492650032043,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 95489,
+            "num_trajectories": 4429
+          }
+        }
+      ],
+      "sampled_shard": "vlnv7/1.0.0/vlnv7-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 10632780,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_ue_bigcity/astar_data/medium_long_updown/2025-1-16_15-9-56_52775474",
+        "episode_metadata/episode_id": 769
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 20480,
+      "range_requests": 5,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    },
+    {
+      "subset": "vlnv10",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv10.vlnv10_dataset_builder",
+        "name": "vlnv10",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "17087132526",
+            "shardLengths": [
+              "2949"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv10/1.0.0/dataset_statistics_3626c4ff6ae63310ad91da8983c61358f6d7fd541673bd5a005b82ca80616f1a.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.15107065439224243,
+                6.124227523803711,
+                0.785577654838562,
+                0.7609883546829224,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3581539988517761,
+                3.9801180362701416,
+                3.3421192169189453,
+                3.29217529296875,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 58562,
+            "num_trajectories": 2949
+          }
+        },
+        {
+          "path": "vlnv10/1.0.0/dataset_statistics_71f78bfab6a753d2a3c74010fcc03ba3c0035cdb70b1b9621b0791c5ffed0fb9.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.15107065439224243,
+                6.124227523803711,
+                0.785577654838562,
+                0.7609883546829224,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3581539988517761,
+                3.9801180362701416,
+                3.3421192169189453,
+                3.29217529296875,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 58562,
+            "num_trajectories": 2949
+          }
+        }
+      ],
+      "sampled_shard": "vlnv10/1.0.0/vlnv10-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 6186723,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_sh/astar_data/high_long/2025-1-11_22-1-31_682974831",
+        "episode_metadata/episode_id": 2230
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 20480,
+      "range_requests": 5,
+      "matching_checkpoint_keys": [
+        "vlnv1",
+        "vlnv10",
+        "vlnv12",
+        "vlnv17",
+        "vlnv2",
+        "vlnv3",
+        "vlnv4",
+        "vlnv5",
+        "vlnv6",
+        "vlnv9"
+      ]
+    },
+    {
+      "subset": "vlnv11",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv11.vlnv11_dataset_builder",
+        "name": "vlnv11",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "30177108061",
+            "shardLengths": [
+              "4838"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv11/1.0.0/dataset_statistics_004638ebd16074d6f2524efc380963631d6314b8137758b91bfe80ece721fef5.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.1320979744195938,
+                2.986074924468994,
+                0.4720905125141144,
+                0.48465046286582947,
+                0.4271841049194336,
+                0.4271841049194336,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3386739492416382,
+                4.089788436889648,
+                2.620157480239868,
+                2.654144525527954,
+                0.8196805715560913,
+                0.8196805119514465,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 109873,
+            "num_trajectories": 4838
+          }
+        },
+        {
+          "path": "vlnv11/1.0.0/dataset_statistics_f1854a3b97341fbc6d498fb9978d6e0493b069ae427ca66ceb0f639c548db58a.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.1320979744195938,
+                2.986074924468994,
+                0.4720905125141144,
+                0.48465046286582947,
+                0.4271841049194336,
+                0.4271841049194336,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3386739492416382,
+                4.089788436889648,
+                2.620157480239868,
+                2.654144525527954,
+                0.8196805715560913,
+                0.8196805119514465,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 109873,
+            "num_trajectories": 4838
+          }
+        }
+      ],
+      "sampled_shard": "vlnv11/1.0.0/vlnv11-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 4979597,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_sh/astar_data/low_short_updown/2025-1-14_7-5-58_813465002",
+        "episode_metadata/episode_id": 1028
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 16384,
+      "range_requests": 4,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    },
+    {
+      "subset": "vlnv13",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv13.vlnv13_dataset_builder",
+        "name": "vlnv13",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "31421144848",
+            "shardLengths": [
+              "4823"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv13/1.0.0/dataset_statistics_52f8ed7f78f2ced73315cf73f3b2782ea0756a2259cf07972b144760d5662648.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.13295046985149384,
+                4.594992160797119,
+                0.7730864882469177,
+                0.7882477045059204,
+                0.19178535044193268,
+                0.19178535044193268,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3394428789615631,
+                4.312356472015381,
+                3.318321704864502,
+                3.3475897312164307,
+                0.5888451933860779,
+                0.588845431804657,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 108830,
+            "num_trajectories": 4823
+          }
+        }
+      ],
+      "sampled_shard": "vlnv13/1.0.0/vlnv13-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 12077997,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_gz/astar_data/low_long_updown/2025-1-14_12-23-44_1953161956",
+        "episode_metadata/episode_id": 359
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 24576,
+      "range_requests": 6,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    },
+    {
+      "subset": "vlnv14",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv14.vlnv14_dataset_builder",
+        "name": "vlnv14",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "26950426905",
+            "shardLengths": [
+              "5006"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv14/1.0.0/dataset_statistics_32107f6d752f1e33cc80d1398c589073f0c26ecccb9e9ab00f89e0d0e8c622ad.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.1671043187379837,
+                4.215395450592041,
+                0.6824706196784973,
+                0.7001624703407288,
+                0.2107219099998474,
+                0.2107219099998474,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.37315133213996887,
+                4.300779819488525,
+                3.124398946762085,
+                3.1652321815490723,
+                0.614077627658844,
+                0.6140782833099365,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 89872,
+            "num_trajectories": 5006
+          }
+        }
+      ],
+      "sampled_shard": "vlnv14/1.0.0/vlnv14-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 4139417,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_16/astar_data/high_short/2025-1-9_18-9-28_2137390358",
+        "episode_metadata/episode_id": 1924
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 16384,
+      "range_requests": 4,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    },
+    {
+      "subset": "vlnv15",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv15.vlnv15_dataset_builder",
+        "name": "vlnv15",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "29683759429",
+            "shardLengths": [
+              "5007"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv15/1.0.0/dataset_statistics_6c9dcd29d3084773ad5cd9d63ff0d58712baa26823da76435745a92bac297112.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.13962113857269287,
+                4.705206871032715,
+                0.7824583649635315,
+                0.7980740666389465,
+                0.16922590136528015,
+                0.16922590136528015,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.34663161635398865,
+                4.302628993988037,
+                3.3366434574127197,
+                3.3654098510742188,
+                0.5568012595176697,
+                0.5568014979362488,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 107584,
+            "num_trajectories": 5007
+          }
+        }
+      ],
+      "sampled_shard": "vlnv15/1.0.0/vlnv15-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 7362884,
+      "identity": {
+        "episode_metadata/episode_id": 2003,
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_airsim_18/astar_data/medium_long/2025-1-9_7-10-39_1199420528"
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 16384,
+      "range_requests": 4,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    },
+    {
+      "subset": "vlnv19",
+      "dataset_info": {
+        "citation": "@misc{vln_2024, title={VLN Dataset}, year={2024}}",
+        "description": "Dataset of trajectories where each step has the following fields: steps, episode_metadata.",
+        "fileFormat": "tfrecord",
+        "location": {
+          "urls": [
+            "https://dataset-homepage/"
+          ]
+        },
+        "moduleName": "vlnv19.vlnv19_dataset_builder",
+        "name": "vlnv19",
+        "releaseNotes": {
+          "1.0.0": "Initial release."
+        },
+        "splits": [
+          {
+            "filepathTemplate": "{DATASET}-{SPLIT}.{FILEFORMAT}-{SHARD_X_OF_Y}",
+            "name": "train",
+            "numBytes": "7424611018",
+            "shardLengths": [
+              "1023"
+            ]
+          }
+        ],
+        "version": "1.0.0"
+      },
+      "statistics": [
+        {
+          "path": "vlnv19/1.0.0/dataset_statistics_a10a87786b65232a2b0cd37daf33eba2a29545bab2a44c29bb1e4427c852762b.json",
+          "data": {
+            "action": {
+              "mean": [
+                0.11362037807703018,
+                3.5945355892181396,
+                0.9890415072441101,
+                0.9584984183311462,
+                0.27388840913772583,
+                0.2649291157722473,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.3173801302909851,
+                4.130086421966553,
+                3.7224225997924805,
+                3.668363094329834,
+                0.6876517534255981,
+                0.6780325174331665,
+                0.0,
+                0.0
+              ],
+              "max": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                1.0,
+                9.0,
+                15.0,
+                15.0,
+                2.0,
+                2.0,
+                0.0,
+                0.0
+              ]
+            },
+            "proprio": {
+              "mean": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "std": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "max": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q01": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "q99": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "num_transitions": 27011,
+            "num_trajectories": 1023
+          }
+        }
+      ],
+      "sampled_shard": "vlnv19/1.0.0/vlnv19-train.tfrecord-00000-of-00001",
+      "sampled_record_offset": 0,
+      "sampled_record_length": 7295792,
+      "identity": {
+        "episode_metadata/file_path": "/nas/shared/public/Openfly/youzhongrui/uav_vln_data/env_ue_bigcity/astar_data/low_average/2025-01-19_06-07-10_201010",
+        "episode_metadata/episode_id": 217
+      },
+      "header_crc_verified": true,
+      "payload_crc_verified": false,
+      "sampled_range_bytes": 20480,
+      "range_requests": 5,
+      "matching_checkpoint_keys": [
+        "vlnv11",
+        "vlnv13",
+        "vlnv14",
+        "vlnv15",
+        "vlnv16",
+        "vlnv18",
+        "vlnv19",
+        "vlnv20",
+        "vlnv7"
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "subset": "vlnv1",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv3",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv2",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv5",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv8",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv9",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv12",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv16",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv17",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv18",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    },
+    {
+      "subset": "vlnv20",
+      "error_type": "UnicodeDecodeError",
+      "message": "'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte"
+    }
+  ],
+  "route_mapping_complete": false,
+  "scope": "First episode of first shard only; metadata, not full payload CRC",
+  "tree_sha256": "5ace178cca82d67d89aba0a6b5df35b85a89d4c7cb987a8ccc21d252eeb05e13"
+}

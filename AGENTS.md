@@ -16,6 +16,29 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D150 execution/source audit complete; native renderer setup in progress
+
+Read reports/vla_openfly_execution_20260919/REPORT.md. Three frozen dev routes
+reconstruct exactly with corrected macro starts; old annotation frames drift up
+to6source units. Native pose adapter matches upstream40cases and rejects invalid
+outputs. Released evaluator teleports, ignores collision and counts endpoint-only
+success even after timeout/error; keep strict diagnostic metrics separate.
+All20RLDS subset metadata/statistics audited:87,157packed TRAIN episodes/460.44GB.
+vlnv8 has vertical max2 but q99zero: UP/DOWN cannot round-trip. Old raw routes'
+exact subset mapping remains unresolved; do not infer it from environment alone.
+Added original vlnv20/env18 source control, absent from our110pilot and official
+3,000eval routes:40packed steps/75raw frames, CRC/source stats verified, raw
+expert reconstruction passes. Preserve future-history flags and version mismatch.
+Viewer: localhost8771/openfly_execution.html (recorded reconstruction, no model
+rollout). Sixroutes/237previews/452browser checks;33focused tests pass.
+User granted HF simulator access; authenticated download now allowed. env18 scene
+285,821,005bytes verified by LFS SHA256 and ZIP CRC, extracted under D:; first
+whole-file response was incomplete. WSL22.04 supports CUDA but Vulkan is software llvmpipe;
+21small graphics packages added, no upgrade/signature bypass. Next finish asset
+verification/extraction and test real rendering before model-controlled navigation.
+No new training/inference, AWS spending, baseline/index/split changes. D150 code
+and data are separate from the architecture session; protected seeds unchanged.
+
 ## D149 drone-only literature audit complete
 
 Read docs/research/vla_results_audit_20260919/REPORT.md. Fifteen aerial learned

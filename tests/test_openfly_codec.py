@@ -50,6 +50,14 @@ class TestOpenFlyCodec(unittest.TestCase):
             horizontal.require_source_statistics(horizontal.stats)["source_statistics_verified"]
         )
 
+    def test_nonconstant_vertical_labels_clipped_by_quantiles_are_unreachable(self):
+        # Actual vlnv8 failure mode: max contains up/down but q99 is zero.
+        source = config([1, 9, 15, 15, 0, 0, 0, 0])
+        source["norm_stats"]["test"]["action"]["max"] = [1, 9, 15, 15, 2, 2, 0, 0]
+        codec = OpenFlyCodec(source, "test")
+        with self.assertRaisesRegex(ValueError, r"\[4, 5\]"):
+            codec.require_coverage([0, 1, 2, 3, 4, 5])
+
     def test_zero_vector_does_not_become_stop(self):
         codec = OpenFlyCodec(config([1, 9, 15, 15, 2, 2, 0, 0]), "test")
         self.assertIsNone(codec.decode([31999] * 8)["action_id"])

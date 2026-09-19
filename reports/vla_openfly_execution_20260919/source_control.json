@@ -1,0 +1,3846 @@
+{
+  "selection": {
+    "route": "env_airsim_18/astar_data/medium_long/2025-01-19_04-40-57_927964",
+    "subset": "vlnv20",
+    "rlds_revision": "aaf4a5288134d5386018392e7f1ce57bb40c4a9c",
+    "raw_revision": "a12316d56a4e35a32ad626fb725ed7089937a1c4",
+    "shard": "vlnv20/1.0.0/vlnv20-train.tfrecord-00000-of-00512",
+    "selection_rule": "First record of first vlnv20 shard, matching smallest env18 scene",
+    "our_adapter_train_or_dev_overlap": false,
+    "official_eval_overlap": false,
+    "model_outputs_inspected_before_selection": false
+  },
+  "source_statistics_verified": true,
+  "record_crc_verified": true,
+  "record_bytes": 11220957,
+  "record_sha256": "e533134b8ab082c279e1f82d62ccc0d0e8c03cc054956f3e2b5e97555b026d2b",
+  "raw_parquet_bytes": 49945872,
+  "raw_parquet_sha256": "9f4fc29e1e3bfeb5fba2a20bb5023194847d1a92d5f41f222c255204ed1b29f8",
+  "raw_frames": 75,
+  "packed_steps": 40,
+  "packed_action_ids": [
+    9,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    9,
+    9,
+    2,
+    9,
+    9,
+    9,
+    9,
+    9,
+    3,
+    9,
+    1,
+    3,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    9,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    1,
+    5,
+    0,
+    0,
+    0
+  ],
+  "packed_instruction": "Continue straight towards the brown building featuring a brick texture , then climb to the large white building with rectangular windows . Head onwards towards the tall gray skyscraper with a cylindrical form , slightly turning left , and persist straight to the gray skyscraper with a glass facade . Next , slightly turn right and walk forward to the beige skyscraper adorned with a grid of windows . Progress to the medium - sized beige man-made structure exhibiting rectangular forms . Lower down to a gray building with a flat rooftop , proceed straight to a medium - sized gray building element shaped like a pyramid , and finally descend to the medium gray commercial structure with a flat rooftop and minimal elements .",
+  "current_instruction": "Continue straight towards the brown building featuring a brick texture , then climb to the large white building with rectangular windows . Head onwards towards the tall gray skyscraper with a cylindrical form , slightly turning left , and persist straight to the gray skyscraper with a glass facade . Next , slightly turn right and walk forward to the beige skyscraper adorned with a grid of windows . Progress to the medium - sized beige man-made structure exhibiting rectangular forms . Lower down to a gray building with a flat rooftop , proceed straight to a medium - sized gray building element shaped like a pyramid , and finally descend to the medium gray commercial structure with a flat rooftop and minimal elements .",
+  "images": {
+    "image_1": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0000.png",
+        "sha256": "d6ff5f54d735b6dc74cd9689743f9763d0fe39aa775bea944d4a9f2e15e90898"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0001.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0002.png",
+        "sha256": "c6d2f9b368a9966cb76ece9914d37e50ab82550da456ed715776a43a22a2c733"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0003.png",
+        "sha256": "e8061a7e198271b3246371d93140eb7b82a316b3c710644c4d83253a44367262"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0004.png",
+        "sha256": "4ddd51c551ccf15a8ebb79d2e1677189d50347425a14f6c2a844a21cf2c0e13f"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0005.png",
+        "sha256": "bab564921663d7b800da8ff906947fdae9b5814537f8a048bb0aa3fcb879bd49"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0006.png",
+        "sha256": "673bf3055d446e64378e70e7b4192ede8469156bfa625379055492cea2ec25f5"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0007.png",
+        "sha256": "a09ad62690c7aef7312fe66a65dcfb0946a22a8aefe56b8841abac22ea792ef3"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0008.png",
+        "sha256": "9459c7ed4eca93ef7c6f98a45fedf750a55ddd6acc49a7a11f9465d70e39f100"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0009.png",
+        "sha256": "bcd6fda63c61c0dfa5a571e9bc713991b59b627ef71768b62fdf912632ed6a66"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0010.png",
+        "sha256": "9162edae5b154e14b001a941002ed74489a948ecd392906924b0db0b27544f29"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0011.png",
+        "sha256": "59109299ac77b153f8decad8b8ef7b2f3a1e5168a9ebdab3592d89de0399d321"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0012.png",
+        "sha256": "cfe21008fcff0931b1de5f1b2160db1858bef04c560f806cc03b6c26e09a43fe"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0013.png",
+        "sha256": "fe29ed0516db0e1fe815be626cea1ddbbdc4649ad4ac7c3d75e70c12444dada2"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0014.png",
+        "sha256": "287c5995ab0c04888db4e4f30bec8b5e2eeca562632329af13ca46f77068ec88"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0015.png",
+        "sha256": "422913e41b0d1e83c6d1944d796b6e7626798c60604241d8b0330b6aab90e116"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0016.png",
+        "sha256": "32c6201edfb8f8a78ae15a9a618d29a33d6591bbf8d14f82a9282714299f2c01"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0017.png",
+        "sha256": "56fd672650469ceb72b876213bbbbb037f94516e11bb7245c2db36508ea0f8c8"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0018.png",
+        "sha256": "56b9419e3cde28ef1af5173d0d1d8f72b27d4a8df154ac469c2960556491db81"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0019.png",
+        "sha256": "62923567f11603b4f407f2ea261a34bd20cdc635ab5b71af5561cfca0b6b0afd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0020.png",
+        "sha256": "2eead31ef4a0406698eef5aee855bd1c6ee155560d7a933a67079bd1012ce8d8"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0021.png",
+        "sha256": "bfe4aad52386b834149a39b9b023d9db761db4dcbdc472ca26759738357df2fd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0022.png",
+        "sha256": "1fbefef315d787874b6fad35a679dd59af25e6e648e34fb840ff9f949c65b2d6"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0023.png",
+        "sha256": "2fe26f529c73ff786806847ad7e97aa0625aaf23d582c81038e1738f3131aa01"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0024.png",
+        "sha256": "8c8e02b4940ded671159ef3c3eb24f532533d8acf6687e4fe9a0dd1d996c49ac"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0025.png",
+        "sha256": "fc52c60e1d33cb81b7ecfdf2c876a82c8ca8787f91e1f8240c8dbc5f1d18c467"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0026.png",
+        "sha256": "6b560fa16c76db06a851894930e810795f5822413a45f7fb587bab1c7c965af7"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0027.png",
+        "sha256": "fba0298d2f2c9ed4053279338746d5c7ee75f890a217bdb0ec5b410fac0eacd6"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0028.png",
+        "sha256": "b2815f7bd910958dab30b03e9381b02da1d56bc01021d13df8108d6681242e42"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0029.png",
+        "sha256": "c182d138a52f03eae20b76c473ca2b413ec6dc48d7bedf49210a73181783b99c"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0030.png",
+        "sha256": "54689f0f0335e879ef3447458aa49268f12ad4c5192e3ed363cacb3acbcd3e0e"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0031.png",
+        "sha256": "4b2840281e530b47c05c6befaf91b1f68e0a2ecc64744207476f6d145efff90d"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0032.png",
+        "sha256": "f0773af4071687488ccecea1b142ca0c9a14ea544723fd06ea3f699d7467220c"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0033.png",
+        "sha256": "67f26415ccd3141928842129717c504cefdef8d872125b00185ee6d7197e5d3b"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0034.png",
+        "sha256": "1a11b367635e1be03b84b4fc78b2d4d8dc152ba4eec80a65683d3eb753a28e51"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0035.png",
+        "sha256": "e801e783f4b0151fa83935c02a923bfd3379fc72fe72cf5277c38e5da80dc445"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0036.png",
+        "sha256": "c830934c8ab3f8dd741d4dbbd7a61534acadea661656eb2564d05f571fb989a0"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0037.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0038.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_1\\0039.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      }
+    ],
+    "image_2": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0000.png",
+        "sha256": "d6ff5f54d735b6dc74cd9689743f9763d0fe39aa775bea944d4a9f2e15e90898"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0001.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0002.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0003.png",
+        "sha256": "c6d2f9b368a9966cb76ece9914d37e50ab82550da456ed715776a43a22a2c733"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0004.png",
+        "sha256": "e8061a7e198271b3246371d93140eb7b82a316b3c710644c4d83253a44367262"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0005.png",
+        "sha256": "4ddd51c551ccf15a8ebb79d2e1677189d50347425a14f6c2a844a21cf2c0e13f"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0006.png",
+        "sha256": "bab564921663d7b800da8ff906947fdae9b5814537f8a048bb0aa3fcb879bd49"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0007.png",
+        "sha256": "673bf3055d446e64378e70e7b4192ede8469156bfa625379055492cea2ec25f5"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0008.png",
+        "sha256": "a09ad62690c7aef7312fe66a65dcfb0946a22a8aefe56b8841abac22ea792ef3"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0009.png",
+        "sha256": "9459c7ed4eca93ef7c6f98a45fedf750a55ddd6acc49a7a11f9465d70e39f100"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0010.png",
+        "sha256": "bcd6fda63c61c0dfa5a571e9bc713991b59b627ef71768b62fdf912632ed6a66"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0011.png",
+        "sha256": "9162edae5b154e14b001a941002ed74489a948ecd392906924b0db0b27544f29"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0012.png",
+        "sha256": "59109299ac77b153f8decad8b8ef7b2f3a1e5168a9ebdab3592d89de0399d321"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0013.png",
+        "sha256": "cfe21008fcff0931b1de5f1b2160db1858bef04c560f806cc03b6c26e09a43fe"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0014.png",
+        "sha256": "fe29ed0516db0e1fe815be626cea1ddbbdc4649ad4ac7c3d75e70c12444dada2"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0015.png",
+        "sha256": "287c5995ab0c04888db4e4f30bec8b5e2eeca562632329af13ca46f77068ec88"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0016.png",
+        "sha256": "422913e41b0d1e83c6d1944d796b6e7626798c60604241d8b0330b6aab90e116"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0017.png",
+        "sha256": "32c6201edfb8f8a78ae15a9a618d29a33d6591bbf8d14f82a9282714299f2c01"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0018.png",
+        "sha256": "56fd672650469ceb72b876213bbbbb037f94516e11bb7245c2db36508ea0f8c8"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0019.png",
+        "sha256": "56b9419e3cde28ef1af5173d0d1d8f72b27d4a8df154ac469c2960556491db81"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0020.png",
+        "sha256": "62923567f11603b4f407f2ea261a34bd20cdc635ab5b71af5561cfca0b6b0afd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0021.png",
+        "sha256": "2eead31ef4a0406698eef5aee855bd1c6ee155560d7a933a67079bd1012ce8d8"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0022.png",
+        "sha256": "bfe4aad52386b834149a39b9b023d9db761db4dcbdc472ca26759738357df2fd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0023.png",
+        "sha256": "1fbefef315d787874b6fad35a679dd59af25e6e648e34fb840ff9f949c65b2d6"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0024.png",
+        "sha256": "2fe26f529c73ff786806847ad7e97aa0625aaf23d582c81038e1738f3131aa01"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0025.png",
+        "sha256": "8c8e02b4940ded671159ef3c3eb24f532533d8acf6687e4fe9a0dd1d996c49ac"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0026.png",
+        "sha256": "fc52c60e1d33cb81b7ecfdf2c876a82c8ca8787f91e1f8240c8dbc5f1d18c467"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0027.png",
+        "sha256": "6b560fa16c76db06a851894930e810795f5822413a45f7fb587bab1c7c965af7"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0028.png",
+        "sha256": "fba0298d2f2c9ed4053279338746d5c7ee75f890a217bdb0ec5b410fac0eacd6"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0029.png",
+        "sha256": "b2815f7bd910958dab30b03e9381b02da1d56bc01021d13df8108d6681242e42"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0030.png",
+        "sha256": "c182d138a52f03eae20b76c473ca2b413ec6dc48d7bedf49210a73181783b99c"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0031.png",
+        "sha256": "54689f0f0335e879ef3447458aa49268f12ad4c5192e3ed363cacb3acbcd3e0e"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0032.png",
+        "sha256": "4b2840281e530b47c05c6befaf91b1f68e0a2ecc64744207476f6d145efff90d"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0033.png",
+        "sha256": "f0773af4071687488ccecea1b142ca0c9a14ea544723fd06ea3f699d7467220c"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0034.png",
+        "sha256": "67f26415ccd3141928842129717c504cefdef8d872125b00185ee6d7197e5d3b"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0035.png",
+        "sha256": "1a11b367635e1be03b84b4fc78b2d4d8dc152ba4eec80a65683d3eb753a28e51"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0036.png",
+        "sha256": "e801e783f4b0151fa83935c02a923bfd3379fc72fe72cf5277c38e5da80dc445"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0037.png",
+        "sha256": "c830934c8ab3f8dd741d4dbbd7a61534acadea661656eb2564d05f571fb989a0"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0038.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_2\\0039.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      }
+    ],
+    "image_3": [
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0000.png",
+        "sha256": "d6ff5f54d735b6dc74cd9689743f9763d0fe39aa775bea944d4a9f2e15e90898"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0001.png",
+        "sha256": "813310b25fa1972a6f81ff970456e1ba736c6d1a34ce691417d9d72625c85026"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0002.png",
+        "sha256": "d6ff5f54d735b6dc74cd9689743f9763d0fe39aa775bea944d4a9f2e15e90898"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0003.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0004.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0005.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0006.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0007.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0008.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0009.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0010.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0011.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0012.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0013.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0014.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0015.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0016.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0017.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0018.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0019.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0020.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0021.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0022.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0023.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0024.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0025.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0026.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0027.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0028.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0029.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0030.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0031.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0032.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0033.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0034.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0035.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0036.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0037.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0038.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      },
+      {
+        "path": "D:\\drone_vla_pilot\\data\\openfly_rlds_execution_20260919\\image_3\\0039.png",
+        "sha256": "19eecb19a89015d3b2f4c890aeabfa657cf85b3f424fc5f7c471a645a3e18bfd"
+      }
+    ]
+  },
+  "alignment": [
+    {
+      "packed_step": 0,
+      "raw_frame": 2,
+      "pixel_mae_255": 4.297499468537415,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 1,
+      "raw_frame": 3,
+      "pixel_mae_255": 3.9401838860544216,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 2,
+      "raw_frame": 4,
+      "pixel_mae_255": 3.534212903911565,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 3,
+      "raw_frame": 5,
+      "pixel_mae_255": 3.409976881377551,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 4,
+      "raw_frame": 6,
+      "pixel_mae_255": 3.3589830463435373,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 5,
+      "raw_frame": 7,
+      "pixel_mae_255": 3.2204905399659864,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 6,
+      "raw_frame": 8,
+      "pixel_mae_255": 4.015206473214286,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 7,
+      "raw_frame": 9,
+      "pixel_mae_255": 4.339504942602041,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 8,
+      "raw_frame": 12,
+      "pixel_mae_255": 4.483298788265306,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 9,
+      "raw_frame": 15,
+      "pixel_mae_255": 3.9021909545068025,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 10,
+      "raw_frame": 16,
+      "pixel_mae_255": 4.260410023384353,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 11,
+      "raw_frame": 19,
+      "pixel_mae_255": 5.735969387755102,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 12,
+      "raw_frame": 22,
+      "pixel_mae_255": 6.827792835884353,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 13,
+      "raw_frame": 25,
+      "pixel_mae_255": 6.876687393707483,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 14,
+      "raw_frame": 28,
+      "pixel_mae_255": 7.067562181122449,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 15,
+      "raw_frame": 31,
+      "pixel_mae_255": 6.725399925595238,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 16,
+      "raw_frame": 32,
+      "pixel_mae_255": 7.165769823554422,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 17,
+      "raw_frame": 35,
+      "pixel_mae_255": 5.42925568664966,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 18,
+      "raw_frame": 36,
+      "pixel_mae_255": 5.55452806122449,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 19,
+      "raw_frame": 37,
+      "pixel_mae_255": 5.449364902210885,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 20,
+      "raw_frame": 40,
+      "pixel_mae_255": 3.268029868197279,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 21,
+      "raw_frame": 43,
+      "pixel_mae_255": 2.9401041666666665,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 22,
+      "raw_frame": 46,
+      "pixel_mae_255": 2.7953271152210886,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 23,
+      "raw_frame": 49,
+      "pixel_mae_255": 2.7149633290816326,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 24,
+      "raw_frame": 52,
+      "pixel_mae_255": 2.6583692070578233,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 25,
+      "raw_frame": 55,
+      "pixel_mae_255": 2.5802043473639458,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 26,
+      "raw_frame": 58,
+      "pixel_mae_255": 2.6124309098639458,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 27,
+      "raw_frame": 61,
+      "pixel_mae_255": 2.783017113095238,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 28,
+      "raw_frame": 64,
+      "pixel_mae_255": 3.0106956845238093,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 29,
+      "raw_frame": 65,
+      "pixel_mae_255": 3.065436330782313,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 30,
+      "raw_frame": 66,
+      "pixel_mae_255": 2.975061118197279,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 31,
+      "raw_frame": 67,
+      "pixel_mae_255": 2.8173363095238093,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 32,
+      "raw_frame": 68,
+      "pixel_mae_255": 2.6358617665816326,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 33,
+      "raw_frame": 69,
+      "pixel_mae_255": 2.505666719812925,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 34,
+      "raw_frame": 70,
+      "pixel_mae_255": 2.452434098639456,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 35,
+      "raw_frame": 72,
+      "pixel_mae_255": 2.4048416241496597,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 36,
+      "raw_frame": 73,
+      "pixel_mae_255": 2.4855774340986394,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 37,
+      "raw_frame": 74,
+      "pixel_mae_255": 2.224343643707483,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 38,
+      "raw_frame": 74,
+      "pixel_mae_255": 2.224343643707483,
+      "kernel_index": 3
+    },
+    {
+      "packed_step": 39,
+      "raw_frame": 74,
+      "pixel_mae_255": 2.224343643707483,
+      "kernel_index": 3
+    }
+  ],
+  "future_history": [
+    {
+      "step": 1,
+      "slot": "image_2",
+      "matching_future_steps": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "step": 1,
+      "slot": "image_3",
+      "matching_future_steps": [
+        37,
+        38,
+        39
+      ]
+    }
+  ],
+  "raw_atomic": {
+    "steps": [
+      {
+        "step": 0,
+        "raw_frame": 0,
+        "action_id": 1,
+        "observed_pose": [
+          1901.6478438329495,
+          -97.4708642670652,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1901.6478438329495,
+          -97.4708642670652,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "after_action": [
+          1903.1478438329495,
+          -94.87278805571188,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 1,
+        "raw_frame": 1,
+        "action_id": 1,
+        "observed_pose": [
+          1903.1478438329495,
+          -94.87278805571188,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1903.1478438329495,
+          -94.87278805571188,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1904.6478438329495,
+          -92.27471184435856,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 2,
+        "raw_frame": 2,
+        "action_id": 1,
+        "observed_pose": [
+          1904.6478438329495,
+          -92.27471184435856,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1904.6478438329495,
+          -92.27471184435856,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 3,
+        "raw_frame": 3,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          7.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 4,
+        "raw_frame": 4,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          7.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          7.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          10.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 5,
+        "raw_frame": 5,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          10.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          10.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          13.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 6,
+        "raw_frame": 6,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          13.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          13.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          16.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 7,
+        "raw_frame": 7,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          16.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          16.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          19.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 8,
+        "raw_frame": 8,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          19.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          19.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          22.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 9,
+        "raw_frame": 9,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          22.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          22.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1906.1478438329495,
+          -89.67663563300525,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 10,
+        "raw_frame": 10,
+        "action_id": 1,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1907.6478438329495,
+          -87.07855942165193,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 11,
+        "raw_frame": 11,
+        "action_id": 1,
+        "observed_pose": [
+          1907.6478438329495,
+          -87.07855942165193,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1907.6478438329495,
+          -87.07855942165193,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 12,
+        "raw_frame": 12,
+        "action_id": 1,
+        "observed_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1910.6478438329495,
+          -81.8824069989453,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 13,
+        "raw_frame": 13,
+        "action_id": 1,
+        "observed_pose": [
+          1910.6478438329495,
+          -81.8824069989453,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1910.6478438329495,
+          -81.8824069989453,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1912.1478438329495,
+          -79.28433078759198,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 14,
+        "raw_frame": 14,
+        "action_id": 1,
+        "observed_pose": [
+          1912.1478438329495,
+          -79.28433078759198,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1912.1478438329495,
+          -79.28433078759198,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 15,
+        "raw_frame": 15,
+        "action_id": 1,
+        "observed_pose": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 16,
+        "raw_frame": 16,
+        "action_id": 2,
+        "observed_pose": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 17,
+        "raw_frame": 17,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -71.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 18,
+        "raw_frame": 18,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -71.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -71.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -68.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 19,
+        "raw_frame": 19,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -68.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -68.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -65.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 20,
+        "raw_frame": 20,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -65.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -65.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -62.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 21,
+        "raw_frame": 21,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -62.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -62.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -59.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 22,
+        "raw_frame": 22,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -59.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -59.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -56.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 23,
+        "raw_frame": 23,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -56.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -56.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -53.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 24,
+        "raw_frame": 24,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -53.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -53.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -50.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 25,
+        "raw_frame": 25,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -50.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -50.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -47.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 26,
+        "raw_frame": 26,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -47.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -47.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -44.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 27,
+        "raw_frame": 27,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -44.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -44.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -41.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 28,
+        "raw_frame": 28,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -41.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -41.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -38.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 29,
+        "raw_frame": 29,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -38.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -38.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -35.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 30,
+        "raw_frame": 30,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -35.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -35.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -32.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 31,
+        "raw_frame": 31,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -32.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -32.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 32,
+        "raw_frame": 32,
+        "action_id": 3,
+        "observed_pose": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 33,
+        "raw_frame": 33,
+        "action_id": 1,
+        "observed_pose": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1916.6478438329495,
+          -26.490102153532035,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 34,
+        "raw_frame": 34,
+        "action_id": 1,
+        "observed_pose": [
+          1916.6478438329495,
+          -26.490102153532035,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1916.6478438329495,
+          -26.490102153532035,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 35,
+        "raw_frame": 35,
+        "action_id": 1,
+        "observed_pose": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1919.6478438329495,
+          -21.293949730825403,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 36,
+        "raw_frame": 36,
+        "action_id": 1,
+        "observed_pose": [
+          1919.6478438329495,
+          -21.293949730825403,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1919.6478438329495,
+          -21.293949730825403,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 37,
+        "raw_frame": 37,
+        "action_id": 3,
+        "observed_pose": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 38,
+        "raw_frame": 38,
+        "action_id": 1,
+        "observed_pose": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          0.523598775598299
+        ],
+        "integrated_pose": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1923.745920044303,
+          -17.195873519472084,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 39,
+        "raw_frame": 39,
+        "action_id": 1,
+        "observed_pose": [
+          1923.745920044303,
+          -17.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1923.745920044303,
+          -17.195873519472084,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1926.3439962556563,
+          -15.695873519472082,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.552713678800501e-15,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 40,
+        "raw_frame": 40,
+        "action_id": 1,
+        "observed_pose": [
+          1926.3439962556563,
+          -15.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1926.3439962556563,
+          -15.695873519472082,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1928.9420724670097,
+          -14.19587351947208,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.329070518200751e-15,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 41,
+        "raw_frame": 41,
+        "action_id": 1,
+        "observed_pose": [
+          1928.9420724670097,
+          -14.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1928.9420724670097,
+          -14.19587351947208,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1931.540148678363,
+          -12.695873519472078,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 7.105427357601002e-15,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 42,
+        "raw_frame": 42,
+        "action_id": 1,
+        "observed_pose": [
+          1931.540148678363,
+          -12.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1931.540148678363,
+          -12.695873519472078,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1934.1382248897164,
+          -11.195873519472077,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 8.881784197001252e-15,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 43,
+        "raw_frame": 43,
+        "action_id": 1,
+        "observed_pose": [
+          1934.1382248897164,
+          -11.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1934.1382248897164,
+          -11.195873519472077,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1936.7363011010698,
+          -9.695873519472075,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.0658141036401503e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 44,
+        "raw_frame": 44,
+        "action_id": 1,
+        "observed_pose": [
+          1936.7363011010698,
+          -9.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1936.7363011010698,
+          -9.695873519472075,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1939.3343773124232,
+          -8.195873519472073,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.2434497875801753e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 45,
+        "raw_frame": 45,
+        "action_id": 1,
+        "observed_pose": [
+          1939.3343773124232,
+          -8.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1939.3343773124232,
+          -8.195873519472073,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1941.9324535237765,
+          -6.695873519472071,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.4210854715202004e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 46,
+        "raw_frame": 46,
+        "action_id": 1,
+        "observed_pose": [
+          1941.9324535237765,
+          -6.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1941.9324535237765,
+          -6.695873519472071,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1944.53052973513,
+          -5.1958735194720695,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.5987211554602254e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 47,
+        "raw_frame": 47,
+        "action_id": 1,
+        "observed_pose": [
+          1944.53052973513,
+          -5.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1944.53052973513,
+          -5.1958735194720695,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1947.1286059464833,
+          -3.6958735194720678,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.7763568394002505e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 48,
+        "raw_frame": 48,
+        "action_id": 1,
+        "observed_pose": [
+          1947.1286059464833,
+          -3.6958735194720873,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1947.1286059464833,
+          -3.6958735194720678,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1949.7266821578366,
+          -2.195873519472066,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 1.9539925233402755e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 49,
+        "raw_frame": 49,
+        "action_id": 1,
+        "observed_pose": [
+          1949.7266821578366,
+          -2.1958735194720873,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1949.7266821578366,
+          -2.195873519472066,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1952.32475836919,
+          -0.695873519472064,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 2.1316282072803006e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 50,
+        "raw_frame": 50,
+        "action_id": 1,
+        "observed_pose": [
+          1952.32475836919,
+          -0.6958735194720875,
+          25.008504278406168,
+          0.5235987755982893
+        ],
+        "integrated_pose": [
+          1952.32475836919,
+          -0.695873519472064,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1954.9228345805434,
+          0.804126480527938,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 2.353672812205332e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 51,
+        "raw_frame": 51,
+        "action_id": 1,
+        "observed_pose": [
+          1954.9228345805434,
+          0.8041264805279122,
+          25.008504278406168,
+          0.5235987755982893
+        ],
+        "integrated_pose": [
+          1954.9228345805434,
+          0.804126480527938,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1957.5209107918968,
+          2.3041264805279402,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 2.5757174171303632e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 52,
+        "raw_frame": 52,
+        "action_id": 1,
+        "observed_pose": [
+          1957.5209107918968,
+          2.304126480527912,
+          25.008504278406168,
+          0.5235987755982893
+        ],
+        "integrated_pose": [
+          1957.5209107918968,
+          2.3041264805279402,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1960.1189870032501,
+          3.804126480527942,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 2.842170943040401e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 53,
+        "raw_frame": 53,
+        "action_id": 1,
+        "observed_pose": [
+          1960.1189870032501,
+          3.804126480527912,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1960.1189870032501,
+          3.804126480527942,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1962.7170632146035,
+          5.304126480527944,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.019806626980426e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 54,
+        "raw_frame": 54,
+        "action_id": 1,
+        "observed_pose": [
+          1962.7170632146035,
+          5.304126480527912,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1962.7170632146035,
+          5.304126480527944,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1965.3151394259569,
+          6.8041264805279456,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.197442310920451e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 55,
+        "raw_frame": 55,
+        "action_id": 1,
+        "observed_pose": [
+          1965.3151394259569,
+          6.804126480527912,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1965.3151394259569,
+          6.8041264805279456,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1967.9132156373103,
+          8.304126480527948,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.375077994860476e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 56,
+        "raw_frame": 56,
+        "action_id": 1,
+        "observed_pose": [
+          1967.9132156373103,
+          8.304126480527911,
+          25.008504278406168,
+          0.5235987755982892
+        ],
+        "integrated_pose": [
+          1967.9132156373103,
+          8.304126480527948,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1970.5112918486636,
+          9.80412648052795,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.730349362740526e-14,
+        "yaw_error_degrees": 6.106664988409952e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 57,
+        "raw_frame": 57,
+        "action_id": 1,
+        "observed_pose": [
+          1970.5112918486636,
+          9.804126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1970.5112918486636,
+          9.80412648052795,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1973.109368060017,
+          11.304126480527952,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.907985046680551e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 58,
+        "raw_frame": 58,
+        "action_id": 1,
+        "observed_pose": [
+          1973.109368060017,
+          11.304126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1973.109368060017,
+          11.304126480527952,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1975.7074442713704,
+          12.804126480527954,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 4.085620730620576e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 59,
+        "raw_frame": 59,
+        "action_id": 1,
+        "observed_pose": [
+          1975.7074442713704,
+          12.804126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1975.7074442713704,
+          12.804126480527954,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1978.3055204827238,
+          14.304126480527955,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 4.263256414560601e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 60,
+        "raw_frame": 60,
+        "action_id": 1,
+        "observed_pose": [
+          1978.3055204827238,
+          14.304126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1978.3055204827238,
+          14.304126480527955,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1980.9035966940771,
+          15.804126480527957,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 4.440892098500626e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 61,
+        "raw_frame": 61,
+        "action_id": 1,
+        "observed_pose": [
+          1980.9035966940771,
+          15.804126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1980.9035966940771,
+          15.804126480527957,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1983.5016729054305,
+          17.30412648052796,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 4.618527782440651e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 62,
+        "raw_frame": 62,
+        "action_id": 1,
+        "observed_pose": [
+          1983.5016729054305,
+          17.30412648052791,
+          25.008504278406168,
+          0.5235987755982888
+        ],
+        "integrated_pose": [
+          1983.5016729054305,
+          17.30412648052796,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1986.0997491167839,
+          18.804126480527962,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 4.973799150320701e-14,
+        "yaw_error_degrees": 6.106664988409952e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 63,
+        "raw_frame": 63,
+        "action_id": 1,
+        "observed_pose": [
+          1986.0997491167839,
+          18.80412648052791,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1986.0997491167839,
+          18.804126480527962,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1988.6978253281372,
+          20.304126480527966,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.3290705182007514e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 64,
+        "raw_frame": 64,
+        "action_id": 1,
+        "observed_pose": [
+          1988.6978253281372,
+          20.30412648052791,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1988.6978253281372,
+          20.304126480527966,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.684341886080802e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 65,
+        "raw_frame": 65,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          22.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 66,
+        "raw_frame": 66,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          22.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          22.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          19.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 67,
+        "raw_frame": 67,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          19.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          19.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          16.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 68,
+        "raw_frame": 68,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          16.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          16.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          13.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 69,
+        "raw_frame": 69,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          13.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          13.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          10.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 70,
+        "raw_frame": 70,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          10.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          10.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1991.2959015394906,
+          21.80412648052797,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 71,
+        "raw_frame": 71,
+        "action_id": 1,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          7.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1991.2959015394906,
+          21.80412648052797,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1993.893977750844,
+          23.304126480527973,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.039613253960852e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 72,
+        "raw_frame": 72,
+        "action_id": 1,
+        "observed_pose": [
+          1993.893977750844,
+          23.30412648052791,
+          7.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1993.893977750844,
+          23.304126480527973,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.4920539621974,
+          24.804126480527977,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.394884621840902e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 73,
+        "raw_frame": 73,
+        "action_id": 5,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          7.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.4920539621974,
+          24.804126480527977,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.4920539621974,
+          24.804126480527977,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.750155989720952e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 74,
+        "raw_frame": 74,
+        "action_id": 0,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          4.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.4920539621974,
+          24.804126480527977,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.4920539621974,
+          24.804126480527977,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.750155989720952e-14,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      }
+    ],
+    "invalid_data_label": false,
+    "max_position_error": 6.750155989720952e-14,
+    "max_yaw_error_degrees": 6.106664988409952e-13,
+    "first_stop_step": 74,
+    "commands_after_first_stop": 0,
+    "metrics_at_first_stop_against_last_raw_pose": {
+      "termination": "stop",
+      "success_with_stop": true,
+      "oracle_goal_reached": true,
+      "final_distance": 6.750155989720952e-14,
+      "closest_distance": 6.750155989720952e-14,
+      "path_length": 213.00000000000145,
+      "legacy_endpoint_success": true,
+      "collision_status": "not_measured"
+    }
+  },
+  "original_packed": {
+    "steps": [
+      {
+        "step": 0,
+        "raw_frame": 2,
+        "action_id": 9,
+        "observed_pose": [
+          1904.6478438329495,
+          -92.27471184435856,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1904.6478438329495,
+          -92.27471184435856,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 1,
+        "raw_frame": 3,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          4.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          4.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          7.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 2,
+        "raw_frame": 4,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          7.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          7.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          10.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 3,
+        "raw_frame": 5,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          10.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          10.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          13.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 4,
+        "raw_frame": 6,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          13.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          13.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          16.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 5,
+        "raw_frame": 7,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          16.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          16.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          19.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 6,
+        "raw_frame": 8,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          19.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          19.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          22.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 7,
+        "raw_frame": 9,
+        "action_id": 4,
+        "observed_pose": [
+          1906.1478438329495,
+          -89.67663563300525,
+          22.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          22.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 8,
+        "raw_frame": 12,
+        "action_id": 9,
+        "observed_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1909.1478438329495,
+          -84.48048321029862,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 9,
+        "raw_frame": 15,
+        "action_id": 9,
+        "observed_pose": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1913.6478438329495,
+          -76.68625457623867,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -68.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 10,
+        "raw_frame": 16,
+        "action_id": 2,
+        "observed_pose": [
+          1915.1478438329495,
+          -74.08817836488535,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -68.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -68.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 11,
+        "raw_frame": 19,
+        "action_id": 9,
+        "observed_pose": [
+          1915.1478438329495,
+          -68.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -68.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -59.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 3.1058285412302493,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 12,
+        "raw_frame": 22,
+        "action_id": 9,
+        "observed_pose": [
+          1915.1478438329495,
+          -59.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -59.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -50.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 3.1058285412302493,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 13,
+        "raw_frame": 25,
+        "action_id": 9,
+        "observed_pose": [
+          1915.1478438329495,
+          -50.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -50.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -41.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 3.1058285412302493,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 14,
+        "raw_frame": 28,
+        "action_id": 9,
+        "observed_pose": [
+          1915.1478438329495,
+          -41.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -41.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -32.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 3.1058285412302493,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 15,
+        "raw_frame": 31,
+        "action_id": 9,
+        "observed_pose": [
+          1915.1478438329495,
+          -32.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -32.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "position_error": 3.1058285412302493,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 16,
+        "raw_frame": 32,
+        "action_id": 3,
+        "observed_pose": [
+          1915.1478438329495,
+          -29.08817836488535,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.5707963267948966
+        ],
+        "after_action": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0,
+        "yaw_error_degrees": 0.0,
+        "after_first_stop": false
+      },
+      {
+        "step": 17,
+        "raw_frame": 35,
+        "action_id": 9,
+        "observed_pose": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1918.1478438329495,
+          -23.89202594217872,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1922.6478438329495,
+          -16.097797308118768,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 0.0,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 18,
+        "raw_frame": 36,
+        "action_id": 1,
+        "observed_pose": [
+          1919.6478438329495,
+          -21.293949730825403,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1922.6478438329495,
+          -16.097797308118768,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1924.1478438329495,
+          -13.499721096765452,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "position_error": 6.0000000000000036,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 19,
+        "raw_frame": 37,
+        "action_id": 3,
+        "observed_pose": [
+          1921.1478438329495,
+          -18.695873519472087,
+          25.008504278406168,
+          1.0471975511965979
+        ],
+        "integrated_pose": [
+          1924.1478438329495,
+          -13.499721096765452,
+          25.008504278406168,
+          1.0471975511965983
+        ],
+        "after_action": [
+          1924.1478438329495,
+          -13.499721096765452,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 6.0000000000000036,
+        "yaw_error_degrees": 2.5444437451708134e-14,
+        "after_first_stop": false
+      },
+      {
+        "step": 20,
+        "raw_frame": 40,
+        "action_id": 9,
+        "observed_pose": [
+          1926.3439962556563,
+          -15.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1924.1478438329495,
+          -13.499721096765452,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1931.9420724670094,
+          -8.999721096765445,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.1058285412303324,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 21,
+        "raw_frame": 43,
+        "action_id": 9,
+        "observed_pose": [
+          1934.1382248897164,
+          -11.195873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1931.9420724670094,
+          -8.999721096765445,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1939.7363011010693,
+          -4.499721096765438,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.105828541230498,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 22,
+        "raw_frame": 46,
+        "action_id": 9,
+        "observed_pose": [
+          1941.9324535237765,
+          -6.695873519472087,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1939.7363011010693,
+          -4.499721096765438,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1947.5305297351292,
+          0.00027890323456780663,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.105828541230663,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 23,
+        "raw_frame": 49,
+        "action_id": 9,
+        "observed_pose": [
+          1949.7266821578366,
+          -2.1958735194720873,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1947.5305297351292,
+          0.00027890323456780663,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1955.324758369189,
+          4.500278903234574,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.1058285412308284,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 24,
+        "raw_frame": 52,
+        "action_id": 9,
+        "observed_pose": [
+          1957.5209107918968,
+          2.304126480527912,
+          25.008504278406168,
+          0.5235987755982893
+        ],
+        "integrated_pose": [
+          1955.324758369189,
+          4.500278903234574,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1963.118987003249,
+          9.00027890323458,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.105828541230994,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 25,
+        "raw_frame": 55,
+        "action_id": 9,
+        "observed_pose": [
+          1965.3151394259569,
+          6.804126480527912,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1963.118987003249,
+          9.00027890323458,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1970.913215637309,
+          13.500278903234587,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.1058285412311593,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 26,
+        "raw_frame": 58,
+        "action_id": 9,
+        "observed_pose": [
+          1973.109368060017,
+          11.304126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1970.913215637309,
+          13.500278903234587,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1978.7074442713688,
+          18.000278903234594,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.105828541231326,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 27,
+        "raw_frame": 61,
+        "action_id": 9,
+        "observed_pose": [
+          1980.9035966940771,
+          15.804126480527911,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1978.7074442713688,
+          18.000278903234594,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1986.5016729054287,
+          22.5002789032346,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.1058285412314914,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 28,
+        "raw_frame": 64,
+        "action_id": 9,
+        "observed_pose": [
+          1988.6978253281372,
+          20.30412648052791,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1986.5016729054287,
+          22.5002789032346,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.105828541231659,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 29,
+        "raw_frame": 65,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          25.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          25.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          22.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 30,
+        "raw_frame": 66,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          22.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          22.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          19.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 31,
+        "raw_frame": 67,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          19.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          19.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          16.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 32,
+        "raw_frame": 68,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          16.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          16.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          13.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 33,
+        "raw_frame": 69,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          13.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          13.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          10.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 34,
+        "raw_frame": 70,
+        "action_id": 5,
+        "observed_pose": [
+          1991.2959015394906,
+          21.80412648052791,
+          10.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          10.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1994.2959015394886,
+          27.00027890323461,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 5.999999999999035,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 35,
+        "raw_frame": 72,
+        "action_id": 1,
+        "observed_pose": [
+          1993.893977750844,
+          23.30412648052791,
+          7.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1994.2959015394886,
+          27.00027890323461,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.893977750842,
+          28.500278903234612,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.7179410247822675,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 36,
+        "raw_frame": 73,
+        "action_id": 5,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          7.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.893977750842,
+          28.500278903234612,
+          7.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.717941024782271,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 37,
+        "raw_frame": 74,
+        "action_id": 0,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          4.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.717941024782271,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": false
+      },
+      {
+        "step": 38,
+        "raw_frame": 74,
+        "action_id": 0,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          4.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.717941024782271,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": true
+      },
+      {
+        "step": 39,
+        "raw_frame": 74,
+        "action_id": 0,
+        "observed_pose": [
+          1996.4920539621974,
+          24.80412648052791,
+          4.008504278406168,
+          0.5235987755982894
+        ],
+        "integrated_pose": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "after_action": [
+          1996.893977750842,
+          28.500278903234612,
+          4.008504278406168,
+          0.5235987755982996
+        ],
+        "position_error": 3.717941024782271,
+        "yaw_error_degrees": 5.852220613892871e-13,
+        "after_first_stop": true
+      }
+    ],
+    "invalid_data_label": false,
+    "max_position_error": 6.0000000000000036,
+    "max_yaw_error_degrees": 5.852220613892871e-13,
+    "first_stop_step": 37,
+    "commands_after_first_stop": 2,
+    "metrics_at_first_stop_against_last_raw_pose": {
+      "termination": "stop",
+      "success_with_stop": true,
+      "oracle_goal_reached": true,
+      "final_distance": 3.717941024782271,
+      "closest_distance": 3.717941024782271,
+      "path_length": 209.99999999999963,
+      "legacy_endpoint_success": true,
+      "collision_status": "not_measured"
+    }
+  },
+  "atomic_gate_passed": true,
+  "renderer_used": false,
+  "model_used": false
+}
