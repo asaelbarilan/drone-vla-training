@@ -3481,3 +3481,135 @@ Concrete 2-hour one-L4 Virginia proposal: $0.9776/h official Linux compute,
 about $2-3 total expected, $5 proposed cap; approval/connection/AMI preflight pending.
 No AWS spend, architecture/split/index/weight changes. See
 reports/vla_openfly_renderer_20260919/REPORT.md and status.json.
+
+
+## 2026-09-20 - D152: blind control on the full aligned 72 panel
+
+User questioned why the released openfly_vla scored no better than our small
+adapters. Ran the same72 decisions twice per model, real frames versus every frame
+replaced by flat gray, unchanged prompts/checkpoints/greedy decoding. Verified the
+harness first: smol256 and openfly_vla reproduced stored D147 predictions exactly,
+and all216 frames passed SHA256 checks against the frozen panel.
+
+Real versus gray /72: openfly_vla20->10 (p=0.0213), smol256 20->15 (p=0.4869),
+smol500 21->14 (p=0.2478), qwen 24->20 (p=0.5966); always-forward is12/72. Only
+openfly_vla depends on the image (right from vision on13 cases versus3). Our
+adapters change55-64 of72 answers when blinded with no separable accuracy gain.
+The D147 ranking is inverted with respect to grounding, and openfly_vla is further
+penalised by24 unparsed outputs (20/48 sighted versus10/38 blind).
+
+Corrected the record: D147's gray control ran on24 openfly: cases sharing only13
+(route,frame) pairs with the aligned72, so it was never a same-panel control.
+Next-direction agreement must not be used to rank these models. Next: repair the
+vlnv11 parse failure, then decide grounding before more training or renderer work.
+
+Viewer: localhost8771/blind_control.html. Evidence:
+reports/vla_blind_control_20260920/REPORT.md and summary.json. No training, AWS
+spend, or weight/adapter/split/seed changes.
+
+
+## 2026-09-21 - D153: UAV-Flow endpoint pilot; first model here that uses its camera
+
+D152 left the OpenFly panel unable to rank anything, and the user objected that the
+task shape was wrong - the prompt enumerated the answer set, which is not how these
+models are used, and D149's own audit shows most drone VLAs emit velocities or
+waypoints. Chose UAV-Flow because three papers report on it (WorldVLN 79.12%,
+ImagineUAV 70.9%, FLIGHTVLA 59.0%), instructions are single free-form goals and
+actions are continuous real-flight trajectories. Downloaded one 4.7GB shard of54.
+The dataset declares NO LICENSE; unresolved, and blocking for publication.
+
+Froze 500 episodes,412 train /88 val by episode-id hash, and computed baselines
+BEFORE training: predicting a validation endpoint with no image at all gives
+5.786m from the global mean and 2.264m from the same-instruction mean. Median
+validation trajectory is 7.342m.
+
+SmolVLM-256M + LoRA,400 updates, first frame + instruction -> final displacement:
+3.205m with real frames versus 6.466m blinded, and 56 versus 6 distinct answers.
+Paired sign tests: better than blinded on 62/83 episodes, p=7.5e-06 - the first
+model in this project whose score demonstrably depends on the camera. But it loses
+to the trivial text lookup, better on only 30/88, p=0.0037. Not a success.
+
+Three harness defects found and fixed, all in the scorer rather than the model: a
+loose parser scraped digits from echoed prompt text and scored a 1049m prediction
+instead of a failure; its strict replacement discarded all 88 predictions because
+no EOS token was trained and the model emits a fourth number; the manifest builder
+pulled a 4.6GB shard into memory to hash a prefix. Reported numbers come from
+score_uav_flow_pilot.py re-running the saved adapter, not the training counters.
+
+Next is D154: rebuild as next-step 6-DoF over all ~34k frames, which is both the
+faithful shape and the fix for 412 training examples. Plan and the standing
+blind-control-plus-baseline rule are in AGENTS.md. Evidence:
+reports/uav_flow_pilot_20260921/. No AWS, no OpenFly weight/split/seed changes.
+
+
+## 2026-09-21 - D155: the model memorises instructions and never lets the image decide
+
+Rebuilt UAV-Flow as 8-step 6-DoF action chunks with a split that shares no episode,
+no instruction wording and no site with training (308 train /62 val /130 dropped,
+21,665 train steps). Adopted the official OpenVLA-UAV representation: 256 bins per
+channel on the vocabulary tail, one token per dimension, q01/q99 normalisation,
+LoRA rank32, lr 5e-4.
+
+Text-only baselines recomputed for the new split, since the D153 exact-match
+baseline is impossible when no wording repeats: no-text 6.868m, TF-IDF
+nearest-neighbour 4.496m, median validation trajectory 10.146m.
+
+Two runs, identical but for LoRA targeting. Run b (text layers only) and run c
+(all-linear, which also trains vision_model.encoder and connector, 5.72M extra
+parameters). Held-out loss 5.30 versus 5.28; rollout held-out 12.09m versus
+13.21m. Unlocking the visual path changed nothing. That hypothesis was wrong.
+
+Rollout endpoints, median, floor first: representation floor 0.06-0.08m, so the
+format costs almost nothing. Train episodes 2.86m; held out 12.09-13.21m, worse
+than the 6.868m no-text baseline and far worse than 4.496m. The model memorises
+instruction-to-trajectory and collapses on unseen wording.
+
+Plumbing checked directly rather than inferred: real and gray images give
+different pixel_values and different logits every time (median max difference
+0.39), but the argmax action token is identical in 12 of 12 cases. The image
+enters the computation and never changes a decision. This is an incentive
+problem, not an architecture one - instruction-to-trajectory is a complete
+solution on 308 episodes, so nothing pressures the model to see.
+
+Harness work that held up: representation floor as a fourth reference, held-out
+loss curve, train-subset rollout as a memorisation check, sign tests keyed by
+episode id rather than zip. Three of my own errors were caught by controls, not
+by loss curves: free-text actions instead of action tokens, BPE re-merging when
+action ids pass through text (177 of 200 chunks corrupted), and the frozen visual
+path. Evidence in reports/uav_flow_chunks_20260921/.
+
+Next candidate: run the authors' own OpenVLA-UAV (14.05GB, ungated) on this exact
+held-out split with the same rollout and blind control. It answers whether a
+properly trained drone VLA clears this bar or hits the same wall. User has
+decided the dataset licence question is closed; it is research use.
+
+
+## 2026-09-21 - D156: the authors' OpenVLA-UAV uses its camera; our fine-tunes do not
+
+Image-swap control, scale-free: same instruction, a different real frame from
+another held-out episode. OpenVLA-UAV (D:/drone_vla_pilot/models/openvla-uav,
+4-bit, 5.15 GiB, prompt per vla-scripts/openvla_act.py with proprio held fixed)
+left its action unchanged on 8/30 cases (gray: 7/30), 21 distinct actions. Our
+SmolVLM fine-tune: 48 action tokens unchanged on 23/40 (gray 28/40), median 0
+tokens changed. So the camera-blindness is our training, not the papers and not
+a gray-image artefact. Needed the D147 predict_action mask fix (token 29871).
+Their action space is 4-D (x, y, z, yaw rad), unnorm_key sim, so endpoint scores
+are not comparable to ours - only the swap result is. Evidence:
+reports/openvla_uav_swap_20260921/summary.json.
+
+## 2026-09-21 - D157: one Qwen3-VL base serves VLM and VLA in llama.cpp; fidelity open
+
+User's real requirement: a VLA co-resident with the testbed VLM (Ollama
+qwen3-vl:4b, Q4_K_M, ~4.2 GB) on one 8 GB GPU. Ollama no longer supports LoRA
+adapters, so the chosen route is llama.cpp llama-server with a per-request LoRA
+scale. Downloaded llama.cpp b11081 CUDA 12.4 Windows binaries and the official
+Qwen3VL-4B-Instruct Q4_K_M GGUF + F16 mmproj.
+
+Chain test on a 60-update Qwen3-VL-4B action adapter: PEFT -> GGUF conversion
+works (504 tensors, 132 MB); llama-server loads base + mmproj + adapter at 5.5 GB;
+the per-request toggle works (scale 1: 100% action tokens, 20/20 full chunks;
+scale 0: normal VLM text, 0% action tokens). Numerical fidelity against PyTorch
+is not established: token agreement median 50%, chunk gap median 0.116 m versus
+0.037 m between-frame spread. Cause not yet isolated between NF4-vs-Q4_K_M and
+image preprocessing; next step is a higher-precision llama.cpp base. Evidence:
+reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.

@@ -1,0 +1,709 @@
+{
+  "summary": {
+    "model": "D:/drone_vla_pilot/models/openvla-uav",
+    "unnorm_key": "sim",
+    "cases": 30,
+    "action_dim": 4,
+    "identical_when_gray": 7,
+    "identical_when_swapped": 8,
+    "distinct_real_actions": 21,
+    "note": "scale-free control: their action units and sim/real distribution differ from ours, so only whether the prediction changes is being read",
+    "ours_for_reference": {
+      "identical_when_gray": "28/40",
+      "identical_when_swapped": "23/40",
+      "action_tokens": 48
+    }
+  },
+  "cases": [
+    {
+      "id": "2025-04-23_07-03-01:00041",
+      "instruction": "Proceed to the tree on the left side",
+      "swapped_from": "2025-04-23_09-46-26:00062",
+      "real": [
+        13.2176,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        14.2266,
+        -0.6427,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        5.8184,
+        -9.3664,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_09-34-21:00040",
+      "instruction": "Advance through the first tree from the right side, then advance through the second tree from the right side",
+      "swapped_from": "2025-04-10_16-37-47:00168",
+      "real": [
+        13.8902,
+        -9.623,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -9.989,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        11.8723,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_17-01-55:00044",
+      "instruction": "Move about the tree in counterclockwise direction",
+      "swapped_from": "2025-04-20_17-41-29:00036",
+      "real": [
+        -1.5808,
+        0.6402,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-21_07-30-45:00012",
+      "instruction": "Suggest proceeding to the tree on the right side",
+      "swapped_from": "2025-04-23_09-46-26:00030",
+      "real": [
+        10.527,
+        4.4889,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -10.998,
+        -10.1362,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        -5.2804,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-10_16-37-47:00112",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-19_15-05-54:00054",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_14-59-16:00039",
+      "instruction": "Request to advance past the tree from the left side",
+      "swapped_from": "2025-04-10_16-37-47:00118",
+      "real": [
+        11.1996,
+        3.9757,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        11.1996,
+        1.9231,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        16.2445,
+        0.3836,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_09-37-34:00017",
+      "instruction": "Navigate to the tree from the right side",
+      "swapped_from": "2025-04-21_07-37-08:00164",
+      "real": [
+        10.8633,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        10.1906,
+        9.8771,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_12-53-45:00063",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-10_16-37-47:00105",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ]
+    },
+    {
+      "id": "2025-04-23_09-54-26:00008",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-23_08-49-33:00024",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ]
+    },
+    {
+      "id": "2025-04-16_12-19-20:00013",
+      "instruction": "Progress toward the tree on the left side",
+      "swapped_from": "2025-04-16_16-19-07:00173",
+      "real": [
+        14.5629,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        0.1008,
+        -14.2415,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-23_09-46-26:00019",
+      "instruction": "Go through the tree from the right side",
+      "swapped_from": "2025-04-14_11-19-33:00038",
+      "real": [
+        14.2266,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -9.989,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        13.8902,
+        -0.6427,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-10_16-37-47:00152",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-14_11-20-25:00030",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ]
+    },
+    {
+      "id": "2025-04-15_17-14-20:00004",
+      "instruction": "Navigate through the streetlight from the left side",
+      "swapped_from": "2025-04-14_17-01-55:00143",
+      "real": [
+        12.8813,
+        0.6402,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        11.1996,
+        0.6402,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        11.1996,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-21_07-37-08:00138",
+      "instruction": "Suggest navigating around the tree in circular direction",
+      "swapped_from": "2025-04-17_09-34-21:00013",
+      "real": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-10_16-37-47:00068",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-23_09-46-26:00018",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ]
+    },
+    {
+      "id": "2025-04-17_15-00-49:00033",
+      "instruction": "Need to make way past the tree from the right side",
+      "swapped_from": "2025-04-14_11-19-33:00033",
+      "real": [
+        15.5719,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        13.8902,
+        -2.6953,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-19_15-05-54:00034",
+      "instruction": "Move through the first tree from the right side, then through the second tree from the right side, and finally through the third tree from the left side",
+      "swapped_from": "2025-04-23_09-46-26:00035",
+      "real": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        16.2445,
+        -2.6953,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        16.9172,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_17-01-55:00139",
+      "instruction": "Move about the tree in counterclockwise direction",
+      "swapped_from": "2025-04-14_14-35-10:00028",
+      "real": [
+        2.1188,
+        -0.8993,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        -0.2355,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_14-59-16:00029",
+      "instruction": "Request to advance past the tree from the left side",
+      "swapped_from": "2025-04-23_08-49-33:00036",
+      "real": [
+        -13.0159,
+        -0.1295,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        11.1996,
+        1.9231,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        10.8633,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-19_15-44-10:00019",
+      "instruction": "Progress toward the tree on the left side",
+      "swapped_from": "2025-04-17_09-37-34:00036",
+      "real": [
+        10.8633,
+        -0.1295,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        8.8453,
+        -3.4651,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_15-00-49:00052",
+      "instruction": "Need to make way past the tree from the right side",
+      "swapped_from": "2025-04-16_10-51-33:00028",
+      "real": [
+        11.1996,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        13.5539,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_17-55-23:00000",
+      "instruction": "Pass through the first tree from the left side, then go past the second tree from the right side, and finally advance past the third tree from the left side",
+      "swapped_from": "2025-04-16_16-25-39:00057",
+      "real": [
+        -12.0069,
+        -0.1295,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        -3.4651,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        12.8813,
+        -0.8993,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_17-01-55:00165",
+      "instruction": "Move about the tree in counterclockwise direction",
+      "swapped_from": "2025-04-23_09-54-26:00045",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-10_16-37-47:00157",
+      "instruction": "Request to spin in counterclockwise direction",
+      "swapped_from": "2025-04-14_11-31-29:00011",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        -0.0522
+      ]
+    },
+    {
+      "id": "2025-04-16_16-19-07:00003",
+      "instruction": "Move about the tree in counterclockwise direction",
+      "swapped_from": "2025-04-23_08-49-33:00019",
+      "real": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        0.1008,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-17_17-55-23:00059",
+      "instruction": "Pass through the first tree from the left side, then go past the second tree from the right side, and finally advance past the third tree from the left side",
+      "swapped_from": "2025-04-21_07-30-45:00025",
+      "real": [
+        -12.3433,
+        -1.1559,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        -3.4651,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        -12.3433,
+        18.3442,
+        -3.2941,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_11-19-33:00000",
+      "instruction": "Request to move toward the tree on the right side in front",
+      "swapped_from": "2025-04-21_07-37-08:00098",
+      "real": [
+        11.5359,
+        -2.9519,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        31.0429,
+        -3.2085,
+        0.0,
+        -0.0004
+      ],
+      "swap": [
+        0.1008,
+        11.6731,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-21_07-37-08:00173",
+      "instruction": "Suggest navigating around the tree in circular direction",
+      "swapped_from": "2025-04-14_17-01-55:00138",
+      "real": [
+        14.5629,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        -12.3433,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        -12.6796,
+        -0.1295,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_11-31-29:00040",
+      "instruction": "Advance toward the left-front tree from the left side",
+      "swapped_from": "2025-04-23_09-54-26:00022",
+      "real": [
+        10.1906,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        14.5629,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        14.5629,
+        0.127,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "2025-04-14_11-31-29:00026",
+      "instruction": "Advance toward the left-front tree from the left side",
+      "swapped_from": "2025-04-16_12-25-10:00019",
+      "real": [
+        10.1906,
+        0.6402,
+        0.0,
+        0.0
+      ],
+      "gray": [
+        14.5629,
+        0.127,
+        0.0,
+        0.0
+      ],
+      "swap": [
+        10.1906,
+        -0.1295,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

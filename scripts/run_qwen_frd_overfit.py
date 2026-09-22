@@ -23,7 +23,10 @@ from uavlab.training.action_value_loss import value_token_weights
 from uavlab.training.direct_vla_frd import CONTRACT_ID, parse_target, target_json
 
 MODEL = Path(
-    "D:/drone_vla_pilot/hf_cache/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17"
+    os.environ.get(
+        "QWEN_MODEL",
+        "D:/drone_vla_pilot/hf_cache/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    )
 )
 
 

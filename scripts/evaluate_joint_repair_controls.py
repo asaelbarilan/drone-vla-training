@@ -18,14 +18,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True, choices=["smol256", "smol500", "qwen"])
     parser.add_argument("--aligned-panel", action="store_true")
+    parser.add_argument("--panel", type=Path, help="Explicit panel JSONL, overriding the subset")
+    parser.add_argument("--out-dir", type=Path, help="Where to write the result JSON")
+    parser.add_argument("--tag", default="panel", help="Result basename suffix used with --panel")
     args = parser.parse_args()
-    out = Path("reports/vla_openfly_repair_20260918")
-    rows = list(map(json.loads, (out / "rerun_inputs.jsonl").read_text().splitlines()))
+    src = Path("reports/vla_openfly_repair_20260918")
+    out = args.out_dir or src
+    rows = list(map(json.loads, (src / "rerun_inputs.jsonl").read_text().splitlines()))
     # Original first24 action-balanced cases + paired macro24 + their gray controls24.
     originals = {r["id"]: r for r in rows[:72]}
     subset = [originals[r["id"].removeprefix("gray:")] for r in rows[96:]] + rows[72:]
-    if args.aligned_panel:
-        subset = list(map(json.loads, (out / "aligned_panel.jsonl").read_text().splitlines()))
+    if args.panel:
+        subset = list(map(json.loads, args.panel.read_text().splitlines()))
+    elif args.aligned_panel:
+        subset = list(map(json.loads, (src / "aligned_panel.jsonl").read_text().splitlines()))
     api = importlib.import_module(
         "run_qwen_frd_overfit" if args.model == "qwen" else "run_smol_frd_overfit"
     )
@@ -91,7 +97,12 @@ def main():
             json.dumps(dict(model=args.model, completed=len(outputs), total=len(subset))),
             flush=True,
         )
-    (out / (args.model + ("_aligned.json" if args.aligned_panel else "_controls.json"))).write_text(
+    if args.panel:
+        name = f"{args.model}_{args.tag}.json"
+    else:
+        name = args.model + ("_aligned.json" if args.aligned_panel else "_controls.json")
+    out.mkdir(parents=True, exist_ok=True)
+    (out / name).write_text(
         json.dumps(
             dict(
                 model=args.model,

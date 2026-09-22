@@ -1,0 +1,845 @@
+{
+  "status": "complete",
+  "adapter_prompt_prefix": "OpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided.",
+  "openfly_prompt_style": "model_card",
+  "prompt_display": "our adapters (smol256, smol500, qwen):\nOpenFly atomic navigation mode. Three front images are oldest to newest, ending with the current observation. Follow the route and choose the next atomic action. Return exactly one digit: 0=mission stop, 1=forward 3 metres, 2=turn left 30 degrees, 3=turn right 30 degrees, 4=ascend 3 metres, 5=descend 3 metres. These are navigation primitives, not velocities. No odometry or downward image is provided.\nRoute: <route instruction>\n\nopenfly_vla (model_card style):\n<route instruction>",
+  "prompt_note": "The two families are not asked the same way. Our adapters receive the task framing above followed by 'Route: <instruction>' and must reply with one digit. openfly_vla receives the route instruction alone, in its published model-card style, and emits action tokens.",
+  "panel": "aligned 72 decisions, 12 per recorded direction, 21 routes, 11 environments",
+  "n": 72,
+  "routes": 21,
+  "chance": 12,
+  "always_forward_reference": 12,
+  "results": {
+    "openfly_vla": {
+      "real": {
+        "n": 72,
+        "correct": 20,
+        "valid": 48,
+        "accuracy": 0.2778,
+        "ci95": [
+          0.1876,
+          0.3905
+        ],
+        "distinct_answers": 7,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 1,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 7,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 6,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 4,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            1,
+            1,
+            0,
+            0,
+            2,
+            1,
+            7
+          ],
+          [
+            0,
+            7,
+            0,
+            1,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            4,
+            2,
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            6
+          ],
+          [
+            0,
+            3,
+            0,
+            2,
+            6,
+            0,
+            1
+          ],
+          [
+            2,
+            4,
+            0,
+            0,
+            2,
+            4,
+            0
+          ]
+        ]
+      },
+      "gray": {
+        "n": 72,
+        "correct": 10,
+        "valid": 38,
+        "accuracy": 0.1389,
+        "ci95": [
+          0.0772,
+          0.2371
+        ],
+        "distinct_answers": 3,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 8,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            2,
+            0,
+            0,
+            2,
+            0,
+            8
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            3,
+            0,
+            7
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            10
+          ],
+          [
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            9
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            8,
+            0,
+            0
+          ]
+        ]
+      },
+      "changed_when_blinded": 35,
+      "changed_fraction": 0.4861,
+      "mcnemar": {
+        "real_only": 13,
+        "gray_only": 3,
+        "p": 0.0213
+      }
+    },
+    "smol256": {
+      "real": {
+        "n": 72,
+        "correct": 20,
+        "valid": 72,
+        "accuracy": 0.2778,
+        "ci95": [
+          0.1876,
+          0.3905
+        ],
+        "distinct_answers": 6,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 4,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 7,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 3,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 4,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            4,
+            4,
+            2,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            7,
+            0,
+            0,
+            2,
+            0,
+            0
+          ],
+          [
+            3,
+            3,
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            4,
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            2,
+            4,
+            0,
+            1,
+            4,
+            1,
+            0
+          ],
+          [
+            2,
+            3,
+            1,
+            6,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "gray": {
+        "n": 72,
+        "correct": 15,
+        "valid": 72,
+        "accuracy": 0.2083,
+        "ci95": [
+          0.1305,
+          0.3157
+        ],
+        "distinct_answers": 2,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 4,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 11,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            11,
+            0
+          ]
+        ]
+      },
+      "changed_when_blinded": 64,
+      "changed_fraction": 0.8889,
+      "mcnemar": {
+        "real_only": 19,
+        "gray_only": 14,
+        "p": 0.4869
+      }
+    },
+    "smol500": {
+      "real": {
+        "n": 72,
+        "correct": 21,
+        "valid": 72,
+        "accuracy": 0.2917,
+        "ci95": [
+          0.1994,
+          0.4051
+        ],
+        "distinct_answers": 5,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 6,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 6,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 1,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 6,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 2,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            6,
+            3,
+            0,
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            6,
+            4,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            1,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            2,
+            5,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            3,
+            3,
+            4,
+            0,
+            2,
+            0
+          ]
+        ]
+      },
+      "gray": {
+        "n": 72,
+        "correct": 14,
+        "valid": 72,
+        "accuracy": 0.1944,
+        "ci95": [
+          0.1195,
+          0.3003
+        ],
+        "distinct_answers": 2,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 0,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 12,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            2,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            0
+          ]
+        ]
+      },
+      "changed_when_blinded": 64,
+      "changed_fraction": 0.8889,
+      "mcnemar": {
+        "real_only": 17,
+        "gray_only": 10,
+        "p": 0.2478
+      }
+    },
+    "qwen": {
+      "real": {
+        "n": 72,
+        "correct": 24,
+        "valid": 72,
+        "accuracy": 0.3333,
+        "ci95": [
+          0.2353,
+          0.4482
+        ],
+        "distinct_answers": 6,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 3,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 5,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 11,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 1,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            2,
+            0,
+            3,
+            5,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            3,
+            1,
+            6,
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            3,
+            5,
+            2,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            11,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            4,
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            6,
+            3,
+            1,
+            1,
+            0
+          ]
+        ]
+      },
+      "gray": {
+        "n": 72,
+        "correct": 20,
+        "valid": 72,
+        "accuracy": 0.2778,
+        "ci95": [
+          0.1876,
+          0.3905
+        ],
+        "distinct_answers": 5,
+        "per_action": [
+          {
+            "action": "STOP",
+            "correct": 2,
+            "n": 12
+          },
+          {
+            "action": "forward 3 m",
+            "correct": 4,
+            "n": 12
+          },
+          {
+            "action": "left turn",
+            "correct": 4,
+            "n": 12
+          },
+          {
+            "action": "right turn",
+            "correct": 3,
+            "n": 12
+          },
+          {
+            "action": "up 3 m",
+            "correct": 7,
+            "n": 12
+          },
+          {
+            "action": "down 3 m",
+            "correct": 0,
+            "n": 12
+          }
+        ],
+        "confusion": [
+          [
+            2,
+            4,
+            2,
+            1,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            2,
+            4,
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            4,
+            2,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            6,
+            1,
+            3,
+            2,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            4,
+            7,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            3,
+            8,
+            0,
+            0
+          ]
+        ]
+      },
+      "changed_when_blinded": 55,
+      "changed_fraction": 0.7639,
+      "mcnemar": {
+        "real_only": 18,
+        "gray_only": 14,
+        "p": 0.5966
+      }
+    }
+  },
+  "panel_sha256": "7574db4ad6fdf98d471a4952b1cf4ed4bdafd5b30a9115baaef8c73f61aa1c58",
+  "gray_panel_sha256": "6ff5728b1daa3172b777ec2c8daf883b7ea6917ea0176eaeb4da04f221e2783d",
+  "source_panel_sha256": "c5aa275f319cc92708e94ae9f662df59a52baf0d1dd1d86f9cca185378a82f27"
+}

@@ -16,6 +16,303 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D157 CURRENT STATE - read this first (2026-09-21)
+
+Supersedes the D154 plan below. Detail and evidence for every point is in
+CHANGES.md (D152-D157) and docs/VLA_DRONE_TRAINING.md.
+
+### What the user actually needs (corrected 2026-09-21)
+
+The research questions are the ones in this repo's papers (the modular
+architecture testbed), NOT "do VLAs use their camera" - an earlier session
+wrongly reframed the research around that. The practical requirement is:
+
+- a VLA that runs NEXT TO the testbed's VLM on one 8 GB GPU (RTX 4060 Laptop),
+  driving AirSim or the local renderer, possibly with shared KV cache;
+- the user also wants to train a VLA themselves.
+
+### Runtime facts
+
+- Testbed VLM = Qwen3-VL-4B via Ollama `qwen3-vl:4b`: GGUF Q4_K_M, 8,192 ctx,
+  about 4.2 GB. Not AWQ.
+- Ollama 0.34.2 runs qwen3vl on its new engine and NO LONGER SUPPORTS LoRA
+  adapters (ollama server/create.go: "LoRA adapters are no longer supported";
+  server/model.go: new adapters cannot be created). Do not plan around Ollama
+  adapters.
+- Ollama's qwen3-vl:4b blob is one combined GGUF (396 text + 411 vision tensors).
+  llama.cpp needs text + a separate mmproj, so it uses the official files instead.
+- Other experiments share this GPU (seen: scripts/valley_operator_experiment.py).
+  Check nvidia-smi before loading anything and never kill a process you did not
+  start. A viewer http.server on 127.0.0.1:8771 was left running by that session.
+
+### Decision: the VLA is a LoRA on the VLM's own base, served by llama.cpp
+
+- One Qwen3-VL-4B base in llama.cpp `llama-server`; the action LoRA is loaded with
+  --lora-init-without-apply and switched per request via the `lora` field
+  ([{id:0, scale:1}] for VLA, scale 0 for VLM).
+- Weights are shared. The KV cache is per request and cannot be reused across a
+  VLM call and a VLA call (the adapter changes the projections) - that is fine,
+  weights are where the memory is. Always send cache_prompt=false when switching
+  scales; a prompt cache built under one scale is invalid under the other.
+- Memory, computed from the real dims (36 layers, 8 KV heads, head dim 128 =
+  144 KB/token fp16): shared = 4.2 GB + 0.13 GB adapter + 0.28 GB VLA KV at 2k
+  = about 4.6 GB. Two separate model copies = about 8.4 GB and do not fit.
+- SmolVLM is DROPPED (user decision): Exp2VLA trained SmolVLA properly and got
+  46.6% single-object against pi0.5's 84.1%.
+- No released VLA can share the VLM's base: OpenVLA-UAV is Llama-2-7B (5.15 GiB
+  alone at 4-bit), pi0.5 is PaliGemma.
+
+### D157 chain test - reports/vla_llamacpp_chain_20260921/
+
+Tiny adapter: Qwen3-VL-4B NF4 + LoRA rank 32 on language_model.layers, 60 updates,
+D:/drone_vla_pilot/runs/qwen_chain_test/adapter_s60.
+
+1. PEFT LoRA -> GGUF WORKS. llama.cpp source at tag b11081 cloned to
+   D:/drone_vla_pilot/llamacpp/src; convert_lora_to_gguf.py produced
+   models/uav_flow_vla_lora_s60.gguf, 504 tensors (36 x 7 x 2), 132 MB.
+2. llama-server LOADS base + vision projector + adapter. Binaries
+   D:/drone_vla_pilot/llamacpp/bin (b11081, CUDA 12.4 Windows); models
+   Qwen3VL-4B-Instruct-Q4_K_M.gguf + mmproj-Qwen3VL-4B-Instruct-F16.gguf from the
+   official Qwen/Qwen3-VL-4B-Instruct-GGUF repo. 5.5 GB alongside another job.
+3. Per-request toggle WORKS: scale 1 -> 100% action tokens, 20/20 complete
+   8-step chunks; scale 0 -> ordinary English VLM answers, 0% action tokens.
+4. Numerical fidelity NOT YET ESTABLISHED. Same adapter, same 20 frames,
+   PyTorch on NF4 base versus llama.cpp on Q4_K_M base: action-token agreement
+   median 50% (min 21%); 8-step chunk displacement gap median 0.116 m (max
+   0.278 m) against a between-frame spread of 0.037 m, ratio 3.1. Caveat: a
+   60-update adapter is near-collapsed, so the spread is tiny and the ratio harsh.
+   Unresolved whether the gap is quantisation (NF4 vs Q4_K_M) or image
+   preprocessing (HF processor vs llama.cpp mtmd).
+   Q8_0 follow-up (base built locally from the exact HF training weights with
+   convert_hf_to_gguf.py --outtype q8_0, models/Qwen3VL-4B-Instruct-Q8_0-local.gguf,
+   4.28 GB): PyTorch-NF4 vs llama.cpp Q8_0 = 65% token agreement, 0.071 m gap;
+   Q8_0 vs Q4_K_M = 76%, 0.049 m. Quantisation explains ~40% of the gap. The
+   residual is ambiguous because the PyTorch reference is itself 4-bit NF4, not
+   the true weights - Q8_0 is the closest to bf16 we have. Clean resolution needs
+   a bf16 reference, i.e. train (and reference) on the full-precision base, which
+   is ~9 GB and cloud-only. Q8_0 serving took ~6 GB, versus ~4.6 GB for Q4_K_M.
+5. Running the VLM from the official Qwen GGUF means a different file from the
+   Ollama blob the testbed's results were measured on. Confirm VLM answers match
+   before trusting earlier architecture results on the new file.
+
+### Training lane
+
+Two paradigms exist. OpenVLA-UAV uses discrete action tokens (256 bins on the
+vocabulary tail, next-token cross-entropy) - what this repo now implements.
+pi0.5 and SmolVLA (Exp2VLA) use a flow-matching action expert (config fields
+time_sampling_beta_*, a separate gemma_300m expert). Hyperparameters do not
+transfer between them. For the deployment requirement above, discrete tokens
+are strongly favoured: action tokens are just vocabulary, so they ride through
+llama.cpp as a LoRA. A flow-matching expert is a separate network llama.cpp does
+not run, which would break weight sharing. Lane choice is still the user's call.
+
+Our runs so far are badly undertrained: about 6,400 examples (0.33 epochs)
+against Exp2VLA's about 3.84M. The user wants real-scale training on AWS; a
+single L4 (g6.2xlarge, $0.9776/h as quoted 2026-09-19 - reconfirm) was
+proposed, NOT an 8-GPU node, because the trainer is single-process. Nothing has
+been launched; AWS CLI is not installed and no credentials exist.
+
+### AWS state (2026-09-22)
+
+- AWS MCP connector is live on this account (512068640697), signed in as ROOT.
+  Every account-level tool is set to "Needs approval" by the user; keep it that
+  way and ask before any launch or spend.
+- us-east-1 GPU quota was 0 vCPU for both on-demand and spot G/VT instances.
+  Increase to 8 vCPU (quota L-DB2E81BA) requested 2026-09-22T09:21Z, request id
+  8965ad1917584b8cb383594823b1212fBJ2iREdo - APPROVED, limit now 8 vCPU
+  (CASE_CLOSED, confirmed via API 2026-09-22). No instances exist in us-east-1.
+- Live on-demand Linux prices, us-east-1, 2026-09-22: g6.xlarge $0.8048/h
+  (L4, 16 GiB RAM), g6.2xlarge $0.9776/h (L4, 32 GiB RAM, the recommended box),
+  g5.2xlarge $1.212/h (A10G), g6e.xlarge $1.861/h (L40S 45 GiB).
+- Intended first cloud run: full-precision Qwen3-VL-4B LoRA on the action-token
+  data, so the adapter trains against the true weights (see D157 fidelity result).
+- 2026-09-22 14:00Z: g6.2xlarge had NO capacity in any us-east-1 zone
+  (InsufficientInstanceCapacity, not quota). User approved g5.2xlarge instead.
+  RUNNING: i-0751e8ef73191703e, g5.2xlarge (A10G 23 GB), us-east-1d,
+  IP 34.229.106.76 (changes on stop/start), user `ubuntu`, key
+  C:\Users\Asael\PycharmProjects\keys\asael_aws.pem, AMI ami-0bf9017599376f62e
+  (DLAMI PyTorch 2.13, Ubuntu 26.04, Python 3.14), 200 GB gp3 root,
+  security group sg-00bde935030fcd6a2 (SSH from 147.235.193.80/32 only),
+  shutdown behaviour = stop. Auto-stop scheduled 16:57Z via `shutdown -h`.
+  Instance-store NVMe is wiped on stop: keep results on the root volume.
+  Purpose: ~2 h bf16 speed measurement. STOP it when done and confirm.
+- Remote layout: code ~/vla (scripts, src), data ~/data/uav_flow_chunks_20260921,
+  base ~/qwen3vl4b (HF download), python /opt/pytorch/bin/python (torch 2.13 cu130,
+  transformers 5.17, peft 0.21). Env: QWEN_MODEL, UAV_FLOW_STORE,
+  PYTHONPATH=~/vla/src:~/vla/scripts. transformer_engine was UNINSTALLED from the
+  venv (broken cublasLt symbol, broke `import peft`). transformers 5 returns
+  mm_token_type_ids; encode() now extends it for the answer tokens.
+- bf16 smoke test (12 updates, batch 1 x accum 8, all-linear r32): works, loss
+  10.7 -> 6.8, peak 9.9 GiB, 4.4 s/update = 0.55 s/example. 10 epochs (195k
+  examples) at that rate is about 30 h (~$36). The GPU is under-used at batch 1;
+  real batching is the next speed step.
+- 2026-09-22 ~14:35Z: instance STOPPED by user request (compute billing off;
+  200 GB disk ~$16/month keeps code, data and model). Public IP will change on
+  next start. The shutdown timer is gone after a stop; set it again on start.
+- Trainer upgraded (local, 2026-09-22; NOT yet on the instance - re-upload
+  scripts/train_uav_flow_vla.py): --batch-size (right-padded collate; padded
+  batch loss 11.5813 vs single-example mean 11.5773), --workers (DataLoader),
+  --schedule cosine --warmup, --save-every/--resume (OUT/checkpoint; resumed
+  step reproduced loss 9.5928 exactly), --epochs, --wandb-project (rank 0; the
+  USER must put WANDB_API_KEY on the machine - never handle it), and torchrun
+  multi-GPU DDP (ranks stride one global example stream; no_sync on accum
+  micro-steps; held-out split across ranks). DDP is untested until a multi-GPU box.
+- User wants 8 GPUs (~1 h run) + wandb. Quotas: G/VT on-demand 8 vCPU, P = 0.
+  8-GPU prices us-east-1: g6.48xlarge $13.35/h (8xL4), g5.48xlarge $16.29/h
+  (8xA10G), p4d.24xlarge $21.96/h (8xA100 40GB, needs P quota 96),
+  g6e.48xlarge $30.13/h. G boxes need G quota 192 vCPU.
+- User chose p4d only. P quota (L-417A185B) increase 0 -> 96 requested
+  2026-09-22, request id 8e333ae19c934fcaafcc4b2f6f98d161vL9uhsKE, PENDING.
+  No G-192 request was made (user declined). A p4d is a new instance: data and
+  model must be uploaded/downloaded again (or copied from the stopped g5 disk).
+- 2026-09-22 ~15:00Z g5 speed sweep (bf16, all-linear r32, 6 workers), s/example:
+  batch1 0.55, batch4 0.199, batch8 0.188 (12.1 GiB), batch16 0.180 (15.0 GiB).
+  10 epochs on one A10G ~10 h (~$12); p4d estimate <1 h.
+- wandb: user logged in on the instance (~/.netrc). Team entity is `asael`
+  (NOT asaelbarilan-wonderful-ai / -org: 404 / "may not log to organization"),
+  project "vla training". Trainer --wandb-entity defaults to asael. Demo run
+  wandb_demo_b8 (200 updates, batch 8, cosine; train 10.7->4.1, held-out
+  11.18->5.08) synced to asael/vla training.
+- Mistake log: I stopped the instance when the user said "stop the run" (the run
+  had already finished). User wanted the machine kept on. Only stop the
+  instance when the user explicitly says the machine/instance.
+- 2026-09-22 15:55Z LONG RUN STARTED (user approved): instance IP 32.199.249.136,
+  ~/runs/shard1_bf16_10ep, log ~/shard1.log, wandb asael/vla training/
+  shard1_bf16_10ep. bf16, all-linear r32, batch 8 x accum 2 (=16, official
+  recipe global batch), lr 5e-4 cosine 3% warmup, 10 epochs (~12.2k updates,
+  ~3 s/update, ~10 h), held-out every 250, checkpoint + adapter_s<step> every
+  250. Auto-stop 2026-09-23 03:55Z; max-wall 44000 s. If stopped early, restart
+  instance and rerun the same command with --resume. P quota request is
+  CASE_OPENED (case 179008835200067). After the run: pick best held-out
+  adapter, rollout-score vs baselines (no-text 6.868 m, TF-IDF 4.496 m), gray +
+  image-swap controls, then STOP instance and ask about deleting it.
+
+### Assets on disk
+
+- OpenVLA-UAV: D:/drone_vla_pilot/models/openvla-uav (runs at 4-bit, 5.15 GiB;
+  action dim 4 = x, y, z, yaw rad; unnorm_key "sim"; prompt includes proprio).
+- Exp2VLA pi0.5: D:/drone_vla_pilot/models/exp2vla-pi05 (LeRobot pi05 policy,
+  needs the lerobot package; not yet run; paper reports 12.9 GB VRAM).
+- UAV-Flow chunk data + unseen split: D:/drone_vla_pilot/data/uav_flow_chunks_20260921.
+- Trainer: scripts/train_uav_flow_vla.py --model qwen (4-bit, grad checkpointing,
+  vision frozen = the Exp2VLA expert-only regime).
+
+### Settled - do not reopen
+
+- Dataset license: the user decided it is fine for research use. Do not raise it.
+- SmolVLM training: dropped.
+
+### Standing rules
+
+- Beside every model number report the image-swap control and the text-only
+  baseline. A model number alone is not a result.
+- The user cannot read long replies. One idea per reply, at most 8 lines, one
+  question at the end.
+
+## D154 plan (SUPERSEDED by D157 above): closed-loop first, then three models on AWS, then RL
+
+Read docs/VLA_DRONE_TRAINING.md for the whole picture, then this. Supersedes the
+earlier D154 note. User direction of 2026-09-21: get the official closed-loop
+evaluation running on Windows, train smol256/smol500/qwen, move training to AWS
+rather than the local 4060, and keep RL as a later improvement - but verify the
+whole pipeline works before any cloud spend.
+
+Standing rule, unchanged and applying to every phase below:
+report the blinded (flat gray image) control AND the text-only baseline beside any
+model number. A model number alone is not a result. D152 exists because four
+models were ranked on a metric a no-vision oracle beat.
+
+### Phase A - make it real, locally, before spending anything
+
+A1. Stand up UAV-Flow-Eval on Windows. github.com/buaa-colalab/UAV-Flow is
+    Apache-2.0 and ships UnrealZoo Gym plus the packaged Collection_WinNoEditor
+    build and the DowntownWest campus map. This is the opposite of the D151
+    blocker: that failed because OpenFly needed a Linux graphics stack. Gate:
+    replay a recorded expert trajectory and have the environment reproduce it.
+    Until that passes, no flight number from any model is meaningful.
+A2. Stand up their inference server contract (vla-scripts/openvla_act.py) so our
+    own models can be driven by batch_run_act_all.py through the same port. We
+    substitute the model, never the evaluator.
+A3. Train ONE small model end to end locally (next-step 6-DoF, data already built
+    at reports/uav_flow_steps_20260921, 28,304 train / 5,714 val steps) and run it
+    through A1+A2. Purpose is to prove the pipeline, not to get a good number.
+A4. Only when A1-A3 pass is the pipeline considered verified.
+
+### Phase B - three models, trained on AWS
+
+B1. Do not launch anything until Phase A passes and the user approves a concrete
+    machine and cost. No AWS resource has ever been started by this project.
+B2. Train smol256, smol500 and qwen on the same frozen split, one change at a
+    time, each scored with the blind control and the text-only baseline (2.264m)
+    and then through closed-loop evaluation from A1.
+B3. Sizing note: the official recipe is openvla-7b, LoRA rank32, batch2,
+    lr 5e-4, 8 GPUs. Our models are far smaller, so a single modern GPU is the
+    starting point, not an 8-way node. Price the instance against the real
+    measured step time from A3 before proposing it.
+B4. Data scaling belongs here too - further shards at 4.7GB and about 500
+    episodes each. Data before updates, data before model size.
+B5. The published 79.12/70.9/59.0 numbers are on UAV-Flow-Sim (33.5GB), not the
+    real set. Matching them needs that dataset and their harness, and is a
+    separate decision.
+
+### Phase C - RL, only after supervised training is honest
+
+C1. Prerequisite: a working closed-loop environment from A1 and a supervised
+    checkpoint that beats the text-only baseline. RL on top of a policy that
+    loses to an instruction lookup would only optimise the wrong thing.
+C2. The reward must not be the metric we already know is gameable. Use the
+    closed-loop task outcome, and keep the blind control as a diagnostic on the
+    RL policy too.
+C3. Scope it as a named ablation against the supervised checkpoint, not as a
+    replacement for it.
+
+### Carried over, still open
+
+- UAV-Flow and UAV-Flow-Sim declare NO dataset license. The code repo is
+  Apache-2.0; that does not cover data. Blocks publication.
+- A rollout over recorded frames is not closed-loop flight. Do not compare to
+  published success rates until A1 is running.
+- OpenFly decoder calibration unresolved: 24 of 72 outputs fail to parse.
+- The paper's OpenFly section must not present 20/20/21/24 as a ranking.
+- Prior art on small models here is discouraging: Exp2VLA trained SmolVLA and
+  reported 46.6% single-object / 15.0% multicolor against pi0.5's 84.1/65.0, and
+  released only the pi0.5 weights. Expect the small-model study to be a study,
+  not a win.
+
+## D152 blind control: only the released model uses the camera
+
+Read reports/vla_blind_control_20260920/REPORT.md and summary.json. All four
+models answered the aligned72 panel twice: real frames, then every frame replaced
+by flat gray, same prompts/checkpoints/greedy decoding. Harness verified first:
+smol256 and openfly_vla reproduced the stored D147 predictions exactly (72/72
+identical action ids; openfly_vla also 72/72 identical action tokens), and all216
+frames were SHA256-checked against the frozen panel.
+
+Real versus gray /72: openfly_vla20->10 (changed35, McNemar p=0.0213),
+smol256 20->15 (changed64, p=0.4869), smol500 21->14 (changed64, p=0.2478),
+qwen 24->20 (changed55, p=0.5966). Always-forward reference is12/72.
+
+openfly_vla is the only model whose agreement depends on the image: right because
+of vision on13 cases against3 the other way. Our three adapters move55-64 of72
+answers when blinded but gain no separable accuracy from vision. The D147 ranking
+is therefore inverted with respect to grounding: qwen leads while contributing
+nothing measurable from vision, and openfly_vla trails while being charged24
+unparsed outputs as wrong (20/48 with vision versus10/38 blind).
+
+D147's earlier gray control used24 cases from the openfly: panel, sharing only13
+(route,frame) pairs with the aligned72; do not cite it as a same-panel control.
+Do not use next-direction agreement to rank these models: all CIs overlap, it is
+not flight success, and it rewards a text prior as readily as grounding. A blind
+control proves a score is not image-driven; it does not make an image-driven score
+good. Decoder calibration is still unresolved (24/72 openfly_vla outputs fail to
+parse under vlnv11). Next: fix that parse failure before any further comparison,
+and decide grounding before more training or renderer work.
+
+Viewer: localhost8771/blind_control.html - all21 routes, every decision, the three
+causal frames each model received, four models under both conditions.
+evaluate_joint_repair_controls.py gained optional --panel/--out-dir/--tag; default
+behaviour unchanged. No training, no weight/adapter/split/seed changes, no AWS.
+
 ## D151 native renderer gate failed locally; HF access is resolved
 
 Read reports/vla_openfly_renderer_20260919/REPORT.md and status.json. Official

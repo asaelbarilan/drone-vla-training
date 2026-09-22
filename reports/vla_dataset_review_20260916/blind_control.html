@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Blind control</title><style>
+body{background:#102033;color:#edf4ff;font:17px system-ui;max-width:1150px;margin:25px auto;padding:0 18px;line-height:1.5}
+section{background:#1b3048;padding:20px;border-radius:10px;margin:18px 0}
+a{color:#84cfff}.warning{color:#ffce8b}.muted{color:#a8bdd4;font-size:15px}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%}
+td,th{padding:8px;text-align:left;border-bottom:1px solid #5a6c80;white-space:nowrap}
+select{max-width:100%;padding:10px;background:#213b55;color:white;border-radius:6px;border:1px solid #5a6c80}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.images{display:flex;gap:8px;margin:8px 0}.images img{width:32%;border-radius:6px}
+.step{background:#16283d;padding:14px;border-radius:9px;margin:14px 0;border-left:4px solid #3d5a7d}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{background:#263e58;padding:10px;border-radius:8px;font-size:15px}
+.hit{color:#8ce8a8}.miss{color:#ff9d9d}.same{color:#ffce8b;font-size:14px}.diff{color:#8ce8a8;font-size:14px}
+b.name{font-size:14px;color:#cfe4ff}
+.ask{background:#0d1c2e;border:1px solid #3d5a7d;border-radius:8px;padding:11px 13px;margin:0 0 12px;font-size:15px;color:#e4eefb}
+.tag{display:inline-block;background:#3d5a7d;color:#dcebff;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;margin-right:8px;vertical-align:1px}
+#prompts{background:#16283d;padding:13px;border-radius:8px;font-size:14px;color:#cfe4ff;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:700px){.grid{grid-template-columns:1fr 1fr}.images img{width:32%}}
+</style>
+<h1>Do these models read the camera?</h1>
+<section class="warning"><b>One question only.</b> Every model answered the same 72 decisions twice: once with the real frames, once with every frame replaced by flat gray. If blinding a model does not change its answers, that model is not using the image, and its position in the direction-agreement table reflects its text prior. This page is not a flight benchmark.</section>
+<section><h2>Result</h2><div class="scroll"><table id="scores"></table></div>
+<p class="muted" id="ref"></p>
+<p class="muted"><b>Changed</b> counts how many of the 72 answers moved when the images were blinded — the direct measure of whether pixels reach the decision. <b>Distinct</b> is how many different answers a model produced across 72 different images. McNemar <i>p</i> tests the paired real-versus-gray accuracy difference; above 0.05 the difference is not separable from noise at this panel size.</p></section>
+<section><h2>What each model is asked</h2>
+<p class="muted" id="promptnote"></p><div id="prompts"></div>
+<p class="muted">The route instruction below each step is appended to this framing, and it is the only part that changes between steps within a route.</p></section>
+<section><h2>Every decision, by route</h2>
+<p class="muted">21 recorded routes across 11 environments. Each step shows the three causal frames the model received, the recorded command, and all four models under both conditions.</p>
+<select id="route"></select><div id="steps"></div></section>
+<section><h2>Provenance</h2><pre id="prov" class="muted"></pre></section>
+<p><a href="openfly_repair.html">D147 decoder and alignment</a> · <a href="openfly_routes.html">Source-matched route debugger</a></p>
+<script>
+const $=id=>document.getElementById(id);let D;
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const name=a=>a===null||a===undefined?'INVALID':D.labels[a];
+function dir(a){return a===8||a===9?1:a}
+function rows(){
+ const s=D.summary,h='<tr><th>Model</th><th>Real /72</th><th>Gray /72</th><th>Changed /72</th><th>Valid real</th><th>Distinct real</th><th>McNemar p</th></tr>';
+ $('scores').innerHTML=h+Object.entries(s.results).map(([m,r])=>
+  `<tr><td>${m}</td><td>${r.real.correct}</td><td>${r.gray.correct}</td><td>${r.changed_when_blinded}</td><td>${r.real.valid}</td><td>${r.real.distinct_answers}</td><td>${r.mcnemar.p}</td></tr>`).join('');
+ $('ref').textContent='Always-forward reference: '+s.always_forward_reference+'/72. The panel is balanced at 12 examples per recorded direction, so a constant answer scores 12.';
+ $('promptnote').textContent=s.prompt_note;
+ $('prompts').textContent=s.prompt_display;
+ $('prov').textContent=JSON.stringify({panel:s.panel,panel_sha256:s.panel_sha256,gray_panel_sha256:s.gray_panel_sha256,source_panel_sha256:s.source_panel_sha256},null,1);
+}
+function steps(){
+ const r=D.routes[+$('route').value||0];
+ $('steps').innerHTML=r.indices.map(i=>{
+  const c=D.cases[i];
+  const cards=Object.entries(c.outputs).map(([m,o])=>{
+   const cell=(p)=>{const ok=p.action_id!==null&&dir(p.action_id)===c.target;
+    return `<div class="${ok?'hit':'miss'}">${esc(name(p.action_id))}</div>`};
+   const moved=o.real.action_id!==o.gray.action_id;
+   return `<div class="card"><b class="name">${m}</b>
+    <div class="muted">real</div>${cell(o.real)}
+    <div class="muted">gray</div>${cell(o.gray)}
+    <div class="${moved?'diff':'same'}">${moved?'changed when blinded':'same when blinded'}</div></div>`}).join('');
+  return `<div class="step"><p class="ask"><span class="tag">asked</span> ${esc(c.instruction)}</p>
+   <div class="images">${c.previews.map(p=>`<img src="${p}" loading="lazy" alt="Causal source frame">`).join('')}</div>
+   <p><b>Recorded command:</b> ${esc(name(c.action_id))} <span class="muted">· frame ${c.frame_index}</span></p>
+   <div class="grid">${cards}</div></div>`}).join('');
+}
+fetch('blind_control.json').then(r=>r.json()).then(d=>{D=d;rows();
+ $('route').innerHTML=d.routes.map((r,i)=>`<option value="${i}">${i+1}/${d.routes.length}: ${esc(r.environment)} · ${r.indices.length} step${r.indices.length>1?'s':''}</option>`).join('');
+ $('route').onchange=steps;steps()});
+</script></html>
