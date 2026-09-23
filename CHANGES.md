@@ -3659,3 +3659,15 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   "which side is the instruction's target" question the same under mirroring at
   256/512/896 px (flip 2/12 at every size) - resolution is NOT the bottleneck.
   83% of flights name a visual target, so instruction filtering is pointless.
+
+- D160 (2026-09-23): 10-shard run official_k8_10shard (K=8, both wordings,
+  mirror, cap 0.1/99.9, 2,500 updates x 32, held-out loss 11.02 -> 2.566) scored
+  on 150 unseen-site flights, batched (0.35 s/call vs ~1 s sequential):
+  floor 0.072 m | real 3.067 m | gray 3.115 m | swap 3.121 m | text-only NN 4.533 m
+  | no-text mean 4.208 m. FIRST adapter to beat both text baselines, by ~1.1 m.
+  Camera contribution is ~0.05 m and not significant (gray sign test 70/127
+  p=0.29; swap 71/122 p=0.085). Mirror probe: 42/180 changed (23%), sideways
+  sign flipped 1/180. So the gain comes from state + instruction, not the image.
+  Batched generation verified: left padding correct; batch-vs-single logit noise
+  ~0.56 (same with zero padding), flips only near ties. Scorer and preparation
+  now batched/threaded. Instance stopped after scoring.

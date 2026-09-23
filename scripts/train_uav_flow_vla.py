@@ -249,6 +249,23 @@ SEQUENCE_FILL = dict(
 )
 
 
+def collate_left(items, pad_id):
+    """Left-padded batch for generation: decoder-only models continue from the
+    last position, so the padding has to sit in front, not behind."""
+    width = max(item["input_ids"].shape[1] for item in items)
+    batch = {}
+    for key in items[0]:
+        if key in SEQUENCE_FILL and key != "labels":
+            fill = pad_id if SEQUENCE_FILL[key] is None else SEQUENCE_FILL[key]
+            parts = [F.pad(i[key], (width - i[key].shape[1], 0), value=fill) for i in items]
+        elif key == "labels":
+            continue
+        else:
+            parts = [i[key] for i in items]
+        batch[key] = torch.cat(parts, dim=0)
+    return batch
+
+
 def collate(items, pad_id):
     """Right-pad single-example encodings into one batch. Every answer is the same
     49 tokens, so the model's token-mean loss is also the per-example mean."""

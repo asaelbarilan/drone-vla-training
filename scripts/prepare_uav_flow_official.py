@@ -29,6 +29,7 @@ import hashlib
 import io
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -158,6 +159,7 @@ def main():
         default=1.0,
         help="action range: 1.0 = the official q01/q99; 0.1 keeps fast turns (D158)",
     )
+    parser.add_argument("--workers", type=int, default=8, help="threads for frame writing")
     parser.add_argument("--out", type=Path, default=OUT)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
@@ -187,22 +189,33 @@ def main():
     val_ids = {e for s in val_sites for e in by_site[s]}
     val_instr = {episodes[e]["log"]["instruction_unified"].strip().lower() for e in val_ids}
 
-    # Pass 2: images, one shard at a time.
+    # Pass 2: images, one shard at a time. JPEG decode and resize release the
+    # GIL, so a thread pool uses every core instead of one.
+    def write_frame(job):
+        path, blob = job
+        if path.exists():
+            return
+        picture = Image.open(io.BytesIO(blob)).convert("RGB")
+        picture.thumbnail((THUMB, THUMB))
+        picture.save(path, quality=JPEG_QUALITY)
+
     for shard in args.shard:
         wanted = set(shard_of.get(shard, []))
         written = 0
-        for episode_id, index, blob in shard_images(shard, wanted):
-            meta = episodes[episode_id]
-            if index not in meta["order"][: len(meta["log"]["preprocessed_logs"])]:
-                continue
-            folder = frames_dir / episode_id
-            folder.mkdir(exist_ok=True)
-            path = folder / f"{index:05d}.jpg"
-            if not path.exists():
-                picture = Image.open(io.BytesIO(blob)).convert("RGB")
-                picture.thumbnail((THUMB, THUMB))
-                picture.save(path, quality=JPEG_QUALITY)
-            written += 1
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            jobs = []
+            for episode_id, index, blob in shard_images(shard, wanted):
+                meta = episodes[episode_id]
+                if index not in meta["order"][: len(meta["log"]["preprocessed_logs"])]:
+                    continue
+                folder = frames_dir / episode_id
+                folder.mkdir(exist_ok=True)
+                jobs.append((folder / f"{index:05d}.jpg", blob))
+                written += 1
+                if len(jobs) >= 512:
+                    list(pool.map(write_frame, jobs))
+                    jobs = []
+            list(pool.map(write_frame, jobs))
         print(f"frames {shard}: {written}", flush=True)
 
     rows, mismatches, length_mismatch = [], 0, 0

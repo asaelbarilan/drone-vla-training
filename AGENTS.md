@@ -101,9 +101,17 @@ an honest closed-loop number.
   Held-out loss (128 examples): 11.02 -> 2.94 (step 250) -> 2.57 (step 2250),
   still falling at the end - no overfitting, unlike the 1-shard run.
 
+### RESULT of the 10-shard run (D160, 2026-09-23)
+
+150 unseen-site flights, open loop: real 3.067 m, gray 3.115 m, swap 3.121 m,
+text-only 4.533 m, no-text 4.208 m, floor 0.072 m. Beats text baselines by
+~1.1 m, but the camera adds only ~0.05 m (not significant); mirror changes 23%.
+The gain is from state + instruction. Instance STOPPED after scoring. Scoring is
+now batched (--batch-size 8, 0.35 s/call) and frame prep is threaded.
+
 ### Next steps, in order
 
-1. When the run ends: re-score the best checkpoint on a MUCH larger held-out
+1. (DONE, see D160) When the run ends: re-score the best checkpoint on a MUCH larger held-out
    sample (the user rightly called 128 examples too small) and run
    probe_mirror_vla.py on the checkpoints. Compare the mirror change rate with
    OpenVLA-UAV's 16/20 and the endpoint error with the text-only baseline.

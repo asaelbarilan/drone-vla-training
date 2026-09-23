@@ -27,7 +27,14 @@ import torch
 from baseline_uav_flow_chunks import NEIGHBOURS, build_vectors, cosine
 from peft import PeftModel
 from score_uav_flow_vla import sign_test
-from train_uav_flow_vla import OFFICIAL_REPORT, encode, official_rows, official_stats, setup
+from train_uav_flow_vla import (
+    OFFICIAL_REPORT,
+    collate_left,
+    encode,
+    official_rows,
+    official_stats,
+    setup,
+)
 from uav_flow_action_tokenizer import ActionTokenizer
 
 CAVEAT = (
@@ -85,6 +92,7 @@ def main():
     parser.add_argument("--model", default="qwen")
     parser.add_argument("--precision", default="bf16", choices=["nf4", "bf16"])
     parser.add_argument("--tag", required=True)
+    parser.add_argument("--batch-size", type=int, default=8, help="predictions per forward pass")
     parser.add_argument("--out-dir", type=Path, default=OFFICIAL_REPORT)
     args = parser.parse_args()
     k = args.chunk
@@ -99,38 +107,65 @@ def main():
     model = PeftModel.from_pretrained(base, args.adapter)
     model.eval()
 
-    def predict(row, gray=False):
-        batch = encode(processor, tokenizer, row, k, gray=gray, with_answer=False)
-        start = time.monotonic()
-        with torch.inference_mode():
-            out = model.generate(
-                **api.cuda(batch), max_new_tokens=4 * k + 2, do_sample=False, use_cache=True
-            )
-        ids = out[0, batch["input_ids"].shape[1] :].tolist()
-        return tokenizer.decode(ids, k), time.monotonic() - start, len(ids)
+    pad_id = processor.tokenizer.pad_token_id
+
+    def predict_many(rows, gray=False):
+        """Every prediction is independent - the frame and the state both come from
+        the recording - so they all batch, whatever flight they belong to."""
+        chunks, seconds, tokens = [], [], []
+        for start in range(0, len(rows), args.batch_size):
+            group = rows[start : start + args.batch_size]
+            items = [
+                encode(processor, tokenizer, row, k, gray=gray, with_answer=False) for row in group
+            ]
+            batch = collate_left(items, pad_id)
+            width = batch["input_ids"].shape[1]
+            tick = time.monotonic()
+            with torch.inference_mode():
+                out = model.generate(
+                    **api.cuda(batch), max_new_tokens=4 * k + 2, do_sample=False, use_cache=True
+                )
+            elapsed = (time.monotonic() - tick) / len(group)
+            for row_index in range(len(group)):
+                ids = out[row_index, width:].tolist()
+                chunks.append(tokenizer.decode(ids, k))
+                seconds.append(elapsed)
+                tokens.append(len(ids))
+        return chunks, seconds, tokens
+
+    def anchors_of(episode, condition):
+        steps = subset_eps[episode]
+        n_actions = len(steps) - 1  # the last frame's zero action is not a move
+        rows = []
+        for anchor in range(0, n_actions, k):
+            row = steps[anchor]
+            if condition == "swap":
+                donor = subset_eps[donors[episode]]
+                row = {**row, "image": donor[min(anchor, len(donor) - 1)]["image"]}
+            rows.append(row)
+        return rows, n_actions
 
     def rollout(condition):
         errors, first_err, seconds, tokens, failed, rows_out = [], [], [], [], 0, []
+        plan = {e: anchors_of(e, condition) for e in chosen}
+        flat = [row for e in chosen for row in plan[e][0]]
+        if condition == "floor":
+            predictions = [tokenizer.decode(tokenizer.token_ids(r["chunk"]), k) for r in flat]
+        else:
+            predictions, seconds, tokens = predict_many(flat, gray=condition == "gray")
+        cursor = 0
         for episode in chosen:
-            steps = subset_eps[episode]
-            n_actions = len(steps) - 1  # the last frame's zero action is not a move
+            rows, n_actions = plan[episode]
             executed, ok = [], True
-            for anchor in range(0, n_actions, k):
-                row = steps[anchor]
-                if condition == "swap":
-                    donor = subset_eps[donors[episode]]
-                    row = {**row, "image": donor[min(anchor, len(donor) - 1)]["image"]}
-                if condition == "floor":
-                    chunk = tokenizer.decode(tokenizer.token_ids(row["chunk"]), k)
-                else:
-                    chunk, secs, n_tok = predict(row, gray=condition == "gray")
-                    seconds.append(secs)
-                    tokens.append(n_tok)
+            for index, row in enumerate(rows):
+                chunk = predictions[cursor + index]
                 if chunk is None:
                     ok = False
                     break
                 first_err.append(np.abs(chunk[0] - np.array(row["chunk"][0])))
-                executed.extend(chunk[: min(k, n_actions - anchor)])
+                executed.extend(chunk[: min(k, n_actions - index * k)])
+            cursor += len(rows)
+            steps = subset_eps[episode]
             if not ok:
                 failed += 1
                 continue
@@ -155,6 +190,7 @@ def main():
             summary.update(
                 calls=len(seconds),
                 seconds_per_call=round(float(np.median(seconds)), 3),
+                batch_size=args.batch_size,
                 tokens_per_call=int(np.median(tokens)),
                 calls_per_flight_second=round(5 / k, 3),
             )
