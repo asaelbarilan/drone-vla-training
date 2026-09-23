@@ -3613,3 +3613,49 @@ is not established: token agreement median 50%, chunk gap median 0.116 m versus
 0.037 m between-frame spread. Cause not yet isolated between NF4-vs-Q4_K_M and
 image preprocessing; next step is a higher-precision llama.cpp base. Evidence:
 reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
+
+
+## D158 - 2026-09-22 - official UAV-Flow format ported; action-range clipping found
+
+- scripts/prepare_uav_flow_official.py: official OpenVLA-UAV data format (4-D
+  drone-frame actions, state in prompt, every frame, first/last x5). 0/500
+  mismatches vs the official loop; xy re-integration matches to 5 mm; raw vs
+  preprocessed altitude differ (median 0.19 m, max 6.8 m) - inherited by the
+  official code. Official trains on `instruction`, D155 used `instruction_unified`.
+- train_uav_flow_vla.py: --format official, --instruction, --chunk K (1/8/16).
+  scripts/score_uav_flow_official.py: open-loop rollout, floor/real/gray/swap,
+  seconds+tokens per call, text baselines recomputed on the same endpoints.
+- FINDING: the official q01/q99 action range clips fast motion. Floor endpoint
+  error (perfect predictions through clip+256 bins), 62 held-out flights:
+  median 0.10 m, p90 4.0 m, max 8.4 m; clipping alone explains all of it.
+  24.5% of steps have a clipped channel. Caps: yaw 0.105 rad/step (30 deg/s),
+  forward 0.46 m/step (2.3 m/s); max yaw step 3.1 rad. Plausible cause of
+  OpenVLA-UAV Rotate 20% SR.
+- Planned single-GPU tests (g5, same update budget each): 1) action range
+  q01/q99 vs q0.1/q99.9 or max at K=1; 2) horizon K=1/8/16; 3) instruction
+  wording official vs both; 4) data 1/5/10 shards.
+
+- D157/D155 shard run SCORED (adapter_s1000, Qwen3-VL-4B bf16, D155 format,
+  8-step chunks, no state): held-out median endpoint error 6.474 m on real
+  frames - IDENTICAL on gray and on swapped frames (57/55/58 distinct endpoints,
+  sign tests p=0.75 / p=1.0). Text-only bar is 4.496 m, no-text 6.868 m, so the
+  model is worse than the text baseline and still ignores the camera. Train
+  subset 3.199 m, also identical across conditions. Representation floor 0.081 m.
+  Conclusion: a 30x longer run on a 16x larger model in full precision did not
+  fix camera-blindness -> the cause is the setup (format/prompt/data), which is
+  what the official-recipe port (D158) changes. Instance stopped after scoring.
+  Known defect: the floor condition failed to parse 52/62 flights (its last
+  partial chunk decodes to None); the floor numbers come from the flights whose
+  length is a multiple of the chunk. Fix before E0 scoring.
+
+- D159 (2026-09-23): official-format K=1 run on shard 1 (Qwen3-VL-4B bf16, 800
+  updates x 32 = 25.6k examples = 1 epoch, lr 5e-4 cosine, loss 16.72 -> 2.96;
+  wandb asael/vla training/official_k1_shard1). Mirror probe (20 val flights x 3
+  frames = 60 comparisons) per checkpoint: s200 -, s400 3/60 (5%), s600 0/60,
+  s800 10/60 (16.7%); sideways sign flipped 1/60; yaw never. Reference: released
+  OpenVLA-UAV changed in 16/20 first frames, 6/20 sideways sign flipped.
+  Also D159: base Qwen3-VL scores 24/24 on a pasted red rectangle (left/right) at
+  512 px, so the probe and the VLM's perception are sound; but it answers the
+  "which side is the instruction's target" question the same under mirroring at
+  256/512/896 px (flip 2/12 at every size) - resolution is NOT the bottleneck.
+  83% of flights name a visual target, so instruction filtering is pointless.

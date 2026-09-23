@@ -502,3 +502,117 @@ state the denominator every time.
 4. Add an explicit termination output (12.5).
 5. Describe the endpoint metric as a local gate, never as a success rate (12.4).
 6. Frame the three-model run as a small-model study, not a bid to win (12.2).
+
+---
+
+## 13. The four UAV-Flow papers, read in full (2026-09-22)
+
+Read after the one-shard Qwen run overfit at 1.3 epochs. Sources: UAV-Flow
+Colosseo (2505.15725) paper + `buaa-colalab/UAV-Flow` code; WorldVLN
+(2605.15964); ImagineUAV (2606.01205); FLIGHT / "Think Like a Pilot"
+(2606.06836). Exp2VLA is NOT a UAV-Flow paper (own Isaac Lab data).
+
+### 13.1 What each one actually did
+
+| | OpenVLA-UAV | Pi-0-UAV | WorldVLN | ImagineUAV | FLIGHT VLA |
+| --- | --- | --- | --- | --- | --- |
+| base | OpenVLA-7B | pi0 | InfinityStar-8B (video) | Wan2.1 1.3B (video) + extractor | Qwen2.5-VL-3B + action model |
+| train data | full real set, 30,692 flights | full real set | UAV-Flow + IndoorUAV | 30k real + 10k sim jointly | own FLIGHT data (not UAV-Flow) |
+| image input | current frame | first + current frame | frame history | current frame | video window + memory |
+| state input | yes, in prompt text | yes | action history | no | IMU/pose |
+| action | 1 step, 4-D (dx,dy,dz,dyaw) in drone LOCAL frame (code) | chunk 10, 6-DoF | chunk 16, (dx,dy,dz,dpsi) | relative trans+rot | chunk 7 at 2 FPS, 4-D local |
+| schedule | lr 5e-4 const, batch 32, 200k steps (~3 ep) | lr 5e-5, batch 16, 12 ep | SFT lr 1e-5, then GRPO | lr 1e-5, 2 ep | lr 5e-5, batch 128 |
+| UAV-Flow-Sim SR | 65.6 fixed / 65.3 open | 51.9 / 65.8 | 79.1 / 78.0 | 70.9 | - |
+
+OpenVLA-UAV code details: every frame is a sample, first and last frame
+oversampled 5x; prompt `Current State: {x,y,z,yaw rounded 0.1}, What action should
+the uav take to {instruction}?`; actions normalised by q01/q99 to [-1,1]; last
+frame's action is zero. The paper text says "6-DoF poses" but the released code
+and checkpoint are 4-D local-frame deltas; trust the code.
+
+### 13.2 Lessons
+
+1. **Data scale is the first-order factor.** Every UAV-Flow model trains on all
+   ~30k real flights (ImagineUAV adds 10k sim) for 2-12 epochs. Our 308-flight
+   shard overfits after 1.3 epochs; that is the expected behaviour, not a bug.
+2. **Evaluation is closed-loop on the Sim test set (273 flights) and SR is judged
+   by manual inspection** of whether the flight satisfies the instruction. NDTW is
+   the automatic companion metric. Our offline endpoint error is a gate only.
+3. **Actions are relative, in the drone's own frame, and 4-D** (no roll/pitch)
+   in OpenVLA-UAV, WorldVLN and FLIGHT. We predict 6-DoF in the start frame.
+4. **State goes into the VLA prompt.** (It hurt the small VLN baselines, not VLAs.)
+5. **Horizon: nobody ablates it.** 1 step (65.6%), chunk 10 (51.9-65.8%), chunk
+   16 with a world model (79.1%). Choosing K is our experiment to run.
+6. **Per-motion weaknesses differ by horizon.** OpenVLA-UAV (1 step): Approach 45%,
+   Land 46%, Rotate 20%, Surround 100%. Pi-0-UAV (chunk 10): Shift 18%, A/D 26%.
+   ImagineUAV: Surround/Turn weakest. Report per motion type, not only the mean.
+7. **Open-vocabulary instructions do not hurt** and improve language
+   generalisation (UAV-Flow 4.2) - train on both instruction sets.
+8. **RL adds ~10 points after SFT saturates** (WorldVLN GRPO) - the later RL phase
+   is supported by evidence.
+9. **Closed-loop correction matters**: replan with real observations after each
+   chunk (WorldVLN); ImagineUAV needed a kinodynamic planner for real flight.
+10. **Latency is part of the design**: OpenVLA-UAV 0.172 s, Pi-0-UAV 0.289 s per
+    call on a ground station; FLIGHT trains with simulated 1-3 s VLM delay.
+
+### 13.3 Changes to make before any large run
+
+- action: 4-D (dx,dy,dz,dyaw), drone local frame, their transform
+- prompt: add current state in their format
+- sampling: every frame, first/last oversampled, zero final action
+- data: several shards (and the Sim set) instead of one
+- metric: per-motion-type results; closed-loop Sim eval as the real test
+- horizon: decided by a single-GPU experiment (K = 1, 8, 16), not assumed
+
+---
+
+## 14. Goal change: better results on less data (2026-09-22)
+
+User decision: do NOT reproduce the official recipe on all 30k flights - a 4B
+model with the 7B recipe would only do worse. Aim for better results faster on
+less data. Levers, ranked by evidence:
+
+1. **RL after a small SFT.** SimpleVLA-RL (2509.09674): one demonstration per
+   task, SFT 17.3% -> GRPO 91.7% on LIBERO-Long. WorldVLN: action-aware GRPO +10
+   points after SFT saturates on UAV-Flow. Needs closed-loop rollouts and an
+   automatic reward; UAV-Flow-Sim gives reference trajectories, so reward =
+   NDTW / distance to the reference (WorldVLN used trajectory accuracy + progress).
+   Cheap first form: offline GRPO on recorded frames with trajectory-distance
+   reward (no simulator), which also fixes token cross-entropy ignoring that bin
+   100 vs 101 is nearly right and 100 vs 200 is badly wrong.
+2. **Train on the evaluation domain.** The test is UAV-Flow-Sim; ImagineUAV trains
+   on 30k real + 10k sim. The Sim set (10,109 flights, 33.5 GB) is small and is
+   the domain we are scored in.
+3. **Better action tokens.** FAST (2501.09747) compresses chunks (fewer tokens,
+   faster, better on fine motion); at minimum widen the q01/q99 cap (D158: it
+   costs a perfect model 4 m+ on 10% of flights).
+4. **Free data multipliers.** Left-right mirror (flip image, negate dy and dyaw,
+   swap left/right words) doubles data; train on both instruction wordings.
+5. **Horizon K** (1/8/16) and **history frames** (Pi-0-UAV uses first + current).
+
+Prerequisite for 1 and for any honest result: the UAV-Flow-Eval simulator
+running locally (Windows, UnrealZoo), so both evaluation and RL rollouts exist.
+
+---
+
+## 15. Experiment plan (agreed 2026-09-22)
+
+Small scale first; a bigger run only after an improvement is proven small-scale.
+Every experiment: same 2 shards, same unseen split, same update budget, scored
+with score_uav_flow_official.py (open loop, real/gray/swap, per call cost);
+top candidates additionally in the UAV-Flow-Sim closed loop once it runs.
+Change ONE thing per experiment against E0.
+
+| # | experiment | changes vs E0 |
+| --- | --- | --- |
+| E0 | baseline: original OpenVLA-UAV recipe on 2 shards | K=1, q01/q99, `instruction`, state in prompt, lr 5e-4 const, batch 32 |
+| E1 | training length | find the held-out optimum (updates/epochs) |
+| E2 | action range | widen q01/q99 cap (q0.1/q99.9 or max) |
+| E3 | prediction horizon | K = 8, 16 |
+| E4 | cheap data multipliers | both instruction wordings; left-right mirror |
+| E5 | history | first + current frame (Pi-0-UAV style) |
+| E6 | domain | add UAV-Flow-Sim flights |
+| E7 | action tokens | FAST-style compressed chunk tokens |
+| E8 | offline RL | GRPO on recorded frames, reward = trajectory distance |
+| E9 | simulator RL | GRPO rollouts in UAV-Flow-Sim, reward = NDTW to reference |
+| E10 | combine winners | then, and only then, a bigger run |

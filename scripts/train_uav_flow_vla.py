@@ -20,6 +20,7 @@ import json
 import math
 import os
 import random
+import re
 import time
 from pathlib import Path
 
@@ -32,13 +33,20 @@ from peft import (
     prepare_model_for_kbit_training,
     set_peft_model_state_dict,
 )
-from PIL import Image
+from PIL import Image, ImageOps
 from uav_flow_action_tokenizer import ActionTokenizer, load_stats
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "reports/uav_flow_chunks_20260921"
 STORE = Path(os.environ.get("UAV_FLOW_STORE", "D:/drone_vla_pilot/data/uav_flow_chunks_20260921"))
 PROMPT = "Drone forward camera. What action should the drone take to {instruction}?"
+# D158: the official OpenVLA-UAV format (prepare_uav_flow_official.py).
+OFFICIAL_REPORT = ROOT / "reports/uav_flow_official_20260922"
+OFFICIAL_STORE = Path(
+    os.environ.get("UAV_FLOW_OFFICIAL_STORE", "D:/drone_vla_pilot/data/uav_flow_official_20260922")
+)
+OFFICIAL_PROMPT = "Current State: {state}, What action should the uav take to {instruction}?"
+OFFICIAL_REPEAT = 5
 SMOL500 = "D:/drone_vla_pilot/models/SmolVLM-500M-Instruct/a7da5b986cb59b408707209984f360a5f4ad7e47"
 
 
@@ -90,21 +98,112 @@ def setup(model_name, precision="nf4"):
     return api, processor, model, "text_model.layers."
 
 
+SIDES = {
+    "left": "right",
+    "right": "left",
+    "leftward": "rightward",
+    "rightward": "leftward",
+    "clockwise": "counterclockwise",
+    "counterclockwise": "clockwise",
+    "anticlockwise": "clockwise",
+}
+# longest first, so "counterclockwise" is matched before "clockwise"
+SIDE_PATTERN = re.compile(
+    r"\b(" + "|".join(sorted(SIDES, key=len, reverse=True)) + r")\b", re.IGNORECASE
+)
+
+
+def mirror_instruction(text):
+    """Swap the side words in one pass, keeping capitalisation."""
+
+    def swap(match):
+        word = match.group(0)
+        other = SIDES[word.lower()]
+        return other.capitalize() if word[0].isupper() else other
+
+    return SIDE_PATTERN.sub(swap, text)
+
+
+def mirror_row(row):
+    """A left-right mirrored copy: photo flipped at load, sideways and yaw negated,
+    side words swapped. Free data that teaches exactly the grounding we fail."""
+    return {
+        **row,
+        "id": row["id"] + ":m",
+        "mirror": True,
+        "instruction": mirror_instruction(row["instruction"]),
+        "prompt": mirror_instruction(row["prompt"]),
+        "chunk": [[dx, -dy, dz, -dyaw] for dx, dy, dz, dyaw in row["chunk"]],
+    }
+
+
 def image_path(row):
     """Frames are stored with absolute Windows paths; on another machine the same
     frame lives under UAV_FLOW_STORE/frames/<episode>/<file>."""
     path = Path(row["image"].replace("\\", "/"))
-    return path if path.exists() else STORE / "frames" / path.parent.name / path.name
+    if path.exists():
+        return path
+    store = OFFICIAL_STORE if row.get("format") == "official" else STORE
+    return store / "frames" / path.parent.name / path.name
+
+
+def official_rows(split, k, instruction="instruction", oversample=False, mirror=False):
+    """Per-frame examples in the official format, with a K-step target.
+
+    The target is actions[t : t+K], each step in the drone frame at that step; past
+    the end of the flight it is padded with zero actions, which is what the
+    official data uses for the last frame. K=1 is exactly the official sample.
+    `instruction`: "instruction" (official, free wording), "instruction_unified",
+    or "both" (alternates by frame, so each flight is seen with both wordings).
+    With oversample=True the first and last frames are repeated 5 extra times.
+    """
+    rows = []
+    for line in (OFFICIAL_STORE / "episodes.jsonl").read_text(encoding="utf-8").splitlines():
+        episode = json.loads(line)
+        if episode["split_unseen"] != split:
+            continue
+        actions, n = episode["actions"], len(episode["actions"])
+        for t in range(n):
+            if instruction == "both":
+                key = "instruction" if t % 2 == 0 else "instruction_unified"
+            else:
+                key = instruction
+            chunk = actions[t : t + k]
+            chunk = chunk + [[0.0] * 4] * (k - len(chunk))
+            state = ",".join(str(round(float(x), 1)) for x in episode["proprio"][t])
+            row = dict(
+                format="official",
+                id=f"{episode['episode']}:{t:05d}",
+                episode=episode["episode"],
+                step=t,
+                image=episode["images"][t],
+                prompt=OFFICIAL_PROMPT.format(state=state, instruction=episode[key]),
+                instruction=episode[key],
+                chunk=chunk,
+                chunk_len=k,
+            )
+            repeats = 1 + (OFFICIAL_REPEAT if oversample and t in (0, n - 1) else 0)
+            rows.extend([row] * repeats)
+            if mirror:
+                rows.extend([mirror_row(row)] * repeats)
+    return rows
+
+
+def official_stats():
+    manifest = json.loads((OFFICIAL_REPORT / "manifest.json").read_text(encoding="utf-8"))
+    return manifest["action_stats_train"]
 
 
 def load_image(row, gray=False):
     picture = Image.open(image_path(row)).convert("RGB")
     picture.thumbnail((256, 256))
+    if row.get("mirror"):
+        picture = ImageOps.mirror(picture)
     return Image.new("RGB", picture.size, (127, 127, 127)) if gray else picture
 
 
-def encode(processor, tokenizer, row, k, gray=False, with_answer=True):
-    image = load_image(row, gray)
+def encode(processor, tokenizer, row, k, gray=False, with_answer=True, image=None):
+    image = load_image(row, gray) if image is None else image
     text = processor.apply_chat_template(
         [
             {
@@ -113,7 +212,9 @@ def encode(processor, tokenizer, row, k, gray=False, with_answer=True):
                     {"type": "image", "image": image},
                     {
                         "type": "text",
-                        "text": PROMPT.format(instruction=row["instruction"].rstrip(".").lower()),
+                        "text": row["prompt"]
+                        if "prompt" in row
+                        else PROMPT.format(instruction=row["instruction"].rstrip(".").lower()),
                     },
                 ],
             }
@@ -228,7 +329,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="qwen", choices=["smol256", "smol500", "qwen"])
     parser.add_argument("--split", default="split_unseen", choices=["split_unseen", "split_seen"])
-    parser.add_argument("--chunk", type=int, default=8)
+    parser.add_argument("--chunk", type=int, default=8, help="prediction horizon K (steps)")
+    parser.add_argument(
+        "--format",
+        default="d155",
+        choices=["d155", "official"],
+        help="official = OpenVLA-UAV: 4-D drone-frame actions, state in the prompt",
+    )
+    parser.add_argument(
+        "--mirror",
+        action="store_true",
+        help="official format: add a left-right mirrored copy of every training example",
+    )
+    parser.add_argument(
+        "--instruction",
+        default="instruction",
+        choices=["instruction", "instruction_unified", "both"],
+        help="official format only; the official code uses `instruction`",
+    )
     parser.add_argument("--updates", type=int, default=800)
     parser.add_argument("--batch-size", type=int, default=1, help="examples per forward pass")
     parser.add_argument("--accum", type=int, default=8, help="forward passes per update")
@@ -266,11 +384,28 @@ def main():
     checkpoint = args.out / "checkpoint"
     start = time.monotonic()
 
-    manifest = json.loads((REPORT / "manifest.json").read_text(encoding="utf-8"))
-    baselines = json.loads((REPORT / "baselines.json").read_text(encoding="utf-8"))[args.split]
-    rows = [json.loads(s) for s in (STORE / "steps.jsonl").read_text(encoding="utf-8").splitlines()]
-    train = [r for r in rows if r[args.split] == "train" and r["chunk_len"] == args.chunk]
-    held = [r for r in rows if r[args.split] == "val" and r["chunk_len"] == args.chunk]
+    if args.format == "official":
+        assert args.split == "split_unseen", "the official data carries the unseen split only"
+        manifest = json.loads((OFFICIAL_REPORT / "manifest.json").read_text(encoding="utf-8"))
+        manifest["task"] = (
+            f"current frame + state + instruction -> next {args.chunk} (dx,dy,dz,dyaw), drone frame"
+        )
+        manifest["steps_sha256"] = manifest["episodes_sha256"]
+        baselines = None
+        stats = official_stats()
+        train = official_rows(
+            "train", args.chunk, args.instruction, oversample=True, mirror=args.mirror
+        )
+        held = official_rows("val", args.chunk, args.instruction)
+    else:
+        manifest = json.loads((REPORT / "manifest.json").read_text(encoding="utf-8"))
+        baselines = json.loads((REPORT / "baselines.json").read_text(encoding="utf-8"))[args.split]
+        stats = load_stats(args.split)
+        rows = [
+            json.loads(s) for s in (STORE / "steps.jsonl").read_text(encoding="utf-8").splitlines()
+        ]
+        train = [r for r in rows if r[args.split] == "train" and r["chunk_len"] == args.chunk]
+        held = [r for r in rows if r[args.split] == "val" and r["chunk_len"] == args.chunk]
     assert train and held, "need full-length chunks on both sides"
     # A fixed held-out sample, so every point on the curve is the same examples.
     held = random.Random(9).sample(held, min(args.val_batches, len(held)))
@@ -280,7 +415,7 @@ def main():
 
     api, processor, model, prefix = setup(args.model, args.precision)
     globals()["api"] = api
-    tokenizer = ActionTokenizer(processor.tokenizer, load_stats(args.split))
+    tokenizer = ActionTokenizer(processor.tokenizer, stats)
     # The official recipe uses target_modules="all-linear", which covers the vision
     # encoder and the projector. Restricting LoRA to the language layers leaves the
     # whole visual path frozen, and the model then learns a text-to-action lookup:
@@ -337,7 +472,10 @@ def main():
         task=manifest["task"],
         baselines=baselines,
         steps_sha256=manifest["steps_sha256"],
-        action_stats=load_stats(args.split),
+        action_stats=stats,
+        data_format=args.format,
+        mirrored=args.mirror,
+        instruction_field=args.instruction if args.format == "official" else "instruction_unified",
         trainable_module_roots=covered,
         train_examples=len(train),
         held_out_examples=len(held),

@@ -1,0 +1,302 @@
+[
+  {
+    "instruction": "Rotate counterclockwise one full circle",
+    "real": [
+      0.101,
+      0.127,
+      0.0,
+      -0.052
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      -0.052
+    ]
+  },
+  {
+    "instruction": "Head to the streetlight on the front side",
+    "real": [
+      5.818,
+      -7.57,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Spin to the counterclockwise side",
+    "real": [
+      0.101,
+      0.127,
+      0.0,
+      -0.052
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      -0.052
+    ]
+  },
+  {
+    "instruction": "Proceed to the tree on the left side",
+    "real": [
+      13.89,
+      -0.13,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      -3.262,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Navigate toward the tree on the right front side",
+    "real": [
+      11.536,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      13.89,
+      5.515,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Please advance toward the tree from the right side",
+    "real": [
+      10.191,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      10.527,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Advance toward the tree from the left front side",
+    "real": [
+      9.518,
+      -11.932,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Move past the tree from the right side",
+    "real": [
+      13.218,
+      0.897,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      13.89,
+      -0.643,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Rotate in counterclockwise direction for one full circle",
+    "real": [
+      0.101,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Need to back off from the tree ahead",
+    "real": [
+      -17.052,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      -13.016,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Move closer to the tree on the left side",
+    "real": [
+      10.863,
+      -0.13,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      12.209,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Pass by the tree from the right side",
+    "real": [
+      16.245,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      15.236,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Move toward the tree on the right side",
+    "real": [
+      10.527,
+      9.364,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      9.518,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Progress toward the tree on the left side",
+    "real": [
+      12.881,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      10.191,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Circle around the tree in counterclockwise direction",
+    "real": [
+      14.563,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      -12.68,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Shift in the direction of the left",
+    "real": [
+      0.101,
+      0.127,
+      0.0,
+      -0.026
+    ],
+    "mirrored": [
+      0.101,
+      0.127,
+      0.0,
+      -0.026
+    ]
+  },
+  {
+    "instruction": "Make way to the road sign from the left side",
+    "real": [
+      12.545,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      10.863,
+      -0.13,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Please pull back from the tree ahead",
+    "real": [
+      -15.707,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      -9.989,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Move closer to the tree on the left side",
+    "real": [
+      12.545,
+      0.127,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      10.191,
+      0.127,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "instruction": "Go to the tree on the left side",
+    "real": [
+      -12.007,
+      0.64,
+      0.0,
+      0.0
+    ],
+    "mirrored": [
+      10.527,
+      0.127,
+      0.0,
+      0.0
+    ]
+  }
+]

@@ -7,6 +7,8 @@ Four numbers, always together:
                          so it says how much of any error is the format's fault.
   model on real frames
   model on flat gray frames
+  model on swapped frames - every frame replaced by the same-index frame of a
+                         different held-out flight (instruction unchanged)
   text-only baseline   - from baselines.json, never sees an image
 
 `--subset train` scores episodes the model was trained on. That is the
@@ -20,18 +22,19 @@ re-parsing loses 177 of 200 chunks to BPE re-merging.
 import argparse
 import json
 import math
+import os
 from pathlib import Path
 
 import numpy as np
-import run_smol_frd_overfit as api
 import torch
 from peft import PeftModel
-from train_uav_flow_vla import encode
+from train_uav_flow_vla import encode, setup
 from uav_flow_action_tokenizer import ActionTokenizer, load_stats
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "reports/uav_flow_chunks_20260921"
-STORE = Path("D:/drone_vla_pilot/data/uav_flow_chunks_20260921")
+STORE = Path(os.environ.get("UAV_FLOW_STORE", "D:/drone_vla_pilot/data/uav_flow_chunks_20260921"))
+api = None
 
 
 def predict_chunk(model, processor, tokenizer, row, k, gray):
@@ -42,6 +45,19 @@ def predict_chunk(model, processor, tokenizer, row, k, gray):
         )
     ids = out[0, batch["input_ids"].shape[1] :].tolist()
     return tokenizer.decode(ids, k)
+
+
+def swapped(episodes, by_episode):
+    """Each flight's frames come from the next flight in the list (cyclic), matched
+    by step index and clamped to that flight's length."""
+    out = {}
+    for i, episode in enumerate(episodes):
+        own = by_episode[episode["episode"]]
+        donor = by_episode[episodes[(i + 1) % len(episodes)]["episode"]]
+        out[episode["episode"]] = [
+            {**row, "image": donor[min(j, len(donor) - 1)]["image"]} for j, row in enumerate(own)
+        ]
+    return out
 
 
 def rollout(model, processor, tokenizer, episodes, by_episode, k, gray, floor=False):
@@ -107,6 +123,9 @@ def main():
     parser.add_argument("--chunk", type=int, default=8)
     parser.add_argument("--episodes", type=int, default=25)
     parser.add_argument("--tag", required=True)
+    parser.add_argument("--model", default="smol256", choices=["smol256", "smol500", "qwen"])
+    parser.add_argument("--precision", default="nf4", choices=["nf4", "bf16"])
+    parser.add_argument("--out-dir", type=Path, default=REPORT)
     args = parser.parse_args()
 
     baselines = json.loads((REPORT / "baselines.json").read_text(encoding="utf-8"))[args.split]
@@ -127,9 +146,10 @@ def main():
     )[: args.episodes]
     assert chosen, "no episodes in that subset"
 
-    processor = api.load_processor()
+    global api
+    api, processor, base, _ = setup(args.model, args.precision)
     tokenizer = ActionTokenizer(processor.tokenizer, load_stats(args.split))
-    model = PeftModel.from_pretrained(api.load_base(), args.adapter)
+    model = PeftModel.from_pretrained(base, args.adapter)
     model.eval()
 
     floor, _ = rollout(
@@ -137,6 +157,9 @@ def main():
     )
     real, real_rows = rollout(model, processor, tokenizer, chosen, by_episode, args.chunk, False)
     gray, gray_rows = rollout(model, processor, tokenizer, chosen, by_episode, args.chunk, True)
+    swap, swap_rows = rollout(
+        model, processor, tokenizer, chosen, swapped(chosen, by_episode), args.chunk, False
+    )
 
     bar = baselines["target_to_beat_m"]
     summary = dict(
@@ -150,19 +173,21 @@ def main():
         ),
         median_trajectory_m=baselines["median_trajectory_m"],
         representation_floor=floor,
-        model=dict(real=real, gray=gray),
+        model=dict(real=real, gray=gray, swap=swap),
         baselines=dict(
             no_text_m=baselines["no_text"]["median_final_error_m"],
             text_only_m=baselines["text_nearest_neighbour"]["median_final_error_m"],
             bar_m=bar if args.subset == "val" else None,
         ),
         vision_sign_test=sign_test(real_rows, gray_rows),
+        swap_sign_test=sign_test(real_rows, swap_rows),
         beats_text_only=args.subset == "val"
         and real["median_final_error_m"] is not None
         and real["median_final_error_m"] < bar,
     )
-    (REPORT / f"scored_{args.tag}.json").write_text(
-        json.dumps(dict(summary=summary, real=real_rows, gray=gray_rows), indent=2),
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    (args.out_dir / f"scored_{args.tag}.json").write_text(
+        json.dumps(dict(summary=summary, real=real_rows, gray=gray_rows, swap=swap_rows), indent=2),
         encoding="utf-8",
     )
     print(json.dumps(summary, indent=2))

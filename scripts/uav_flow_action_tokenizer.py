@@ -42,6 +42,8 @@ class ActionTokenizer:
         self.bins = np.linspace(-1.0, 1.0, self.n_bins)
         self.bin_centers = (self.bins[:-1] + self.bins[1:]) / 2.0
         self.vocab_size = tokenizer.vocab_size
+        # 6 for the D155 start-frame format, 4 for the official (dx, dy, dz, dyaw).
+        self.channels = len(self.low)
 
     def normalise(self, action):
         return np.clip(
@@ -61,13 +63,13 @@ class ActionTokenizer:
         return self.tokenizer.decode(self.token_ids(action))
 
     def decode(self, token_ids, steps):
-        """Token ids -> (steps, 6) actions in real units, or None if malformed."""
+        """Token ids -> (steps, channels) actions in real units, or None if malformed."""
         ids = np.asarray([i for i in token_ids if self.is_action_token(i)], dtype=int)
-        if ids.size < steps * CHANNELS:
+        if ids.size < steps * self.channels:
             return None
-        ids = ids[: steps * CHANNELS]
+        ids = ids[: steps * self.channels]
         discretized = np.clip(self.vocab_size - ids - 1, 0, self.bin_centers.shape[0] - 1)
-        return self.denormalise(self.bin_centers[discretized].reshape(steps, CHANNELS))
+        return self.denormalise(self.bin_centers[discretized].reshape(steps, self.channels))
 
     def is_action_token(self, token_id):
         return self.vocab_size - self.n_bins <= token_id < self.vocab_size

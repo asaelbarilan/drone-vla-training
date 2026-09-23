@@ -1,0 +1,475 @@
+{
+  "summary": {
+    "model": "D:\\drone_vla_pilot\\hf_cache\\hub\\models--Qwen--Qwen3-VL-4B-Instruct\\snapshots\\ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "question": "This is a photo from a drone's forward camera. A pilot was told: \"{instruction}\".\nIs the target of that instruction in the left half or the right half of the photo?\nAnswer with one word: left or right.",
+    "frame": 0,
+    "original_size": [
+      256,
+      256
+    ],
+    "note": "flip_rate is the share of flights where mirroring the photo flipped the answer; a model that cannot see the target answers the same both ways",
+    "per_size": {
+      "256": {
+        "flights": 12,
+        "flipped_with_mirror": 2,
+        "flip_rate": 0.167,
+        "answer_counts": {
+          "left": 8,
+          "right": 4
+        }
+      },
+      "512": {
+        "flights": 12,
+        "flipped_with_mirror": 2,
+        "flip_rate": 0.167,
+        "answer_counts": {
+          "left": 8,
+          "right": 4
+        }
+      },
+      "896": {
+        "flights": 12,
+        "flipped_with_mirror": 2,
+        "flip_rate": 0.167,
+        "answer_counts": {
+          "left": 8,
+          "right": 4
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "size": 256,
+      "episode": "2025-04-10_16-37-47",
+      "instruction": "Rotate counterclockwise one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-11_09-13-30",
+      "instruction": "Head to the streetlight on the front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_10-59-52",
+      "instruction": "Spin to the counterclockwise side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_11-05-50",
+      "instruction": "Proceed to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_11-19-33",
+      "instruction": "Navigate toward the tree on the right front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_11-20-25",
+      "instruction": "Please advance toward the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_11-31-29",
+      "instruction": "Advance toward the tree from the left front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_11-32-55",
+      "instruction": "Move past the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_12-53-45",
+      "instruction": "Rotate in counterclockwise direction for one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_13-13-32",
+      "instruction": "Need to back off from the tree ahead",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_14-15-12",
+      "instruction": "Move closer to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 256,
+      "episode": "2025-04-14_14-35-10",
+      "instruction": "Pass by the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-10_16-37-47",
+      "instruction": "Rotate counterclockwise one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-11_09-13-30",
+      "instruction": "Head to the streetlight on the front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_10-59-52",
+      "instruction": "Spin to the counterclockwise side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_11-05-50",
+      "instruction": "Proceed to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_11-19-33",
+      "instruction": "Navigate toward the tree on the right front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_11-20-25",
+      "instruction": "Please advance toward the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_11-31-29",
+      "instruction": "Advance toward the tree from the left front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_11-32-55",
+      "instruction": "Move past the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_12-53-45",
+      "instruction": "Rotate in counterclockwise direction for one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_13-13-32",
+      "instruction": "Need to back off from the tree ahead",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_14-15-12",
+      "instruction": "Move closer to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 512,
+      "episode": "2025-04-14_14-35-10",
+      "instruction": "Pass by the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-10_16-37-47",
+      "instruction": "Rotate counterclockwise one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-11_09-13-30",
+      "instruction": "Head to the streetlight on the front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_10-59-52",
+      "instruction": "Spin to the counterclockwise side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_11-05-50",
+      "instruction": "Proceed to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_11-19-33",
+      "instruction": "Navigate toward the tree on the right front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_11-20-25",
+      "instruction": "Please advance toward the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_11-31-29",
+      "instruction": "Advance toward the tree from the left front side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_11-32-55",
+      "instruction": "Move past the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_12-53-45",
+      "instruction": "Rotate in counterclockwise direction for one full circle",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_13-13-32",
+      "instruction": "Need to back off from the tree ahead",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "right",
+      "flipped": true
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_14-15-12",
+      "instruction": "Move closer to the tree on the left side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "left",
+      "mirrored_answer": "left",
+      "flipped": false
+    },
+    {
+      "size": 896,
+      "episode": "2025-04-14_14-35-10",
+      "instruction": "Pass by the tree from the right side",
+      "pixels": [
+        256,
+        256
+      ],
+      "answer": "right",
+      "mirrored_answer": "right",
+      "flipped": false
+    }
+  ]
+}

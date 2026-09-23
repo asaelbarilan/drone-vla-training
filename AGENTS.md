@@ -16,6 +16,122 @@ architectures. Architectures are composed from configuration (`configs/`), run
 against a deterministic simulator, and charged model latency on a simulated
 clock. Seven families are the base; everything else is an ablation.
 
+## D159 CURRENT STATE - read this first (2026-09-23)
+
+Supersedes the D157/D158 sections below wherever they conflict. Evidence is in
+CHANGES.md (D158, D159) and docs/VLA_DRONE_TRAINING.md sections 13-15.
+
+### Goal (user, unchanged)
+
+A VLA that runs next to the testbed's VLM on one 8 GB GPU, and the user having
+trained a VLA themselves. The user explicitly does NOT want to reproduce the
+official recipe on all 30k flights with a 4B model ("we will get worse results
+because of model size"); the aim is better results on less data. Beating WorldVLN
+(79.1% SR) was agreed to be unrealistic here; the honest angle is efficiency plus
+an honest closed-loop number.
+
+### The one open problem: our adapters barely use the camera
+
+- D155 format (6-DoF start-frame 8-step chunks, no state), Qwen3-VL-4B bf16,
+  1 shard, best checkpoint: held-out endpoint error 6.474 m, IDENTICAL on real,
+  gray and swapped frames; text-only bar 4.496 m. Camera-blind and worse than text.
+- The released OpenVLA-UAV on the same frames CHANGES its action in 16/20 when the
+  photo is mirrored (6/20 flip the sideways sign) - so the target is reachable.
+- The base VLM is not at fault: Qwen3-VL scores 24/24 on a pasted red rectangle
+  (left/right) at 512 px. Resolution is not the bottleneck either (flip rate 2/12
+  at 256, 512 and 896 px). 83% of flights name a visual target, so filtering
+  instructions by "has a target" is pointless.
+- Official-format K=1, 1 shard, 1 epoch: mirroring changes 10/60 (16.7%) at the
+  end of training and 0/60 before it. Weak but no longer zero, which points at
+  data scale and training length rather than a dead end.
+
+### Data and code (this worktree)
+
+- scripts/prepare_uav_flow_official.py - the official OpenVLA-UAV format: 4-D
+  (dx,dy,dz,dyaw) in the drone's local frame from raw_logs [0,1,2,4], yaw deg to
+  rad, zero last action, proprio = preprocessed [0,1,2,4] written into the prompt,
+  every frame, first/last repeated 5x. Verified 0 mismatches against the official
+  loop on 5,000 flights; re-integrated xy matches the dataset to 5 mm. Streams
+  shard by shard (pass 1 logs for the site split, pass 2 images), so 10 shards fit
+  in 30 GB RAM. --clip-percentile sets the action range (1.0 = official q01/q99,
+  0.1 = wider), --shard takes several parquet files, --out sets the manifest dir.
+- scripts/train_uav_flow_vla.py - --format official, --chunk K, --instruction
+  {instruction,instruction_unified,both}, --mirror (left-right mirrored copy:
+  photo flipped, dy and dyaw negated, side words swapped; verified that the
+  mirrored chunk integrates to the mirrored path), --precision bf16,
+  --batch-size/--accum/--workers, --schedule cosine, --save-every/--resume,
+  --epochs, --wandb-project (entity defaults to `asael`), torchrun DDP (untested).
+- scripts/score_uav_flow_official.py - open-loop rollout of a K-chunk adapter:
+  floor/real/gray/swap, endpoint error, first-step MAE, seconds and tokens per
+  call, text baselines recomputed on the same endpoints. KNOWN DEFECT: the floor
+  condition fails to parse flights whose length is not a multiple of K.
+- scripts/probe_mirror_vla.py - the camera test used above (real vs mirrored).
+- scripts/probe_image_resolution.py - the VLM perception probe (red rectangle,
+  resolution sweep).
+
+### Data facts worth knowing
+
+- The official q01/q99 action cap clips 24.5% of steps; with perfect predictions
+  it still costs 4 m or more of endpoint error on 10% of flights (yaw cap
+  0.105 rad/step = 30 deg/s, forward 0.46 m/step, while the largest yaw step in
+  the data is 3.1 rad). The 10-shard store therefore uses percentiles 0.1/99.9.
+- raw_logs altitude and preprocessed_logs altitude disagree (median 0.19 m, max
+  6.8 m). The official code mixes them (action dz from raw, state z from
+  preprocessed) and we inherit that. Caveat any height result.
+- Every flight carries `instruction` (free wording, what the official code trains
+  on) and `instruction_unified` (fixed template); 478/500 differ in shard 0.
+
+### RUNNING NOW (2026-09-23)
+
+- Instance i-0751e8ef73191703e, g5.2xlarge (A10G 23 GB), us-east-1d, IP
+  98.87.4.20, user ubuntu, key C:\Users\Asael\PycharmProjects\keys\asael_aws.pem,
+  $1.21/h, auto-stop 2026-09-23 18:44Z. The AWS connector must be reconnected by
+  the user from connector settings whenever a call says it was invalidated.
+- Remote layout: code ~/vla, 10 raw shards ~/data/uav_flow_raw (45 GB), prepared
+  store ~/data/uav_flow_official_10shard (5,000 flights: 1,987 train / 791 val /
+  2,222 dropped by the instruction sweep), base model ~/qwen3vl4b, interpreter
+  /opt/pytorch/bin/python. Env: QWEN_MODEL, UAV_FLOW_OFFICIAL_STORE,
+  PYTHONPATH=~/vla/src:~/vla/scripts. NOTE: train_uav_flow_vla.py ON THE INSTANCE
+  was sed-edited so OFFICIAL_REPORT points at reports/uav_flow_official_10shard;
+  redo that edit after any re-upload.
+- Run: ~/runs/official_k8_10shard, log ~/k8.log, wandb
+  asael/vla training/official_k8_10shard. Official format, K=8, bf16,
+  --instruction both --mirror, batch 8 x accum 4 = 32, lr 5e-4 cosine, 2,500
+  updates (about 5 h, about $6), checkpoint and adapter_s<step> every 250.
+  Held-out loss (128 examples): 11.02 -> 2.94 (step 250) -> 2.57 (step 2250),
+  still falling at the end - no overfitting, unlike the 1-shard run.
+
+### Next steps, in order
+
+1. When the run ends: re-score the best checkpoint on a MUCH larger held-out
+   sample (the user rightly called 128 examples too small) and run
+   probe_mirror_vla.py on the checkpoints. Compare the mirror change rate with
+   OpenVLA-UAV's 16/20 and the endpoint error with the text-only baseline.
+2. Then stop the instance. "Stop the run" means the training process only; stop
+   the machine only when the user says machine or instance.
+3. Get UAV-Flow-Eval (UnrealZoo, Windows) running for a real closed-loop number.
+   It is also the prerequisite for RL.
+4. Only then consider RL (SimpleVLA-RL: 17.3% -> 91.7% from one demonstration per
+   task; WorldVLN: +10 points after SFT saturates) and, last and only if needed,
+   a bigger run on a p4d (P quota request 8e333ae19c934fcaafcc4b2f6f98d161vL9uhsKE,
+   case 179008835200067, still CASE_OPENED).
+
+### Experiment plan (docs/VLA_DRONE_TRAINING.md section 15)
+
+E0 baseline, E1 training length, E2 action cap, E3 horizon, E4 free data (both
+wordings + mirror), E5 history, E6 sim data, E7 FAST tokens, E8 offline RL,
+E9 simulator RL, E10 combine the winners. The current run is E0+E1+E2+E3(K=8)+E4.
+Only RL and data scale have published evidence behind them; the rest are guesses,
+and the user's constraint is implementation risk, not compute.
+
+### Standing rules
+
+- Report the image control (gray/swap/mirror) and the text-only baseline beside
+  every model number. A model number alone is not a result.
+- The user cannot read long replies: one idea, at most 8 lines, one question.
+- Ask before any AWS launch or spend.
+- Dataset licence is settled (research use). SmolVLM training is dropped.
+
 ## D157 CURRENT STATE - read this first (2026-09-21)
 
 Supersedes the D154 plan below. Detail and evidence for every point is in
@@ -186,6 +302,43 @@ been launched; AWS CLI is not installed and no credentials exist.
   CASE_OPENED (case 179008835200067). After the run: pick best held-out
   adapter, rollout-score vs baselines (no-text 6.868 m, TF-IDF 4.496 m), gray +
   image-swap controls, then STOP instance and ask about deleting it.
+- 2026-09-22 ~17:10Z: training STOPPED at update ~1500 (user approved) because
+  held-out loss rose after update 1000: 250 5.165, 500 4.848, 750 4.769,
+  1000 4.689 (best), 1250 4.892, 1500 4.955 -> overfits after ~1.3 epochs of one
+  shard (308 flights). Instance still RUNNING. Scoring adapter_s1000 with
+  score_uav_flow_vla.py (now --model qwen --precision bf16, adds image-swap
+  condition): val 62 episodes + train 20; out ~/runs/shard1_bf16_10ep/scored,
+  log ~/score.log.
+- OFFICIAL RECIPES (verified 2026-09-22 from code + papers):
+  UAV-Flow paper (2505.15725) trains on the FULL REAL set, 30,692 flights (Sim
+  10,109 is for evaluation). OpenVLA-UAV code: finetune_uav.sh batch_size 4 x 8
+  GPUs = 32, lr 5e-4 constant (no scheduler), LoRA r32, max_steps default
+  200,000 (~3 epochs of ~2M frames), save 20k; uav_dataset.py: every frame,
+  first/last frames oversampled 5x, ONE-STEP action (dx,dy,dz,dyaw) in the
+  drone's LOCAL frame (rotated by current yaw), prompt "Current State: {proprio},
+  What action should the uav take to {instruction}?", q01/q99 -> [-1,1].
+  Pi-0-UAV: chunk 10, batch 16, 12 epochs, lr 5e-5. WorldVLN (2605.15964):
+  InfinityStar-8B, (dx,dy,dz,dpsi) chunks K=16, SFT lr 1e-5 + GRPO; 79.12/78.02 SR
+  vs OpenVLA-UAV 65.61/65.33. ImagineUAV (2606.01205): Wan2.1 1.3B, 2 epochs on
+  30k real + 10k sim, 70.9% SR. Exp2VLA did NOT use UAV-Flow (own Isaac data).
+  Our shard run deviates: 1% of data, 6-DoF world-frame 8-step chunks, no state.
+- USER DIRECTION 2026-09-22: p4d/all-shards run is the LAST step, only if needed.
+  First: decide the prediction horizon (steps ahead) and apply lessons from all
+  UAV-Flow papers (docs/VLA_DRONE_TRAINING.md section 13), running as many
+  single-GPU tests as possible. Stop the g5 after scoring finishes (user: yes).
+- D158 (local): scripts/prepare_uav_flow_official.py ports the official
+  uav_dataset.py (4-D local-frame actions from raw_logs [0,1,2,4], yaw deg->rad,
+  zero last action, proprio = preprocessed [0,1,2,4], every frame, first/last
+  x5 extra). Output D:/drone_vla_pilot/data/uav_flow_official_20260922/
+  episodes.jsonl (+frames incl. last frame), manifest
+  reports/uav_flow_official_20260922/manifest.json. Same D155 unseen split
+  (308/62/130). 0/500 mismatches vs a verbatim restatement of the official loop.
+  Independent check: local actions re-integrated match preprocessed xy to 5 mm
+  median (transform correct) but Z differs: raw z vs preprocessed z median 0.19 m,
+  max 6.8 m (different altitude sources in the dataset; official code inherits it).
+  Official trains on `instruction` (free wording); D155 used instruction_unified;
+  478/500 differ. Next: trainer support for 4-D + state prompt + K-step chunks
+  from per-frame actions (horizon test K=1/8/16).
 
 ### Assets on disk
 
