@@ -106,7 +106,9 @@ an honest closed-loop number.
 150 unseen-site flights, open loop: real 3.067 m, gray 3.115 m, swap 3.121 m,
 text-only 4.533 m, no-text 4.208 m, floor 0.072 m. Beats text baselines by
 ~1.1 m, but the camera adds only ~0.05 m (not significant); mirror changes 23%.
-The gain is from state + instruction. Instance STOPPED after scoring. Scoring is
+The gain is from state + instruction. Instance STOPPED after scoring.
+Mirror trend by checkpoint (D161): 0/11/19/14/12/26% at s250..s2500 -
+rising but noisy, no saturation. Instance stopped again after the trend probe. Scoring is
 now batched (--batch-size 8, 0.35 s/call) and frame prep is threaded.
 
 ### Next steps, in order

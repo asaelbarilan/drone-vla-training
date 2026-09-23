@@ -3671,3 +3671,11 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   Batched generation verified: left padding correct; batch-vs-single logit noise
   ~0.56 (same with zero padding), flips only near ties. Scorer and preparation
   now batched/threaded. Instance stopped after scoring.
+
+- D161 (2026-09-23): mirror-probe trend across checkpoints of official_k8_10shard
+  (60 held-out flights x 3 frames = 180 comparisons, batched): s250 0%, s500 11%,
+  s1000 19%, s1500 14%, s2000 12%, s2500 26%. Rising overall but noisy, no sign
+  of saturation - weak support for more data/training. (Earlier sequential
+  s2500 run gave 23%; batched 26% - the gap is batch-shape noise near ties.)
+  probe_mirror_vla.py now takes several --adapter paths, loads the base once and
+  batches generation. Instance stopped afterwards.
