@@ -3723,3 +3723,17 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   off (skips tasks with plots); scripts in D:/drone_vla_pilot/runs/sim_eval/.
   UnrealZoo also ships a Linux build (Collection_v4_LinuxNoEditor.zip, 45 GB),
   so the evaluation can move to the g5.
+
+- D162 AWS run INVALID (2026-09-24): OpenVLA-UAV 177/273 flights on the Linux
+  v4 build (mean nDTW 0.278; Land 0.04, Approach 0.07) and our adapter's first
+  12 flights are NOT usable. The first camera frame of every task is the SAME
+  image regardless of start pose (contact sheet
+  D:/drone_vla_pilot/runs/sim_eval_aws/first_frames_sheet.png): the camera does
+  not follow the drone on Collection_v4_LinuxNoEditor, probably tied to the
+  camera-count behaviour that forced the base_env.py remove_agent timeout patch.
+  Colours are also swapped (orange sky): unrealcv returns BGR and the official
+  evaluator passes it straight to PIL.Image.fromarray - check whether the
+  Windows build does the same before calling it our bug. Both evaluations were
+  stopped; the instance was left running per the user. Next: make the camera
+  follow the drone (compare camera ids/poses on Linux vs the Windows build), or
+  evaluate on the Windows build on a Windows GPU instance.
