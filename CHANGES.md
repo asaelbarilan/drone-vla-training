@@ -3768,3 +3768,9 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   instances stopped. To finish later: start i-03a3c8632314bf5fc (g6.xlarge or
   g5.2xlarge), then via SSM run C:unsinish.ps1 again (it reinstalls deps,
   reruns qwen from scratch, uploads results, and stops the instance itself).
+
+- D163 update 2: user changed their mind ("if it will run and shut down, never
+  mind"). Instance restarted 17:45 UTC as g6.xlarge and C:unsinish.ps1
+  relaunched: qwen rerun -> results/{openvla,qwen}.zip + run_eval.log to S3 ->
+  Stop-Computer. Expected done ~19:30 UTC. Next session: confirm the instance is
+  STOPPED, then download and score results/qwen.zip.
