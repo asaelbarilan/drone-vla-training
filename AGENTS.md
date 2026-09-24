@@ -122,8 +122,8 @@ scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
 
 OpenVLA-UAV on the official Windows build, 100 stratified tasks: mean nDTW
 0.395 (paper's SR 65.6% is a different, human-judged metric). Our adapter's
-rerun was launched and the Windows instance i-03a3c8632314bf5fc STOPS ITSELF
-when done. To finish: presign-download s3://vla-eval-artifacts-512068640697/
+rerun was launched but the user STOPPED the instance before it finished (0
+tasks done). Restart i-03a3c8632314bf5fc and rerun C:unsinish.ps1 via SSM. To finish: presign-download s3://vla-eval-artifacts-512068640697/
 results/qwen.zip (backslash paths - unzip with chr(92)->'/'), score with
 scripts/score_uav_flow_sim.py, compare per class with
 D:/drone_vla_pilot/runs/sim_eval_win/openvla/score.json. Confirm the instance

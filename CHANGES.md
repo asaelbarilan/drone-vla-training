@@ -3762,3 +3762,9 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   missing pydantic, 0 calls). Rerun launched ~17:10 UTC via C:unsinish.ps1:
   runs qwen, zips both results to s3://vla-eval-artifacts-512068640697/results/
   {openvla,qwen}.zip + run_eval.log, then Stop-Computer (instance STOPS itself).
+
+- D163 update: user asked to shut down before our adapter's rerun finished.
+  Windows instance STOPPED ~17:15 UTC mid-run (qwen had 0 completed tasks). Both
+  instances stopped. To finish later: start i-03a3c8632314bf5fc (g6.xlarge or
+  g5.2xlarge), then via SSM run C:unsinish.ps1 again (it reinstalls deps,
+  reruns qwen from scratch, uploads results, and stops the instance itself).
