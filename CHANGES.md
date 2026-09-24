@@ -3774,3 +3774,17 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   relaunched: qwen rerun -> results/{openvla,qwen}.zip + run_eval.log to S3 ->
   Stop-Computer. Expected done ~19:30 UTC. Next session: confirm the instance is
   STOPPED, then download and score results/qwen.zip.
+
+- D164 (2026-09-25): OUR adapter (Qwen3-VL-4B bf16, official format K=8, 10
+  shards + mirror, s2500) on the same 100 Windows closed-loop tasks: mean nDTW
+  0.129 vs OpenVLA-UAV 0.395; theirs better on 77/100 paired flights. Per class
+  ours/theirs: Turn .154/.176, Move .044/.121, Shift .106/.675, Rotate .110/.349,
+  Surround .001/.753, Ascend/Descend .057/.775, Approach .320/.389,
+  Retreat .355/.293, Pass .134/.252, Land .004/.167. Ours ends much earlier
+  (median 26 vs 50 steps) and further from the reference end (2.62 vs 0.61 m).
+  Only Retreat is better. 404 model calls, run valid. Caveats: ours was trained
+  on REAL flights only and tested in SIM (their checkpoint's action stats are the
+  "sim" key); our outputs are scaled m->cm by assumption; the evaluator's
+  10-near-still-steps rule may end our slower flights early. Results:
+  D:/drone_vla_pilot/runs/sim_eval_win/{openvla,qwen}/score.json. Both
+  instances confirmed STOPPED.

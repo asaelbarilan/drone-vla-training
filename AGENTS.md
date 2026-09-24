@@ -118,6 +118,12 @@ full 273-task run in progress; ours blocked until the adapter is copied off the
 stopped instance (AWS connector must be reconnected). Server
 scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
 
+### D164 RESULT (2026-09-25): ours nDTW 0.129 vs OpenVLA-UAV 0.395 (100 tasks)
+
+Same Windows closed-loop tasks; theirs better on 77/100; ours stops early and is
+near zero on Surround, Land and Ascend/Descend. Details and caveats in
+CHANGES.md D164. Both instances stopped.
+
 ### D163 WINDOWS CLOSED-LOOP EVAL (2026-09-24) - read CHANGES.md D163
 
 OpenVLA-UAV on the official Windows build, 100 stratified tasks: mean nDTW
