@@ -3710,3 +3710,16 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   the AWS connector is disconnected; needs the user to reconnect, then start the
   instance just long enough to scp runs/official_k8_10shard/adapter_s2500 and
   the reports/uav_flow_official_10shard manifest (action stats) to D:.
+
+- D162 update (2026-09-24): the local closed-loop run was STOPPED at the user's
+  request (it froze the laptop: simulator + 6 GB model on one 8 GB GPU). The
+  simulator had also crashed once at task 70 (unrealcv image request timeout).
+  69/273 OpenVLA-UAV flights completed, scored in
+  D:/drone_vla_pilot/runs/sim_eval/openvla_uav/score_69.json: mean nDTW 0.537 over
+  Turn 0.18 (8/15), Move 0.11 (10/15), Shift 0.70 (28/49), Rotate 0.40 (8/15),
+  Surround 0.76 (6/12), Ascend/Descend 0.78 (9/19); Approach/Retreat/Pass/Land
+  not reached (the task order is alphabetical by timestamp, not by class).
+  Partial and class-biased - not a result. The evaluator resumes where it left
+  off (skips tasks with plots); scripts in D:/drone_vla_pilot/runs/sim_eval/.
+  UnrealZoo also ships a Linux build (Collection_v4_LinuxNoEditor.zip, 45 GB),
+  so the evaluation can move to the g5.
