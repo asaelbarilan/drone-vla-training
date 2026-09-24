@@ -111,6 +111,13 @@ Mirror trend by checkpoint (D161): 0/11/19/14/12/26% at s250..s2500 -
 rising but noisy, no saturation. Instance stopped again after the trend probe. Scoring is
 now batched (--batch-size 8, 0.35 s/call) and frame prep is threaded.
 
+### D162 closed-loop simulator (2026-09-24) - see CHANGES.md D162
+
+UAV-Flow-Eval runs locally (4060) with the UnrealZoo build on D:. OpenVLA-UAV
+full 273-task run in progress; ours blocked until the adapter is copied off the
+stopped instance (AWS connector must be reconnected). Server
+scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
+
 ### Next steps, in order
 
 1. (DONE, see D160) When the run ends: re-score the best checkpoint on a MUCH larger held-out

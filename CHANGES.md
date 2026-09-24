@@ -3679,3 +3679,34 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   s2500 run gave 23%; batched 26% - the gap is batch-shape noise near ties.)
   probe_mirror_vla.py now takes several --adapter paths, loads the base once and
   batches generation. Instance stopped afterwards.
+
+- D162 (2026-09-24): UAV-Flow-Eval closed loop running LOCALLY on the 4060.
+  Simulator: UnrealZoo Collection_WinNoEditor_0424_25.zip (51,216,498,779 bytes,
+  ModelScope UnrealZoo/UnrealZoo-UE4, user-approved) downloaded with a
+  24-connection resumable range downloader (~23 MB/s; single connection ~1 MB/s),
+  extracted to D:/drone_vla_pilot/simulators/Collection_WinNoEditor_0424_25 (49 GB).
+  Eval code: D:/drone_vla_pilot/simulators/uav_flow_repo (git clone of
+  buaa-colalab/UAV-Flow), venv D:/drone_vla_pilot/venv_uaveval (Python 3.11,
+  gym 0.10.9, numpy pinned <2 because their track.py breaks on numpy 2).
+  Local changes: DowntownWest.json env_bin_win -> our path; batch_run_act_all.py
+  sends `vrun t.MaxFPS $UE_MAX_FPS` (default 10, used 5) after reset, since at
+  full frame rate Unreal saturates the GPU and each policy call took 13-40 s
+  (now ~1.3 s). Original kept as batch_run_act_all.orig.py.
+  Protocol facts: POST /predict {image 224px PNG, proprio [x,y,z cm, yaw deg] in
+  the START frame, instr} -> {action: [[x,y,z cm, yaw rad], ...]} poses in the
+  start frame; the simulator is in CENTIMETRES (OpenVLA-UAV "sim" action q99 is
+  48.7 forward per step), our model is in metres -> x100 / /100 in the server.
+  273 test tasks, 10 classes; official metric = nDTW per class (success rate is
+  human-judged in the paper). The evaluator ends a task after 100 steps or 10
+  near-still steps.
+  scripts/uav_flow_eval_server.py serves openvla-uav (NF4, eager, D156 mask fix;
+  official server is bf16 + flash-attn) or our qwen adapter (K steps -> K poses).
+  scripts/score_uav_flow_sim.py = official nDTW functions + end distance/yaw.
+  Smoke: "Turn to the direction of the person" -25.6 vs ref -29.7 deg (good);
+  "Rotate 105 degrees to the right" turned the wrong way for 100 steps.
+  FULL RUN of OpenVLA-UAV started 10:00 local: flights in
+  D:/drone_vla_pilot/runs/sim_eval/openvla_uav/flights, log eval.log.
+  OUR MODEL IS BLOCKED: adapter_s2500 exists only on the stopped AWS instance and
+  the AWS connector is disconnected; needs the user to reconnect, then start the
+  instance just long enough to scp runs/official_k8_10shard/adapter_s2500 and
+  the reports/uav_flow_official_10shard manifest (action stats) to D:.
