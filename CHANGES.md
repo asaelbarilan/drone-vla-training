@@ -3737,3 +3737,28 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   stopped; the instance was left running per the user. Next: make the camera
   follow the drone (compare camera ids/poses on Linux vs the Windows build), or
   evaluate on the Windows build on a Windows GPU instance.
+
+- D163 (2026-09-24): closed-loop eval on an AWS WINDOWS GPU box (the supported
+  build; Linux v4 camera was frozen). Instance i-03a3c8632314bf5fc, launched
+  g5.2xlarge but started as g6.xlarge (no g5 capacity in us-east-1d), Windows
+  Server 2022, 250 GB gp3, sg-025131379aa7665f0 (no inbound), IAM role/instance
+  profile vla-eval-windows-role (SSM core + read ec2-windows-nvidia-drivers +
+  RW s3://vla-eval-artifacts-512068640697, private bucket). Controlled only via
+  SSM RunCommand (no RDP/password). NVIDIA GRID 596.86 from the AWS bucket.
+  Gotchas: fresh Windows needs UE4PrereqSetup_x64.exe (VC++/DirectX) or
+  Collection.exe exits silently; SSM runs in session 0 so the evaluator must
+  pass offscreen=True (UAV_EVAL_OFFSCREEN=1 patch); never Start-Process with
+  -RedirectStandardOutput from an SSM command (the agent blocks until the child
+  exits); ModelScope CDN needs SSL_CERT_FILE=certifi on fresh Windows; the
+  qwen venv also needs pydantic+pyyaml (uavlab imports). Driver:
+  scripts/win_eval/run_eval.ps1 (stratified 100 tasks = first 10 per class).
+  Camera verified: first frames differ per task and show the targets. Colours
+  are BGR-as-RGB in the OFFICIAL evaluator too (orange sky) - left as-is.
+  RESULT OpenVLA-UAV (bf16, 100 tasks, 5,463 calls): mean nDTW 0.395; Turn 0.18,
+  Move 0.12, Shift 0.67, Rotate 0.35, Surround 0.75, Ascend/Descend 0.78,
+  Approach 0.39, Retreat 0.29, Pass 0.25, Land 0.17; median end dist 0.61 m.
+  Files D:/drone_vla_pilot/runs/sim_eval_win/openvla/{flights,score.json}.
+  OUR adapter (qwen k8 10-shard s2500): first attempt INVALID (server died on
+  missing pydantic, 0 calls). Rerun launched ~17:10 UTC via C:unsinish.ps1:
+  runs qwen, zips both results to s3://vla-eval-artifacts-512068640697/results/
+  {openvla,qwen}.zip + run_eval.log, then Stop-Computer (instance STOPS itself).

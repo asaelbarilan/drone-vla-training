@@ -118,6 +118,18 @@ full 273-task run in progress; ours blocked until the adapter is copied off the
 stopped instance (AWS connector must be reconnected). Server
 scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
 
+### D163 WINDOWS CLOSED-LOOP EVAL (2026-09-24) - read CHANGES.md D163
+
+OpenVLA-UAV on the official Windows build, 100 stratified tasks: mean nDTW
+0.395 (paper's SR 65.6% is a different, human-judged metric). Our adapter's
+rerun was launched and the Windows instance i-03a3c8632314bf5fc STOPS ITSELF
+when done. To finish: presign-download s3://vla-eval-artifacts-512068640697/
+results/qwen.zip (backslash paths - unzip with chr(92)->'/'), score with
+scripts/score_uav_flow_sim.py, compare per class with
+D:/drone_vla_pilot/runs/sim_eval_win/openvla/score.json. Confirm the instance
+is stopped. The Linux g5 i-0751e8ef73191703e is stopped (GPU quota is 8 vCPU:
+only one G machine may run at a time).
+
 ### Next steps, in order
 
 1. (DONE, see D160) When the run ends: re-score the best checkpoint on a MUCH larger held-out
