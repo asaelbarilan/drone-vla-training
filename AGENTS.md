@@ -118,6 +118,12 @@ full 273-task run in progress; ours blocked until the adapter is copied off the
 stopped instance (AWS connector must be reconnected). Server
 scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
 
+### D165 IN PROGRESS (2026-09-25): real + simulator training - CHANGES.md D165
+
+Linux g5 runs scripts/aws/sim_pipeline_d165.sh via SSM (SSH blocked: user IP
+changed), uploads s3://vla-eval-artifacts-512068640697/d165/realsim_adapter.tgz
+and stops itself (hard stop 04:36 UTC). Then evaluate it on the Windows box.
+
 ### D164 RESULT (2026-09-25): ours nDTW 0.129 vs OpenVLA-UAV 0.395 (100 tasks)
 
 Same Windows closed-loop tasks; theirs better on 77/100; ours stops early and is

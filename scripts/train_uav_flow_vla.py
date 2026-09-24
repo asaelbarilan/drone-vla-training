@@ -372,6 +372,9 @@ def main():
     parser.add_argument("--warmup", type=float, default=0.03, help="cosine warmup fraction")
     parser.add_argument("--save-every", type=int, default=0, help="checkpoint every N updates")
     parser.add_argument("--resume", action="store_true", help="continue from OUT/checkpoint")
+    parser.add_argument(
+        "--init-adapter", type=Path, help="initialise LoRA weights from this adapter"
+    )
     parser.add_argument("--epochs", type=float, help="set --updates from passes over train")
     parser.add_argument("--wandb-project", help="log to Weights & Biases (needs WANDB_API_KEY)")
     parser.add_argument("--wandb-entity", default="asael", help="team that owns the project")
@@ -468,6 +471,10 @@ def main():
             task_type="CAUSAL_LM",
         ),
     )
+    if args.init_adapter:
+        # D165: start from an earlier adapter (fresh optimiser and schedule), e.g.
+        # to continue the real-data model on real + simulator flights.
+        set_peft_model_state_dict(model, load_peft_weights(str(args.init_adapter)))
     params = [p for p in model.parameters() if p.requires_grad]
     optimiser = torch.optim.AdamW(params, lr=args.lr)
 
@@ -491,6 +498,7 @@ def main():
         steps_sha256=manifest["steps_sha256"],
         action_stats=stats,
         data_format=args.format,
+        init_adapter=str(args.init_adapter) if args.init_adapter else None,
         mirrored=args.mirror,
         instruction_field=args.instruction if args.format == "official" else "instruction_unified",
         trainable_module_roots=covered,

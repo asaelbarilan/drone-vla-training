@@ -3788,3 +3788,29 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   10-near-still-steps rule may end our slower flights early. Results:
   D:/drone_vla_pilot/runs/sim_eval_win/{openvla,qwen}/score.json. Both
   instances confirmed STOPPED.
+
+- D165 (2026-09-25): real + SIMULATOR training run launched (user approved).
+  Overlap check first (logs of all 21 UAV-Flow-Sim shards read via HF range
+  requests, index D:/drone_vla_pilot/data/uav_flow_sim_index.json): 10,109 sim
+  flights; only 1 of 273 test tasks has a sim flight with the same start (<0.5 m)
+  AND the same instruction; 54 test tasks have a sim flight starting <0.5 m away;
+  238/273 test instructions occur verbatim (templated wording). Excluded every
+  sim flight starting <0.5 m from any test start: 168 flights, list
+  D:/drone_vla_pilot/data/uav_flow_sim_excluded.json -> 9,941 sim flights kept
+  (312k frames, median 25 frames / 5 m). Sim data shares the DowntownWest town
+  with the test tasks: report as same-environment, disjoint-trajectory.
+  scripts/prepare_uav_flow_sim.py: official maths after cm -> m (x,y,z of raw and
+  preprocessed logs /100), all sim to train, appended to the 10-shard store
+  (original kept as episodes.real_only.jsonl), action stats NOT recomputed.
+  Trainer: --init-adapter (fresh optimiser). Run: from adapter_s2500, K=8, both
+  wordings, mirror, bf16, batch 32, lr 2e-4 cosine, 2,000 updates, ckpt every
+  500, wandb asael/vla training/official_k8_realsim, out
+  ~/runs/official_k8_realsim.
+  The user's home IP changed (147.235.193.80 -> 147.236.104.250), so SSH to the
+  Linux box is blocked by its SG; instead vla-eval-windows-role was attached to
+  it and it is driven by SSM + S3 (no SG change). Pipeline
+  scripts/aws/sim_pipeline_d165.sh: hard auto-stop +6 h (04:36 UTC), downloads
+  sim, prepares, trains, uploads s3://vla-eval-artifacts-512068640697/d165/
+  realsim_adapter.tgz + sim_pipeline.log, then shuts down. NEXT: when the tarball
+  is in S3, start the Windows box and run run_eval.ps1 -Models qwen with the new
+  adapter (the driver needs its adapter path parameterised), compare with D164.
