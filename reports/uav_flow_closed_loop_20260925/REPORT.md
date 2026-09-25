@@ -174,8 +174,7 @@ lr 2e-4 cosine with 3% warm-up, 2,000 updates x 32 examples, same K = 8, mirror,
 both wordings; 1,121,502 training examples (real + simulator, mirrored), about
 3.4 h on one A10G. Train loss 2.23 -> 1.19; held-out loss on the REAL unseen
 split 2.565 -> 2.582 (unchanged). Adapter:
-`D:\drone_vla_pilot
-elease\qwen3vl4b_uavflow_k8_realsim_s2000\`.
+`D:\drone_vla_pilot\release\qwen3vl4b_uavflow_k8_realsim_s2000\`.
 
 **Closed loop, same 100 tasks (mean nDTW; one empty flight counted as 0):**
 
