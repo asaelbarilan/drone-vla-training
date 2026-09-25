@@ -3814,3 +3814,12 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   realsim_adapter.tgz + sim_pipeline.log, then shuts down. NEXT: when the tarball
   is in S3, start the Windows box and run run_eval.ps1 -Models qwen with the new
   adapter (the driver needs its adapter path parameterised), compare with D164.
+
+- D165 training DONE 2026-09-25 02:12 UTC (instance stopped itself): 2,000
+  updates from adapter_s2500 on real+sim (1,121,502 train examples incl. mirror),
+  lr 2e-4 cosine; train loss 2.23 -> 1.19; held-out (REAL unseen split) 2.565 ->
+  2.666 (250) -> 2.582 (2000), i.e. real performance roughly unchanged. Adapter
+  s3://vla-eval-artifacts-512068640697/d165/realsim_adapter.tgz, local
+  D:/drone_vla_pilot/runs/d165/adapter_s2000. Windows closed-loop eval of it
+  launched 07:56 UTC (C:unsealsim.ps1, same 100 tasks, output
+  C:uns\qwen_realsim), uploads results/qwen_realsim.zip and stops itself.
