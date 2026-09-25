@@ -40,7 +40,7 @@ app = Flask(__name__)
 STATE = {}
 
 
-def openvla_loader(path):
+def openvla_loader(path, precision):
     sys.path.insert(0, "D:/drone_vla_pilot/models/OpenFly-Platform/train")
     import timm
 
@@ -54,7 +54,9 @@ def openvla_loader(path):
         trust_remote_code=True,
         local_files_only=True,
         torch_dtype=torch.bfloat16,
-        quantization_config=BitsAndBytesConfig(
+        quantization_config=None
+        if precision == "bf16"
+        else BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
             bnb_4bit_compute_dtype=torch.bfloat16,
@@ -124,6 +126,9 @@ def predict():
     data = request.json
     image = Image.open(io.BytesIO(base64.b64decode(data["image"]))).convert("RGB")
     proprio = np.array(data["proprio"], dtype=float)  # x, y, z (sim units), yaw (deg)
+    if not proprio.any():  # first call of a task: keep what the drone saw at the start
+        STATE["first_frames"] += 1
+        image.save(STATE["frames_dir"] / f"{STATE['first_frames']:03d}.png")
     steps = STATE["predict"](image, proprio, data["instr"])
     poses, position, yaw = [], proprio[:3].copy(), math.radians(proprio[3])
     for step in steps:
@@ -150,11 +155,14 @@ def main():
     parser.add_argument("--log", type=Path, required=True)
     args = parser.parse_args()
     if args.model == "openvla-uav":
-        STATE["predict"] = openvla_loader(args.path)
+        STATE["predict"] = openvla_loader(args.path, args.precision)
     else:
         STATE["predict"] = qwen_loader(args.path, args.chunk, args.precision)
     args.log.parent.mkdir(parents=True, exist_ok=True)
     STATE["log"] = open(args.log, "a", encoding="utf-8")  # noqa: SIM115 - lives with the server
+    STATE["frames_dir"] = args.log.parent / "first_frames"
+    STATE["frames_dir"].mkdir(exist_ok=True)
+    STATE["first_frames"] = 0
     app.run(host="127.0.0.1", port=args.port, threaded=False)
 
 
