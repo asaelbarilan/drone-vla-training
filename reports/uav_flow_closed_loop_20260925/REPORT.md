@@ -151,3 +151,52 @@ missing library and made no model calls.
 | `data_manifest_10shard.json` | data split, counts, action statistics, checksums |
 | `adapter_config.json` | exact LoRA configuration |
 | Flight logs and plots | `D:\drone_vla_pilot\runs\sim_eval_win\{qwen,openvla}\flights\` and `s3://vla-eval-artifacts-512068640697/results/` |
+
+
+## 9. Update D165 (2026-09-25): adding simulator flights
+
+The domain-gap explanation was tested directly. The adapter above was trained
+for 2,000 more updates on real + UAV-Flow-Sim flights and flown on the same 100
+tasks.
+
+**Simulator data.** `wangxiangyu0814/UAV-Flow-Sim`, 21 shards, 10,109 flights.
+Leak check against the 273 test tasks: only 1 test task had a simulator flight
+with the same start (<0.5 m) and the same instruction; 54 had a simulator flight
+starting within 0.5 m. Every simulator flight starting within 0.5 m of any test
+start was removed (168), leaving 9,941 flights / 307,834 frames. The simulator
+data is recorded in the same town (DowntownWest) as the tests, so this is a
+same-environment, disjoint-trajectory evaluation. Simulator positions are in
+centimetres and were divided by 100 to match the real data; the action range
+(section 3) was kept, and 5.6% of simulator steps fall outside it.
+
+**Training.** Initialised from the section-2 adapter (update 2,500), fresh AdamW,
+lr 2e-4 cosine with 3% warm-up, 2,000 updates x 32 examples, same K = 8, mirror,
+both wordings; 1,121,502 training examples (real + simulator, mirrored), about
+3.4 h on one A10G. Train loss 2.23 -> 1.19; held-out loss on the REAL unseen
+split 2.565 -> 2.582 (unchanged). Adapter:
+`D:\drone_vla_pilotelease\qwen3vl4b_uavflow_k8_realsim_s2000\`.
+
+**Closed loop, same 100 tasks (mean nDTW; one empty flight counted as 0):**
+
+| Motion class | OpenVLA-UAV | Ours, real only | Ours, real + sim |
+|---|---|---|---|
+| Turn | 0.176 | 0.154 | 0.120 |
+| Move | 0.121 | 0.044 | 0.020 |
+| Shift | 0.675 | 0.106 | 0.664 |
+| Rotate | 0.349 | 0.110 | 0.259 |
+| Surround | 0.753 | 0.001 | 0.612 |
+| Ascend/Descend | 0.775 | 0.057 | 0.721 |
+| Approach | 0.389 | 0.320 | 0.343 |
+| Retreat | 0.293 | 0.355 | **0.467** |
+| Pass | 0.252 | 0.134 | 0.142 |
+| Land | 0.167 | 0.004 | 0.051 |
+| **Mean** | **0.395** | **0.128** | **0.333** |
+| Median steps / end distance | 50 / 0.61 m | 26 / 2.62 m | 34 / 1.29 m |
+
+Simulator data lifts the adapter from 0.128 to 0.333 (better than the real-only
+adapter on 69 of 100 flights), which confirms the domain gap as the main cause.
+It is now within 0.06 of the released 7B model (theirs better on 62 of 100) with
+a 4B model that shares its weights with the testbed's VLM, and it beats it on
+Retreat. Still weak: Land, Move, Turn, Pass. Files:
+`closed_loop_ours_real_sim.json`, `training_report_real_sim.json`,
+`sim_data_added.json`.

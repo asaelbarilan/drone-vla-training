@@ -3823,3 +3823,14 @@ reports/vla_llamacpp_chain_20260921/. Current state written to AGENTS.md.
   D:/drone_vla_pilot/runs/d165/adapter_s2000. Windows closed-loop eval of it
   launched 07:56 UTC (C:unsealsim.ps1, same 100 tasks, output
   C:uns\qwen_realsim), uploads results/qwen_realsim.zip and stops itself.
+
+- D166 (2026-09-25): real+sim adapter (D165, s2000) on the same 100 Windows
+  closed-loop tasks: mean nDTW 0.333 (0.336 over the 99 non-empty flights) vs
+  0.128 real-only and 0.395 OpenVLA-UAV. Better than real-only on 69/100, worse
+  than OpenVLA-UAV on 62/100. Per class (theirs/real/real+sim): Shift
+  .675/.106/.664, Surround .753/.001/.612, A/D .775/.057/.721, Retreat
+  .293/.355/.467, Approach .389/.320/.343, Rotate .349/.110/.259, Land
+  .167/.004/.051, Pass .252/.134/.142, Move .121/.044/.020, Turn .176/.154/.120.
+  Median steps 34, end distance 1.29 m. Domain gap confirmed as the main cause.
+  Report section 9 in reports/uav_flow_closed_loop_20260925/REPORT.md. Both
+  instances stopped.

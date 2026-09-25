@@ -118,7 +118,15 @@ full 273-task run in progress; ours blocked until the adapter is copied off the
 stopped instance (AWS connector must be reconnected). Server
 scripts/uav_flow_eval_server.py, scorer scripts/score_uav_flow_sim.py.
 
-### D165 IN PROGRESS (2026-09-25): real + simulator training - CHANGES.md D165
+### D166 RESULT (2026-09-25): real+sim adapter nDTW 0.333 vs 0.395 OpenVLA-UAV
+
+Adding UAV-Flow-Sim (9,941 leak-checked flights) lifted closed-loop nDTW from
+0.128 to 0.333 on the same 100 tasks; OpenVLA-UAV 0.395. Weak: Land, Move, Turn,
+Pass. Report: reports/uav_flow_closed_loop_20260925/REPORT.md section 9.
+Adapter: D:/drone_vla_pilot/release/qwen3vl4b_uavflow_k8_realsim_s2000. Both
+instances stopped.
+
+### D165 (done): real + simulator training - CHANGES.md D165
 
 Linux g5 runs scripts/aws/sim_pipeline_d165.sh via SSM (SSH blocked: user IP
 changed), uploads s3://vla-eval-artifacts-512068640697/d165/realsim_adapter.tgz
